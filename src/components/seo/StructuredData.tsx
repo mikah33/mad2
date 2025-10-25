@@ -1,4 +1,4 @@
-interface BusinessInfo {
+export interface BusinessInfo {
   name: string;
   description: string;
   phone: string;
@@ -13,19 +13,19 @@ interface BusinessInfo {
   priceRange?: string;
 }
 
-interface ServiceInfo {
+export interface ServiceInfo {
   name: string;
   description: string;
   price?: string;
   url: string;
 }
 
-interface FAQItem {
+export interface FAQItem {
   question: string;
   answer: string;
 }
 
-interface BlogPostInfo {
+export interface BlogPostInfo {
   title: string;
   description: string;
   author: string;

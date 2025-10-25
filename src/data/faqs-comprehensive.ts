@@ -13,15 +13,21 @@ export interface FAQ {
   schemaMarkup?: object;
 }
 
-export const faqCategories = [
-  'General Detailing',
-  'Mobile Detailing',
-  'Interior Detailing',
-  'Exterior Detailing',
-  'Ceramic Coating',
-  'Pricing & Packages',
-  'Scheduling & Service Area',
-  'Maintenance & Care'
+export interface FAQCategory {
+  id: string;
+  name: string;
+  icon: string;
+}
+
+export const faqCategories: FAQCategory[] = [
+  { id: 'General Detailing', name: 'General Detailing', icon: '🚗' },
+  { id: 'Mobile Detailing', name: 'Mobile Detailing', icon: '🚐' },
+  { id: 'Interior Detailing', name: 'Interior Detailing', icon: '🧽' },
+  { id: 'Exterior Detailing', name: 'Exterior Detailing', icon: '✨' },
+  { id: 'Ceramic Coating', name: 'Ceramic Coating', icon: '🛡️' },
+  { id: 'Pricing & Packages', name: 'Pricing & Packages', icon: '💰' },
+  { id: 'Scheduling & Service Area', name: 'Scheduling & Service Area', icon: '📅' },
+  { id: 'Maintenance & Care', name: 'Maintenance & Care', icon: '🔧' }
 ];
 
 export const faqs: FAQ[] = [
