@@ -11,7 +11,7 @@ exports.handler = async (event, context) => {
     const data = JSON.parse(event.body);
 
     // Forward to n8n webhook
-    const response = await fetch('https://contractorai.app.n8n.cloud/webhook/3dd95dd5-4308-4ece-8495-9c72239e2e4b', {
+    const response = await fetch('https://contractorai.app.n8n.cloud/webhook/41d626b4-d245-4ef6-82b1-575c623e02d6', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
