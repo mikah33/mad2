@@ -148,6 +148,7 @@ const Services: React.FC<{ onSelectService: (service: string) => void }> = ({ on
                 <a
                   href={getServiceUrl(service.title)}
                   className="flex-1 py-3 bg-orange-500 text-white font-semibold rounded-lg hover:bg-orange-600 transition text-center"
+                  aria-label={`Learn more about ${service.title}`}
                 >
                   Learn More
                 </a>
