@@ -29,7 +29,7 @@ function App() {
         <title>Professional Mobile Auto Detailing Columbia SC | Mikah's Auto Detailing</title>
         <meta name="description" content="Premium mobile auto detailing services in Columbia, Lexington & Irmo SC. Professional ceramic coating, paint correction, interior/exterior detailing. We come to you! Book your free quote today." />
         <meta name="keywords" content="auto detailing Columbia SC, mobile detailing Lexington SC, ceramic coating, paint correction, car detailing near me, interior detailing, exterior detailing, mobile car wash Columbia" />
-        <link rel="canonical" href="https://mikahsautodetailingsc.com" />
+        <link rel="canonical" href="https://mikahsmobiledetailingsc.com" />
       </Helmet>
 
       <div className="min-h-screen bg-white w-full overflow-x-hidden">
