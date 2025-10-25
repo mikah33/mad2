@@ -31,7 +31,7 @@ interface SitemapURL {
   priority: number;
 }
 
-const SITE_URL = 'https://mikahsautodetailing.com';
+const SITE_URL = 'https://mikahsautodetailingsc.com';
 const currentDate = new Date().toISOString().split('T')[0];
 
 /**
