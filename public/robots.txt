@@ -1,0 +1,14 @@
+# robots.txt for Mikah's Auto Detailing
+
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://mikahsautodetailing.com/sitemap.xml
+
+# Disallow admin or private areas (add as needed)
+# Disallow: /admin/
+# Disallow: /private/
+
+# Crawl-delay (optional, use if needed)
+# Crawl-delay: 1

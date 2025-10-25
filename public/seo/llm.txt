@@ -1,0 +1,43 @@
+# Mikah's Auto Detailing - LLM Context File
+
+## Business Overview
+Mikah's Auto Detailing provides professional mobile auto detailing services throughout the Phoenix, Arizona metropolitan area.
+
+## Core Services
+- Mobile Auto Detailing (on-location service)
+- Interior Detailing (steam cleaning, leather conditioning, odor elimination)
+- Exterior Detailing (hand wash, clay bar, polish, wax)
+- Ceramic Coating (long-lasting paint protection)
+- Paint Correction (swirl and scratch removal)
+- Headlight Restoration
+
+## Service Areas
+Primary: Phoenix, Scottsdale, Tempe, Mesa, Arizona
+Service Radius: 25 miles from Phoenix
+
+## Contact Information
+Phone: (555) 123-4567
+Email: info@mikahsautodetailing.com
+Website: https://mikahsautodetailing.com
+
+## Business Hours
+Monday-Friday: 8:00 AM - 6:00 PM
+Saturday: 9:00 AM - 5:00 PM
+Sunday: Closed
+
+## Key Features
+- Mobile service (we come to you)
+- Self-contained units (no need for water/electricity)
+- Licensed and insured
+- IDA Certified Detailer
+- Ceramic Pro Installer
+- 100% satisfaction guarantee
+
+## Pricing Range
+Services start at $79 and range up to $1299 for premium ceramic coatings.
+
+## Booking
+Recommend booking 3-5 days in advance, though same-day appointments may be available.
+
+## Payment Methods
+Cash, credit cards, Venmo, Zelle, PayPal

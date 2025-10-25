@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+html {
+  overflow-x: hidden;
+  width: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-width: 320px;
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+}
+
+#root {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.coral-500 {
+  color: #ff6b6b;
+}
+
+.bg-coral-500 {
+  background-color: #ff6b6b;
+}
+
+.bg-coral-600 {
+  background-color: #ff5252;
+}
+
+.bg-coral-300 {
+  background-color: #ff9e9e;
+}
+
+.focus\:ring-coral-500:focus {
+  --tw-ring-color: #ff6b6b;
+}
