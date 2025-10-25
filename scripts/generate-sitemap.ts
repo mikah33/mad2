@@ -105,29 +105,29 @@ function generateSitemap(): string {
     });
   });
 
-  // Blog listing page
-  urls.push({
-    loc: `${SITE_URL}/blog`,
-    lastmod: currentDate,
-    changefreq: 'weekly',
-    priority: 0.8,
-  });
+  // Blog listing page - Removed until blog is implemented
+  // urls.push({
+  //   loc: `${SITE_URL}/blog`,
+  //   lastmod: currentDate,
+  //   changefreq: 'weekly',
+  //   priority: 0.8,
+  // });
 
   // Blog posts (to be populated when blog posts are added)
   // Example blog posts - replace with actual blog data when available
-  const blogPosts = [
-    // { slug: 'ceramic-coating-guide', date: currentDate },
-    // { slug: 'interior-detailing-tips', date: currentDate },
-  ];
+  // const blogPosts = [
+  //   // { slug: 'ceramic-coating-guide', date: currentDate },
+  //   // { slug: 'interior-detailing-tips', date: currentDate },
+  // ];
 
-  blogPosts.forEach((post) => {
-    urls.push({
-      loc: `${SITE_URL}/blog/${post.slug}`,
-      lastmod: post.date,
-      changefreq: 'monthly',
-      priority: 0.8,
-    });
-  });
+  // blogPosts.forEach((post) => {
+  //   urls.push({
+  //     loc: `${SITE_URL}/blog/${post.slug}`,
+  //     lastmod: post.date,
+  //     changefreq: 'monthly',
+  //     priority: 0.8,
+  //   });
+  // });
 
   // FAQ page
   urls.push({
