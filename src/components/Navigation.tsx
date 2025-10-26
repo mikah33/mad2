@@ -61,7 +61,7 @@ const Navigation: React.FC = () => {
             </button>
             <button
               onClick={() => document.getElementById('quote')?.scrollIntoView({ behavior: 'smooth' })}
-              className="px-2 lg:px-4 xl:px-6 py-2 bg-gradient-to-r from-gold-600 to-gold-500 text-luxury-900 rounded-lg hover:from-gold-500 hover:to-gold-400 transition font-bold text-xs lg:text-sm xl:text-base whitespace-nowrap shadow-lg shadow-gold-500/20"
+              className="px-2 lg:px-4 xl:px-6 py-2 bg-gradient-to-r from-luxblue-600 to-luxblue-500 text-white rounded-lg hover:from-luxblue-500 hover:to-luxblue-400 transition font-bold text-xs lg:text-sm xl:text-base whitespace-nowrap shadow-lg shadow-luxblue-500/30"
             >
               <span className="hidden lg:inline">Get Free Quote</span>
               <span className="lg:hidden">Quote</span>
@@ -137,7 +137,7 @@ const Navigation: React.FC = () => {
                 </button>
                 <button
                   onClick={() => document.getElementById('quote')?.scrollIntoView({ behavior: 'smooth' })}
-                  className="w-full px-4 py-3 bg-gradient-to-r from-gold-600 to-gold-500 text-luxury-900 rounded-lg hover:from-gold-500 hover:to-gold-400 transition font-bold shadow-lg shadow-gold-500/20"
+                  className="w-full px-4 py-3 bg-gradient-to-r from-luxblue-600 to-luxblue-500 text-white rounded-lg hover:from-luxblue-500 hover:to-luxblue-400 transition font-bold shadow-lg shadow-luxblue-500/30"
                 >
                   Get Free Quote
                 </button>

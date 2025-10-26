@@ -275,11 +275,11 @@ const Chatbot: React.FC = () => {
       {!isOpen && (
         <button
           onClick={() => setIsOpen(true)}
-          className="fixed bottom-6 right-6 bg-gradient-to-r from-gold-600 to-gold-500 text-luxury-900 p-4 rounded-full shadow-2xl hover:shadow-gold-500/50 hover:scale-110 transition-all duration-300 z-50 animate-bounce"
+          className="fixed bottom-6 right-6 bg-gradient-to-r from-luxblue-600 to-luxblue-500 text-white p-4 rounded-full shadow-2xl hover:shadow-luxblue-500/50 hover:scale-110 transition-all duration-300 z-50 animate-bounce"
           aria-label="Open chat"
         >
           <MessageCircle className="w-6 h-6" />
-          <div className="absolute -top-1 -right-1 w-3 h-3 bg-green-500 rounded-full animate-pulse border-2 border-luxury-900"></div>
+          <div className="absolute -top-1 -right-1 w-3 h-3 bg-green-500 rounded-full animate-pulse border-2 border-white"></div>
         </button>
       )}
 
@@ -319,12 +319,12 @@ const Chatbot: React.FC = () => {
                 <div
                   className={`max-w-[80%] p-3 rounded-2xl ${
                     message.sender === 'user'
-                      ? 'bg-gradient-to-r from-gold-600 to-gold-500 text-luxury-900 rounded-br-none shadow-lg'
+                      ? 'bg-gradient-to-r from-luxblue-600 to-luxblue-500 text-white rounded-br-none shadow-lg'
                       : 'bg-luxury-700/80 text-white rounded-bl-none shadow-md border border-gold-500/20 backdrop-blur-sm'
                   }`}
                 >
                   <p className="text-sm whitespace-pre-line leading-relaxed">{message.text}</p>
-                  <p className={`text-xs mt-1 ${message.sender === 'user' ? 'text-luxury-900/70' : 'text-gold-400/70'}`}>
+                  <p className={`text-xs mt-1 ${message.sender === 'user' ? 'text-white/70' : 'text-gold-400/70'}`}>
                     {message.timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
                   </p>
                 </div>
@@ -360,7 +360,7 @@ const Chatbot: React.FC = () => {
               />
               <button
                 onClick={handleSendMessage}
-                className="bg-gradient-to-r from-gold-600 to-gold-500 text-luxury-900 p-3 rounded-full hover:shadow-lg hover:shadow-gold-500/30 hover:scale-105 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                className="bg-gradient-to-r from-luxblue-600 to-luxblue-500 text-white p-3 rounded-full hover:shadow-lg hover:shadow-luxblue-500/30 hover:scale-105 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
                 disabled={!inputValue.trim()}
                 aria-label="Send message"
               >

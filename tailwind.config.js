@@ -20,6 +20,19 @@ export default {
           800: '#7c5a07',
           900: '#654805',
         },
+        // Luxury Blue Palette
+        luxblue: {
+          50: '#eff6ff',
+          100: '#dbeafe',
+          200: '#bfdbfe',
+          300: '#93c5fd',
+          400: '#60a5fa',
+          500: '#3b82f6',  // Royal Blue
+          600: '#2563eb',  // Deep Blue
+          700: '#1d4ed8',
+          800: '#1e40af',
+          900: '#1e3a8a',
+        },
         // Premium Black/Gray Palette
         luxury: {
           50: '#f8f9fa',
@@ -33,10 +46,10 @@ export default {
           800: '#212529',
           900: '#0a0a0a',  // Deep Black
         },
-        // Keep orange for backwards compatibility but update to more luxurious tones
+        // Keep orange for backwards compatibility but update to blue
         orange: {
-          500: '#d4af37',  // Map to gold
-          600: '#b8860b',
+          500: '#3b82f6',  // Map to blue
+          600: '#2563eb',
         }
       }
     },
