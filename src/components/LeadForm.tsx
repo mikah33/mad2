@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useEffect } from 'react';
-import { Mail, User, Phone, MapPin, Car, FileText } from 'lucide-react';
+import { Mail, User, Phone, MapPin, Car, FileText, Briefcase } from 'lucide-react';
 
 interface LeadFormProps {
   selectedService: string;
@@ -13,21 +13,33 @@ const LeadForm: React.FC<LeadFormProps> = ({ selectedService }) => {
     phone: '',
     location: '',
     vehicleDetails: '',
+    service: '',
     description: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
+  const serviceOptions = [
+    'Basic Detail Package - $200',
+    'Factory Reset Package - $325',
+    'Ceramic Coatings',
+    'Paint Corrections',
+    'Specialty Services',
+    'Marine & RV Detailing',
+    'Routine Reset - $175/Month'
+  ];
+
   useEffect(() => {
     if (selectedService) {
       setFormData(prev => ({
         ...prev,
+        service: selectedService,
         description: selectedService
       }));
     }
   }, [selectedService]);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
@@ -52,8 +64,8 @@ const LeadForm: React.FC<LeadFormProps> = ({ selectedService }) => {
           phone: formData.phone,
           location: formData.location,
           vehicleDetails: formData.vehicleDetails,
+          service: formData.service || selectedService,
           description: formData.description,
-          service: selectedService || formData.description,
           timestamp: new Date().toISOString(),
           source: 'Mikahs Auto Detailing Website'
         }),
@@ -71,6 +83,7 @@ const LeadForm: React.FC<LeadFormProps> = ({ selectedService }) => {
             phone: '',
             location: '',
             vehicleDetails: '',
+            service: '',
             description: ''
           });
           setSubmitStatus('idle');
@@ -217,6 +230,33 @@ const LeadForm: React.FC<LeadFormProps> = ({ selectedService }) => {
             placeholder="Vehicle Year Make and Model"
             disabled={isSubmitting}
           />
+        </div>
+
+        {/* Service Selection Dropdown */}
+        <div className="relative">
+          <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+            <Briefcase className="h-5 w-5 text-gray-400" />
+          </div>
+          <select
+            name="service"
+            value={formData.service}
+            onChange={handleChange}
+            required
+            className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200 bg-gray-50 focus:bg-white appearance-none cursor-pointer"
+            disabled={isSubmitting}
+          >
+            <option value="">Select a Service *</option>
+            {serviceOptions.map((service, index) => (
+              <option key={index} value={service}>
+                {service}
+              </option>
+            ))}
+          </select>
+          <div className="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+            <svg className="h-5 w-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+            </svg>
+          </div>
         </div>
 
         {/* Service Description Field */}

@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mikah's Auto Detailing - Quote Request</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            max-width: 500px;
+            width: 100%;
+            padding: 40px;
+        }
+
+        h1 {
+            color: #1f2937;
+            font-size: 28px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .subtitle {
+            color: #6b7280;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 14px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            color: #374151;
+            font-weight: 500;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        .required {
+            color: #f97316;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            font-size: 15px;
+            transition: all 0.3s ease;
+            background: #f9fafb;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: #f97316;
+            background: white;
+            box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.1);
+        }
+
+        select {
+            cursor: pointer;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%236b7280'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 12px center;
+            background-size: 20px;
+            padding-right: 40px;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+            font-family: inherit;
+        }
+
+        button {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(249, 115, 22, 0.3);
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(249, 115, 22, 0.4);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        button:disabled {
+            background: #d1d5db;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        .status-message {
+            padding: 16px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            display: none;
+        }
+
+        .status-message.success {
+            background: #ecfdf5;
+            border: 2px solid #10b981;
+            color: #065f46;
+            display: block;
+        }
+
+        .status-message.error {
+            background: #fef2f2;
+            border: 2px solid #ef4444;
+            color: #991b1b;
+            display: block;
+        }
+
+        .spinner {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-top-color: white;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            margin-right: 8px;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Get Your Free Quote</h1>
+        <p class="subtitle">Fill out the form below and we'll get back to you within 24 hours</p>
+
+        <div id="statusMessage" class="status-message"></div>
+
+        <form id="quoteForm">
+            <div class="form-group">
+                <label for="fullName">Full Name <span class="required">*</span></label>
+                <input type="text" id="fullName" name="fullName" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address <span class="required">*</span></label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone">
+            </div>
+
+            <div class="form-group">
+                <label for="location">Street Address, City and Zipcode</label>
+                <input type="text" id="location" name="location">
+            </div>
+
+            <div class="form-group">
+                <label for="vehicleDetails">Vehicle Year Make and Model</label>
+                <input type="text" id="vehicleDetails" name="vehicleDetails" placeholder="e.g., 2020 Toyota Camry">
+            </div>
+
+            <div class="form-group">
+                <label for="service">Select a Service <span class="required">*</span></label>
+                <select id="service" name="service" required>
+                    <option value="">Choose a service...</option>
+                    <option value="Basic Detail Package - $200">Basic Detail Package - $200</option>
+                    <option value="Factory Reset Package - $325">Factory Reset Package - $325</option>
+                    <option value="Ceramic Coatings">Ceramic Coatings</option>
+                    <option value="Paint Corrections">Paint Corrections</option>
+                    <option value="Specialty Services">Specialty Services</option>
+                    <option value="Marine & RV Detailing">Marine & RV Detailing</option>
+                    <option value="Routine Reset - $175/Month">Routine Reset - $175/Month</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="description">Additional Details</label>
+                <textarea id="description" name="description" placeholder="Tell us more about your needs..."></textarea>
+            </div>
+
+            <button type="submit" id="submitBtn">
+                Submit Request
+            </button>
+        </form>
+    </div>
+
+    <script>
+        const form = document.getElementById('quoteForm');
+        const submitBtn = document.getElementById('submitBtn');
+        const statusMessage = document.getElementById('statusMessage');
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            // Disable button and show loading
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<span class="spinner"></span> Submitting...';
+            statusMessage.style.display = 'none';
+
+            // Collect form data
+            const formData = {
+                fullName: document.getElementById('fullName').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                location: document.getElementById('location').value,
+                vehicleDetails: document.getElementById('vehicleDetails').value,
+                service: document.getElementById('service').value,
+                description: document.getElementById('description').value,
+                timestamp: new Date().toISOString(),
+                source: 'Mikahs Auto Detailing Website'
+            };
+
+            try {
+                // Send to n8n webhook
+                const response = await fetch('https://contractorai.app.n8n.cloud/webhook/41d626b4-d245-4ef6-82b1-575c623e02d6', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(formData)
+                });
+
+                if (response.ok) {
+                    // Success
+                    statusMessage.className = 'status-message success';
+                    statusMessage.textContent = '✅ Thank you! We\'ll get back to you within 24 hours with your personalized quote.';
+                    form.reset();
+
+                    // Hide success message after 5 seconds
+                    setTimeout(() => {
+                        statusMessage.style.display = 'none';
+                    }, 5000);
+                } else {
+                    throw new Error('Submission failed');
+                }
+            } catch (error) {
+                // Error
+                statusMessage.className = 'status-message error';
+                statusMessage.textContent = '❌ Something went wrong. Please try again or call us at (803) 667-8731';
+            } finally {
+                // Re-enable button
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = 'Submit Request';
+            }
+        });
+    </script>
+</body>
+</html>
