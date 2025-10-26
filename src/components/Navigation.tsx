@@ -29,9 +29,9 @@ const Navigation: React.FC = () => {
           {/* Logo */}
           <div className="flex items-center gap-3">
             <img
-              src="/logo.png"
+              src="/logo.jpg"
               alt="M.A.Detailing Logo"
-              className="h-10 w-10 sm:h-12 sm:w-12 rounded-full object-cover"
+              className="h-10 w-10 sm:h-12 sm:w-12 rounded-full object-cover shadow-md"
             />
             <h1 className="text-lg sm:text-xl font-bold">Mikah's Auto Detailing</h1>
           </div>
