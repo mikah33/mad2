@@ -275,34 +275,34 @@ const Chatbot: React.FC = () => {
       {!isOpen && (
         <button
           onClick={() => setIsOpen(true)}
-          className="fixed bottom-6 right-6 bg-gradient-to-r from-orange-500 to-orange-600 text-white p-4 rounded-full shadow-2xl hover:shadow-orange-500/50 hover:scale-110 transition-all duration-300 z-50 animate-bounce"
+          className="fixed bottom-6 right-6 bg-gradient-to-r from-gold-600 to-gold-500 text-luxury-900 p-4 rounded-full shadow-2xl hover:shadow-gold-500/50 hover:scale-110 transition-all duration-300 z-50 animate-bounce"
           aria-label="Open chat"
         >
           <MessageCircle className="w-6 h-6" />
-          <div className="absolute -top-1 -right-1 w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+          <div className="absolute -top-1 -right-1 w-3 h-3 bg-green-500 rounded-full animate-pulse border-2 border-luxury-900"></div>
         </button>
       )}
 
       {/* Chat Window */}
       {isOpen && (
-        <div className="fixed bottom-6 right-6 w-96 h-[600px] bg-white rounded-2xl shadow-2xl flex flex-col z-50 overflow-hidden border-2 border-orange-200">
+        <div className="fixed bottom-6 right-6 w-96 h-[600px] bg-luxury-900 rounded-2xl shadow-2xl flex flex-col z-50 overflow-hidden border-2 border-gold-500/30">
           {/* Header */}
-          <div className="bg-gradient-to-r from-orange-500 to-orange-600 text-white p-4 flex items-center justify-between">
+          <div className="bg-gradient-to-r from-luxury-900 to-luxury-800 text-white p-4 flex items-center justify-between border-b border-gold-500/30">
             <div className="flex items-center gap-3">
               <div className="relative">
-                <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center">
-                  <Sparkles className="w-6 h-6 text-orange-500" />
+                <div className="w-10 h-10 bg-gradient-to-br from-gold-500 to-gold-600 rounded-full flex items-center justify-center shadow-lg">
+                  <Sparkles className="w-6 h-6 text-luxury-900" />
                 </div>
-                <div className="absolute -bottom-0.5 -right-0.5 w-3 h-3 bg-green-500 rounded-full border-2 border-white"></div>
+                <div className="absolute -bottom-0.5 -right-0.5 w-3 h-3 bg-green-500 rounded-full border-2 border-luxury-900"></div>
               </div>
               <div>
-                <h3 className="font-bold text-lg">Julia</h3>
-                <p className="text-xs text-orange-100">Virtual Receptionist • Online</p>
+                <h3 className="font-bold text-lg text-gold-400">Julia</h3>
+                <p className="text-xs text-gold-500/80">Virtual Receptionist • Online</p>
               </div>
             </div>
             <button
               onClick={() => setIsOpen(false)}
-              className="hover:bg-white/20 p-2 rounded-lg transition"
+              className="hover:bg-gold-500/20 p-2 rounded-lg transition text-gold-400"
               aria-label="Close chat"
             >
               <X className="w-5 h-5" />
@@ -310,7 +310,7 @@ const Chatbot: React.FC = () => {
           </div>
 
           {/* Messages */}
-          <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-gray-50">
+          <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-luxury-800/50">
             {messages.map((message) => (
               <div
                 key={message.id}
@@ -319,12 +319,12 @@ const Chatbot: React.FC = () => {
                 <div
                   className={`max-w-[80%] p-3 rounded-2xl ${
                     message.sender === 'user'
-                      ? 'bg-orange-500 text-white rounded-br-none'
-                      : 'bg-white text-gray-800 rounded-bl-none shadow-md border border-gray-100'
+                      ? 'bg-gradient-to-r from-gold-600 to-gold-500 text-luxury-900 rounded-br-none shadow-lg'
+                      : 'bg-luxury-700/80 text-white rounded-bl-none shadow-md border border-gold-500/20 backdrop-blur-sm'
                   }`}
                 >
                   <p className="text-sm whitespace-pre-line leading-relaxed">{message.text}</p>
-                  <p className={`text-xs mt-1 ${message.sender === 'user' ? 'text-orange-100' : 'text-gray-400'}`}>
+                  <p className={`text-xs mt-1 ${message.sender === 'user' ? 'text-luxury-900/70' : 'text-gold-400/70'}`}>
                     {message.timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
                   </p>
                 </div>
@@ -334,11 +334,11 @@ const Chatbot: React.FC = () => {
             {/* Typing Indicator */}
             {isTyping && (
               <div className="flex justify-start">
-                <div className="bg-white text-gray-800 rounded-2xl rounded-bl-none shadow-md border border-gray-100 p-3">
+                <div className="bg-luxury-700/80 rounded-2xl rounded-bl-none shadow-md border border-gold-500/20 p-3 backdrop-blur-sm">
                   <div className="flex gap-1">
-                    <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0ms' }}></div>
-                    <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '150ms' }}></div>
-                    <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '300ms' }}></div>
+                    <div className="w-2 h-2 bg-gold-500 rounded-full animate-bounce" style={{ animationDelay: '0ms' }}></div>
+                    <div className="w-2 h-2 bg-gold-500 rounded-full animate-bounce" style={{ animationDelay: '150ms' }}></div>
+                    <div className="w-2 h-2 bg-gold-500 rounded-full animate-bounce" style={{ animationDelay: '300ms' }}></div>
                   </div>
                 </div>
               </div>
@@ -348,7 +348,7 @@ const Chatbot: React.FC = () => {
           </div>
 
           {/* Input */}
-          <div className="p-4 bg-white border-t border-gray-200">
+          <div className="p-4 bg-luxury-900 border-t border-gold-500/30">
             <div className="flex gap-2">
               <input
                 type="text"
@@ -356,11 +356,11 @@ const Chatbot: React.FC = () => {
                 onChange={(e) => setInputValue(e.target.value)}
                 onKeyPress={handleKeyPress}
                 placeholder="Type your message..."
-                className="flex-1 px-4 py-3 border border-gray-300 rounded-full focus:outline-none focus:border-orange-500 focus:ring-2 focus:ring-orange-200 transition"
+                className="flex-1 px-4 py-3 bg-luxury-800/50 border border-gold-500/30 text-white placeholder-gold-500/50 rounded-full focus:outline-none focus:border-gold-500 focus:ring-2 focus:ring-gold-500/20 transition backdrop-blur-sm"
               />
               <button
                 onClick={handleSendMessage}
-                className="bg-gradient-to-r from-orange-500 to-orange-600 text-white p-3 rounded-full hover:shadow-lg hover:scale-105 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                className="bg-gradient-to-r from-gold-600 to-gold-500 text-luxury-900 p-3 rounded-full hover:shadow-lg hover:shadow-gold-500/30 hover:scale-105 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
                 disabled={!inputValue.trim()}
                 aria-label="Send message"
               >
