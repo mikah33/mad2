@@ -43,7 +43,7 @@ const Chatbot: React.FC = () => {
     if (isOpen && messages.length === 0) {
       // Welcome message
       addBotMessage(
-        "Hi! I'm Julia, your friendly virtual receptionist at Mikah's Auto Detailing! 🚗✨\n\nI'd love to help you find the perfect detailing service for your vehicle. What can I help you with today?\n\n💡 Try asking me about:\n• Our services and pricing\n• Areas we serve\n• Ceramic coating packages\n• Booking a detail"
+        "Hi! I'm Julia, your friendly virtual receptionist at Mikah's Auto Detailing! 🚗✨\n\nI'd love to help you find the perfect detailing service for your vehicle. What can I help you with today?"
       );
     }
   }, [isOpen]);
