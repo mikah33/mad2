@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet-async';
 import { Truck, Phone, ChevronRight, CheckCircle, MapPin, Clock } from 'lucide-react';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
+import Chatbot from '../components/Chatbot';
 
 const MobileDetailingPage: React.FC = () => {
   const scrollToQuote = () => { window.location.href = '/#quote'; };
@@ -35,13 +36,18 @@ const MobileDetailingPage: React.FC = () => {
                   <a href="tel:5551234567" className="bg-blue-700 text-white px-8 py-4 rounded-lg font-bold hover:bg-blue-600 transition">
                     <Phone className="w-5 h-5 inline" /> (555) 123-4567
                   </a>
-                </div>
-              </div>
+                <Chatbot />
+      </div>
+              <Chatbot />
+      </div>
               <div className="hidden md:block">
                 <img src="/exterior3.jpg" alt="Mobile auto detailing Columbia SC" className="rounded-lg shadow-2xl" />
-              </div>
-            </div>
-          </div>
+              <Chatbot />
+      </div>
+            <Chatbot />
+      </div>
+          <Chatbot />
+      </div>
         </section>
 
         <section className="py-16 bg-gray-50">
@@ -54,23 +60,28 @@ const MobileDetailingPage: React.FC = () => {
                 <p className="text-gray-600">
                   No more wasting hours at the car wash. Work from home, run errands, or relax while we detail your vehicle at your location.
                 </p>
-              </div>
+              <Chatbot />
+      </div>
               <div className="bg-white p-6 rounded-lg shadow-lg text-center">
                 <Truck className="w-16 h-16 text-blue-500 mx-auto mb-4" />
                 <h3 className="text-xl font-bold mb-3">Fully Self-Contained</h3>
                 <p className="text-gray-600">
                   We bring everything - 100+ gallons of water, quiet generators, professional equipment, and premium products. You provide nothing.
                 </p>
-              </div>
+              <Chatbot />
+      </div>
               <div className="bg-white p-6 rounded-lg shadow-lg text-center">
                 <MapPin className="w-16 h-16 text-blue-500 mx-auto mb-4" />
                 <h3 className="text-xl font-bold mb-3">Anywhere You Need</h3>
                 <p className="text-gray-600">
                   Home driveway, office parking lot, apartment complex, storage facility - we come to you anywhere in Columbia or Lexington area.
                 </p>
-              </div>
-            </div>
-          </div>
+              <Chatbot />
+      </div>
+            <Chatbot />
+      </div>
+          <Chatbot />
+      </div>
         </section>
 
         <section className="py-16">
@@ -91,7 +102,8 @@ const MobileDetailingPage: React.FC = () => {
                   <li>• Shandon</li>
                   <li>• Olympia</li>
                 </ul>
-              </div>
+              <Chatbot />
+      </div>
               <div className="bg-blue-50 p-6 rounded-lg">
                 <h3 className="font-bold text-lg mb-3 text-center">Lexington Area</h3>
                 <ul className="space-y-2 text-sm">
@@ -102,7 +114,8 @@ const MobileDetailingPage: React.FC = () => {
                   <li>• Red Bank</li>
                   <li>• Oak Grove</li>
                 </ul>
-              </div>
+              <Chatbot />
+      </div>
               <div className="bg-blue-50 p-6 rounded-lg">
                 <h3 className="font-bold text-lg mb-3 text-center">Irmo Area</h3>
                 <ul className="space-y-2 text-sm">
@@ -113,7 +126,8 @@ const MobileDetailingPage: React.FC = () => {
                   <li>• Chapin</li>
                   <li>• Ballentine</li>
                 </ul>
-              </div>
+              <Chatbot />
+      </div>
               <div className="bg-blue-50 p-6 rounded-lg">
                 <h3 className="font-bold text-lg mb-3 text-center">Extended Areas</h3>
                 <ul className="space-y-2 text-sm">
@@ -124,9 +138,12 @@ const MobileDetailingPage: React.FC = () => {
                   <li>• Lake Carolina</li>
                   <li>• Dentsville</li>
                 </ul>
-              </div>
-            </div>
-          </div>
+              <Chatbot />
+      </div>
+            <Chatbot />
+      </div>
+          <Chatbot />
+      </div>
         </section>
 
         <section className="py-16 bg-gray-50">
@@ -135,42 +152,60 @@ const MobileDetailingPage: React.FC = () => {
             <div className="max-w-3xl mx-auto space-y-6">
               <div className="bg-white p-6 rounded-lg shadow-lg">
                 <div className="flex gap-4">
-                  <div className="bg-blue-500 text-white rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0 font-bold text-xl">1</div>
+                  <div className="bg-blue-500 text-white rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0 font-bold text-xl">1<Chatbot />
+      </div>
                   <div>
                     <h3 className="text-xl font-bold mb-2">Book Your Appointment</h3>
                     <p className="text-gray-600">Call, text, or use our online form. Choose your preferred date, time, and location. We confirm within hours.</p>
-                  </div>
-                </div>
-              </div>
+                  <Chatbot />
+      </div>
+                <Chatbot />
+      </div>
+              <Chatbot />
+      </div>
               <div className="bg-white p-6 rounded-lg shadow-lg">
                 <div className="flex gap-4">
-                  <div className="bg-blue-500 text-white rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0 font-bold text-xl">2</div>
+                  <div className="bg-blue-500 text-white rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0 font-bold text-xl">2<Chatbot />
+      </div>
                   <div>
                     <h3 className="text-xl font-bold mb-2">We Arrive at Your Location</h3>
                     <p className="text-gray-600">Our mobile unit arrives on time with everything needed - water, power, equipment, and professional products.</p>
-                  </div>
-                </div>
-              </div>
+                  <Chatbot />
+      </div>
+                <Chatbot />
+      </div>
+              <Chatbot />
+      </div>
               <div className="bg-white p-6 rounded-lg shadow-lg">
                 <div className="flex gap-4">
-                  <div className="bg-blue-500 text-white rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0 font-bold text-xl">3</div>
+                  <div className="bg-blue-500 text-white rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0 font-bold text-xl">3<Chatbot />
+      </div>
                   <div>
                     <h3 className="text-xl font-bold mb-2">Professional Service</h3>
                     <p className="text-gray-600">We perform complete detailing service while you work from home, stay at the office, or go about your day.</p>
-                  </div>
-                </div>
-              </div>
+                  <Chatbot />
+      </div>
+                <Chatbot />
+      </div>
+              <Chatbot />
+      </div>
               <div className="bg-white p-6 rounded-lg shadow-lg">
                 <div className="flex gap-4">
-                  <div className="bg-blue-500 text-white rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0 font-bold text-xl">4</div>
+                  <div className="bg-blue-500 text-white rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0 font-bold text-xl">4<Chatbot />
+      </div>
                   <div>
                     <h3 className="text-xl font-bold mb-2">Final Walkthrough</h3>
                     <p className="text-gray-600">We inspect our work, show you the results, and ensure you're completely satisfied before we leave.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+                  <Chatbot />
+      </div>
+                <Chatbot />
+      </div>
+              <Chatbot />
+      </div>
+            <Chatbot />
+      </div>
+          <Chatbot />
+      </div>
         </section>
 
         <section className="py-16">
@@ -180,25 +215,32 @@ const MobileDetailingPage: React.FC = () => {
               <div className="bg-white p-6 rounded-lg shadow-lg">
                 <h3 className="text-xl font-bold mb-3">Do I need to provide water or electricity?</h3>
                 <p className="text-gray-600">No! Our mobile units are completely self-contained with 100+ gallon water tanks and quiet generators. You just provide access to your vehicle.</p>
-              </div>
+              <Chatbot />
+      </div>
               <div className="bg-white p-6 rounded-lg shadow-lg">
                 <h3 className="text-xl font-bold mb-3">Where exactly do you perform the service?</h3>
                 <p className="text-gray-600">Anywhere you have parking - driveway, garage, office parking lot, apartment complex, storage facility. We just need space to work around the vehicle.</p>
-              </div>
+              <Chatbot />
+      </div>
               <div className="bg-white p-6 rounded-lg shadow-lg">
                 <h3 className="text-xl font-bold mb-3">Do I need to be home during service?</h3>
                 <p className="text-gray-600">Not necessarily. Many customers provide vehicle access and go about their day. We communicate via phone when we arrive and finish.</p>
-              </div>
+              <Chatbot />
+      </div>
               <div className="bg-white p-6 rounded-lg shadow-lg">
                 <h3 className="text-xl font-bold mb-3">Is your generator loud?</h3>
                 <p className="text-gray-600">Our commercial-grade generators are designed for quiet operation - much quieter than typical construction generators. Most customers barely hear them from inside.</p>
-              </div>
+              <Chatbot />
+      </div>
               <div className="bg-white p-6 rounded-lg shadow-lg">
                 <h3 className="text-xl font-bold mb-3">Can you come to apartment complexes?</h3>
                 <p className="text-gray-600">Yes! We regularly service vehicles at apartment complexes throughout Columbia and Lexington. Just confirm with your complex management.</p>
-              </div>
-            </div>
-          </div>
+              <Chatbot />
+      </div>
+            <Chatbot />
+      </div>
+          <Chatbot />
+      </div>
         </section>
 
         <section className="py-16 bg-gradient-to-r from-blue-600 to-indigo-800 text-white">
@@ -211,11 +253,14 @@ const MobileDetailingPage: React.FC = () => {
             <div className="flex flex-wrap gap-4 justify-center">
               <button onClick={scrollToQuote} className="bg-white text-blue-600 px-8 py-4 rounded-lg font-bold hover:bg-blue-50 transition">Get Free Quote</button>
               <a href="tel:5551234567" className="bg-blue-700 text-white px-8 py-4 rounded-lg font-bold hover:bg-blue-600 transition">Call (555) 123-4567</a>
-            </div>
-          </div>
+            <Chatbot />
+      </div>
+          <Chatbot />
+      </div>
         </section>
 
         <Footer />
+      <Chatbot />
       </div>
     </>
   );

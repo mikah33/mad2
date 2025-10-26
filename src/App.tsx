@@ -10,6 +10,7 @@ import FAQ from './components/FAQ'
 import Contact from './components/Contact'
 import LeadForm from './components/LeadForm'
 import Footer from './components/Footer'
+import Chatbot from './components/Chatbot'
 
 function App() {
   const [selectedService, setSelectedService] = useState('')
@@ -57,6 +58,7 @@ function App() {
       <FAQ />
       <Contact />
       <Footer />
+      <Chatbot />
       </div>
     </>
   )

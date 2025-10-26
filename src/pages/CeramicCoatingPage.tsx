@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet-async';
 import { Shield, CheckCircle, Clock, DollarSign, Phone, ChevronRight, Award, Droplets, Sun } from 'lucide-react';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
+import Chatbot from '../components/Chatbot';
 
 const CeramicCoatingPage: React.FC = () => {
   const scrollToQuote = () => {
@@ -351,6 +352,7 @@ const CeramicCoatingPage: React.FC = () => {
         </section>
 
         <Footer />
+        <Chatbot />
       </div>
     </>
   );
