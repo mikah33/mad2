@@ -52,14 +52,22 @@ const Chatbot: React.FC = () => {
 
   const sendLeadToWebhook = async (data: LeadData) => {
     try {
-      const conversationSummary = data.messages.join('\n');
+      // Format conversation in alternating AI/USER chat style
+      const formattedConversation = data.messages.map((msg) => {
+        if (msg.startsWith('Julia: ')) {
+          return `🤖 Julia: ${msg.replace('Julia: ', '')}`;
+        } else if (msg.startsWith('User: ')) {
+          return `👤 User: ${msg.replace('User: ', '')}`;
+        }
+        return msg;
+      }).join('\n\n');
 
       const payload = {
         fullName: data.fullName || 'Not provided',
         email: data.email || 'Not provided',
         phone: data.phone || 'Not provided',
         service: data.service || 'Chatbot Inquiry',
-        description: `Chatbot Conversation:\n\n${conversationSummary}`,
+        description: `💬 Chatbot Conversation:\n\n${formattedConversation}`,
         location: data.location || 'Not provided',
         vehicleDetails: data.vehicleDetails || 'Not provided',
         timestamp: new Date().toISOString(),
