@@ -8,6 +8,11 @@ interface Message {
   timestamp: Date;
 }
 
+interface ConversationMessage {
+  role: 'user' | 'assistant';
+  content: string;
+}
+
 interface LeadData {
   fullName?: string;
   email?: string;
@@ -22,6 +27,8 @@ const Chatbot: React.FC = () => {
   const [inputValue, setInputValue] = useState('');
   const [leadData, setLeadData] = useState<LeadData>({ messages: [] });
   const [leadCaptured, setLeadCaptured] = useState(false);
+  const [isTyping, setIsTyping] = useState(false);
+  const [conversationHistory, setConversationHistory] = useState<ConversationMessage[]>([]);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
   const scrollToBottom = () => {
@@ -113,10 +120,53 @@ const Chatbot: React.FC = () => {
     }
   };
 
-  const getBotResponse = (userInput: string): string => {
-    const input = userInput.toLowerCase();
+  const getAiResponse = async (userInput: string): Promise<string> => {
+    try {
+      const response = await fetch('/.netlify/functions/chat', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          message: userInput,
+          conversationHistory: conversationHistory
+        }),
+      });
 
-    // Detect service interest and track it
+      if (!response.ok) {
+        throw new Error('Failed to get AI response');
+      }
+
+      const data = await response.json();
+
+      if (data.success) {
+        // Update conversation history
+        setConversationHistory(prev => [
+          ...prev,
+          { role: 'user', content: userInput },
+          { role: 'assistant', content: data.message }
+        ]);
+
+        return data.message;
+      } else {
+        throw new Error(data.error || 'AI response failed');
+      }
+    } catch (error) {
+      console.error('AI chat error:', error);
+      return "I apologize, but I'm having trouble connecting right now. Please call us at (803) 667-8731 or fill out the quote form on this page! I'm here to help you get the best auto detailing service in Columbia, SC! 🚗✨";
+    }
+  };
+
+  const handleSendMessage = async () => {
+    if (!inputValue.trim() || isTyping) return;
+
+    const userMessage = inputValue;
+    addUserMessage(userMessage);
+    setInputValue('');
+    setIsTyping(true);
+
+    // Detect service interest for lead tracking
+    const input = userMessage.toLowerCase();
     if (input.includes('basic detail')) {
       setLeadData((prev) => ({ ...prev, service: 'Basic Detail Package - $200' }));
     } else if (input.includes('factory reset')) {
@@ -129,108 +179,21 @@ const Chatbot: React.FC = () => {
       setLeadData((prev) => ({ ...prev, service: 'Routine Reset Subscription - $175/month' }));
     }
 
-    // Greetings
-    if (input.match(/^(hi|hello|hey|greetings)/i)) {
-      return "Hello! Great to hear from you! 😊 I'm Julia, and I'm here to help you with all your auto detailing needs. What would you like to know about our services?";
+    // Capture lead if booking/contact questions
+    if ((input.includes('book') || input.includes('contact') || input.includes('phone'))
+        && !leadCaptured && leadData.messages.length > 4) {
+      setLeadCaptured(true);
+      setTimeout(() => sendLeadToWebhook(leadData), 1000);
     }
 
-    // Pricing questions
-    if (input.includes('price') || input.includes('cost') || input.includes('how much')) {
-      return "Here are our main service packages:\n\n💰 **Detailing Packages:**\n• Basic Detail Package - $200\n• Factory Reset Package - $325\n• Routine Reset Subscription - $175/month\n\n🛡️ **Ceramic Coating:**\n• Bronze (2-year) - $599\n• Silver (3-year) - $799\n• Gold (5-year) - $999\n• Platinum (7-year) - $1,299\n\n🎨 **Other Services:**\n• Paint Corrections - Custom quote\n• Specialty Services - Custom quote\n• Marine & RV Detailing - Custom quote\n\n*Note: Prices may vary if your vehicle requires extra attention due to heavy soiling or damage. We'll always agree on the final price before starting any work!*\n\nWould you like more details about any specific service?";
-    }
-
-    // Basic Detail Package
-    if (input.includes('basic detail') || input.includes('basic package')) {
-      return "**Basic Detail Package - $200**\n\nThis is perfect for maintaining your vehicle's appearance!\n\n✨ Interior:\n• Full wipe down\n• Conditioner + UV protection\n• Vacuum & disinfection\n• Glass cleaned\n• Door jambs cleaned & waxed\n\n🚗 Exterior:\n• Wheels decontaminated\n• Foam contact wash\n• Protective wax layer\n• Wheels & tires dressed\n\n*Prices may vary for heavily soiled vehicles. Final price agreed before starting work.*\n\nReady to book? Just let me know!";
-    }
-
-    // Factory Reset Package
-    if (input.includes('factory reset') || input.includes('factory package')) {
-      return "**Factory Reset Package - $325**\n\nOur most comprehensive detail - restores your car to like-new condition!\n\n✨ Interior:\n• Full wipe down with conditioner + UV protection\n• Vacuum + disinfection\n• Light stain removal\n• Shampoo & extraction\n• Glass cleaned\n• Door jambs cleaned & waxed\n\n🚗 Exterior:\n• Foam contact wash\n• Brake dust removal\n• Protective wax layer\n• Tires & rims dressed\n\n➕ Add-Ons Available:\n• Weather Stripping Restoration ($50)\n• Scratch Removal ($80/panel)\n\n*Prices may vary for heavily soiled vehicles. Final price agreed before starting work.*\n\nInterested in booking this service?";
-    }
-
-    // Routine Reset Subscription
-    if (input.includes('routine reset') || input.includes('subscription') || input.includes('monthly')) {
-      return "**Routine Reset - $175/Month**\n\nStay consistently clean with our monthly subscription!\n\n✅ What's Included:\n• 2x Exterior Details per Month\n• 1x Interior Reset per Month\n• 1x Engine Bay Cleaning (first visit each month)\n• Priority Scheduling - You pick the times\n\n💰 Special Offer:\n• First 2 months: $300 upfront\n• After that: $175/month\n• Cancel anytime, no rollovers\n\nThis is perfect if you want to stay consistently clean without falling behind! Want to sign up?";
-    }
-
-    // Ceramic Coating
-    if (input.includes('ceramic') || input.includes('coating')) {
-      return "**Ceramic Coating Packages** 🛡️\n\nProfessional paint protection that lasts years, not weeks!\n\n💎 Our Packages:\n• **Bronze** (2-year warranty) - $599\n  Premium ceramic protection, decontamination, paint prep\n\n• **Silver** (3-year warranty) - $799\n  Enhanced coating, deep decontamination, advanced prep\n\n• **Gold** (5-year warranty) - $999 ⭐ MOST POPULAR\n  Premium multi-coat, wheels coated, light paint correction\n\n• **Platinum** (7-year warranty) - $1,299\n  Ultimate protection, wheels + windows, full paint correction\n\nAll packages include:\n✅ Hydrophobic water beading\n✅ UV protection\n✅ Enhanced gloss & depth\n✅ Easier cleaning\n\n*Prices may vary based on vehicle condition. Final price agreed before starting work.*\n\nWhich package interests you?";
-    }
-
-    // Paint Correction
-    if (input.includes('paint correction') || input.includes('scratch')) {
-      return "**Paint Corrections** 🎨\n\nRestore your vehicle's flawless finish! We remove:\n• Swirl marks\n• Light scratches\n• Oxidation\n• Water spots\n\nWe offer single-stage or two-stage correction to bring back your paint's original luster.\n\n💰 Pricing: Custom quote based on vehicle condition\n\n*We'll inspect your vehicle and provide an exact quote before starting. The price is always agreed upon upfront!*\n\nWould you like to schedule a free quote?";
-    }
-
-    // Specialty Services
-    if (input.includes('specialty') || input.includes('interior only') || input.includes('exterior only') || input.includes('odor') || input.includes('ozone') || input.includes('engine')) {
-      return "**Specialty Services** ⚡\n\nWe offer specialized services tailored to your needs:\n\n• Interior-only Detail\n• Exterior-only Detail\n• Odor Removal / Ozone Treatment\n• Engine Bay Detail\n\n💰 Pricing: Custom quote based on service needed\n\n*Each vehicle is unique, so we provide personalized quotes. Price is always agreed upon before we start!*\n\nWhat specific service are you interested in?";
-    }
-
-    // Marine & RV
-    if (input.includes('marine') || input.includes('rv') || input.includes('boat') || input.includes('motorcycle')) {
-      return "**Marine & RV Detailing** ⚓\n\nWe detail more than just cars!\n\n• Marine Detailing (boats, yachts)\n• RV Detailing\n• Motorcycle Detailing\n\n💰 Pricing: Custom quote based on size and condition\n\n*Prices vary significantly based on vehicle type and size. We'll provide a detailed quote after seeing your vehicle.*\n\nWhat type of vehicle would you like detailed?";
-    }
-
-    // Areas/Locations
-    if (input.includes('area') || input.includes('location') || input.includes('where') || input.includes('service area') || input.includes('come to')) {
-      return "**Areas We Serve** 📍\n\nWe're a mobile detailing service serving the greater Columbia, SC area!\n\n🚗 We come to you in:\n• Columbia, SC\n• Lexington, SC\n• West Columbia, SC\n• Irmo, SC\n• Cayce, SC\n• And surrounding areas!\n\nWe bring all our professional equipment to your home or office - you don't have to go anywhere! Just relax while we make your vehicle look amazing.\n\nAre you located in one of these areas?";
-    }
-
-    // Mobile service
-    if (input.includes('mobile') || input.includes('come to me') || input.includes('my location')) {
-      return "Yes! We're a fully mobile service! 🚐\n\nThat means we come directly to your home, office, or wherever is convenient for you in the Columbia, SC area. You don't have to drive anywhere or wait at a shop.\n\n📍 We serve:\n• Columbia, SC\n• Lexington, SC\n• West Columbia, SC\n• Irmo, SC\n• Cayce, SC\n• Surrounding areas\n\nJust schedule your appointment and we'll handle everything at your location!\n\nWould you like to book a service?";
-    }
-
-    // Booking/Appointment
-    if (input.includes('book') || input.includes('schedule') || input.includes('appointment') || input.includes('when can you')) {
-      // Capture lead interest
-      if (!leadCaptured && leadData.messages.length > 4) {
-        setLeadCaptured(true);
-        setTimeout(() => sendLeadToWebhook(leadData), 1000);
-      }
-
-      return "I'd love to help you schedule a detail! 📅\n\nHere's how to book:\n\n1️⃣ **Call us:** (803) 667-8731\n2️⃣ **Get a quote:** Scroll down to the 'Get Your Free Quote' form on our website\n3️⃣ **Tell me more:** Let me know what service you're interested in and I can guide you!\n\nWe offer flexible scheduling and come to your location throughout the Columbia, SC area.\n\nWhat service are you interested in booking?";
-    }
-
-    // Contact/Phone
-    if (input.includes('contact') || input.includes('phone') || input.includes('call') || input.includes('number')) {
-      // Capture lead interest
-      if (!leadCaptured && leadData.messages.length > 4) {
-        setLeadCaptured(true);
-        setTimeout(() => sendLeadToWebhook(leadData), 1000);
-      }
-
-      return "**Contact Information** 📞\n\n• Phone: (803) 667-8731\n• Service: Mobile (we come to you!)\n• Areas: Columbia, Lexington, West Columbia, Irmo, Cayce, SC\n\nFeel free to call us anytime, or fill out the 'Get Your Free Quote' form on this page!\n\nIs there anything else I can help you with?";
-    }
-
-    // How long/duration
-    if (input.includes('how long') || input.includes('duration') || input.includes('time')) {
-      return "Great question! ⏱️\n\nService times vary based on the package:\n\n• **Basic Detail:** 2-3 hours\n• **Factory Reset:** 4-6 hours\n• **Ceramic Coating:** 1-2 days (includes curing time)\n• **Paint Correction:** 4-8 hours (depending on level)\n\nWe'll give you a more specific timeframe when you book, based on your vehicle's condition.\n\nRemember - we're mobile, so we come to you! You can go about your day while we work.\n\nWhat service are you considering?";
-    }
-
-    // Thank you
-    if (input.includes('thank') || input.includes('thanks')) {
-      return "You're very welcome! 😊 I'm happy to help!\n\nIf you have any other questions about our services, pricing, or scheduling, feel free to ask anytime.\n\nReady to book? Call us at (803) 667-8731 or fill out the quote form on this page!\n\nHave a wonderful day! ✨";
-    }
-
-    // Default response
-    return "I'd be happy to help you with that! Here's what I can tell you about:\n\n💰 **Services & Pricing**\n• Detailing packages ($200-$325)\n• Ceramic coating ($599-$1,299)\n• Paint correction & specialty services\n\n📍 **Service Areas**\n• Columbia, Lexington, Irmo, Cayce, SC\n\n📞 **Booking**\n• Call: (803) 667-8731\n• Request a quote on this page\n\nCould you tell me more specifically what you're looking for? I'm here to help! 😊";
-  };
-
-  const handleSendMessage = () => {
-    if (!inputValue.trim()) return;
-
-    addUserMessage(inputValue);
-    const response = getBotResponse(inputValue);
-
-    setTimeout(() => {
+    try {
+      const response = await getAiResponse(userMessage);
       addBotMessage(response);
-    }, 500);
-
-    setInputValue('');
+    } catch (error) {
+      addBotMessage("I apologize, but I'm having trouble connecting right now. Please call us at (803) 667-8731 or fill out the quote form on this page!");
+    } finally {
+      setIsTyping(false);
+    }
   };
 
   const handleKeyPress = (e: React.KeyboardEvent) => {
@@ -301,6 +264,20 @@ const Chatbot: React.FC = () => {
                 </div>
               </div>
             ))}
+
+            {/* Typing Indicator */}
+            {isTyping && (
+              <div className="flex justify-start">
+                <div className="bg-white text-gray-800 rounded-2xl rounded-bl-none shadow-md border border-gray-100 p-3">
+                  <div className="flex gap-1">
+                    <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0ms' }}></div>
+                    <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '150ms' }}></div>
+                    <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '300ms' }}></div>
+                  </div>
+                </div>
+              </div>
+            )}
+
             <div ref={messagesEndRef} />
           </div>
 
