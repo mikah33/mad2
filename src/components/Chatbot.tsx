@@ -228,9 +228,14 @@ const Chatbot: React.FC = () => {
 
     try {
       const response = await getAiResponse(userMessage);
+      console.log('🤖 Julia response:', response);
+      console.log('🔍 Contains BOOKING_COMPLETE?', response.includes('BOOKING_COMPLETE'));
+      console.log('📊 Lead captured?', leadCaptured);
+      console.log('📋 Current lead data:', leadData);
 
       // Check if booking is complete
       if (response.includes('BOOKING_COMPLETE') && !leadCaptured) {
+        console.log('✅ BOOKING_COMPLETE detected! Triggering webhook...');
         // Remove the BOOKING_COMPLETE marker before displaying
         const cleanResponse = response.replace('BOOKING_COMPLETE', '').trim();
         addBotMessage(cleanResponse);
@@ -238,14 +243,19 @@ const Chatbot: React.FC = () => {
         // Submit to webhook - use a callback to ensure we have latest state
         setLeadCaptured(true);
         setLeadData((currentData) => {
+          console.log('📧 About to send webhook with data:', currentData);
           // Send webhook with current state
           setTimeout(() => sendLeadToWebhook(currentData), 500);
           return currentData;
         });
       } else {
         addBotMessage(response);
+        if (response.includes('BOOKING_COMPLETE')) {
+          console.log('⚠️ BOOKING_COMPLETE found but lead already captured');
+        }
       }
     } catch (error) {
+      console.error('❌ Error in handleSendMessage:', error);
       addBotMessage("I apologize, but I'm having trouble connecting right now. Please call us at (803) 667-8731 or fill out the quote form on this page!");
     } finally {
       setIsTyping(false);
