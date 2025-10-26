@@ -38,12 +38,13 @@ const Navigation: React.FC = () => {
 
           {/* Desktop Navigation Links */}
           <div className="hidden lg:flex items-center space-x-3 xl:space-x-6">
-            <a href="#home" className="hover:text-gold-500 transition text-sm xl:text-base font-medium">Home</a>
-            <a href="#services" className="hover:text-gold-500 transition text-sm xl:text-base font-medium">Services</a>
-            <a href="#projects" className="hidden xl:flex hover:text-gold-500 transition text-sm xl:text-base font-medium">Recent Projects</a>
-            <a href="#faq" className="hover:text-gold-500 transition text-sm xl:text-base font-medium">FAQ</a>
-            <a href="#contact" className="hover:text-gold-500 transition text-sm xl:text-base font-medium">Contact</a>
-            <a href="#locations" className="flex items-center hover:text-gold-500 transition text-sm xl:text-base font-medium">
+            <a href="/#home" className="hover:text-gold-500 transition text-sm xl:text-base font-medium">Home</a>
+            <a href="/#services" className="hover:text-gold-500 transition text-sm xl:text-base font-medium">Services</a>
+            <a href="/blog" className="hover:text-gold-500 transition text-sm xl:text-base font-medium">Blog</a>
+            <a href="/#projects" className="hidden xl:flex hover:text-gold-500 transition text-sm xl:text-base font-medium">Recent Projects</a>
+            <a href="/#faq" className="hover:text-gold-500 transition text-sm xl:text-base font-medium">FAQ</a>
+            <a href="/#contact" className="hover:text-gold-500 transition text-sm xl:text-base font-medium">Contact</a>
+            <a href="/#locations" className="flex items-center hover:text-gold-500 transition text-sm xl:text-base font-medium">
               <MapPin className="w-4 h-4 mr-1" />
               Locations
             </a>
@@ -83,42 +84,49 @@ const Navigation: React.FC = () => {
           <div className="md:hidden border-t border-gray-700/30 bg-gray-900/95 backdrop-blur-md">
             <div className="py-4 space-y-3">
               <a
-                href="#home"
+                href="/#home"
                 onClick={handleLinkClick}
                 className="block px-4 py-2 hover:bg-gold-500/20 hover:text-gold-500 rounded transition font-medium"
               >
                 Home
               </a>
               <a
-                href="#services"
+                href="/#services"
                 onClick={handleLinkClick}
                 className="block px-4 py-2 hover:bg-gold-500/20 hover:text-gold-500 rounded transition font-medium"
               >
                 Services
               </a>
               <a
-                href="#projects"
+                href="/blog"
+                onClick={handleLinkClick}
+                className="block px-4 py-2 hover:bg-gold-500/20 hover:text-gold-500 rounded transition font-medium"
+              >
+                Blog
+              </a>
+              <a
+                href="/#projects"
                 onClick={handleLinkClick}
                 className="block px-4 py-2 hover:bg-gold-500/20 hover:text-gold-500 rounded transition font-medium"
               >
                 Recent Projects
               </a>
               <a
-                href="#faq"
+                href="/#faq"
                 onClick={handleLinkClick}
                 className="block px-4 py-2 hover:bg-gold-500/20 hover:text-gold-500 rounded transition font-medium"
               >
                 FAQ
               </a>
               <a
-                href="#contact"
+                href="/#contact"
                 onClick={handleLinkClick}
                 className="block px-4 py-2 hover:bg-gold-500/20 hover:text-gold-500 rounded transition font-medium"
               >
                 Contact
               </a>
               <a
-                href="#locations"
+                href="/#locations"
                 onClick={handleLinkClick}
                 className="flex items-center px-4 py-2 hover:bg-gold-500/20 hover:text-gold-500 rounded transition font-medium"
               >

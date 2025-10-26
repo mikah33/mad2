@@ -6,6 +6,8 @@ import CeramicCoatingPage from './pages/CeramicCoatingPage';
 import PaintCorrectionPage from './pages/PaintCorrectionPage';
 import FullDetailPage from './pages/FullDetailPage';
 import MobileDetailingPage from './pages/MobileDetailingPage';
+import { BlogPage } from './pages/blog/BlogPage';
+import { BlogPostPage } from './pages/blog/BlogPostPage';
 
 export const router = createBrowserRouter([
   {
@@ -35,5 +37,13 @@ export const router = createBrowserRouter([
   {
     path: '/services/mobile-detailing',
     element: <MobileDetailingPage />,
+  },
+  {
+    path: '/blog',
+    element: <BlogPage />,
+  },
+  {
+    path: '/blog/:slug',
+    element: <BlogPostPage />,
   },
 ]);
