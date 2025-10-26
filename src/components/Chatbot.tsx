@@ -74,7 +74,9 @@ const Chatbot: React.FC = () => {
         source: 'Julia Chatbot - Mikahs Auto Detailing Website'
       };
 
-      await fetch('/.netlify/functions/submit-form', {
+      console.log('📧 Sending lead to webhook with data:', payload);
+
+      const response = await fetch('/.netlify/functions/submit-form', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -82,9 +84,14 @@ const Chatbot: React.FC = () => {
         body: JSON.stringify(payload),
       });
 
-      console.log('Lead submitted to webhook:', payload);
+      const result = await response.json();
+      console.log('✅ Webhook response:', result);
+
+      if (!response.ok) {
+        console.error('❌ Webhook failed:', result);
+      }
     } catch (error) {
-      console.error('Failed to send lead to webhook:', error);
+      console.error('❌ Failed to send lead to webhook:', error);
     }
   };
 
@@ -228,9 +235,13 @@ const Chatbot: React.FC = () => {
         const cleanResponse = response.replace('BOOKING_COMPLETE', '').trim();
         addBotMessage(cleanResponse);
 
-        // Submit to webhook
+        // Submit to webhook - use a callback to ensure we have latest state
         setLeadCaptured(true);
-        setTimeout(() => sendLeadToWebhook(leadData), 500);
+        setLeadData((currentData) => {
+          // Send webhook with current state
+          setTimeout(() => sendLeadToWebhook(currentData), 500);
+          return currentData;
+        });
       } else {
         addBotMessage(response);
       }
