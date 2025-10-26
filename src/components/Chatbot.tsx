@@ -18,6 +18,8 @@ interface LeadData {
   email?: string;
   phone?: string;
   service?: string;
+  location?: string;
+  vehicleDetails?: string;
   messages: string[];
 }
 
@@ -58,8 +60,8 @@ const Chatbot: React.FC = () => {
         phone: data.phone || 'Not provided',
         service: data.service || 'Chatbot Inquiry',
         description: `Chatbot Conversation:\n\n${conversationSummary}`,
-        location: 'Not provided',
-        vehicleDetails: 'Not provided',
+        location: data.location || 'Not provided',
+        vehicleDetails: data.vehicleDetails || 'Not provided',
         timestamp: new Date().toISOString(),
         source: 'Julia Chatbot - Mikahs Auto Detailing Website'
       };
@@ -71,6 +73,8 @@ const Chatbot: React.FC = () => {
         },
         body: JSON.stringify(payload),
       });
+
+      console.log('Lead submitted to webhook:', payload);
     } catch (error) {
       console.error('Failed to send lead to webhook:', error);
     }
@@ -111,12 +115,33 @@ const Chatbot: React.FC = () => {
     const emailMatch = text.match(/[\w.-]+@[\w.-]+\.\w+/);
     const phoneMatch = text.match(/(\+\d{1,2}\s?)?(\(?\d{3}\)?[\s.-]?)?\d{3}[\s.-]?\d{4}/);
 
+    // Extract name if message looks like a name (capitalize first word)
+    const namePattern = /^([A-Z][a-z]+(?:\s+[A-Z][a-z]+)+)$/;
+    const nameMatch = text.match(namePattern);
+
     if (emailMatch && !leadData.email) {
       setLeadData((prev) => ({ ...prev, email: emailMatch[0] }));
     }
 
     if (phoneMatch && !leadData.phone) {
       setLeadData((prev) => ({ ...prev, phone: phoneMatch[0] }));
+    }
+
+    if (nameMatch && !leadData.fullName) {
+      setLeadData((prev) => ({ ...prev, fullName: nameMatch[0] }));
+    }
+
+    // Extract location if message contains Columbia area cities
+    const locationKeywords = ['columbia', 'lexington', 'irmo', 'cayce', 'west columbia', 'blythewood', 'forest acres'];
+    const lowerText = text.toLowerCase();
+    if (locationKeywords.some(city => lowerText.includes(city)) && !leadData.location) {
+      setLeadData((prev) => ({ ...prev, location: text }));
+    }
+
+    // Extract vehicle info if message contains car-related keywords
+    const vehicleKeywords = ['honda', 'toyota', 'ford', 'chevy', 'nissan', 'bmw', 'mercedes', 'audi', 'car', 'truck', 'suv', 'sedan'];
+    if (vehicleKeywords.some(keyword => lowerText.includes(keyword)) && !leadData.vehicleDetails) {
+      setLeadData((prev) => ({ ...prev, vehicleDetails: text }));
     }
   };
 
@@ -188,7 +213,19 @@ const Chatbot: React.FC = () => {
 
     try {
       const response = await getAiResponse(userMessage);
-      addBotMessage(response);
+
+      // Check if booking is complete
+      if (response.includes('BOOKING_COMPLETE') && !leadCaptured) {
+        // Remove the BOOKING_COMPLETE marker before displaying
+        const cleanResponse = response.replace('BOOKING_COMPLETE', '').trim();
+        addBotMessage(cleanResponse);
+
+        // Submit to webhook
+        setLeadCaptured(true);
+        setTimeout(() => sendLeadToWebhook(leadData), 500);
+      } else {
+        addBotMessage(response);
+      }
     } catch (error) {
       addBotMessage("I apologize, but I'm having trouble connecting right now. Please call us at (803) 667-8731 or fill out the quote form on this page!");
     } finally {

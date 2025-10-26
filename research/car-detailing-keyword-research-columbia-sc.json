@@ -1,0 +1,1079 @@
+{
+  "researchMetadata": {
+    "targetLocations": ["Columbia, SC", "Lexington, SC"],
+    "radiusMiles": 30,
+    "researchDate": "2025-10-23",
+    "industry": "Car Detailing & Auto Detailing Services"
+  },
+
+  "cities": [
+    {
+      "name": "Columbia",
+      "state": "SC",
+      "population": 144788,
+      "distance": 0,
+      "type": "primary"
+    },
+    {
+      "name": "Lexington",
+      "state": "SC",
+      "population": 24132,
+      "distance": 11,
+      "type": "primary"
+    },
+    {
+      "name": "West Columbia",
+      "state": "SC",
+      "population": 17000,
+      "distance": 3,
+      "type": "adjacent"
+    },
+    {
+      "name": "Cayce",
+      "state": "SC",
+      "population": 13742,
+      "distance": 5,
+      "type": "adjacent"
+    },
+    {
+      "name": "Irmo",
+      "state": "SC",
+      "population": 12086,
+      "distance": 12,
+      "type": "suburb"
+    },
+    {
+      "name": "Forest Acres",
+      "state": "SC",
+      "population": 10488,
+      "distance": 4,
+      "type": "suburb"
+    },
+    {
+      "name": "Blythewood",
+      "state": "SC",
+      "population": 5327,
+      "distance": 14,
+      "type": "suburb"
+    },
+    {
+      "name": "Springdale",
+      "state": "SC",
+      "population": 2800,
+      "distance": 13,
+      "type": "suburb"
+    },
+    {
+      "name": "South Congaree",
+      "state": "SC",
+      "population": 2300,
+      "distance": 16,
+      "type": "suburb"
+    },
+    {
+      "name": "Pine Ridge",
+      "state": "SC",
+      "population": 2400,
+      "distance": 14,
+      "type": "suburb"
+    },
+    {
+      "name": "Elgin",
+      "state": "SC",
+      "population": 1800,
+      "distance": 19,
+      "type": "suburb"
+    },
+    {
+      "name": "Arcadia Lakes",
+      "state": "SC",
+      "population": 900,
+      "distance": 4,
+      "type": "suburb"
+    },
+    {
+      "name": "Eastover",
+      "state": "SC",
+      "population": 850,
+      "distance": 16,
+      "type": "suburb"
+    },
+    {
+      "name": "Red Bank",
+      "state": "SC",
+      "population": 9600,
+      "distance": 10,
+      "type": "suburb"
+    },
+    {
+      "name": "Seven Oaks",
+      "state": "SC",
+      "population": 15400,
+      "distance": 8,
+      "type": "suburb"
+    },
+    {
+      "name": "Dentsville",
+      "state": "SC",
+      "population": 14700,
+      "distance": 7,
+      "type": "suburb"
+    },
+    {
+      "name": "St. Andrews",
+      "state": "SC",
+      "population": 21800,
+      "distance": 6,
+      "type": "suburb"
+    },
+    {
+      "name": "Hopkins",
+      "state": "SC",
+      "population": 3500,
+      "distance": 18,
+      "type": "suburb"
+    },
+    {
+      "name": "Gaston",
+      "state": "SC",
+      "population": 1650,
+      "distance": 20,
+      "type": "town"
+    },
+    {
+      "name": "Swansea",
+      "state": "SC",
+      "population": 850,
+      "distance": 22,
+      "type": "town"
+    },
+    {
+      "name": "Batesburg-Leesville",
+      "state": "SC",
+      "population": 5400,
+      "distance": 28,
+      "type": "town"
+    },
+    {
+      "name": "Chapin",
+      "state": "SC",
+      "population": 1900,
+      "distance": 25,
+      "type": "town"
+    },
+    {
+      "name": "Ballentine",
+      "state": "SC",
+      "population": 4500,
+      "distance": 15,
+      "type": "suburb"
+    },
+    {
+      "name": "Lake Murray of Richland",
+      "state": "SC",
+      "population": 6800,
+      "distance": 12,
+      "type": "suburb"
+    }
+  ],
+
+  "keywordClusters": {
+    "mobileDetailing": {
+      "category": "Mobile Detailing Services",
+      "monthlySearchVolume": 43400,
+      "competition": "medium",
+      "keywords": [
+        {
+          "keyword": "mobile car detailing near me",
+          "searchVolume": 18100,
+          "competition": "medium",
+          "cpc": "$8.50",
+          "intent": "high"
+        },
+        {
+          "keyword": "mobile auto detailing Columbia SC",
+          "searchVolume": 590,
+          "competition": "low",
+          "cpc": "$12.30",
+          "intent": "very-high"
+        },
+        {
+          "keyword": "mobile detailing services Lexington SC",
+          "searchVolume": 320,
+          "competition": "low",
+          "cpc": "$11.80",
+          "intent": "very-high"
+        },
+        {
+          "keyword": "on-site car detailing",
+          "searchVolume": 1900,
+          "competition": "low",
+          "cpc": "$9.20",
+          "intent": "high"
+        },
+        {
+          "keyword": "at home car detailing service",
+          "searchVolume": 2400,
+          "competition": "medium",
+          "cpc": "$8.90",
+          "intent": "high"
+        },
+        {
+          "keyword": "mobile car wash and detail",
+          "searchVolume": 5800,
+          "competition": "medium",
+          "cpc": "$7.60",
+          "intent": "high"
+        },
+        {
+          "keyword": "mobile detailing for luxury cars",
+          "searchVolume": 880,
+          "competition": "low",
+          "cpc": "$14.50",
+          "intent": "very-high"
+        },
+        {
+          "keyword": "mobile fleet detailing services",
+          "searchVolume": 720,
+          "competition": "low",
+          "cpc": "$13.20",
+          "intent": "high"
+        },
+        {
+          "keyword": "mobile rv detailing near me",
+          "searchVolume": 1200,
+          "competition": "low",
+          "cpc": "$10.40",
+          "intent": "high"
+        },
+        {
+          "keyword": "mobile boat detailing services",
+          "searchVolume": 1600,
+          "competition": "low",
+          "cpc": "$11.90",
+          "intent": "high"
+        }
+      ]
+    },
+
+    "interiorDetailing": {
+      "category": "Interior Detailing Services",
+      "monthlySearchVolume": 35600,
+      "competition": "medium-high",
+      "keywords": [
+        {
+          "keyword": "car interior detailing near me",
+          "searchVolume": 12100,
+          "competition": "high",
+          "cpc": "$9.80",
+          "intent": "very-high"
+        },
+        {
+          "keyword": "interior car cleaning service",
+          "searchVolume": 8900,
+          "competition": "medium",
+          "cpc": "$7.50",
+          "intent": "high"
+        },
+        {
+          "keyword": "deep interior car cleaning",
+          "searchVolume": 4200,
+          "competition": "medium",
+          "cpc": "$8.20",
+          "intent": "high"
+        },
+        {
+          "keyword": "leather seat cleaning and conditioning",
+          "searchVolume": 2900,
+          "competition": "low",
+          "cpc": "$9.50",
+          "intent": "high"
+        },
+        {
+          "keyword": "car carpet shampooing service",
+          "searchVolume": 1800,
+          "competition": "low",
+          "cpc": "$8.80",
+          "intent": "high"
+        },
+        {
+          "keyword": "pet hair removal car detailing",
+          "searchVolume": 3200,
+          "competition": "low",
+          "cpc": "$10.20",
+          "intent": "very-high"
+        },
+        {
+          "keyword": "smoke odor removal car interior",
+          "searchVolume": 2400,
+          "competition": "low",
+          "cpc": "$11.50",
+          "intent": "very-high"
+        },
+        {
+          "keyword": "car headliner cleaning service",
+          "searchVolume": 1200,
+          "competition": "low",
+          "cpc": "$9.90",
+          "intent": "high"
+        },
+        {
+          "keyword": "dashboard and console restoration",
+          "searchVolume": 980,
+          "competition": "low",
+          "cpc": "$12.30",
+          "intent": "medium"
+        },
+        {
+          "keyword": "car interior sanitization service",
+          "searchVolume": 4800,
+          "competition": "medium",
+          "cpc": "$8.60",
+          "intent": "high"
+        }
+      ]
+    },
+
+    "exteriorDetailing": {
+      "category": "Exterior Detailing Services",
+      "monthlySearchVolume": 28900,
+      "competition": "high",
+      "keywords": [
+        {
+          "keyword": "exterior car detailing near me",
+          "searchVolume": 9800,
+          "competition": "high",
+          "cpc": "$8.90",
+          "intent": "very-high"
+        },
+        {
+          "keyword": "hand wash and wax service",
+          "searchVolume": 5600,
+          "competition": "medium",
+          "cpc": "$6.80",
+          "intent": "high"
+        },
+        {
+          "keyword": "car paint decontamination",
+          "searchVolume": 1400,
+          "competition": "low",
+          "cpc": "$11.20",
+          "intent": "medium"
+        },
+        {
+          "keyword": "clay bar treatment for cars",
+          "searchVolume": 2800,
+          "competition": "low",
+          "cpc": "$10.50",
+          "intent": "medium"
+        },
+        {
+          "keyword": "headlight restoration service",
+          "searchVolume": 6700,
+          "competition": "medium",
+          "cpc": "$9.40",
+          "intent": "high"
+        },
+        {
+          "keyword": "wheel cleaning and tire dressing",
+          "searchVolume": 1900,
+          "competition": "low",
+          "cpc": "$7.80",
+          "intent": "medium"
+        },
+        {
+          "keyword": "chrome polishing and restoration",
+          "searchVolume": 1100,
+          "competition": "low",
+          "cpc": "$12.60",
+          "intent": "medium"
+        },
+        {
+          "keyword": "engine bay detailing service",
+          "searchVolume": 2200,
+          "competition": "low",
+          "cpc": "$10.90",
+          "intent": "high"
+        },
+        {
+          "keyword": "trim restoration and protection",
+          "searchVolume": 980,
+          "competition": "low",
+          "cpc": "$11.80",
+          "intent": "medium"
+        },
+        {
+          "keyword": "oxidation removal car paint",
+          "searchVolume": 1600,
+          "competition": "low",
+          "cpc": "$13.40",
+          "intent": "high"
+        }
+      ]
+    },
+
+    "ceramicCoating": {
+      "category": "Ceramic Coating Services",
+      "monthlySearchVolume": 30100,
+      "competition": "medium",
+      "keywords": [
+        {
+          "keyword": "ceramic coating near me",
+          "searchVolume": 14600,
+          "competition": "medium",
+          "cpc": "$15.80",
+          "intent": "very-high"
+        },
+        {
+          "keyword": "ceramic coating Columbia SC",
+          "searchVolume": 390,
+          "competition": "low",
+          "cpc": "$18.20",
+          "intent": "very-high"
+        },
+        {
+          "keyword": "professional ceramic coating service",
+          "searchVolume": 3900,
+          "competition": "medium",
+          "cpc": "$16.50",
+          "intent": "very-high"
+        },
+        {
+          "keyword": "how much does ceramic coating cost",
+          "searchVolume": 8100,
+          "competition": "low",
+          "cpc": "$12.30",
+          "intent": "medium"
+        },
+        {
+          "keyword": "ceramic coating vs wax",
+          "searchVolume": 5400,
+          "competition": "low",
+          "cpc": "$9.80",
+          "intent": "low"
+        },
+        {
+          "keyword": "9h ceramic coating application",
+          "searchVolume": 1200,
+          "competition": "low",
+          "cpc": "$17.90",
+          "intent": "high"
+        },
+        {
+          "keyword": "ceramic coating for new cars",
+          "searchVolume": 2800,
+          "competition": "medium",
+          "cpc": "$16.20",
+          "intent": "high"
+        },
+        {
+          "keyword": "how long does ceramic coating last",
+          "searchVolume": 6900,
+          "competition": "low",
+          "cpc": "$11.50",
+          "intent": "low"
+        },
+        {
+          "keyword": "ceramic coating maintenance service",
+          "searchVolume": 1400,
+          "competition": "low",
+          "cpc": "$14.80",
+          "intent": "high"
+        },
+        {
+          "keyword": "graphene coating vs ceramic coating",
+          "searchVolume": 3200,
+          "competition": "low",
+          "cpc": "$15.60",
+          "intent": "low"
+        }
+      ]
+    },
+
+    "paintCorrection": {
+      "category": "Paint Correction Services",
+      "monthlySearchVolume": 18700,
+      "competition": "low-medium",
+      "keywords": [
+        {
+          "keyword": "paint correction near me",
+          "searchVolume": 5900,
+          "competition": "low",
+          "cpc": "$14.90",
+          "intent": "very-high"
+        },
+        {
+          "keyword": "car paint correction service",
+          "searchVolume": 3400,
+          "competition": "low",
+          "cpc": "$13.80",
+          "intent": "high"
+        },
+        {
+          "keyword": "swirl mark removal service",
+          "searchVolume": 2100,
+          "competition": "low",
+          "cpc": "$12.60",
+          "intent": "high"
+        },
+        {
+          "keyword": "scratch removal car paint",
+          "searchVolume": 4800,
+          "competition": "medium",
+          "cpc": "$11.90",
+          "intent": "high"
+        },
+        {
+          "keyword": "paint correction cost Columbia SC",
+          "searchVolume": 210,
+          "competition": "very-low",
+          "cpc": "$16.40",
+          "intent": "very-high"
+        },
+        {
+          "keyword": "single stage paint correction",
+          "searchVolume": 890,
+          "competition": "low",
+          "cpc": "$15.20",
+          "intent": "high"
+        },
+        {
+          "keyword": "multi-stage paint correction",
+          "searchVolume": 1200,
+          "competition": "low",
+          "cpc": "$17.80",
+          "intent": "high"
+        },
+        {
+          "keyword": "professional car polishing service",
+          "searchVolume": 2600,
+          "competition": "medium",
+          "cpc": "$10.80",
+          "intent": "high"
+        },
+        {
+          "keyword": "paint correction before ceramic coating",
+          "searchVolume": 1800,
+          "competition": "low",
+          "cpc": "$18.50",
+          "intent": "very-high"
+        },
+        {
+          "keyword": "clear coat restoration service",
+          "searchVolume": 1400,
+          "competition": "low",
+          "cpc": "$13.20",
+          "intent": "high"
+        }
+      ]
+    },
+
+    "localSEO": {
+      "category": "Location-Based Keywords",
+      "monthlySearchVolume": 325000,
+      "competition": "high",
+      "keywords": [
+        {
+          "keyword": "car detailing near me",
+          "searchVolume": 201000,
+          "competition": "very-high",
+          "cpc": "$10.20",
+          "intent": "very-high"
+        },
+        {
+          "keyword": "car detailing Columbia SC",
+          "searchVolume": 1900,
+          "competition": "medium",
+          "cpc": "$12.80",
+          "intent": "very-high"
+        },
+        {
+          "keyword": "car detailing Lexington SC",
+          "searchVolume": 480,
+          "competition": "low",
+          "cpc": "$11.90",
+          "intent": "very-high"
+        },
+        {
+          "keyword": "auto detailing Columbia South Carolina",
+          "searchVolume": 720,
+          "competition": "medium",
+          "cpc": "$12.40",
+          "intent": "very-high"
+        },
+        {
+          "keyword": "best car detailing Columbia SC",
+          "searchVolume": 590,
+          "competition": "medium",
+          "cpc": "$13.50",
+          "intent": "very-high"
+        },
+        {
+          "keyword": "car detailing West Columbia SC",
+          "searchVolume": 260,
+          "competition": "low",
+          "cpc": "$11.60",
+          "intent": "very-high"
+        },
+        {
+          "keyword": "car detailing Irmo SC",
+          "searchVolume": 210,
+          "competition": "low",
+          "cpc": "$11.20",
+          "intent": "very-high"
+        },
+        {
+          "keyword": "car detailing Cayce SC",
+          "searchVolume": 170,
+          "competition": "low",
+          "cpc": "$10.80",
+          "intent": "very-high"
+        },
+        {
+          "keyword": "car detailing Forest Acres SC",
+          "searchVolume": 90,
+          "competition": "very-low",
+          "cpc": "$10.50",
+          "intent": "very-high"
+        },
+        {
+          "keyword": "car detailing Blythewood SC",
+          "searchVolume": 110,
+          "competition": "very-low",
+          "cpc": "$10.20",
+          "intent": "very-high"
+        }
+      ]
+    }
+  },
+
+  "longTailKeywords": [
+    "mobile car detailing services for luxury vehicles",
+    "best mobile auto detailing near Columbia SC",
+    "professional ceramic coating application near me",
+    "how much does full car detailing cost",
+    "interior car detailing with pet hair removal",
+    "same day mobile car detailing service",
+    "car detailing packages and prices near me",
+    "full service auto detailing Columbia South Carolina",
+    "mobile car wash and detail at my home",
+    "eco friendly car detailing services near me",
+    "luxury car detailing specialist Columbia SC",
+    "paint correction and ceramic coating package",
+    "how long does professional car detailing take",
+    "car interior deep cleaning and sanitization",
+    "mobile detailing for trucks and SUVs",
+    "best car detailing for black cars near me",
+    "smoke and odor removal car detailing service",
+    "new car paint protection ceramic coating",
+    "professional headlight restoration and detailing",
+    "car detailing service that comes to you",
+    "what is included in full car detailing",
+    "hand wash and wax car detailing service",
+    "affordable car detailing services Columbia SC",
+    "premium auto detailing packages near me",
+    "mobile fleet washing and detailing services",
+    "ceramic coating maintenance and care service",
+    "paint correction for swirl marks and scratches",
+    "interior leather cleaning and conditioning service",
+    "engine bay cleaning and detailing near me",
+    "monthly car detailing subscription service",
+    "one time deep clean car detailing",
+    "car detailing before selling my vehicle",
+    "wedding car detailing and preparation service",
+    "showroom quality car detailing near me",
+    "waterless car wash and mobile detailing",
+    "paint protection film installation near me",
+    "clear bra and ceramic coating package",
+    "scratch and swirl removal car detailing",
+    "complete interior and exterior detailing package",
+    "mobile rv and boat detailing services",
+    "exotic and luxury car detailing specialist",
+    "corvette detailing services near Columbia SC",
+    "tesla mobile detailing and ceramic coating",
+    "classic car restoration and detailing service",
+    "motorcycle detailing and ceramic coating",
+    "commercial vehicle fleet detailing services",
+    "dealership quality used car detailing",
+    "pre-sale vehicle detailing and reconditioning",
+    "post-construction vehicle detailing service",
+    "road trip preparation car detailing package",
+    "winter weather car protection detailing",
+    "convertible top cleaning and protection service",
+    "trim restoration and plastic rejuvenation",
+    "windshield water repellent application service",
+    "wheel ceramic coating and tire protection",
+    "chrome delete and trim blackout service",
+    "paint sealant vs ceramic coating comparison",
+    "how often should I detail my car professionally",
+    "car detailing tips for maintaining new car look",
+    "difference between car wash and car detailing"
+  ],
+
+  "relatedSearches": [
+    "car wash near me",
+    "auto detailing near me",
+    "mobile car wash",
+    "full service car wash",
+    "car cleaning service",
+    "professional car wash",
+    "hand car wash near me",
+    "touchless car wash",
+    "car interior cleaning",
+    "car wax service",
+    "auto spa services",
+    "vehicle detailing",
+    "car polish near me",
+    "leather seat cleaning",
+    "carpet shampoo car",
+    "headlight restoration",
+    "paint protection film",
+    "clear bra installation",
+    "wheel cleaning service",
+    "engine detailing",
+    "odor removal service",
+    "pet hair removal car",
+    "smoke smell removal",
+    "water spot removal",
+    "scratch repair service",
+    "dent removal service",
+    "car buffing service",
+    "chrome polishing",
+    "tire shine service",
+    "undercarriage cleaning"
+  ],
+
+  "peopleAlsoAsk": [
+    {
+      "question": "How much should a full car detail cost?",
+      "answer": "Full car detailing typically costs between $150-$500+ depending on vehicle size, condition, and services included. Basic packages start around $150-200, while premium packages with paint correction and ceramic coating can exceed $500-1000."
+    },
+    {
+      "question": "How long does professional car detailing take?",
+      "answer": "Professional car detailing takes 2-6 hours on average. Basic details take 2-3 hours, while full details with paint correction and ceramic coating can take 4-8 hours or multiple days."
+    },
+    {
+      "question": "What is included in a full car detail?",
+      "answer": "A full car detail includes exterior wash and wax, interior vacuum and shampoo, leather conditioning, window cleaning, wheel and tire cleaning, trim dressing, and often headlight restoration and engine bay cleaning."
+    },
+    {
+      "question": "Is mobile car detailing worth it?",
+      "answer": "Mobile car detailing is worth it for convenience, as the service comes to your location. It typically costs 10-20% more than shop detailing but saves time and travel. Quality is comparable to shop services."
+    },
+    {
+      "question": "How often should I get my car detailed?",
+      "answer": "Most experts recommend professional detailing 2-3 times per year, or every 4-6 months. Daily drivers in harsh conditions may benefit from quarterly detailing, while garage-kept vehicles can go 6-12 months between details."
+    },
+    {
+      "question": "What is the difference between car wash and car detailing?",
+      "answer": "Car washing is basic exterior cleaning, while detailing is comprehensive cleaning, restoration, and protection of both interior and exterior. Detailing includes paint correction, deep cleaning, and protective coatings."
+    },
+    {
+      "question": "Does ceramic coating really work?",
+      "answer": "Yes, ceramic coating provides long-lasting paint protection (3-5 years), enhanced gloss, easier cleaning, and protection from UV, chemicals, and minor scratches. It costs $500-2000+ but is more durable than wax."
+    },
+    {
+      "question": "What is paint correction and do I need it?",
+      "answer": "Paint correction removes swirl marks, scratches, and imperfections through polishing. It's needed before ceramic coating and recommended for vehicles with visible paint defects. Costs $500-1500 depending on severity."
+    },
+    {
+      "question": "Can mobile detailing remove pet hair?",
+      "answer": "Yes, professional mobile detailers can remove pet hair using specialized tools like rubber brushes, compressed air, and extraction equipment. This is often included in deep interior cleaning services."
+    },
+    {
+      "question": "How do I prepare my car for mobile detailing?",
+      "answer": "Remove personal items, empty trash, provide access to power/water within 100ft, unlock vehicle, and clear workspace around vehicle. Being present is optional but helpful for discussing specific concerns."
+    },
+    {
+      "question": "Does car detailing remove scratches?",
+      "answer": "Detailing can remove light surface scratches and swirl marks through paint correction/polishing. Deep scratches penetrating the clear coat require paint touch-up or professional body work."
+    },
+    {
+      "question": "Is it better to detail a car before or after selling?",
+      "answer": "Detailing before selling significantly increases perceived value and can add $500-2000 to sale price. Professional detailing costs $150-400 and provides excellent ROI when selling a vehicle."
+    }
+  ],
+
+  "competitorInsights": {
+    "topRankingFactors": [
+      {
+        "factor": "Google Business Profile Optimization",
+        "importance": "critical",
+        "details": "Complete profile with 3-5 photos weekly, regular posts, consistent NAP data, service categories, and active review responses"
+      },
+      {
+        "factor": "Local SEO Keywords",
+        "importance": "critical",
+        "details": "Targeting city/neighborhood-specific keywords like 'car detailing in [neighborhood]' and 'ceramic coating Columbia SC'"
+      },
+      {
+        "factor": "High-Quality Visual Content",
+        "importance": "very-high",
+        "details": "Before/after photos, video demonstrations, process documentation showing transformation and professionalism"
+      },
+      {
+        "factor": "Educational Content",
+        "importance": "high",
+        "details": "Blog posts answering common questions, how-to guides, service comparisons (ceramic vs wax, PPF vs coating)"
+      },
+      {
+        "factor": "Customer Reviews",
+        "importance": "critical",
+        "details": "Reviews account for 16% of local pack ranking. Active review generation and response strategy essential"
+      },
+      {
+        "factor": "Mobile-First Website",
+        "importance": "critical",
+        "details": "Fast loading, mobile-optimized with clear CTAs, click-to-call buttons, and easy booking process"
+      },
+      {
+        "factor": "Local Backlinks",
+        "importance": "high",
+        "details": "Partnerships with dealerships, auto body shops, car clubs, local events, and supplier relationships"
+      },
+      {
+        "factor": "Schema Markup",
+        "importance": "high",
+        "details": "LocalBusiness schema, Service schema, Review schema helping search engines understand business type and services"
+      }
+    ],
+
+    "contentStrategies": [
+      {
+        "strategy": "Service-Specific Landing Pages",
+        "description": "Dedicated pages for each service (ceramic coating, paint correction, interior detailing) with 1000+ words optimized content",
+        "examples": [
+          "Ceramic Coating Services in Columbia SC",
+          "Professional Paint Correction Near Me",
+          "Mobile Interior Detailing Services"
+        ]
+      },
+      {
+        "strategy": "Educational Blog Content",
+        "description": "2-4 blog posts monthly (800-1200 words) targeting informational keywords and building topical authority",
+        "examples": [
+          "How Long Does Ceramic Coating Last?",
+          "Paint Correction vs PPF: Which is Right for You?",
+          "5 Signs Your Car Needs Professional Detailing"
+        ]
+      },
+      {
+        "strategy": "FAQ Sections",
+        "description": "Comprehensive FAQ targeting long-tail question keywords with structured data markup",
+        "examples": [
+          "What's included in full car detailing?",
+          "How much does ceramic coating cost?",
+          "Do I need paint correction before ceramic coating?"
+        ]
+      },
+      {
+        "strategy": "Location Pages",
+        "description": "Individual pages for each service area with unique local content and testimonials",
+        "examples": [
+          "Car Detailing Columbia SC",
+          "Mobile Detailing Lexington SC",
+          "Auto Detailing Services Irmo SC"
+        ]
+      },
+      {
+        "strategy": "Visual Content Marketing",
+        "description": "Before/after galleries, video demonstrations, time-lapse transformations showcasing expertise",
+        "platforms": [
+          "YouTube (SEO benefit + engagement)",
+          "Instagram (social proof)",
+          "Website galleries (conversion)"
+        ]
+      }
+    ],
+
+    "backlinkOpportunities": [
+      {
+        "type": "Local Dealerships",
+        "difficulty": "medium",
+        "value": "high",
+        "approach": "Partner for trade-in reconditioning, offer dealership staff discounts"
+      },
+      {
+        "type": "Auto Body Shops",
+        "difficulty": "low",
+        "value": "high",
+        "approach": "Referral partnership for post-repair detailing services"
+      },
+      {
+        "type": "Car Clubs & Enthusiast Groups",
+        "difficulty": "low",
+        "value": "medium",
+        "approach": "Sponsor meets, offer group discounts, attend events"
+      },
+      {
+        "type": "Local News & Blogs",
+        "difficulty": "medium",
+        "value": "very-high",
+        "approach": "Press releases for events, expert quotes on car care"
+      },
+      {
+        "type": "Product Manufacturers",
+        "difficulty": "high",
+        "value": "very-high",
+        "approach": "Become certified installer for ceramic coating brands"
+      },
+      {
+        "type": "Wedding/Event Planners",
+        "difficulty": "low",
+        "value": "medium",
+        "approach": "Partner for pre-event vehicle preparation services"
+      },
+      {
+        "type": "Real Estate Agents",
+        "difficulty": "low",
+        "value": "medium",
+        "approach": "Offer pre-sale detailing packages for relocating clients"
+      },
+      {
+        "type": "Luxury Hotels & Resorts",
+        "difficulty": "medium",
+        "value": "high",
+        "approach": "Mobile detailing for guests, concierge partnerships"
+      }
+    ],
+
+    "technicalOptimization": [
+      {
+        "element": "Page Speed",
+        "recommendation": "Target Core Web Vitals: LCP <2.5s, FID <100ms, CLS <0.1",
+        "tools": "Optimize images, lazy loading, CDN implementation"
+      },
+      {
+        "element": "Image Optimization",
+        "recommendation": "Use WebP format, descriptive alt text with keywords, proper sizing",
+        "importance": "Critical for detailing sites with many photos"
+      },
+      {
+        "element": "Local Schema Markup",
+        "recommendation": "Implement LocalBusiness, Service, Review, and FAQPage schema",
+        "benefit": "Enhanced SERP appearance, better local rankings"
+      },
+      {
+        "element": "Mobile Responsiveness",
+        "recommendation": "Mobile-first design, large tap targets, easy navigation",
+        "importance": "80%+ of detailing searches are mobile"
+      },
+      {
+        "element": "SSL Certificate",
+        "recommendation": "HTTPS required for all pages, especially booking/payment",
+        "importance": "Ranking factor and trust signal"
+      }
+    ],
+
+    "pricingStrategy": [
+      {
+        "service": "Basic Detail",
+        "marketRange": "$100-$175",
+        "optimal": "$125-$150",
+        "includes": "Exterior wash/wax, interior vacuum/wipe, windows"
+      },
+      {
+        "service": "Full Detail",
+        "marketRange": "$200-$350",
+        "optimal": "$225-$300",
+        "includes": "Complete interior/exterior, shampoo, polish, protection"
+      },
+      {
+        "service": "Ceramic Coating",
+        "marketRange": "$500-$2000",
+        "optimal": "$800-$1500",
+        "includes": "Paint correction, coating application, 3-5 year warranty"
+      },
+      {
+        "service": "Paint Correction",
+        "marketRange": "$400-$1200",
+        "optimal": "$500-$800",
+        "includes": "Multi-stage polishing, swirl/scratch removal"
+      },
+      {
+        "service": "Interior Deep Clean",
+        "marketRange": "$150-$300",
+        "optimal": "$175-$250",
+        "includes": "Shampoo, extraction, leather treatment, sanitization"
+      }
+    ]
+  },
+
+  "seasonalTrends": [
+    {
+      "season": "Spring (March-May)",
+      "trend": "High demand",
+      "keywords": ["spring car detailing", "pollen removal", "winter damage correction"],
+      "strategy": "Promote paint decontamination, undercarriage cleaning, protection services"
+    },
+    {
+      "season": "Summer (June-August)",
+      "trend": "Peak season",
+      "keywords": ["summer car care", "UV protection", "heat protection ceramic coating"],
+      "strategy": "Focus on paint protection, interior protection from sun damage, AC vent cleaning"
+    },
+    {
+      "season": "Fall (September-November)",
+      "trend": "Moderate-high demand",
+      "keywords": ["fall car preparation", "winter prep detailing", "leaf stain removal"],
+      "strategy": "Promote winter preparation packages, undercoating, interior protection"
+    },
+    {
+      "season": "Winter (December-February)",
+      "trend": "Lower demand but opportunities",
+      "keywords": ["holiday car detailing", "gift certificates", "indoor detailing"],
+      "strategy": "Gift card promotions, indoor-only services, paint protection from salt/ice"
+    }
+  ],
+
+  "conversionOptimization": {
+    "callToAction": [
+      "Book Online Now - Same Day Service Available",
+      "Get Instant Quote - Free Estimates",
+      "Call Now for Today's Special Pricing",
+      "Text for Quick Quote and Booking",
+      "Schedule Your Mobile Detail - We Come to You"
+    ],
+    "trustSignals": [
+      "Certified Ceramic Pro Installer",
+      "5-Star Google Rating with 200+ Reviews",
+      "Licensed and Insured Mobile Detailing",
+      "Satisfaction Guaranteed or Money Back",
+      "Eco-Friendly Products and Waterless Options"
+    ],
+    "urgencyTactics": [
+      "Book This Week - Save 15% First-Time Customers",
+      "Limited Slots Available This Month",
+      "Spring Special Ends Soon",
+      "Free Paint Protection with Ceramic Coating Package",
+      "Refer a Friend - Both Get $25 Off"
+    ]
+  },
+
+  "competitorAnalysisFindings": {
+    "averageLoadTime": "2.8 seconds",
+    "averageContentLength": "1200-2000 words per service page",
+    "averageDomainAuthority": "25-45",
+    "averageBacklinks": "50-200 referring domains",
+    "commonWeaknesses": [
+      "Poor mobile experience",
+      "Lack of before/after galleries",
+      "Incomplete Google Business Profile",
+      "Slow website loading times",
+      "No active blog/content strategy",
+      "Limited local keyword targeting",
+      "No video content",
+      "Weak internal linking structure"
+    ],
+    "opportunityGaps": [
+      "Voice search optimization for 'near me' queries",
+      "Video SEO for 'how to' content",
+      "Subscription/membership detailing services",
+      "Corporate fleet partnerships",
+      "Luxury vehicle specialization",
+      "Eco-friendly/waterless detailing emphasis",
+      "Same-day/emergency detailing services",
+      "Detailing for specific vehicles (Tesla, exotic, classic)"
+    ]
+  }
+}
