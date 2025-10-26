@@ -21,8 +21,8 @@ const Navigation: React.FC = () => {
   };
 
   return (
-    <nav className={`text-white sticky top-0 z-50 transition-all duration-300 ${
-      isScrolled ? 'bg-luxury-900 shadow-2xl border-b border-gold-500/20' : 'bg-gradient-to-b from-black/80 to-transparent backdrop-blur-sm'
+    <nav className={`text-white fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      isScrolled ? 'bg-gray-900/95 shadow-2xl border-b border-gray-700/50 backdrop-blur-sm' : 'bg-transparent'
     }`}>
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
@@ -80,7 +80,7 @@ const Navigation: React.FC = () => {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="md:hidden border-t border-gold-500/20 bg-luxury-900/95 backdrop-blur-md">
+          <div className="md:hidden border-t border-gray-700/30 bg-gray-900/95 backdrop-blur-md">
             <div className="py-4 space-y-3">
               <a
                 href="#home"

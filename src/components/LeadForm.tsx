@@ -280,7 +280,7 @@ const LeadForm: React.FC<LeadFormProps> = ({ selectedService }) => {
         <button
           type="submit"
           disabled={isSubmitting}
-          className="w-full bg-orange-500 hover:bg-orange-600 disabled:bg-orange-300 disabled:cursor-not-allowed text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200 transform hover:scale-105 disabled:transform-none shadow-lg hover:shadow-xl"
+          className="w-full bg-primary-700 hover:bg-primary-800 disabled:bg-primary-400 disabled:cursor-not-allowed text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200 transform hover:scale-105 disabled:transform-none shadow-lg hover:shadow-xl"
         >
           {isSubmitting ? (
             <div className="flex items-center justify-center">

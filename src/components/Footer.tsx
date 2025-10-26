@@ -11,32 +11,32 @@ const Footer: React.FC = () => {
             <h4 className="text-lg font-bold mb-4">Quick Links</h4>
             <ul className="space-y-2 text-gray-400">
               <li>
-                <a href="#home" className="hover:text-orange-500 transition">
+                <a href="#home" className="hover:text-primary-500 transition">
                   Home
                 </a>
               </li>
               <li>
-                <a href="#services" className="hover:text-orange-500 transition">
+                <a href="#services" className="hover:text-primary-500 transition">
                   Services
                 </a>
               </li>
               <li>
-                <a href="#projects" className="hover:text-orange-500 transition">
+                <a href="#projects" className="hover:text-primary-500 transition">
                   Recent Projects
                 </a>
               </li>
               <li>
-                <a href="#quote" className="hover:text-orange-500 transition">
+                <a href="#quote" className="hover:text-primary-500 transition">
                   Get Quote
                 </a>
               </li>
               <li>
-                <a href="#faq" className="hover:text-orange-500 transition">
+                <a href="#faq" className="hover:text-primary-500 transition">
                   FAQ
                 </a>
               </li>
               <li>
-                <a href="#privacy" className="hover:text-orange-500 transition">
+                <a href="#privacy" className="hover:text-primary-500 transition">
                   Privacy Policy
                 </a>
               </li>
@@ -48,23 +48,23 @@ const Footer: React.FC = () => {
             <h4 className="text-lg font-bold mb-4">Our Services</h4>
             <ul className="space-y-2 text-gray-400">
               <li className="flex items-center">
-                <span className="text-orange-500 mr-2">✨</span>
+                <span className="text-primary-500 mr-2">✨</span>
                 Auto Detailing
               </li>
               <li className="flex items-center">
-                <span className="text-orange-500 mr-2">✨</span>
+                <span className="text-primary-500 mr-2">✨</span>
                 Ceramic Coatings
               </li>
               <li className="flex items-center">
-                <span className="text-orange-500 mr-2">✨</span>
+                <span className="text-primary-500 mr-2">✨</span>
                 Paint Correction
               </li>
               <li className="flex items-center">
-                <span className="text-orange-500 mr-2">✨</span>
+                <span className="text-primary-500 mr-2">✨</span>
                 Marine & RV Detailing
               </li>
               <li className="flex items-center">
-                <span className="text-orange-500 mr-2">✨</span>
+                <span className="text-primary-500 mr-2">✨</span>
                 Mobile Service
               </li>
             </ul>
@@ -75,10 +75,10 @@ const Footer: React.FC = () => {
             <h4 className="text-lg font-bold mb-2">Free Estimates</h4>
             <p className="text-gray-400 text-sm mb-4">Get your personalized quote today</p>
             <div className="flex gap-3">
-              <button className="flex-1 px-4 py-3 bg-orange-500 text-white font-semibold rounded-lg hover:bg-orange-600 transition">
+              <button className="flex-1 px-4 py-3 bg-primary-700 text-white font-semibold rounded-lg hover:bg-primary-800 transition">
                 Call Now
               </button>
-              <button className="flex-1 px-4 py-3 bg-gray-800 text-white font-semibold rounded-lg hover:bg-gray-700 transition">
+              <button className="flex-1 px-4 py-3 bg-primary-600 text-white font-semibold rounded-lg hover:bg-primary-700 transition">
                 Get Quote
               </button>
             </div>
@@ -94,14 +94,14 @@ const Footer: React.FC = () => {
           <div className="flex items-center gap-4">
             <a
               href="tel:8036678731"
-              className="flex items-center text-gray-400 hover:text-orange-500 transition"
+              className="flex items-center text-gray-400 hover:text-primary-500 transition"
             >
               <Phone className="w-4 h-4 mr-2" />
               (803) 667-8731
             </a>
             <a
               href="#facebook"
-              className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-orange-500 transition"
+              className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary-700 transition"
             >
               <Facebook className="w-5 h-5" />
             </a>

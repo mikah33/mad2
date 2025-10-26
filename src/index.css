@@ -30,21 +30,21 @@ body {
 }
 
 .coral-500 {
-  color: #ff6b6b;
+  color: #737373;
 }
 
 .bg-coral-500 {
-  background-color: #ff6b6b;
+  background-color: #737373;
 }
 
 .bg-coral-600 {
-  background-color: #ff5252;
+  background-color: #525252;
 }
 
 .bg-coral-300 {
-  background-color: #ff9e9e;
+  background-color: #d4d4d4;
 }
 
 .focus\:ring-coral-500:focus {
-  --tw-ring-color: #ff6b6b;
+  --tw-ring-color: #737373;
 }

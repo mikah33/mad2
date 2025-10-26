@@ -1,41 +1,29 @@
 import React from 'react';
 import { Star } from 'lucide-react';
+import { reviews as allReviews } from '../data/reviews';
 
 const Testimonials: React.FC = () => {
-  const reviews = [
-    {
-      name: 'William Warren',
-      initial: 'WW',
-      text: '"Mikah came and did a full detail on my RV. This thing is 36ft and hasn\'t been cleaned properly in years. He does a tremendous job. I haven\'t gotten my car detailed by him but if he can clean a 36ft RV then Im sure the work he does on a vehicle would be worth it"',
-      rating: 5,
-    },
-    {
-      name: 'Deborah Autry',
-      initial: 'DA',
-      text: '"They did an exceptional job on our vehicle! Besides needing a good cleaning, we had a ton of dog hair! They surpassed my expectations on that alone! Very pleased!"',
-      rating: 5,
-    },
-    {
-      name: 'Humberto Acevedo',
-      initial: 'HA',
-      text: '"Great service and results. Will definitely be calling them again."',
-      rating: 5,
-    },
-  ];
+  // Display the first 3 reviews for the testimonial section
+  const displayReviews = allReviews.slice(0, 3).map(review => ({
+    name: review.author,
+    initial: review.authorInitials,
+    text: `"${review.reviewText}"`,
+    rating: review.rating,
+  }));
 
   return (
     <section className="py-12 md:py-20 bg-gray-50 w-full overflow-hidden">
       <div className="container mx-auto px-4 max-w-7xl">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mb-12">
-          {reviews.map((review, index) => (
+          {displayReviews.map((review, index) => (
             <div key={index} className="bg-white rounded-xl shadow-lg p-6">
               <div className="flex items-center mb-4">
-                <div className="w-10 h-10 rounded-full bg-orange-500 text-white flex items-center justify-center font-bold mr-3">
+                <div className="w-10 h-10 rounded-full bg-primary-700 text-white flex items-center justify-center font-bold mr-3">
                   {review.initial}
                 </div>
                 <div>
                   <div className="flex items-center text-sm text-gray-600 mb-1">
-                    <span className="w-5 h-5 rounded-full bg-blue-500 text-white flex items-center justify-center text-xs mr-2">
+                    <span className="w-5 h-5 rounded-full bg-primary-600 text-white flex items-center justify-center text-xs mr-2">
                       G
                     </span>
                     Google Review
@@ -68,13 +56,13 @@ const Testimonials: React.FC = () => {
           </p>
           <div className="flex justify-center gap-4 flex-wrap">
             <a href="#quote">
-              <button className="px-8 py-4 bg-orange-500 text-white font-bold rounded-lg hover:bg-orange-600 transition">
+              <button className="px-8 py-4 bg-primary-700 text-white font-bold rounded-lg hover:bg-primary-800 transition">
                 Get Your Free Quote
               </button>
             </a>
             <a
               href="#reviews"
-              className="px-8 py-4 text-orange-500 font-semibold rounded-lg hover:text-orange-600 transition flex items-center"
+              className="px-8 py-4 text-primary-700 font-semibold rounded-lg hover:text-primary-800 transition flex items-center"
             >
               View more of our reviews →
             </a>

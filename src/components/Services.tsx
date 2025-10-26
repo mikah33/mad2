@@ -49,7 +49,7 @@ const Services: React.FC<{ onSelectService: (service: string) => void }> = ({ on
       icon: <Shield className="w-8 h-8" />,
       title: 'Ceramic Coatings',
       price: 'Quote',
-      color: 'bg-green-500',
+      color: 'bg-primary-500',
       description: [
         'Achieve long-term paint protection with our professional-grade ceramic application',
         'We meticulously prepare your vehicle with thorough wash and decontamination',
@@ -60,7 +60,7 @@ const Services: React.FC<{ onSelectService: (service: string) => void }> = ({ on
       icon: <Wrench className="w-8 h-8" />,
       title: 'Paint Corrections',
       price: 'Quote',
-      color: 'bg-green-600',
+      color: 'bg-primary-600',
       description: [
         "Restore your vehicle's flawless finish with expert paint correction",
         'Effectively remove swirl marks, light scratches, and oxidation',
@@ -71,7 +71,7 @@ const Services: React.FC<{ onSelectService: (service: string) => void }> = ({ on
       icon: <Zap className="w-8 h-8" />,
       title: 'Specialty Services',
       price: 'Quote',
-      color: 'bg-purple-500',
+      color: 'bg-primary-500',
       description: [
         'Interior-only or Exterior-only detail',
         'Odor Removal / Ozone Treatment',
@@ -82,7 +82,7 @@ const Services: React.FC<{ onSelectService: (service: string) => void }> = ({ on
       icon: <Anchor className="w-8 h-8" />,
       title: 'Marine & RV Detailing',
       price: 'Quote',
-      color: 'bg-blue-500',
+      color: 'bg-primary-500',
       description: [
         'Marine Detailing',
         'RV Detailing',
@@ -141,13 +141,13 @@ const Services: React.FC<{ onSelectService: (service: string) => void }> = ({ on
               <div className="flex gap-2">
                 <button
                   onClick={() => onSelectService(service.title)}
-                  className="flex-1 py-3 bg-gray-100 text-gray-800 font-semibold rounded-lg hover:bg-orange-500 hover:text-white transition"
+                  className="flex-1 py-3 bg-gray-100 text-gray-800 font-semibold rounded-lg hover:bg-primary-700 hover:text-white transition"
                 >
                   Get Quote
                 </button>
                 <a
                   href={getServiceUrl(service.title)}
-                  className="flex-1 py-3 bg-orange-500 text-white font-semibold rounded-lg hover:bg-orange-600 transition text-center text-sm"
+                  className="flex-1 py-3 bg-primary-700 text-white font-semibold rounded-lg hover:bg-primary-800 transition text-center text-sm"
                 >
                   View {service.title}
                 </a>

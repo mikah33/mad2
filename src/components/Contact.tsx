@@ -16,26 +16,26 @@ const Contact: React.FC = () => {
 
             <div className="space-y-6">
               <div className="flex items-start">
-                <div className="w-12 h-12 bg-orange-500 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                <div className="w-12 h-12 bg-primary-700 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
                   <Phone className="w-6 h-6" />
                 </div>
                 <div>
                   <p className="text-sm text-gray-400 mb-1">Call or Text</p>
-                  <a href="tel:8036678731" className="text-xl font-bold hover:text-orange-500">
+                  <a href="tel:8036678731" className="text-xl font-bold hover:text-primary-500">
                     (803) 667-8731
                   </a>
                 </div>
               </div>
 
               <div className="flex items-start">
-                <div className="w-12 h-12 bg-orange-500 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                <div className="w-12 h-12 bg-primary-700 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
                   <Globe className="w-6 h-6" />
                 </div>
                 <div>
                   <p className="text-sm text-gray-400 mb-1">Website</p>
                   <a
                     href="https://mikahsmobiledetailingsc.com"
-                    className="text-lg hover:text-orange-500"
+                    className="text-lg hover:text-primary-500"
                   >
                     mikahsmobiledetailingsc.com
                   </a>
@@ -43,7 +43,7 @@ const Contact: React.FC = () => {
               </div>
 
               <div className="flex items-start">
-                <div className="w-12 h-12 bg-orange-500 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                <div className="w-12 h-12 bg-primary-700 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
                   <MapPin className="w-6 h-6" />
                 </div>
                 <div>
@@ -56,7 +56,7 @@ const Contact: React.FC = () => {
               </div>
 
               <div className="flex items-start">
-                <div className="w-12 h-12 bg-orange-500 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                <div className="w-12 h-12 bg-primary-700 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
                   <Clock className="w-6 h-6" />
                 </div>
                 <div>
@@ -71,7 +71,7 @@ const Contact: React.FC = () => {
           {/* Map & Service Areas */}
           <div>
             <h3 className="text-2xl font-bold mb-6 flex items-center">
-              <span className="w-8 h-8 bg-orange-500 rounded flex items-center justify-center mr-3">
+              <span className="w-8 h-8 bg-primary-700 rounded flex items-center justify-center mr-3">
                 📍
               </span>
               Our Service Area
@@ -125,7 +125,7 @@ const Contact: React.FC = () => {
 
             <div className="mt-6 text-center">
               <a href="#quote">
-                <button className="w-full px-8 py-4 bg-orange-500 text-white font-bold rounded-lg hover:bg-orange-600 transition">
+                <button className="w-full px-8 py-4 bg-primary-700 text-white font-bold rounded-lg hover:bg-primary-800 transition">
                   📝 Get Your Free Quote
                 </button>
               </a>

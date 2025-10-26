@@ -1,9 +1,8 @@
 import { useParams } from 'react-router-dom';
 import { SEOHead } from '../../components/seo/SEOHead';
 import { Breadcrumbs } from '../../components/seo/Breadcrumbs';
-import { generateBlogPostSchema } from '../../components/seo/StructuredData';
+import { generateCompleteBlogPostSchema } from '../../components/seo/BlogSchemas';
 import { getBlogPostBySlug } from '../../data/blog';
-import { businessInfo } from '../../data/business';
 import { NotFoundPage } from '../NotFoundPage';
 
 export const BlogPostPage = () => {
@@ -14,24 +13,11 @@ export const BlogPostPage = () => {
     return <NotFoundPage />;
   }
 
-  const schema = generateBlogPostSchema(
-    {
-      title: post.title,
-      description: post.excerpt,
-      author: post.author,
-      datePublished: post.datePublished,
-      dateModified: post.dateModified,
-      image: post.image,
-      url: `https://mikahsautodetailing.com/blog/${post.slug}`
-    },
-    {
-      name: businessInfo.name,
-      description: businessInfo.description,
-      phone: businessInfo.phone,
-      email: businessInfo.email,
-      address: businessInfo.address
-    }
-  );
+  // Generate comprehensive blog post schemas (BlogPosting + WebPage with breadcrumbs)
+  const schemas = generateCompleteBlogPostSchema(post);
+
+  const postUrl = `https://mikahsmobiledetailingsc.com/blog/${post.slug}`;
+  const imageUrl = post.image || 'https://mikahsmobiledetailingsc.com/exterior1.jpg';
 
   return (
     <>
@@ -39,9 +25,13 @@ export const BlogPostPage = () => {
         title={post.title}
         description={post.excerpt}
         keywords={post.tags.join(', ')}
-        canonical={`https://mikahsautodetailing.com/blog/${post.slug}`}
+        canonical={postUrl}
         ogType="article"
-        schema={schema}
+        ogImage={imageUrl}
+        ogImageAlt={post.imageAlt || post.title}
+        ogImageWidth={1200}
+        ogImageHeight={630}
+        schema={schemas}
       />
 
       <Breadcrumbs
@@ -51,14 +41,35 @@ export const BlogPostPage = () => {
         ]}
       />
 
-      <article className="blog-post-page">
+      <article
+        className="blog-post-page"
+        itemScope
+        itemType="https://schema.org/BlogPosting"
+      >
         {/* Content placeholder */}
-        <h1>{post.title}</h1>
-        <p className="meta">
-          By {post.author} | {new Date(post.datePublished).toLocaleDateString()}
+        <h1 itemProp="headline">{post.title}</h1>
+        <div className="meta">
+          <span>
+            By <span itemProp="author" itemScope itemType="https://schema.org/Person">
+              <span itemProp="name">{post.author}</span>
+            </span>
+          </span>
+          {' | '}
+          <time itemProp="datePublished" dateTime={post.datePublished}>
+            {new Date(post.datePublished).toLocaleDateString()}
+          </time>
+          {post.dateModified && (
+            <meta itemProp="dateModified" content={post.dateModified} />
+          )}
           {post.readTime && ` | ${post.readTime} min read`}
-        </p>
-        <p>{post.excerpt}</p>
+        </div>
+        <div itemProp="description">
+          <p>{post.excerpt}</p>
+        </div>
+        {post.image && (
+          <meta itemProp="image" content={imageUrl} />
+        )}
+        <meta itemProp="url" content={postUrl} />
       </article>
     </>
   );

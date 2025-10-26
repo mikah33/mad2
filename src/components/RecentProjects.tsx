@@ -222,7 +222,7 @@ const RecentProjects: React.FC = () => {
               onClick={() => setActiveTab(tab.id)}
               className={`px-6 py-3 rounded-lg font-semibold transition ${
                 activeTab === tab.id
-                  ? 'bg-orange-500 text-white'
+                  ? 'bg-primary-700 text-white'
                   : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
               }`}
             >
@@ -272,7 +272,7 @@ const RecentProjects: React.FC = () => {
           <div className="text-center mb-12">
             <button
               onClick={() => setShowAll(true)}
-              className="px-8 py-3 bg-orange-500 text-white font-semibold rounded-lg hover:bg-orange-600 transition-all duration-200"
+              className="px-8 py-3 bg-primary-700 text-white font-semibold rounded-lg hover:bg-primary-800 transition-all duration-200"
             >
               Show More Projects ({filteredProjects.length - 3} more)
             </button>
@@ -294,13 +294,13 @@ const RecentProjects: React.FC = () => {
           <h3 className="text-3xl font-bold mb-4">Ready to Transform Your Vehicle?</h3>
           <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
             Join our satisfied customers and experience the difference professional detailing makes.{' '}
-            <a href="#quote" className="text-orange-500 hover:underline">
+            <a href="#quote" className="text-primary-700 hover:underline">
               Get your free quote today
             </a>{' '}
             and see why we're the trusted choice for vehicle care.
           </p>
           <a href="#quote">
-            <button className="px-8 py-4 bg-orange-500 text-white text-lg font-bold rounded-lg hover:bg-orange-600 transition">
+            <button className="px-8 py-4 bg-primary-700 text-white text-lg font-bold rounded-lg hover:bg-primary-800 transition">
               Get Your Free Quote
             </button>
           </a>

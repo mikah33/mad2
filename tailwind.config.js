@@ -7,49 +7,44 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Luxury Gold Palette
-        gold: {
-          50: '#fffbeb',
-          100: '#fef3c7',
-          200: '#fde68a',
-          300: '#fcd34d',
-          400: '#fbbf24',
-          500: '#d4af37',  // Classic Gold
-          600: '#b8860b',  // Dark Gold
-          700: '#9d7009',
-          800: '#7c5a07',
-          900: '#654805',
+        // Primary Palette - Light Grey
+        primary: {
+          50: '#fafafa',   // Almost white
+          100: '#f5f5f5',  // Very light grey
+          200: '#e5e5e5',  // Light grey
+          300: '#d4d4d4',  // Medium light grey
+          400: '#a3a3a3',  // Medium grey
+          500: '#737373',  // Mid grey
+          600: '#525252',  // Dark grey
+          700: '#404040',  // Darker grey
+          800: '#262626',  // Very dark grey
+          900: '#171717',  // Almost black
         },
-        // Luxury Blue Palette
-        luxblue: {
-          50: '#eff6ff',
-          100: '#dbeafe',
-          200: '#bfdbfe',
-          300: '#93c5fd',
-          400: '#60a5fa',
-          500: '#3b82f6',  // Royal Blue
-          600: '#2563eb',  // Deep Blue
-          700: '#1d4ed8',
-          800: '#1e40af',
-          900: '#1e3a8a',
-        },
-        // Premium Black/Gray Palette
-        luxury: {
-          50: '#f8f9fa',
-          100: '#e9ecef',
-          200: '#dee2e6',
-          300: '#ced4da',
-          400: '#adb5bd',
-          500: '#6c757d',
-          600: '#495057',
-          700: '#343a40',
-          800: '#212529',
-          900: '#0a0a0a',  // Deep Black
-        },
-        // Keep orange for backwards compatibility but update to blue
+        // Map orange to grey for backward compatibility
         orange: {
-          500: '#3b82f6',  // Map to blue
-          600: '#2563eb',
+          50: '#fafafa',
+          100: '#f5f5f5',
+          200: '#e5e5e5',
+          300: '#d4d4d4',
+          400: '#a3a3a3',
+          500: '#737373',  // Main grey
+          600: '#525252',  // Darker grey
+          700: '#404040',
+          800: '#262626',
+          900: '#171717',
+        },
+        // Map blue to grey for backward compatibility
+        blue: {
+          50: '#fafafa',
+          100: '#f5f5f5',
+          200: '#e5e5e5',
+          300: '#d4d4d4',
+          400: '#a3a3a3',
+          500: '#737373',
+          600: '#525252',
+          700: '#404040',
+          800: '#262626',
+          900: '#171717',
         }
       }
     },

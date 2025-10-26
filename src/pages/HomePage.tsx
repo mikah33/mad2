@@ -1,25 +1,31 @@
 import { SEOHead } from '../components/seo/SEOHead';
 import { generateLocalBusinessSchema } from '../components/seo/StructuredData';
 import { businessInfo } from '../data/business';
+import { reviews, aggregateRating } from '../data/reviews';
 
 export const HomePage = () => {
-  const schema = generateLocalBusinessSchema({
-    name: businessInfo.name,
-    description: businessInfo.description,
-    phone: businessInfo.phone,
-    email: businessInfo.email,
-    address: businessInfo.address,
-    hours: businessInfo.hours,
-    priceRange: businessInfo.priceRange
-  });
+  // Generate comprehensive LocalBusiness schema with reviews and aggregate rating
+  const schema = generateLocalBusinessSchema(
+    {
+      name: businessInfo.name,
+      description: businessInfo.description,
+      phone: businessInfo.phone,
+      email: businessInfo.email,
+      address: businessInfo.address,
+      hours: businessInfo.hours,
+      priceRange: businessInfo.priceRange
+    },
+    aggregateRating,
+    reviews
+  );
 
   return (
     <>
       <SEOHead
-        title="Professional Mobile Auto Detailing"
-        description="Premium mobile auto detailing services in Phoenix, AZ. Professional ceramic coating, paint correction, and interior/exterior detailing. Book today!"
-        keywords="auto detailing, mobile detailing, ceramic coating, paint correction, Phoenix AZ"
-        canonical="https://mikahsautodetailing.com"
+        title="Professional Mobile Auto Detailing Columbia SC | Mikah's Auto Detailing"
+        description="Premium mobile auto detailing services in Columbia, Lexington & Irmo SC. Professional ceramic coating, paint correction, interior/exterior detailing. We come to you! Book your free quote today."
+        keywords="auto detailing Columbia SC, mobile detailing Lexington SC, ceramic coating, paint correction, car detailing near me, interior detailing, exterior detailing, mobile car wash Columbia"
+        canonical="https://mikahsmobiledetailingsc.com"
         schema={schema}
       />
 

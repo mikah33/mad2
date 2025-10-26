@@ -11,6 +11,11 @@ import Contact from './components/Contact'
 import LeadForm from './components/LeadForm'
 import Footer from './components/Footer'
 import Chatbot from './components/Chatbot'
+import { generateLocalBusinessSchema } from './components/seo/StructuredData'
+import { generateOrganizationSchema } from './components/seo/OrganizationSchema'
+import { businessInfo } from './data/business'
+import { reviews, aggregateRating } from './data/reviews'
+import { images } from './data/images'
 
 function App() {
   const [selectedService, setSelectedService] = useState('')
@@ -24,6 +29,29 @@ function App() {
     }
   }
 
+  // Generate comprehensive schema with reviews
+  const localBusinessSchema = generateLocalBusinessSchema(
+    businessInfo,
+    aggregateRating,
+    reviews
+  )
+
+  // Generate organization schema
+  const organizationSchema = generateOrganizationSchema({
+    name: businessInfo.name,
+    legalName: businessInfo.legalName,
+    description: businessInfo.description,
+    url: 'https://mikahsmobiledetailingsc.com',
+    telephone: businessInfo.phone,
+    email: businessInfo.email,
+    address: businessInfo.address,
+    foundingDate: '2020',
+    socialMedia: businessInfo.socialMedia
+  })
+
+  // Combine schemas
+  const schemas = [localBusinessSchema, organizationSchema]
+
   return (
     <>
       <Helmet>
@@ -31,6 +59,30 @@ function App() {
         <meta name="description" content="Premium mobile auto detailing services in Columbia, Lexington & Irmo SC. Professional ceramic coating, paint correction, interior/exterior detailing. We come to you! Book your free quote today." />
         <meta name="keywords" content="auto detailing Columbia SC, mobile detailing Lexington SC, ceramic coating, paint correction, car detailing near me, interior detailing, exterior detailing, mobile car wash Columbia" />
         <link rel="canonical" href="https://mikahsmobiledetailingsc.com" />
+
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://mikahsmobiledetailingsc.com" />
+        <meta property="og:title" content="Professional Mobile Auto Detailing Columbia SC | Mikah's Auto Detailing" />
+        <meta property="og:description" content="Premium mobile auto detailing services in Columbia, Lexington & Irmo SC. We come to you!" />
+        <meta property="og:image" content={images.ogDefault.url} />
+        <meta property="og:image:alt" content={images.ogDefault.alt} />
+        <meta property="og:image:width" content={images.ogDefault.width.toString()} />
+        <meta property="og:image:height" content={images.ogDefault.height.toString()} />
+        <meta property="og:site_name" content="Mikah's Auto Detailing" />
+        <meta property="og:locale" content="en_US" />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Professional Mobile Auto Detailing Columbia SC" />
+        <meta name="twitter:description" content="Premium mobile auto detailing services. We come to you!" />
+        <meta name="twitter:image" content={images.ogDefault.url} />
+        <meta name="twitter:image:alt" content={images.ogDefault.alt} />
+
+        {/* Structured Data */}
+        <script type="application/ld+json">
+          {JSON.stringify(schemas)}
+        </script>
       </Helmet>
 
       <div className="min-h-screen bg-white w-full overflow-x-hidden">

@@ -1,4 +1,5 @@
 import { Helmet } from 'react-helmet-async';
+import { getDefaultOGImage } from '../../data/images';
 
 interface SEOHeadProps {
   title: string;
@@ -7,8 +8,13 @@ interface SEOHeadProps {
   canonical?: string;
   ogType?: string;
   ogImage?: string;
+  ogImageAlt?: string;
+  ogImageWidth?: number;
+  ogImageHeight?: number;
   ogUrl?: string;
   twitterCard?: 'summary' | 'summary_large_image';
+  twitterImage?: string;
+  twitterImageAlt?: string;
   noindex?: boolean;
   schema?: object | object[];
 }
@@ -19,14 +25,28 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
   keywords,
   canonical,
   ogType = 'website',
-  ogImage = '/images/og-default.jpg',
+  ogImage,
+  ogImageAlt,
+  ogImageWidth,
+  ogImageHeight,
   ogUrl,
   twitterCard = 'summary_large_image',
+  twitterImage,
+  twitterImageAlt,
   noindex = false,
   schema
 }) => {
   const fullTitle = `${title} | Mikah's Auto Detailing`;
   const currentUrl = ogUrl || (typeof window !== 'undefined' ? window.location.href : '');
+
+  // Use provided image or default
+  const defaultImage = getDefaultOGImage();
+  const finalOgImage = ogImage || defaultImage.url;
+  const finalOgImageAlt = ogImageAlt || defaultImage.alt;
+  const finalOgImageWidth = ogImageWidth || defaultImage.width;
+  const finalOgImageHeight = ogImageHeight || defaultImage.height;
+  const finalTwitterImage = twitterImage || finalOgImage;
+  const finalTwitterImageAlt = twitterImageAlt || finalOgImageAlt;
 
   return (
     <Helmet>
@@ -43,15 +63,25 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
       <meta property="og:url" content={currentUrl} />
       <meta property="og:title" content={fullTitle} />
       <meta property="og:description" content={description} />
-      <meta property="og:image" content={ogImage} />
+      <meta property="og:image" content={finalOgImage} />
+      <meta property="og:image:alt" content={finalOgImageAlt} />
+      <meta property="og:image:width" content={finalOgImageWidth.toString()} />
+      <meta property="og:image:height" content={finalOgImageHeight.toString()} />
+      <meta property="og:image:type" content="image/png" />
       <meta property="og:site_name" content="Mikah's Auto Detailing" />
+      <meta property="og:locale" content="en_US" />
 
       {/* Twitter */}
-      <meta property="twitter:card" content={twitterCard} />
-      <meta property="twitter:url" content={currentUrl} />
-      <meta property="twitter:title" content={fullTitle} />
-      <meta property="twitter:description" content={description} />
-      <meta property="twitter:image" content={ogImage} />
+      <meta name="twitter:card" content={twitterCard} />
+      <meta name="twitter:url" content={currentUrl} />
+      <meta name="twitter:title" content={fullTitle} />
+      <meta name="twitter:description" content={description} />
+      <meta name="twitter:image" content={finalTwitterImage} />
+      <meta name="twitter:image:alt" content={finalTwitterImageAlt} />
+
+      {/* Additional Image Meta */}
+      <meta name="image" content={finalOgImage} />
+      <meta itemProp="image" content={finalOgImage} />
 
       {/* Schema.org structured data */}
       {schema && (
