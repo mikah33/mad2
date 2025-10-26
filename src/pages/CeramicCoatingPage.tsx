@@ -57,33 +57,46 @@ const CeramicCoatingPage: React.FC = () => {
       <div className="min-h-screen bg-white">
         <Navigation />
 
-        {/* Hero */}
-        <section className="relative bg-gradient-to-br from-green-600 to-green-800 text-white py-20">
-          <div className="container mx-auto px-4 max-w-7xl">
-            <div className="grid md:grid-cols-2 gap-12 items-center">
-              <div>
-                <div className="flex items-center gap-2 mb-4">
-                  <Award className="w-8 h-8 text-yellow-400" />
-                  <span className="text-yellow-400 font-bold">Authorized Ceramic Pro Installer</span>
-                </div>
-                <h1 className="text-4xl md:text-5xl font-bold mb-6">
-                  Professional Ceramic Coating in Columbia, SC
-                </h1>
-                <p className="text-xl mb-8 text-green-100">
-                  Multi-year paint protection with superior gloss, hydrophobic properties, and UV resistance.
-                  2-7 year warranties available. Mobile service throughout Columbia and Lexington.
-                </p>
-                <div className="flex flex-wrap gap-4">
-                  <button onClick={scrollToQuote} className="bg-white text-green-600 px-8 py-4 rounded-lg font-bold hover:bg-green-50 transition">
-                    Get Free Quote <ChevronRight className="w-5 h-5 inline" />
-                  </button>
-                  <a href="tel:5551234567" className="bg-green-700 text-white px-8 py-4 rounded-lg font-bold hover:bg-green-600 transition">
-                    <Phone className="w-5 h-5 inline" /> (555) 123-4567
-                  </a>
-                </div>
+        {/* Hero with Video */}
+        <section className="relative text-white min-h-[600px] w-full overflow-hidden flex items-center" style={{ marginTop: '-4rem' }}>
+          {/* Video Background */}
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover"
+          >
+            <source src="/hero-video.mp4" type="video/mp4" />
+          </video>
+
+          {/* Dark Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-br from-green-900/80 to-black/70"></div>
+
+          {/* Content */}
+          <div className="container mx-auto px-4 max-w-7xl relative z-10 py-20">
+            <div className="max-w-3xl">
+              <div className="flex items-center gap-2 mb-4">
+                <Award className="w-8 h-8 text-yellow-400" />
+                <span className="text-yellow-400 font-bold text-lg">Authorized Ceramic Pro Installer</span>
               </div>
-              <div className="hidden md:block">
-                <img src="/exterior1.jpg" alt="Ceramic coating Columbia SC" className="rounded-lg shadow-2xl" />
+              <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+                Ultimate Paint Protection
+                <br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-300">Ceramic Coating Columbia, SC</span>
+              </h1>
+              <p className="text-xl mb-8 text-gray-100 leading-relaxed">
+                Transform your vehicle with a mirror-like shine that lasts years, not weeks.
+                Professional-grade ceramic coating with unmatched gloss, self-cleaning properties,
+                and permanent UV protection. Mobile service throughout Columbia and Lexington.
+              </p>
+              <div className="flex flex-wrap gap-4">
+                <button onClick={scrollToQuote} className="bg-gradient-to-r from-green-500 to-emerald-600 text-white px-8 py-4 rounded-lg font-bold hover:from-green-600 hover:to-emerald-700 transition shadow-xl transform hover:scale-105">
+                  Get Free Quote <ChevronRight className="w-5 h-5 inline" />
+                </button>
+                <a href="tel:8036678731" className="bg-white/10 backdrop-blur-sm border-2 border-white/30 text-white px-8 py-4 rounded-lg font-bold hover:bg-white/20 transition">
+                  <Phone className="w-5 h-5 inline" /> (803) 667-8731
+                </a>
               </div>
             </div>
           </div>
@@ -123,71 +136,103 @@ const CeramicCoatingPage: React.FC = () => {
         </section>
 
         {/* Packages */}
-        <section className="py-16">
+        <section className="py-16 bg-gradient-to-b from-white to-gray-50">
           <div className="container mx-auto px-4 max-w-7xl">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Ceramic Coating Packages</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">Ceramic Coating Packages</h2>
+            <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+              Choose the perfect level of protection for your investment. All packages include professional application and warranty.
+            </p>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              <div className="bg-white border-2 border-gray-200 rounded-lg p-6 hover:border-green-500 transition">
-                <h3 className="text-2xl font-bold mb-2">Bronze</h3>
-                <p className="text-3xl font-bold text-green-600 mb-4">$599</p>
-                <div className="mb-4">
-                  <div className="text-sm text-gray-600 mb-2">2-Year Warranty</div>
-                  <div className="h-1 bg-green-200 rounded-full"></div>
+
+              {/* Bronze Package */}
+              <div className="bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-green-500 hover:shadow-xl transition transform hover:-translate-y-1">
+                <div className="text-center mb-4">
+                  <div className="inline-block p-3 bg-gradient-to-br from-orange-100 to-orange-200 rounded-full mb-3">
+                    <Shield className="w-8 h-8 text-orange-600" />
+                  </div>
+                  <h3 className="text-2xl font-bold mb-2">Bronze</h3>
+                  <p className="text-4xl font-bold text-green-600 mb-1">$599</p>
+                  <div className="text-sm font-semibold text-green-700 bg-green-50 px-3 py-1 rounded-full inline-block">2-Year Warranty</div>
                 </div>
-                <ul className="space-y-2 text-sm">
-                  <li className="flex gap-2"><CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />Single layer coating</li>
-                  <li className="flex gap-2"><CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />Paint decontamination</li>
-                  <li className="flex gap-2"><CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />Basic paint prep</li>
-                  <li className="flex gap-2"><CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />2-year protection</li>
+                <ul className="space-y-3 text-sm">
+                  <li className="flex gap-2"><CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" /><span>Premium ceramic protection</span></li>
+                  <li className="flex gap-2"><CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" /><span>Complete decontamination</span></li>
+                  <li className="flex gap-2"><CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" /><span>Professional paint prep</span></li>
+                  <li className="flex gap-2"><CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" /><span>Hydrophobic water beading</span></li>
+                  <li className="flex gap-2"><CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" /><span>UV protection</span></li>
                 </ul>
+                <button onClick={scrollToQuote} className="w-full mt-6 py-3 bg-gray-100 text-gray-800 rounded-lg font-semibold hover:bg-green-500 hover:text-white transition">
+                  Get Started
+                </button>
               </div>
 
-              <div className="bg-white border-2 border-gray-200 rounded-lg p-6 hover:border-green-500 transition">
-                <h3 className="text-2xl font-bold mb-2">Silver</h3>
-                <p className="text-3xl font-bold text-green-600 mb-4">$799</p>
-                <div className="mb-4">
-                  <div className="text-sm text-gray-600 mb-2">3-Year Warranty</div>
-                  <div className="h-1 bg-green-300 rounded-full"></div>
+              {/* Silver Package */}
+              <div className="bg-white border-2 border-gray-300 rounded-xl p-6 hover:border-green-500 hover:shadow-xl transition transform hover:-translate-y-1">
+                <div className="text-center mb-4">
+                  <div className="inline-block p-3 bg-gradient-to-br from-gray-100 to-gray-300 rounded-full mb-3">
+                    <Shield className="w-8 h-8 text-gray-600" />
+                  </div>
+                  <h3 className="text-2xl font-bold mb-2">Silver</h3>
+                  <p className="text-4xl font-bold text-green-600 mb-1">$799</p>
+                  <div className="text-sm font-semibold text-green-700 bg-green-50 px-3 py-1 rounded-full inline-block">3-Year Warranty</div>
                 </div>
-                <ul className="space-y-2 text-sm">
-                  <li className="flex gap-2"><CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />Two layer coating</li>
-                  <li className="flex gap-2"><CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />Full decontamination</li>
-                  <li className="flex gap-2"><CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />Enhanced prep</li>
-                  <li className="flex gap-2"><CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />3-year protection</li>
+                <ul className="space-y-3 text-sm">
+                  <li className="flex gap-2"><CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" /><span>Enhanced ceramic coating</span></li>
+                  <li className="flex gap-2"><CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" /><span>Deep decontamination process</span></li>
+                  <li className="flex gap-2"><CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" /><span>Advanced surface preparation</span></li>
+                  <li className="flex gap-2"><CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" /><span>Extended gloss enhancement</span></li>
+                  <li className="flex gap-2"><CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" /><span>Chemical resistance</span></li>
                 </ul>
+                <button onClick={scrollToQuote} className="w-full mt-6 py-3 bg-gray-100 text-gray-800 rounded-lg font-semibold hover:bg-green-500 hover:text-white transition">
+                  Get Started
+                </button>
               </div>
 
-              <div className="bg-white border-2 border-green-500 rounded-lg p-6 relative">
-                <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-green-500 text-white px-3 py-1 rounded-full text-sm font-bold">
-                  POPULAR
+              {/* Gold Package - POPULAR */}
+              <div className="bg-gradient-to-br from-white to-green-50 border-2 border-green-500 rounded-xl p-6 relative shadow-lg transform scale-105">
+                <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-green-500 to-emerald-600 text-white px-4 py-1 rounded-full text-sm font-bold shadow-md">
+                  ⭐ MOST POPULAR
                 </div>
-                <h3 className="text-2xl font-bold mb-2">Gold</h3>
-                <p className="text-3xl font-bold text-green-600 mb-4">$999</p>
-                <div className="mb-4">
-                  <div className="text-sm text-gray-600 mb-2">5-Year Warranty</div>
-                  <div className="h-1 bg-green-400 rounded-full"></div>
+                <div className="text-center mb-4 mt-2">
+                  <div className="inline-block p-3 bg-gradient-to-br from-yellow-100 to-yellow-300 rounded-full mb-3">
+                    <Award className="w-8 h-8 text-yellow-700" />
+                  </div>
+                  <h3 className="text-2xl font-bold mb-2">Gold</h3>
+                  <p className="text-4xl font-bold text-green-600 mb-1">$999</p>
+                  <div className="text-sm font-semibold text-green-700 bg-green-100 px-3 py-1 rounded-full inline-block">5-Year Warranty</div>
                 </div>
-                <ul className="space-y-2 text-sm">
-                  <li className="flex gap-2"><CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />Three layer coating</li>
-                  <li className="flex gap-2"><CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />Wheels coated</li>
-                  <li className="flex gap-2"><CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />Light paint correction</li>
-                  <li className="flex gap-2"><CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />5-year protection</li>
+                <ul className="space-y-3 text-sm">
+                  <li className="flex gap-2"><CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" /><span className="font-medium">Premium multi-coat protection</span></li>
+                  <li className="flex gap-2"><CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" /><span className="font-medium">Wheels ceramic coated</span></li>
+                  <li className="flex gap-2"><CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" /><span className="font-medium">Light paint correction included</span></li>
+                  <li className="flex gap-2"><CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" /><span className="font-medium">Maximum gloss & depth</span></li>
+                  <li className="flex gap-2"><CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" /><span className="font-medium">Superior scratch resistance</span></li>
                 </ul>
+                <button onClick={scrollToQuote} className="w-full mt-6 py-3 bg-gradient-to-r from-green-500 to-emerald-600 text-white rounded-lg font-bold hover:from-green-600 hover:to-emerald-700 transition shadow-md">
+                  Get Started →
+                </button>
               </div>
 
-              <div className="bg-gradient-to-br from-yellow-50 to-yellow-100 border-2 border-yellow-400 rounded-lg p-6">
-                <h3 className="text-2xl font-bold mb-2">Platinum</h3>
-                <p className="text-3xl font-bold text-green-600 mb-4">$1,299</p>
-                <div className="mb-4">
-                  <div className="text-sm text-gray-600 mb-2">7-Year Warranty</div>
-                  <div className="h-1 bg-green-500 rounded-full"></div>
+              {/* Platinum Package */}
+              <div className="bg-gradient-to-br from-slate-50 to-slate-100 border-2 border-slate-400 rounded-xl p-6 hover:border-green-500 hover:shadow-xl transition transform hover:-translate-y-1">
+                <div className="text-center mb-4">
+                  <div className="inline-block p-3 bg-gradient-to-br from-slate-200 to-slate-300 rounded-full mb-3">
+                    <Award className="w-8 h-8 text-slate-700" />
+                  </div>
+                  <h3 className="text-2xl font-bold mb-2">Platinum</h3>
+                  <p className="text-4xl font-bold text-green-600 mb-1">$1,299</p>
+                  <div className="text-sm font-semibold text-green-700 bg-green-50 px-3 py-1 rounded-full inline-block">7-Year Warranty</div>
                 </div>
-                <ul className="space-y-2 text-sm">
-                  <li className="flex gap-2"><CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />Five layer coating</li>
-                  <li className="flex gap-2"><CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />Wheels + windows</li>
-                  <li className="flex gap-2"><CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />Full paint correction</li>
-                  <li className="flex gap-2"><CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />7-year protection</li>
+                <ul className="space-y-3 text-sm">
+                  <li className="flex gap-2"><CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" /><span className="font-medium">Ultimate ceramic protection</span></li>
+                  <li className="flex gap-2"><CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" /><span className="font-medium">Wheels + windows coated</span></li>
+                  <li className="flex gap-2"><CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" /><span className="font-medium">Full paint correction</span></li>
+                  <li className="flex gap-2"><CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" /><span className="font-medium">Show-car finish quality</span></li>
+                  <li className="flex gap-2"><CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" /><span className="font-medium">Maximum longevity</span></li>
                 </ul>
+                <button onClick={scrollToQuote} className="w-full mt-6 py-3 bg-gray-100 text-gray-800 rounded-lg font-semibold hover:bg-green-500 hover:text-white transition">
+                  Get Started
+                </button>
               </div>
             </div>
           </div>
@@ -223,8 +268,8 @@ const CeramicCoatingPage: React.FC = () => {
                 <div className="flex gap-4">
                   <div className="bg-green-500 text-white rounded-full w-10 h-10 flex items-center justify-center flex-shrink-0 font-bold">4</div>
                   <div>
-                    <h3 className="font-bold mb-1">Multi-Layer Application</h3>
-                    <p className="text-gray-600">2-5 layers of ceramic coating applied by hand with proper curing between each layer.</p>
+                    <h3 className="font-bold mb-1">Professional Application</h3>
+                    <p className="text-gray-600">Ceramic coating carefully applied by hand with proper curing time between applications for maximum bonding and durability.</p>
                   </div>
                 </div>
                 <div className="flex gap-4">
