@@ -22,7 +22,7 @@ const Navigation: React.FC = () => {
 
   return (
     <nav className={`text-white sticky top-0 z-50 transition-all duration-300 ${
-      isScrolled ? 'bg-gray-800 shadow-lg' : 'bg-transparent'
+      isScrolled ? 'bg-gray-800 shadow-lg' : 'bg-gray-800/90 backdrop-blur-md shadow-md'
     }`}>
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
