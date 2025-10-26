@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Quote Request - Mikah's Auto Detailing</title>
+</head>
+<body style="margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; background-color: #f3f4f6;">
+    <table role="presentation" style="width: 100%; border-collapse: collapse;">
+        <tr>
+            <td style="padding: 40px 20px;">
+                <table role="presentation" style="max-width: 600px; margin: 0 auto; background-color: #ffffff; border-radius: 12px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+
+                    <!-- Header -->
+                    <tr>
+                        <td style="background: linear-gradient(135deg, #f97316 0%, #ea580c 100%); padding: 30px; text-align: center; border-radius: 12px 12px 0 0;">
+                            <h1 style="margin: 0; color: #ffffff; font-size: 28px; font-weight: 700;">🚗 New Quote Request</h1>
+                            <p style="margin: 10px 0 0; color: #fff3e0; font-size: 14px;">Mikah's Auto Detailing</p>
+                        </td>
+                    </tr>
+
+                    <!-- Content -->
+                    <tr>
+                        <td style="padding: 40px 30px;">
+                            <p style="margin: 0 0 25px; color: #374151; font-size: 16px; line-height: 1.6;">
+                                You've received a new quote request from your website. Here are the details:
+                            </p>
+
+                            <!-- Customer Information -->
+                            <table role="presentation" style="width: 100%; border-collapse: collapse; margin-bottom: 30px;">
+                                <tr>
+                                    <td colspan="2" style="padding: 15px 0 10px; border-bottom: 2px solid #f97316;">
+                                        <h2 style="margin: 0; color: #1f2937; font-size: 18px; font-weight: 600;">👤 Customer Information</h2>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 12px 0; color: #6b7280; font-size: 14px; font-weight: 500; width: 160px;">Full Name:</td>
+                                    <td style="padding: 12px 0; color: #1f2937; font-size: 14px; font-weight: 600;">{{ $json.body.fullName }}</td>
+                                </tr>
+                                <tr style="background-color: #f9fafb;">
+                                    <td style="padding: 12px 10px; color: #6b7280; font-size: 14px; font-weight: 500;">Email:</td>
+                                    <td style="padding: 12px 10px; color: #1f2937; font-size: 14px;">
+                                        <a href="mailto:{{ $json.body.email }}" style="color: #f97316; text-decoration: none;">{{ $json.body.email }}</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 12px 0; color: #6b7280; font-size: 14px; font-weight: 500;">Phone:</td>
+                                    <td style="padding: 12px 0; color: #1f2937; font-size: 14px;">
+                                        <a href="tel:{{ $json.body.phone }}" style="color: #f97316; text-decoration: none;">{{ $json.body.phone }}</a>
+                                    </td>
+                                </tr>
+                                <tr style="background-color: #f9fafb;">
+                                    <td style="padding: 12px 10px; color: #6b7280; font-size: 14px; font-weight: 500;">Location:</td>
+                                    <td style="padding: 12px 10px; color: #1f2937; font-size: 14px;">{{ $json.body.location }}</td>
+                                </tr>
+                            </table>
+
+                            <!-- Service Details -->
+                            <table role="presentation" style="width: 100%; border-collapse: collapse; margin-bottom: 30px;">
+                                <tr>
+                                    <td colspan="2" style="padding: 15px 0 10px; border-bottom: 2px solid #f97316;">
+                                        <h2 style="margin: 0; color: #1f2937; font-size: 18px; font-weight: 600;">🛠️ Service Details</h2>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 12px 0; color: #6b7280; font-size: 14px; font-weight: 500; width: 160px;">Vehicle:</td>
+                                    <td style="padding: 12px 0; color: #1f2937; font-size: 14px; font-weight: 600;">{{ $json.body.vehicleDetails }}</td>
+                                </tr>
+                                <tr style="background-color: #f9fafb;">
+                                    <td style="padding: 12px 10px; color: #6b7280; font-size: 14px; font-weight: 500;">Service Requested:</td>
+                                    <td style="padding: 12px 10px;">
+                                        <span style="display: inline-block; padding: 6px 12px; background-color: #f97316; color: #ffffff; font-size: 13px; font-weight: 600; border-radius: 6px;">{{ $json.body.service }}</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 12px 0 0; color: #6b7280; font-size: 14px; font-weight: 500; vertical-align: top;">Additional Details:</td>
+                                    <td style="padding: 12px 0 0; color: #1f2937; font-size: 14px; line-height: 1.6;">{{ $json.body.description }}</td>
+                                </tr>
+                            </table>
+
+                            <!-- Action Button -->
+                            <table role="presentation" style="width: 100%; margin-top: 30px;">
+                                <tr>
+                                    <td style="text-align: center; padding: 20px 0;">
+                                        <a href="mailto:{{ $json.body.email }}" style="display: inline-block; padding: 14px 32px; background: linear-gradient(135deg, #f97316 0%, #ea580c 100%); color: #ffffff; text-decoration: none; font-weight: 600; font-size: 16px; border-radius: 8px; box-shadow: 0 4px 6px rgba(249, 115, 22, 0.3);">
+                                            📧 Reply to Customer
+                                        </a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <!-- Footer -->
+                    <tr>
+                        <td style="padding: 20px 30px; background-color: #f9fafb; border-radius: 0 0 12px 12px; border-top: 1px solid #e5e7eb;">
+                            <p style="margin: 0; color: #6b7280; font-size: 12px; text-align: center; line-height: 1.5;">
+                                This quote request was submitted through your website<br>
+                                <strong>Mikah's Auto Detailing</strong> | Columbia, SC<br>
+                                <a href="tel:+18036678731" style="color: #f97316; text-decoration: none;">(803) 667-8731</a>
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
