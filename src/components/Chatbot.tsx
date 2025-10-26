@@ -8,10 +8,20 @@ interface Message {
   timestamp: Date;
 }
 
+interface LeadData {
+  fullName?: string;
+  email?: string;
+  phone?: string;
+  service?: string;
+  messages: string[];
+}
+
 const Chatbot: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([]);
   const [inputValue, setInputValue] = useState('');
+  const [leadData, setLeadData] = useState<LeadData>({ messages: [] });
+  const [leadCaptured, setLeadCaptured] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
   const scrollToBottom = () => {
@@ -31,6 +41,34 @@ const Chatbot: React.FC = () => {
     }
   }, [isOpen]);
 
+  const sendLeadToWebhook = async (data: LeadData) => {
+    try {
+      const conversationSummary = data.messages.join('\n');
+
+      const payload = {
+        fullName: data.fullName || 'Not provided',
+        email: data.email || 'Not provided',
+        phone: data.phone || 'Not provided',
+        service: data.service || 'Chatbot Inquiry',
+        description: `Chatbot Conversation:\n\n${conversationSummary}`,
+        location: 'Not provided',
+        vehicleDetails: 'Not provided',
+        timestamp: new Date().toISOString(),
+        source: 'Julia Chatbot - Mikahs Auto Detailing Website'
+      };
+
+      await fetch('/.netlify/functions/submit-form', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(payload),
+      });
+    } catch (error) {
+      console.error('Failed to send lead to webhook:', error);
+    }
+  };
+
   const addBotMessage = (text: string) => {
     const newMessage: Message = {
       id: Date.now().toString(),
@@ -39,6 +77,12 @@ const Chatbot: React.FC = () => {
       timestamp: new Date(),
     };
     setMessages((prev) => [...prev, newMessage]);
+
+    // Track bot responses
+    setLeadData((prev) => ({
+      ...prev,
+      messages: [...prev.messages, `Julia: ${text}`]
+    }));
   };
 
   const addUserMessage = (text: string) => {
@@ -49,10 +93,41 @@ const Chatbot: React.FC = () => {
       timestamp: new Date(),
     };
     setMessages((prev) => [...prev, newMessage]);
+
+    // Track conversation
+    setLeadData((prev) => ({
+      ...prev,
+      messages: [...prev.messages, `User: ${text}`]
+    }));
+
+    // Extract contact info from message
+    const emailMatch = text.match(/[\w.-]+@[\w.-]+\.\w+/);
+    const phoneMatch = text.match(/(\+\d{1,2}\s?)?(\(?\d{3}\)?[\s.-]?)?\d{3}[\s.-]?\d{4}/);
+
+    if (emailMatch && !leadData.email) {
+      setLeadData((prev) => ({ ...prev, email: emailMatch[0] }));
+    }
+
+    if (phoneMatch && !leadData.phone) {
+      setLeadData((prev) => ({ ...prev, phone: phoneMatch[0] }));
+    }
   };
 
   const getBotResponse = (userInput: string): string => {
     const input = userInput.toLowerCase();
+
+    // Detect service interest and track it
+    if (input.includes('basic detail')) {
+      setLeadData((prev) => ({ ...prev, service: 'Basic Detail Package - $200' }));
+    } else if (input.includes('factory reset')) {
+      setLeadData((prev) => ({ ...prev, service: 'Factory Reset Package - $325' }));
+    } else if (input.includes('ceramic')) {
+      setLeadData((prev) => ({ ...prev, service: 'Ceramic Coating' }));
+    } else if (input.includes('paint correction')) {
+      setLeadData((prev) => ({ ...prev, service: 'Paint Correction' }));
+    } else if (input.includes('routine reset')) {
+      setLeadData((prev) => ({ ...prev, service: 'Routine Reset Subscription - $175/month' }));
+    }
 
     // Greetings
     if (input.match(/^(hi|hello|hey|greetings)/i)) {
@@ -111,11 +186,23 @@ const Chatbot: React.FC = () => {
 
     // Booking/Appointment
     if (input.includes('book') || input.includes('schedule') || input.includes('appointment') || input.includes('when can you')) {
+      // Capture lead interest
+      if (!leadCaptured && leadData.messages.length > 4) {
+        setLeadCaptured(true);
+        setTimeout(() => sendLeadToWebhook(leadData), 1000);
+      }
+
       return "I'd love to help you schedule a detail! 📅\n\nHere's how to book:\n\n1️⃣ **Call us:** (803) 667-8731\n2️⃣ **Get a quote:** Scroll down to the 'Get Your Free Quote' form on our website\n3️⃣ **Tell me more:** Let me know what service you're interested in and I can guide you!\n\nWe offer flexible scheduling and come to your location throughout the Columbia, SC area.\n\nWhat service are you interested in booking?";
     }
 
     // Contact/Phone
     if (input.includes('contact') || input.includes('phone') || input.includes('call') || input.includes('number')) {
+      // Capture lead interest
+      if (!leadCaptured && leadData.messages.length > 4) {
+        setLeadCaptured(true);
+        setTimeout(() => sendLeadToWebhook(leadData), 1000);
+      }
+
       return "**Contact Information** 📞\n\n• Phone: (803) 667-8731\n• Service: Mobile (we come to you!)\n• Areas: Columbia, Lexington, West Columbia, Irmo, Cayce, SC\n\nFeel free to call us anytime, or fill out the 'Get Your Free Quote' form on this page!\n\nIs there anything else I can help you with?";
     }
 
