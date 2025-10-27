@@ -511,6 +511,54 @@ export const blogPosts: BlogPost[] = [
     featured: true,
     readTime: 12,
     wordCount: 2350
+  },
+  {
+    id: 'blog-033',
+    title: 'Mobile Detailing Columbia SC: Complete Pricing and Service Guide',
+    slug: 'mobile-detailing-columbia-sc-prices-guide',
+    excerpt: 'Understanding mobile detailing Columbia SC prices helps you choose quality service. Mikah\'s Auto Detailing provides transparent pricing from $150-600 with professional mobile convenience.',
+    author: 'Mikah Albertson',
+    authorJobTitle: 'Professional Auto Detailer',
+    datePublished: '2025-01-29',
+    category: 'guides',
+    tags: ['mobile detailing columbia sc', 'mobile detailing prices', 'mobile car detailing columbia sc', 'mobile detailing cost', 'best mobile detailing columbia sc'],
+    image: `${baseUrl}/exterior5.jpg`,
+    imageAlt: 'Mobile detailing service pricing Columbia SC',
+    featured: true,
+    readTime: 12,
+    wordCount: 2100
+  },
+  {
+    id: 'blog-034',
+    title: 'Full Service Car Wash vs Detailing Columbia SC: Complete Comparison',
+    slug: 'full-service-car-wash-vs-detailing-columbia-sc',
+    excerpt: 'Choosing between full service car wash and professional detailing Columbia SC affects vehicle value and appearance. Mikah\'s Auto Detailing explains the critical differences.',
+    author: 'Mikah Albertson',
+    authorJobTitle: 'Professional Auto Detailer',
+    datePublished: '2025-01-30',
+    category: 'guides',
+    tags: ['car wash vs detailing', 'full service car wash columbia sc', 'car detailing columbia sc', 'professional detailing'],
+    image: `${baseUrl}/exterior5.jpg`,
+    imageAlt: 'Car wash versus professional detailing comparison',
+    featured: true,
+    readTime: 13,
+    wordCount: 2200
+  },
+  {
+    id: 'blog-035',
+    title: 'Mobile Car Detailing Lexington SC: Complete Service Guide',
+    slug: 'mobile-car-detailing-lexington-sc-complete-guide',
+    excerpt: 'Mobile car detailing Lexington SC brings professional service to Lake Murray area. Mikah\'s Auto Detailing serves all of Lexington County with shop-quality results at your location.',
+    author: 'Mikah Albertson',
+    authorJobTitle: 'Professional Auto Detailer',
+    datePublished: '2025-01-31',
+    category: 'guides',
+    tags: ['mobile car detailing lexington sc', 'lexington car detailing', 'lake murray detailing', 'mobile detailing lexington'],
+    image: `${baseUrl}/exterior5.jpg`,
+    imageAlt: 'Mobile car detailing Lexington SC service',
+    featured: true,
+    readTime: 12,
+    wordCount: 2000
   }
 ];
 
