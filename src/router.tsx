@@ -15,6 +15,7 @@ import { MobileDetailingFAQPage } from './pages/MobileDetailingFAQPage';
 import { PrivacyPolicyPage } from './pages/PrivacyPolicyPage';
 import { TermsOfServicePage } from './pages/TermsOfServicePage';
 import { LocationsPage } from './pages/LocationsPage';
+import { ResourcesPage } from './pages/ResourcesPage';
 
 export const router = createBrowserRouter([
   {
@@ -72,6 +73,10 @@ export const router = createBrowserRouter([
   {
     path: '/locations',
     element: <LocationsPage />,
+  },
+  {
+    path: '/resources',
+    element: <ResourcesPage />,
   },
   {
     path: '/privacy',

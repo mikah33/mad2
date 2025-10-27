@@ -156,6 +156,14 @@ function generateSitemap(): string {
     priority: 0.9,
   });
 
+  // Resources page
+  urls.push({
+    loc: `${SITE_URL}/resources`,
+    lastmod: currentDate,
+    changefreq: 'monthly',
+    priority: 0.8,
+  });
+
   // Contact page
   urls.push({
     loc: `${SITE_URL}/contact`,

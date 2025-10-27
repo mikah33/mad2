@@ -1,0 +1,88 @@
+GOOGLE SEARCH CONSOLE - SUBMIT YOUR PAGES ONLY
+==============================================
+
+You can ONLY submit URLs from YOUR domain: mikahsmobiledetailingsc.com
+
+Submit These URLs (Copy/Paste into GSC URL Inspection Tool):
+==============================================================
+
+MAIN PAGES:
+-----------
+https://mikahsmobiledetailingsc.com/
+https://mikahsmobiledetailingsc.com/services
+https://mikahsmobiledetailingsc.com/ceramic-coating
+https://mikahsmobiledetailingsc.com/about
+https://mikahsmobiledetailingsc.com/contact
+https://mikahsmobiledetailingsc.com/blog
+
+RECENT BLOG POSTS (High Priority):
+-----------------------------------
+https://mikahsmobiledetailingsc.com/blog/mobile-detailing-columbia-sc-prices-guide
+https://mikahsmobiledetailingsc.com/blog/full-service-car-wash-vs-detailing-columbia-sc
+https://mikahsmobiledetailingsc.com/blog/mobile-car-detailing-lexington-sc-complete-guide
+https://mikahsmobiledetailingsc.com/blog/ceramic-coating-near-me-columbia-sc
+https://mikahsmobiledetailingsc.com/blog/car-detailing-near-me-columbia-sc
+https://mikahsmobiledetailingsc.com/blog/mobile-detailing-near-me-columbia-sc
+https://mikahsmobiledetailingsc.com/blog/auto-detailing-near-me-columbia-sc
+
+OLDER BLOG POSTS (Lower Priority):
+-----------------------------------
+https://mikahsmobiledetailingsc.com/blog/ultimate-guide-mobile-car-detailing-columbia-sc
+https://mikahsmobiledetailingsc.com/blog/how-often-detail-car-south-carolina
+https://mikahsmobiledetailingsc.com/blog/ceramic-coating-vs-wax-south-carolina
+https://mikahsmobiledetailingsc.com/blog/interior-car-detailing-complete-guide
+https://mikahsmobiledetailingsc.com/blog/prepare-car-summer-south-carolina
+https://mikahsmobiledetailingsc.com/blog/best-car-detailing-lexington-sc
+https://mikahsmobiledetailingsc.com/blog/paint-correction-before-after-guide
+https://mikahsmobiledetailingsc.com/blog/mobile-vs-shop-detailing-comparison
+https://mikahsmobiledetailingsc.com/blog/car-detailing-prices-value-breakdown
+https://mikahsmobiledetailingsc.com/blog/what-expect-professional-auto-detailing
+https://mikahsmobiledetailingsc.com/blog/maintain-car-between-details
+https://mikahsmobiledetailingsc.com/blog/signs-your-car-needs-detailing
+https://mikahsmobiledetailingsc.com/blog/02-ceramic-coating-vs-ppf
+https://mikahsmobiledetailingsc.com/blog/03-ceramic-coating-longevity-south-carolina
+https://mikahsmobiledetailingsc.com/blog/04-professional-ceramic-coating-what-to-expect
+https://mikahsmobiledetailingsc.com/blog/05-ceramic-coating-cost-benefit-analysis
+https://mikahsmobiledetailingsc.com/blog/06-ceramic-coating-maintenance-guide
+https://mikahsmobiledetailingsc.com/blog/01-best-car-detailing-near-me-columbia-sc
+https://mikahsmobiledetailingsc.com/blog/02-mobile-car-detailing-columbia-sc-guide
+https://mikahsmobiledetailingsc.com/blog/03-mobile-auto-detailing-vs-traditional-shops
+https://mikahsmobiledetailingsc.com/blog/04-auto-detailing-services-columbia-sc
+https://mikahsmobiledetailingsc.com/blog/05-interior-car-detailing-deep-cleaning
+https://mikahsmobiledetailingsc.com/blog/06-how-often-should-you-detail-your-car
+https://mikahsmobiledetailingsc.com/blog/car-wash-vs-detailing-columbia-sc
+https://mikahsmobiledetailingsc.com/blog/mobile-car-wash-lexington-sc-guide
+https://mikahsmobiledetailingsc.com/blog/professional-car-detailing-columbia-sc-guide
+https://mikahsmobiledetailingsc.com/blog/finding-best-car-detailing-near-me
+
+HOW TO SUBMIT:
+--------------
+1. Go to: https://search.google.com/search-console
+2. Select your property: mikahsmobiledetailingsc.com
+3. Click "URL Inspection" in the top search bar
+4. Paste ONE URL at a time
+5. Click "Test Live URL"
+6. Click "Request Indexing"
+7. Repeat for each URL
+
+GOOGLE LIMITS:
+--------------
+- You can only submit 10-20 URLs per day
+- Do your main pages + 3-5 blog posts today
+- Do 10-15 more tomorrow
+- Finish the rest over the next 3-4 days
+
+PRIORITY ORDER:
+---------------
+1. Homepage (most important)
+2. Services page
+3. New blog posts (last 3 created)
+4. Ceramic coating page
+5. Contact page
+6. Remaining blog posts
+
+RESULT:
+-------
+- Google crawls your pages within 24-48 hours
+- Pages appear in search results within 1-2 weeks
+- Much faster than waiting for natural discovery (2-4 weeks)
