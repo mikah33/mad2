@@ -26,6 +26,11 @@ const Footer: React.FC = () => {
                 </a>
               </li>
               <li>
+                <a href="/resources" className="hover:text-primary-500 transition">
+                  Resources
+                </a>
+              </li>
+              <li>
                 <a href="/#projects" className="hover:text-primary-500 transition">
                   Recent Projects
                 </a>
