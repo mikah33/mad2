@@ -285,14 +285,42 @@ export const generateLocalBusinessSchema = () => {
 };
 
 /**
+ * Generate FAQPage schema for blog posts with FAQs
+ */
+export const generateBlogFAQSchema = (faqs: Array<{ question: string; answer: string }>) => {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map(faq => ({
+      '@type': 'Question',
+      name: faq.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: faq.answer
+      }
+    }))
+  };
+};
+
+/**
  * Generate complete schema array for blog post page
  */
-export const generateCompleteBlogPostSchema = (post: BlogPost) => {
-  return [
+export const generateCompleteBlogPostSchema = (
+  post: BlogPost,
+  faqs?: Array<{ question: string; answer: string }>
+) => {
+  const schemas = [
     generateBlogPostingSchema(post),
     generateBlogWebPageSchema(post),
     generateLocalBusinessSchema()
   ];
+
+  // Add FAQPage schema if FAQs are provided
+  if (faqs && faqs.length > 0) {
+    schemas.push(generateBlogFAQSchema(faqs));
+  }
+
+  return schemas;
 };
 
 export default {
@@ -301,6 +329,7 @@ export default {
   generateBlogCollectionSchema,
   generateBlogItemListSchema,
   generateBlogWebPageSchema,
+  generateBlogFAQSchema,
   generateCompleteBlogPostSchema,
   generateLocalBusinessSchema
 };

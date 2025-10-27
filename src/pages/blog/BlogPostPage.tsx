@@ -1,5 +1,5 @@
 import { useParams, Link } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useMemo } from 'react';
 import { Calendar, Clock, Tag, ArrowLeft, Phone } from 'lucide-react';
 import { SEOHead } from '../../components/seo/SEOHead';
 import { generateCompleteBlogPostSchema } from '../../components/seo/BlogSchemas';
@@ -40,10 +40,14 @@ export const BlogPostPage = () => {
     return <NotFoundPage />;
   }
 
-  // Generate comprehensive blog post schemas
-  const schemas = generateCompleteBlogPostSchema(post);
   const postUrl = `https://mikahsmobiledetailingsc.com/blog/${post.slug}`;
   const imageUrl = post.image || 'https://mikahsmobiledetailingsc.com/exterior1.jpg';
+
+  // Generate comprehensive blog post schemas (including FAQs if available)
+  // Use useMemo to regenerate when fullContent changes
+  const schemas = useMemo(() => {
+    return generateCompleteBlogPostSchema(post, fullContent?.faqs);
+  }, [post, fullContent?.faqs]);
 
   const formatDate = (dateString: string) => {
     return new Date(dateString).toLocaleDateString('en-US', {
