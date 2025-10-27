@@ -1,0 +1,153 @@
+import React from 'react';
+import { Helmet } from 'react-helmet-async';
+import Navigation from '../components/Navigation';
+import Footer from '../components/Footer';
+import { ceramicCoatingFAQs, generateCeramicCoatingFAQSchema } from '../data/faqs/ceramic-coating-faqs';
+import { Shield } from 'lucide-react';
+
+export const CeramicCoatingFAQPage: React.FC = () => {
+  // Group FAQs by category
+  const categories = Array.from(new Set(ceramicCoatingFAQs.map(faq => faq.category)));
+
+  return (
+    <>
+      <Helmet>
+        <title>Ceramic Coating FAQs | Professional Auto Ceramic Coating Columbia SC</title>
+        <meta
+          name="description"
+          content="Get answers to all your ceramic coating questions. Learn about automotive ceramic coating, professional application, costs, benefits, and maintenance in Columbia SC."
+        />
+        <meta
+          name="keywords"
+          content="ceramic coating, auto ceramic coating, car ceramic coating, professional ceramic coating, ceramic coating columbia sc, automotive ceramic coating, ceramic paint coating"
+        />
+        <link rel="canonical" href="https://mikahsmobiledetailingsc.com/faq/ceramic-coating" />
+
+        <meta property="og:title" content="Ceramic Coating FAQs | Mikah's Auto Detailing" />
+        <meta property="og:description" content="Expert answers to ceramic coating questions. Learn about costs, benefits, application process, and maintenance." />
+        <meta property="og:url" content="https://mikahsmobiledetailingsc.com/faq/ceramic-coating" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://mikahsmobiledetailingsc.com/exterior3.jpg" />
+
+        <script type="application/ld+json">
+          {JSON.stringify(generateCeramicCoatingFAQSchema())}
+        </script>
+      </Helmet>
+
+      <Navigation />
+
+
+      <div className="py-12 md:py-20 bg-white w-full overflow-hidden">
+        <div className="container mx-auto px-4 max-w-4xl">
+          {/* Hero Section with Image */}
+          <div className="text-center mb-12">
+            <div className="relative mb-8 rounded-xl overflow-hidden shadow-2xl">
+              <img
+                src="/exterior3.jpg"
+                alt="Professional ceramic coating application on vehicle in Columbia SC"
+                className="w-full h-64 md:h-96 object-cover"
+                loading="eager"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end justify-center pb-8">
+                <div className="text-white">
+                  <div className="flex justify-center mb-4">
+                    <div className="bg-white/20 backdrop-blur-sm p-4 rounded-full">
+                      <Shield className="w-12 h-12 text-white" />
+                    </div>
+                  </div>
+                  <h1 className="text-3xl md:text-5xl font-bold mb-2">Ceramic Coating FAQs</h1>
+                </div>
+              </div>
+            </div>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Everything you need to know about automotive ceramic coating in Columbia SC.
+              Get expert answers about professional ceramic coating application, benefits, costs, and maintenance.
+            </p>
+          </div>
+
+          {/* FAQ Categories */}
+          {categories.map((category, catIndex) => {
+            const categoryFAQs = ceramicCoatingFAQs.filter(faq => faq.category === category);
+
+            return (
+              <div key={catIndex} className="mb-12">
+                <h2 className="text-2xl font-bold mb-6 text-gray-800 border-b-2 border-primary-500 pb-2">
+                  {category}
+                </h2>
+
+                <div className="space-y-6">
+                  {categoryFAQs.map((faq, index) => (
+                    <div
+                      key={index}
+                      className="bg-gray-50 rounded-lg p-6 hover:shadow-md transition-shadow"
+                    >
+                      <h3 className="text-xl font-semibold mb-3 text-gray-900">
+                        {faq.question}
+                      </h3>
+                      <p className="text-gray-700 leading-relaxed mb-3">
+                        {faq.answer}
+                      </p>
+                      <div className="flex flex-wrap gap-2">
+                        {faq.keywords.slice(0, 3).map((keyword, ki) => (
+                          <span
+                            key={ki}
+                            className="text-xs bg-primary-100 text-primary-800 px-3 py-1 rounded-full"
+                          >
+                            {keyword}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            );
+          })}
+
+          {/* CTA Section */}
+          <div className="bg-gradient-to-r from-primary-700 to-primary-600 rounded-xl p-8 md:p-12 text-center text-white mt-12">
+            <h2 className="text-3xl font-bold mb-4">Ready for Professional Ceramic Coating?</h2>
+            <p className="text-lg mb-6 max-w-2xl mx-auto">
+              Protect your vehicle with premium ceramic coating services in Columbia SC.
+              Get long-lasting protection, enhanced shine, and easier maintenance.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a
+                href="tel:+18036678731"
+                className="px-8 py-4 bg-white text-primary-700 font-bold rounded-lg hover:bg-gray-100 transition"
+              >
+                Call (803) 667-8731
+              </a>
+              <a
+                href="/#quote"
+                className="px-8 py-4 bg-primary-800 text-white font-bold rounded-lg hover:bg-primary-900 transition border-2 border-white"
+              >
+                Get Free Quote
+              </a>
+            </div>
+          </div>
+
+          {/* Related Links */}
+          <div className="mt-12 text-center">
+            <p className="text-gray-600 mb-4">Have more questions?</p>
+            <div className="flex flex-wrap justify-center gap-4">
+              <a href="/faq/mobile-detailing" className="text-primary-700 hover:underline font-semibold">
+                Mobile Detailing FAQs →
+              </a>
+              <a href="/faq" className="text-primary-700 hover:underline font-semibold">
+                All FAQs →
+              </a>
+              <a href="/services/ceramic-coating" className="text-primary-700 hover:underline font-semibold">
+                Ceramic Coating Service →
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <Footer />
+    </>
+  );
+};
+
+export default CeramicCoatingFAQPage;

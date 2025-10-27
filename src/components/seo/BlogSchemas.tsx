@@ -112,7 +112,7 @@ export const generateArticleSchema = (post: BlogPost) => {
 };
 
 /**
- * Generate Blog/Collection schema for blog listing page
+ * Generate Blog/Collection schema for blog listing page with LocalBusiness
  */
 export const generateBlogCollectionSchema = (posts: BlogPost[]) => {
   return {
@@ -123,8 +123,17 @@ export const generateBlogCollectionSchema = (posts: BlogPost[]) => {
     description: 'Expert auto detailing tips, guides, and advice for vehicle care in Columbia, SC',
     url: `${baseUrl}/blog`,
     publisher: {
-      '@type': 'Organization',
+      '@type': 'LocalBusiness',
+      '@id': `${baseUrl}/#business`,
       name: "Mikah's Auto Detailing",
+      url: baseUrl,
+      telephone: '(803) 667-8731',
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: 'Columbia',
+        addressRegion: 'SC',
+        addressCountry: 'US'
+      },
       logo: {
         '@type': 'ImageObject',
         url: `${baseUrl}/logo.png`
@@ -219,12 +228,70 @@ export const generateBlogWebPageSchema = (post: BlogPost) => {
 };
 
 /**
+ * Generate LocalBusiness schema for blog pages
+ */
+export const generateLocalBusinessSchema = () => {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'LocalBusiness',
+    '@id': `${baseUrl}/#business`,
+    name: "Mikah's Auto Detailing",
+    image: `${baseUrl}/exterior1.jpg`,
+    description: 'Professional mobile auto detailing services in Columbia, Lexington, and Irmo SC. Ceramic coating, paint correction, interior and exterior detailing.',
+    url: baseUrl,
+    telephone: '(803) 667-8731',
+    priceRange: '$$',
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'Columbia',
+      addressRegion: 'SC',
+      addressCountry: 'US'
+    },
+    geo: {
+      '@type': 'GeoCoordinates',
+      latitude: '34.0007',
+      longitude: '-81.0348'
+    },
+    openingHoursSpecification: [
+      {
+        '@type': 'OpeningHoursSpecification',
+        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+        opens: '08:00',
+        closes: '18:00'
+      }
+    ],
+    areaServed: [
+      {
+        '@type': 'City',
+        name: 'Columbia',
+        sameAs: 'https://en.wikipedia.org/wiki/Columbia,_South_Carolina'
+      },
+      {
+        '@type': 'City',
+        name: 'Lexington',
+        sameAs: 'https://en.wikipedia.org/wiki/Lexington,_South_Carolina'
+      },
+      {
+        '@type': 'City',
+        name: 'Irmo',
+        sameAs: 'https://en.wikipedia.org/wiki/Irmo,_South_Carolina'
+      }
+    ],
+    sameAs: [
+      'https://www.facebook.com/mikahsautodetailing',
+      'https://www.instagram.com/mikahsautodetailing'
+    ]
+  };
+};
+
+/**
  * Generate complete schema array for blog post page
  */
 export const generateCompleteBlogPostSchema = (post: BlogPost) => {
   return [
     generateBlogPostingSchema(post),
-    generateBlogWebPageSchema(post)
+    generateBlogWebPageSchema(post),
+    generateLocalBusinessSchema()
   ];
 };
 
@@ -234,5 +301,6 @@ export default {
   generateBlogCollectionSchema,
   generateBlogItemListSchema,
   generateBlogWebPageSchema,
-  generateCompleteBlogPostSchema
+  generateCompleteBlogPostSchema,
+  generateLocalBusinessSchema
 };

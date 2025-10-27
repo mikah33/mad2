@@ -1,6 +1,5 @@
 import { useParams } from 'react-router-dom';
 import { SEOHead } from '../components/seo/SEOHead';
-import { Breadcrumbs } from '../components/seo/Breadcrumbs';
 import { generateLocalBusinessSchema } from '../components/seo/StructuredData';
 import { getLocationBySlug } from '../data/locations';
 import { businessInfo } from '../data/business';
@@ -37,12 +36,6 @@ export const LocationDetailPage = () => {
         schema={schema}
       />
 
-      <Breadcrumbs
-        items={[
-          { name: 'Locations', url: '/locations' },
-          { name: `${location.city}, ${location.state}`, url: `/locations/${location.slug}` }
-        ]}
-      />
 
       <div className="location-detail-page">
         {/* Content placeholder */}

@@ -138,39 +138,46 @@ const RecentProjects: React.FC = () => {
   const generateImageGallerySchema = () => {
     const imageObjects = projects.filter(p => p.type === 'image').map(project => ({
       "@type": "ImageObject",
-      "@id": `https://mikahsautodetailing.com${project.image}`,
-      "contentUrl": `https://mikahsautodetailing.com${project.image}`,
-      "url": `https://mikahsautodetailing.com${project.image}`,
+      "@id": `https://mikahsmobiledetailingsc.com${project.image}`,
+      "contentUrl": `https://mikahsmobiledetailingsc.com${project.image}`,
+      "url": `https://mikahsmobiledetailingsc.com${project.image}`,
       "name": project.title,
       "description": project.description,
       "datePublished": project.datePublished,
       "creator": {
-        "@type": "LocalBusiness",
-        "name": "Mikah's Auto Detailing",
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Columbia",
-          "addressRegion": "SC"
-        }
+        "@type": "Person",
+        "name": "Mikah Albertson"
       },
       "copyrightHolder": {
         "@type": "Organization",
         "name": "Mikah's Auto Detailing"
-      }
+      },
+      "copyrightNotice": "© 2024 Mikah's Auto Detailing. All rights reserved.",
+      "creditText": "Photo by Mikah's Auto Detailing",
+      "acquireLicensePage": "https://mikahsmobiledetailingsc.com/contact",
+      "license": "https://creativecommons.org/licenses/by-nc-nd/4.0/"
     }));
 
     const videoObjects = projects.filter(p => p.type === 'video').map(project => ({
       "@type": "VideoObject",
-      "@id": `https://mikahsautodetailing.com${project.image}`,
-      "contentUrl": `https://mikahsautodetailing.com${project.image}`,
+      "@id": `https://mikahsmobiledetailingsc.com${project.image}`,
+      "contentUrl": `https://mikahsmobiledetailingsc.com${project.image}`,
       "name": project.title,
       "description": project.description,
-      "uploadDate": project.datePublished,
-      "thumbnailUrl": `https://mikahsautodetailing.com${project.image}`,
+      "uploadDate": `${project.datePublished}T12:00:00-05:00`,
+      "thumbnailUrl": `https://mikahsmobiledetailingsc.com${project.image.replace('.mov', '-thumb.jpg')}`,
       "creator": {
-        "@type": "LocalBusiness",
+        "@type": "Person",
+        "name": "Mikah Albertson"
+      },
+      "copyrightHolder": {
+        "@type": "Organization",
         "name": "Mikah's Auto Detailing"
-      }
+      },
+      "copyrightNotice": "© 2024 Mikah's Auto Detailing. All rights reserved.",
+      "creditText": "Video by Mikah's Auto Detailing",
+      "acquireLicensePage": "https://mikahsmobiledetailingsc.com/contact",
+      "license": "https://creativecommons.org/licenses/by-nc-nd/4.0/"
     }));
 
     return {
@@ -182,9 +189,9 @@ const RecentProjects: React.FC = () => {
       "video": videoObjects,
       "provider": {
         "@type": "LocalBusiness",
-        "@id": "https://mikahsautodetailing.com",
+        "@id": "https://mikahsmobiledetailingsc.com",
         "name": "Mikah's Auto Detailing",
-        "image": "https://mikahsautodetailing.com/logo.png",
+        "image": "https://mikahsmobiledetailingsc.com/logo.png",
         "telephone": "(803) 667-8731",
         "address": {
           "@type": "PostalAddress",

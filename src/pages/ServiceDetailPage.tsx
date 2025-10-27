@@ -1,6 +1,5 @@
 import { useParams } from 'react-router-dom';
 import { SEOHead } from '../components/seo/SEOHead';
-import { Breadcrumbs } from '../components/seo/Breadcrumbs';
 import { generateServiceSchema } from '../components/seo/StructuredData';
 import { getServiceBySlug } from '../data/services';
 import { businessInfo } from '../data/business';
@@ -40,12 +39,6 @@ export const ServiceDetailPage = () => {
         schema={schema}
       />
 
-      <Breadcrumbs
-        items={[
-          { name: 'Services', url: '/services' },
-          { name: service.name, url: `/services/${service.slug}` }
-        ]}
-      />
 
       <div className="service-detail-page">
         {/* Content placeholder */}

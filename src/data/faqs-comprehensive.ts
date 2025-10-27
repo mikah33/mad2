@@ -564,12 +564,88 @@ export const searchFAQs = (searchTerm: string): FAQ[] => {
 };
 
 /**
- * Generate Schema.org FAQPage markup
+ * Generate Schema.org FAQPage markup with comprehensive LocalBusiness and Service schema
  */
 export const generateFAQSchema = (faqList: FAQ[] = faqs) => {
   return {
     "@context": "https://schema.org",
     "@type": "FAQPage",
+    "name": "Auto Detailing FAQs - Columbia SC",
+    "description": "Comprehensive answers to all your mobile auto detailing questions in Columbia, Lexington, and Irmo SC",
+    "url": "https://mikahsmobiledetailingsc.com/faq",
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://mikahsmobiledetailingsc.com/exterior1.jpg",
+      "name": "Professional mobile auto detailing service",
+      "description": "Mobile car detailing service in Columbia SC showing professional results",
+      "contentUrl": "https://mikahsmobiledetailingsc.com/exterior1.jpg",
+      "width": "1200",
+      "height": "630",
+      "creator": {
+        "@type": "Person",
+        "name": "Mikah Albertson"
+      },
+      "copyrightHolder": {
+        "@type": "Organization",
+        "name": "Mikah's Auto Detailing"
+      },
+      "copyrightNotice": "© 2024 Mikah's Auto Detailing. All rights reserved.",
+      "creditText": "Photo by Mikah's Auto Detailing",
+      "license": "https://creativecommons.org/licenses/by-nc-nd/4.0/"
+    },
+    "about": {
+      "@type": "Service",
+      "name": "Mobile Auto Detailing Services",
+      "serviceType": "Mobile Car Detailing",
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Columbia",
+          "sameAs": "https://en.wikipedia.org/wiki/Columbia,_South_Carolina"
+        },
+        {
+          "@type": "City",
+          "name": "Lexington",
+          "sameAs": "https://en.wikipedia.org/wiki/Lexington,_South_Carolina"
+        },
+        {
+          "@type": "City",
+          "name": "Irmo",
+          "sameAs": "https://en.wikipedia.org/wiki/Irmo,_South_Carolina"
+        }
+      ],
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "Mikah's Auto Detailing",
+        "image": "https://mikahsmobiledetailingsc.com/exterior1.jpg",
+        "telephone": "(803) 667-8731",
+        "priceRange": "$$",
+        "url": "https://mikahsmobiledetailingsc.com",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Columbia",
+          "addressRegion": "SC",
+          "addressCountry": "US"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "34.0007",
+          "longitude": "-81.0348"
+        },
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+            "opens": "08:00",
+            "closes": "18:00"
+          }
+        ],
+        "sameAs": [
+          "https://www.facebook.com/mikahsautodetailing",
+          "https://www.instagram.com/mikahsautodetailing"
+        ]
+      }
+    },
     "mainEntity": faqList.map(faq => ({
       "@type": "Question",
       "name": faq.question,

@@ -1,5 +1,4 @@
 import { SEOHead } from '../components/seo/SEOHead';
-import { Breadcrumbs } from '../components/seo/Breadcrumbs';
 
 export const ContactPage = () => {
   return (
@@ -11,7 +10,6 @@ export const ContactPage = () => {
         canonical="https://mikahsautodetailing.com/contact"
       />
 
-      <Breadcrumbs items={[{ name: 'Contact', url: '/contact' }]} />
 
       <div className="contact-page">
         {/* Content placeholder */}

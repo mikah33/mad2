@@ -1,8 +1,9 @@
 import React from 'react';
 import { SEOHead } from '../components/seo/SEOHead';
-import { Breadcrumbs } from '../components/seo/Breadcrumbs';
 import { FAQSection } from '../components/FAQSection';
 import { faqs, faqCategories, generateFAQSchema } from '../data/faqs-comprehensive';
+import Navigation from '../components/Navigation';
+import Footer from '../components/Footer';
 
 export const FAQPage = () => {
   const schema = generateFAQSchema(faqs);
@@ -17,11 +18,8 @@ export const FAQPage = () => {
         schema={schema}
       />
 
-      <Breadcrumbs
-        items={[
-          { name: 'FAQ', url: '/faq' }
-        ]}
-      />
+      <Navigation />
+
 
       <div className="faq-page">
         {/* Hero Section */}
@@ -50,10 +48,51 @@ export const FAQPage = () => {
           </div>
         </section>
 
+        {/* Specialty FAQ Pages */}
+        <section className="faq-specialty" style={{padding: '3rem 0', background: '#f9fafb', borderBottom: '1px solid #e5e7eb'}}>
+          <div style={{maxWidth: '1200px', margin: '0 auto', padding: '0 1rem'}}>
+            <h2 style={{fontSize: '1.5rem', fontWeight: 700, color: '#1f2937', marginBottom: '1.5rem', textAlign: 'center'}}>
+              Specialized FAQ Pages
+            </h2>
+            <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1.5rem'}}>
+              <a
+                href="/faq/ceramic-coating"
+                style={{display: 'flex', flexDirection: 'column', padding: '2rem', background: 'linear-gradient(135deg, #3b82f6 0%, #2563eb 100%)', borderRadius: '12px', textDecoration: 'none', color: 'white', transition: 'transform 0.2s, box-shadow 0.2s'}}
+                className="specialty-card"
+              >
+                <h3 style={{fontSize: '1.5rem', fontWeight: 700, marginBottom: '0.75rem'}}>
+                  🛡️ Ceramic Coating FAQs
+                </h3>
+                <p style={{fontSize: '1rem', opacity: 0.9, marginBottom: '1rem'}}>
+                  Get expert answers about automotive ceramic coating, professional application, costs, benefits, and maintenance.
+                </p>
+                <span style={{fontSize: '0.875rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em'}}>
+                  25 Questions →
+                </span>
+              </a>
+              <a
+                href="/faq/mobile-detailing"
+                style={{display: 'flex', flexDirection: 'column', padding: '2rem', background: 'linear-gradient(135deg, #10b981 0%, #059669 100%)', borderRadius: '12px', textDecoration: 'none', color: 'white', transition: 'transform 0.2s, box-shadow 0.2s'}}
+                className="specialty-card"
+              >
+                <h3 style={{fontSize: '1.5rem', fontWeight: 700, marginBottom: '0.75rem'}}>
+                  🚗 Mobile Detailing FAQs
+                </h3>
+                <p style={{fontSize: '1rem', opacity: 0.9, marginBottom: '1rem'}}>
+                  Learn about mobile car detailing services, pricing, scheduling, and what to expect from our mobile service.
+                </p>
+                <span style={{fontSize: '0.875rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em'}}>
+                  25 Questions →
+                </span>
+              </a>
+            </div>
+          </div>
+        </section>
+
         {/* Quick Navigation */}
         <section className="faq-quick-nav">
           <div className="faq-quick-nav-container">
-            <h2 className="faq-quick-nav-title">Jump to Category</h2>
+            <h2 className="faq-quick-nav-title">General FAQ Categories</h2>
             <div className="faq-quick-nav-grid">
               {faqCategories.map(category => (
                 <a
@@ -110,6 +149,11 @@ export const FAQPage = () => {
       <style>{`
         .faq-page {
           background: white;
+        }
+
+        .specialty-card:hover {
+          transform: translateY(-4px);
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
         }
 
         /* Hero Section */
@@ -337,6 +381,8 @@ export const FAQPage = () => {
           }
         }
       `}</style>
+
+      <Footer />
     </>
   );
 };

@@ -2,7 +2,6 @@ import { useParams, Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { Calendar, Clock, Tag, ArrowLeft, Phone } from 'lucide-react';
 import { SEOHead } from '../../components/seo/SEOHead';
-import { Breadcrumbs } from '../../components/seo/Breadcrumbs';
 import { generateCompleteBlogPostSchema } from '../../components/seo/BlogSchemas';
 import { getBlogPostBySlug, blogPosts } from '../../data/blog';
 import { NotFoundPage } from '../NotFoundPage';
@@ -98,12 +97,6 @@ export const BlogPostPage = () => {
               Back to Blog
             </Link>
 
-            <Breadcrumbs
-              items={[
-                { name: 'Blog', url: '/blog' },
-                { name: post.title, url: `/blog/${post.slug}` }
-              ]}
-            />
           </div>
         </div>
 

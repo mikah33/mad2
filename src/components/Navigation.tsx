@@ -21,8 +21,10 @@ const Navigation: React.FC = () => {
   };
 
   return (
-    <nav className={`text-white fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      isScrolled ? 'bg-gray-900/95 shadow-2xl border-b border-gray-700/50 backdrop-blur-sm' : 'bg-transparent'
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      isScrolled
+        ? 'bg-gray-900/95 shadow-2xl border-b border-gray-700/50 backdrop-blur-sm text-white'
+        : 'bg-transparent text-gray-900'
     }`}>
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
@@ -38,13 +40,13 @@ const Navigation: React.FC = () => {
 
           {/* Desktop Navigation Links */}
           <div className="hidden lg:flex items-center space-x-3 xl:space-x-6">
-            <a href="/#home" className="hover:text-gold-500 transition text-sm xl:text-base font-medium">Home</a>
-            <a href="/#services" className="hover:text-gold-500 transition text-sm xl:text-base font-medium">Services</a>
-            <a href="/blog" className="hover:text-gold-500 transition text-sm xl:text-base font-medium">Blog</a>
-            <a href="/#projects" className="hidden xl:flex hover:text-gold-500 transition text-sm xl:text-base font-medium">Recent Projects</a>
-            <a href="/#faq" className="hover:text-gold-500 transition text-sm xl:text-base font-medium">FAQ</a>
-            <a href="/#contact" className="hover:text-gold-500 transition text-sm xl:text-base font-medium">Contact</a>
-            <a href="/#locations" className="flex items-center hover:text-gold-500 transition text-sm xl:text-base font-medium">
+            <a href="/#home" className={`hover:text-gold-500 transition text-sm xl:text-base font-medium ${isScrolled ? 'text-white' : 'text-gray-900'}`}>Home</a>
+            <a href="/services" className={`hover:text-gold-500 transition text-sm xl:text-base font-medium ${isScrolled ? 'text-white' : 'text-gray-900'}`}>Services</a>
+            <a href="/blog" className={`hover:text-gold-500 transition text-sm xl:text-base font-medium ${isScrolled ? 'text-white' : 'text-gray-900'}`}>Blog</a>
+            <a href="/#projects" className={`hidden xl:flex hover:text-gold-500 transition text-sm xl:text-base font-medium ${isScrolled ? 'text-white' : 'text-gray-900'}`}>Recent Projects</a>
+            <a href="/faq" className={`hover:text-gold-500 transition text-sm xl:text-base font-medium ${isScrolled ? 'text-white' : 'text-gray-900'}`}>FAQ</a>
+            <a href="/#contact" className={`hover:text-gold-500 transition text-sm xl:text-base font-medium ${isScrolled ? 'text-white' : 'text-gray-900'}`}>Contact</a>
+            <a href="/locations" className={`flex items-center hover:text-gold-500 transition text-sm xl:text-base font-medium ${isScrolled ? 'text-white' : 'text-gray-900'}`}>
               <MapPin className="w-4 h-4 mr-1" />
               Locations
             </a>
@@ -53,7 +55,7 @@ const Navigation: React.FC = () => {
           {/* Desktop CTA Buttons */}
           <div className="hidden md:flex items-center space-x-2">
             <button
-              onClick={() => window.location.href = 'tel:+18037319901'}
+              onClick={() => window.location.href = 'tel:+18036678731'}
               className="flex items-center px-2 lg:px-3 xl:px-4 py-2 bg-white/10 text-white border border-gold-500/30 rounded-lg hover:bg-gold-500/20 hover:border-gold-500 transition text-xs lg:text-sm xl:text-base whitespace-nowrap backdrop-blur-sm"
             >
               <Phone className="w-4 h-4 mr-1" />
@@ -72,7 +74,7 @@ const Navigation: React.FC = () => {
           {/* Mobile Hamburger Button */}
           <button
             onClick={toggleMenu}
-            className="md:hidden p-2 rounded-lg hover:bg-gold-500/20 border border-gold-500/30 transition"
+            className={`md:hidden p-2 rounded-lg hover:bg-gold-500/20 border border-gold-500/30 transition ${isScrolled ? 'text-white' : 'text-gray-900'}`}
             aria-label="Toggle menu"
           >
             {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -91,7 +93,7 @@ const Navigation: React.FC = () => {
                 Home
               </a>
               <a
-                href="/#services"
+                href="/services"
                 onClick={handleLinkClick}
                 className="block px-4 py-2 hover:bg-gold-500/20 hover:text-gold-500 rounded transition font-medium"
               >
@@ -112,7 +114,7 @@ const Navigation: React.FC = () => {
                 Recent Projects
               </a>
               <a
-                href="/#faq"
+                href="/faq"
                 onClick={handleLinkClick}
                 className="block px-4 py-2 hover:bg-gold-500/20 hover:text-gold-500 rounded transition font-medium"
               >
@@ -126,7 +128,7 @@ const Navigation: React.FC = () => {
                 Contact
               </a>
               <a
-                href="/#locations"
+                href="/locations"
                 onClick={handleLinkClick}
                 className="flex items-center px-4 py-2 hover:bg-gold-500/20 hover:text-gold-500 rounded transition font-medium"
               >
@@ -137,7 +139,7 @@ const Navigation: React.FC = () => {
               {/* Mobile CTA Buttons */}
               <div className="px-4 pt-4 space-y-3 border-t border-gold-500/20">
                 <button
-                  onClick={() => window.location.href = 'tel:+18037319901'}
+                  onClick={() => window.location.href = 'tel:+18036678731'}
                   className="w-full flex items-center justify-center px-4 py-3 bg-white/10 text-white border border-gold-500/30 rounded-lg hover:bg-gold-500/20 hover:border-gold-500 transition font-semibold backdrop-blur-sm"
                 >
                   <Phone className="w-4 h-4 mr-2" />

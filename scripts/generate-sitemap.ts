@@ -9,6 +9,7 @@ const __dirname = dirname(__filename);
 // Import data files (optional - may not exist)
 let services: any[] = [];
 let locations: any[] = [];
+let blogPosts: any[] = [];
 
 try {
   const servicesModule = await import('../src/data/services.js');
@@ -22,6 +23,13 @@ try {
   locations = locationsModule.locations || [];
 } catch (e) {
   // locations.js doesn't exist
+}
+
+try {
+  const blogModule = await import('../src/data/blog.js');
+  blogPosts = blogModule.blogPosts || [];
+} catch (e) {
+  console.log('⚠️  Blog posts not found, skipping blog URLs');
 }
 
 interface SitemapURL {
@@ -105,36 +113,47 @@ function generateSitemap(): string {
     });
   });
 
-  // Blog listing page - Removed until blog is implemented
-  // urls.push({
-  //   loc: `${SITE_URL}/blog`,
-  //   lastmod: currentDate,
-  //   changefreq: 'weekly',
-  //   priority: 0.8,
-  // });
+  // Blog listing page
+  urls.push({
+    loc: `${SITE_URL}/blog`,
+    lastmod: currentDate,
+    changefreq: 'weekly',
+    priority: 0.8,
+  });
 
-  // Blog posts (to be populated when blog posts are added)
-  // Example blog posts - replace with actual blog data when available
-  // const blogPosts = [
-  //   // { slug: 'ceramic-coating-guide', date: currentDate },
-  //   // { slug: 'interior-detailing-tips', date: currentDate },
-  // ];
+  // Blog posts - dynamically added from blog.ts
+  if (blogPosts.length > 0) {
+    blogPosts.forEach((post) => {
+      urls.push({
+        loc: `${SITE_URL}/blog/${post.slug}`,
+        lastmod: post.dateModified || post.datePublished || currentDate,
+        changefreq: 'monthly',
+        priority: post.featured ? 0.9 : 0.8,
+      });
+    });
+  }
 
-  // blogPosts.forEach((post) => {
-  //   urls.push({
-  //     loc: `${SITE_URL}/blog/${post.slug}`,
-  //     lastmod: post.date,
-  //     changefreq: 'monthly',
-  //     priority: 0.8,
-  //   });
-  // });
-
-  // FAQ page
+  // FAQ pages
   urls.push({
     loc: `${SITE_URL}/faq`,
     lastmod: currentDate,
     changefreq: 'monthly',
-    priority: 0.7,
+    priority: 0.8,
+  });
+
+  // Specialty FAQ pages
+  urls.push({
+    loc: `${SITE_URL}/faq/ceramic-coating`,
+    lastmod: currentDate,
+    changefreq: 'monthly',
+    priority: 0.9,
+  });
+
+  urls.push({
+    loc: `${SITE_URL}/faq/mobile-detailing`,
+    lastmod: currentDate,
+    changefreq: 'monthly',
+    priority: 0.9,
   });
 
   // Contact page

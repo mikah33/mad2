@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Calendar, Clock, Tag, ArrowRight } from 'lucide-react';
 import { SEOHead } from '../../components/seo/SEOHead';
-import { Breadcrumbs } from '../../components/seo/Breadcrumbs';
 import { blogPosts, getFeaturedPosts } from '../../data/blog';
 import { generateBlogCollectionSchema, generateBlogItemListSchema } from '../../components/seo/BlogSchemas';
 import Navigation from '../../components/Navigation';
@@ -12,7 +11,7 @@ export const BlogPage = () => {
   const blogCollectionSchema = generateBlogCollectionSchema(blogPosts);
   const blogItemListSchema = generateBlogItemListSchema(blogPosts);
 
-  // Combine schemas
+  // Combine schemas (blogCollectionSchema already includes LocalBusiness as publisher)
   const schemas = [blogCollectionSchema, blogItemListSchema];
 
   const featuredPosts = getFeaturedPosts();
@@ -55,7 +54,6 @@ export const BlogPage = () => {
         {/* Hero Section */}
         <div className="bg-gradient-to-b from-gray-900 to-gray-800 text-white py-16 md:py-24">
           <div className="container mx-auto px-4 max-w-7xl">
-            <Breadcrumbs items={[{ name: 'Blog', url: '/blog' }]} />
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 mt-8">
               Auto Detailing Blog & Resources

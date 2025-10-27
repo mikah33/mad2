@@ -1,5 +1,6 @@
 import { createBrowserRouter } from 'react-router-dom';
 import App from './App';
+import { ServicesPage } from './pages/ServicesPage';
 import InteriorDetailingPage from './pages/InteriorDetailingPage';
 import ExteriorDetailingPage from './pages/ExteriorDetailingPage';
 import CeramicCoatingPage from './pages/CeramicCoatingPage';
@@ -8,11 +9,21 @@ import FullDetailPage from './pages/FullDetailPage';
 import MobileDetailingPage from './pages/MobileDetailingPage';
 import { BlogPage } from './pages/blog/BlogPage';
 import { BlogPostPage } from './pages/blog/BlogPostPage';
+import { FAQPage } from './pages/FAQPage';
+import { CeramicCoatingFAQPage } from './pages/CeramicCoatingFAQPage';
+import { MobileDetailingFAQPage } from './pages/MobileDetailingFAQPage';
+import { PrivacyPolicyPage } from './pages/PrivacyPolicyPage';
+import { TermsOfServicePage } from './pages/TermsOfServicePage';
+import { LocationsPage } from './pages/LocationsPage';
 
 export const router = createBrowserRouter([
   {
     path: '/',
     element: <App />,
+  },
+  {
+    path: '/services',
+    element: <ServicesPage />,
   },
   {
     path: '/services/interior-detailing',
@@ -45,5 +56,29 @@ export const router = createBrowserRouter([
   {
     path: '/blog/:slug',
     element: <BlogPostPage />,
+  },
+  {
+    path: '/faq',
+    element: <FAQPage />,
+  },
+  {
+    path: '/faq/ceramic-coating',
+    element: <CeramicCoatingFAQPage />,
+  },
+  {
+    path: '/faq/mobile-detailing',
+    element: <MobileDetailingFAQPage />,
+  },
+  {
+    path: '/locations',
+    element: <LocationsPage />,
+  },
+  {
+    path: '/privacy',
+    element: <PrivacyPolicyPage />,
+  },
+  {
+    path: '/terms',
+    element: <TermsOfServicePage />,
   },
 ]);
