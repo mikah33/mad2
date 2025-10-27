@@ -164,11 +164,16 @@ function generateSitemap(): string {
     priority: 0.8,
   });
 
+  // Deduplicate URLs by loc (keep first occurrence)
+  const uniqueUrls = Array.from(
+    new Map(urls.map(url => [url.loc, url])).values()
+  );
+
   // Generate XML
   let xml = '<?xml version="1.0" encoding="UTF-8"?>\n';
   xml += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n';
 
-  urls.forEach((url) => {
+  uniqueUrls.forEach((url) => {
     xml += '  <url>\n';
     xml += `    <loc>${url.loc}</loc>\n`;
     xml += `    <lastmod>${url.lastmod}</lastmod>\n`;

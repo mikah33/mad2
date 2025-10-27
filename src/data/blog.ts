@@ -446,6 +446,71 @@ export const blogPosts: BlogPost[] = [
     imageAlt: 'Finding the best car detailing services near me',
     readTime: 10,
     wordCount: 1900
+  },
+  // New "Near Me" Search Query Blog Posts
+  {
+    id: 'blog-029',
+    title: 'Ceramic Coating Near Me Columbia SC: Complete Guide to Finding Quality Service',
+    slug: 'ceramic-coating-near-me-columbia-sc',
+    excerpt: 'Searching for ceramic coating near me in Columbia SC? Learn how to identify quality installers, avoid marketing hype, and get professional ceramic coating that lasts.',
+    author: 'Mikah Albertson',
+    authorJobTitle: 'Professional Auto Detailer',
+    datePublished: '2025-01-25',
+    category: 'guides',
+    tags: ['ceramic coating near me', 'ceramic coating columbia sc', 'car ceramic coating', 'auto ceramic coating', 'professional ceramic coating'],
+    image: `${baseUrl}/exterior5.jpg`,
+    imageAlt: 'Professional ceramic coating service Columbia SC',
+    featured: true,
+    readTime: 13,
+    wordCount: 2500
+  },
+  {
+    id: 'blog-030',
+    title: 'Car Detailing Near Me Columbia SC: How to Find Quality Service',
+    slug: 'car-detailing-near-me-columbia-sc',
+    excerpt: 'Complete guide to finding quality car detailing near me in Columbia, Lexington, and Irmo SC. Learn what professional detailing includes and how to avoid common pitfalls.',
+    author: 'Mikah Albertson',
+    authorJobTitle: 'Professional Auto Detailer',
+    datePublished: '2025-01-26',
+    category: 'guides',
+    tags: ['car detailing near me', 'auto detailing columbia sc', 'car detailing columbia sc', 'professional car detailing', 'mobile car detailing'],
+    image: `${baseUrl}/exterior6.jpg`,
+    imageAlt: 'Quality car detailing service near me Columbia SC',
+    featured: true,
+    readTime: 12,
+    wordCount: 2300
+  },
+  {
+    id: 'blog-031',
+    title: 'Mobile Detailing Near Me Columbia SC: Professional Service Guide',
+    slug: 'mobile-detailing-near-me-columbia-sc',
+    excerpt: 'Finding professional mobile detailing near me in Columbia SC? This guide covers what to expect, how to verify quality, and why mobile detailing offers superior convenience.',
+    author: 'Mikah Albertson',
+    authorJobTitle: 'Professional Auto Detailer',
+    datePublished: '2025-01-27',
+    category: 'guides',
+    tags: ['mobile detailing near me', 'mobile car detailing', 'mobile auto detailing', 'car detailing columbia sc', 'mobile detailing service'],
+    image: `${baseUrl}/exterior1.jpg`,
+    imageAlt: 'Professional mobile detailing service near me',
+    featured: true,
+    readTime: 12,
+    wordCount: 2400
+  },
+  {
+    id: 'blog-032',
+    title: 'Auto Detailing Near Me Columbia SC: Complete Service Guide',
+    slug: 'auto-detailing-near-me-columbia-sc',
+    excerpt: 'Comprehensive guide to finding quality auto detailing near me in Columbia, Lexington, and Irmo. Compare mobile vs shop services and understand what professional detailing includes.',
+    author: 'Mikah Albertson',
+    authorJobTitle: 'Professional Auto Detailer',
+    datePublished: '2025-01-28',
+    category: 'guides',
+    tags: ['auto detailing near me', 'car detailing near me', 'professional auto detailing', 'auto detailing columbia sc', 'vehicle detailing'],
+    image: `${baseUrl}/exterior2.jpg`,
+    imageAlt: 'Professional auto detailing service near me Columbia SC',
+    featured: true,
+    readTime: 12,
+    wordCount: 2350
   }
 ];
 

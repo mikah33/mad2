@@ -1,16 +1,52 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { CheckCircle, Shield, Clock } from 'lucide-react';
 
 const Hero: React.FC = () => {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    // Force play on mobile devices
+    const playVideo = async () => {
+      if (videoRef.current) {
+        try {
+          await videoRef.current.play();
+        } catch (error) {
+          console.log('Autoplay prevented:', error);
+        }
+      }
+    };
+
+    playVideo();
+
+    // Retry play on user interaction (for browsers that block autoplay)
+    const handleInteraction = () => {
+      playVideo();
+      // Remove listeners after first interaction
+      document.removeEventListener('touchstart', handleInteraction);
+      document.removeEventListener('click', handleInteraction);
+    };
+
+    document.addEventListener('touchstart', handleInteraction);
+    document.addEventListener('click', handleInteraction);
+
+    return () => {
+      document.removeEventListener('touchstart', handleInteraction);
+      document.removeEventListener('click', handleInteraction);
+    };
+  }, []);
+
   return (
     <div className="relative text-white min-h-screen w-full overflow-hidden flex items-center">
       {/* Video Background */}
       <video
+        ref={videoRef}
         autoPlay
         loop
         muted
         playsInline
+        preload="auto"
         className="absolute inset-0 w-full h-full object-cover"
+        webkit-playsinline="true"
       >
         <source src="/hero-video.mp4" type="video/mp4" />
       </video>
