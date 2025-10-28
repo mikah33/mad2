@@ -559,6 +559,55 @@ export const blogPosts: BlogPost[] = [
     featured: true,
     readTime: 12,
     wordCount: 2000
+  },
+  // New conversational "near me" search query blog posts
+  {
+    id: 'blog-036',
+    title: 'What Are Some Good Mobile Car Detailing Services in Columbia SC?',
+    slug: 'good-mobile-car-detailing-services-columbia-sc',
+    excerpt: 'Looking for good mobile car detailing services in Columbia SC? Learn what makes quality mobile detailing, how to identify professional services, and why Mikah\'s Auto Detailing is the top choice.',
+    author: 'Mikah Albertson',
+    authorJobTitle: 'Professional Auto Detailer',
+    datePublished: '2025-02-01',
+    category: 'guides',
+    tags: ['mobile car detailing', 'car detailing columbia sc', 'mobile detailing services', 'auto detailing near me', 'mobile auto detailing', 'vehicle detailing', 'car detail shops near me'],
+    image: `${baseUrl}/exterior1.jpg`,
+    imageAlt: 'Good mobile car detailing services in Columbia SC',
+    featured: true,
+    readTime: 10,
+    wordCount: 1800
+  },
+  {
+    id: 'blog-037',
+    title: 'Anyone Know a Mobile Car Detailer? Finding Quality Service in Columbia',
+    slug: 'anyone-know-mobile-car-detailer-columbia',
+    excerpt: 'Anyone know a mobile car detailer in Columbia SC? This guide helps you find trustworthy mobile detailing professionals with verified credentials and proven results.',
+    author: 'Mikah Albertson',
+    authorJobTitle: 'Professional Auto Detailer',
+    datePublished: '2025-02-02',
+    category: 'guides',
+    tags: ['mobile car detailer', 'mobile detailing near me', 'car detailing near me', 'auto detailers near me mobile', 'mobile vehicle detailing', 'car mobile detailing', 'detailing near me mobile'],
+    image: `${baseUrl}/exterior2.jpg`,
+    imageAlt: 'Professional mobile car detailer in Columbia SC',
+    featured: true,
+    readTime: 9,
+    wordCount: 1700
+  },
+  {
+    id: 'blog-038',
+    title: 'Mobile Detailing in Columbia SC Prices: Complete Cost Guide 2025',
+    slug: 'mobile-detailing-columbia-sc-prices-2025',
+    excerpt: 'Complete guide to mobile detailing in Columbia SC prices. Understand what you\'re paying for, compare packages from $129-$599, and get the best value for professional mobile service.',
+    author: 'Mikah Albertson',
+    authorJobTitle: 'Professional Auto Detailer',
+    datePublished: '2025-02-03',
+    category: 'guides',
+    tags: ['mobile detailing prices', 'mobile detailing columbia sc', 'mobile car detailing cost', 'auto detailing prices', 'detailing columbia sc', 'mobile detailing pricing', 'car detailing cost'],
+    image: `${baseUrl}/exterior3.jpg`,
+    imageAlt: 'Mobile detailing prices in Columbia SC',
+    featured: true,
+    readTime: 11,
+    wordCount: 2000
   }
 ];
 
