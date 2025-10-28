@@ -4,7 +4,7 @@ User-agent: *
 Allow: /
 
 # Sitemaps
-Sitemap: https://mikahsautodetailing.com/sitemap.xml
+Sitemap: https://mikahsmobiledetailingsc.com/sitemap.xml
 
 # Disallow admin or private areas (add as needed)
 # Disallow: /admin/
