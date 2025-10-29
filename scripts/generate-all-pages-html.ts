@@ -26,6 +26,9 @@ console.log('\n🚀 Generating pre-rendered HTML files for ALL pages...\n');
 
 // Define all routes that need HTML files
 const routes = [
+  // Homepage
+  { path: '', title: "Mikah's Auto Detailing - Best Mobile Car Detailing in Columbia SC", description: 'Professional mobile auto detailing serving Columbia, Lexington, and Irmo SC. Expert ceramic coating, paint correction, and comprehensive car care. IDA certified with 100% satisfaction guarantee.' },
+
   // Service pages
   { path: 'services', title: 'Auto Detailing Services | Columbia SC', description: 'Professional mobile auto detailing services in Columbia SC. Ceramic coating, paint correction, interior/exterior detailing, and more.' },
   { path: 'services/interior-detailing', title: 'Interior Car Detailing | Columbia SC', description: 'Professional interior car detailing services. Deep cleaning, stain removal, leather conditioning, odor elimination.' },

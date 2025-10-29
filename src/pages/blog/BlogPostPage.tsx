@@ -51,11 +51,9 @@ export const BlogPostPage = () => {
   const postUrl = `https://mikahsmobiledetailingsc.com/blog/${post.slug}`;
   const imageUrl = post.image || 'https://mikahsmobiledetailingsc.com/exterior1.jpg';
 
-  // Generate comprehensive blog post schemas (including FAQs and HowTo if available)
-  // Use useMemo to regenerate when fullContent changes
-  const schemas = useMemo(() => {
-    return generateCompleteBlogPostSchema(post, fullContent?.faqs, fullContent?.howToSteps);
-  }, [post, fullContent?.faqs, fullContent?.howToSteps]);
+  // NOTE: Schemas are pre-rendered in static HTML by generate-blog-html.ts script
+  // DO NOT add schemas here to avoid duplication
+  // The schemas include: BlogPosting, WebPage, LocalBusiness, FAQPage (if faqs exist), HowTo (if steps exist)
 
   const formatDate = (dateString: string) => {
     return new Date(dateString).toLocaleDateString('en-US', {
@@ -92,7 +90,6 @@ export const BlogPostPage = () => {
         ogImageAlt={post.imageAlt || post.title}
         ogImageWidth={1200}
         ogImageHeight={630}
-        schema={schemas}
         author={post.author}
       />
 
