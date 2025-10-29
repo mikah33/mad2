@@ -67,20 +67,10 @@ export const LocationWestColumbiaPage = () => {
     phone: "(803) 667-8731",
     email: "contact@mikahsmobiledetailingsc.com",
     address: {
-      streetAddress: "Serving West Columbia",
-      addressLocality: "West Columbia",
-      addressRegion: "SC",
-      postalCode: "29169",
-      addressCountry: "US"
-    },
-    hours: {
-      monday: "8:00 AM - 6:00 PM",
-      tuesday: "8:00 AM - 6:00 PM",
-      wednesday: "8:00 AM - 6:00 PM",
-      thursday: "8:00 AM - 6:00 PM",
-      friday: "8:00 AM - 6:00 PM",
-      saturday: "9:00 AM - 5:00 PM",
-      sunday: "Closed"
+      street: "Serving West Columbia",
+      city: "West Columbia",
+      state: "SC",
+      zip: "29169"
     },
     priceRange: "$$"
   });

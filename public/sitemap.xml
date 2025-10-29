@@ -1,24 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <!-- Homepage - Highest priority -->
   <url>
     <loc>https://mikahsmobiledetailingsc.com/</loc>
     <lastmod>2025-10-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-
-  <!-- High-Value Pages - Priority 0.95 -->
-  <url>
-    <loc>https://mikahsmobiledetailingsc.com/pricing</loc>
-    <lastmod>2025-10-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.95</priority>
-  </url>
-
-  <!-- Main Service Pages - Priority 0.9 -->
   <url>
     <loc>https://mikahsmobiledetailingsc.com/services</loc>
+    <lastmod>2025-10-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://mikahsmobiledetailingsc.com/services/interior-detailing</loc>
+    <lastmod>2025-10-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://mikahsmobiledetailingsc.com/services/exterior-detailing</loc>
     <lastmod>2025-10-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
@@ -36,31 +37,17 @@
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://mikahsmobiledetailingsc.com/services/mobile-detailing</loc>
-    <lastmod>2025-10-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
     <loc>https://mikahsmobiledetailingsc.com/services/full-detail</loc>
     <lastmod>2025-10-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://mikahsmobiledetailingsc.com/services/interior-detailing</loc>
+    <loc>https://mikahsmobiledetailingsc.com/services/mobile-detailing</loc>
     <lastmod>2025-10-29</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
+    <priority>0.9</priority>
   </url>
-  <url>
-    <loc>https://mikahsmobiledetailingsc.com/services/exterior-detailing</loc>
-    <lastmod>2025-10-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-
-  <!-- Location Pages - Priority 0.9 -->
   <url>
     <loc>https://mikahsmobiledetailingsc.com/locations</loc>
     <lastmod>2025-10-29</lastmod>
@@ -74,62 +61,128 @@
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://mikahsmobiledetailingsc.com/locations/west-columbia</loc>
+    <loc>https://mikahsmobiledetailingsc.com/locations/lexington-sc</loc>
     <lastmod>2025-10-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://mikahsmobiledetailingsc.com/locations/lexington-sc</loc>
-    <lastmod>2025-10-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
     <loc>https://mikahsmobiledetailingsc.com/locations/irmo-sc</loc>
     <lastmod>2025-10-29</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://mikahsmobiledetailingsc.com/locations/cayce-sc</loc>
     <lastmod>2025-10-29</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
+    <priority>0.9</priority>
   </url>
-
-  <!-- FAQ Pages - Priority 0.85 -->
-  <url>
-    <loc>https://mikahsmobiledetailingsc.com/faq</loc>
-    <lastmod>2025-10-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://mikahsmobiledetailingsc.com/faq/ceramic-coating</loc>
-    <lastmod>2025-10-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://mikahsmobiledetailingsc.com/faq/mobile-detailing</loc>
-    <lastmod>2025-10-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-
-  <!-- Blog Hub - Priority 0.8 -->
   <url>
     <loc>https://mikahsmobiledetailingsc.com/blog</loc>
     <lastmod>2025-10-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
-
-  <!-- High-Value Blog Posts - Priority 0.8 -->
   <url>
     <loc>https://mikahsmobiledetailingsc.com/blog/ultimate-guide-mobile-car-detailing-columbia-sc</loc>
     <lastmod>2025-10-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://mikahsmobiledetailingsc.com/blog/how-often-detail-car-south-carolina</loc>
+    <lastmod>2025-10-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://mikahsmobiledetailingsc.com/blog/ceramic-coating-vs-wax-south-carolina</loc>
+    <lastmod>2025-10-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://mikahsmobiledetailingsc.com/blog/interior-car-detailing-complete-guide</loc>
+    <lastmod>2025-10-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mikahsmobiledetailingsc.com/blog/prepare-car-summer-south-carolina</loc>
+    <lastmod>2025-10-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://mikahsmobiledetailingsc.com/blog/best-car-detailing-lexington-sc</loc>
+    <lastmod>2025-10-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mikahsmobiledetailingsc.com/blog/paint-correction-before-after-guide</loc>
+    <lastmod>2025-10-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mikahsmobiledetailingsc.com/blog/mobile-vs-shop-detailing-comparison</loc>
+    <lastmod>2025-10-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mikahsmobiledetailingsc.com/blog/car-detailing-prices-value-breakdown</loc>
+    <lastmod>2024-03-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mikahsmobiledetailingsc.com/blog/what-expect-professional-auto-detailing</loc>
+    <lastmod>2024-03-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mikahsmobiledetailingsc.com/blog/maintain-car-between-details</loc>
+    <lastmod>2024-04-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mikahsmobiledetailingsc.com/blog/signs-your-car-needs-detailing</loc>
+    <lastmod>2024-04-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mikahsmobiledetailingsc.com/blog/02-ceramic-coating-vs-ppf</loc>
+    <lastmod>2024-11-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mikahsmobiledetailingsc.com/blog/03-ceramic-coating-longevity-south-carolina</loc>
+    <lastmod>2024-11-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mikahsmobiledetailingsc.com/blog/04-professional-ceramic-coating-what-to-expect</loc>
+    <lastmod>2024-11-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://mikahsmobiledetailingsc.com/blog/05-ceramic-coating-cost-benefit-analysis</loc>
+    <lastmod>2024-11-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mikahsmobiledetailingsc.com/blog/06-ceramic-coating-maintenance-guide</loc>
+    <lastmod>2024-12-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -137,11 +190,35 @@
     <loc>https://mikahsmobiledetailingsc.com/blog/01-best-car-detailing-near-me-columbia-sc</loc>
     <lastmod>2024-11-01</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://mikahsmobiledetailingsc.com/blog/02-mobile-car-detailing-columbia-sc-guide</loc>
     <lastmod>2024-11-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://mikahsmobiledetailingsc.com/blog/03-mobile-auto-detailing-vs-traditional-shops</loc>
+    <lastmod>2024-11-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mikahsmobiledetailingsc.com/blog/04-auto-detailing-services-columbia-sc</loc>
+    <lastmod>2024-11-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mikahsmobiledetailingsc.com/blog/05-interior-car-detailing-deep-cleaning</loc>
+    <lastmod>2024-11-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mikahsmobiledetailingsc.com/blog/06-how-often-should-you-detail-your-car</loc>
+    <lastmod>2024-12-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -149,288 +226,174 @@
     <loc>https://mikahsmobiledetailingsc.com/blog/car-wash-vs-detailing-columbia-sc</loc>
     <lastmod>2025-01-15</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://mikahsmobiledetailingsc.com/blog/professional-car-detailing-columbia-sc-guide</loc>
-    <lastmod>2025-01-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://mikahsmobiledetailingsc.com/blog/car-detailing-near-me-columbia-sc</loc>
-    <lastmod>2025-01-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://mikahsmobiledetailingsc.com/blog/mobile-detailing-near-me-columbia-sc</loc>
-    <lastmod>2025-01-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://mikahsmobiledetailingsc.com/blog/auto-detailing-near-me-columbia-sc</loc>
-    <lastmod>2025-01-28</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://mikahsmobiledetailingsc.com/blog/mobile-detailing-columbia-sc-prices-guide</loc>
-    <lastmod>2025-01-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://mikahsmobiledetailingsc.com/blog/good-mobile-car-detailing-services-columbia-sc</loc>
-    <lastmod>2025-10-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://mikahsmobiledetailingsc.com/blog/anyone-know-mobile-car-detailer-columbia</loc>
-    <lastmod>2025-10-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://mikahsmobiledetailingsc.com/blog/mobile-detailing-columbia-sc-prices-2025</loc>
-    <lastmod>2025-10-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://mikahsmobiledetailingsc.com/blog/car-detailing-near-me-columbia</loc>
-    <lastmod>2025-10-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://mikahsmobiledetailingsc.com/blog/auto-detailing-complete-industry-guide</loc>
-    <lastmod>2025-10-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- Standard Blog Posts - Priority 0.7 -->
-  <url>
-    <loc>https://mikahsmobiledetailingsc.com/blog/how-often-detail-car-south-carolina</loc>
-    <lastmod>2025-10-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://mikahsmobiledetailingsc.com/blog/ceramic-coating-vs-wax-south-carolina</loc>
-    <lastmod>2025-10-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://mikahsmobiledetailingsc.com/blog/interior-car-detailing-complete-guide</loc>
-    <lastmod>2025-10-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://mikahsmobiledetailingsc.com/blog/prepare-car-summer-south-carolina</loc>
-    <lastmod>2025-10-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://mikahsmobiledetailingsc.com/blog/best-car-detailing-lexington-sc</loc>
-    <lastmod>2025-10-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://mikahsmobiledetailingsc.com/blog/paint-correction-before-after-guide</loc>
-    <lastmod>2025-10-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://mikahsmobiledetailingsc.com/blog/mobile-vs-shop-detailing-comparison</loc>
-    <lastmod>2025-10-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://mikahsmobiledetailingsc.com/blog/car-detailing-prices-value-breakdown</loc>
-    <lastmod>2024-03-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://mikahsmobiledetailingsc.com/blog/what-expect-professional-auto-detailing</loc>
-    <lastmod>2024-03-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://mikahsmobiledetailingsc.com/blog/maintain-car-between-details</loc>
-    <lastmod>2024-04-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://mikahsmobiledetailingsc.com/blog/signs-your-car-needs-detailing</loc>
-    <lastmod>2024-04-10</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://mikahsmobiledetailingsc.com/blog/02-ceramic-coating-vs-ppf</loc>
-    <lastmod>2024-11-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://mikahsmobiledetailingsc.com/blog/03-ceramic-coating-longevity-south-carolina</loc>
-    <lastmod>2024-11-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://mikahsmobiledetailingsc.com/blog/04-professional-ceramic-coating-what-to-expect</loc>
-    <lastmod>2024-11-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://mikahsmobiledetailingsc.com/blog/05-ceramic-coating-cost-benefit-analysis</loc>
-    <lastmod>2024-11-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://mikahsmobiledetailingsc.com/blog/06-ceramic-coating-maintenance-guide</loc>
-    <lastmod>2024-12-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://mikahsmobiledetailingsc.com/blog/03-mobile-auto-detailing-vs-traditional-shops</loc>
-    <lastmod>2024-11-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://mikahsmobiledetailingsc.com/blog/04-auto-detailing-services-columbia-sc</loc>
-    <lastmod>2024-11-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://mikahsmobiledetailingsc.com/blog/05-interior-car-detailing-deep-cleaning</loc>
-    <lastmod>2024-11-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://mikahsmobiledetailingsc.com/blog/06-how-often-should-you-detail-your-car</loc>
-    <lastmod>2024-12-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://mikahsmobiledetailingsc.com/blog/mobile-car-wash-lexington-sc-guide</loc>
     <lastmod>2025-01-18</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://mikahsmobiledetailingsc.com/blog/professional-car-detailing-columbia-sc-guide</loc>
+    <lastmod>2025-01-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://mikahsmobiledetailingsc.com/blog/finding-best-car-detailing-near-me</loc>
     <lastmod>2025-01-22</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://mikahsmobiledetailingsc.com/blog/ceramic-coating-near-me-columbia-sc</loc>
     <lastmod>2025-01-25</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://mikahsmobiledetailingsc.com/blog/car-detailing-near-me-columbia-sc</loc>
+    <lastmod>2025-01-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://mikahsmobiledetailingsc.com/blog/mobile-detailing-near-me-columbia-sc</loc>
+    <lastmod>2025-01-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://mikahsmobiledetailingsc.com/blog/auto-detailing-near-me-columbia-sc</loc>
+    <lastmod>2025-01-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://mikahsmobiledetailingsc.com/blog/mobile-detailing-columbia-sc-prices-guide</loc>
+    <lastmod>2025-01-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://mikahsmobiledetailingsc.com/blog/full-service-car-wash-vs-detailing-columbia-sc</loc>
     <lastmod>2025-01-30</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://mikahsmobiledetailingsc.com/blog/mobile-car-detailing-lexington-sc-complete-guide</loc>
     <lastmod>2025-01-31</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://mikahsmobiledetailingsc.com/blog/good-mobile-car-detailing-services-columbia-sc</loc>
+    <lastmod>2025-10-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://mikahsmobiledetailingsc.com/blog/anyone-know-mobile-car-detailer-columbia</loc>
+    <lastmod>2025-10-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://mikahsmobiledetailingsc.com/blog/mobile-detailing-columbia-sc-prices-2025</loc>
+    <lastmod>2025-10-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://mikahsmobiledetailingsc.com/blog/mobile-car-detail-columbia-sc</loc>
     <lastmod>2025-01-28</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://mikahsmobiledetailingsc.com/blog/car-detail-columbia-sc</loc>
     <lastmod>2025-01-29</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://mikahsmobiledetailingsc.com/blog/auto-detailing-lexington-sc</loc>
     <lastmod>2025-01-30</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://mikahsmobiledetailingsc.com/blog/best-auto-detailing-columbia-sc</loc>
     <lastmod>2025-01-31</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://mikahsmobiledetailingsc.com/blog/mobile-detailing-columbia-sc-complete</loc>
     <lastmod>2025-02-01</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://mikahsmobiledetailingsc.com/blog/interior-car-detailing-columbia-sc</loc>
     <lastmod>2025-02-02</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://mikahsmobiledetailingsc.com/blog/ceramic-coating-columbia-sc-pro</loc>
     <lastmod>2025-02-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://mikahsmobiledetailingsc.com/blog/car-detailing-columbia-sc-complete</loc>
     <lastmod>2025-02-04</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.9</priority>
   </url>
-
-  <!-- Resources & Utility Pages - Priority 0.6 -->
+  <url>
+    <loc>https://mikahsmobiledetailingsc.com/blog/car-detailing-near-me-columbia</loc>
+    <lastmod>2025-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://mikahsmobiledetailingsc.com/blog/auto-detailing-complete-industry-guide</loc>
+    <lastmod>2025-10-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://mikahsmobiledetailingsc.com/faq</loc>
+    <lastmod>2025-10-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mikahsmobiledetailingsc.com/faq/ceramic-coating</loc>
+    <lastmod>2025-10-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://mikahsmobiledetailingsc.com/faq/mobile-detailing</loc>
+    <lastmod>2025-10-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
   <url>
     <loc>https://mikahsmobiledetailingsc.com/resources</loc>
     <lastmod>2025-10-29</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <!-- Legal Pages - Priority 0.3 -->
-  <url>
-    <loc>https://mikahsmobiledetailingsc.com/terms</loc>
-    <lastmod>2025-10-29</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://mikahsmobiledetailingsc.com/privacy</loc>
+    <loc>https://mikahsmobiledetailingsc.com/contact</loc>
     <lastmod>2025-10-29</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
 </urlset>

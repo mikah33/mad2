@@ -1,7 +1,7 @@
 import React from 'react';
 import { Check, Star, Shield, Sparkles } from 'lucide-react';
 import { SEOHead } from '../components/seo/SEOHead';
-import { generateFAQSchema, generateOfferSchema } from '../components/seo/StructuredData';
+import { generateFAQSchema } from '../components/seo/StructuredData';
 import { generateEnhancedLocalBusinessSchema } from '../components/seo/EnhancedLocalBusinessSchema';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
@@ -113,18 +113,22 @@ export const PricingPage = () => {
   const faqSchema = generateFAQSchema(pricingFAQs);
   const enhancedBusinessSchema = generateEnhancedLocalBusinessSchema();
 
-  // Generate offer schemas for each package
-  const offerSchemas = packages.filter(pkg => pkg.price !== 'Custom Quote').map(pkg =>
-    generateOfferSchema({
-      name: pkg.name,
-      description: pkg.description,
-      price: pkg.price.replace('$', ''),
-      priceCurrency: 'USD',
-      url: 'https://mikahsmobiledetailingsc.com/pricing',
-      availability: 'https://schema.org/InStock',
-      validFrom: '2024-01-01'
-    })
-  );
+  // Generate offer schemas for each package (inline schema)
+  const offerSchemas = packages.filter(pkg => pkg.price !== 'Custom Quote').map(pkg => ({
+    '@context': 'https://schema.org',
+    '@type': 'Offer',
+    name: pkg.name,
+    description: pkg.description,
+    price: pkg.price.replace('$', ''),
+    priceCurrency: 'USD',
+    url: 'https://mikahsmobiledetailingsc.com/pricing',
+    availability: 'https://schema.org/InStock',
+    validFrom: '2024-01-01',
+    seller: {
+      '@type': 'Organization',
+      name: "Mikah's Auto Detailing"
+    }
+  }));
 
   const schemas = [faqSchema, enhancedBusinessSchema, ...offerSchemas];
 
