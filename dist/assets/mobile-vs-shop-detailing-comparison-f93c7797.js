@@ -154,7 +154,7 @@ const e="mobile-vs-shop-detailing-comparison",i="Mobile vs Shop Detailing: Which
 <li><strong>Prefer eco-friendly options:</strong> Minimal water usage and no driving emissions</li>
 <li><strong>Want personalized service:</strong> Direct interaction with your detailer</li>
 <li><strong>Need flexible scheduling:</strong> Early, late, or weekend appointments</li>
-<li><strong>Live in Lexington, Irmo, or suburbs:</strong> [service-mobile-detailing] comes to you rather than driving to Columbia</li>
+<li><strong>Live in Lexington, <a href="/locations/irmo-sc">Irmo</a>, or suburbs:</strong> [service-mobile-detailing] comes to you rather than driving to Columbia</li>
 </ul>
 
 <h2>When to Choose Shop Detailing</h2>
