@@ -236,7 +236,7 @@ export const BlogPostPage = () => {
                   [&_ul]:list-disc [&_ul]:pl-6 [&_ul>li]:marker:text-primary-600
                   [&_ol]:list-decimal [&_ol]:pl-6 [&_ol>li]:marker:text-primary-700 [&_ol>li]:marker:font-bold"
                 itemProp="articleBody"
-                dangerouslySetInnerHTML={{ __html: marked(fullContent.content) }}
+                dangerouslySetInnerHTML={{ __html: marked.parse(fullContent.content) as string }}
               />
             ) : (
               <div className="prose prose-lg max-w-none">
