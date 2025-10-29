@@ -1,12 +1,19 @@
 import { useParams, Link } from 'react-router-dom';
 import { useEffect, useState, useMemo } from 'react';
 import { Calendar, Clock, Tag, ArrowLeft, Phone } from 'lucide-react';
+import { marked } from 'marked';
 import { SEOHead } from '../../components/seo/SEOHead';
 import { generateCompleteBlogPostSchema } from '../../components/seo/BlogSchemas';
 import { getBlogPostBySlug, blogPosts } from '../../data/blog';
 import { NotFoundPage } from '../NotFoundPage';
 import Navigation from '../../components/Navigation';
 import Footer from '../../components/Footer';
+
+// Configure marked options
+marked.setOptions({
+  breaks: true,
+  gfm: true,
+});
 
 interface BlogContent {
   content: string;
@@ -229,7 +236,7 @@ export const BlogPostPage = () => {
                   [&_ul]:list-disc [&_ul]:pl-6 [&_ul>li]:marker:text-primary-600
                   [&_ol]:list-decimal [&_ol]:pl-6 [&_ol>li]:marker:text-primary-700 [&_ol>li]:marker:font-bold"
                 itemProp="articleBody"
-                dangerouslySetInnerHTML={{ __html: fullContent.content }}
+                dangerouslySetInnerHTML={{ __html: marked(fullContent.content) }}
               />
             ) : (
               <div className="prose prose-lg max-w-none">
