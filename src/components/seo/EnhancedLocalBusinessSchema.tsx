@@ -338,10 +338,10 @@ export const generateEnhancedLocalBusinessSchema = (
     schema.keywords = allKeywords.join(', ');
   }
 
-  // Additional Business Properties
-  schema.priceRange = '$$$';
-  schema.currenciesAccepted = 'USD, BTC, ETH';
-  schema.paymentAccepted = 'Cash, Credit Card, Debit Card, PayPal, Zelle, Cash App, Cryptocurrency';
+  // Additional Business Properties (only if not already set by options above)
+  if (!schema.priceRange) {
+    schema.priceRange = '$$';
+  }
 
   // Business Features
   schema.amenityFeature = [
