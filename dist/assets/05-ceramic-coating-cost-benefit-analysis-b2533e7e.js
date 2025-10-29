@@ -306,3 +306,4 @@ const e="Is Ceramic Coating Worth It? Complete Cost vs Benefits Analysis for 202
 
 <p><strong>Ready to protect your investment and start enjoying the benefits of ceramic coating?</strong> Contact us today for a personalized consultation and quote. We'll assess your specific vehicle, discuss your goals, and create a custom protection package that delivers maximum value for your situation. Your vehicle is worth protecting—let's make it happen!</p>
 </article>`,p={title:e,metaDescription:n,slug:i,excerpt:t,featuredImage:a,keywords:o,category:r,author:s,publishDate:l,content:c};export{s as author,r as category,c as content,p as default,t as excerpt,a as featuredImage,o as keywords,n as metaDescription,l as publishDate,i as slug,e as title};
+//# sourceMappingURL=05-ceramic-coating-cost-benefit-analysis-b2533e7e.js.map

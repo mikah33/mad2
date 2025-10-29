@@ -174,3 +174,4 @@ const e="Auto Ceramic Coating vs Paint Protection Film: Which is Better for Your
 
 <p><strong>Ready to protect your vehicle with ceramic coating, PPF, or both?</strong> Contact our expert team today to schedule a consultation. We'll assess your vehicle, discuss your protection goals, and recommend the perfect solution tailored to your needs and budget. Your car deserves the best protection available—let us make it happen!</p>
 </article>`,p={title:e,metaDescription:i,slug:n,excerpt:t,featuredImage:a,keywords:o,category:r,author:s,publishDate:l,content:c};export{s as author,r as category,c as content,p as default,t as excerpt,a as featuredImage,o as keywords,i as metaDescription,l as publishDate,n as slug,e as title};
+//# sourceMappingURL=02-ceramic-coating-vs-ppf-2ed99189.js.map

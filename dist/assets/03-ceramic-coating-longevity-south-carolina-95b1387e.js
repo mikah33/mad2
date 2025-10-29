@@ -170,3 +170,4 @@ const e="How Long Does Ceramic Coating Last in South Carolina? Complete Longevit
 
 <p><strong>Ready to invest in long-lasting ceramic coating protection?</strong> Contact us today to discuss which coating system is right for your vehicle and driving conditions. We'll create a customized protection plan that maximizes longevity while fitting your budget and maintenance preferences. Let's keep your vehicle looking showroom fresh for years to come!</p>
 </article>`,p={title:e,metaDescription:n,slug:a,excerpt:t,featuredImage:i,keywords:o,category:r,author:s,publishDate:c,content:l};export{s as author,r as category,l as content,p as default,t as excerpt,i as featuredImage,o as keywords,n as metaDescription,c as publishDate,a as slug,e as title};
+//# sourceMappingURL=03-ceramic-coating-longevity-south-carolina-95b1387e.js.map

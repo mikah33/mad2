@@ -259,3 +259,4 @@ const e="Professional Ceramic Coating: What to Expect During the Complete Proces
 
 <p><strong>Ready to experience the professional ceramic coating difference?</strong> Contact us today to schedule your consultation. We'll walk you through our process, inspect your vehicle, and create a customized protection plan that delivers the stunning results you deserve. Your vehicle is an investment worth protecting—let our professionals make it happen!</p>
 </article>`,p={title:e,metaDescription:n,slug:i,excerpt:t,featuredImage:a,keywords:o,category:r,author:s,publishDate:l,content:c};export{s as author,r as category,c as content,p as default,t as excerpt,a as featuredImage,o as keywords,n as metaDescription,l as publishDate,i as slug,e as title};
+//# sourceMappingURL=04-professional-ceramic-coating-what-to-expect-ec39fb72.js.map
