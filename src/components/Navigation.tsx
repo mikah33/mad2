@@ -29,14 +29,14 @@ const Navigation: React.FC = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <div className="flex items-center gap-3">
+          <a href="/" className="flex items-center gap-3 hover:opacity-80 transition">
             <img
               src="/logo.jpg"
               alt="M.A.Detailing Logo"
               className="h-10 w-10 sm:h-12 sm:w-12 rounded-full object-cover shadow-md"
             />
             <h1 className="text-lg sm:text-xl font-bold">Mikah's Auto Detailing</h1>
-          </div>
+          </a>
 
           {/* Desktop Navigation Links */}
           <div className="hidden lg:flex items-center space-x-3 xl:space-x-6">
