@@ -1,115 +1,14 @@
 import { MapPin, Phone, Clock, CheckCircle, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { SEOHead } from '../components/seo/SEOHead';
-import { generateEnhancedLocalBusinessSchema } from '../components/seo/EnhancedLocalBusinessSchema';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 
 export const LocationsPage = () => {
   const baseUrl = 'https://mikahsmobiledetailingsc.com';
 
-  // Generate comprehensive LocalBusiness schema with all service areas
-  const locationSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'LocalBusiness',
-    '@id': `${baseUrl}/#business`,
-    name: "Mikah's Auto Detailing",
-    image: `${baseUrl}/exterior1.jpg`,
-    description: 'Professional mobile auto detailing services serving Columbia, Lexington, Irmo, and surrounding South Carolina communities. We bring expert car detailing directly to your location.',
-    url: baseUrl,
-    telephone: '(803) 667-8731',
-    priceRange: '$$',
-    address: {
-      '@type': 'PostalAddress',
-      addressLocality: 'Columbia',
-      addressRegion: 'SC',
-      addressCountry: 'US',
-      postalCode: '29201'
-    },
-    geo: {
-      '@type': 'GeoCoordinates',
-      latitude: '34.0007',
-      longitude: '-81.0348'
-    },
-    openingHoursSpecification: [
-      {
-        '@type': 'OpeningHoursSpecification',
-        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
-        opens: '08:00',
-        closes: '18:00'
-      }
-    ],
-    areaServed: [
-      {
-        '@type': 'City',
-        name: 'Columbia',
-        sameAs: 'https://en.wikipedia.org/wiki/Columbia,_South_Carolina'
-      },
-      {
-        '@type': 'City',
-        name: 'Lexington',
-        sameAs: 'https://en.wikipedia.org/wiki/Lexington,_South_Carolina'
-      },
-      {
-        '@type': 'City',
-        name: 'Irmo',
-        sameAs: 'https://en.wikipedia.org/wiki/Irmo,_South_Carolina'
-      },
-      {
-        '@type': 'City',
-        name: 'West Columbia'
-      },
-      {
-        '@type': 'City',
-        name: 'Cayce'
-      },
-      {
-        '@type': 'City',
-        name: 'Forest Acres'
-      },
-      {
-        '@type': 'City',
-        name: 'Chapin'
-      }
-    ],
-    sameAs: [
-      'https://www.facebook.com/mikahsautodetailing',
-      'https://www.instagram.com/mikahsautodetailing'
-    ],
-    hasOfferCatalog: {
-      '@type': 'OfferCatalog',
-      name: 'Mobile Auto Detailing Services',
-      itemListElement: [
-        {
-          '@type': 'Offer',
-          itemOffered: {
-            '@type': 'Service',
-            name: 'Mobile Car Detailing',
-            description: 'Complete mobile detailing service at your location'
-          }
-        },
-        {
-          '@type': 'Offer',
-          itemOffered: {
-            '@type': 'Service',
-            name: 'Ceramic Coating',
-            description: 'Professional ceramic coating application'
-          }
-        },
-        {
-          '@type': 'Offer',
-          itemOffered: {
-            '@type': 'Service',
-            name: 'Interior Detailing',
-            description: 'Deep interior cleaning and restoration'
-          }
-        }
-      ]
-    }
-  };
-
-  const enhancedLocalBusinessSchema = generateEnhancedLocalBusinessSchema();
-  const schemas = [locationSchema, enhancedLocalBusinessSchema];
+  // NOTE: Enhanced LocalBusiness schema is pre-rendered in static HTML via generate-all-pages-html.ts
+  // DO NOT add schemas here to avoid duplication in production builds
 
   const serviceAreas = [
     {
@@ -193,7 +92,6 @@ export const LocationsPage = () => {
         description="Mobile auto detailing services available throughout Columbia, Lexington, Irmo, West Columbia, Cayce, and surrounding South Carolina communities. We come to you!"
         keywords="mobile detailing columbia sc, auto detailing lexington sc, car detailing irmo, mobile car wash columbia, detailing near me"
         canonical={`${baseUrl}/locations`}
-        schema={schemas}
       />
 
       <Navigation />
