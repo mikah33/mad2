@@ -1,9 +1,9 @@
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
 import { Truck, Phone, ChevronRight, CheckCircle, MapPin, Clock } from 'lucide-react';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 import Chatbot from '../components/Chatbot';
+import { SEOHead } from '../components/seo/SEOHead';
 import { generateProductSchema } from '../components/seo/StructuredData';
 import { generateEnhancedLocalBusinessSchema } from '../components/seo/EnhancedLocalBusinessSchema';
 
@@ -34,15 +34,15 @@ const MobileDetailingPage: React.FC = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Mobile Auto Detailing Columbia SC | Car Detailing Near Me | We Come To You</title>
-        <meta name="description" content="Mobile auto detailing in Columbia SC. We come to your location with everything needed. Professional car detailing at your home or office in Lexington, Irmo, Cayce. Book now!" />
-        <meta name="keywords" content="mobile auto detailing Columbia SC, mobile car wash, car detailing near me, mobile detailing Lexington SC, on-site auto detailing, mobile car detailing service, we come to you, at-home car detailing, office car detailing" />
-        <link rel="canonical" content="https://mikahsautodetailing.com/services/mobile-detailing" />
-        <script type="application/ld+json">
-          {JSON.stringify(schemas)}
-        </script>
-      </Helmet>
+      <SEOHead
+        title="Mobile Auto Detailing Columbia SC | Car Detailing Near Me | We Come To You"
+        description="Mobile auto detailing in Columbia SC. We come to your location with everything needed. Professional car detailing at your home or office in Lexington, Irmo, Cayce. Book now!"
+        keywords="mobile auto detailing Columbia SC, mobile car wash, car detailing near me, mobile detailing Lexington SC, on-site auto detailing, mobile car detailing service, we come to you, at-home car detailing, office car detailing"
+        canonical="https://mikahsmobiledetailingsc.com/services/mobile-detailing"
+        ogImage="https://mikahsmobiledetailingsc.com/exterior3.jpg"
+        ogImageAlt="Mobile auto detailing Columbia SC - we come to your location"
+        schema={schemas}
+      />
 
       <div className="min-h-screen bg-white">
         <Navigation />

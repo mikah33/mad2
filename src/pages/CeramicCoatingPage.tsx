@@ -1,9 +1,9 @@
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
 import { Shield, CheckCircle, Clock, DollarSign, Phone, ChevronRight, Award, Droplets, Sun } from 'lucide-react';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 import Chatbot from '../components/Chatbot';
+import { SEOHead } from '../components/seo/SEOHead';
 import { generateProductSchema } from '../components/seo/StructuredData';
 import { generateEnhancedLocalBusinessSchema } from '../components/seo/EnhancedLocalBusinessSchema';
 
@@ -63,21 +63,15 @@ const CeramicCoatingPage: React.FC = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Ceramic Coating Columbia SC | Paint Protection Near Me | Ceramic Pro Installer</title>
-        <meta name="description" content="Professional ceramic coating in Columbia SC. Multi-year paint protection with 2-7 year warranties. Authorized Ceramic Pro installer. Serving Lexington, Irmo, Cayce. Call today!" />
-        <meta name="keywords" content="ceramic coating Columbia SC, ceramic coating near me, paint protection Columbia, Ceramic Pro Columbia, ceramic coating Lexington SC, car ceramic coating, paint sealant, hydrophobic coating, nano coating, ceramic coating installer, long-term paint protection, ceramic paint protection" />
-
-        <meta property="og:title" content="Ceramic Coating Columbia SC | Professional Paint Protection" />
-        <meta property="og:description" content="Professional ceramic coating installation. Multi-year paint protection with hydrophobic properties. Authorized Ceramic Pro installer." />
-        <meta property="og:url" content="https://mikahsautodetailing.com/services/ceramic-coating" />
-
-        <link rel="canonical" content="https://mikahsautodetailing.com/services/ceramic-coating" />
-
-        <script type="application/ld+json">
-          {JSON.stringify(schemas)}
-        </script>
-      </Helmet>
+      <SEOHead
+        title="Ceramic Coating Columbia SC | Paint Protection Near Me | Ceramic Pro Installer"
+        description="Professional ceramic coating in Columbia SC. Multi-year paint protection with 2-7 year warranties. Authorized Ceramic Pro installer. Serving Lexington, Irmo, Cayce. Call today!"
+        keywords="ceramic coating Columbia SC, ceramic coating near me, paint protection Columbia, Ceramic Pro Columbia, ceramic coating Lexington SC, car ceramic coating, paint sealant, hydrophobic coating, nano coating, ceramic coating installer, long-term paint protection, ceramic paint protection"
+        canonical="https://mikahsmobiledetailingsc.com/services/ceramic-coating"
+        ogImage="https://mikahsmobiledetailingsc.com/exterior3.jpg"
+        ogImageAlt="Professional ceramic coating application - Mikah's Auto Detailing Columbia SC"
+        schema={schemas}
+      />
 
       <div className="min-h-screen bg-white">
         <Navigation />

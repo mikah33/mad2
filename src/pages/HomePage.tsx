@@ -69,9 +69,9 @@ export const HomePage = () => {
   return (
     <>
       <SEOHead
-        title="Best Car Detailing in Columbia SC | Mikah's Mobile Auto Detailing"
-        description="Columbia SC's best mobile auto detailing service. Professional ceramic coating, paint correction, interior/exterior detailing. IDA certified, fully insured. We come to you! Book your free quote today."
-        keywords="best car detailing columbia sc, auto detailing Columbia SC, mobile detailing Lexington SC, ceramic coating, paint correction, car detailing near me, interior detailing, exterior detailing, mobile car wash Columbia"
+        title="Mobile Auto Detailing Columbia SC | Best Car Detailing Near Me"
+        description="#1 mobile auto detailing in Columbia SC. Professional mobile car detailing service - we come to you! Interior/exterior detailing, ceramic coating, paint correction. Get a free quote today!"
+        keywords="mobile auto detailing, mobile auto detailing columbia sc, mobile car detailing columbia sc, car detailing near me, auto detailing columbia sc, mobile automotive detailing, best car detailing columbia sc, interior car detailing, exterior detailing, ceramic coating columbia sc"
         canonical="https://mikahsmobiledetailingsc.com"
         schema={schemas}
       />

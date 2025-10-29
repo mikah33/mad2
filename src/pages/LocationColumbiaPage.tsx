@@ -154,9 +154,9 @@ export const LocationColumbiaPage = () => {
   return (
     <>
       <SEOHead
-        title="Mobile Detailing Columbia SC | Best Car Detailing Prices & Reviews"
-        description="Best mobile detailing Columbia SC. Professional car detailing at your location. $129+ Interior/exterior detailing, ceramic coating. 5.0★ 19 reviews. Serving Lexington, Two Notch, West Columbia. Free quotes!"
-        keywords={allKeywords.join(', ')}
+        title="Columbia Detailing | Professional Auto Detail Columbia SC | 5.0★ Rated"
+        description="Columbia detailing & auto detail services. Professional mobile car detailing at your Columbia location. Interior/exterior, ceramic coating, paint correction. 5.0★ 19 reviews. Columbia auto detail experts!"
+        keywords="columbia detailing, columbia auto detail, auto detail columbia, columbia mobile detailing, detailing columbia sc, car detailing columbia sc, mobile auto detailing columbia sc, professional car detailing columbia, best columbia detailing"
         canonical="https://mikahsmobiledetailingsc.com/locations/columbia-sc"
         schema={schemas}
       />
@@ -201,14 +201,14 @@ export const LocationColumbiaPage = () => {
             </div>
 
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 leading-tight">
-              Best Mobile Car Detailing
+              Columbia Detailing | Auto Detail
               <br />
               <span className="text-primary-300">Columbia, SC</span>
             </h1>
 
             <p className="text-base sm:text-lg md:text-xl mb-6 md:mb-8 max-w-3xl mx-auto text-gray-100 px-4">
-              Professional mobile detailing at your Columbia location. Interior, exterior,
-              ceramic coating & more. 5.0★ rated with 19 reviews. We come to you!
+              Columbia's premier auto detailing service. Professional columbia detailing for interior, exterior,
+              ceramic coating & more. 5.0★ rated columbia mobile detailing - we come to you!
             </p>
 
             <p className="text-lg sm:text-xl md:text-2xl font-semibold mb-6 md:mb-8 text-primary-300">
@@ -254,10 +254,10 @@ export const LocationColumbiaPage = () => {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 max-w-6xl">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
-              Mobile Detailing Services & Prices - Columbia SC
+              Columbia Auto Detail Services & Pricing
             </h2>
             <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
-              Professional car detailing at your Columbia, Lexington, or Irmo location. All prices include mobile service.
+              Professional Columbia detailing at your location. Expert auto detail columbia services for all vehicles. Mobile service included in all pricing.
             </p>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">

@@ -20,6 +20,8 @@ import LocationColumbiaPage from './pages/LocationColumbiaPage';
 import LocationLexingtonPage from './pages/LocationLexingtonPage';
 import LocationIrmoPage from './pages/LocationIrmoPage';
 import LocationCayecPage from './pages/LocationCayecPage';
+import LocationWestColumbiaPage from './pages/LocationWestColumbiaPage';
+import PricingPage from './pages/PricingPage';
 
 export const router = createBrowserRouter([
   {
@@ -93,6 +95,14 @@ export const router = createBrowserRouter([
   {
     path: '/locations/cayce-sc',
     element: <LocationCayecPage />,
+  },
+  {
+    path: '/locations/west-columbia',
+    element: <LocationWestColumbiaPage />,
+  },
+  {
+    path: '/pricing',
+    element: <PricingPage />,
   },
   {
     path: '/resources',

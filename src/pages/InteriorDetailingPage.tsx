@@ -1,9 +1,9 @@
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
 import { Star, CheckCircle, Clock, DollarSign, Phone, ChevronRight } from 'lucide-react';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 import Chatbot from '../components/Chatbot';
+import { SEOHead } from '../components/seo/SEOHead';
 import { generateProductSchema } from '../components/seo/StructuredData';
 import { generateEnhancedLocalBusinessSchema } from '../components/seo/EnhancedLocalBusinessSchema';
 
@@ -159,28 +159,15 @@ const InteriorDetailingPage: React.FC = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Interior Car Detailing Columbia SC | Mobile Auto Detailing Services</title>
-        <meta name="description" content="Professional interior car detailing in Columbia SC. Deep cleaning, stain removal, odor elimination, leather conditioning. Mobile service to your location. Book now!" />
-        <meta name="keywords" content="interior car detailing, car interior cleaning Columbia SC, interior detailing near me, leather conditioning, stain removal, odor elimination, pet hair removal, auto interior detailing Lexington SC, mobile car detailing, vehicle interior cleaning, car upholstery cleaning, dashboard cleaning, carpet cleaning Columbia" />
-
-        <meta property="og:title" content="Interior Car Detailing Columbia SC | Mobile Auto Detailing" />
-        <meta property="og:description" content="Professional interior car detailing in Columbia SC. Deep cleaning, stain removal, odor elimination, leather conditioning. Mobile service to your location." />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://mikahsautodetailing.com/services/interior-detailing" />
-        <meta property="og:image" content="https://mikahsautodetailing.com/interior1.jpg" />
-
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Interior Car Detailing Columbia SC" />
-        <meta name="twitter:description" content="Professional interior car detailing in Columbia SC. Deep cleaning, stain removal, odor elimination." />
-        <meta name="twitter:image" content="https://mikahsautodetailing.com/interior1.jpg" />
-
-        <link rel="canonical" content="https://mikahsautodetailing.com/services/interior-detailing" />
-
-        <script type="application/ld+json">
-          {JSON.stringify(schemas)}
-        </script>
-      </Helmet>
+      <SEOHead
+        title="Interior Car Detailing Columbia SC | Mobile Auto Detailing Services"
+        description="Professional interior car detailing in Columbia SC. Deep cleaning, stain removal, odor elimination, leather conditioning. Mobile service to your location. Book now!"
+        keywords="interior car detailing, car interior cleaning Columbia SC, interior detailing near me, leather conditioning, stain removal, odor elimination, pet hair removal, auto interior detailing Lexington SC, mobile car detailing, vehicle interior cleaning, car upholstery cleaning, dashboard cleaning, carpet cleaning Columbia"
+        canonical="https://mikahsmobiledetailingsc.com/services/interior-detailing"
+        ogImage="https://mikahsmobiledetailingsc.com/interior1.jpg"
+        ogImageAlt="Professional interior car detailing Columbia SC"
+        schema={schemas}
+      />
 
       <div className="min-h-screen bg-white">
         <Navigation />

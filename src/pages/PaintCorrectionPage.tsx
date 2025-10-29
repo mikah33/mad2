@@ -1,9 +1,9 @@
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
 import { Wrench, CheckCircle, Phone, ChevronRight } from 'lucide-react';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 import Chatbot from '../components/Chatbot';
+import { SEOHead } from '../components/seo/SEOHead';
 import { generateProductSchema } from '../components/seo/StructuredData';
 import { generateEnhancedLocalBusinessSchema } from '../components/seo/EnhancedLocalBusinessSchema';
 
@@ -34,15 +34,15 @@ const PaintCorrectionPage: React.FC = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Paint Correction Columbia SC | Swirl Mark Removal | Auto Detailing Near Me</title>
-        <meta name="description" content="Professional paint correction in Columbia SC. Remove swirl marks, scratches, oxidation. Expert polishing and paint restoration. Serving Lexington, Irmo, Cayce. Book now!" />
-        <meta name="keywords" content="paint correction Columbia SC, swirl removal, scratch removal, paint polishing, paint restoration, auto detailing Columbia, car paint correction Lexington SC, oxidation removal, paint correction near me" />
-        <link rel="canonical" content="https://mikahsautodetailing.com/services/paint-correction" />
-        <script type="application/ld+json">
-          {JSON.stringify(schemas)}
-        </script>
-      </Helmet>
+      <SEOHead
+        title="Paint Correction Columbia SC | Swirl Mark Removal | Auto Detailing Near Me"
+        description="Professional paint correction in Columbia SC. Remove swirl marks, scratches, oxidation. Expert polishing and paint restoration. Serving Lexington, Irmo, Cayce. Book now!"
+        keywords="paint correction Columbia SC, swirl removal, scratch removal, paint polishing, paint restoration, auto detailing Columbia, car paint correction Lexington SC, oxidation removal, paint correction near me"
+        canonical="https://mikahsmobiledetailingsc.com/services/paint-correction"
+        ogImage="https://mikahsmobiledetailingsc.com/exterior4.jpg"
+        ogImageAlt="Professional paint correction Columbia SC - swirl mark and scratch removal"
+        schema={schemas}
+      />
 
       <div className="min-h-screen bg-white">
         <Navigation />

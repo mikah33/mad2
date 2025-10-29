@@ -1,9 +1,9 @@
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
 import { Star, Phone, ChevronRight, CheckCircle } from 'lucide-react';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 import Chatbot from '../components/Chatbot';
+import { SEOHead } from '../components/seo/SEOHead';
 import { generateProductSchema } from '../components/seo/StructuredData';
 import { generateEnhancedLocalBusinessSchema } from '../components/seo/EnhancedLocalBusinessSchema';
 
@@ -56,15 +56,15 @@ const FullDetailPage: React.FC = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Full Car Detailing Columbia SC | Complete Auto Detailing Package | Mobile Service</title>
-        <meta name="description" content="Complete full car detailing in Columbia SC. Interior + exterior detailing package. Professional cleaning, protection, and restoration. Mobile service to Lexington, Irmo, Cayce. Book now!" />
-        <meta name="keywords" content="full car detailing, complete auto detailing Columbia SC, interior exterior detailing, full detail package, car detailing near me, mobile auto detailing Lexington SC, vehicle detailing services, comprehensive car cleaning" />
-        <link rel="canonical" content="https://mikahsautodetailing.com/services/full-detail" />
-        <script type="application/ld+json">
-          {JSON.stringify(schemas)}
-        </script>
-      </Helmet>
+      <SEOHead
+        title="Full Car Detailing Columbia SC | Complete Auto Detailing Package | Mobile Service"
+        description="Complete full car detailing in Columbia SC. Interior + exterior detailing package. Professional cleaning, protection, and restoration. Mobile service to Lexington, Irmo, Cayce. Book now!"
+        keywords="full car detailing, complete auto detailing Columbia SC, interior exterior detailing, full detail package, car detailing near me, mobile auto detailing Lexington SC, vehicle detailing services, comprehensive car cleaning"
+        canonical="https://mikahsmobiledetailingsc.com/services/full-detail"
+        ogImage="https://mikahsmobiledetailingsc.com/exterior1.jpg"
+        ogImageAlt="Full car detailing Columbia SC - complete interior and exterior package"
+        schema={schemas}
+      />
 
       <div className="min-h-screen bg-white">
         <Navigation />

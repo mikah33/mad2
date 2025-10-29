@@ -800,6 +800,24 @@ export const blogPosts: BlogPost[] = [
     featured: true,
     readTime: 10,
     wordCount: 1800
+  },
+  {
+    id: 'blog-048',
+    title: 'Auto Detailing: Complete Industry Guide and Professional Standards',
+    slug: 'auto-detailing-complete-industry-guide',
+    excerpt: 'Comprehensive guide to auto detailing covering industry standards, techniques, products, and market trends. Learn from Columbia SC\'s leading detailing experts.',
+    metaDescription: 'Complete auto detailing industry guide. Professional standards, techniques, and products used by top detailers in Columbia SC. Expert insights from Mikah\'s Auto Detailing.',
+    author: 'Mikah Albertson',
+    authorJobTitle: 'Professional Auto Detailer',
+    datePublished: '2025-10-29',
+    dateModified: '2025-10-29',
+    category: 'guides',
+    tags: ['auto detailing', 'professional detailing', 'detailing standards', 'industry guide', 'detailing products', 'Columbia SC'],
+    image: `${baseUrl}/mclarens-og.jpg`,
+    imageAlt: 'Professional auto detailing standards and techniques demonstration',
+    featured: true,
+    readTime: 15,
+    wordCount: 3500
   }
 ];
 
