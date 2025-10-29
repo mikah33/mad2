@@ -5,11 +5,12 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build && npm run generate-blog-html",
+    "build": "tsc && vite build && npm run generate-blog-html && npm run generate-all-pages-html",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "generate-sitemap": "tsx scripts/generate-sitemap.ts",
     "generate-blog-html": "tsx scripts/generate-blog-html.ts",
+    "generate-all-pages-html": "tsx scripts/generate-all-pages-html.ts",
     "prebuild": "npm run generate-sitemap"
   },
   "dependencies": {
