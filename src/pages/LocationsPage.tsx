@@ -1,4 +1,5 @@
-import { MapPin, Phone, Clock, CheckCircle } from 'lucide-react';
+import { MapPin, Phone, Clock, CheckCircle, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { SEOHead } from '../components/seo/SEOHead';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
@@ -109,6 +110,7 @@ export const LocationsPage = () => {
   const serviceAreas = [
     {
       city: 'Columbia',
+      citySlug: 'columbia-sc',
       description: 'Premier mobile detailing services throughout Columbia SC',
       neighborhoods: [
         'Downtown Columbia',
@@ -130,6 +132,7 @@ export const LocationsPage = () => {
     },
     {
       city: 'Lexington',
+      citySlug: 'lexington-sc',
       description: 'Mobile auto detailing for Lexington and Lake Murray communities',
       neighborhoods: [
         'Lake Murray Shores',
@@ -147,6 +150,7 @@ export const LocationsPage = () => {
     },
     {
       city: 'Irmo & Chapin',
+      citySlug: 'irmo-sc',
       description: 'Expert detailing services for Lake Murray area and Northwest Columbia',
       neighborhoods: [
         'Harbison',
@@ -161,16 +165,18 @@ export const LocationsPage = () => {
       landmarks: ['Harbison State Forest', 'Lake Murray Boulevard', 'Columbiana Centre']
     },
     {
-      city: 'West Columbia & Cayce',
-      description: 'Mobile detailing for West Columbia, Cayce, and Airport area',
+      city: 'Cayce',
+      citySlug: 'cayce-sc',
+      description: 'Mobile detailing for Cayce and Airport area',
       neighborhoods: [
-        'West Columbia',
         'Cayce',
         'Springdale',
         'Airport Area',
         'Sunset',
         'Congaree Vista',
-        'New Brookland'
+        'New Brookland',
+        'Guignard Park',
+        'Knox Abbott Drive'
       ],
       landmarks: ['Riverbanks Zoo', 'Columbia Metropolitan Airport', 'West Columbia Riverwalk']
     }
@@ -259,14 +265,18 @@ export const LocationsPage = () => {
 
             <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
               {serviceAreas.map((area, index) => (
-                <div
+                <Link
                   key={index}
-                  className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden"
+                  to={`/locations/${area.citySlug}`}
+                  className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group"
                 >
-                  <div className="bg-gradient-to-r from-primary-700 to-primary-600 text-white p-6">
-                    <div className="flex items-center gap-3 mb-2">
-                      <MapPin className="w-6 h-6" />
-                      <h3 className="text-2xl font-bold">{area.city}</h3>
+                  <div className="bg-gradient-to-r from-primary-700 to-primary-600 text-white p-6 group-hover:from-primary-600 group-hover:to-primary-500 transition-all">
+                    <div className="flex items-center justify-between mb-2">
+                      <div className="flex items-center gap-3">
+                        <MapPin className="w-6 h-6" />
+                        <h3 className="text-2xl font-bold">{area.city}</h3>
+                      </div>
+                      <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
                     </div>
                     <p className="text-gray-100">{area.description}</p>
                   </div>
@@ -304,7 +314,7 @@ export const LocationsPage = () => {
                       </div>
                     </div>
                   </div>
-                </div>
+                </Link>
               ))}
             </div>
           </div>

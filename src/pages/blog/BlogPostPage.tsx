@@ -76,7 +76,7 @@ export const BlogPostPage = () => {
     <>
       <SEOHead
         title={post.title}
-        description={post.excerpt}
+        description={post.metaDescription || post.excerpt}
         keywords={post.tags.join(', ')}
         canonical={postUrl}
         ogType="article"
@@ -85,6 +85,7 @@ export const BlogPostPage = () => {
         ogImageWidth={1200}
         ogImageHeight={630}
         schema={schemas}
+        author={post.author}
       />
 
       <Navigation />

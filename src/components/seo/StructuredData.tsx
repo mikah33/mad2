@@ -189,32 +189,69 @@ export const generateLocalBusinessSchema = (
   return baseSchema;
 };
 
-export const generateServiceSchema = (service: ServiceInfo, business: BusinessInfo) => ({
-  '@context': 'https://schema.org',
-  '@type': 'Service',
-  serviceType: service.name,
-  description: service.description,
-  provider: {
-    '@type': 'LocalBusiness',
-    name: business.name,
-    telephone: business.phone,
-    address: {
-      '@type': 'PostalAddress',
-      addressLocality: business.address.city,
-      addressRegion: business.address.state
-    }
-  },
-  areaServed: {
-    '@type': 'City',
-    name: business.address.city
-  },
-  offers: service.price ? {
-    '@type': 'Offer',
-    price: service.price,
-    priceCurrency: 'USD'
-  } : undefined,
-  url: service.url
-});
+export const generateServiceSchema = (
+  service: ServiceInfo,
+  business: BusinessInfo,
+  aggregateRating?: AggregateRatingInfo,
+  reviews?: ReviewInfo[]
+) => {
+  const baseSchema: any = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    serviceType: service.name,
+    description: service.description,
+    provider: {
+      '@type': 'LocalBusiness',
+      name: business.name,
+      telephone: business.phone,
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: business.address.city,
+        addressRegion: business.address.state
+      }
+    },
+    areaServed: {
+      '@type': 'City',
+      name: business.address.city
+    },
+    offers: service.price ? {
+      '@type': 'Offer',
+      price: service.price,
+      priceCurrency: 'USD'
+    } : undefined,
+    url: service.url
+  };
+
+  if (aggregateRating) {
+    baseSchema.aggregateRating = {
+      '@type': 'AggregateRating',
+      ratingValue: aggregateRating.ratingValue.toFixed(1),
+      reviewCount: aggregateRating.reviewCount.toString(),
+      bestRating: aggregateRating.bestRating.toString(),
+      worstRating: aggregateRating.worstRating.toString()
+    };
+  }
+
+  if (reviews && reviews.length > 0) {
+    baseSchema.review = reviews.map(review => ({
+      '@type': 'Review',
+      author: {
+        '@type': 'Person',
+        name: review.author
+      },
+      reviewRating: {
+        '@type': 'Rating',
+        ratingValue: review.rating.toString(),
+        bestRating: '5',
+        worstRating: '1'
+      },
+      reviewBody: review.reviewText,
+      datePublished: review.datePublished
+    }));
+  }
+
+  return baseSchema;
+};
 
 export const generateFAQSchema = (faqs: FAQItem[]) => ({
   '@context': 'https://schema.org',
@@ -265,4 +302,83 @@ export const generateBreadcrumbSchema = (breadcrumbs: Array<{ name: string; url:
     name: crumb.name,
     item: crumb.url
   }))
+});
+
+export const generateHowToSchema = (howTo: {
+  name: string;
+  description: string;
+  totalTime?: string;
+  steps: Array<{ name: string; text: string; image?: string }>;
+  image?: string;
+}) => ({
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: howTo.name,
+  description: howTo.description,
+  totalTime: howTo.totalTime,
+  image: howTo.image,
+  step: howTo.steps.map((step, index) => ({
+    '@type': 'HowToStep',
+    position: index + 1,
+    name: step.name,
+    text: step.text,
+    image: step.image
+  }))
+});
+
+export const generateOrganizationSchema = (business: BusinessInfo) => ({
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  '@id': 'https://mikahsmobiledetailingsc.com/#organization',
+  name: business.name,
+  url: 'https://mikahsmobiledetailingsc.com',
+  logo: {
+    '@type': 'ImageObject',
+    url: 'https://mikahsmobiledetailingsc.com/logo.png',
+    width: 512,
+    height: 512
+  },
+  image: 'https://mikahsmobiledetailingsc.com/logo.png',
+  description: business.description,
+  telephone: business.phone,
+  email: business.email,
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: business.address.street,
+    addressLocality: business.address.city,
+    addressRegion: business.address.state,
+    postalCode: business.address.zip,
+    addressCountry: 'US'
+  },
+  sameAs: [
+    'https://www.facebook.com/mikahsautodetailing',
+    'https://www.instagram.com/mikahsautodetailing',
+    'https://www.google.com/maps/place/Mikah+s+Auto+Detailing'
+  ],
+  contactPoint: {
+    '@type': 'ContactPoint',
+    telephone: business.phone,
+    contactType: 'Customer Service',
+    areaServed: 'US-SC',
+    availableLanguage: 'English'
+  }
+});
+
+export const generateVideoSchema = (video: {
+  name: string;
+  description: string;
+  thumbnailUrl: string;
+  uploadDate: string;
+  duration: string;
+  contentUrl: string;
+}) => ({
+  '@context': 'https://schema.org',
+  '@type': 'VideoObject',
+  name: video.name,
+  description: video.description,
+  thumbnailUrl: video.thumbnailUrl,
+  uploadDate: video.uploadDate,
+  duration: video.duration,
+  contentUrl: video.contentUrl,
+  embedUrl: video.contentUrl
 });

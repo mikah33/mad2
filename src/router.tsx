@@ -16,6 +16,10 @@ import { PrivacyPolicyPage } from './pages/PrivacyPolicyPage';
 import { TermsOfServicePage } from './pages/TermsOfServicePage';
 import { LocationsPage } from './pages/LocationsPage';
 import { ResourcesPage } from './pages/ResourcesPage';
+import LocationColumbiaPage from './pages/LocationColumbiaPage';
+import LocationLexingtonPage from './pages/LocationLexingtonPage';
+import LocationIrmoPage from './pages/LocationIrmoPage';
+import LocationCayecPage from './pages/LocationCayecPage';
 
 export const router = createBrowserRouter([
   {
@@ -73,6 +77,22 @@ export const router = createBrowserRouter([
   {
     path: '/locations',
     element: <LocationsPage />,
+  },
+  {
+    path: '/locations/columbia-sc',
+    element: <LocationColumbiaPage />,
+  },
+  {
+    path: '/locations/lexington-sc',
+    element: <LocationLexingtonPage />,
+  },
+  {
+    path: '/locations/irmo-sc',
+    element: <LocationIrmoPage />,
+  },
+  {
+    path: '/locations/cayce-sc',
+    element: <LocationCayecPage />,
   },
   {
     path: '/resources',

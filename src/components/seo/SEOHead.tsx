@@ -17,6 +17,11 @@ interface SEOHeadProps {
   twitterImageAlt?: string;
   noindex?: boolean;
   schema?: object | object[];
+  ogVideo?: string;
+  ogVideoType?: string;
+  ogVideoWidth?: number;
+  ogVideoHeight?: number;
+  author?: string;
 }
 
 export const SEOHead: React.FC<SEOHeadProps> = ({
@@ -34,7 +39,12 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
   twitterImage,
   twitterImageAlt,
   noindex = false,
-  schema
+  schema,
+  ogVideo,
+  ogVideoType,
+  ogVideoWidth,
+  ogVideoHeight,
+  author
 }) => {
   const fullTitle = `${title} | Mikah's Auto Detailing`;
   const currentUrl = ogUrl || (typeof window !== 'undefined' ? window.location.href : '');
@@ -82,6 +92,19 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
       {/* Additional Image Meta */}
       <meta name="image" content={finalOgImage} />
       <meta itemProp="image" content={finalOgImage} />
+
+      {/* Video Meta Tags */}
+      {ogVideo && (
+        <>
+          <meta property="og:video" content={ogVideo} />
+          {ogVideoType && <meta property="og:video:type" content={ogVideoType} />}
+          {ogVideoWidth && <meta property="og:video:width" content={ogVideoWidth.toString()} />}
+          {ogVideoHeight && <meta property="og:video:height" content={ogVideoHeight.toString()} />}
+        </>
+      )}
+
+      {/* Author */}
+      {author && <meta name="author" content={author} />}
 
       {/* Schema.org structured data */}
       {schema && (

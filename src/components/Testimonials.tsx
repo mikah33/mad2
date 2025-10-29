@@ -61,10 +61,12 @@ const Testimonials: React.FC = () => {
               </button>
             </a>
             <a
-              href="#reviews"
+              href="https://g.page/r/CdSqpNXvv_3aEBM/review"
+              target="_blank"
+              rel="noopener noreferrer"
               className="px-8 py-4 text-primary-700 font-semibold rounded-lg hover:text-primary-800 transition flex items-center"
             >
-              View more of our reviews →
+              View all 19 Google reviews →
             </a>
           </div>
         </div>

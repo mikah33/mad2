@@ -1,6 +1,8 @@
 import React from 'react';
 import { Sparkles, Star, Shield, Wrench, Zap, Anchor, RotateCw } from 'lucide-react';
 import { SEOHead } from '../components/seo/SEOHead';
+import { generateFAQSchema } from '../components/seo/StructuredData';
+import { faqs } from '../data/faqs-comprehensive';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 
@@ -15,6 +17,15 @@ interface Service {
 }
 
 export const ServicesPage = () => {
+  // Get service-specific FAQs
+  const serviceFAQs = [
+    faqs.find(f => f.id === 'pri-1'), // How much does car detailing cost
+    faqs.find(f => f.id === 'pri-3'), // What is most popular package
+    faqs.find(f => f.id === 'pri-6'), // Can I get just interior or exterior
+    faqs.find(f => f.id === 'gen-2'), // How long does detailing take
+    faqs.find(f => f.id === 'gen-6'), // Do you detail trucks and SUVs
+  ].filter(Boolean).map(f => ({ question: f!.question, answer: f!.answer }));
+
   const getServiceUrl = (title: string): string => {
     const urlMap: { [key: string]: string } = {
       'Basic Detail Package': '/services/full-detail',
@@ -127,6 +138,34 @@ export const ServicesPage = () => {
     }
   ];
 
+  // Generate service list schema
+  const serviceListSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "itemListElement": services.map((service, index) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "item": {
+        "@type": "Service",
+        "@id": `https://mikahsmobiledetailingsc.com${getServiceUrl(service.title)}`,
+        "name": service.title,
+        "description": service.description.join(' '),
+        "image": `https://mikahsmobiledetailingsc.com${service.image}`,
+        "provider": {
+          "@type": "LocalBusiness",
+          "name": "Mikah's Auto Detailing",
+          "telephone": "(803) 667-8731"
+        }
+      }
+    }))
+  };
+
+  // Generate FAQ schema
+  const faqSchema = generateFAQSchema(serviceFAQs);
+
+  // Combine schemas
+  const schemas = [serviceListSchema, faqSchema];
+
   return (
     <>
       <SEOHead
@@ -135,71 +174,8 @@ export const ServicesPage = () => {
         keywords="auto detailing services, mobile detailing Columbia SC, interior detailing, exterior detailing, ceramic coating, paint correction, car detailing services"
         canonical="https://mikahsmobiledetailingsc.com/services"
         ogType="website"
+        schema={schemas}
       />
-
-      <script type="application/ld+json">
-        {JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "ItemList",
-          "itemListElement": services.map((service, index) => ({
-            "@type": "ListItem",
-            "position": index + 1,
-            "item": {
-              "@type": "Service",
-              "@id": `https://mikahsmobiledetailingsc.com${getServiceUrl(service.title)}`,
-              "name": service.title,
-              "description": service.description.join(' '),
-              "image": {
-                "@type": "ImageObject",
-                "url": `https://mikahsmobiledetailingsc.com${service.image}`,
-                "name": service.imageAlt,
-                "description": service.imageAlt,
-                "contentUrl": `https://mikahsmobiledetailingsc.com${service.image}`,
-                "creator": {
-                  "@type": "Person",
-                  "name": "Mikah Albertson"
-                },
-                "copyrightHolder": {
-                  "@type": "Organization",
-                  "name": "Mikah's Auto Detailing"
-                },
-                "copyrightNotice": "© 2024 Mikah's Auto Detailing. All rights reserved.",
-                "creditText": "Photo by Mikah's Auto Detailing",
-                "acquireLicensePage": "https://mikahsmobiledetailingsc.com/contact",
-                "license": "https://creativecommons.org/licenses/by-nc-nd/4.0/"
-              },
-              "provider": {
-                "@type": "LocalBusiness",
-                "name": "Mikah's Auto Detailing",
-                "telephone": "(803) 667-8731",
-                "address": {
-                  "@type": "PostalAddress",
-                  "addressLocality": "Columbia",
-                  "addressRegion": "SC",
-                  "addressCountry": "US"
-                }
-              },
-              "areaServed": {
-                "@type": "City",
-                "name": "Columbia",
-                "address": {
-                  "@type": "PostalAddress",
-                  "addressRegion": "SC"
-                }
-              },
-              "offers": service.price !== 'Quote' ? {
-                "@type": "Offer",
-                "price": service.price.replace(/[^0-9]/g, ''),
-                "priceCurrency": "USD",
-                "availability": "https://schema.org/InStock"
-              } : {
-                "@type": "Offer",
-                "availability": "https://schema.org/InStock"
-              }
-            }
-          }))
-        })}
-      </script>
 
       <Navigation />
 
