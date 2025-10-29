@@ -43,12 +43,13 @@ export const generateBlogPostingSchema = (
       height: 630,
       caption: post.imageAlt || post.title
     },
-    datePublished: post.datePublished,
-    dateModified: post.dateModified || post.datePublished,
+    datePublished: post.datePublished.includes('T') ? post.datePublished : `${post.datePublished}T09:00:00-05:00`,
+    dateModified: (post.dateModified || post.datePublished).includes('T') ? (post.dateModified || post.datePublished) : `${post.dateModified || post.datePublished}T09:00:00-05:00`,
     ...(includeAuthor && {
       author: {
         '@type': 'Person',
         name: post.author,
+        url: `${baseUrl}/about`,
         ...(post.authorJobTitle && { jobTitle: post.authorJobTitle })
       }
     }),
@@ -91,11 +92,12 @@ export const generateArticleSchema = (post: BlogPost) => {
     headline: post.title,
     description: post.excerpt,
     image: imageUrl,
-    datePublished: post.datePublished,
-    dateModified: post.dateModified || post.datePublished,
+    datePublished: post.datePublished.includes('T') ? post.datePublished : `${post.datePublished}T09:00:00-05:00`,
+    dateModified: (post.dateModified || post.datePublished).includes('T') ? (post.dateModified || post.datePublished) : `${post.dateModified || post.datePublished}T09:00:00-05:00`,
     author: {
       '@type': 'Person',
       name: post.author,
+      url: `${baseUrl}/about`,
       jobTitle: post.authorJobTitle || 'Professional Auto Detailer'
     },
     publisher: {
@@ -146,11 +148,12 @@ export const generateBlogCollectionSchema = (posts: BlogPost[]) => {
       '@id': `${baseUrl}/blog/${post.slug}`,
       headline: post.title,
       description: post.excerpt,
-      datePublished: post.datePublished,
-      dateModified: post.dateModified || post.datePublished,
+      datePublished: post.datePublished.includes('T') ? post.datePublished : `${post.datePublished}T09:00:00-05:00`,
+      dateModified: (post.dateModified || post.datePublished).includes('T') ? (post.dateModified || post.datePublished) : `${post.dateModified || post.datePublished}T09:00:00-05:00`,
       author: {
         '@type': 'Person',
-        name: post.author
+        name: post.author,
+        url: `${baseUrl}/about`
       },
       url: `${baseUrl}/blog/${post.slug}`,
       image: post.image || `${baseUrl}/exterior1.jpg`
@@ -177,10 +180,11 @@ export const generateBlogItemListSchema = (posts: BlogPost[]) => {
         description: post.excerpt,
         url: `${baseUrl}/blog/${post.slug}`,
         image: post.image || `${baseUrl}/exterior1.jpg`,
-        datePublished: post.datePublished,
+        datePublished: post.datePublished.includes('T') ? post.datePublished : `${post.datePublished}T09:00:00-05:00`,
         author: {
           '@type': 'Person',
-          name: post.author
+          name: post.author,
+          url: `${baseUrl}/about`
         }
       }
     }))
