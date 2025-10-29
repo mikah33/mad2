@@ -1,5 +1,6 @@
 import { SEOHead } from '../components/seo/SEOHead';
-import { generateLocalBusinessSchema, generateFAQSchema } from '../components/seo/StructuredData';
+import { generateLocalBusinessSchema, generateFAQSchema, generateVideoSchema } from '../components/seo/StructuredData';
+import { generateGMBSchema } from '../components/seo/GMBSchema';
 import { businessInfo } from '../data/business';
 import { reviews, aggregateRating } from '../data/reviews';
 import { faqs } from '../data/faqs-comprehensive';
@@ -29,11 +30,24 @@ export const HomePage = () => {
     reviews
   );
 
+  // Generate GMB schema with all reviews
+  const gmbSchema = generateGMBSchema();
+
   // Generate FAQ schema for common questions
   const faqSchema = generateFAQSchema(homepageFAQs);
 
+  // Generate Video schema for hero video
+  const videoSchema = generateVideoSchema({
+    name: "Professional Mobile Auto Detailing in Columbia SC - Mikah's Auto Detailing",
+    description: "Watch our professional mobile auto detailing service in action. We bring expert ceramic coating, paint correction, and interior/exterior detailing directly to your location in Columbia, Lexington, Irmo, and surrounding South Carolina areas.",
+    thumbnailUrl: "https://mikahsmobiledetailingsc.com/exterior1.jpg",
+    uploadDate: "2024-10-01",
+    duration: "PT2M30S",
+    contentUrl: "https://mikahsmobiledetailingsc.com/hero-video.mp4"
+  });
+
   // Combine schemas
-  const schemas = [localBusinessSchema, faqSchema];
+  const schemas = [gmbSchema, localBusinessSchema, faqSchema, videoSchema];
 
   return (
     <>
