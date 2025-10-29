@@ -11,10 +11,6 @@ import Contact from './components/Contact'
 import LeadForm from './components/LeadForm'
 import Footer from './components/Footer'
 import Chatbot from './components/Chatbot'
-import { generateLocalBusinessSchema } from './components/seo/StructuredData'
-import { generateOrganizationSchema } from './components/seo/OrganizationSchema'
-import { businessInfo } from './data/business'
-import { reviews, aggregateRating } from './data/reviews'
 import { images } from './data/images'
 
 function App() {
@@ -29,28 +25,8 @@ function App() {
     }
   }
 
-  // Generate comprehensive schema with reviews
-  const localBusinessSchema = generateLocalBusinessSchema(
-    businessInfo,
-    aggregateRating,
-    reviews
-  )
-
-  // Generate organization schema
-  const organizationSchema = generateOrganizationSchema({
-    name: businessInfo.name,
-    legalName: businessInfo.legalName,
-    description: businessInfo.description,
-    url: 'https://mikahsmobiledetailingsc.com',
-    telephone: businessInfo.phone,
-    email: businessInfo.email,
-    address: businessInfo.address,
-    foundingDate: '2020',
-    socialMedia: businessInfo.socialMedia
-  })
-
-  // Combine schemas
-  const schemas = [localBusinessSchema, organizationSchema]
+  // NOTE: Enhanced LocalBusiness schema is pre-rendered in static HTML via generate-all-pages-html.ts
+  // DO NOT add schemas here to avoid duplication in production builds
 
   return (
     <>
@@ -79,10 +55,7 @@ function App() {
         <meta name="twitter:image" content={images.ogDefault.url} />
         <meta name="twitter:image:alt" content={images.ogDefault.alt} />
 
-        {/* Structured Data */}
-        <script type="application/ld+json">
-          {JSON.stringify(schemas)}
-        </script>
+        {/* Structured Data - Schema is in static HTML, no need to add here */}
       </Helmet>
 
       <div className="min-h-screen bg-white w-full overflow-x-hidden">
