@@ -195,6 +195,7 @@ const InteriorDetailingPage: React.FC = () => {
                   src="/interior1.jpg"
                   alt="Professional interior car detailing Columbia SC"
                   className="rounded-lg shadow-2xl"
+                  loading="lazy"
                 />
               <Chatbot />
       </div>
@@ -439,6 +440,7 @@ const InteriorDetailingPage: React.FC = () => {
                   src="/interior2.jpg"
                   alt="Car interior before detailing"
                   className="mt-6 rounded-lg shadow-lg w-full"
+                  loading="lazy"
                 />
               <Chatbot />
       </div>
@@ -478,6 +480,7 @@ const InteriorDetailingPage: React.FC = () => {
                   src="/interior1.jpg"
                   alt="Car interior after professional detailing"
                   className="mt-6 rounded-lg shadow-lg w-full"
+                  loading="lazy"
                 />
               <Chatbot />
       </div>

@@ -8,6 +8,7 @@ import { services } from '../data/services';
 import { aggregateRating, reviews } from '../data/reviews';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
+import { Breadcrumbs } from '../components/Breadcrumbs';
 
 export const LocationLexingtonPage = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -179,6 +180,18 @@ export const LocationLexingtonPage = () => {
       />
 
       <Navigation />
+
+      <div className="bg-gray-50">
+        <div className="container mx-auto px-4 max-w-7xl">
+          <Breadcrumbs
+            items={[
+              { label: 'Locations', path: '/locations' },
+              { label: 'Lexington SC', path: '/locations/lexington-sc' }
+            ]}
+          />
+        </div>
+      </div>
+
 
       <div className="min-h-screen bg-white">
         {/* Hero Video Section */}

@@ -34,6 +34,7 @@ const Navigation: React.FC = () => {
               src="/logo.jpg"
               alt="M.A.Detailing Logo"
               className="h-10 w-10 sm:h-12 sm:w-12 rounded-full object-cover shadow-md"
+              loading="eager"
             />
             <h1 className="text-lg sm:text-xl font-bold">Mikah's Auto Detailing</h1>
           </a>

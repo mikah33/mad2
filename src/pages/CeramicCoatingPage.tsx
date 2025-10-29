@@ -282,7 +282,7 @@ const CeramicCoatingPage: React.FC = () => {
                 </div>
               </div>
               <div>
-                <img src="/exterior3.jpg" alt="Ceramic coating application process" className="rounded-lg shadow-lg mb-4" />
+                <img src="/exterior3.jpg" alt="Ceramic coating application process" className="rounded-lg shadow-lg mb-4" loading="lazy" />
                 <div className="bg-white p-6 rounded-lg shadow-lg">
                   <h3 className="font-bold text-lg mb-3">What Makes Ceramic Coating Different?</h3>
                   <ul className="space-y-2 text-sm">

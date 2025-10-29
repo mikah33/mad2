@@ -41,7 +41,7 @@ const PaintCorrectionPage: React.FC = () => {
               <Chatbot />
       </div>
               <div className="hidden md:block">
-                <img src="/exterior4.jpg" alt="Paint correction Columbia SC" className="rounded-lg shadow-2xl" />
+                <img src="/exterior4.jpg" alt="Paint correction Columbia SC" className="rounded-lg shadow-2xl" loading="lazy" />
               <Chatbot />
       </div>
             <Chatbot />
@@ -76,7 +76,7 @@ const PaintCorrectionPage: React.FC = () => {
               <Chatbot />
       </div>
               <div>
-                <img src="/exterior5.jpg" alt="Paint correction results" className="rounded-lg shadow-lg mb-6" />
+                <img src="/exterior5.jpg" alt="Paint correction results" className="rounded-lg shadow-lg mb-6" loading="lazy" />
                 <div className="bg-white p-6 rounded-lg shadow-lg">
                   <h3 className="text-xl font-bold mb-4">Paint Correction Packages</h3>
                   <div className="space-y-3">

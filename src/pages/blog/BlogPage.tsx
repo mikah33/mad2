@@ -85,6 +85,7 @@ export const BlogPage = () => {
                           src={post.image}
                           alt={post.imageAlt || post.title}
                           className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                          loading="lazy"
                         />
                       </div>
                     )}
@@ -145,6 +146,7 @@ export const BlogPage = () => {
                         src={post.image}
                         alt={post.imageAlt || post.title}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                        loading="lazy"
                       />
                     </div>
                   )}

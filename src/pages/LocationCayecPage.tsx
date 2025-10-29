@@ -9,6 +9,7 @@ import { generateGMBSchema } from '../components/seo/GMBSchema';
 import { aggregateRating, reviews } from '../data/reviews';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
+import { Breadcrumbs } from '../components/Breadcrumbs';
 
 const LocationCayecPage = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -281,6 +282,18 @@ const LocationCayecPage = () => {
 
       <div className="min-h-screen bg-gray-50">
         <Navigation />
+
+      <div className="bg-gray-50">
+        <div className="container mx-auto px-4 max-w-7xl">
+          <Breadcrumbs
+            items={[
+              { label: 'Locations', path: '/locations' },
+              { label: 'Cayce SC', path: '/locations/cayce-sc' }
+            ]}
+          />
+        </div>
+      </div>
+
 
         {/* Hero Video Section - Full Screen */}
         <div className="relative text-white min-h-screen w-full overflow-hidden flex items-center">

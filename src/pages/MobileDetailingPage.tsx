@@ -41,7 +41,7 @@ const MobileDetailingPage: React.FC = () => {
               <Chatbot />
       </div>
               <div className="hidden md:block">
-                <img src="/exterior3.jpg" alt="Mobile auto detailing Columbia SC" className="rounded-lg shadow-2xl" />
+                <img src="/exterior3.jpg" alt="Mobile auto detailing Columbia SC" className="rounded-lg shadow-2xl" loading="lazy" />
               <Chatbot />
       </div>
             <Chatbot />

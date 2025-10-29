@@ -187,6 +187,7 @@ export const BlogPostPage = () => {
                   alt={post.imageAlt || post.title}
                   className="w-full h-auto"
                   itemProp="image"
+                  loading="eager"
                 />
               </div>
             )}
@@ -305,6 +306,7 @@ export const BlogPostPage = () => {
                             src={relatedPost.image}
                             alt={relatedPost.imageAlt || relatedPost.title}
                             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                            loading="lazy"
                           />
                         </div>
                       )}
