@@ -108,9 +108,19 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
 
       {/* Schema.org structured data */}
       {schema && (
-        <script type="application/ld+json">
-          {JSON.stringify(Array.isArray(schema) ? schema : [schema])}
-        </script>
+        <>
+          {Array.isArray(schema) ? (
+            schema.map((schemaItem, index) => (
+              <script key={`schema-${index}`} type="application/ld+json">
+                {JSON.stringify(schemaItem)}
+              </script>
+            ))
+          ) : (
+            <script type="application/ld+json">
+              {JSON.stringify(schema)}
+            </script>
+          )}
+        </>
       )}
     </Helmet>
   );
