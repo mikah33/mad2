@@ -6,6 +6,7 @@ import {
 import { SEOHead } from '../components/seo/SEOHead';
 import { generateLocalBusinessSchema, generateFAQSchema } from '../components/seo/StructuredData';
 import { generateGMBSchema } from '../components/seo/GMBSchema';
+import { generateEnhancedLocalBusinessSchema } from '../components/seo/EnhancedLocalBusinessSchema';
 import { aggregateRating, reviews } from '../data/reviews';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
@@ -268,7 +269,8 @@ const LocationCayecPage = () => {
     }
   }, aggregateRating, reviews);
   const faqSchema = generateFAQSchema(locationFAQs);
-  const schemas = [gmbSchema, localBusinessSchema, faqSchema];
+  const enhancedLocalBusinessSchema = generateEnhancedLocalBusinessSchema();
+  const schemas = [gmbSchema, localBusinessSchema, faqSchema, enhancedLocalBusinessSchema];
 
   return (
     <>

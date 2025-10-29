@@ -1,6 +1,7 @@
 import { MapPin, Phone, Clock, CheckCircle, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { SEOHead } from '../components/seo/SEOHead';
+import { generateEnhancedLocalBusinessSchema } from '../components/seo/EnhancedLocalBusinessSchema';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 
@@ -107,6 +108,9 @@ export const LocationsPage = () => {
     }
   };
 
+  const enhancedLocalBusinessSchema = generateEnhancedLocalBusinessSchema();
+  const schemas = [locationSchema, enhancedLocalBusinessSchema];
+
   const serviceAreas = [
     {
       city: 'Columbia',
@@ -189,7 +193,7 @@ export const LocationsPage = () => {
         description="Mobile auto detailing services available throughout Columbia, Lexington, Irmo, West Columbia, Cayce, and surrounding South Carolina communities. We come to you!"
         keywords="mobile detailing columbia sc, auto detailing lexington sc, car detailing irmo, mobile car wash columbia, detailing near me"
         canonical={`${baseUrl}/locations`}
-        schema={locationSchema}
+        schema={schemas}
       />
 
       <Navigation />

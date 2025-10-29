@@ -5,6 +5,7 @@ import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 import Chatbot from '../components/Chatbot';
 import { generateProductSchema } from '../components/seo/StructuredData';
+import { generateEnhancedLocalBusinessSchema } from '../components/seo/EnhancedLocalBusinessSchema';
 
 const MobileDetailingPage: React.FC = () => {
   const scrollToQuote = () => { window.location.href = '/#quote'; };
@@ -29,6 +30,8 @@ const MobileDetailingPage: React.FC = () => {
     category: "Auto Detailing Services"
   });
 
+  const schemas = [productSchema, generateEnhancedLocalBusinessSchema()];
+
   return (
     <>
       <Helmet>
@@ -37,7 +40,7 @@ const MobileDetailingPage: React.FC = () => {
         <meta name="keywords" content="mobile auto detailing Columbia SC, mobile car wash, car detailing near me, mobile detailing Lexington SC, on-site auto detailing, mobile car detailing service, we come to you, at-home car detailing, office car detailing" />
         <link rel="canonical" content="https://mikahsautodetailing.com/services/mobile-detailing" />
         <script type="application/ld+json">
-          {JSON.stringify(productSchema)}
+          {JSON.stringify(schemas)}
         </script>
       </Helmet>
 

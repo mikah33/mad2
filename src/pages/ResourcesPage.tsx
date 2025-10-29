@@ -2,6 +2,7 @@ import { ExternalLink, FileText, Video, Users, BookOpen, Share2 } from 'lucide-r
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 import { SEOHead } from '../components/seo/SEOHead';
+import { generateEnhancedLocalBusinessSchema } from '../components/seo/EnhancedLocalBusinessSchema';
 
 interface ResourceLink {
   title: string;
@@ -194,6 +195,9 @@ export const ResourcesPage = () => {
     }
   ];
 
+  // Generate enhanced comprehensive LocalBusiness schema
+  const enhancedBusinessSchema = generateEnhancedLocalBusinessSchema();
+
   return (
     <>
       <SEOHead
@@ -201,6 +205,7 @@ export const ResourcesPage = () => {
         description="Explore our comprehensive auto detailing guides, articles, and resources published across the web. Professional mobile car detailing education from Columbia SC's trusted experts."
         keywords="auto detailing resources, car detailing guides, mobile detailing articles, columbia sc auto detailing, detailing education"
         canonical="https://mikahsmobiledetailingsc.com/resources"
+        schema={enhancedBusinessSchema}
       />
 
       <Navigation />

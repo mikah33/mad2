@@ -1,12 +1,18 @@
 import React from 'react';
 import { SEOHead } from '../components/seo/SEOHead';
+import { generateEnhancedLocalBusinessSchema } from '../components/seo/EnhancedLocalBusinessSchema';
 import { FAQSection } from '../components/FAQSection';
 import { faqs, faqCategories, generateFAQSchema } from '../data/faqs-comprehensive';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 
 export const FAQPage = () => {
-  const schema = generateFAQSchema(faqs);
+  const faqSchema = generateFAQSchema(faqs);
+  // Generate enhanced comprehensive LocalBusiness schema
+  const enhancedBusinessSchema = generateEnhancedLocalBusinessSchema();
+
+  // Combine schemas
+  const schemas = [faqSchema, enhancedBusinessSchema];
 
   return (
     <>
@@ -15,7 +21,7 @@ export const FAQPage = () => {
         description="Get answers to your auto detailing questions. Learn about mobile detailing services, pricing, ceramic coating, interior/exterior cleaning in Columbia, Lexington & Irmo SC."
         keywords="auto detailing FAQ Columbia SC, mobile detailing questions, ceramic coating FAQ, interior detailing questions, exterior detailing FAQ, detailing pricing Columbia, car detailing services Lexington SC"
         canonical="https://mikahsautodetailing.com/faq"
-        schema={schema}
+        schema={schemas}
       />
 
       <Navigation />

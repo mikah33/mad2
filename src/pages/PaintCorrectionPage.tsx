@@ -5,6 +5,7 @@ import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 import Chatbot from '../components/Chatbot';
 import { generateProductSchema } from '../components/seo/StructuredData';
+import { generateEnhancedLocalBusinessSchema } from '../components/seo/EnhancedLocalBusinessSchema';
 
 const PaintCorrectionPage: React.FC = () => {
   const scrollToQuote = () => { window.location.href = '/#quote'; };
@@ -29,6 +30,8 @@ const PaintCorrectionPage: React.FC = () => {
     category: "Auto Detailing Services"
   });
 
+  const schemas = [productSchema, generateEnhancedLocalBusinessSchema()];
+
   return (
     <>
       <Helmet>
@@ -37,7 +40,7 @@ const PaintCorrectionPage: React.FC = () => {
         <meta name="keywords" content="paint correction Columbia SC, swirl removal, scratch removal, paint polishing, paint restoration, auto detailing Columbia, car paint correction Lexington SC, oxidation removal, paint correction near me" />
         <link rel="canonical" content="https://mikahsautodetailing.com/services/paint-correction" />
         <script type="application/ld+json">
-          {JSON.stringify(productSchema)}
+          {JSON.stringify(schemas)}
         </script>
       </Helmet>
 

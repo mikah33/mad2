@@ -1,5 +1,6 @@
 import { BlogPost } from '../../data/blog';
 import { generateHowToSchema } from './StructuredData';
+import { generateEnhancedLocalBusinessSchema } from './EnhancedLocalBusinessSchema';
 
 const baseUrl = 'https://mikahsmobiledetailingsc.com';
 
@@ -230,59 +231,10 @@ export const generateBlogWebPageSchema = (post: BlogPost) => {
 
 /**
  * Generate LocalBusiness schema for blog pages
+ * Now using the comprehensive enhanced schema
  */
 export const generateLocalBusinessSchema = () => {
-  return {
-    '@context': 'https://schema.org',
-    '@type': 'LocalBusiness',
-    '@id': `${baseUrl}/#business`,
-    name: "Mikah's Auto Detailing",
-    image: `${baseUrl}/exterior1.jpg`,
-    description: 'Professional mobile auto detailing services in Columbia, Lexington, and Irmo SC. Ceramic coating, paint correction, interior and exterior detailing.',
-    url: baseUrl,
-    telephone: '(803) 667-8731',
-    priceRange: '$$',
-    address: {
-      '@type': 'PostalAddress',
-      addressLocality: 'Columbia',
-      addressRegion: 'SC',
-      addressCountry: 'US'
-    },
-    geo: {
-      '@type': 'GeoCoordinates',
-      latitude: '34.0007',
-      longitude: '-81.0348'
-    },
-    openingHoursSpecification: [
-      {
-        '@type': 'OpeningHoursSpecification',
-        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
-        opens: '08:00',
-        closes: '18:00'
-      }
-    ],
-    areaServed: [
-      {
-        '@type': 'City',
-        name: 'Columbia',
-        sameAs: 'https://en.wikipedia.org/wiki/Columbia,_South_Carolina'
-      },
-      {
-        '@type': 'City',
-        name: 'Lexington',
-        sameAs: 'https://en.wikipedia.org/wiki/Lexington,_South_Carolina'
-      },
-      {
-        '@type': 'City',
-        name: 'Irmo',
-        sameAs: 'https://en.wikipedia.org/wiki/Irmo,_South_Carolina'
-      }
-    ],
-    sameAs: [
-      'https://www.facebook.com/mikahsautodetailing',
-      'https://www.instagram.com/mikahsautodetailing'
-    ]
-  };
+  return generateEnhancedLocalBusinessSchema();
 };
 
 /**
@@ -344,5 +296,6 @@ export default {
   generateBlogWebPageSchema,
   generateBlogFAQSchema,
   generateCompleteBlogPostSchema,
-  generateLocalBusinessSchema
+  generateLocalBusinessSchema,
+  generateEnhancedLocalBusinessSchema
 };

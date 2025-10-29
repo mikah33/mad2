@@ -5,6 +5,7 @@ import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 import Chatbot from '../components/Chatbot';
 import { generateProductSchema } from '../components/seo/StructuredData';
+import { generateEnhancedLocalBusinessSchema } from '../components/seo/EnhancedLocalBusinessSchema';
 
 const FullDetailPage: React.FC = () => {
   const scrollToQuote = () => { window.location.href = '/#quote'; };
@@ -51,6 +52,8 @@ const FullDetailPage: React.FC = () => {
     category: "Auto Detailing Package"
   });
 
+  const schemas = [basicPackageSchema, factoryResetSchema, generateEnhancedLocalBusinessSchema()];
+
   return (
     <>
       <Helmet>
@@ -59,7 +62,7 @@ const FullDetailPage: React.FC = () => {
         <meta name="keywords" content="full car detailing, complete auto detailing Columbia SC, interior exterior detailing, full detail package, car detailing near me, mobile auto detailing Lexington SC, vehicle detailing services, comprehensive car cleaning" />
         <link rel="canonical" content="https://mikahsautodetailing.com/services/full-detail" />
         <script type="application/ld+json">
-          {JSON.stringify([basicPackageSchema, factoryResetSchema])}
+          {JSON.stringify(schemas)}
         </script>
       </Helmet>
 

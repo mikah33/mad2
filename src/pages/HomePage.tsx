@@ -1,6 +1,7 @@
 import { SEOHead } from '../components/seo/SEOHead';
 import { generateLocalBusinessSchema, generateFAQSchema, generateVideoSchema, generateItemListSchema } from '../components/seo/StructuredData';
 import { generateGMBSchema } from '../components/seo/GMBSchema';
+import { generateEnhancedLocalBusinessSchema } from '../components/seo/EnhancedLocalBusinessSchema';
 import { businessInfo } from '../data/business';
 import { reviews, aggregateRating } from '../data/reviews';
 import { faqs } from '../data/faqs-comprehensive';
@@ -59,8 +60,11 @@ export const HomePage = () => {
     }))
   );
 
+  // Generate enhanced comprehensive LocalBusiness schema
+  const enhancedBusinessSchema = generateEnhancedLocalBusinessSchema();
+
   // Combine schemas
-  const schemas = [gmbSchema, localBusinessSchema, faqSchema, videoSchema, itemListSchema];
+  const schemas = [gmbSchema, localBusinessSchema, enhancedBusinessSchema, faqSchema, videoSchema, itemListSchema];
 
   return (
     <>

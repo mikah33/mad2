@@ -2,6 +2,7 @@ import React from 'react';
 import { Sparkles, Star, Shield, Wrench, Zap, Anchor, RotateCw } from 'lucide-react';
 import { SEOHead } from '../components/seo/SEOHead';
 import { generateFAQSchema } from '../components/seo/StructuredData';
+import { generateEnhancedLocalBusinessSchema } from '../components/seo/EnhancedLocalBusinessSchema';
 import { faqs } from '../data/faqs-comprehensive';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
@@ -164,7 +165,7 @@ export const ServicesPage = () => {
   const faqSchema = generateFAQSchema(serviceFAQs);
 
   // Combine schemas
-  const schemas = [serviceListSchema, faqSchema];
+  const schemas = [serviceListSchema, faqSchema, generateEnhancedLocalBusinessSchema()];
 
   return (
     <>

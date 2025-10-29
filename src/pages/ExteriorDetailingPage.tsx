@@ -5,6 +5,7 @@ import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 import Chatbot from '../components/Chatbot';
 import { generateProductSchema } from '../components/seo/StructuredData';
+import { generateEnhancedLocalBusinessSchema } from '../components/seo/EnhancedLocalBusinessSchema';
 
 const ExteriorDetailingPage: React.FC = () => {
   const scrollToQuote = () => {
@@ -72,7 +73,7 @@ const ExteriorDetailingPage: React.FC = () => {
     }
   };
 
-  const schemas = [structuredData, productSchema];
+  const schemas = [structuredData, productSchema, generateEnhancedLocalBusinessSchema()];
 
   const faqs = [
     {
