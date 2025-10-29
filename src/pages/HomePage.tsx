@@ -1,9 +1,10 @@
 import { SEOHead } from '../components/seo/SEOHead';
-import { generateLocalBusinessSchema, generateFAQSchema, generateVideoSchema } from '../components/seo/StructuredData';
+import { generateLocalBusinessSchema, generateFAQSchema, generateVideoSchema, generateItemListSchema } from '../components/seo/StructuredData';
 import { generateGMBSchema } from '../components/seo/GMBSchema';
 import { businessInfo } from '../data/business';
 import { reviews, aggregateRating } from '../data/reviews';
 import { faqs } from '../data/faqs-comprehensive';
+import { services, getFeaturedServices } from '../data/services';
 
 export const HomePage = () => {
   // Get top FAQs for homepage (most common questions)
@@ -46,8 +47,20 @@ export const HomePage = () => {
     contentUrl: "https://mikahsmobiledetailingsc.com/hero-video.mp4"
   });
 
+  // Generate ItemList schema for featured services
+  const featuredServices = getFeaturedServices();
+  const itemListSchema = generateItemListSchema(
+    featuredServices.map(service => ({
+      name: service.name,
+      description: service.description || service.shortDescription,
+      url: `https://mikahsmobiledetailingsc.com/services/${service.slug}`,
+      image: service.image || `https://mikahsmobiledetailingsc.com/exterior1.jpg`,
+      price: service.pricing?.starting !== 'Quote' ? service.pricing?.starting : undefined
+    }))
+  );
+
   // Combine schemas
-  const schemas = [gmbSchema, localBusinessSchema, faqSchema, videoSchema];
+  const schemas = [gmbSchema, localBusinessSchema, faqSchema, videoSchema, itemListSchema];
 
   return (
     <>

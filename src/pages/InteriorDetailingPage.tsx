@@ -4,11 +4,32 @@ import { Star, CheckCircle, Clock, DollarSign, Phone, ChevronRight } from 'lucid
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 import Chatbot from '../components/Chatbot';
+import { generateProductSchema } from '../components/seo/StructuredData';
 
 const InteriorDetailingPage: React.FC = () => {
   const scrollToQuote = () => {
     window.location.href = '/#quote';
   };
+
+  const productSchema = generateProductSchema({
+    name: "Interior Car Detailing Service",
+    description: "Professional interior car detailing services in Columbia SC. Deep cleaning, stain removal, odor elimination, leather conditioning, and fabric protection for all vehicle types.",
+    price: "200",
+    features: [
+      "Complete vacuum service",
+      "Professional steam cleaning",
+      "Stain removal",
+      "Leather cleaning and conditioning",
+      "Dashboard and console detail",
+      "Door panels cleaning",
+      "Window cleaning",
+      "Air vent cleaning",
+      "UV protection application"
+    ],
+    image: "https://mikahsmobiledetailingsc.com/interior1.jpg",
+    url: "https://mikahsmobiledetailingsc.com/services/interior-detailing",
+    category: "Auto Detailing Services"
+  });
 
   const structuredData = {
     "@context": "https://schema.org",
@@ -20,7 +41,7 @@ const InteriorDetailingPage: React.FC = () => {
       "image": "https://mikahsautodetailing.com/logo.png",
       "@id": "https://mikahsautodetailing.com",
       "url": "https://mikahsautodetailing.com",
-      "telephone": "(555) 123-4567",
+      "telephone": "(803) 667-8731",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "",
@@ -98,6 +119,8 @@ const InteriorDetailingPage: React.FC = () => {
     }
   };
 
+  const schemas = [structuredData, productSchema];
+
   const faqs = [
     {
       question: "How long does interior detailing take?",
@@ -154,7 +177,7 @@ const InteriorDetailingPage: React.FC = () => {
         <link rel="canonical" content="https://mikahsautodetailing.com/services/interior-detailing" />
 
         <script type="application/ld+json">
-          {JSON.stringify(structuredData)}
+          {JSON.stringify(schemas)}
         </script>
       </Helmet>
 

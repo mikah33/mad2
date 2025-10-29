@@ -4,11 +4,32 @@ import { Shield, CheckCircle, Clock, DollarSign, Phone, ChevronRight, Award, Dro
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 import Chatbot from '../components/Chatbot';
+import { generateProductSchema } from '../components/seo/StructuredData';
 
 const CeramicCoatingPage: React.FC = () => {
   const scrollToQuote = () => {
     window.location.href = '/#quote';
   };
+
+  const productSchema = generateProductSchema({
+    name: "Professional Ceramic Coating Service",
+    description: "Professional ceramic coating installation in Columbia SC. Multi-year paint protection with hydrophobic properties. Authorized Ceramic Pro installer. 2-7 year warranties available.",
+    price: "Quote",
+    features: [
+      "Multi-year protection (2-7 years)",
+      "UV resistance",
+      "Chemical resistance",
+      "Enhanced gloss",
+      "Hydrophobic properties",
+      "Professional-grade application",
+      "Complete decontamination",
+      "Paint correction included (Gold & Platinum)",
+      "Warranty included"
+    ],
+    image: "https://mikahsmobiledetailingsc.com/exterior3.jpg",
+    url: "https://mikahsmobiledetailingsc.com/services/ceramic-coating",
+    category: "Auto Detailing Services"
+  });
 
   const structuredData = {
     "@context": "https://schema.org",
@@ -17,7 +38,7 @@ const CeramicCoatingPage: React.FC = () => {
     "provider": {
       "@type": "LocalBusiness",
       "name": "Mikah's Auto Detailing",
-      "telephone": "(555) 123-4567",
+      "telephone": "(803) 667-8731",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Columbia",
@@ -37,6 +58,8 @@ const CeramicCoatingPage: React.FC = () => {
     }
   };
 
+  const schemas = [structuredData, productSchema];
+
   return (
     <>
       <Helmet>
@@ -51,7 +74,7 @@ const CeramicCoatingPage: React.FC = () => {
         <link rel="canonical" content="https://mikahsautodetailing.com/services/ceramic-coating" />
 
         <script type="application/ld+json">
-          {JSON.stringify(structuredData)}
+          {JSON.stringify(schemas)}
         </script>
       </Helmet>
 

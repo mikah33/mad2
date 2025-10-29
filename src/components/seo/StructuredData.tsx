@@ -382,3 +382,128 @@ export const generateVideoSchema = (video: {
   contentUrl: video.contentUrl,
   embedUrl: video.contentUrl
 });
+
+export const generateProductSchema = (product: {
+  name: string;
+  description: string;
+  price?: string;
+  priceCurrency?: string;
+  priceValidUntil?: string;
+  availability?: string;
+  features?: string[];
+  image?: string;
+  url: string;
+  brand?: string;
+  category?: string;
+  aggregateRating?: AggregateRatingInfo;
+  reviews?: ReviewInfo[];
+}) => {
+  const baseSchema: any = {
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    name: product.name,
+    description: product.description,
+    image: product.image || 'https://mikahsmobiledetailingsc.com/exterior1.jpg',
+    url: product.url,
+    brand: {
+      '@type': 'Brand',
+      name: product.brand || "Mikah's Auto Detailing"
+    },
+    category: product.category || 'Auto Detailing Services'
+  };
+
+  if (product.features && product.features.length > 0) {
+    baseSchema.additionalProperty = product.features.map(feature => ({
+      '@type': 'PropertyValue',
+      name: 'Feature',
+      value: feature
+    }));
+  }
+
+  if (product.price && product.price !== 'Quote') {
+    baseSchema.offers = {
+      '@type': 'Offer',
+      price: product.price,
+      priceCurrency: product.priceCurrency || 'USD',
+      priceValidUntil: product.priceValidUntil || new Date(new Date().setMonth(new Date().getMonth() + 3)).toISOString().split('T')[0],
+      availability: product.availability || 'https://schema.org/InStock',
+      url: product.url,
+      seller: {
+        '@type': 'Organization',
+        name: "Mikah's Auto Detailing"
+      }
+    };
+  } else if (product.price === 'Quote') {
+    baseSchema.offers = {
+      '@type': 'Offer',
+      availability: 'https://schema.org/InStock',
+      url: product.url,
+      priceSpecification: {
+        '@type': 'PriceSpecification',
+        priceCurrency: 'USD',
+        valueAddedTaxIncluded: false
+      },
+      seller: {
+        '@type': 'Organization',
+        name: "Mikah's Auto Detailing"
+      }
+    };
+  }
+
+  if (product.aggregateRating) {
+    baseSchema.aggregateRating = {
+      '@type': 'AggregateRating',
+      ratingValue: product.aggregateRating.ratingValue.toFixed(1),
+      reviewCount: product.aggregateRating.reviewCount.toString(),
+      bestRating: product.aggregateRating.bestRating.toString(),
+      worstRating: product.aggregateRating.worstRating.toString()
+    };
+  }
+
+  if (product.reviews && product.reviews.length > 0) {
+    baseSchema.review = product.reviews.map(review => ({
+      '@type': 'Review',
+      author: {
+        '@type': 'Person',
+        name: review.author
+      },
+      reviewRating: {
+        '@type': 'Rating',
+        ratingValue: review.rating.toString(),
+        bestRating: '5',
+        worstRating: '1'
+      },
+      reviewBody: review.reviewText,
+      datePublished: review.datePublished
+    }));
+  }
+
+  return baseSchema;
+};
+
+export const generateItemListSchema = (items: Array<{
+  name: string;
+  description: string;
+  url: string;
+  image?: string;
+  price?: string;
+}>) => ({
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  itemListElement: items.map((item, index) => ({
+    '@type': 'ListItem',
+    position: index + 1,
+    item: {
+      '@type': 'Product',
+      name: item.name,
+      description: item.description,
+      url: item.url,
+      image: item.image || 'https://mikahsmobiledetailingsc.com/exterior1.jpg',
+      offers: item.price ? {
+        '@type': 'Offer',
+        price: item.price,
+        priceCurrency: 'USD'
+      } : undefined
+    }
+  }))
+});

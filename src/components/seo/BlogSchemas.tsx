@@ -1,4 +1,5 @@
 import { BlogPost } from '../../data/blog';
+import { generateHowToSchema } from './StructuredData';
 
 const baseUrl = 'https://mikahsmobiledetailingsc.com';
 
@@ -307,7 +308,8 @@ export const generateBlogFAQSchema = (faqs: Array<{ question: string; answer: st
  */
 export const generateCompleteBlogPostSchema = (
   post: BlogPost,
-  faqs?: Array<{ question: string; answer: string }>
+  faqs?: Array<{ question: string; answer: string }>,
+  howToSteps?: Array<{ name: string; text: string; image?: string }>
 ) => {
   const schemas = [
     generateBlogPostingSchema(post),
@@ -318,6 +320,17 @@ export const generateCompleteBlogPostSchema = (
   // Add FAQPage schema if FAQs are provided
   if (faqs && faqs.length > 0) {
     schemas.push(generateBlogFAQSchema(faqs));
+  }
+
+  // Add HowTo schema if steps are provided
+  if (howToSteps && howToSteps.length > 0) {
+    const howToSchema = generateHowToSchema({
+      name: post.title,
+      description: post.excerpt,
+      steps: howToSteps,
+      image: post.image || `${baseUrl}/exterior1.jpg`
+    });
+    schemas.push(howToSchema);
   }
 
   return schemas;

@@ -4,11 +4,32 @@ import { Sparkles, CheckCircle, Clock, DollarSign, Phone, ChevronRight, Droplets
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 import Chatbot from '../components/Chatbot';
+import { generateProductSchema } from '../components/seo/StructuredData';
 
 const ExteriorDetailingPage: React.FC = () => {
   const scrollToQuote = () => {
     window.location.href = '/#quote';
   };
+
+  const productSchema = generateProductSchema({
+    name: "Exterior Car Detailing Service",
+    description: "Professional exterior car detailing in Columbia SC. Hand wash, clay bar treatment, paint correction, wax protection, and wheel detailing. Mobile service available.",
+    price: "200",
+    features: [
+      "Hand wash using premium products",
+      "Wheel and tire deep cleaning",
+      "Clay bar treatment to remove contaminants",
+      "Hand polish",
+      "Wax or sealant application",
+      "Trim restoration",
+      "Tire dressing",
+      "Door jamb cleaning",
+      "Exterior glass treatment"
+    ],
+    image: "https://mikahsmobiledetailingsc.com/exterior1.jpg",
+    url: "https://mikahsmobiledetailingsc.com/services/exterior-detailing",
+    category: "Auto Detailing Services"
+  });
 
   const structuredData = {
     "@context": "https://schema.org",
@@ -20,7 +41,7 @@ const ExteriorDetailingPage: React.FC = () => {
       "image": "https://mikahsautodetailing.com/logo.png",
       "@id": "https://mikahsautodetailing.com",
       "url": "https://mikahsautodetailing.com",
-      "telephone": "(555) 123-4567",
+      "telephone": "(803) 667-8731",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Columbia",
@@ -50,6 +71,8 @@ const ExteriorDetailingPage: React.FC = () => {
       }
     }
   };
+
+  const schemas = [structuredData, productSchema];
 
   const faqs = [
     {
@@ -102,7 +125,7 @@ const ExteriorDetailingPage: React.FC = () => {
         <link rel="canonical" content="https://mikahsautodetailing.com/services/exterior-detailing" />
 
         <script type="application/ld+json">
-          {JSON.stringify(structuredData)}
+          {JSON.stringify(schemas)}
         </script>
       </Helmet>
 

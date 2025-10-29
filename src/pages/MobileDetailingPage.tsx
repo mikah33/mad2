@@ -4,9 +4,30 @@ import { Truck, Phone, ChevronRight, CheckCircle, MapPin, Clock } from 'lucide-r
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 import Chatbot from '../components/Chatbot';
+import { generateProductSchema } from '../components/seo/StructuredData';
 
 const MobileDetailingPage: React.FC = () => {
   const scrollToQuote = () => { window.location.href = '/#quote'; };
+
+  const productSchema = generateProductSchema({
+    name: "Mobile Auto Detailing Service",
+    description: "Professional car detailing at your location. No need to waste time at car washes. We bring all equipment, water, and power to your home, office, or preferred location.",
+    price: "175",
+    features: [
+      "On-location service",
+      "Flexible scheduling",
+      "Commercial and residential",
+      "2x Exterior Details per Month",
+      "1x Interior Reset per Month",
+      "1x Engine Bay Cleaning",
+      "Fully self-contained",
+      "100+ gallons of water",
+      "Professional equipment"
+    ],
+    image: "https://mikahsmobiledetailingsc.com/exterior3.jpg",
+    url: "https://mikahsmobiledetailingsc.com/services/mobile-detailing",
+    category: "Auto Detailing Services"
+  });
 
   return (
     <>
@@ -15,6 +36,9 @@ const MobileDetailingPage: React.FC = () => {
         <meta name="description" content="Mobile auto detailing in Columbia SC. We come to your location with everything needed. Professional car detailing at your home or office in Lexington, Irmo, Cayce. Book now!" />
         <meta name="keywords" content="mobile auto detailing Columbia SC, mobile car wash, car detailing near me, mobile detailing Lexington SC, on-site auto detailing, mobile car detailing service, we come to you, at-home car detailing, office car detailing" />
         <link rel="canonical" content="https://mikahsautodetailing.com/services/mobile-detailing" />
+        <script type="application/ld+json">
+          {JSON.stringify(productSchema)}
+        </script>
       </Helmet>
 
       <div className="min-h-screen bg-white">

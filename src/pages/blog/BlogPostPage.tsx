@@ -13,6 +13,7 @@ interface BlogContent {
   faqs?: Array<{ question: string; answer: string }>;
   relatedPosts?: string[];
   cta?: string;
+  howToSteps?: Array<{ name: string; text: string; image?: string }>;
 }
 
 export const BlogPostPage = () => {
@@ -43,11 +44,11 @@ export const BlogPostPage = () => {
   const postUrl = `https://mikahsmobiledetailingsc.com/blog/${post.slug}`;
   const imageUrl = post.image || 'https://mikahsmobiledetailingsc.com/exterior1.jpg';
 
-  // Generate comprehensive blog post schemas (including FAQs if available)
+  // Generate comprehensive blog post schemas (including FAQs and HowTo if available)
   // Use useMemo to regenerate when fullContent changes
   const schemas = useMemo(() => {
-    return generateCompleteBlogPostSchema(post, fullContent?.faqs);
-  }, [post, fullContent?.faqs]);
+    return generateCompleteBlogPostSchema(post, fullContent?.faqs, fullContent?.howToSteps);
+  }, [post, fullContent?.faqs, fullContent?.howToSteps]);
 
   const formatDate = (dateString: string) => {
     return new Date(dateString).toLocaleDateString('en-US', {

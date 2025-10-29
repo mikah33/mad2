@@ -4,9 +4,52 @@ import { Star, Phone, ChevronRight, CheckCircle } from 'lucide-react';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 import Chatbot from '../components/Chatbot';
+import { generateProductSchema } from '../components/seo/StructuredData';
 
 const FullDetailPage: React.FC = () => {
   const scrollToQuote = () => { window.location.href = '/#quote'; };
+
+  const basicPackageSchema = generateProductSchema({
+    name: "Basic Detail Package",
+    description: "Complete interior and exterior detail. Full wipe down, conditioning, vacuum, disinfection, foam wash, wheels decontaminated, protective wax layer.",
+    price: "200",
+    features: [
+      "Interior full wipe down",
+      "Conditioner + UV protection",
+      "Complete vacuum",
+      "Disinfection",
+      "Glass cleaned",
+      "Door jambs cleaned & waxed",
+      "Wheels decontaminated",
+      "Foam contact wash",
+      "Protective wax layer",
+      "Wheels & tires dressed"
+    ],
+    image: "https://mikahsmobiledetailingsc.com/exterior1.jpg",
+    url: "https://mikahsmobiledetailingsc.com/services/full-detail",
+    category: "Auto Detailing Package"
+  });
+
+  const factoryResetSchema = generateProductSchema({
+    name: "Factory Reset Package",
+    description: "Deep interior and exterior restoration. Includes shampoo & extraction, light stain removal, brake dust removal, and complete protection.",
+    price: "325",
+    features: [
+      "Full wipe down + conditioner + UV protection",
+      "Vacuum + disinfection",
+      "Light stain removal",
+      "Shampoo & extraction",
+      "Glass cleaned",
+      "Door jambs cleaned & waxed",
+      "Foam contact wash",
+      "Brake dust removal",
+      "Protective wax layer",
+      "Tires & rims dressed"
+    ],
+    image: "https://mikahsmobiledetailingsc.com/exterior1.jpg",
+    url: "https://mikahsmobiledetailingsc.com/services/full-detail",
+    category: "Auto Detailing Package"
+  });
 
   return (
     <>
@@ -15,6 +58,9 @@ const FullDetailPage: React.FC = () => {
         <meta name="description" content="Complete full car detailing in Columbia SC. Interior + exterior detailing package. Professional cleaning, protection, and restoration. Mobile service to Lexington, Irmo, Cayce. Book now!" />
         <meta name="keywords" content="full car detailing, complete auto detailing Columbia SC, interior exterior detailing, full detail package, car detailing near me, mobile auto detailing Lexington SC, vehicle detailing services, comprehensive car cleaning" />
         <link rel="canonical" content="https://mikahsautodetailing.com/services/full-detail" />
+        <script type="application/ld+json">
+          {JSON.stringify([basicPackageSchema, factoryResetSchema])}
+        </script>
       </Helmet>
 
       <div className="min-h-screen bg-white">

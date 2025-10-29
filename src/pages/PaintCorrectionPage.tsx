@@ -4,9 +4,30 @@ import { Wrench, CheckCircle, Phone, ChevronRight } from 'lucide-react';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 import Chatbot from '../components/Chatbot';
+import { generateProductSchema } from '../components/seo/StructuredData';
 
 const PaintCorrectionPage: React.FC = () => {
   const scrollToQuote = () => { window.location.href = '/#quote'; };
+
+  const productSchema = generateProductSchema({
+    name: "Professional Paint Correction Service",
+    description: "Expert paint correction removes swirl marks, scratches, and oxidation to restore your vehicle's flawless finish. Multi-stage polishing for show car results.",
+    price: "Quote",
+    features: [
+      "Multi-stage polishing",
+      "Swirl removal",
+      "Scratch removal",
+      "Oxidation removal",
+      "Paint depth restoration",
+      "Single or two-stage options",
+      "Complete wash & decontamination",
+      "Paint depth measurement",
+      "Professional inspection"
+    ],
+    image: "https://mikahsmobiledetailingsc.com/exterior4.jpg",
+    url: "https://mikahsmobiledetailingsc.com/services/paint-correction",
+    category: "Auto Detailing Services"
+  });
 
   return (
     <>
@@ -15,6 +36,9 @@ const PaintCorrectionPage: React.FC = () => {
         <meta name="description" content="Professional paint correction in Columbia SC. Remove swirl marks, scratches, oxidation. Expert polishing and paint restoration. Serving Lexington, Irmo, Cayce. Book now!" />
         <meta name="keywords" content="paint correction Columbia SC, swirl removal, scratch removal, paint polishing, paint restoration, auto detailing Columbia, car paint correction Lexington SC, oxidation removal, paint correction near me" />
         <link rel="canonical" content="https://mikahsautodetailing.com/services/paint-correction" />
+        <script type="application/ld+json">
+          {JSON.stringify(productSchema)}
+        </script>
       </Helmet>
 
       <div className="min-h-screen bg-white">
