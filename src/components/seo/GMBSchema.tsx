@@ -11,7 +11,6 @@ export const generateGMBSchema = () => ({
     'https://mikahsmobiledetailingsc.com/exterior2.jpg',
     'https://mikahsmobiledetailingsc.com/interior1.jpg'
   ],
-  '@id': 'https://mikahsmobiledetailingsc.com',
   url: 'https://mikahsmobiledetailingsc.com',
   telephone: '(803) 667-8731',
   email: 'mikahsautodetailing@gmail.com',

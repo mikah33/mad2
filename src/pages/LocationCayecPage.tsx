@@ -257,16 +257,13 @@ const LocationCayecPage = () => {
   const localBusinessSchema = generateLocalBusinessSchema({
     name: "Mikah's Auto Detailing - Cayce SC",
     description: "Professional mobile car detailing and ceramic coating services in Cayce, West Columbia, and surrounding areas. Expert paint correction, interior detailing, and premium protection.",
-    url: 'https://mikahsmobiledetailingsc.com/locations/cayce-sc',
+    phone: '(803) 667-8731',
+    email: 'mikahsautodetailing@gmail.com',
     address: {
-      streetAddress: '',
+      street: '',
       city: 'Cayce',
       state: 'SC',
       zip: '29033'
-    },
-    geo: {
-      latitude: 33.9663,
-      longitude: -81.0734
     }
   }, aggregateRating, reviews);
   const faqSchema = generateFAQSchema(locationFAQs);
