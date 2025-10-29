@@ -5,9 +5,11 @@ import { marked } from 'marked';
 import { SEOHead } from '../../components/seo/SEOHead';
 import { generateCompleteBlogPostSchema } from '../../components/seo/BlogSchemas';
 import { getBlogPostBySlug, blogPosts } from '../../data/blog';
+import { getRelatedPosts } from '../../data/relatedPosts';
 import { NotFoundPage } from '../NotFoundPage';
 import Navigation from '../../components/Navigation';
 import Footer from '../../components/Footer';
+import { RelatedPosts } from '../../components/blog/RelatedPosts';
 
 // Configure marked options
 marked.setOptions({
@@ -74,8 +76,10 @@ export const BlogPostPage = () => {
     return colors[category as keyof typeof colors] || 'bg-gray-100 text-gray-800';
   };
 
-  const relatedPosts = fullContent?.relatedPosts
-    ? blogPosts.filter(p => fullContent.relatedPosts?.includes(p.slug))
+  // Get related posts from manual mapping first, then fall back to category-based
+  const relatedPostSlugs = getRelatedPosts(post.slug);
+  const relatedPosts = relatedPostSlugs.length > 0
+    ? blogPosts.filter(p => relatedPostSlugs.includes(p.slug)).slice(0, 4)
     : blogPosts.filter(p => p.category === post.category && p.slug !== post.slug).slice(0, 3);
 
   return (
@@ -293,44 +297,7 @@ export const BlogPostPage = () => {
             </div>
 
             {/* Related Posts */}
-            {relatedPosts.length > 0 && (
-              <div className="mt-12 md:mt-16">
-                <h3 className="text-2xl md:text-3xl font-bold mb-8 text-gray-900">
-                  Related Articles
-                </h3>
-                <div className="grid md:grid-cols-3 gap-6">
-                  {relatedPosts.map((relatedPost) => (
-                    <Link
-                      key={relatedPost.id}
-                      to={`/blog/${relatedPost.slug}`}
-                      className="bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300 group"
-                    >
-                      {relatedPost.image && (
-                        <div className="h-40 overflow-hidden">
-                          <img
-                            src={relatedPost.image}
-                            alt={relatedPost.imageAlt || relatedPost.title}
-                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                            loading="lazy"
-                          />
-                        </div>
-                      )}
-                      <div className="p-4">
-                        <span className={`inline-block px-2 py-1 rounded text-xs font-semibold mb-2 ${getCategoryColor(relatedPost.category)}`}>
-                          {relatedPost.category}
-                        </span>
-                        <h4 className="font-bold text-gray-900 group-hover:text-primary-600 transition-colors mb-2">
-                          {relatedPost.title}
-                        </h4>
-                        <p className="text-sm text-gray-600 line-clamp-2">
-                          {relatedPost.excerpt}
-                        </p>
-                      </div>
-                    </Link>
-                  ))}
-                </div>
-              </div>
-            )}
+            <RelatedPosts relatedPosts={relatedPosts} />
           </div>
 
           <meta itemProp="url" content={postUrl} />

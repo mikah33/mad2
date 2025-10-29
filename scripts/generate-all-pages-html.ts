@@ -22,6 +22,34 @@ const baseUrl = 'https://mikahsmobiledetailingsc.com';
 // Generate enhanced schema
 const enhancedSchema = generateEnhancedLocalBusinessSchema();
 
+// OG Image mapping for each page
+const ogImageMap: Record<string, { image: string; width: number; height: number }> = {
+  '': { image: 'mclarens-og.jpg', width: 1200, height: 630 },
+
+  // Service pages
+  'services': { image: 'logo.jpg', width: 1200, height: 630 },
+  'services/interior-detailing': { image: 'interior1.jpg', width: 1200, height: 630 },
+  'services/exterior-detailing': { image: 'exterior1.jpg', width: 1200, height: 630 },
+  'services/ceramic-coating': { image: 'mclarens.jpg', width: 1200, height: 630 },
+  'services/paint-correction': { image: 'exterior2.jpg', width: 1200, height: 630 },
+  'services/full-detail': { image: 'interior1.jpg', width: 1200, height: 630 },
+  'services/mobile-detailing': { image: 'exterior1.jpg', width: 1200, height: 630 },
+
+  // Location pages
+  'locations': { image: 'exterior3.jpg', width: 1200, height: 630 },
+  'locations/columbia-sc': { image: 'exterior1.jpg', width: 1200, height: 630 },
+  'locations/lexington-sc': { image: 'exterior2.jpg', width: 1200, height: 630 },
+  'locations/irmo-sc': { image: 'mclarens.jpg', width: 1200, height: 630 },
+  'locations/cayce-sc': { image: 'interior1.jpg', width: 1200, height: 630 },
+
+  // Main pages
+  'contact': { image: 'logo.jpg', width: 1200, height: 630 },
+  'faq': { image: 'exterior4.jpg', width: 1200, height: 630 },
+  'faq/ceramic-coating': { image: 'mclarens.jpg', width: 1200, height: 630 },
+  'faq/mobile-detailing': { image: 'exterior5.jpg', width: 1200, height: 630 },
+  'resources': { image: 'exterior6.jpg', width: 1200, height: 630 },
+};
+
 console.log('\n🚀 Generating pre-rendered HTML files for ALL pages...\n');
 
 // Define all routes that need HTML files
@@ -93,6 +121,10 @@ routes.forEach(route => {
     html = html.replace(/<link rel="canonical" href=".*?"\/?>/, `<link rel="canonical" href="${pageUrl}"/>`);
   }
 
+  // Get OG image for this route
+  const ogImageData = ogImageMap[routePath] || { image: 'mclarens-og.jpg', width: 1200, height: 630 };
+  const ogImageUrl = `${baseUrl}/${ogImageData.image}`;
+
   // Update OG tags
   html = html.replace(/<meta property="og:title" content=".*?"\/>/g, `<meta property="og:title" content="${fullTitle.replace(/"/g, '&quot;')}"/>`);
   html = html.replace(
@@ -101,11 +133,33 @@ routes.forEach(route => {
   );
   html = html.replace(/<meta property="og:url" content=".*?"\/>/g, `<meta property="og:url" content="${pageUrl}"/>`);
 
-  // Update Twitter tags
+  // Update OG image (use more flexible regex to match various formats)
+  html = html.replace(
+    /<meta property="og:image" content="[^"]*"[^>]*>/g,
+    `<meta property="og:image" content="${ogImageUrl}" />`
+  );
+
+  // Update OG image dimensions
+  html = html.replace(
+    /<meta property="og:image:width" content="[^"]*"[^>]*>/g,
+    `<meta property="og:image:width" content="${ogImageData.width}" />`
+  );
+  html = html.replace(
+    /<meta property="og:image:height" content="[^"]*"[^>]*>/g,
+    `<meta property="og:image:height" content="${ogImageData.height}" />`
+  );
+
+  // Update Twitter tags (including image)
   html = html.replace(/<meta name="twitter:title" content=".*?"\/>/g, `<meta name="twitter:title" content="${fullTitle.replace(/"/g, '&quot;')}"/>`);
   html = html.replace(
     /<meta name="twitter:description" content=".*?"\/>/g,
     `<meta name="twitter:description" content="${route.description.replace(/"/g, '&quot;')}"/>`
+  );
+
+  // Update Twitter image tag
+  html = html.replace(
+    /<meta name="twitter:image" content="[^"]*"[^>]*>/g,
+    `<meta name="twitter:image" content="${ogImageUrl}" />`
   );
 
   // Inject enhanced schema
@@ -116,7 +170,7 @@ routes.forEach(route => {
   fs.writeFileSync(outputPath, html);
 
   generatedCount++;
-  console.log(`✅ Generated: /${routePath}/index.html`);
+  console.log(`✅ Generated: /${routePath}/index.html → OG Image: ${ogImageData.image}`);
 });
 
 console.log(`\n✨ Successfully generated ${generatedCount} additional HTML files!`);

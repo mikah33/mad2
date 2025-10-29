@@ -441,9 +441,9 @@ const ExteriorDetailingPage: React.FC = () => {
       </div>
 
             <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-              <img src="/exterior4.jpg" alt="Detailed car exterior" className="rounded-lg shadow-lg" loading="lazy" />
-              <img src="/exterior5.jpg" alt="Professional paint protection" className="rounded-lg shadow-lg" loading="lazy" />
-              <img src="/exterior6.jpg" alt="Car detailing results" className="rounded-lg shadow-lg" loading="lazy" />
+              <img src="/exterior4.jpg" alt="Detailed car exterior showing paint correction results in Columbia SC" className="rounded-lg shadow-lg" loading="lazy" />
+              <img src="/exterior5.jpg" alt="Professional paint protection and wax application on vehicle in Columbia SC" className="rounded-lg shadow-lg" loading="lazy" />
+              <img src="/exterior6.jpg" alt="Car detailing results showing mirror finish and ceramic coating in Columbia SC" className="rounded-lg shadow-lg" loading="lazy" />
             <Chatbot />
       </div>
           <Chatbot />
