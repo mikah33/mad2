@@ -124,7 +124,7 @@ const Contact: React.FC = () => {
             </div>
 
             <div className="mt-6 text-center">
-              <a href="#quote">
+              <a href="#booking">
                 <button className="w-full px-8 py-4 bg-[#023E8A] text-white font-bold rounded-lg hover:bg-[#0077B6] transition">
                   📝 Get Your Free Quote
                 </button>

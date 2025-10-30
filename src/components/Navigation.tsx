@@ -24,7 +24,7 @@ const Navigation: React.FC = () => {
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
       isScrolled
         ? 'shadow-2xl border-b backdrop-blur-sm text-white'
-        : 'bg-transparent text-gray-900'
+        : 'bg-transparent text-white'
     }`} style={{
       backgroundColor: isScrolled ? 'rgba(2, 62, 138, 0.95)' : 'transparent',
       borderColor: isScrolled ? 'rgba(0, 119, 182, 0.5)' : 'transparent'
@@ -39,18 +39,18 @@ const Navigation: React.FC = () => {
               className="h-10 w-10 sm:h-12 sm:w-12 rounded-full object-cover shadow-md"
               loading="eager"
             />
-            <h1 className="text-lg sm:text-xl font-bold">Mikah's Auto Detailing</h1>
+            <h1 className="text-lg sm:text-xl font-bold text-white">Mikah's Auto Detailing</h1>
           </a>
 
           {/* Desktop Navigation Links */}
           <div className="hidden lg:flex items-center space-x-3 xl:space-x-6">
-            <a href="/#home" className={`hover:text-[#90E0EF] transition text-sm xl:text-base font-medium ${isScrolled ? 'text-white' : 'text-gray-900'}`}>Home</a>
-            <a href="/services" className={`hover:text-[#90E0EF] transition text-sm xl:text-base font-medium ${isScrolled ? 'text-white' : 'text-gray-900'}`}>Services</a>
-            <a href="/blog" className={`hover:text-[#90E0EF] transition text-sm xl:text-base font-medium ${isScrolled ? 'text-white' : 'text-gray-900'}`}>Blog</a>
-            <a href="/#projects" className={`hidden xl:flex hover:text-[#90E0EF] transition text-sm xl:text-base font-medium ${isScrolled ? 'text-white' : 'text-gray-900'}`}>Recent Projects</a>
-            <a href="/faq" className={`hover:text-[#90E0EF] transition text-sm xl:text-base font-medium ${isScrolled ? 'text-white' : 'text-gray-900'}`}>FAQ</a>
-            <a href="/#contact" className={`hover:text-[#90E0EF] transition text-sm xl:text-base font-medium ${isScrolled ? 'text-white' : 'text-gray-900'}`}>Contact</a>
-            <a href="/locations" className={`flex items-center hover:text-[#90E0EF] transition text-sm xl:text-base font-medium ${isScrolled ? 'text-white' : 'text-gray-900'}`}>
+            <a href="/#home" className="text-white hover:text-[#90E0EF] transition text-sm xl:text-base font-medium">Home</a>
+            <a href="/services" className="text-white hover:text-[#90E0EF] transition text-sm xl:text-base font-medium">Services</a>
+            <a href="/blog" className="text-white hover:text-[#90E0EF] transition text-sm xl:text-base font-medium">Blog</a>
+            <a href="/#projects" className="hidden xl:flex text-white hover:text-[#90E0EF] transition text-sm xl:text-base font-medium">Recent Projects</a>
+            <a href="/faq" className="text-white hover:text-[#90E0EF] transition text-sm xl:text-base font-medium">FAQ</a>
+            <a href="/#contact" className="text-white hover:text-[#90E0EF] transition text-sm xl:text-base font-medium">Contact</a>
+            <a href="/locations" className="flex items-center text-white hover:text-[#90E0EF] transition text-sm xl:text-base font-medium">
               <MapPin className="w-4 h-4 mr-1" />
               Locations
             </a>
@@ -67,7 +67,7 @@ const Navigation: React.FC = () => {
               <span className="lg:hidden">Call</span>
             </button>
             <button
-              onClick={() => document.getElementById('quote')?.scrollIntoView({ behavior: 'smooth' })}
+              onClick={() => document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' })}
               className="px-2 lg:px-4 xl:px-6 py-2 text-white rounded-lg transition font-bold text-xs lg:text-sm xl:text-base whitespace-nowrap shadow-lg"
               style={{
                 background: 'linear-gradient(to right, #023E8A, #0077B6)',
@@ -88,7 +88,7 @@ const Navigation: React.FC = () => {
           {/* Mobile Hamburger Button */}
           <button
             onClick={toggleMenu}
-            className={`md:hidden p-2 rounded-lg hover:bg-gold-500/20 border border-[#90E0EF]/30 transition ${isScrolled ? 'text-white' : 'text-gray-900'}`}
+            className="md:hidden p-2 rounded-lg hover:bg-gold-500/20 border border-[#90E0EF]/30 transition text-white"
             aria-label="Toggle menu"
           >
             {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -160,7 +160,7 @@ const Navigation: React.FC = () => {
                   Call Now
                 </button>
                 <button
-                  onClick={() => document.getElementById('quote')?.scrollIntoView({ behavior: 'smooth' })}
+                  onClick={() => document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' })}
                   className="w-full px-4 py-3 text-white rounded-lg transition font-bold shadow-lg"
                   style={{
                     background: 'linear-gradient(to right, #023E8A, #0077B6)',

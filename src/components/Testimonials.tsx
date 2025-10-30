@@ -55,7 +55,7 @@ const Testimonials: React.FC = () => {
             Experience the same exceptional service that has earned us these outstanding reviews.
           </p>
           <div className="flex justify-center gap-4 flex-wrap">
-            <a href="#quote">
+            <a href="#booking">
               <button className="px-8 py-4 bg-[#023E8A] text-white font-bold rounded-lg hover:bg-[#0077B6] transition">
                 Get Your Free Quote
               </button>

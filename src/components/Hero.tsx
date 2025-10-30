@@ -87,14 +87,30 @@ const Hero: React.FC = () => {
           </div>
         </div>
 
-        <a href="#quote">
-          <button className="px-6 md:px-8 py-3 md:py-4 text-white text-base md:text-lg font-bold rounded-lg transition shadow-lg hover:shadow-xl transform hover:scale-105"
-            style={{background: '#023E8A'}}
-            onMouseEnter={(e) => e.currentTarget.style.background = '#0077B6'}
-            onMouseLeave={(e) => e.currentTarget.style.background = '#023E8A'}>
-            Get Your Free Quote
-          </button>
-        </a>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <a href="#booking">
+            <button className="px-6 md:px-8 py-3 md:py-4 text-white text-base md:text-lg font-bold rounded-lg transition shadow-lg hover:shadow-xl transform hover:scale-105"
+              style={{background: '#023E8A'}}
+              onMouseEnter={(e) => e.currentTarget.style.background = '#0077B6'}
+              onMouseLeave={(e) => e.currentTarget.style.background = '#023E8A'}>
+              Get Your Free Quote
+            </button>
+          </a>
+
+          <a href="/services">
+            <button className="px-6 md:px-8 py-3 md:py-4 text-[#023E8A] bg-white text-base md:text-lg font-bold rounded-lg transition shadow-lg hover:shadow-xl transform hover:scale-105 border-2 border-white"
+              onMouseEnter={(e) => {
+                e.currentTarget.style.background = '#CAF0F8';
+                e.currentTarget.style.borderColor = '#90E0EF';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.background = '#ffffff';
+                e.currentTarget.style.borderColor = '#ffffff';
+              }}>
+              See Pricing
+            </button>
+          </a>
+        </div>
       </div>
     </div>
   );

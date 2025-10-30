@@ -73,20 +73,29 @@ const BookingTimeline: React.FC = () => {
     {
       icon: <Wrench className="w-8 h-8" />,
       title: 'Paint Correction',
-      price: 'Custom Quote',
+      price: 'Starting at $599',
       color: 'bg-[#0077B6]',
       slug: 'paint-correction',
-      description: 'Remove swirls, scratches & restore finish'
+      description: '1-step & 2-step correction available'
     },
     {
       icon: <Shield className="w-8 h-8" />,
       title: 'Ceramic Coating',
-      price: 'Custom Quote',
+      price: 'Starting at $999',
       color: 'bg-[#023E8A]',
       slug: 'ceramic-coating',
       description: 'Long-lasting paint protection (2-5 years)'
     }
   ];
+
+  const bottomRowService: Service = {
+    icon: <RotateCw className="w-8 h-8" />,
+    title: 'Routine Reset',
+    price: '$225/Month',
+    color: 'bg-[#0077B6]',
+    slug: 'routine-reset',
+    description: '1 interior + 2 exterior details monthly'
+  };
 
   // Auto-scroll on step change
   useEffect(() => {
@@ -273,6 +282,129 @@ const BookingTimeline: React.FC = () => {
         ],
         process: [],
         timeEstimate: '4-6 hours',
+        benefits: []
+      },
+      'Paint Correction': {
+        fullDescription: '🔧 Paint Correction – Starting at $599\n\nProfessional paint correction removes swirls, scratches, and oxidation to restore your vehicle\'s finish to like-new condition.',
+        includes: [
+          '**1-Step Paint Correction:**',
+          '✅ Thorough hand wash and decontamination',
+          '✅ Clay bar treatment to remove bonded contaminants',
+          '✅ Single-stage machine polishing',
+          '✅ Removes light swirls and minor scratches',
+          '✅ Restores gloss and clarity',
+          '✅ Paint sealant application',
+          '',
+          '**2-Step Paint Correction:**',
+          '✅ Everything in 1-step correction',
+          '✅ Heavy cutting compound for deep scratches',
+          '✅ Fine polishing stage for ultimate clarity',
+          '✅ Removes moderate to severe paint defects',
+          '✅ Maximum gloss and depth enhancement',
+          '✅ Premium carnauba wax or sealant',
+          '',
+          '**Process depends on paint condition:**',
+          '• We inspect your paint and recommend the best correction level',
+          '• 1-step for newer vehicles with light swirls',
+          '• 2-step for older vehicles or heavy defects'
+        ],
+        process: [],
+        timeEstimate: '4-8 hours (varies by correction level)',
+        benefits: []
+      },
+      'Ceramic Coating': {
+        fullDescription: '🛡️ Ceramic Coating – Starting at $999\n\nProfessional-grade ceramic coating provides years of protection with incredible gloss, hydrophobic properties, and chemical resistance.',
+        includes: [
+          '**What is Ceramic Coating?**',
+          'Ceramic coating is a liquid polymer that chemically bonds with your vehicle\'s paint, creating a protective layer that lasts 2-5 years. It provides superior protection against UV rays, chemicals, bird droppings, and environmental contaminants.',
+          '',
+          '**Benefits:**',
+          '✅ Long-lasting protection (2-5 years depending on product)',
+          '✅ Extreme hydrophobic effect - water beads off instantly',
+          '✅ Enhanced gloss and depth of color',
+          '✅ Protection from UV damage and oxidation',
+          '✅ Chemical resistant to bird droppings, bug splatter, tar',
+          '✅ Easier washing - dirt slides right off',
+          '✅ Scratch resistance (not scratch-proof)',
+          '',
+          '**Correction Required:**',
+          'We offer 1-step and 2-step paint correction options depending on your paint\'s condition. Paint must be properly corrected before coating for optimal results.',
+          '',
+          '**Process:**',
+          '• Thorough decontamination and clay bar treatment',
+          '• Paint correction (1-step or 2-step based on condition)',
+          '• Paint prep and IPA wipe down',
+          '• Professional ceramic coating application',
+          '• 24-48 hour curing time required'
+        ],
+        process: [],
+        timeEstimate: '1-2 days (includes curing time)',
+        benefits: []
+      },
+      'Marine & RV': {
+        fullDescription: '⚓ Marine & RV Detailing – Custom Quote\n\nSpecialized detailing for boats, RVs, motorcycles, and other specialty vehicles.',
+        includes: [
+          '**Pricing depends on:**',
+          '• Size of boat or RV',
+          '• Condition of gel coat or paint',
+          '• Type of surfaces (fiberglass, gel coat, aluminum, etc.)',
+          '• Level of oxidation or damage',
+          '• Additional services requested',
+          '',
+          '**Boat Detailing Services:**',
+          '✅ Gel coat cleaning and restoration',
+          '✅ Oxidation removal',
+          '✅ Waxing and protection',
+          '✅ Interior cleaning',
+          '✅ Canvas and upholstery cleaning',
+          '✅ Metal polishing',
+          '',
+          '**RV Detailing Services:**',
+          '✅ Exterior wash and wax',
+          '✅ Oxidation removal',
+          '✅ Decal and stripe restoration',
+          '✅ Interior deep cleaning',
+          '✅ Slide-out cleaning',
+          '✅ Awning cleaning',
+          '',
+          'Contact us for a custom quote based on your specific needs.'
+        ],
+        process: [],
+        timeEstimate: 'Varies by size and condition',
+        benefits: []
+      },
+      'Routine Reset': {
+        fullDescription: '🔄 Routine Reset – $225/Month\n\nOur monthly maintenance subscription keeps your vehicle consistently fresh with 1 interior detail and 2 exterior washes per month.',
+        includes: [
+          '**Monthly Package Includes:**',
+          '',
+          '**1x Interior Detail per month:**',
+          '✅ Full vacuum of all surfaces',
+          '✅ Interior wipe down and conditioning',
+          '✅ UV protection on all surfaces',
+          '✅ Glass cleaning',
+          '✅ Door jambs cleaned',
+          '✅ Light stain treatment',
+          '',
+          '**2x Exterior Details per month:**',
+          '✅ Hand wash with foam cannon',
+          '✅ Wheel and tire cleaning',
+          '✅ Tire dressing',
+          '✅ Trim dressing',
+          '✅ Glass cleaning',
+          '✅ Quick spray wax',
+          '',
+          '**Perfect for:**',
+          '• Busy professionals who want their car always fresh',
+          '• Families with kids who need regular cleaning',
+          '• Car enthusiasts maintaining show-quality appearance',
+          '• Anyone who wants to preserve their vehicle\'s value',
+          '',
+          '**Saves you money:**',
+          'Regular price would be $350/month - you save $125/month with this package!'
+        ],
+        process: [],
+        timeEstimate: 'Scheduled monthly',
         benefits: []
       }
     };
@@ -536,7 +668,7 @@ const BookingTimeline: React.FC = () => {
               ))}
             </div>
 
-            <div className="grid grid-cols-2 gap-2 sm:gap-3 md:gap-4">
+            <div className="grid grid-cols-2 gap-2 sm:gap-3 md:gap-4 mb-4">
               {middleRowServices.map((service, index) => (
                 <div
                   key={index}
@@ -583,6 +715,53 @@ const BookingTimeline: React.FC = () => {
                   </button>
                 </div>
               ))}
+            </div>
+
+            {/* Routine Reset - Single Card */}
+            <div className="max-w-md mx-auto">
+              <div
+                onClick={() => currentStep === 4 && handleServiceSelect(bottomRowService.title)}
+                className={`
+                  relative rounded-xl sm:rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 p-4 sm:p-5 md:p-6 border-2 transform group
+                  ${selectedService === bottomRowService.title
+                    ? 'border-[#0077B6] ring-4 ring-[#90E0EF]/50 scale-105 shadow-2xl bg-gradient-to-br from-[#CAF0F8] to-white'
+                    : 'border-gray-200 hover:border-[#90E0EF] hover:scale-105 bg-white'
+                  }
+                  ${currentStep === 4 ? 'cursor-pointer active:scale-100' : 'cursor-not-allowed opacity-70'}
+                `}
+              >
+                {selectedService === bottomRowService.title && (
+                  <div className="absolute -top-2 -right-2 bg-gradient-to-r from-[#0077B6] to-[#023E8A] text-white rounded-full p-2 shadow-lg animate-bounce">
+                    <Check className="w-5 h-5" />
+                  </div>
+                )}
+
+                <div className={`${bottomRowService.color} text-white p-3 md:p-4 rounded-xl inline-block mb-3 transform transition-all duration-300 ${selectedService === bottomRowService.title ? 'scale-110 rotate-3' : 'group-hover:scale-110 group-hover:-rotate-3'}`}>
+                  <div className="w-8 h-8 md:w-10 md:h-10">
+                    {bottomRowService.icon}
+                  </div>
+                </div>
+
+                <h4 className={`text-base md:text-xl font-bold mb-2 transition-colors ${selectedService === bottomRowService.title ? 'text-[#023E8A]' : 'text-gray-800 group-hover:text-[#0077B6]'}`}>
+                  {bottomRowService.title}
+                </h4>
+                <div className={`text-2xl md:text-3xl font-black mb-2 transition-colors ${selectedService === bottomRowService.title ? 'text-[#0077B6]' : 'text-[#023E8A] group-hover:text-[#0077B6]'}`}>
+                  {bottomRowService.price}
+                </div>
+                <p className="hidden sm:block text-gray-600 text-xs md:text-sm mb-4">{bottomRowService.description}</p>
+
+                <button
+                  onClick={(e) => handleOpenModal(bottomRowService.title, e)}
+                  className={`w-full py-2 rounded-lg text-xs md:text-sm font-semibold transition-all flex items-center justify-center gap-2 transform hover:scale-105 ${
+                    selectedService === bottomRowService.title
+                      ? 'bg-gradient-to-r from-[#0077B6] to-[#90E0EF] text-white shadow-md'
+                      : 'bg-[#CAF0F8] hover:bg-[#90E0EF] text-[#023E8A]'
+                  }`}
+                >
+                  <Info className="w-4 h-4" />
+                  <span>Details</span>
+                </button>
+              </div>
             </div>
 
             {/* Back Button */}
@@ -695,7 +874,7 @@ const BookingTimeline: React.FC = () => {
                       required
                       autoComplete="street-address"
                       className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#90E0EF] focus:border-transparent transition bg-gray-50 focus:bg-white"
-                      placeholder="City & Zip Code *"
+                      placeholder="Street address, city and zip"
                       disabled={isSubmitting}
                     />
                   </div>
