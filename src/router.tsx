@@ -22,15 +22,18 @@ import LocationIrmoPage from './pages/LocationIrmoPage';
 import LocationCayecPage from './pages/LocationCayecPage';
 import LocationWestColumbiaPage from './pages/LocationWestColumbiaPage';
 import PricingPage from './pages/PricingPage';
+import ErrorBoundary from './components/ErrorBoundary';
 
 export const router = createBrowserRouter([
   {
     path: '/',
     element: <App />,
+    errorElement: <ErrorBoundary />,
   },
   {
     path: '/services',
     element: <ServicesPage />,
+    errorElement: <ErrorBoundary />,
   },
   {
     path: '/services/interior-detailing',
@@ -63,6 +66,7 @@ export const router = createBrowserRouter([
   {
     path: '/blog/:slug',
     element: <BlogPostPage />,
+    errorElement: <ErrorBoundary />,
   },
   {
     path: '/faq',
