@@ -51,7 +51,7 @@ const FAQ: React.FC = () => {
             placeholder="Search frequently asked questions..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="w-full px-6 py-4 rounded-lg bg-gray-800 text-white border border-gray-700 focus:border-primary-500 focus:outline-none"
+            className="w-full px-6 py-4 rounded-lg bg-gray-800 text-white border border-gray-700 focus:border-[#90E0EF] focus:outline-none"
           />
         </div>
 
@@ -88,10 +88,10 @@ const FAQ: React.FC = () => {
             our services.
           </p>
           <div className="flex justify-center gap-4">
-            <button className="px-6 py-3 bg-primary-700 text-white font-semibold rounded-lg hover:bg-primary-800 transition">
+            <button className="px-6 py-3 bg-[#023E8A] text-white font-semibold rounded-lg hover:bg-[#0077B6] transition">
               Contact Us
             </button>
-            <button className="px-6 py-3 bg-primary-600 text-white font-semibold rounded-lg hover:bg-primary-700 transition">
+            <button className="px-6 py-3 bg-[#0077B6] text-white font-semibold rounded-lg hover:bg-[#023E8A] transition">
               Get Free Quote
             </button>
           </div>

@@ -157,7 +157,7 @@ const LeadForm: React.FC<LeadFormProps> = ({ selectedService }) => {
             onChange={handleChange}
             required
             autoComplete="name"
-            className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200 bg-gray-50 focus:bg-white"
+            className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#90E0EF] focus:border-transparent transition-all duration-200 bg-gray-50 focus:bg-white"
             placeholder="Full Name *"
             disabled={isSubmitting}
           />
@@ -175,7 +175,7 @@ const LeadForm: React.FC<LeadFormProps> = ({ selectedService }) => {
             onChange={handleChange}
             required
             autoComplete="email"
-            className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200 bg-gray-50 focus:bg-white"
+            className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#90E0EF] focus:border-transparent transition-all duration-200 bg-gray-50 focus:bg-white"
             placeholder="Email Address *"
             disabled={isSubmitting}
           />
@@ -192,7 +192,7 @@ const LeadForm: React.FC<LeadFormProps> = ({ selectedService }) => {
             value={formData.phone}
             onChange={handleChange}
             autoComplete="tel"
-            className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200 bg-gray-50 focus:bg-white"
+            className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#90E0EF] focus:border-transparent transition-all duration-200 bg-gray-50 focus:bg-white"
             placeholder="Phone Number"
             disabled={isSubmitting}
           />
@@ -209,7 +209,7 @@ const LeadForm: React.FC<LeadFormProps> = ({ selectedService }) => {
             value={formData.location}
             onChange={handleChange}
             autoComplete="street-address"
-            className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200 bg-gray-50 focus:bg-white"
+            className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#90E0EF] focus:border-transparent transition-all duration-200 bg-gray-50 focus:bg-white"
             placeholder="Street Address, City and Zipcode"
             disabled={isSubmitting}
           />
@@ -226,7 +226,7 @@ const LeadForm: React.FC<LeadFormProps> = ({ selectedService }) => {
             value={formData.vehicleDetails}
             onChange={handleChange}
             autoComplete="off"
-            className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200 bg-gray-50 focus:bg-white"
+            className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#90E0EF] focus:border-transparent transition-all duration-200 bg-gray-50 focus:bg-white"
             placeholder="Vehicle Year Make and Model"
             disabled={isSubmitting}
           />
@@ -242,7 +242,7 @@ const LeadForm: React.FC<LeadFormProps> = ({ selectedService }) => {
             value={formData.service}
             onChange={handleChange}
             required
-            className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200 bg-gray-50 focus:bg-white appearance-none cursor-pointer"
+            className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#90E0EF] focus:border-transparent transition-all duration-200 bg-gray-50 focus:bg-white appearance-none cursor-pointer"
             disabled={isSubmitting}
           >
             <option value="">Select a Service *</option>
@@ -280,7 +280,7 @@ const LeadForm: React.FC<LeadFormProps> = ({ selectedService }) => {
         <button
           type="submit"
           disabled={isSubmitting}
-          className="w-full bg-primary-700 hover:bg-primary-800 disabled:bg-primary-400 disabled:cursor-not-allowed text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200 transform hover:scale-105 disabled:transform-none shadow-lg hover:shadow-xl"
+          className="w-full bg-[#023E8A] hover:bg-[#0077B6] disabled:bg-[#90E0EF] disabled:cursor-not-allowed text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200 transform hover:scale-105 disabled:transform-none shadow-lg hover:shadow-xl"
         >
           {isSubmitting ? (
             <div className="flex items-center justify-center">

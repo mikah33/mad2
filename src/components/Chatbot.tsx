@@ -276,16 +276,16 @@ const Chatbot: React.FC = () => {
         <div className="fixed bottom-6 right-6 z-50 group">
           <button
             onClick={() => setIsOpen(true)}
-            className="bg-gradient-to-r from-blue-600 to-blue-500 text-white p-4 rounded-full shadow-2xl hover:shadow-blue-500/50 hover:scale-110 transition-all duration-300 animate-bounce"
+            className="bg-gradient-to-r from-[#023E8A] to-[#0077B6] text-white p-4 rounded-full shadow-2xl hover:shadow-[#0077B6]/50 hover:scale-110 transition-all duration-300 animate-bounce"
             aria-label="Open chat"
           >
             <MessageCircle className="w-6 h-6" />
             <div className="absolute -top-1 -right-1 w-3 h-3 bg-green-500 rounded-full animate-pulse border-2 border-white"></div>
           </button>
           <div className="absolute bottom-full right-0 mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
-            <div className="bg-gray-900 text-white px-4 py-2 rounded-lg shadow-lg whitespace-nowrap text-sm">
+            <div className="bg-[#023E8A] text-white px-4 py-2 rounded-lg shadow-lg whitespace-nowrap text-sm">
               Speak to an agent here
-              <div className="absolute top-full right-6 w-0 h-0 border-l-8 border-r-8 border-t-8 border-transparent border-t-gray-900"></div>
+              <div className="absolute top-full right-6 w-0 h-0 border-l-8 border-r-8 border-t-8 border-transparent border-t-[#023E8A]"></div>
             </div>
           </div>
         </div>
@@ -293,24 +293,24 @@ const Chatbot: React.FC = () => {
 
       {/* Chat Window */}
       {isOpen && (
-        <div className="fixed bottom-6 right-6 w-96 h-[600px] bg-gradient-to-b from-gray-50 to-gray-100 rounded-2xl shadow-2xl flex flex-col z-50 overflow-hidden border-2 border-gray-300">
+        <div className="fixed bottom-6 right-6 w-96 h-[600px] bg-gradient-to-b from-gray-50 to-gray-100 rounded-2xl shadow-2xl flex flex-col z-50 overflow-hidden border-2 border-[#90E0EF]">
           {/* Header */}
-          <div className="bg-gradient-to-r from-gray-200 to-gray-300 text-gray-800 p-4 flex items-center justify-between border-b border-gray-400/50">
+          <div className="bg-gradient-to-r from-[#023E8A] to-[#0077B6] text-white p-4 flex items-center justify-between border-b border-[#0077B6]/50">
             <div className="flex items-center gap-3">
               <div className="relative">
-                <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center shadow-lg">
+                <div className="w-10 h-10 bg-gradient-to-br from-[#0077B6] to-[#90E0EF] rounded-full flex items-center justify-center shadow-lg">
                   <Sparkles className="w-6 h-6 text-white" />
                 </div>
                 <div className="absolute -bottom-0.5 -right-0.5 w-3 h-3 bg-green-500 rounded-full border-2 border-white"></div>
               </div>
               <div>
-                <h3 className="font-bold text-lg text-gray-800">Julia</h3>
-                <p className="text-xs text-gray-600">Virtual Receptionist • Online</p>
+                <h3 className="font-bold text-lg text-white">Julia</h3>
+                <p className="text-xs text-[#CAF0F8]">Virtual Receptionist • Online</p>
               </div>
             </div>
             <button
               onClick={() => setIsOpen(false)}
-              className="hover:bg-gray-400/30 p-2 rounded-lg transition text-gray-600"
+              className="hover:bg-white/20 p-2 rounded-lg transition text-white"
               aria-label="Close chat"
             >
               <X className="w-5 h-5" />
@@ -327,8 +327,8 @@ const Chatbot: React.FC = () => {
                 <div
                   className={`max-w-[80%] p-3 rounded-2xl ${
                     message.sender === 'user'
-                      ? 'bg-gradient-to-r from-blue-600 to-blue-500 text-white rounded-br-none shadow-lg'
-                      : 'bg-white text-gray-800 rounded-bl-none shadow-md border border-gray-200'
+                      ? 'bg-gradient-to-r from-[#023E8A] to-[#0077B6] text-white rounded-br-none shadow-lg'
+                      : 'bg-white text-gray-800 rounded-bl-none shadow-md border border-[#90E0EF]'
                   }`}
                 >
                   <p className="text-sm whitespace-pre-line leading-relaxed">{message.text}</p>
@@ -342,11 +342,11 @@ const Chatbot: React.FC = () => {
             {/* Typing Indicator */}
             {isTyping && (
               <div className="flex justify-start">
-                <div className="bg-white rounded-2xl rounded-bl-none shadow-md border border-gray-200 p-3">
+                <div className="bg-white rounded-2xl rounded-bl-none shadow-md border border-[#90E0EF] p-3">
                   <div className="flex gap-1">
-                    <div className="w-2 h-2 bg-blue-500 rounded-full animate-bounce" style={{ animationDelay: '0ms' }}></div>
-                    <div className="w-2 h-2 bg-blue-500 rounded-full animate-bounce" style={{ animationDelay: '150ms' }}></div>
-                    <div className="w-2 h-2 bg-blue-500 rounded-full animate-bounce" style={{ animationDelay: '300ms' }}></div>
+                    <div className="w-2 h-2 bg-[#0077B6] rounded-full animate-bounce" style={{ animationDelay: '0ms' }}></div>
+                    <div className="w-2 h-2 bg-[#0077B6] rounded-full animate-bounce" style={{ animationDelay: '150ms' }}></div>
+                    <div className="w-2 h-2 bg-[#0077B6] rounded-full animate-bounce" style={{ animationDelay: '300ms' }}></div>
                   </div>
                 </div>
               </div>
@@ -356,7 +356,7 @@ const Chatbot: React.FC = () => {
           </div>
 
           {/* Input */}
-          <div className="p-4 bg-gradient-to-r from-gray-200 to-gray-300 border-t border-gray-400/50">
+          <div className="p-4 bg-gradient-to-r from-[#CAF0F8] to-[#90E0EF] border-t border-[#90E0EF]/50">
             <div className="flex gap-2">
               <input
                 type="text"
@@ -364,11 +364,11 @@ const Chatbot: React.FC = () => {
                 onChange={(e) => setInputValue(e.target.value)}
                 onKeyPress={handleKeyPress}
                 placeholder="Type your message..."
-                className="flex-1 px-4 py-3 bg-white border border-gray-300 text-gray-800 placeholder-gray-400 rounded-full focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition"
+                className="flex-1 px-4 py-3 bg-white border border-[#90E0EF] text-gray-800 placeholder-gray-400 rounded-full focus:outline-none focus:border-[#0077B6] focus:ring-2 focus:ring-[#90E0EF]/20 transition"
               />
               <button
                 onClick={handleSendMessage}
-                className="bg-gradient-to-r from-blue-600 to-blue-500 text-white p-3 rounded-full hover:shadow-lg hover:shadow-blue-500/30 hover:scale-105 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                className="bg-gradient-to-r from-[#023E8A] to-[#0077B6] text-white p-3 rounded-full hover:shadow-lg hover:shadow-[#0077B6]/30 hover:scale-105 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
                 disabled={!inputValue.trim()}
                 aria-label="Send message"
               >

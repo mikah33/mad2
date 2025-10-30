@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Sparkles, Star, Shield, Wrench, Zap, Anchor, RotateCw, Check, ChevronRight, Mail, User, Phone, MapPin, Car, FileText } from 'lucide-react';
+import { Sparkles, Star, Shield, Wrench, Anchor, RotateCw, Check, ChevronRight, Mail, User, Phone, MapPin, Car, FileText, Info, X, Calendar, Droplet, Clock, CheckCircle } from 'lucide-react';
 
 interface Service {
   icon: React.ReactNode;
@@ -8,29 +8,45 @@ interface Service {
   description: string;
   color: string;
   slug: string;
+  isPopular?: boolean;
 }
 
 const BookingTimeline: React.FC = () => {
-  const [selectedService, setSelectedService] = useState<string>('');
+  // Step tracking
+  const [currentStep, setCurrentStep] = useState(1);
+
+  // Step 1: Vehicle Type
+  const [vehicleType, setVehicleType] = useState('');
+
+  // Step 2: Last Detail Timing
+  const [lastDetailTiming, setLastDetailTiming] = useState('');
+
+  // Step 3: Cleanliness Level
+  const [cleanlinessLevel, setCleanlinessLevel] = useState('');
+
+  // Step 4: Package Selection
+  const [selectedService, setSelectedService] = useState('');
+
+  // Step 5: Contact Form
   const [formData, setFormData] = useState({
     fullName: '',
     email: '',
     phone: '',
     location: '',
-    vehicleDetails: '',
-    service: '',
     description: ''
   });
+
+  const [openModal, setOpenModal] = useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
-  // Top 6 main services
-  const mainServices: Service[] = [
+  // Service packages
+  const topRowServices: Service[] = [
     {
       icon: <Sparkles className="w-8 h-8" />,
       title: 'Basic Detail',
       price: '$200',
-      color: 'bg-orange-500',
+      color: 'bg-[#0077B6]',
       slug: 'basic-detail',
       description: 'Full interior & exterior detail with wax protection'
     },
@@ -38,61 +54,74 @@ const BookingTimeline: React.FC = () => {
       icon: <Star className="w-8 h-8" />,
       title: 'Factory Reset',
       price: '$325',
-      color: 'bg-orange-600',
+      color: 'bg-[#0077B6]',
       slug: 'factory-reset',
-      description: 'Deep clean with shampoo, extraction & restoration'
-    },
-    {
-      icon: <Shield className="w-8 h-8" />,
-      title: 'Ceramic Coating',
-      price: 'Custom Quote',
-      color: 'bg-primary-500',
-      slug: 'ceramic-coating',
-      description: 'Long-lasting paint protection (2-5 years)'
-    },
-    {
-      icon: <Wrench className="w-8 h-8" />,
-      title: 'Paint Correction',
-      price: 'Custom Quote',
-      color: 'bg-primary-600',
-      slug: 'paint-correction',
-      description: 'Remove swirls, scratches & restore finish'
-    },
-    {
-      icon: <Zap className="w-8 h-8" />,
-      title: 'Specialty Services',
-      price: 'Starting at $50',
-      color: 'bg-purple-500',
-      slug: 'specialty',
-      description: 'Interior-only, exterior-only, engine bay & more'
+      description: 'Deep clean with shampoo, extraction & restoration',
+      isPopular: true
     },
     {
       icon: <Anchor className="w-8 h-8" />,
       title: 'Marine & RV',
       price: 'Custom Quote',
-      color: 'bg-blue-500',
+      color: 'bg-[#023E8A]',
       slug: 'marine-rv',
       description: 'Boats, RVs, motorcycles & specialty vehicles'
     }
   ];
 
-  // Auto-fill form when service is selected
-  useEffect(() => {
-    if (selectedService) {
-      setFormData(prev => ({
-        ...prev,
-        service: selectedService
-      }));
+  const middleRowServices: Service[] = [
+    {
+      icon: <Wrench className="w-8 h-8" />,
+      title: 'Paint Correction',
+      price: 'Custom Quote',
+      color: 'bg-[#0077B6]',
+      slug: 'paint-correction',
+      description: 'Remove swirls, scratches & restore finish'
+    },
+    {
+      icon: <Shield className="w-8 h-8" />,
+      title: 'Ceramic Coating',
+      price: 'Custom Quote',
+      color: 'bg-[#023E8A]',
+      slug: 'ceramic-coating',
+      description: 'Long-lasting paint protection (2-5 years)'
+    }
+  ];
 
-      // Scroll to form
+  // Auto-scroll on step change
+  useEffect(() => {
+    if (currentStep > 1) {
       setTimeout(() => {
-        document.getElementById('step-2')?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        document.getElementById(`step-${currentStep}`)?.scrollIntoView({ behavior: 'smooth', block: 'center' });
       }, 100);
     }
-  }, [selectedService]);
+  }, [currentStep]);
+
+  const handleVehicleTypeSubmit = () => {
+    if (vehicleType.trim()) {
+      setCurrentStep(2);
+    }
+  };
+
+  const handleLastDetailSubmit = (timing: string) => {
+    setLastDetailTiming(timing);
+    setTimeout(() => {
+      setCurrentStep(3);
+    }, 500);
+  };
+
+  const handleCleanlinessSubmit = (level: string) => {
+    setCleanlinessLevel(level);
+    setTimeout(() => {
+      setCurrentStep(4);
+    }, 500);
+  };
 
   const handleServiceSelect = (serviceTitle: string) => {
     setSelectedService(serviceTitle);
+    setTimeout(() => {
+      setCurrentStep(5);
+    }, 500);
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -108,273 +137,501 @@ const BookingTimeline: React.FC = () => {
     setSubmitStatus('idle');
 
     try {
-      const response = await fetch('/.netlify/functions/submit-form', {
+      // Prepare the payload with ALL step data
+      const payload = {
+        // Step 1: Vehicle Type
+        vehicleType: vehicleType,
+
+        // Step 2: Last Detail Timing
+        lastDetailTiming: lastDetailTiming,
+
+        // Step 3: Cleanliness Level
+        cleanlinessLevel: cleanlinessLevel,
+
+        // Step 4: Selected Service
+        service: selectedService,
+
+        // Step 5: Contact Information
+        fullName: formData.fullName,
+        email: formData.email,
+        phone: formData.phone,
+        location: formData.location,
+        description: formData.description,
+
+        // Metadata
+        timestamp: new Date().toISOString(),
+        source: 'Mikahs Auto Detailing - Booking Timeline'
+      };
+
+      console.log('📧 Sending to n8n webhook:', payload);
+
+      // Send directly to n8n webhook
+      const response = await fetch('https://contractorai.app.n8n.cloud/webhook/41d626b4-d245-4ef6-82b1-575c623e02d6', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({
-          ...formData,
-          timestamp: new Date().toISOString(),
-          source: 'Mikahs Auto Detailing - Booking Timeline'
-        }),
+        body: JSON.stringify(payload),
       });
 
       if (response.ok) {
-        setIsSubmitting(false);
+        console.log('✅ Successfully sent to n8n webhook');
         setSubmitStatus('success');
 
+        // Reset form after 3 seconds
         setTimeout(() => {
           setFormData({
             fullName: '',
             email: '',
             phone: '',
             location: '',
-            vehicleDetails: '',
-            service: '',
             description: ''
           });
+          setVehicleType('');
+          setLastDetailTiming('');
+          setCleanlinessLevel('');
           setSelectedService('');
+          setCurrentStep(1);
           setSubmitStatus('idle');
         }, 3000);
       } else {
+        console.error('❌ n8n webhook failed:', response.status, response.statusText);
         throw new Error('Submission failed');
       }
     } catch (error) {
-      console.error('Form submission error:', error);
-      setIsSubmitting(false);
+      console.error('❌ Form submission error:', error);
       setSubmitStatus('error');
-
       setTimeout(() => {
         setSubmitStatus('idle');
       }, 5000);
+    } finally {
+      setIsSubmitting(false);
     }
+  };
+
+  const handleOpenModal = (serviceTitle: string, e: React.MouseEvent) => {
+    e.stopPropagation();
+    setTimeout(() => {
+      setOpenModal(serviceTitle);
+    }, 300);
+  };
+
+  const handleCloseModal = () => {
+    setTimeout(() => {
+      setOpenModal(null);
+    }, 200);
+  };
+
+  const getServiceDetails = (serviceTitle: string) => {
+    const serviceDetails: Record<string, {
+      fullDescription: string;
+      includes: string[];
+      process: string[];
+      timeEstimate: string;
+      benefits: string[];
+    }> = {
+      'Basic Detail': {
+        fullDescription: '🚗 Our Basic Package Includes: ($200)',
+        includes: [
+          '**Interior:**',
+          '✅ Full interior wipe down',
+          '✅ Conditioner applied to all surfaces',
+          '✅ UV protection on all surfaces',
+          '✅ Full vacuum',
+          '✅ Full disinfection process for cloth surfaces',
+          '✅ Glass cleaning',
+          '✅ Door jambs cleaned and waxed',
+          '',
+          '**Exterior:**',
+          '🛞 Wheels decontaminated from brake dust',
+          '🫧 Foam contact wash (all bugs, sap and tar removed)',
+          '✨ Layer of wax for protection',
+          '🛑 Trim and tires dressed'
+        ],
+        process: [],
+        timeEstimate: '2-3 hours',
+        benefits: []
+      },
+      'Factory Reset': {
+        fullDescription: '🏭 Factory Reset Package – $325\n\nOur Factory Reset is an enhanced version of the Basic Maintenance Detail, designed to get your vehicle looking as close to factory condition as possible.',
+        includes: [
+          '**Interior:**',
+          '✅ Full interior wipe down',
+          '✅ Conditioner + UV protection on all surfaces',
+          '✅ Full vacuum and disinfection of cloth areas',
+          '✅ LIGHT stain removal',
+          '✅ Upholstery and floor mat shampoo & extraction',
+          '✅ Glass cleaned, door jambs cleaned and waxed',
+          '',
+          '**Exterior:**',
+          '✅ Foam contact wash (removes bugs, tar, sap)',
+          '✅ Brake dust removal from wheels',
+          '✅ Layer of wax for protection',
+          '✅ Trim and tires dressed',
+          '✅ Black trim restored/redyed',
+          '✅ Engine bay detailed'
+        ],
+        process: [],
+        timeEstimate: '4-6 hours',
+        benefits: []
+      }
+    };
+
+    return serviceDetails[serviceTitle] || null;
   };
 
   return (
     <section id="booking" className="py-16 md:py-24 bg-gradient-to-br from-gray-50 via-white to-gray-50">
       <div className="container mx-auto px-4 max-w-6xl">
 
-        {/* ========== STEP 1: HOW TO BOOK ========== */}
-        <div className="text-center mb-12">
-          <div className="inline-block bg-primary-100 text-primary-700 px-6 py-2 rounded-full font-semibold text-sm mb-4">
-            STEP 1
-          </div>
-          <h2 className="text-3xl md:text-5xl font-bold mb-4">How to Book a Detail</h2>
-          <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-            Get your vehicle detailed in 3 simple steps. Select your service, fill out the form, and we'll contact you within 24 hours.
+        {/* Header */}
+        <div className="text-center mb-6">
+          <h2 className="text-2xl md:text-3xl font-bold mb-2">Book Your Detail</h2>
+          <p className="text-gray-600 text-base max-w-2xl mx-auto">
+            Answer a few quick questions to get a personalized quote
           </p>
         </div>
 
-        {/* Timeline Line */}
-        <div className="flex justify-center mb-12">
-          <div className="w-1 h-16 bg-gradient-to-b from-primary-400 to-orange-500"></div>
+        {/* Progress Indicator */}
+        <div className="flex justify-center items-center mb-8 max-w-2xl mx-auto">
+          {[1, 2, 3, 4, 5].map((step) => (
+            <React.Fragment key={step}>
+              <div className={`
+                w-10 h-10 rounded-full flex items-center justify-center font-bold text-sm
+                ${currentStep >= step ? 'bg-[#0077B6] text-white' : 'bg-gray-200 text-gray-400'}
+              `}>
+                {currentStep > step ? <Check className="w-5 h-5" /> : step}
+              </div>
+              {step < 5 && (
+                <div className={`
+                  flex-1 h-1 mx-2
+                  ${currentStep > step ? 'bg-[#0077B6]' : 'bg-gray-200'}
+                `} />
+              )}
+            </React.Fragment>
+          ))}
         </div>
 
-        {/* ========== STEP 2: SELECT YOUR SERVICE ========== */}
-        <div id="step-1" className="mb-16">
-          <div className="text-center mb-8">
-            <div className="inline-block bg-orange-100 text-orange-700 px-6 py-2 rounded-full font-semibold text-sm mb-4">
-              STEP 2
+        {/* STEP 1: Vehicle Type */}
+        {currentStep === 1 && (
+        <div id="step-1" className="mb-8">
+          <div className="text-center mb-4">
+            <div className="inline-block bg-[#CAF0F8] text-[#023E8A] px-4 py-1 rounded-full font-semibold text-xs mb-2">
+              STEP 1
             </div>
-            <h3 className="text-2xl md:text-3xl font-bold mb-2">Select Your Service</h3>
-            <p className="text-gray-600">Choose the package that fits your needs</p>
+            <h3 className="text-xl md:text-2xl font-bold mb-1">First, what kind of vehicle do you drive?</h3>
+            <p className="text-gray-600 text-sm">Tell us about your car, truck, SUV, or specialty vehicle</p>
           </div>
 
-          {/* Services Grid: 3x2 for main services + 1x3 for Routine Reset */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-
-            {/* Main 6 Services (3x2 grid) */}
-            {mainServices.map((service, index) => (
-              <div
-                key={index}
-                onClick={() => handleServiceSelect(service.title)}
-                className={`
-                  relative bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer p-6 border-2
-                  ${selectedService === service.title
-                    ? 'border-orange-500 ring-4 ring-orange-200 transform scale-105'
-                    : 'border-gray-200 hover:border-orange-300'
-                  }
-                `}
-              >
-                {/* Selection Indicator */}
-                {selectedService === service.title && (
-                  <div className="absolute top-4 right-4 bg-orange-500 text-white rounded-full p-1">
-                    <Check className="w-5 h-5" />
-                  </div>
-                )}
-
-                {/* Icon */}
-                <div className={`${service.color} text-white p-4 rounded-lg inline-block mb-4`}>
-                  {service.icon}
-                </div>
-
-                {/* Title & Price */}
-                <h4 className="text-xl font-bold text-gray-800 mb-2">{service.title}</h4>
-                <div className="text-2xl font-bold text-orange-600 mb-3">{service.price}</div>
-
-                {/* Description */}
-                <p className="text-gray-600 text-sm mb-4">{service.description}</p>
-
-                {/* CTA */}
-                <button className={`
-                  w-full py-3 rounded-lg font-semibold transition-all flex items-center justify-center gap-2
-                  ${selectedService === service.title
-                    ? 'bg-orange-500 text-white'
-                    : 'bg-gray-100 text-gray-800 hover:bg-orange-500 hover:text-white'
-                  }
-                `}>
-                  {selectedService === service.title ? 'Selected' : 'Select This Service'}
-                  <ChevronRight className="w-4 h-4" />
-                </button>
+          <div className="max-w-2xl mx-auto bg-white rounded-2xl shadow-xl p-4 md:p-6">
+            <div className="relative">
+              <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                <Car className="h-5 w-5 text-gray-400" />
               </div>
-            ))}
+              <input
+                type="text"
+                value={vehicleType}
+                onChange={(e) => setVehicleType(e.target.value)}
+                onKeyPress={(e) => e.key === 'Enter' && handleVehicleTypeSubmit()}
+                className="w-full pl-10 pr-4 py-4 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#90E0EF] focus:border-transparent transition bg-gray-50 focus:bg-white text-lg"
+                placeholder="e.g., 2020 Honda Civic, Ford F-150, Tesla Model 3..."
+                disabled={currentStep > 1}
+              />
+            </div>
 
-            {/* Routine Reset - Tall Card (spans 1x3 height on desktop) */}
-            <div className="md:col-span-2 lg:col-span-1 lg:row-span-2">
-              <div
-                onClick={() => handleServiceSelect('Routine Reset')}
-                className={`
-                  relative bg-gradient-to-br from-orange-50 to-orange-100 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer p-6 border-2 h-full
-                  ${selectedService === 'Routine Reset'
-                    ? 'border-orange-500 ring-4 ring-orange-200 transform scale-105'
-                    : 'border-orange-300 hover:border-orange-400'
-                  }
-                `}
+            {currentStep === 1 && (
+              <button
+                onClick={handleVehicleTypeSubmit}
+                disabled={!vehicleType.trim()}
+                className="w-full mt-4 bg-gradient-to-r from-[#023E8A] to-[#0077B6] hover:from-[#0077B6] hover:to-[#90E0EF] disabled:from-gray-300 disabled:to-gray-400 disabled:cursor-not-allowed text-white font-bold py-3 px-6 rounded-lg transition-all transform hover:scale-105 disabled:transform-none"
               >
-                {/* "NOW INTRODUCING" Banner */}
-                <div className="absolute top-0 left-0 right-0 bg-gradient-to-r from-orange-500 to-orange-600 text-white text-center py-2 rounded-t-xl font-bold text-sm tracking-wide">
-                  ✨ NOW INTRODUCING ✨
-                </div>
+                Continue <ChevronRight className="w-5 h-5 inline ml-2" />
+              </button>
+            )}
+          </div>
+        </div>
+        )}
 
-                {/* Selection Indicator */}
-                {selectedService === 'Routine Reset' && (
-                  <div className="absolute top-14 right-4 bg-orange-500 text-white rounded-full p-1 z-10">
-                    <Check className="w-5 h-5" />
-                  </div>
-                )}
+        {/* STEP 2: Last Detail Timing */}
+        {currentStep === 2 && (
+          <div id="step-2" className="mb-8 scroll-mt-20">
+            <div className="text-center mb-4">
+              <div className="inline-block bg-[#CAF0F8] text-[#023E8A] px-4 py-1 rounded-full font-semibold text-xs mb-2">
+                STEP 2
+              </div>
+              <h3 className="text-xl md:text-2xl font-bold mb-1">When's the last time you had a detail?</h3>
+              <p className="text-gray-600 text-sm">This helps us understand your vehicle's condition</p>
+            </div>
 
-                {/* Content (with top padding for banner) */}
-                <div className="pt-8">
-                  {/* Icon */}
-                  <div className="bg-orange-500 text-white p-4 rounded-lg inline-block mb-4">
-                    <RotateCw className="w-8 h-8" />
-                  </div>
-
-                  {/* Title & Price */}
-                  <h4 className="text-2xl font-bold text-gray-800 mb-2">Routine Reset</h4>
-                  <div className="text-3xl font-bold text-orange-600 mb-4">$175/Month</div>
-
-                  {/* Description */}
-                  <p className="text-gray-700 mb-4 leading-relaxed">
-                    Stay consistently clean with our monthly subscription designed to keep your vehicle clean, protected, and consistent — every month.
-                  </p>
-
-                  {/* What's Included */}
-                  <div className="mb-4">
-                    <p className="font-semibold text-gray-800 mb-2">✅ What's Included:</p>
-                    <ul className="space-y-2 text-sm text-gray-700">
-                      <li className="flex items-start">
-                        <Check className="w-4 h-4 text-orange-500 mr-2 flex-shrink-0 mt-0.5" />
-                        <span>2x Exterior Details per Month</span>
-                      </li>
-                      <li className="flex items-start">
-                        <Check className="w-4 h-4 text-orange-500 mr-2 flex-shrink-0 mt-0.5" />
-                        <span>1x Interior Reset per Month</span>
-                      </li>
-                      <li className="flex items-start">
-                        <Check className="w-4 h-4 text-orange-500 mr-2 flex-shrink-0 mt-0.5" />
-                        <span>1x Engine Bay Cleaning (first visit)</span>
-                      </li>
-                      <li className="flex items-start">
-                        <Check className="w-4 h-4 text-orange-500 mr-2 flex-shrink-0 mt-0.5" />
-                        <span>Priority Scheduling - You pick the times</span>
-                      </li>
-                    </ul>
-                  </div>
-
-                  {/* Pricing Details */}
-                  <div className="bg-white/80 rounded-lg p-4 mb-4">
-                    <p className="font-semibold text-gray-800 mb-2">💰 Pricing:</p>
-                    <p className="text-sm text-gray-700 mb-1">
-                      <span className="font-semibold text-orange-600">First 2 months:</span> $300 upfront (limited-time offer)
-                    </p>
-                    <p className="text-sm text-gray-700">
-                      <span className="font-semibold">After that:</span> $175/month • Cancel anytime • No rollovers
-                    </p>
-                  </div>
-
-                  {/* Warning/CTA */}
-                  <div className="bg-orange-200 border border-orange-400 rounded-lg p-3 mb-4">
-                    <p className="text-sm text-gray-800">
-                      ⚠️ <span className="font-semibold">Want to stay consistently clean without falling behind?</span> The Routine Reset is your system.
-                    </p>
-                  </div>
-
-                  {/* CTA Button */}
-                  <button className={`
-                    w-full py-3 rounded-lg font-semibold transition-all flex items-center justify-center gap-2
-                    ${selectedService === 'Routine Reset'
-                      ? 'bg-orange-500 text-white'
-                      : 'bg-orange-500 text-white hover:bg-orange-600'
+            <div className="max-w-3xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-3">
+              {[
+                { value: '1-4 weeks', icon: <CheckCircle className="w-8 h-8" />, label: '1-4 weeks ago', desc: 'Recent detail' },
+                { value: '4-8 weeks', icon: <Calendar className="w-8 h-8" />, label: '4-8 weeks ago', desc: 'Regular maintenance' },
+                { value: '2+ months', icon: <Clock className="w-8 h-8" />, label: '2+ months ago', desc: 'Needs attention' },
+                { value: 'never', icon: <Star className="w-8 h-8" />, label: 'Never had a detail', desc: 'First time' }
+              ].map((option) => (
+                <button
+                  key={option.value}
+                  onClick={() => handleLastDetailSubmit(option.value)}
+                  disabled={currentStep > 2}
+                  className={`
+                    p-4 rounded-xl border-2 transition-all duration-200 text-left transform
+                    ${lastDetailTiming === option.value
+                      ? 'border-[#0077B6] ring-4 ring-[#90E0EF] bg-[#CAF0F8] scale-105 shadow-xl'
+                      : 'border-gray-200 hover:border-[#90E0EF] bg-white hover:shadow-lg hover:scale-102'
                     }
-                  `}>
-                    {selectedService === 'Routine Reset' ? 'Selected' : 'Select Routine Reset'}
-                    <ChevronRight className="w-4 h-4" />
-                  </button>
-                </div>
-              </div>
+                    ${currentStep > 2 ? 'cursor-not-allowed' : 'cursor-pointer active:scale-95'}
+                  `}
+                >
+                  <div className={`mb-2 transition-all ${lastDetailTiming === option.value ? 'text-[#023E8A] scale-110' : 'text-[#0077B6]'}`}>{option.icon}</div>
+                  <div className={`font-bold text-base mb-1 ${lastDetailTiming === option.value ? 'text-[#023E8A]' : ''}`}>{option.label}</div>
+                  <div className="text-gray-600 text-sm">{option.desc}</div>
+                </button>
+              ))}
             </div>
 
-          </div>
-        </div>
-
-        {/* Timeline Line */}
-        {selectedService && (
-          <div className="flex justify-center mb-12">
-            <div className="w-1 h-16 bg-gradient-to-b from-orange-500 to-green-500 animate-pulse"></div>
+            {/* Back Button */}
+            <div className="max-w-3xl mx-auto mt-4">
+              <button
+                onClick={() => setCurrentStep(1)}
+                className="px-4 py-2 bg-gray-200 hover:bg-gray-300 text-gray-800 font-semibold rounded-lg transition-all text-sm"
+              >
+                ← Back
+              </button>
+            </div>
           </div>
         )}
 
-        {/* ========== STEP 3: ENTER YOUR DETAILS ========== */}
-        {selectedService && (
-          <div id="step-2" className="scroll-mt-20">
-            <div className="text-center mb-8">
-              <div className="inline-block bg-green-100 text-green-700 px-6 py-2 rounded-full font-semibold text-sm mb-4">
+        {/* STEP 3: Cleanliness Level */}
+        {currentStep === 3 && (
+          <div id="step-3" className="mb-8 scroll-mt-20">
+            <div className="text-center mb-4">
+              <div className="inline-block bg-[#CAF0F8] text-[#023E8A] px-4 py-1 rounded-full font-semibold text-xs mb-2">
                 STEP 3
               </div>
-              <h3 className="text-2xl md:text-3xl font-bold mb-2">Enter Your Details</h3>
-              <p className="text-gray-600">We'll contact you within 24 hours with your personalized quote</p>
-              <p className="text-orange-600 font-semibold mt-2">Selected Service: {selectedService}</p>
+              <h3 className="text-xl md:text-2xl font-bold mb-1">How dirty is your car?</h3>
+              <p className="text-gray-600 text-sm">Be honest - we've seen it all!</p>
+            </div>
+
+            <div className="max-w-3xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-3">
+              {[
+                {
+                  value: 'level-1',
+                  label: 'Level 1: Not too bad',
+                  desc: 'Just want a refresh',
+                  color: 'bg-green-50 border-green-200'
+                },
+                {
+                  value: 'level-2',
+                  label: 'Level 2: Moderately dirty',
+                  desc: 'Just dirt and dust',
+                  color: 'bg-yellow-50 border-yellow-200'
+                },
+                {
+                  value: 'level-3',
+                  label: 'Level 3: Really dirty',
+                  desc: 'Food residue, excessive dirt',
+                  color: 'bg-red-50 border-red-200'
+                }
+              ].map((option) => (
+                <button
+                  key={option.value}
+                  onClick={() => handleCleanlinessSubmit(option.value)}
+                  disabled={currentStep > 3}
+                  className={`
+                    p-4 rounded-xl border-2 transition-all duration-200 text-left transform
+                    ${cleanlinessLevel === option.value
+                      ? 'border-[#0077B6] ring-4 ring-[#90E0EF] bg-[#CAF0F8] scale-105 shadow-xl'
+                      : `${option.color} hover:border-[#90E0EF] hover:shadow-lg hover:scale-102`
+                    }
+                    ${currentStep > 3 ? 'cursor-not-allowed opacity-70' : 'cursor-pointer active:scale-95'}
+                  `}
+                >
+                  <div className={`font-bold text-base mb-1 ${cleanlinessLevel === option.value ? 'text-[#023E8A]' : ''}`}>{option.label}</div>
+                  <div className="text-gray-600 text-sm">{option.desc}</div>
+                </button>
+              ))}
+            </div>
+
+            {/* Back Button */}
+            <div className="max-w-3xl mx-auto mt-4">
+              <button
+                onClick={() => setCurrentStep(2)}
+                className="px-4 py-2 bg-gray-200 hover:bg-gray-300 text-gray-800 font-semibold rounded-lg transition-all text-sm"
+              >
+                ← Back
+              </button>
+            </div>
+          </div>
+        )}
+
+        {/* STEP 4: Package Selection */}
+        {currentStep === 4 && (
+          <div id="step-4" className="mb-8 scroll-mt-20">
+            <div className="text-center mb-4">
+              <div className="inline-block bg-[#CAF0F8] text-[#023E8A] px-4 py-1 rounded-full font-semibold text-xs mb-2">
+                STEP 4
+              </div>
+              <h3 className="text-xl md:text-2xl font-bold mb-1">Select Your Service Package</h3>
+              <p className="text-gray-600 text-sm">Choose the package that fits your needs</p>
+            </div>
+
+            {/* Service Cards */}
+            <div className="grid grid-cols-3 gap-2 sm:gap-3 md:gap-4 mb-4">
+              {topRowServices.map((service, index) => (
+                <div
+                  key={index}
+                  onClick={() => currentStep === 4 && handleServiceSelect(service.title)}
+                  className={`
+                    relative rounded-xl sm:rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 p-4 sm:p-5 md:p-6 border-2 transform group
+                    ${selectedService === service.title
+                      ? 'border-[#0077B6] ring-4 ring-[#90E0EF]/50 scale-105 shadow-2xl bg-gradient-to-br from-[#CAF0F8] to-white'
+                      : 'border-gray-200 hover:border-[#90E0EF] hover:scale-105 bg-white'
+                    }
+                    ${currentStep === 4 ? 'cursor-pointer active:scale-100' : 'cursor-not-allowed opacity-70'}
+                    ${service.isPopular ? 'shadow-[0_0_40px_rgba(0,119,182,0.4)]' : ''}
+                  `}
+                >
+                  {service.isPopular && (
+                    <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 z-10">
+                      <div className="bg-gradient-to-r from-[#0077B6] to-[#90E0EF] text-white px-3 py-1.5 rounded-full text-xs font-bold shadow-lg flex items-center gap-1">
+                        <Star className="w-3 h-3 fill-white" />
+                        MOST POPULAR
+                      </div>
+                    </div>
+                  )}
+
+                  {selectedService === service.title && (
+                    <div className="absolute -top-2 -right-2 bg-gradient-to-r from-[#0077B6] to-[#023E8A] text-white rounded-full p-2 shadow-lg animate-bounce z-20">
+                      <Check className="w-5 h-5" />
+                    </div>
+                  )}
+
+                  <div className={`${service.color} text-white p-3 md:p-4 rounded-xl inline-block mb-3 transform transition-all duration-300 ${selectedService === service.title ? 'scale-110 rotate-3' : 'group-hover:scale-110 group-hover:-rotate-3'}`}>
+                    <div className="w-8 h-8 md:w-10 md:h-10">
+                      {service.icon}
+                    </div>
+                  </div>
+
+                  <h4 className={`text-base md:text-xl font-bold mb-2 transition-colors ${selectedService === service.title ? 'text-[#023E8A]' : 'text-gray-800 group-hover:text-[#0077B6]'}`}>
+                    {service.title}
+                  </h4>
+                  <div className={`text-2xl md:text-3xl font-black mb-2 transition-colors ${selectedService === service.title ? 'text-[#0077B6]' : 'text-[#023E8A] group-hover:text-[#0077B6]'}`}>
+                    {service.price}
+                  </div>
+                  <p className="hidden sm:block text-gray-600 text-xs md:text-sm mb-4 line-clamp-2">{service.description}</p>
+
+                  <button
+                    onClick={(e) => handleOpenModal(service.title, e)}
+                    className={`w-full py-2 rounded-lg text-xs md:text-sm font-semibold transition-all flex items-center justify-center gap-2 transform hover:scale-105 ${
+                      selectedService === service.title
+                        ? 'bg-gradient-to-r from-[#0077B6] to-[#90E0EF] text-white shadow-md'
+                        : 'bg-[#CAF0F8] hover:bg-[#90E0EF] text-[#023E8A]'
+                    }`}
+                  >
+                    <Info className="w-4 h-4" />
+                    <span>Details</span>
+                  </button>
+                </div>
+              ))}
+            </div>
+
+            <div className="grid grid-cols-2 gap-2 sm:gap-3 md:gap-4">
+              {middleRowServices.map((service, index) => (
+                <div
+                  key={index}
+                  onClick={() => currentStep === 4 && handleServiceSelect(service.title)}
+                  className={`
+                    relative rounded-xl sm:rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 p-4 sm:p-5 md:p-6 border-2 transform group
+                    ${selectedService === service.title
+                      ? 'border-[#0077B6] ring-4 ring-[#90E0EF]/50 scale-105 shadow-2xl bg-gradient-to-br from-[#CAF0F8] to-white'
+                      : 'border-gray-200 hover:border-[#90E0EF] hover:scale-105 bg-white'
+                    }
+                    ${currentStep === 4 ? 'cursor-pointer active:scale-100' : 'cursor-not-allowed opacity-70'}
+                  `}
+                >
+                  {selectedService === service.title && (
+                    <div className="absolute -top-2 -right-2 bg-gradient-to-r from-[#0077B6] to-[#023E8A] text-white rounded-full p-2 shadow-lg animate-bounce">
+                      <Check className="w-5 h-5" />
+                    </div>
+                  )}
+
+                  <div className={`${service.color} text-white p-3 md:p-4 rounded-xl inline-block mb-3 transform transition-all duration-300 ${selectedService === service.title ? 'scale-110 rotate-3' : 'group-hover:scale-110 group-hover:-rotate-3'}`}>
+                    <div className="w-8 h-8 md:w-10 md:h-10">
+                      {service.icon}
+                    </div>
+                  </div>
+
+                  <h4 className={`text-base md:text-xl font-bold mb-2 transition-colors ${selectedService === service.title ? 'text-[#023E8A]' : 'text-gray-800 group-hover:text-[#0077B6]'}`}>
+                    {service.title}
+                  </h4>
+                  <div className={`text-2xl md:text-3xl font-black mb-2 transition-colors ${selectedService === service.title ? 'text-[#0077B6]' : 'text-[#023E8A] group-hover:text-[#0077B6]'}`}>
+                    {service.price}
+                  </div>
+                  <p className="hidden sm:block text-gray-600 text-xs md:text-sm mb-4 line-clamp-2">{service.description}</p>
+
+                  <button
+                    onClick={(e) => handleOpenModal(service.title, e)}
+                    className={`w-full py-2 rounded-lg text-xs md:text-sm font-semibold transition-all flex items-center justify-center gap-2 transform hover:scale-105 ${
+                      selectedService === service.title
+                        ? 'bg-gradient-to-r from-[#0077B6] to-[#90E0EF] text-white shadow-md'
+                        : 'bg-[#CAF0F8] hover:bg-[#90E0EF] text-[#023E8A]'
+                    }`}
+                  >
+                    <Info className="w-4 h-4" />
+                    <span>Details</span>
+                  </button>
+                </div>
+              ))}
+            </div>
+
+            {/* Back Button */}
+            <div className="mt-4">
+              <button
+                onClick={() => setCurrentStep(3)}
+                className="px-4 py-2 bg-gray-200 hover:bg-gray-300 text-gray-800 font-semibold rounded-lg transition-all text-sm"
+              >
+                ← Back
+              </button>
+            </div>
+          </div>
+        )}
+
+        {/* STEP 5: Contact Information */}
+        {currentStep === 5 && selectedService && (
+          <div id="step-5" className="scroll-mt-20">
+            <div className="text-center mb-4">
+              <div className="inline-block bg-[#CAF0F8] text-[#023E8A] px-4 py-1 rounded-full font-semibold text-xs mb-2">
+                STEP 5
+              </div>
+              <h3 className="text-xl md:text-2xl font-bold mb-1">Enter Your Contact Details</h3>
+              <p className="text-gray-600 text-sm">We'll contact you within a few minutes!</p>
+              <p className="text-[#023E8A] font-semibold text-sm mt-1">Selected: {selectedService}</p>
             </div>
 
             <div className="max-w-2xl mx-auto">
-              <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-200">
+              <div className="bg-white rounded-2xl shadow-xl p-4 md:p-6 border border-gray-200">
 
-                {/* Success Message */}
                 {submitStatus === 'success' && (
-                  <div className="bg-green-50 border border-green-200 rounded-lg p-4 mb-6">
+                  <div className="bg-green-50 border border-green-200 rounded-lg p-3 mb-4">
                     <div className="flex items-start">
-                      <Check className="w-5 h-5 text-green-600 mr-3 flex-shrink-0 mt-0.5" />
+                      <Check className="w-5 h-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
                       <div>
-                        <p className="text-green-800 font-medium">Thank you for your booking request!</p>
-                        <p className="text-green-700 text-sm">We'll get back to you within 24 hours with your personalized quote for {selectedService}.</p>
+                        <p className="text-green-800 font-medium text-sm">Thank you for your booking request!</p>
+                        <p className="text-green-700 text-xs">We'll contact you within a few minutes!</p>
                       </div>
                     </div>
                   </div>
                 )}
 
-                {/* Error Message */}
                 {submitStatus === 'error' && (
-                  <div className="bg-red-50 border border-red-200 rounded-lg p-4 mb-6">
-                    <p className="text-red-800 font-medium">Submission failed</p>
-                    <p className="text-red-700 text-sm">Please try again or call us at (803) 667-8731</p>
+                  <div className="bg-red-50 border border-red-200 rounded-lg p-3 mb-4">
+                    <p className="text-red-800 font-medium text-sm">Submission failed</p>
+                    <p className="text-red-700 text-xs">Please try again or call us at (803) 667-8731</p>
                   </div>
                 )}
 
-                <form onSubmit={handleSubmit} className="space-y-5">
-
-                  {/* Full Name */}
+                <form onSubmit={handleSubmit} className="space-y-4">
                   <div className="relative">
                     <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                       <User className="h-5 w-5 text-gray-400" />
@@ -386,13 +643,12 @@ const BookingTimeline: React.FC = () => {
                       onChange={handleChange}
                       required
                       autoComplete="name"
-                      className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition bg-gray-50 focus:bg-white"
+                      className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#90E0EF] focus:border-transparent transition bg-gray-50 focus:bg-white"
                       placeholder="Full Name *"
                       disabled={isSubmitting}
                     />
                   </div>
 
-                  {/* Email */}
                   <div className="relative">
                     <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                       <Mail className="h-5 w-5 text-gray-400" />
@@ -404,13 +660,12 @@ const BookingTimeline: React.FC = () => {
                       onChange={handleChange}
                       required
                       autoComplete="email"
-                      className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition bg-gray-50 focus:bg-white"
+                      className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#90E0EF] focus:border-transparent transition bg-gray-50 focus:bg-white"
                       placeholder="Email Address *"
                       disabled={isSubmitting}
                     />
                   </div>
 
-                  {/* Phone */}
                   <div className="relative">
                     <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                       <Phone className="h-5 w-5 text-gray-400" />
@@ -422,13 +677,12 @@ const BookingTimeline: React.FC = () => {
                       onChange={handleChange}
                       required
                       autoComplete="tel"
-                      className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition bg-gray-50 focus:bg-white"
+                      className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#90E0EF] focus:border-transparent transition bg-gray-50 focus:bg-white"
                       placeholder="Phone Number *"
                       disabled={isSubmitting}
                     />
                   </div>
 
-                  {/* Location */}
                   <div className="relative">
                     <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                       <MapPin className="h-5 w-5 text-gray-400" />
@@ -440,34 +694,15 @@ const BookingTimeline: React.FC = () => {
                       onChange={handleChange}
                       required
                       autoComplete="street-address"
-                      className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition bg-gray-50 focus:bg-white"
+                      className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#90E0EF] focus:border-transparent transition bg-gray-50 focus:bg-white"
                       placeholder="City & Zip Code *"
                       disabled={isSubmitting}
                     />
                   </div>
 
-                  {/* Vehicle Details */}
-                  <div className="relative">
-                    <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                      <Car className="h-5 w-5 text-gray-400" />
-                    </div>
-                    <input
-                      type="text"
-                      name="vehicleDetails"
-                      value={formData.vehicleDetails}
-                      onChange={handleChange}
-                      required
-                      autoComplete="off"
-                      className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition bg-gray-50 focus:bg-white"
-                      placeholder="Vehicle Year/Make/Model *"
-                      disabled={isSubmitting}
-                    />
-                  </div>
+                  {/* Vehicle Type - Hidden (already collected in Step 1) */}
+                  <input type="hidden" name="vehicleType" value={vehicleType} />
 
-                  {/* Service Selection (Hidden - auto-filled) */}
-                  <input type="hidden" name="service" value={formData.service} />
-
-                  {/* Additional Notes */}
                   <div className="relative">
                     <div className="absolute top-3 left-0 pl-3 flex items-start pointer-events-none">
                       <FileText className="h-5 w-5 text-gray-400" />
@@ -477,39 +712,124 @@ const BookingTimeline: React.FC = () => {
                       value={formData.description}
                       onChange={handleChange}
                       rows={3}
-                      autoComplete="off"
-                      className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition bg-gray-50 focus:bg-white resize-none"
+                      className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#90E0EF] focus:border-transparent transition bg-gray-50 focus:bg-white resize-none"
                       placeholder="Additional Details (Optional)"
                       disabled={isSubmitting}
                     />
                   </div>
 
-                  {/* Submit Button */}
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 disabled:from-gray-300 disabled:to-gray-400 disabled:cursor-not-allowed text-white font-bold py-4 px-6 rounded-lg transition-all duration-200 transform hover:scale-105 disabled:transform-none shadow-lg hover:shadow-xl"
+                    className="w-full bg-gradient-to-r from-[#023E8A] to-[#0077B6] hover:from-[#0077B6] hover:to-[#90E0EF] disabled:from-gray-300 disabled:to-gray-400 disabled:cursor-not-allowed text-white font-bold py-3 px-6 rounded-lg transition-all transform hover:scale-105 disabled:transform-none shadow-lg"
                   >
-                    {isSubmitting ? (
-                      <div className="flex items-center justify-center">
-                        <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin mr-2"></div>
-                        Submitting...
-                      </div>
-                    ) : (
-                      `Get Quote for ${selectedService}`
-                    )}
+                    {isSubmitting ? 'Submitting...' : `Get Quote for ${selectedService}`}
                   </button>
 
-                  <p className="text-sm text-gray-500 text-center mt-4">
-                    Or call us directly: <a href="tel:8036678731" className="text-orange-600 font-semibold hover:underline">(803) 667-8731</a>
+                  <p className="text-xs text-gray-500 text-center mt-3">
+                    Or call us: <a href="tel:8036678731" className="text-[#023E8A] font-semibold hover:underline">(803) 667-8731</a>
                   </p>
                 </form>
+
+                {/* Back Button */}
+                <div className="mt-4">
+                  <button
+                    onClick={() => setCurrentStep(4)}
+                    type="button"
+                    className="px-4 py-2 bg-gray-200 hover:bg-gray-300 text-gray-800 font-semibold rounded-lg transition-all text-sm"
+                  >
+                    ← Back
+                  </button>
+                </div>
               </div>
             </div>
           </div>
         )}
 
       </div>
+
+      {/* Modal */}
+      {openModal && (() => {
+        const details = getServiceDetails(openModal);
+        return (
+          <div
+            className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4"
+            onClick={handleCloseModal}
+          >
+            <div
+              className="bg-white rounded-2xl shadow-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div className="sticky top-0 bg-gradient-to-r from-[#023E8A] to-[#0077B6] text-white p-6 rounded-t-2xl flex justify-between items-center z-10">
+                <h3 className="text-2xl md:text-3xl font-bold">{openModal}</h3>
+                <button
+                  onClick={handleCloseModal}
+                  className="bg-white/20 hover:bg-white/30 rounded-full p-2 transition-all active:scale-90"
+                >
+                  <X className="w-6 h-6" />
+                </button>
+              </div>
+
+              {details && (
+                <div className="p-6 md:p-8">
+                  <div className="text-gray-700 text-base mb-6 whitespace-pre-line leading-relaxed">
+                    {details.fullDescription}
+                  </div>
+
+                  {details.timeEstimate && (
+                    <div className="bg-[#CAF0F8] border border-[#90E0EF] rounded-lg p-4 mb-6">
+                      <p className="font-semibold text-gray-800">⏱️ Time Estimate: {details.timeEstimate}</p>
+                    </div>
+                  )}
+
+                  <div className="space-y-2">
+                    {details.includes.map((item, index) => {
+                      // Bold headers (Interior/Exterior)
+                      if (item.startsWith('**') && item.endsWith('**')) {
+                        return (
+                          <div key={index} className="font-bold text-lg text-[#023E8A] mt-4 mb-2">
+                            {item.replace(/\*\*/g, '')}
+                          </div>
+                        );
+                      }
+                      // Empty lines for spacing
+                      if (item === '') {
+                        return <div key={index} className="h-2"></div>;
+                      }
+                      // Regular list items
+                      return (
+                        <div key={index} className="flex items-start gap-2 pl-2">
+                          <span className="text-gray-700">{item}</span>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+              )}
+
+              <div className="sticky bottom-0 border-t border-gray-200 p-6 bg-gray-50 rounded-b-2xl flex gap-4">
+                <button
+                  onClick={handleCloseModal}
+                  className="flex-1 bg-gray-200 hover:bg-gray-300 text-gray-800 font-semibold py-3 px-6 rounded-lg transition-all active:scale-95"
+                >
+                  Close
+                </button>
+                <button
+                  onClick={() => {
+                    setTimeout(() => {
+                      setOpenModal(null);
+                      if (currentStep === 4 && openModal) handleServiceSelect(openModal);
+                    }, 200);
+                  }}
+                  className="flex-1 bg-gradient-to-r from-[#023E8A] to-[#0077B6] hover:from-[#0077B6] hover:to-[#90E0EF] text-white font-semibold py-3 px-6 rounded-lg transition-all active:scale-95"
+                >
+                  Select {openModal}
+                </button>
+              </div>
+            </div>
+          </div>
+        );
+      })()}
     </section>
   );
 };

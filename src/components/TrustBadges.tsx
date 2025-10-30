@@ -7,15 +7,15 @@ const TrustBadges: React.FC = () => {
       <div className="container mx-auto px-4 max-w-7xl">
         <div className="flex flex-wrap justify-center items-center gap-4 md:gap-8">
           <div className="flex items-center bg-white px-6 py-4 rounded-lg shadow-md">
-            <CheckCircle className="w-6 h-6 text-primary-500 mr-3" />
+            <CheckCircle className="w-6 h-6 text-[#0077B6] mr-3" />
             <span className="font-semibold text-gray-800">Free Estimates</span>
           </div>
           <div className="flex items-center bg-white px-6 py-4 rounded-lg shadow-md">
-            <Truck className="w-6 h-6 text-primary-600 mr-3" />
+            <Truck className="w-6 h-6 text-[#023E8A] mr-3" />
             <span className="font-semibold text-gray-800">Mobile Service Available</span>
           </div>
           <div className="flex items-center bg-white px-6 py-4 rounded-lg shadow-md">
-            <ThumbsUp className="w-6 h-6 text-primary-500 mr-3" />
+            <ThumbsUp className="w-6 h-6 text-[#0077B6] mr-3" />
             <span className="font-semibold text-gray-800">Satisfaction Guaranteed</span>
           </div>
         </div>

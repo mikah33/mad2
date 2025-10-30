@@ -59,7 +59,7 @@ const Hero: React.FC = () => {
         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 leading-tight">
           Expert Mobile Auto Detailing
           <br />
-          <span className="text-primary-300">in Columbia, SC</span>
+          <span style={{color: '#90E0EF'}}>in Columbia, SC</span>
         </h1>
 
         <p className="text-base sm:text-lg md:text-xl mb-6 md:mb-8 max-w-3xl mx-auto text-gray-100 px-4">
@@ -68,27 +68,30 @@ const Hero: React.FC = () => {
           delivering professional results with ultimate convenience.
         </p>
 
-        <p className="text-lg sm:text-xl md:text-2xl font-semibold mb-6 md:mb-8 text-primary-300">
+        <p className="text-lg sm:text-xl md:text-2xl font-semibold mb-6 md:mb-8 text-[#90E0EF]">
           ✨ Trusted. Convenient. Exceptional Results.
         </p>
 
         <div className="flex flex-wrap justify-center gap-3 md:gap-6 mb-8 md:mb-10 px-4">
           <div className="flex items-center bg-white/10 backdrop-blur-sm px-3 sm:px-4 md:px-6 py-2 md:py-3 rounded-lg text-sm md:text-base">
-            <CheckCircle className="w-4 h-4 md:w-5 md:h-5 mr-1 md:mr-2 text-primary-300 flex-shrink-0" />
+            <CheckCircle className="w-4 h-4 md:w-5 md:h-5 mr-1 md:mr-2 text-[#90E0EF] flex-shrink-0" />
             <span>Professional Results</span>
           </div>
           <div className="flex items-center bg-white/10 backdrop-blur-sm px-3 sm:px-4 md:px-6 py-2 md:py-3 rounded-lg text-sm md:text-base">
-            <Shield className="w-4 h-4 md:w-5 md:h-5 mr-1 md:mr-2 text-primary-300 flex-shrink-0" />
+            <Shield className="w-4 h-4 md:w-5 md:h-5 mr-1 md:mr-2 text-[#90E0EF] flex-shrink-0" />
             <span>Fully Insured</span>
           </div>
           <div className="flex items-center bg-white/10 backdrop-blur-sm px-3 sm:px-4 md:px-6 py-2 md:py-3 rounded-lg text-sm md:text-base">
-            <Clock className="w-4 h-4 md:w-5 md:h-5 mr-1 md:mr-2 text-primary-300 flex-shrink-0" />
+            <Clock className="w-4 h-4 md:w-5 md:h-5 mr-1 md:mr-2 text-[#90E0EF] flex-shrink-0" />
             <span>Fast Service</span>
           </div>
         </div>
 
         <a href="#quote">
-          <button className="px-6 md:px-8 py-3 md:py-4 bg-primary-700 text-white text-base md:text-lg font-bold rounded-lg hover:bg-primary-800 transition shadow-lg hover:shadow-xl transform hover:scale-105">
+          <button className="px-6 md:px-8 py-3 md:py-4 text-white text-base md:text-lg font-bold rounded-lg transition shadow-lg hover:shadow-xl transform hover:scale-105"
+            style={{background: '#023E8A'}}
+            onMouseEnter={(e) => e.currentTarget.style.background = '#0077B6'}
+            onMouseLeave={(e) => e.currentTarget.style.background = '#023E8A'}>
             Get Your Free Quote
           </button>
         </a>

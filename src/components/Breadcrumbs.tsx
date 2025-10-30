@@ -48,7 +48,7 @@ export const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ items, className = '' 
       >
         <Link
           to="/"
-          className="flex items-center hover:text-primary-700 transition"
+          className="flex items-center hover:text-[#023E8A] transition"
           aria-label="Home"
         >
           <Home className="w-4 h-4" />
@@ -68,7 +68,7 @@ export const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ items, className = '' 
             ) : (
               <Link
                 to={item.path}
-                className="hover:text-primary-700 transition"
+                className="hover:text-[#023E8A] transition"
               >
                 {item.label}
               </Link>

@@ -18,12 +18,12 @@ const Testimonials: React.FC = () => {
           {displayReviews.map((review, index) => (
             <div key={index} className="bg-white rounded-xl shadow-lg p-6">
               <div className="flex items-center mb-4">
-                <div className="w-10 h-10 rounded-full bg-primary-700 text-white flex items-center justify-center font-bold mr-3">
+                <div className="w-10 h-10 rounded-full bg-[#023E8A] text-white flex items-center justify-center font-bold mr-3">
                   {review.initial}
                 </div>
                 <div>
                   <div className="flex items-center text-sm text-gray-600 mb-1">
-                    <span className="w-5 h-5 rounded-full bg-primary-600 text-white flex items-center justify-center text-xs mr-2">
+                    <span className="w-5 h-5 rounded-full bg-[#0077B6] text-white flex items-center justify-center text-xs mr-2">
                       G
                     </span>
                     Google Review
@@ -56,7 +56,7 @@ const Testimonials: React.FC = () => {
           </p>
           <div className="flex justify-center gap-4 flex-wrap">
             <a href="#quote">
-              <button className="px-8 py-4 bg-primary-700 text-white font-bold rounded-lg hover:bg-primary-800 transition">
+              <button className="px-8 py-4 bg-[#023E8A] text-white font-bold rounded-lg hover:bg-[#0077B6] transition">
                 Get Your Free Quote
               </button>
             </a>
@@ -64,7 +64,7 @@ const Testimonials: React.FC = () => {
               href="https://g.page/r/CdSqpNXvv_3aEBM/review"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-8 py-4 text-primary-700 font-semibold rounded-lg hover:text-primary-800 transition flex items-center"
+              className="px-8 py-4 text-[#023E8A] font-semibold rounded-lg hover:text-[#0077B6] transition flex items-center"
             >
               View all 19 Google reviews →
             </a>

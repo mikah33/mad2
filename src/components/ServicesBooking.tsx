@@ -30,7 +30,7 @@ const ServicesBooking: React.FC = () => {
       icon: <Sparkles className="w-6 h-6" />,
       title: 'Basic Detail Package',
       price: '$200',
-      color: 'bg-orange-500',
+      color: 'bg-[#0077B6]',
       slug: 'basic-detail',
       description: [
         'Full Interior Wipe Down',
@@ -48,7 +48,7 @@ const ServicesBooking: React.FC = () => {
       icon: <Star className="w-6 h-6" />,
       title: 'Factory Reset Package',
       price: '$325',
-      color: 'bg-orange-500',
+      color: 'bg-[#0077B6]',
       slug: 'factory-reset',
       description: [
         'Everything in Basic Detail',
@@ -66,7 +66,7 @@ const ServicesBooking: React.FC = () => {
       icon: <Shield className="w-6 h-6" />,
       title: 'Ceramic Coating',
       price: 'Custom Quote',
-      color: 'bg-primary-500',
+      color: 'bg-[#0077B6]',
       slug: 'ceramic-coating',
       description: [
         'Complete Paint Decontamination',
@@ -84,7 +84,7 @@ const ServicesBooking: React.FC = () => {
       icon: <Wrench className="w-6 h-6" />,
       title: 'Paint Correction',
       price: 'Custom Quote',
-      color: 'bg-primary-600',
+      color: 'bg-[#023E8A]',
       slug: 'paint-correction',
       description: [
         'Remove Swirl Marks',
@@ -100,7 +100,7 @@ const ServicesBooking: React.FC = () => {
       icon: <Zap className="w-6 h-6" />,
       title: 'Specialty Services',
       price: 'Custom Quote',
-      color: 'bg-primary-500',
+      color: 'bg-[#0077B6]',
       slug: 'specialty',
       description: [
         'Interior-Only Detail ($150)',
@@ -117,7 +117,7 @@ const ServicesBooking: React.FC = () => {
       icon: <Anchor className="w-6 h-6" />,
       title: 'Marine & RV Detailing',
       price: 'Custom Quote',
-      color: 'bg-primary-500',
+      color: 'bg-[#0077B6]',
       slug: 'marine-rv',
       description: [
         'Marine Boat Detailing',
@@ -133,7 +133,7 @@ const ServicesBooking: React.FC = () => {
       icon: <RotateCw className="w-6 h-6" />,
       title: 'Routine Reset',
       price: '$175/Month',
-      color: 'bg-orange-500',
+      color: 'bg-[#0077B6]',
       slug: 'routine-reset',
       description: [
         '2x Exterior Details per Month',
@@ -249,7 +249,7 @@ const ServicesBooking: React.FC = () => {
                 key={index}
                 className={`
                   bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 cursor-pointer border-2
-                  ${selectedService === service.title ? 'border-orange-500 ring-2 ring-orange-200' : 'border-gray-200 hover:border-orange-300'}
+                  ${selectedService === service.title ? 'border-[#0077B6] ring-2 ring-[#90E0EF]' : 'border-gray-200 hover:border-[#90E0EF]'}
                 `}
                 onClick={() => handleServiceSelect(service.title)}
               >
@@ -264,14 +264,14 @@ const ServicesBooking: React.FC = () => {
                     {/* Title & Price */}
                     <div className="flex-1">
                       <h3 className="text-lg md:text-xl font-bold text-gray-800">{service.title}</h3>
-                      <p className="text-2xl font-bold text-orange-600 mt-1">{service.price}</p>
+                      <p className="text-2xl font-bold text-[#023E8A] mt-1">{service.price}</p>
                     </div>
 
                     {/* Selection Indicator */}
                     <div className={`
                       w-8 h-8 rounded-full border-2 flex items-center justify-center transition-all flex-shrink-0
                       ${selectedService === service.title
-                        ? 'border-orange-500 bg-orange-500'
+                        ? 'border-[#0077B6] bg-[#0077B6]'
                         : 'border-gray-300 bg-white'
                       }
                     `}>
@@ -322,7 +322,7 @@ const ServicesBooking: React.FC = () => {
                 <h3 className="text-2xl font-bold text-gray-800 mb-2 text-center">Get Your Free Quote</h3>
                 <p className="text-sm text-gray-600 mb-6 text-center">
                   {selectedService ? (
-                    <span className="text-orange-600 font-semibold">
+                    <span className="text-[#023E8A] font-semibold">
                       Selected: {selectedService}
                     </span>
                   ) : (
@@ -364,7 +364,7 @@ const ServicesBooking: React.FC = () => {
                       onChange={handleChange}
                       required
                       autoComplete="name"
-                      className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition bg-gray-50 focus:bg-white"
+                      className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#90E0EF] focus:border-transparent transition bg-gray-50 focus:bg-white"
                       placeholder="Full Name *"
                       disabled={isSubmitting}
                     />
@@ -382,7 +382,7 @@ const ServicesBooking: React.FC = () => {
                       onChange={handleChange}
                       required
                       autoComplete="email"
-                      className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition bg-gray-50 focus:bg-white"
+                      className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#90E0EF] focus:border-transparent transition bg-gray-50 focus:bg-white"
                       placeholder="Email Address *"
                       disabled={isSubmitting}
                     />
@@ -399,7 +399,7 @@ const ServicesBooking: React.FC = () => {
                       value={formData.phone}
                       onChange={handleChange}
                       autoComplete="tel"
-                      className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition bg-gray-50 focus:bg-white"
+                      className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#90E0EF] focus:border-transparent transition bg-gray-50 focus:bg-white"
                       placeholder="Phone Number"
                       disabled={isSubmitting}
                     />
@@ -416,7 +416,7 @@ const ServicesBooking: React.FC = () => {
                       value={formData.location}
                       onChange={handleChange}
                       autoComplete="street-address"
-                      className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition bg-gray-50 focus:bg-white"
+                      className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#90E0EF] focus:border-transparent transition bg-gray-50 focus:bg-white"
                       placeholder="City & Zip Code"
                       disabled={isSubmitting}
                     />
@@ -433,7 +433,7 @@ const ServicesBooking: React.FC = () => {
                       value={formData.vehicleDetails}
                       onChange={handleChange}
                       autoComplete="off"
-                      className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition bg-gray-50 focus:bg-white"
+                      className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#90E0EF] focus:border-transparent transition bg-gray-50 focus:bg-white"
                       placeholder="Vehicle Year/Make/Model"
                       disabled={isSubmitting}
                     />
@@ -453,7 +453,7 @@ const ServicesBooking: React.FC = () => {
                       onChange={handleChange}
                       rows={3}
                       autoComplete="off"
-                      className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition bg-gray-50 focus:bg-white resize-none"
+                      className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#90E0EF] focus:border-transparent transition bg-gray-50 focus:bg-white resize-none"
                       placeholder="Additional Details (Optional)"
                       disabled={isSubmitting}
                     />
@@ -463,7 +463,7 @@ const ServicesBooking: React.FC = () => {
                   <button
                     type="submit"
                     disabled={isSubmitting || !selectedService}
-                    className="w-full bg-orange-500 hover:bg-orange-600 disabled:bg-gray-300 disabled:cursor-not-allowed text-white font-bold py-4 px-6 rounded-lg transition-all duration-200 transform hover:scale-105 disabled:transform-none shadow-lg hover:shadow-xl"
+                    className="w-full bg-[#0077B6] hover:bg-[#023E8A] disabled:bg-gray-300 disabled:cursor-not-allowed text-white font-bold py-4 px-6 rounded-lg transition-all duration-200 transform hover:scale-105 disabled:transform-none shadow-lg hover:shadow-xl"
                   >
                     {isSubmitting ? (
                       <div className="flex items-center justify-center">
@@ -476,7 +476,7 @@ const ServicesBooking: React.FC = () => {
                   </button>
 
                   <p className="text-xs text-gray-500 text-center mt-2">
-                    Or call us: <a href="tel:8036678731" className="text-orange-600 font-semibold hover:underline">(803) 667-8731</a>
+                    Or call us: <a href="tel:8036678731" className="text-[#023E8A] font-semibold hover:underline">(803) 667-8731</a>
                   </p>
                 </form>
               </div>
