@@ -48,7 +48,7 @@ const Services: React.FC<{ onSelectService: (service: string) => void }> = ({ on
     {
       icon: <Shield className="w-8 h-8" />,
       title: 'Ceramic Coatings',
-      price: 'Quote',
+      price: 'Starting at $999',
       color: 'bg-[#0077B6]',
       description: [
         'Achieve long-term paint protection with our professional-grade ceramic application',
@@ -59,7 +59,7 @@ const Services: React.FC<{ onSelectService: (service: string) => void }> = ({ on
     {
       icon: <Wrench className="w-8 h-8" />,
       title: 'Paint Corrections',
-      price: 'Quote',
+      price: 'Starting at $599',
       color: 'bg-[#023E8A]',
       description: [
         "Restore your vehicle's flawless finish with expert paint correction",
@@ -92,17 +92,15 @@ const Services: React.FC<{ onSelectService: (service: string) => void }> = ({ on
     {
       icon: <RotateCw className="w-8 h-8" />,
       title: 'Routine Reset',
-      price: '$175/Month',
+      price: '$225/Month',
       color: 'bg-[#0077B6]',
       description: [
         'Stay consistently clean with our monthly subscription designed to keep your vehicle clean, protected, and consistent — every month.',
         "✅What's Included:",
         '• 2x Exterior Details per Month',
         '• 1x Interior Reset per Month',
-        '• 1x Engine Bay Cleaning (first visit of each month)',
         '• Priority Scheduling - You pick the times',
-        '💰 Pricing: First 2 months: $300 upfront (limited-time offer)',
-        'After that: $175/month • Cancel anytime. No rollovers.',
+        '💰 Pricing: $225/month • Cancel anytime. No rollovers.',
         '⚠️ Want to stay consistently clean without falling behind? The Routine Reset is your system.'
       ]
     }
