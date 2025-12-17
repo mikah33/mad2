@@ -1,5 +1,5 @@
 import React from 'react';
-import { Sparkles, Star, Shield, Wrench, Zap, Anchor, RotateCw } from 'lucide-react';
+import { Sparkles, Star, Shield, Wrench, Zap, Anchor, RotateCw, Gift } from 'lucide-react';
 
 interface Service {
   icon: React.ReactNode;
@@ -19,6 +19,8 @@ const Services: React.FC<{ onSelectService: (service: string) => void }> = ({ on
       'Specialty Services': '/services/interior-detailing',
       'Marine & RV Detailing': '/services/exterior-detailing',
       'Routine Reset': '/services/mobile-detailing',
+      'Gift Card - Basic Detail': '/#quote',
+      'Gift Card - Factory Reset': '/#quote',
     };
     return urlMap[title] || '/services/full-detail';
   };
@@ -102,6 +104,34 @@ const Services: React.FC<{ onSelectService: (service: string) => void }> = ({ on
         '• Priority Scheduling - You pick the times',
         '💰 Pricing: $225/month • Cancel anytime. No rollovers.',
         '⚠️ Want to stay consistently clean without falling behind? The Routine Reset is your system.'
+      ]
+    },
+    {
+      icon: <Gift className="w-8 h-8" />,
+      title: 'Gift Card - Basic Detail',
+      price: '$200',
+      color: 'bg-[#D4AF37]',
+      description: [
+        '🎄 Perfect Holiday Gift!',
+        'Full Interior & Exterior Detail',
+        'Conditioning + UV Protection',
+        'Foam Wash & Protective Wax',
+        'Valid for 3 Months',
+        'Emailed or Printed Card Available'
+      ]
+    },
+    {
+      icon: <Gift className="w-8 h-8" />,
+      title: 'Gift Card - Factory Reset',
+      price: '$400',
+      color: 'bg-[#D4AF37]',
+      description: [
+        '🎁 Ultimate Gift Experience!',
+        'Everything in Basic Detail PLUS',
+        'Deep Interior Extraction & Shampoo',
+        'Pet Hair & Odor Elimination',
+        'Valid for 3 Months',
+        'Emailed or Printed Card Available'
       ]
     }
   ];

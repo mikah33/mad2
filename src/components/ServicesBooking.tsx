@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Sparkles, Star, Shield, Wrench, Zap, Anchor, RotateCw, ChevronDown, ChevronUp, Mail, User, Phone, MapPin, Car, FileText, Briefcase, Check } from 'lucide-react';
+import { Sparkles, Star, Shield, Wrench, Zap, Anchor, RotateCw, ChevronDown, ChevronUp, Mail, User, Phone, MapPin, Car, FileText, Briefcase, Check, Gift } from 'lucide-react';
 
 interface Service {
   icon: React.ReactNode;
@@ -144,6 +144,42 @@ const ServicesBooking: React.FC = () => {
         'First 2 Months: $300 Upfront',
         'After: $175/Month',
         'Stay Consistently Clean'
+      ]
+    },
+    {
+      icon: <Gift className="w-6 h-6" />,
+      title: 'Gift Card - Basic Detail',
+      price: '$200',
+      color: 'bg-[#D4AF37]',
+      slug: 'gift-card-basic',
+      description: [
+        'Perfect Holiday Gift 🎄',
+        'Full Interior Wipe Down',
+        'Conditioning + UV Protection',
+        'Complete Vacuum & Disinfection',
+        'Exterior Foam Contact Wash',
+        'Protective Wax Layer',
+        'Wheels & Tires Dressed',
+        'Valid for 3 Months',
+        'Emailed or Printed Card'
+      ]
+    },
+    {
+      icon: <Gift className="w-6 h-6" />,
+      title: 'Gift Card - Factory Reset',
+      price: '$400',
+      color: 'bg-[#D4AF37]',
+      slug: 'gift-card-factory',
+      description: [
+        'Ultimate Gift Experience 🎁',
+        'Everything in Basic Detail',
+        'Deep Interior Extraction',
+        'Carpet & Seat Shampoo',
+        'Pet Hair Removal',
+        'Odor Elimination Treatment',
+        'Engine Bay Wipe Down',
+        'Valid for 3 Months',
+        'Emailed or Printed Card'
       ]
     }
   ];

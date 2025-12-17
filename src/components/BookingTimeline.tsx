@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Sparkles, Star, Shield, Wrench, Anchor, RotateCw, Check, ChevronRight, Mail, User, Phone, MapPin, Car, FileText, Info, X, Calendar, Droplet, Clock, CheckCircle } from 'lucide-react';
+import { Sparkles, Star, Shield, Wrench, Anchor, RotateCw, Check, ChevronRight, Mail, User, Phone, MapPin, Car, FileText, Info, X, Calendar, Droplet, Clock, CheckCircle, Gift } from 'lucide-react';
 
 interface Service {
   icon: React.ReactNode;
@@ -53,7 +53,7 @@ const BookingTimeline: React.FC = () => {
     {
       icon: <Star className="w-8 h-8" />,
       title: 'Factory Reset',
-      price: '$325',
+      price: '$400',
       color: 'bg-[#0077B6]',
       slug: 'factory-reset',
       description: 'Deep clean with shampoo, extraction & restoration',
@@ -96,6 +96,25 @@ const BookingTimeline: React.FC = () => {
     slug: 'routine-reset',
     description: '1 interior + 2 exterior details monthly'
   };
+
+  const giftCardServices: Service[] = [
+    {
+      icon: <Gift className="w-8 h-8" />,
+      title: 'Gift Card - Basic Detail',
+      price: '$200',
+      color: 'bg-[#0077B6]',
+      slug: 'gift-card-basic',
+      description: '🎄 Perfect holiday gift! Full detail package'
+    },
+    {
+      icon: <Gift className="w-8 h-8" />,
+      title: 'Gift Card - Factory Reset',
+      price: '$400',
+      color: 'bg-[#023E8A]',
+      slug: 'gift-card-factory',
+      description: '🎁 Ultimate gift! Complete restoration package'
+    }
+  ];
 
   // Auto-scroll on step change
   useEffect(() => {
@@ -406,6 +425,64 @@ const BookingTimeline: React.FC = () => {
         process: [],
         timeEstimate: 'Scheduled monthly',
         benefits: []
+      },
+      'Gift Card - Basic Detail': {
+        fullDescription: '🎄 Gift Card - Basic Detail Package – $200\n\nThe perfect holiday gift for the car lover in your life! Give the gift of a professionally detailed vehicle.',
+        includes: [
+          '**What\'s Included:**',
+          '',
+          '**Interior:**',
+          '✅ Full interior wipe down',
+          '✅ Conditioner + UV protection on all surfaces',
+          '✅ Complete vacuum & disinfection',
+          '✅ Interior glass cleaning',
+          '✅ Door jambs cleaned & waxed',
+          '',
+          '**Exterior:**',
+          '✅ Wheels decontaminated',
+          '✅ Foam contact wash',
+          '✅ Protective wax layer',
+          '✅ Wheels & tires dressed',
+          '',
+          '**Gift Card Details:**',
+          '🎁 Valid for 3 months from purchase',
+          '📧 Emailed or printed card available',
+          '🚗 Recipient schedules at their convenience',
+          '💝 Perfect for birthdays, holidays, or any occasion'
+        ],
+        process: [],
+        timeEstimate: '2-3 hours (when redeemed)',
+        benefits: []
+      },
+      'Gift Card - Factory Reset': {
+        fullDescription: '🎁 Gift Card - Factory Reset Package – $400\n\nThe ultimate gift experience! Give someone a complete vehicle transformation with our most thorough detail package.',
+        includes: [
+          '**What\'s Included:**',
+          '',
+          '**Everything in Basic Detail PLUS:**',
+          '',
+          '**Deep Interior:**',
+          '✅ Light stain removal',
+          '✅ Carpet & seat shampoo',
+          '✅ Hot water extraction',
+          '✅ Pet hair removal',
+          '✅ Odor elimination treatment',
+          '',
+          '**Enhanced Exterior:**',
+          '✅ Brake dust removal',
+          '✅ Weather stripping conditioning',
+          '✅ Engine bay wipe down',
+          '✅ Black trim restored',
+          '',
+          '**Gift Card Details:**',
+          '🎁 Valid for 3 months from purchase',
+          '📧 Emailed or printed card available',
+          '🚗 Recipient schedules at their convenience',
+          '💝 The ultimate gift for any car enthusiast'
+        ],
+        process: [],
+        timeEstimate: '4-6 hours (when redeemed)',
+        benefits: []
       }
     };
 
@@ -606,6 +683,61 @@ const BookingTimeline: React.FC = () => {
               </div>
               <h3 className="text-xl md:text-2xl font-bold mb-1">Select Your Service Package</h3>
               <p className="text-gray-600 text-sm">Choose the package that fits your needs</p>
+            </div>
+
+            {/* Gift Cards Row - TOP */}
+            <div className="mb-6">
+              <div className="text-center mb-3">
+                <span className="text-sm font-semibold text-[#0077B6]">🎁 HOLIDAY GIFT CARDS</span>
+              </div>
+              <div className="grid grid-cols-2 gap-2 sm:gap-3 md:gap-4">
+                {giftCardServices.map((service, index) => (
+                  <div
+                    key={index}
+                    onClick={() => currentStep === 4 && handleServiceSelect(service.title)}
+                    className={`
+                      relative rounded-xl sm:rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 p-4 sm:p-5 md:p-6 border-2 transform group
+                      ${selectedService === service.title
+                        ? 'border-[#0077B6] ring-4 ring-[#90E0EF]/50 scale-105 shadow-2xl bg-gradient-to-br from-[#CAF0F8] to-white'
+                        : 'border-gray-200 hover:border-[#90E0EF] hover:scale-105 bg-white'
+                      }
+                      ${currentStep === 4 ? 'cursor-pointer active:scale-100' : 'cursor-not-allowed opacity-70'}
+                    `}
+                  >
+                    {selectedService === service.title && (
+                      <div className="absolute -top-2 -right-2 bg-gradient-to-r from-[#0077B6] to-[#023E8A] text-white rounded-full p-2 shadow-lg animate-bounce">
+                        <Check className="w-5 h-5" />
+                      </div>
+                    )}
+
+                    <div className={`${service.color} text-white p-3 md:p-4 rounded-xl inline-block mb-3 transform transition-all duration-300 ${selectedService === service.title ? 'scale-110 rotate-3' : 'group-hover:scale-110 group-hover:-rotate-3'}`}>
+                      <div className="w-8 h-8 md:w-10 md:h-10">
+                        {service.icon}
+                      </div>
+                    </div>
+
+                    <h4 className={`text-base md:text-xl font-bold mb-2 transition-colors ${selectedService === service.title ? 'text-[#023E8A]' : 'text-gray-800 group-hover:text-[#0077B6]'}`}>
+                      {service.title}
+                    </h4>
+                    <div className={`text-2xl md:text-3xl font-black mb-2 transition-colors ${selectedService === service.title ? 'text-[#0077B6]' : 'text-[#023E8A] group-hover:text-[#0077B6]'}`}>
+                      {service.price}
+                    </div>
+                    <p className="hidden sm:block text-gray-600 text-xs md:text-sm mb-4 line-clamp-2">{service.description}</p>
+
+                    <button
+                      onClick={(e) => handleOpenModal(service.title, e)}
+                      className={`w-full py-2 rounded-lg text-xs md:text-sm font-semibold transition-all flex items-center justify-center gap-2 transform hover:scale-105 ${
+                        selectedService === service.title
+                          ? 'bg-gradient-to-r from-[#0077B6] to-[#90E0EF] text-white shadow-md'
+                          : 'bg-[#CAF0F8] hover:bg-[#90E0EF] text-[#023E8A]'
+                      }`}
+                    >
+                      <Info className="w-4 h-4" />
+                      <span>Details</span>
+                    </button>
+                  </div>
+                ))}
+              </div>
             </div>
 
             {/* Service Cards */}
