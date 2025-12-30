@@ -1,11 +1,12 @@
 import React from 'react';
-import { Sparkles, Star, Shield, Wrench, Zap, Anchor, RotateCw } from 'lucide-react';
+import { Sparkles, Star, Shield, Wrench, Zap, Anchor, RotateCw, ArrowLeft } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import { SEOHead } from '../components/seo/SEOHead';
 import { generateFAQSchema } from '../components/seo/StructuredData';
 import { generateEnhancedLocalBusinessSchema } from '../components/seo/EnhancedLocalBusinessSchema';
 import { faqs } from '../data/faqs-comprehensive';
-import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
+import BottomNavbar from '../components/BottomNavbar';
 
 interface Service {
   icon: React.ReactNode;
@@ -18,6 +19,8 @@ interface Service {
 }
 
 export const ServicesPage = () => {
+  const navigate = useNavigate();
+
   // Get service-specific FAQs
   const serviceFAQs = [
     faqs.find(f => f.id === 'pri-1'), // How much does car detailing cost
@@ -176,15 +179,30 @@ export const ServicesPage = () => {
         schema={schemas}
       />
 
-      <Navigation />
-
+      {/* Header */}
+      <div className="sticky top-0 z-40 bg-white/95 backdrop-blur-sm border-b border-gray-200 shadow-sm">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <div className="flex items-center h-14">
+            <button
+              onClick={() => navigate('/')}
+              className="flex items-center gap-2 text-gray-600 hover:text-[#023E8A] transition-colors"
+            >
+              <ArrowLeft className="w-5 h-5" />
+              <span className="font-medium">Back</span>
+            </button>
+            <div className="flex-1 text-center">
+              <h1 className="text-lg font-bold text-[#023E8A]">Services</h1>
+            </div>
+            <div className="w-16" />
+          </div>
+        </div>
+      </div>
 
       {/* Services Section */}
-      <section className="py-12 md:py-20 bg-white w-full overflow-hidden">
+      <section className="pt-4 pb-24 bg-white w-full overflow-hidden">
         <div className="container mx-auto px-4 max-w-7xl">
-          <h1 className="text-3xl md:text-4xl font-bold text-center mb-4">Our Professional Services</h1>
-          <p className="text-center text-gray-600 mb-8 md:mb-12 max-w-2xl mx-auto px-4">
-            Choose from our comprehensive range of detailing services. Click "View Details" to learn more about each service.
+          <p className="text-center text-gray-600 mb-6 max-w-2xl mx-auto px-4">
+            Choose from our comprehensive range of detailing services.
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
@@ -238,7 +256,7 @@ export const ServicesPage = () => {
 
                   <div className="flex gap-2">
                     <a
-                      href="/#quote"
+                      href="/book"
                       className="flex-1 py-3 bg-gray-100 text-gray-800 font-semibold rounded-lg hover:bg-primary-700 hover:text-white transition text-center"
                     >
                       Get Quote
@@ -258,6 +276,7 @@ export const ServicesPage = () => {
       </section>
 
       <Footer />
+      <BottomNavbar />
     </>
   );
 };

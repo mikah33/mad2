@@ -22,6 +22,10 @@ import LocationIrmoPage from './pages/LocationIrmoPage';
 import LocationCayecPage from './pages/LocationCayecPage';
 import LocationWestColumbiaPage from './pages/LocationWestColumbiaPage';
 import PricingPage from './pages/PricingPage';
+import BookingPage from './pages/BookingPage';
+import AccountPage from './pages/AccountPage';
+import GalleryPage from './pages/GalleryPage';
+import ReviewsPage from './pages/ReviewsPage';
 import ErrorBoundary from './components/ErrorBoundary';
 
 export const router = createBrowserRouter([
@@ -107,6 +111,26 @@ export const router = createBrowserRouter([
   {
     path: '/pricing',
     element: <PricingPage />,
+  },
+  {
+    path: '/book',
+    element: <BookingPage />,
+    errorElement: <ErrorBoundary />,
+  },
+  {
+    path: '/account',
+    element: <AccountPage />,
+    errorElement: <ErrorBoundary />,
+  },
+  {
+    path: '/gallery',
+    element: <GalleryPage />,
+    errorElement: <ErrorBoundary />,
+  },
+  {
+    path: '/reviews',
+    element: <ReviewsPage />,
+    errorElement: <ErrorBoundary />,
   },
   {
     path: '/resources',

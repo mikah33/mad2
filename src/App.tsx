@@ -1,21 +1,64 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import { Helmet } from 'react-helmet-async'
-import Navigation from './components/Navigation'
-import Hero from './components/Hero'
-import BookingTimeline from './components/BookingTimeline'
-import TrustBadges from './components/TrustBadges'
-import RecentProjects from './components/RecentProjects'
-import Testimonials from './components/Testimonials'
-import FAQ from './components/FAQ'
-import Contact from './components/Contact'
-import Footer from './components/Footer'
-import Chatbot from './components/Chatbot'
+import { Link } from 'react-router-dom'
+import { Image, Star, Wrench, Calendar, HelpCircle, Phone, MapPin, ChevronRight } from 'lucide-react'
+import BottomNavbar from './components/BottomNavbar'
 import { images } from './data/images'
 
 function App() {
+  const videoRef = useRef<HTMLVideoElement>(null);
 
-  // NOTE: Enhanced LocalBusiness schema is pre-rendered in static HTML via generate-all-pages-html.ts
-  // DO NOT add schemas here to avoid duplication in production builds
+  useEffect(() => {
+    const playVideo = async () => {
+      if (videoRef.current) {
+        try {
+          await videoRef.current.play();
+        } catch (error) {
+          console.log('Autoplay prevented:', error);
+        }
+      }
+    };
+    playVideo();
+  }, []);
+
+  const menuItems = [
+    {
+      icon: <Image className="w-7 h-7" />,
+      title: 'Gallery',
+      description: 'View our recent work',
+      path: '/gallery',
+      color: 'from-purple-500 to-purple-600',
+    },
+    {
+      icon: <Star className="w-7 h-7" />,
+      title: 'Reviews',
+      description: 'What our customers say',
+      path: '/reviews',
+      color: 'from-yellow-500 to-orange-500',
+    },
+    {
+      icon: <Wrench className="w-7 h-7" />,
+      title: 'Services',
+      description: 'Explore our packages',
+      path: '/services',
+      color: 'from-blue-500 to-blue-600',
+    },
+    {
+      icon: <Calendar className="w-7 h-7" />,
+      title: 'Book Now',
+      description: 'Schedule your detail',
+      path: '/book',
+      color: 'from-[#023E8A] to-[#0077B6]',
+      featured: true,
+    },
+    {
+      icon: <HelpCircle className="w-7 h-7" />,
+      title: 'FAQs',
+      description: 'Common questions',
+      path: '/faq',
+      color: 'from-teal-500 to-teal-600',
+    },
+  ];
 
   return (
     <>
@@ -43,22 +86,134 @@ function App() {
         <meta name="twitter:description" content="Premium mobile auto detailing services. We come to you!" />
         <meta name="twitter:image" content={images.ogDefault.url} />
         <meta name="twitter:image:alt" content={images.ogDefault.alt} />
-
-        {/* Structured Data - Schema is in static HTML, no need to add here */}
       </Helmet>
 
-      <div className="min-h-screen bg-white w-full overflow-x-hidden">
-        <Navigation />
-        <Hero />
-        <BookingTimeline />
-        <TrustBadges />
-        <RecentProjects />
-      <Testimonials />
-      <FAQ />
-      <Contact />
-      <Footer />
-      <Chatbot />
+      <div className="min-h-screen bg-gray-50 w-full overflow-x-hidden pb-32">
+        {/* Hero Section with Video Background */}
+        <div className="relative h-[55vh] min-h-[400px] w-full overflow-hidden">
+          {/* Video Background */}
+          <video
+            ref={videoRef}
+            autoPlay
+            loop
+            muted
+            playsInline
+            preload="auto"
+            className="absolute inset-0 w-full h-full object-cover"
+          >
+            <source src="/hero-video.mp4" type="video/mp4" />
+          </video>
+
+          {/* Dark Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70"></div>
+
+          {/* Content */}
+          <div className="absolute inset-0 flex flex-col items-center justify-center text-white px-6">
+            {/* Logo */}
+            <img
+              src="/logo.jpg"
+              alt="M.A.Detailing Logo"
+              className="h-16 w-16 rounded-full object-cover shadow-xl mb-3 border-2 border-white/30"
+              loading="eager"
+            />
+            <h1 className="text-xl sm:text-2xl font-bold text-center mb-1">
+              Mikah's Auto Detailing
+            </h1>
+            <p className="text-xs sm:text-sm text-gray-200 text-center">
+              Premium Mobile Detailing · Columbia, SC
+            </p>
+
+            {/* Quick Contact */}
+            <div className="flex items-center gap-3 mt-3 flex-wrap justify-center">
+              <a
+                href="tel:+18036678731"
+                className="flex items-center gap-1.5 bg-white/20 backdrop-blur-sm px-3 py-1.5 rounded-full text-xs hover:bg-white/30 transition"
+              >
+                <Phone className="w-3.5 h-3.5" />
+                <span>Call</span>
+              </a>
+              <a
+                href="https://www.facebook.com/mikahsautodetailing"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-1.5 bg-white/20 backdrop-blur-sm px-3 py-1.5 rounded-full text-xs hover:bg-white/30 transition"
+              >
+                <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                <span>Facebook</span>
+              </a>
+              <a
+                href="/blog"
+                className="flex items-center gap-1.5 bg-white/20 backdrop-blur-sm px-3 py-1.5 rounded-full text-xs hover:bg-white/30 transition"
+              >
+                <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" /></svg>
+                <span>Blog</span>
+              </a>
+              <a
+                href="/locations"
+                className="flex items-center gap-1.5 bg-white/20 backdrop-blur-sm px-3 py-1.5 rounded-full text-xs hover:bg-white/30 transition"
+              >
+                <MapPin className="w-3.5 h-3.5" />
+                <span>Areas</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        {/* Navigation Menu */}
+        <div className="px-4 -mt-6 relative z-10">
+          <div className="space-y-2">
+            {menuItems.map((item) => (
+              <Link
+                key={item.path}
+                to={item.path}
+                className={`flex items-center gap-3 bg-white rounded-xl p-3 shadow-md hover:shadow-lg transition-all duration-200 active:scale-[0.98] w-full ${
+                  item.featured ? 'ring-2 ring-[#0077B6]' : ''
+                }`}
+                style={{ display: 'flex' }}
+              >
+                <div className={`w-11 h-11 rounded-lg bg-gradient-to-br ${item.color} flex items-center justify-center text-white flex-shrink-0`}>
+                  {React.cloneElement(item.icon as React.ReactElement, { className: 'w-5 h-5' })}
+                </div>
+                <div className="flex-1 overflow-hidden">
+                  <h3 className="font-semibold text-gray-800 text-sm">{item.title}</h3>
+                  <p className="text-gray-400 text-xs truncate">{item.description}</p>
+                </div>
+                <ChevronRight className="w-4 h-4 text-gray-300 flex-shrink-0" />
+              </Link>
+            ))}
+          </div>
+        </div>
+
+        {/* Trust Indicators */}
+        <div className="px-4 mt-4">
+          <div className="bg-white rounded-xl p-3 shadow-md">
+            <div className="grid grid-cols-3 gap-2 text-center">
+              <div>
+                <div className="text-lg font-bold text-[#023E8A]">5.0</div>
+                <div className="text-[10px] text-gray-400">Google Rating</div>
+              </div>
+              <div>
+                <div className="text-lg font-bold text-[#023E8A]">100%</div>
+                <div className="text-[10px] text-gray-400">Satisfaction</div>
+              </div>
+              <div>
+                <div className="text-lg font-bold text-[#023E8A]">Mobile</div>
+                <div className="text-[10px] text-gray-400">We Come To You</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Contact Info */}
+        <div className="px-4 mt-3 text-center text-gray-400 text-xs">
+          <p>Serving Columbia, Lexington, Irmo & more</p>
+          <a href="tel:+18036678731" className="text-[#023E8A] font-semibold">
+            (803) 667-8731
+          </a>
+        </div>
       </div>
+
+      <BottomNavbar />
     </>
   )
 }

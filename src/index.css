@@ -50,3 +50,30 @@ body {
 .focus\:ring-coral-500:focus {
   --tw-ring-color: #737373;
 }
+
+/* Safe area padding for bottom navbar on iOS devices */
+.safe-area-pb {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+/* Ensure proper spacing for bottom navbar */
+@supports (padding-bottom: env(safe-area-inset-bottom)) {
+  .pb-safe {
+    padding-bottom: calc(5rem + env(safe-area-inset-bottom, 0px));
+  }
+}
+
+/* Bottom navbar sticky fix for mobile */
+html, body {
+  height: 100%;
+}
+
+/* Prevent body scroll issues on iOS */
+body {
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Ensure content doesn't get hidden behind navbar */
+.has-bottom-nav {
+  padding-bottom: calc(4rem + env(safe-area-inset-bottom, 0px));
+}
