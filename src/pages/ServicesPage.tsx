@@ -1,14 +1,13 @@
-import React from 'react';
-import { Sparkles, Star, Shield, Wrench, Zap, Anchor, RotateCw, ArrowLeft } from 'lucide-react';
+import React, { useState } from 'react';
+import { ArrowLeft, X, Sparkles, Star, Shield, Wrench, Zap, Anchor, RotateCw } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { SEOHead } from '../components/seo/SEOHead';
-import { generateFAQSchema } from '../components/seo/StructuredData';
 import { generateEnhancedLocalBusinessSchema } from '../components/seo/EnhancedLocalBusinessSchema';
-import { faqs } from '../data/faqs-comprehensive';
 import Footer from '../components/Footer';
 import BottomNavbar from '../components/BottomNavbar';
 
 interface Service {
+  id: number;
   icon: React.ReactNode;
   title: string;
   price: string;
@@ -20,260 +19,326 @@ interface Service {
 
 export const ServicesPage = () => {
   const navigate = useNavigate();
-
-  // Get service-specific FAQs
-  const serviceFAQs = [
-    faqs.find(f => f.id === 'pri-1'), // How much does car detailing cost
-    faqs.find(f => f.id === 'pri-3'), // What is most popular package
-    faqs.find(f => f.id === 'pri-6'), // Can I get just interior or exterior
-    faqs.find(f => f.id === 'gen-2'), // How long does detailing take
-    faqs.find(f => f.id === 'gen-6'), // Do you detail trucks and SUVs
-  ].filter(Boolean).map(f => ({ question: f!.question, answer: f!.answer }));
-
-  const getServiceUrl = (title: string): string => {
-    const urlMap: { [key: string]: string } = {
-      'Basic Detail Package': '/services/full-detail',
-      'Factory Reset Package': '/services/full-detail',
-      'Ceramic Coatings': '/services/ceramic-coating',
-      'Paint Corrections': '/services/paint-correction',
-      'Specialty Services': '/services/interior-detailing',
-      'Marine & RV Detailing': '/services/exterior-detailing',
-      'Routine Reset': '/services/mobile-detailing',
-    };
-    return urlMap[title] || '/services/full-detail';
-  };
+  const [selectedService, setSelectedService] = useState<Service | null>(null);
 
   const services: Service[] = [
     {
-      icon: <Sparkles className="w-8 h-8" />,
-      title: 'Basic Detail Package',
-      price: '$200',
+      id: 1,
+      icon: <Sparkles className="w-6 h-6" />,
+      title: 'Basic Package',
+      price: '$225',
       color: 'bg-orange-500',
       description: [
-        'Interior: Full wipe down, conditioner + UV protection, vacuum, disinfection, glass cleaned, door jambs cleaned & waxed',
-        'Exterior: Wheels decontaminated, foam contact wash, protective wax layer, wheels & tires dressed'
+        '✅ Interior:',
+        '• Full interior wipe down',
+        '• Conditioner applied to all surfaces',
+        '• UV protection on all surfaces',
+        '• Full vacuum',
+        '• Full disinfection process for cloth surfaces',
+        '• Glass cleaning',
+        '• Door jambs cleaned and waxed',
+        '',
+        '✅ Exterior:',
+        '• Wheels decontaminated from brake dust',
+        '• Foam contact wash (all bugs, sap and tar removed)',
+        '• Layer of wax for protection',
+        '• Trim and tires dressed'
       ],
       image: '/exterior1.jpg',
-      imageAlt: 'Basic auto detailing package showing clean exterior and interior in Columbia SC'
+      imageAlt: 'Basic auto detailing package'
     },
     {
-      icon: <Star className="w-8 h-8" />,
-      title: 'Factory Reset Package',
-      price: '$325',
+      id: 2,
+      icon: <Star className="w-6 h-6" />,
+      title: 'Factory Reset',
+      price: '$400',
       color: 'bg-orange-500',
       description: [
-        'Interior: Full wipe down, conditioner + UV protection, vacuum + disinfection, light stain removal, shampoo & extraction, glass cleaned, door jambs cleaned & waxed',
-        'Exterior: Foam contact wash, brake dust removal, protective wax layer, tires & rims dressed',
-        'Add-On Services: Weather Stripping Restoration ($50), Scratch Removal ($80/panel)'
+        'Our Factory Reset is designed to get your vehicle looking as close to factory condition as possible.',
+        '',
+        '✅ Interior:',
+        '• Full interior wipe down',
+        '• Conditioner + UV protection on all surfaces',
+        '• Full vacuum and disinfection of cloth areas',
+        '• Light stain removal',
+        '• Upholstery and floor mat shampoo & extraction',
+        '• Glass cleaned, door jambs cleaned and waxed',
+        '',
+        '✅ Exterior:',
+        '• Foam contact wash (removes bugs, tar, sap)',
+        '• Brake dust removal from wheels',
+        '• Layer of wax for protection',
+        '• Trim and tires dressed',
+        '• Black trim restored/redyed',
+        '• Engine bay detailed'
       ],
       image: '/exterior2.jpg',
-      imageAlt: 'Factory reset complete auto detailing package in Columbia SC'
+      imageAlt: 'Factory reset complete auto detailing'
     },
     {
-      icon: <Shield className="w-8 h-8" />,
-      title: 'Ceramic Coatings',
-      price: 'Starting at $999',
-      color: 'bg-primary-500',
+      id: 3,
+      icon: <Shield className="w-6 h-6" />,
+      title: 'Ceramic Coating',
+      price: 'From $999',
+      color: 'bg-[#023E8A]',
       description: [
         'Achieve long-term paint protection with our professional-grade ceramic application',
         'We meticulously prepare your vehicle with thorough wash and decontamination',
         'Ensures maximum durability and an incredible shine that lasts'
       ],
-      image: '/exterior3.jpg',
-      imageAlt: 'Professional ceramic coating application on vehicle in Columbia SC'
+      image: '/ceramic.jpg',
+      imageAlt: 'Professional ceramic coating application'
     },
     {
-      icon: <Wrench className="w-8 h-8" />,
-      title: 'Paint Corrections',
-      price: 'Starting at $599',
-      color: 'bg-primary-600',
+      id: 4,
+      icon: <Wrench className="w-6 h-6" />,
+      title: 'Paint Correction',
+      price: 'From $599',
+      color: 'bg-[#023E8A]',
       description: [
         "Restore your vehicle's flawless finish with expert paint correction",
         'Effectively remove swirl marks, light scratches, and oxidation',
         'Single-stage or two-stage correction options bring back original luster'
       ],
-      image: '/exterior4.jpg',
-      imageAlt: 'Paint correction and polishing service removing swirls in Columbia SC'
+      image: '/paintcorrection.jpg',
+      imageAlt: 'Paint correction and polishing service'
     },
     {
-      icon: <Zap className="w-8 h-8" />,
-      title: 'Specialty Services',
+      id: 5,
+      icon: <Zap className="w-6 h-6" />,
+      title: 'Specialty',
       price: 'Quote',
-      color: 'bg-primary-500',
+      color: 'bg-[#023E8A]',
       description: [
         'Interior-only or Exterior-only detail',
         'Odor Removal / Ozone Treatment',
         'Engine Bay Detail'
       ],
       image: '/interior1.jpg',
-      imageAlt: 'Specialty auto detailing services including interior and engine bay in Columbia SC'
+      imageAlt: 'Specialty auto detailing services'
     },
     {
-      icon: <Anchor className="w-8 h-8" />,
-      title: 'Marine & RV Detailing',
+      id: 6,
+      icon: <Anchor className="w-6 h-6" />,
+      title: 'Marine & RV',
       price: 'Quote',
-      color: 'bg-primary-500',
+      color: 'bg-[#023E8A]',
       description: [
         'Marine Detailing',
         'RV Detailing',
         'Motorcycle Detailing'
       ],
-      image: '/exterior5.jpg',
-      imageAlt: 'Marine, RV, and motorcycle detailing services in Columbia SC'
+      image: '/marine.jpg',
+      imageAlt: 'Marine, RV, and motorcycle detailing'
     },
     {
-      icon: <RotateCw className="w-8 h-8" />,
+      id: 7,
+      icon: <RotateCw className="w-6 h-6" />,
       title: 'Routine Reset',
-      price: '$225/Month',
+      price: '$225/mo',
       color: 'bg-orange-500',
       description: [
-        'Stay consistently clean with our monthly subscription designed to keep your vehicle clean, protected, and consistent — every month.',
-        "✅What's Included:",
-        '• 2x Exterior Details per Month',
-        '• 1x Interior Reset per Month',
-        '• Priority Scheduling - You pick the times',
-        '💰 Pricing: $225/month • Cancel anytime. No rollovers.',
-        '⚠️ Want to stay consistently clean without falling behind? The Routine Reset is your system.'
+        'Stay consistently clean with our monthly subscription',
+        '2x Exterior Details per Month',
+        '1x Interior Reset per Month',
+        'Priority Scheduling - You pick the times',
+        'Cancel anytime. No rollovers.'
       ],
       image: '/exterior6.jpg',
-      imageAlt: 'Monthly auto detailing subscription service in Columbia SC'
+      imageAlt: 'Monthly auto detailing subscription'
+    },
+    {
+      id: 8,
+      icon: <Star className="w-6 h-6" />,
+      title: 'Interior Only',
+      price: 'From $150',
+      color: 'bg-[#0077B6]',
+      description: [
+        'Deep vacuum and steam cleaning',
+        'Leather/vinyl conditioning',
+        'Dashboard and console detailing',
+        'Window cleaning inside',
+        'Odor elimination'
+      ],
+      image: '/interior2.jpg',
+      imageAlt: 'Interior only detailing service'
+    },
+    {
+      id: 9,
+      icon: <Sparkles className="w-6 h-6" />,
+      title: 'Exterior Only',
+      price: 'From $100',
+      color: 'bg-[#0077B6]',
+      description: [
+        'Hand wash and dry',
+        'Clay bar treatment',
+        'Polish and wax application',
+        'Tire and wheel cleaning',
+        'Glass cleaning and treatment'
+      ],
+      image: '/exterior7.jpg',
+      imageAlt: 'Exterior only detailing service'
     }
   ];
-
-  // Generate service list schema
-  const serviceListSchema = {
-    "@context": "https://schema.org",
-    "@type": "ItemList",
-    "itemListElement": services.map((service, index) => ({
-      "@type": "ListItem",
-      "position": index + 1,
-      "item": {
-        "@type": "Service",
-        "@id": `https://mikahsmobiledetailingsc.com${getServiceUrl(service.title)}`,
-        "name": service.title,
-        "description": service.description.join(' '),
-        "image": `https://mikahsmobiledetailingsc.com${service.image}`,
-        "provider": {
-          "@type": "LocalBusiness",
-          "name": "Mikah's Auto Detailing",
-          "telephone": "(803) 667-8731"
-        }
-      }
-    }))
-  };
-
-  // Generate FAQ schema
-  const faqSchema = generateFAQSchema(serviceFAQs);
-
-  // Combine schemas
-  const schemas = [serviceListSchema, faqSchema, generateEnhancedLocalBusinessSchema()];
 
   return (
     <>
       <SEOHead
         title="Auto Detailing Services | Mikah's Mobile Detailing SC"
         description="Professional auto detailing services in Columbia, SC. Mobile detailing, interior/exterior cleaning, ceramic coating, paint correction, and more."
-        keywords="auto detailing services, mobile detailing Columbia SC, interior detailing, exterior detailing, ceramic coating, paint correction, car detailing services"
+        keywords="auto detailing services, mobile detailing Columbia SC, interior detailing, exterior detailing, ceramic coating, paint correction"
         canonical="https://mikahsmobiledetailingsc.com/services"
         ogType="website"
-        schema={schemas}
+        schema={[generateEnhancedLocalBusinessSchema()]}
       />
 
-      {/* Header */}
-      <div className="sticky top-0 z-40 bg-white/95 backdrop-blur-sm border-b border-gray-200 shadow-sm">
-        <div className="container mx-auto px-4 max-w-6xl">
-          <div className="flex items-center h-14">
+      <div className="min-h-screen bg-white pb-20">
+        {/* Instagram-style Header */}
+        <div className="sticky top-0 z-40 bg-white border-b border-gray-200">
+          <div className="flex items-center justify-between h-14 px-4">
             <button
               onClick={() => navigate('/')}
-              className="flex items-center gap-2 text-gray-600 hover:text-[#023E8A] transition-colors"
+              className="text-gray-800"
             >
-              <ArrowLeft className="w-5 h-5" />
-              <span className="font-medium">Back</span>
+              <ArrowLeft className="w-6 h-6" />
             </button>
-            <div className="flex-1 text-center">
-              <h1 className="text-lg font-bold text-[#023E8A]">Services</h1>
+            <div className="flex items-center gap-2">
+              <span className="text-lg font-semibold">Services</span>
             </div>
-            <div className="w-16" />
+            <div className="w-6" />
+          </div>
+        </div>
+
+        {/* Header Section */}
+        <div className="px-4 py-4 border-b border-gray-200">
+          <div className="flex items-center gap-3">
+            <div className="w-12 h-12 bg-gradient-to-br from-[#023E8A] to-[#0077B6] rounded-xl flex items-center justify-center">
+              <Wrench className="w-6 h-6 text-white" />
+            </div>
+            <div>
+              <h1 className="font-bold text-lg text-gray-800">Auto Detailing Services</h1>
+              <p className="text-gray-500 text-sm">Tap any service for details</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Services Grid */}
+        <div className="grid grid-cols-3 gap-0.5">
+          {services.map((service) => (
+            <button
+              key={service.id}
+              onClick={() => setSelectedService(service)}
+              className="relative aspect-square overflow-hidden bg-gray-100"
+            >
+              <img
+                src={service.image}
+                alt={service.imageAlt}
+                loading="lazy"
+                className="w-full h-full object-cover"
+              />
+              {/* Overlay with name and price */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-2">
+                <span className="text-white font-bold text-xs leading-tight">{service.title}</span>
+                <span className="text-[#90E0EF] font-semibold text-xs">{service.price}</span>
+              </div>
+            </button>
+          ))}
+        </div>
+
+        {/* CTA */}
+        <div className="px-4 py-6">
+          <div className="bg-gray-50 rounded-xl p-4 text-center">
+            <p className="text-gray-600 text-sm mb-3">
+              Questions? Call us anytime!
+            </p>
+            <a
+              href="tel:+18036678731"
+              className="inline-block px-6 py-2 bg-[#023E8A] text-white font-semibold rounded-lg text-sm"
+            >
+              (803) 667-8731
+            </a>
           </div>
         </div>
       </div>
 
-      {/* Services Section */}
-      <section className="pt-4 pb-24 bg-white w-full overflow-hidden">
-        <div className="container mx-auto px-4 max-w-7xl">
-          <p className="text-center text-gray-600 mb-6 max-w-2xl mx-auto px-4">
-            Choose from our comprehensive range of detailing services.
-          </p>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-            {services.map((service, index) => (
-              <article
-                key={index}
-                className="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-shadow overflow-hidden border border-gray-100"
-                itemScope
-                itemType="https://schema.org/Service"
+      {/* Service Detail Modal */}
+      {selectedService && (
+        <div
+          className="fixed inset-0 z-50 bg-black/50 flex items-end sm:items-center justify-center"
+          onClick={() => setSelectedService(null)}
+        >
+          <div
+            className="bg-white w-full sm:max-w-lg sm:mx-4 rounded-t-2xl sm:rounded-2xl max-h-[85vh] overflow-hidden"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Modal Header Image */}
+            <div className="relative h-48">
+              <img
+                src={selectedService.image}
+                alt={selectedService.imageAlt}
+                className="w-full h-full object-cover"
+              />
+              <button
+                onClick={() => setSelectedService(null)}
+                className="absolute top-3 right-3 bg-black/50 text-white p-2 rounded-full"
               >
-                {/* Service Image */}
-                <div className="relative h-48 overflow-hidden">
-                  <img
-                    src={service.image}
-                    alt={service.imageAlt}
-                    title={service.title}
-                    loading="lazy"
-                    itemProp="image"
-                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                  />
-                  <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-lg">
-                    <span className="text-xl font-bold text-gray-800" itemProp="price">{service.price}</span>
+                <X className="w-5 h-5" />
+              </button>
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">
+                <div className="flex items-center gap-3">
+                  <div className={`${selectedService.color} text-white p-2 rounded-lg`}>
+                    {selectedService.icon}
+                  </div>
+                  <div>
+                    <h2 className="text-white font-bold text-xl">{selectedService.title}</h2>
+                    <p className="text-[#90E0EF] font-semibold">{selectedService.price}</p>
                   </div>
                 </div>
+              </div>
+            </div>
 
-                {/* Service Content */}
-                <div className="p-6">
-                  <div className="flex items-center justify-between mb-4">
-                    <div className={`${service.color} text-white p-3 rounded-lg`}>
-                      {service.icon}
-                    </div>
-                  </div>
+            {/* Modal Content */}
+            <div className="p-4 overflow-y-auto max-h-[40vh]">
+              <div className="space-y-1">
+                {selectedService.description.map((item, i) => {
+                  // Section headers
+                  if (item.startsWith('✅') || item === '') {
+                    return item === '' ? null : (
+                      <h4 key={i} className="font-semibold text-gray-800 mt-3 first:mt-0">{item}</h4>
+                    );
+                  }
+                  // Description text (no bullet)
+                  if (!item.startsWith('•')) {
+                    return (
+                      <p key={i} className="text-sm text-gray-600">{item}</p>
+                    );
+                  }
+                  // Bullet items
+                  return (
+                    <p key={i} className="text-sm text-gray-600 pl-2">{item}</p>
+                  );
+                })}
+              </div>
+            </div>
 
-                  <h3 className="text-xl font-bold mb-4 text-gray-800" itemProp="name">{service.title}</h3>
-
-                  <div itemProp="description">
-                    <ul className="space-y-2 mb-6">
-                      {service.description.map((item, i) => (
-                        <li key={i} className="text-sm text-gray-600 flex items-start">
-                          <span className="text-orange-500 mr-2">•</span>
-                          <span>{item}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  {/* Hidden metadata for schema */}
-                  <meta itemProp="provider" content="Mikah's Auto Detailing" />
-                  <meta itemProp="areaServed" content="Columbia, SC" />
-                  <link itemProp="url" href={`https://mikahsmobiledetailingsc.com${getServiceUrl(service.title)}`} />
-
-                  <div className="flex gap-2">
-                    <a
-                      href="/book"
-                      className="flex-1 py-3 bg-gray-100 text-gray-800 font-semibold rounded-lg hover:bg-primary-700 hover:text-white transition text-center"
-                    >
-                      Get Quote
-                    </a>
-                    <a
-                      href={getServiceUrl(service.title)}
-                      className="flex-1 py-3 bg-primary-700 text-white font-semibold rounded-lg hover:bg-primary-800 transition text-center text-sm"
-                    >
-                      View Details
-                    </a>
-                  </div>
-                </div>
-              </article>
-            ))}
+            {/* Modal Actions */}
+            <div className="p-4 border-t border-gray-200 flex gap-3">
+              <a
+                href="/book"
+                className="flex-1 py-3 bg-[#023E8A] text-white font-semibold rounded-lg text-center text-sm"
+              >
+                Book This Service
+              </a>
+              <a
+                href="tel:+18036678731"
+                className="py-3 px-4 bg-gray-100 text-gray-800 font-semibold rounded-lg text-sm"
+              >
+                Call
+              </a>
+            </div>
           </div>
         </div>
-      </section>
+      )}
 
       <Footer />
       <BottomNavbar />
