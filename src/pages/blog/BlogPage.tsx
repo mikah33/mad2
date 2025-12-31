@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { ArrowLeft, X, BookOpen, Clock, Calendar } from 'lucide-react';
+import React from 'react';
+import { ArrowLeft, BookOpen } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { SEOHead } from '../../components/seo/SEOHead';
 import { blogPosts } from '../../data/blog';
@@ -38,7 +38,6 @@ interface BlogItem {
 
 export const BlogPage = () => {
   const navigate = useNavigate();
-  const [selectedPost, setSelectedPost] = useState<BlogItem | null>(null);
 
   const blogCollectionSchema = generateBlogCollectionSchema(blogPosts);
   const blogItemListSchema = generateBlogItemListSchema(blogPosts);
@@ -55,14 +54,6 @@ export const BlogPage = () => {
     datePublished: post.datePublished,
     image: blogImages[index % blogImages.length],
   }));
-
-  const formatDate = (dateString: string) => {
-    return new Date(dateString).toLocaleDateString('en-US', {
-      year: 'numeric',
-      month: 'short',
-      day: 'numeric'
-    });
-  };
 
   const getCategoryLabel = (category: string) => {
     const labels: { [key: string]: string } = {
@@ -122,7 +113,7 @@ export const BlogPage = () => {
           {blogItems.map((post) => (
             <button
               key={post.id}
-              onClick={() => setSelectedPost(post)}
+              onClick={() => navigate(`/blog/${post.slug}`)}
               className="relative aspect-square overflow-hidden bg-gray-100"
             >
               <img
@@ -140,74 +131,6 @@ export const BlogPage = () => {
           ))}
         </div>
       </div>
-
-      {/* Blog Post Preview Modal */}
-      {selectedPost && (
-        <div
-          className="fixed inset-0 z-50 bg-black/50 flex items-end sm:items-center justify-center"
-          onClick={() => setSelectedPost(null)}
-        >
-          <div
-            className="bg-white w-full sm:max-w-lg sm:mx-4 rounded-t-2xl sm:rounded-2xl max-h-[85vh] overflow-hidden"
-            onClick={(e) => e.stopPropagation()}
-          >
-            {/* Modal Header Image */}
-            <div className="relative h-48">
-              <img
-                src={selectedPost.image}
-                alt={selectedPost.title}
-                className="w-full h-full object-cover"
-              />
-              <button
-                onClick={() => setSelectedPost(null)}
-                className="absolute top-3 right-3 bg-black/50 text-white p-2 rounded-full"
-              >
-                <X className="w-5 h-5" />
-              </button>
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">
-                <span className="text-[#90E0EF] text-xs font-semibold uppercase">{getCategoryLabel(selectedPost.category)}</span>
-                <h2 className="text-white font-bold text-lg leading-tight">{selectedPost.title}</h2>
-              </div>
-            </div>
-
-            {/* Modal Content */}
-            <div className="p-4 overflow-y-auto max-h-[40vh]">
-              <div className="flex items-center gap-4 text-sm text-gray-500 mb-3">
-                <span className="flex items-center gap-1">
-                  <Calendar className="w-4 h-4" />
-                  {formatDate(selectedPost.datePublished)}
-                </span>
-                {selectedPost.readTime && (
-                  <span className="flex items-center gap-1">
-                    <Clock className="w-4 h-4" />
-                    {selectedPost.readTime} min read
-                  </span>
-                )}
-              </div>
-              <p className="text-gray-600 text-sm">{selectedPost.excerpt}</p>
-            </div>
-
-            {/* Modal Actions */}
-            <div className="p-4 border-t border-gray-200 flex gap-3">
-              <button
-                onClick={() => {
-                  setSelectedPost(null);
-                  navigate(`/blog/${selectedPost.slug}`);
-                }}
-                className="flex-1 py-3 bg-[#023E8A] text-white font-semibold rounded-lg text-center text-sm"
-              >
-                Read Full Article
-              </button>
-              <button
-                onClick={() => setSelectedPost(null)}
-                className="py-3 px-4 bg-gray-100 text-gray-800 font-semibold rounded-lg text-sm"
-              >
-                Close
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
 
       <Footer />
       <BottomNavbar />

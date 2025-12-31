@@ -268,7 +268,7 @@ export const ServicesPage = () => {
           onClick={() => setSelectedService(null)}
         >
           <div
-            className="bg-white w-full sm:max-w-lg sm:mx-4 rounded-t-2xl sm:rounded-2xl max-h-[85vh] overflow-hidden"
+            className="bg-white w-full sm:max-w-lg sm:mx-4 rounded-t-2xl sm:rounded-2xl max-h-[70vh] overflow-hidden mb-20"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Modal Header Image */}
