@@ -9,6 +9,7 @@ interface GalleryItem {
   image: string;
   title: string;
   type: 'image' | 'video';
+  thumbnail?: string;
 }
 
 const GalleryPage: React.FC = () => {
@@ -23,8 +24,8 @@ const GalleryPage: React.FC = () => {
     { id: 5, image: '/exterior5.jpg', title: 'Full Detail', type: 'image' },
     { id: 6, image: '/exterior6.jpg', title: 'Ceramic Install', type: 'image' },
     { id: 7, image: '/exterior7.jpg', title: 'Restoration', type: 'image' },
-    { id: 8, image: '/ceramic-video1.mov', title: 'Ceramic Process', type: 'video' },
-    { id: 9, image: '/ceramic-video2.mov', title: 'Application', type: 'video' },
+    { id: 8, image: '/ceramic-video1.mov', title: 'Ceramic Process', type: 'video', thumbnail: '/ceramic.jpg' },
+    { id: 9, image: '/ceramic-video2.mov', title: 'Application', type: 'video', thumbnail: '/exterior3.jpg' },
     { id: 10, image: '/interior1.jpg', title: 'Interior Restore', type: 'image' },
     { id: 11, image: '/interior2.jpg', title: 'Interior Detail', type: 'image' },
   ];
@@ -110,13 +111,16 @@ const GalleryPage: React.FC = () => {
             >
               {item.type === 'video' ? (
                 <>
-                  <video
-                    src={item.image}
+                  <img
+                    src={item.thumbnail || '/ceramic.jpg'}
+                    alt={item.title}
+                    loading="lazy"
                     className="w-full h-full object-cover"
-                    preload="metadata"
                   />
-                  <div className="absolute top-2 right-2">
-                    <Play className="w-5 h-5 text-white drop-shadow-lg" fill="white" />
+                  <div className="absolute inset-0 flex items-center justify-center bg-black/20">
+                    <div className="w-12 h-12 bg-white/90 rounded-full flex items-center justify-center">
+                      <Play className="w-6 h-6 text-gray-800 ml-1" fill="currentColor" />
+                    </div>
                   </div>
                 </>
               ) : (

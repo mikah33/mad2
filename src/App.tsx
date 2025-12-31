@@ -9,16 +9,35 @@ function App() {
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
     const playVideo = async () => {
-      if (videoRef.current) {
-        try {
-          await videoRef.current.play();
-        } catch (error) {
-          console.log('Autoplay prevented:', error);
-        }
+      try {
+        video.muted = true;
+        await video.play();
+      } catch (error) {
+        console.log('Autoplay prevented:', error);
       }
     };
+
+    // Try to play immediately
     playVideo();
+
+    // Also try on user interaction (for iOS)
+    const handleInteraction = () => {
+      playVideo();
+      document.removeEventListener('touchstart', handleInteraction);
+      document.removeEventListener('click', handleInteraction);
+    };
+
+    document.addEventListener('touchstart', handleInteraction, { once: true });
+    document.addEventListener('click', handleInteraction, { once: true });
+
+    return () => {
+      document.removeEventListener('touchstart', handleInteraction);
+      document.removeEventListener('click', handleInteraction);
+    };
   }, []);
 
   const menuItems = [
@@ -99,11 +118,19 @@ function App() {
             loop
             muted
             playsInline
+            webkit-playsinline="true"
             preload="auto"
+            poster="/hero-poster.jpg"
             className="absolute inset-0 w-full h-full object-cover"
           >
             <source src="/hero-video.mp4" type="video/mp4" />
           </video>
+          {/* Fallback image for when video doesn't play */}
+          <img
+            src="/hero-poster.jpg"
+            alt="Mikah's Auto Detailing"
+            className="absolute inset-0 w-full h-full object-cover -z-10"
+          />
 
           {/* Dark Overlay */}
           <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70"></div>

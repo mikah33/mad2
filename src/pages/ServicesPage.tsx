@@ -323,12 +323,15 @@ export const ServicesPage = () => {
 
             {/* Modal Actions */}
             <div className="p-4 border-t border-gray-200 flex gap-3">
-              <a
-                href="/book"
+              <button
+                onClick={() => {
+                  setSelectedService(null);
+                  navigate('/book');
+                }}
                 className="flex-1 py-3 bg-[#023E8A] text-white font-semibold rounded-lg text-center text-sm"
               >
                 Book This Service
-              </a>
+              </button>
               <a
                 href="tel:+18036678731"
                 className="py-3 px-4 bg-gray-100 text-gray-800 font-semibold rounded-lg text-sm"
