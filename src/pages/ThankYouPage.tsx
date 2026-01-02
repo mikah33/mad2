@@ -1,11 +1,27 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { CheckCircle, Phone, Home } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import BottomNavbar from '../components/BottomNavbar';
 
+// Declare gtag for TypeScript
+declare global {
+  interface Window {
+    gtag?: (...args: any[]) => void;
+  }
+}
+
 const ThankYouPage: React.FC = () => {
   const navigate = useNavigate();
+
+  // Google Ads Conversion Tracking
+  useEffect(() => {
+    if (window.gtag) {
+      window.gtag('event', 'conversion', {
+        'send_to': 'AW-16694998422/TihGCPrb_9sZEJbr5Zg-'
+      });
+    }
+  }, []);
 
   return (
     <>
