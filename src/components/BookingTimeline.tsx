@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Sparkles, Star, Shield, Wrench, Anchor, RotateCw, Check, ChevronRight, Mail, User, Phone, MapPin, Car, FileText, Info, X, Calendar, Droplet, Clock, CheckCircle, Gift } from 'lucide-react';
 
 interface Service {
@@ -12,6 +13,8 @@ interface Service {
 }
 
 const BookingTimeline: React.FC = () => {
+  const navigate = useNavigate();
+
   // Step tracking
   const [currentStep, setCurrentStep] = useState(1);
 
@@ -204,24 +207,8 @@ const BookingTimeline: React.FC = () => {
 
       if (response.ok) {
         console.log('✅ Successfully sent to n8n webhook');
-        setSubmitStatus('success');
-
-        // Reset form after 3 seconds
-        setTimeout(() => {
-          setFormData({
-            fullName: '',
-            email: '',
-            phone: '',
-            location: '',
-            description: ''
-          });
-          setVehicleType('');
-          setLastDetailTiming('');
-          setCleanlinessLevel('');
-          setSelectedService('');
-          setCurrentStep(1);
-          setSubmitStatus('idle');
-        }, 3000);
+        // Redirect to thank you page for GTM conversion tracking
+        navigate('/book/thank-you');
       } else {
         console.error('❌ n8n webhook failed:', response.status, response.statusText);
         throw new Error('Submission failed');

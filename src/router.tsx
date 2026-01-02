@@ -23,6 +23,7 @@ import LocationCayecPage from './pages/LocationCayecPage';
 import LocationWestColumbiaPage from './pages/LocationWestColumbiaPage';
 import PricingPage from './pages/PricingPage';
 import BookingPage from './pages/BookingPage';
+import ThankYouPage from './pages/ThankYouPage';
 import AccountPage from './pages/AccountPage';
 import GalleryPage from './pages/GalleryPage';
 import ReviewsPage from './pages/ReviewsPage';
@@ -116,6 +117,10 @@ export const router = createBrowserRouter([
     path: '/book',
     element: <BookingPage />,
     errorElement: <ErrorBoundary />,
+  },
+  {
+    path: '/book/thank-you',
+    element: <ThankYouPage />,
   },
   {
     path: '/account',
