@@ -208,7 +208,8 @@ const BookingTimeline: React.FC = () => {
       if (response.ok) {
         console.log('✅ Successfully sent to n8n webhook');
         // Redirect to thank you page for GTM conversion tracking
-        navigate('/book/thank-you');
+        window.location.href = '/book/thank-you';
+        return;
       } else {
         console.error('❌ n8n webhook failed:', response.status, response.statusText);
         throw new Error('Submission failed');

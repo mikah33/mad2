@@ -48,6 +48,12 @@ const ogImageMap: Record<string, { image: string; width: number; height: number 
   'faq/ceramic-coating': { image: 'mclarens.jpg', width: 1200, height: 630 },
   'faq/mobile-detailing': { image: 'exterior5.jpg', width: 1200, height: 630 },
   'resources': { image: 'exterior6.jpg', width: 1200, height: 630 },
+
+  // Additional pages
+  'blog': { image: 'exterior1.jpg', width: 1200, height: 630 },
+  'gallery': { image: 'mclarens.jpg', width: 1200, height: 630 },
+  'book': { image: 'logo.jpg', width: 1200, height: 630 },
+  'book/thank-you': { image: 'logo.jpg', width: 1200, height: 630 },
 };
 
 console.log('\n🚀 Generating pre-rendered HTML files for ALL pages...\n');
@@ -79,6 +85,12 @@ const routes = [
   { path: 'faq/ceramic-coating', title: 'Ceramic Coating FAQ | Common Questions', description: 'Frequently asked questions about ceramic coating, application, maintenance, and benefits.' },
   { path: 'faq/mobile-detailing', title: 'Mobile Detailing FAQ | Common Questions', description: 'Frequently asked questions about our mobile detailing service and process.' },
   { path: 'resources', title: 'Auto Detailing Resources | Tips & Guides', description: 'Helpful resources, guides, and tips for maintaining your vehicle between professional details.' },
+
+  // Additional pages
+  { path: 'blog', title: 'Auto Detailing Blog | Tips & Guides', description: 'Expert auto detailing tips, car care guides, and industry insights from Columbia SC\'s trusted mobile detailer.' },
+  { path: 'gallery', title: 'Gallery | Our Work', description: 'See our professional auto detailing results. Before and after photos of ceramic coating, paint correction, and interior detailing.' },
+  { path: 'book', title: 'Book Your Detail | Schedule Online', description: 'Book your professional mobile auto detailing appointment online. Easy scheduling for Columbia, Lexington, and Irmo SC.' },
+  { path: 'book/thank-you', title: 'Thank You | Booking Confirmed', description: 'Thank you for booking with Mikah\'s Auto Detailing. We\'ll contact you shortly to confirm your appointment.' },
 ];
 
 let generatedCount = 0;
