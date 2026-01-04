@@ -76,6 +76,28 @@ const BookingTimeline: React.FC = () => {
     }
   ];
 
+  // Interior & Exterior Only Options
+  const standaloneServices: Service[] = [
+    {
+      icon: <Sparkles className="w-8 h-8" />,
+      title: 'Interior Detail',
+      price: '$200',
+      color: 'bg-[#0077B6]',
+      slug: 'interior-detail',
+      image: '/interior1.jpg',
+      description: 'Complete interior cleaning & protection'
+    },
+    {
+      icon: <Droplet className="w-8 h-8" />,
+      title: 'Exterior Detail',
+      price: '$100',
+      color: 'bg-[#0077B6]',
+      slug: 'exterior-detail',
+      image: '/exterior2.jpg',
+      description: 'Full exterior wash, wax & protection'
+    }
+  ];
+
   const middleRowServices: Service[] = [
     {
       icon: <Wrench className="w-8 h-8" />,
@@ -373,6 +395,45 @@ const BookingTimeline: React.FC = () => {
         timeEstimate: 'Varies by size and condition',
         benefits: []
       },
+      'Interior Detail': {
+        fullDescription: '🧹 Interior Detail – $200\n\nComplete interior cleaning and protection for your vehicle.',
+        includes: [
+          '**Interior Services:**',
+          '✅ Full interior wipe down',
+          '✅ Conditioner applied to all surfaces',
+          '✅ UV protection on all surfaces',
+          '✅ Full vacuum',
+          '✅ Full disinfection process for cloth surfaces',
+          '✅ Glass cleaning',
+          '✅ Door jambs cleaned and waxed',
+          '',
+          '**Perfect for:**',
+          '• Vehicles that need interior refresh only',
+          '• Regular interior maintenance',
+          '• Quick turnaround cleaning'
+        ],
+        process: [],
+        timeEstimate: '1-2 hours',
+        benefits: []
+      },
+      'Exterior Detail': {
+        fullDescription: '✨ Exterior Detail – $100\n\nComplete exterior wash, decontamination, and protection.',
+        includes: [
+          '**Exterior Services:**',
+          '🛞 Wheels decontaminated from brake dust',
+          '🫧 Foam contact wash (all bugs, sap and tar removed)',
+          '✨ Layer of wax for protection',
+          '🛑 Trim and tires dressed',
+          '',
+          '**Perfect for:**',
+          '• Vehicles that need exterior refresh only',
+          '• Quick wash and protection',
+          '• Between full details'
+        ],
+        process: [],
+        timeEstimate: '1 hour',
+        benefits: []
+      },
       'Routine Reset': {
         fullDescription: '🔄 Routine Reset – $225/Month\n\nOur monthly maintenance subscription keeps your vehicle consistently fresh with 1 interior detail and 2 exterior washes per month.',
         includes: [
@@ -658,6 +719,68 @@ const BookingTimeline: React.FC = () => {
 
                   {selectedService === service.title && (
                     <div className="absolute top-2 right-2 bg-gradient-to-r from-[#0077B6] to-[#023E8A] text-white rounded-full p-2 shadow-lg animate-bounce z-20">
+                      <Check className="w-5 h-5" />
+                    </div>
+                  )}
+
+                  {/* Card Content */}
+                  <div className={`p-3 sm:p-4 md:p-5 ${selectedService === service.title ? 'bg-gradient-to-br from-[#CAF0F8] to-white' : 'bg-white'}`}>
+                    <h4 className={`text-sm md:text-lg font-bold mb-1 transition-colors ${selectedService === service.title ? 'text-[#023E8A]' : 'text-gray-800 group-hover:text-[#0077B6]'}`}>
+                      {service.title}
+                    </h4>
+                    <div className={`text-xl md:text-2xl font-black mb-2 transition-colors ${selectedService === service.title ? 'text-[#0077B6]' : 'text-[#023E8A] group-hover:text-[#0077B6]'}`}>
+                      {service.price}
+                    </div>
+                    <p className="hidden sm:block text-gray-600 text-xs md:text-sm mb-3 line-clamp-2">{service.description}</p>
+
+                    <button
+                      onClick={(e) => handleOpenModal(service.title, e)}
+                      className={`w-full py-2 rounded-lg text-xs md:text-sm font-semibold transition-all flex items-center justify-center gap-2 transform hover:scale-105 ${
+                        selectedService === service.title
+                          ? 'bg-gradient-to-r from-[#0077B6] to-[#90E0EF] text-white shadow-md'
+                          : 'bg-[#CAF0F8] hover:bg-[#90E0EF] text-[#023E8A]'
+                      }`}
+                    >
+                      <Info className="w-4 h-4" />
+                      <span>Details</span>
+                    </button>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Interior & Exterior Only Row */}
+            <div className="grid grid-cols-2 gap-2 sm:gap-3 md:gap-4 mb-4">
+              {standaloneServices.map((service, index) => (
+                <div
+                  key={index}
+                  onClick={() => currentStep === 1 && handleServiceSelect(service.title)}
+                  className={`
+                    relative rounded-xl sm:rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border-2 transform group
+                    ${selectedService === service.title
+                      ? 'border-[#0077B6] ring-4 ring-[#90E0EF]/50 scale-105 shadow-2xl'
+                      : 'border-gray-200 hover:border-[#90E0EF] hover:scale-105'
+                    }
+                    ${currentStep === 1 ? 'cursor-pointer active:scale-100' : 'cursor-not-allowed opacity-70'}
+                  `}
+                >
+                  {/* Image Header */}
+                  <div className="relative h-28 sm:h-32 md:h-36 overflow-hidden">
+                    <img
+                      src={service.image}
+                      alt={service.title}
+                      className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                    <div className={`absolute bottom-2 left-2 ${service.color} text-white p-2 rounded-lg shadow-lg`}>
+                      <div className="w-5 h-5 md:w-6 md:h-6">
+                        {service.icon}
+                      </div>
+                    </div>
+                  </div>
+
+                  {selectedService === service.title && (
+                    <div className="absolute top-2 right-2 bg-gradient-to-r from-[#0077B6] to-[#023E8A] text-white rounded-full p-2 shadow-lg animate-bounce">
                       <Check className="w-5 h-5" />
                     </div>
                   )}
