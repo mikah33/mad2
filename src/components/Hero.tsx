@@ -45,6 +45,7 @@ const Hero: React.FC = () => {
         muted
         playsInline
         preload="auto"
+        poster="/exterior2.jpg"
         className="absolute inset-0 w-full h-full object-cover"
         webkit-playsinline="true"
       >
