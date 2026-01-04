@@ -117,12 +117,15 @@ const BookingTimeline: React.FC = () => {
     }
   }, [currentStep]);
 
-  const handleVehicleTypeSubmit = () => {
-    if (vehicleType.trim()) {
+  // Step 1: Package Selection -> Step 2
+  const handleServiceSelect = (serviceTitle: string) => {
+    setSelectedService(serviceTitle);
+    setTimeout(() => {
       setCurrentStep(2);
-    }
+    }, 500);
   };
 
+  // Step 2: Last Detail -> Step 3
   const handleLastDetailSubmit = (timing: string) => {
     setLastDetailTiming(timing);
     setTimeout(() => {
@@ -130,6 +133,7 @@ const BookingTimeline: React.FC = () => {
     }, 500);
   };
 
+  // Step 3: Cleanliness -> Step 4
   const handleCleanlinessSubmit = (level: string) => {
     setCleanlinessLevel(level);
     setTimeout(() => {
@@ -137,11 +141,11 @@ const BookingTimeline: React.FC = () => {
     }, 500);
   };
 
-  const handleServiceSelect = (serviceTitle: string) => {
-    setSelectedService(serviceTitle);
-    setTimeout(() => {
+  // Step 4: Vehicle Type -> Step 5
+  const handleVehicleTypeSubmit = () => {
+    if (vehicleType.trim()) {
       setCurrentStep(5);
-    }, 500);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -440,14 +444,14 @@ const BookingTimeline: React.FC = () => {
           ))}
         </div>
 
-        {/* STEP 1: Vehicle Type */}
-        {currentStep === 1 && (
-        <div id="step-1" className="mb-8">
+        {/* STEP 4: Vehicle Type */}
+        {currentStep === 4 && (
+        <div id="step-4" className="mb-8 scroll-mt-20">
           <div className="text-center mb-4">
             <div className="inline-block bg-[#CAF0F8] text-[#023E8A] px-4 py-1 rounded-full font-semibold text-xs mb-2">
-              STEP 1
+              STEP 4
             </div>
-            <h3 className="text-xl md:text-2xl font-bold mb-1">First, what kind of vehicle do you drive?</h3>
+            <h3 className="text-xl md:text-2xl font-bold mb-1">What kind of vehicle do you drive?</h3>
             <p className="text-gray-600 text-sm">Tell us about your car, truck, SUV, or specialty vehicle</p>
           </div>
 
@@ -463,19 +467,27 @@ const BookingTimeline: React.FC = () => {
                 onKeyPress={(e) => e.key === 'Enter' && handleVehicleTypeSubmit()}
                 className="w-full pl-10 pr-4 py-4 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#90E0EF] focus:border-transparent transition bg-gray-50 focus:bg-white text-lg"
                 placeholder="e.g., 2020 Honda Civic, Ford F-150, Tesla Model 3..."
-                disabled={currentStep > 1}
+                disabled={currentStep > 4}
               />
             </div>
 
-            {currentStep === 1 && (
+            <button
+              onClick={handleVehicleTypeSubmit}
+              disabled={!vehicleType.trim()}
+              className="w-full mt-4 bg-gradient-to-r from-[#023E8A] to-[#0077B6] hover:from-[#0077B6] hover:to-[#90E0EF] disabled:from-gray-300 disabled:to-gray-400 disabled:cursor-not-allowed text-white font-bold py-3 px-6 rounded-lg transition-all transform hover:scale-105 disabled:transform-none"
+            >
+              Continue <ChevronRight className="w-5 h-5 inline ml-2" />
+            </button>
+
+            {/* Back Button */}
+            <div className="mt-4">
               <button
-                onClick={handleVehicleTypeSubmit}
-                disabled={!vehicleType.trim()}
-                className="w-full mt-4 bg-gradient-to-r from-[#023E8A] to-[#0077B6] hover:from-[#0077B6] hover:to-[#90E0EF] disabled:from-gray-300 disabled:to-gray-400 disabled:cursor-not-allowed text-white font-bold py-3 px-6 rounded-lg transition-all transform hover:scale-105 disabled:transform-none"
+                onClick={() => setCurrentStep(3)}
+                className="px-4 py-2 bg-gray-200 hover:bg-gray-300 text-gray-800 font-semibold rounded-lg transition-all text-sm"
               >
-                Continue <ChevronRight className="w-5 h-5 inline ml-2" />
+                ← Back
               </button>
-            )}
+            </div>
           </div>
         </div>
         )}
@@ -593,12 +605,12 @@ const BookingTimeline: React.FC = () => {
           </div>
         )}
 
-        {/* STEP 4: Package Selection */}
-        {currentStep === 4 && (
-          <div id="step-4" className="mb-8 scroll-mt-20">
+        {/* STEP 1: Package Selection */}
+        {currentStep === 1 && (
+          <div id="step-1" className="mb-8">
             <div className="text-center mb-4">
               <div className="inline-block bg-[#CAF0F8] text-[#023E8A] px-4 py-1 rounded-full font-semibold text-xs mb-2">
-                STEP 4
+                STEP 1
               </div>
               <h3 className="text-xl md:text-2xl font-bold mb-1">Select Your Service Package</h3>
               <p className="text-gray-600 text-sm">Choose the package that fits your needs</p>
@@ -609,14 +621,14 @@ const BookingTimeline: React.FC = () => {
               {topRowServices.map((service, index) => (
                 <div
                   key={index}
-                  onClick={() => currentStep === 4 && handleServiceSelect(service.title)}
+                  onClick={() => currentStep === 1 && handleServiceSelect(service.title)}
                   className={`
                     relative rounded-xl sm:rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border-2 transform group
                     ${selectedService === service.title
                       ? 'border-[#0077B6] ring-4 ring-[#90E0EF]/50 scale-105 shadow-2xl'
                       : 'border-gray-200 hover:border-[#90E0EF] hover:scale-105'
                     }
-                    ${currentStep === 4 ? 'cursor-pointer active:scale-100' : 'cursor-not-allowed opacity-70'}
+                    ${currentStep === 1 ? 'cursor-pointer active:scale-100' : 'cursor-not-allowed opacity-70'}
                     ${service.isPopular ? 'shadow-[0_0_40px_rgba(0,119,182,0.4)]' : ''}
                   `}
                 >
@@ -680,14 +692,14 @@ const BookingTimeline: React.FC = () => {
               {middleRowServices.map((service, index) => (
                 <div
                   key={index}
-                  onClick={() => currentStep === 4 && handleServiceSelect(service.title)}
+                  onClick={() => currentStep === 1 && handleServiceSelect(service.title)}
                   className={`
                     relative rounded-xl sm:rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border-2 transform group
                     ${selectedService === service.title
                       ? 'border-[#0077B6] ring-4 ring-[#90E0EF]/50 scale-105 shadow-2xl'
                       : 'border-gray-200 hover:border-[#90E0EF] hover:scale-105'
                     }
-                    ${currentStep === 4 ? 'cursor-pointer active:scale-100' : 'cursor-not-allowed opacity-70'}
+                    ${currentStep === 1 ? 'cursor-pointer active:scale-100' : 'cursor-not-allowed opacity-70'}
                   `}
                 >
                   {/* Image Header */}
@@ -740,14 +752,14 @@ const BookingTimeline: React.FC = () => {
             {/* Routine Reset - Single Card */}
             <div className="max-w-md mx-auto">
               <div
-                onClick={() => currentStep === 4 && handleServiceSelect(bottomRowService.title)}
+                onClick={() => currentStep === 1 && handleServiceSelect(bottomRowService.title)}
                 className={`
                   relative rounded-xl sm:rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border-2 transform group
                   ${selectedService === bottomRowService.title
                     ? 'border-[#0077B6] ring-4 ring-[#90E0EF]/50 scale-105 shadow-2xl'
                     : 'border-gray-200 hover:border-[#90E0EF] hover:scale-105'
                   }
-                  ${currentStep === 4 ? 'cursor-pointer active:scale-100' : 'cursor-not-allowed opacity-70'}
+                  ${currentStep === 1 ? 'cursor-pointer active:scale-100' : 'cursor-not-allowed opacity-70'}
                 `}
               >
                 {/* Image Header */}
@@ -796,14 +808,19 @@ const BookingTimeline: React.FC = () => {
               </div>
             </div>
 
-            {/* Back Button */}
-            <div className="mt-4">
-              <button
-                onClick={() => setCurrentStep(3)}
-                className="px-4 py-2 bg-gray-200 hover:bg-gray-300 text-gray-800 font-semibold rounded-lg transition-all text-sm"
+            {/* Facebook Button */}
+            <div className="mt-8 text-center">
+              <a
+                href="https://www.facebook.com/MikahsDetailing"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-3 bg-[#1877F2] hover:bg-[#166FE5] text-white font-semibold py-3 px-6 rounded-lg transition-all transform hover:scale-105 shadow-lg"
               >
-                ← Back
-              </button>
+                <svg className="w-6 h-6 fill-current" viewBox="0 0 24 24">
+                  <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                </svg>
+                View Our Work on Facebook
+              </a>
             </div>
           </div>
         )}
@@ -911,7 +928,7 @@ const BookingTimeline: React.FC = () => {
                     />
                   </div>
 
-                  {/* Vehicle Type - Hidden (already collected in Step 1) */}
+                  {/* Vehicle Type - Hidden (already collected in Step 4) */}
                   <input type="hidden" name="vehicleType" value={vehicleType} />
 
                   <div className="relative">
@@ -1029,7 +1046,7 @@ const BookingTimeline: React.FC = () => {
                   onClick={() => {
                     setTimeout(() => {
                       setOpenModal(null);
-                      if (currentStep === 4 && openModal) handleServiceSelect(openModal);
+                      if (currentStep === 1 && openModal) handleServiceSelect(openModal);
                     }, 200);
                   }}
                   className="flex-1 bg-gradient-to-r from-[#023E8A] to-[#0077B6] hover:from-[#0077B6] hover:to-[#90E0EF] text-white font-semibold py-3 px-6 rounded-lg transition-all active:scale-95"

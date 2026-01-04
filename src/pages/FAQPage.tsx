@@ -1,17 +1,17 @@
 import React from 'react';
-import { ArrowLeft } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
 import { SEOHead } from '../components/seo/SEOHead';
 import { generateEnhancedLocalBusinessSchema } from '../components/seo/EnhancedLocalBusinessSchema';
 import { FAQSection } from '../components/FAQSection';
-import { faqs, generateFAQSchema } from '../data/faqs-comprehensive';
+import { faqs, faqCategories, generateFAQSchema } from '../data/faqs-comprehensive';
+import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
-import BottomNavbar from '../components/BottomNavbar';
 
 export const FAQPage = () => {
-  const navigate = useNavigate();
   const faqSchema = generateFAQSchema(faqs);
+  // Generate enhanced comprehensive LocalBusiness schema
   const enhancedBusinessSchema = generateEnhancedLocalBusinessSchema();
+
+  // Combine schemas
   const schemas = [faqSchema, enhancedBusinessSchema];
 
   return (
@@ -20,107 +20,375 @@ export const FAQPage = () => {
         title="Frequently Asked Questions - Mobile Auto Detailing Columbia SC | Mikahs Auto Detailing"
         description="Get answers to your auto detailing questions. Learn about mobile detailing services, pricing, ceramic coating, interior/exterior cleaning in Columbia, Lexington & Irmo SC."
         keywords="auto detailing FAQ Columbia SC, mobile detailing questions, ceramic coating FAQ, interior detailing questions, exterior detailing FAQ, detailing pricing Columbia, car detailing services Lexington SC"
-        canonical="https://mikahsmobiledetailingsc.com/faq"
+        canonical="https://mikahsautodetailing.com/faq"
         schema={schemas}
       />
 
-      <div className="min-h-screen bg-gray-50 pb-24">
-        {/* Header */}
-        <div className="sticky top-0 z-40 bg-white/95 backdrop-blur-sm border-b border-gray-200 shadow-sm">
-          <div className="container mx-auto px-4 max-w-6xl">
-            <div className="flex items-center h-14">
-              <button
-                onClick={() => navigate('/')}
-                className="flex items-center gap-2 text-gray-600 hover:text-[#023E8A] transition-colors"
-              >
-                <ArrowLeft className="w-5 h-5" />
-                <span className="font-medium">Back</span>
-              </button>
-              <div className="flex-1 text-center">
-                <h1 className="text-lg font-bold text-[#023E8A]">FAQs</h1>
-              </div>
-              <div className="w-16" />
-            </div>
-          </div>
-        </div>
+      <Navigation />
 
+
+      <div className="faq-page">
         {/* Hero Section */}
-        <div className="bg-gradient-to-br from-[#023E8A] to-[#0077B6] text-white py-8 px-4">
-          <div className="max-w-2xl mx-auto text-center">
-            <h2 className="text-2xl font-bold mb-2">How Can We Help?</h2>
-            <p className="text-[#90E0EF] text-sm">
-              Find answers to common questions about our mobile detailing services
+        <section className="faq-hero">
+          <div className="faq-hero-container">
+            <h1 className="faq-hero-title">
+              Frequently Asked Questions
+            </h1>
+            <p className="faq-hero-subtitle">
+              Everything you need to know about professional mobile auto detailing in Columbia, SC
             </p>
-          </div>
-        </div>
-
-        {/* Quick Links */}
-        <div className="px-4 -mt-4 relative z-10">
-          <div className="max-w-2xl mx-auto">
-            <div className="bg-white rounded-xl shadow-md p-4">
-              <div className="grid grid-cols-2 gap-3">
-                <a
-                  href="/faq/ceramic-coating"
-                  className="flex flex-col items-center p-3 bg-gradient-to-br from-[#CAF0F8] to-white rounded-lg hover:shadow-md transition-all"
-                >
-                  <span className="text-2xl mb-1">🛡️</span>
-                  <span className="text-sm font-semibold text-gray-800">Ceramic Coating</span>
-                  <span className="text-xs text-gray-500">FAQs</span>
-                </a>
-                <a
-                  href="/faq/mobile-detailing"
-                  className="flex flex-col items-center p-3 bg-gradient-to-br from-[#CAF0F8] to-white rounded-lg hover:shadow-md transition-all"
-                >
-                  <span className="text-2xl mb-1">🚗</span>
-                  <span className="text-sm font-semibold text-gray-800">Mobile Detailing</span>
-                  <span className="text-xs text-gray-500">FAQs</span>
-                </a>
+            <div className="faq-hero-stats">
+              <div className="faq-stat">
+                <span className="faq-stat-number">{faqs.length}+</span>
+                <span className="faq-stat-label">Questions Answered</span>
+              </div>
+              <div className="faq-stat">
+                <span className="faq-stat-number">{faqCategories.length}</span>
+                <span className="faq-stat-label">Categories</span>
+              </div>
+              <div className="faq-stat">
+                <span className="faq-stat-number">24/7</span>
+                <span className="faq-stat-label">Information Access</span>
               </div>
             </div>
           </div>
-        </div>
+        </section>
+
+        {/* Specialty FAQ Pages */}
+        <section className="faq-specialty" style={{padding: '3rem 0', background: '#f9fafb', borderBottom: '1px solid #e5e7eb'}}>
+          <div style={{maxWidth: '1200px', margin: '0 auto', padding: '0 1rem'}}>
+            <h2 style={{fontSize: '1.5rem', fontWeight: 700, color: '#1f2937', marginBottom: '1.5rem', textAlign: 'center'}}>
+              Specialized FAQ Pages
+            </h2>
+            <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1.5rem'}}>
+              <a
+                href="/faq/ceramic-coating"
+                style={{display: 'flex', flexDirection: 'column', padding: '2rem', background: 'linear-gradient(135deg, #3b82f6 0%, #2563eb 100%)', borderRadius: '12px', textDecoration: 'none', color: 'white', transition: 'transform 0.2s, box-shadow 0.2s'}}
+                className="specialty-card"
+              >
+                <h3 style={{fontSize: '1.5rem', fontWeight: 700, marginBottom: '0.75rem'}}>
+                  🛡️ Ceramic Coating FAQs
+                </h3>
+                <p style={{fontSize: '1rem', opacity: 0.9, marginBottom: '1rem'}}>
+                  Get expert answers about automotive ceramic coating, professional application, costs, benefits, and maintenance.
+                </p>
+                <span style={{fontSize: '0.875rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em'}}>
+                  25 Questions →
+                </span>
+              </a>
+              <a
+                href="/faq/mobile-detailing"
+                style={{display: 'flex', flexDirection: 'column', padding: '2rem', background: 'linear-gradient(135deg, #10b981 0%, #059669 100%)', borderRadius: '12px', textDecoration: 'none', color: 'white', transition: 'transform 0.2s, box-shadow 0.2s'}}
+                className="specialty-card"
+              >
+                <h3 style={{fontSize: '1.5rem', fontWeight: 700, marginBottom: '0.75rem'}}>
+                  🚗 Mobile Detailing FAQs
+                </h3>
+                <p style={{fontSize: '1rem', opacity: 0.9, marginBottom: '1rem'}}>
+                  Learn about mobile car detailing services, pricing, scheduling, and what to expect from our mobile service.
+                </p>
+                <span style={{fontSize: '0.875rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em'}}>
+                  25 Questions →
+                </span>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        {/* Quick Navigation */}
+        <section className="faq-quick-nav">
+          <div className="faq-quick-nav-container">
+            <h2 className="faq-quick-nav-title">General FAQ Categories</h2>
+            <div className="faq-quick-nav-grid">
+              {faqCategories.map(category => (
+                <a
+                  key={category.id}
+                  href={`#category-${category.id}`}
+                  className="faq-quick-nav-card"
+                >
+                  <span className="faq-quick-nav-icon">{category.icon}</span>
+                  <span className="faq-quick-nav-name">{category.name}</span>
+                  <span className="faq-quick-nav-count">
+                    {faqs.filter(f => f.category === category.id).length} questions
+                  </span>
+                </a>
+              ))}
+            </div>
+          </div>
+        </section>
 
         {/* Main FAQ Section */}
-        <div className="px-4 mt-6">
-          <div className="max-w-2xl mx-auto">
-            <FAQSection
-              showSearch={true}
-              showCategoryFilter={true}
-              title=""
-              description=""
-            />
-          </div>
-        </div>
+        <FAQSection
+          showSearch={true}
+          showCategoryFilter={true}
+          title="All Your Questions Answered"
+          description="Browse our comprehensive FAQ database or use the search and filters to find exactly what you're looking for."
+        />
+
+        {/* Category Anchors for Quick Nav */}
+        {faqCategories.map(category => (
+          <div key={category.id} id={`category-${category.id}`} style={{ scrollMarginTop: '100px' }} />
+        ))}
 
         {/* CTA Section */}
-        <div className="px-4 mt-8">
-          <div className="max-w-2xl mx-auto">
-            <div className="bg-white rounded-xl shadow-md p-6 text-center">
-              <h3 className="text-lg font-bold text-gray-800 mb-2">Still Have Questions?</h3>
-              <p className="text-gray-600 text-sm mb-4">
-                Our team is happy to help with any questions about our services.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-3 justify-center">
-                <a
-                  href="tel:+18036678731"
-                  className="px-6 py-3 bg-[#023E8A] text-white font-semibold rounded-lg hover:bg-[#0077B6] transition-colors"
-                >
-                  Call (803) 667-8731
-                </a>
-                <a
-                  href="/book"
-                  className="px-6 py-3 bg-gray-100 text-gray-800 font-semibold rounded-lg hover:bg-gray-200 transition-colors"
-                >
-                  Book Online
-                </a>
-              </div>
+        <section className="faq-cta">
+          <div className="faq-cta-container">
+            <h2 className="faq-cta-title">Still Have Questions?</h2>
+            <p className="faq-cta-text">
+              Can't find what you're looking for? Our team is here to help with any questions about our mobile detailing services in Columbia, Lexington, and Irmo.
+            </p>
+            <div className="faq-cta-buttons">
+              <a href="/contact" className="faq-cta-btn faq-cta-btn-primary">
+                Contact Us
+              </a>
+              <a href="tel:+18035551234" className="faq-cta-btn faq-cta-btn-secondary">
+                Call (803) 555-1234
+              </a>
+              <a href="/booking" className="faq-cta-btn faq-cta-btn-secondary">
+                Book Online
+              </a>
             </div>
           </div>
-        </div>
+        </section>
       </div>
 
+      <style>{`
+        .faq-page {
+          background: white;
+        }
+
+        .specialty-card:hover {
+          transform: translateY(-4px);
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Hero Section */
+        .faq-hero {
+          background: linear-gradient(135deg, #1f2937 0%, #374151 100%);
+          color: white;
+          padding: 4rem 0;
+          text-align: center;
+        }
+
+        .faq-hero-container {
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 0 1rem;
+        }
+
+        .faq-hero-title {
+          font-size: 3rem;
+          font-weight: 800;
+          margin-bottom: 1rem;
+        }
+
+        .faq-hero-subtitle {
+          font-size: 1.25rem;
+          color: #d1d5db;
+          margin-bottom: 3rem;
+          max-width: 700px;
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        .faq-hero-stats {
+          display: flex;
+          justify-content: center;
+          gap: 3rem;
+          flex-wrap: wrap;
+        }
+
+        .faq-stat {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 0.5rem;
+        }
+
+        .faq-stat-number {
+          font-size: 2.5rem;
+          font-weight: 800;
+          color: #ef4444;
+        }
+
+        .faq-stat-label {
+          font-size: 0.875rem;
+          color: #d1d5db;
+          text-transform: uppercase;
+          letter-spacing: 0.05em;
+        }
+
+        /* Quick Navigation */
+        .faq-quick-nav {
+          padding: 3rem 0;
+          background: white;
+          border-bottom: 1px solid #e5e7eb;
+        }
+
+        .faq-quick-nav-container {
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 0 1rem;
+        }
+
+        .faq-quick-nav-title {
+          font-size: 1.5rem;
+          font-weight: 700;
+          color: #1f2937;
+          margin-bottom: 1.5rem;
+          text-align: center;
+        }
+
+        .faq-quick-nav-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+          gap: 1rem;
+        }
+
+        .faq-quick-nav-card {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          padding: 1.5rem;
+          background: #f9fafb;
+          border: 2px solid #e5e7eb;
+          border-radius: 8px;
+          text-decoration: none;
+          transition: all 0.2s;
+        }
+
+        .faq-quick-nav-card:hover {
+          border-color: #ef4444;
+          background: #fef2f2;
+          transform: translateY(-2px);
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .faq-quick-nav-icon {
+          font-size: 2rem;
+          margin-bottom: 0.5rem;
+        }
+
+        .faq-quick-nav-name {
+          font-size: 1rem;
+          font-weight: 600;
+          color: #1f2937;
+          margin-bottom: 0.25rem;
+        }
+
+        .faq-quick-nav-count {
+          font-size: 0.875rem;
+          color: #6b7280;
+        }
+
+        /* CTA Section */
+        .faq-cta {
+          background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+          color: white;
+          padding: 4rem 0;
+          text-align: center;
+        }
+
+        .faq-cta-container {
+          max-width: 800px;
+          margin: 0 auto;
+          padding: 0 1rem;
+        }
+
+        .faq-cta-title {
+          font-size: 2.5rem;
+          font-weight: 800;
+          margin-bottom: 1rem;
+        }
+
+        .faq-cta-text {
+          font-size: 1.125rem;
+          margin-bottom: 2rem;
+          opacity: 0.95;
+        }
+
+        .faq-cta-buttons {
+          display: flex;
+          gap: 1rem;
+          justify-content: center;
+          flex-wrap: wrap;
+        }
+
+        .faq-cta-btn {
+          padding: 1rem 2rem;
+          font-size: 1rem;
+          font-weight: 600;
+          border-radius: 8px;
+          text-decoration: none;
+          transition: all 0.2s;
+          display: inline-block;
+        }
+
+        .faq-cta-btn-primary {
+          background: white;
+          color: #ef4444;
+        }
+
+        .faq-cta-btn-primary:hover {
+          background: #f9fafb;
+          transform: translateY(-2px);
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .faq-cta-btn-secondary {
+          background: rgba(255, 255, 255, 0.1);
+          color: white;
+          border: 2px solid white;
+        }
+
+        .faq-cta-btn-secondary:hover {
+          background: white;
+          color: #ef4444;
+          transform: translateY(-2px);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+          .faq-hero-title {
+            font-size: 2rem;
+          }
+
+          .faq-hero-subtitle {
+            font-size: 1rem;
+          }
+
+          .faq-hero-stats {
+            gap: 1.5rem;
+          }
+
+          .faq-stat-number {
+            font-size: 2rem;
+          }
+
+          .faq-quick-nav-grid {
+            grid-template-columns: 1fr;
+          }
+
+          .faq-cta-title {
+            font-size: 1.75rem;
+          }
+
+          .faq-cta-text {
+            font-size: 1rem;
+          }
+
+          .faq-cta-buttons {
+            flex-direction: column;
+            align-items: stretch;
+          }
+
+          .faq-cta-btn {
+            width: 100%;
+          }
+        }
+      `}</style>
+
       <Footer />
-      <BottomNavbar />
     </>
   );
 };

@@ -301,12 +301,12 @@ const RecentProjects: React.FC = () => {
           <h3 className="text-3xl font-bold mb-4">Ready to Transform Your Vehicle?</h3>
           <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
             Join our satisfied customers and experience the difference professional detailing makes.{' '}
-            <a href="/book" className="text-[#023E8A] hover:underline">
+            <a href="#booking" className="text-[#023E8A] hover:underline">
               Get your free quote today
             </a>{' '}
             and see why we're the trusted choice for vehicle care.
           </p>
-          <a href="/book">
+          <a href="#booking">
             <button className="px-8 py-4 bg-[#023E8A] text-white text-lg font-bold rounded-lg hover:bg-[#0077B6] transition">
               Get Your Free Quote
             </button>
