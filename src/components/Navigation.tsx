@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { Phone, MapPin, Menu, X } from 'lucide-react';
+import { Phone, MapPin, Menu, X, MessageCircle } from 'lucide-react';
 
 const Navigation: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isContactPopupOpen, setIsContactPopupOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -90,14 +91,27 @@ const Navigation: React.FC = () => {
             </button>
           </div>
 
-          {/* Mobile Hamburger Button */}
-          <button
-            onClick={toggleMenu}
-            className="md:hidden p-2 rounded-lg transition text-gray-700 hover:bg-gray-100 border border-gray-300"
-            aria-label="Toggle menu"
-          >
-            {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
+          {/* Mobile Contact & Hamburger Buttons */}
+          <div className="md:hidden flex items-center gap-2">
+            {/* Phone/Text Button */}
+            <button
+              onClick={() => setIsContactPopupOpen(true)}
+              className="p-2 rounded-lg transition text-white hover:opacity-90 border border-[#0077B6]"
+              style={{ backgroundColor: '#0077B6' }}
+              aria-label="Call or Text"
+            >
+              <Phone className="w-6 h-6" />
+            </button>
+
+            {/* Hamburger Menu */}
+            <button
+              onClick={toggleMenu}
+              className="p-2 rounded-lg transition text-gray-700 hover:bg-gray-100 border border-gray-300"
+              aria-label="Toggle menu"
+            >
+              {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
+          </div>
         </div>
 
         {/* Mobile Menu */}
@@ -185,6 +199,79 @@ const Navigation: React.FC = () => {
           </div>
         )}
       </div>
+
+      {/* Call/Text Popup Modal */}
+      {isContactPopupOpen && (
+        <div
+          className="fixed inset-0 bg-black/50 z-[100] flex items-center justify-center p-4"
+          onClick={() => setIsContactPopupOpen(false)}
+        >
+          <div
+            className="bg-white rounded-2xl shadow-2xl w-full max-w-sm overflow-hidden"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Header */}
+            <div className="bg-gradient-to-r from-[#023E8A] to-[#0077B6] text-white p-4 flex justify-between items-center">
+              <h3 className="text-xl font-bold">Contact Us</h3>
+              <button
+                onClick={() => setIsContactPopupOpen(false)}
+                className="p-1 hover:bg-white/20 rounded-full transition"
+              >
+                <X className="w-6 h-6" />
+              </button>
+            </div>
+
+            {/* Options */}
+            <div className="p-4 space-y-3">
+              {/* Call Option */}
+              <a
+                href="tel:+18036678731"
+                onClick={() => {
+                  (window as any).gtag_report_conversion && (window as any).gtag_report_conversion();
+                  setIsContactPopupOpen(false);
+                }}
+                className="flex items-center gap-4 p-4 bg-[#CAF0F8] hover:bg-[#90E0EF] rounded-xl transition group"
+              >
+                <div className="p-3 bg-[#0077B6] text-white rounded-full group-hover:bg-[#023E8A] transition">
+                  <Phone className="w-6 h-6" />
+                </div>
+                <div>
+                  <div className="font-bold text-gray-900 text-lg">Call Us</div>
+                  <div className="text-gray-600">(803) 667-8731</div>
+                </div>
+              </a>
+
+              {/* Text Option */}
+              <a
+                href="sms:+18036678731"
+                onClick={() => {
+                  (window as any).gtag_report_conversion && (window as any).gtag_report_conversion();
+                  setIsContactPopupOpen(false);
+                }}
+                className="flex items-center gap-4 p-4 bg-[#CAF0F8] hover:bg-[#90E0EF] rounded-xl transition group"
+              >
+                <div className="p-3 bg-[#0077B6] text-white rounded-full group-hover:bg-[#023E8A] transition">
+                  <MessageCircle className="w-6 h-6" />
+                </div>
+                <div>
+                  <div className="font-bold text-gray-900 text-lg">Text Us</div>
+                  <div className="text-gray-600">(803) 667-8731</div>
+                </div>
+              </a>
+            </div>
+
+            {/* Footer */}
+            <div className="px-4 pb-4">
+              <button
+                onClick={() => setIsContactPopupOpen(false)}
+                className="w-full py-3 bg-gray-100 hover:bg-gray-200 text-gray-700 font-semibold rounded-lg transition"
+              >
+                Cancel
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </nav>
   );
 };
