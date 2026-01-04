@@ -28,6 +28,21 @@
       gtag('js', new Date());
       gtag('config', 'AW-16694998422');
     </script>
+    <!-- Google Ads Conversion Tracking -->
+    <script>
+      function gtag_report_conversion(url) {
+        var callback = function () {
+          if (typeof(url) != 'undefined') {
+            window.location = url;
+          }
+        };
+        gtag('event', 'conversion', {
+          'send_to': 'AW-16694998422/TihGCPrb_9sZEJbr5Zg-',
+          'event_callback': callback
+        });
+        return false;
+      }
+    </script>
     <!-- End Google Ads -->
 
     <!-- Primary Meta Tags -->

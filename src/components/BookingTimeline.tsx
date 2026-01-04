@@ -222,8 +222,13 @@ const BookingTimeline: React.FC = () => {
 
       if (response.ok) {
         console.log('✅ Successfully sent to n8n webhook');
-        // Redirect to thank you page for GTM conversion tracking
-        window.location.href = '/book/thank-you';
+        // Fire Google Ads conversion tracking
+        if (typeof (window as any).gtag_report_conversion === 'function') {
+          (window as any).gtag_report_conversion('/book/thank-you');
+        } else {
+          // Fallback if conversion function not available
+          window.location.href = '/book/thank-you';
+        }
         return;
       } else {
         console.error('❌ n8n webhook failed:', response.status, response.statusText);
@@ -1078,7 +1083,7 @@ const BookingTimeline: React.FC = () => {
                   </button>
 
                   <p className="text-xs text-gray-500 text-center mt-3">
-                    Or call us: <a href="tel:8036678731" className="text-[#023E8A] font-semibold hover:underline">(803) 667-8731</a>
+                    Or call us: <a href="tel:8036678731" onClick={() => (window as any).gtag_report_conversion && (window as any).gtag_report_conversion()} className="text-[#023E8A] font-semibold hover:underline">(803) 667-8731</a>
                   </p>
                 </form>
 

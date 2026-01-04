@@ -64,7 +64,7 @@ const Navigation: React.FC = () => {
           {/* Desktop CTA Buttons */}
           <div className="hidden md:flex items-center space-x-2">
             <button
-              onClick={() => window.location.href = 'tel:+18036678731'}
+              onClick={() => { (window as any).gtag_report_conversion && (window as any).gtag_report_conversion(); window.location.href = 'tel:+18036678731'; }}
               className="flex items-center px-2 lg:px-3 xl:px-4 py-2 rounded-lg transition text-xs lg:text-sm xl:text-base whitespace-nowrap bg-gray-100 text-gray-700 border border-gray-300 hover:bg-gray-200"
             >
               <Phone className="w-4 h-4 mr-1" />
@@ -158,7 +158,7 @@ const Navigation: React.FC = () => {
               {/* Mobile CTA Buttons */}
               <div className="px-4 pt-4 space-y-3 border-t border-[#90E0EF]/20">
                 <button
-                  onClick={() => window.location.href = 'tel:+18036678731'}
+                  onClick={() => { (window as any).gtag_report_conversion && (window as any).gtag_report_conversion(); window.location.href = 'tel:+18036678731'; }}
                   className="w-full flex items-center justify-center px-4 py-3 bg-white/10 text-white border border-[#90E0EF]/30 rounded-lg hover:bg-gold-500/20 hover:border-[#90E0EF] transition font-semibold backdrop-blur-sm"
                 >
                   <Phone className="w-4 h-4 mr-2" />
