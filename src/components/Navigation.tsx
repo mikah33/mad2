@@ -7,10 +7,14 @@ const Navigation: React.FC = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      const scrolled = window.scrollY > 20;
+      setIsScrolled(scrolled);
     };
 
-    window.addEventListener('scroll', handleScroll);
+    // Check immediately on mount
+    handleScroll();
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -20,15 +24,16 @@ const Navigation: React.FC = () => {
     setIsMenuOpen(false);
   };
 
+  // Force white background ALWAYS for testing
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      isScrolled
-        ? 'shadow-2xl border-b backdrop-blur-sm text-white'
-        : 'bg-transparent text-white'
-    }`} style={{
-      backgroundColor: isScrolled ? 'rgba(2, 62, 138, 0.95)' : 'transparent',
-      borderColor: isScrolled ? 'rgba(0, 119, 182, 0.5)' : 'transparent'
-    }}>
+    <nav
+      className="fixed top-0 left-0 right-0 z-50"
+      style={{
+        backgroundColor: '#ffffff',
+        boxShadow: '0 4px 20px rgba(0, 0, 0, 0.15)',
+        borderBottom: '2px solid #023E8A',
+      }}
+    >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
@@ -39,18 +44,18 @@ const Navigation: React.FC = () => {
               className="h-10 w-10 sm:h-12 sm:w-12 rounded-full object-cover shadow-md"
               loading="eager"
             />
-            <h1 className="text-lg sm:text-xl font-bold text-white">Mikah's Auto Detailing</h1>
+            <h1 className="text-lg sm:text-xl font-bold text-gray-900">Mikah's Auto Detailing</h1>
           </a>
 
           {/* Desktop Navigation Links */}
           <div className="hidden lg:flex items-center space-x-3 xl:space-x-6">
-            <a href="/#home" className="text-white hover:text-[#90E0EF] transition text-sm xl:text-base font-medium">Home</a>
-            <a href="/services" className="text-white hover:text-[#90E0EF] transition text-sm xl:text-base font-medium">Services</a>
-            <a href="/blog" className="text-white hover:text-[#90E0EF] transition text-sm xl:text-base font-medium">Blog</a>
-            <a href="/#projects" className="hidden xl:flex text-white hover:text-[#90E0EF] transition text-sm xl:text-base font-medium">Recent Projects</a>
-            <a href="/faq" className="text-white hover:text-[#90E0EF] transition text-sm xl:text-base font-medium">FAQ</a>
-            <a href="/#contact" className="text-white hover:text-[#90E0EF] transition text-sm xl:text-base font-medium">Contact</a>
-            <a href="/locations" className="flex items-center text-white hover:text-[#90E0EF] transition text-sm xl:text-base font-medium">
+            <a href="/#home" className="text-gray-700 hover:text-[#023E8A] transition text-sm xl:text-base font-medium">Home</a>
+            <a href="/services" className="text-gray-700 hover:text-[#023E8A] transition text-sm xl:text-base font-medium">Services</a>
+            <a href="/blog" className="text-gray-700 hover:text-[#023E8A] transition text-sm xl:text-base font-medium">Blog</a>
+            <a href="/#projects" className="hidden xl:flex text-gray-700 hover:text-[#023E8A] transition text-sm xl:text-base font-medium">Recent Projects</a>
+            <a href="/faq" className="text-gray-700 hover:text-[#023E8A] transition text-sm xl:text-base font-medium">FAQ</a>
+            <a href="/#contact" className="text-gray-700 hover:text-[#023E8A] transition text-sm xl:text-base font-medium">Contact</a>
+            <a href="/locations" className="flex items-center text-gray-700 hover:text-[#023E8A] transition text-sm xl:text-base font-medium">
               <MapPin className="w-4 h-4 mr-1" />
               Locations
             </a>
@@ -60,7 +65,7 @@ const Navigation: React.FC = () => {
           <div className="hidden md:flex items-center space-x-2">
             <button
               onClick={() => window.location.href = 'tel:+18036678731'}
-              className="flex items-center px-2 lg:px-3 xl:px-4 py-2 bg-white/10 text-white border border-[#90E0EF]/30 rounded-lg hover:bg-gold-500/20 hover:border-[#90E0EF] transition text-xs lg:text-sm xl:text-base whitespace-nowrap backdrop-blur-sm"
+              className="flex items-center px-2 lg:px-3 xl:px-4 py-2 rounded-lg transition text-xs lg:text-sm xl:text-base whitespace-nowrap bg-gray-100 text-gray-700 border border-gray-300 hover:bg-gray-200"
             >
               <Phone className="w-4 h-4 mr-1" />
               <span className="hidden lg:inline">Call Now</span>
@@ -88,7 +93,7 @@ const Navigation: React.FC = () => {
           {/* Mobile Hamburger Button */}
           <button
             onClick={toggleMenu}
-            className="md:hidden p-2 rounded-lg hover:bg-gold-500/20 border border-[#90E0EF]/30 transition text-white"
+            className="md:hidden p-2 rounded-lg transition text-gray-700 hover:bg-gray-100 border border-gray-300"
             aria-label="Toggle menu"
           >
             {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}

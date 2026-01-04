@@ -4,6 +4,17 @@ export default {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
+  safelist: [
+    'bg-white',
+    'bg-transparent',
+    'shadow-xl',
+    'shadow-lg',
+    'border-b-2',
+    'border-blue-800',
+    'text-gray-900',
+    'text-gray-700',
+    'text-white',
+  ],
   theme: {
     extend: {
       fontFamily: {
