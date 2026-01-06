@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>How Did We Do? - Mikah's Auto Detailing</title>
+  <title>⚠️ Negative Review Alert - Mikah's Auto Detailing</title>
 </head>
 <body style="margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f5f5f5;">
   <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #f5f5f5;">
@@ -11,80 +11,80 @@
       <td style="padding: 40px 20px;">
         <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="max-width: 600px; margin: 0 auto; background-color: #ffffff; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
 
-          <!-- Header -->
+          <!-- Header - Red/Orange for Alert -->
           <tr>
-            <td style="background: linear-gradient(135deg, #023E8A 0%, #0077B6 100%); padding: 40px 30px; text-align: center;">
-              <img src="https://mikahsmobiledetailingsc.com/logo.jpg" alt="Mikah's Auto Detailing" style="width: 80px; height: 80px; border-radius: 50%; border: 3px solid #ffffff; margin-bottom: 15px;">
-              <h1 style="color: #ffffff; margin: 0; font-size: 28px; font-weight: 700;">Thank You!</h1>
-              <p style="color: #CAF0F8; margin: 10px 0 0 0; font-size: 16px;">We hope you loved your detail</p>
+            <td style="background: linear-gradient(135deg, #DC2626 0%, #EA580C 100%); padding: 30px; text-align: center;">
+              <h1 style="color: #ffffff; margin: 0; font-size: 24px; font-weight: 700;">⚠️ Negative Feedback Received</h1>
+              <p style="color: #FED7AA; margin: 10px 0 0 0; font-size: 14px;">A customer rated their experience {{rating}} star(s)</p>
             </td>
           </tr>
 
-          <!-- Body Content -->
+          <!-- Customer Info -->
           <tr>
-            <td style="padding: 40px 30px;">
-              <p style="color: #333333; font-size: 16px; line-height: 1.6; margin: 0 0 20px 0;">
-                Hi there! 👋
-              </p>
-              <p style="color: #333333; font-size: 16px; line-height: 1.6; margin: 0 0 20px 0;">
-                Thank you for choosing <strong>Mikah's Auto Detailing</strong> for your recent service. We truly appreciate your business and hope your vehicle is looking its best!
-              </p>
-              <p style="color: #333333; font-size: 16px; line-height: 1.6; margin: 0 0 30px 0;">
-                We'd love to hear about your experience. Your feedback helps us continue to provide excellent service to our community.
-              </p>
-
-              <!-- CTA Button -->
+            <td style="padding: 30px 30px 20px 30px;">
+              <h2 style="color: #333333; font-size: 18px; margin: 0 0 15px 0; border-bottom: 2px solid #e0e0e0; padding-bottom: 10px;">Customer Information</h2>
               <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
                 <tr>
-                  <td style="text-align: center; padding: 10px 0 30px 0;">
-                    <a href="https://mikahsmobiledetailingsc.com/review-us" style="display: inline-block; background: linear-gradient(135deg, #023E8A 0%, #0077B6 100%); color: #ffffff; text-decoration: none; padding: 16px 40px; border-radius: 8px; font-size: 18px; font-weight: 600; box-shadow: 0 4px 15px rgba(0, 119, 182, 0.3);">
-                      ⭐ Rate Your Experience
+                  <td style="padding: 8px 0;">
+                    <strong style="color: #666666;">Name:</strong>
+                    <span style="color: #333333; margin-left: 10px;">{{name}}</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="padding: 8px 0;">
+                    <strong style="color: #666666;">Phone:</strong>
+                    <a href="tel:{{phone}}" style="color: #0077B6; text-decoration: none; margin-left: 10px;">{{phone}}</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="padding: 8px 0;">
+                    <strong style="color: #666666;">Rating:</strong>
+                    <span style="color: #DC2626; margin-left: 10px; font-weight: 600;">{{rating}} / 5 stars</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="padding: 8px 0;">
+                    <strong style="color: #666666;">Date:</strong>
+                    <span style="color: #333333; margin-left: 10px;">{{timestamp}}</span>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- Feedback Content -->
+          <tr>
+            <td style="padding: 0 30px 30px 30px;">
+              <h2 style="color: #333333; font-size: 18px; margin: 0 0 15px 0; border-bottom: 2px solid #e0e0e0; padding-bottom: 10px;">Their Feedback</h2>
+              <div style="background-color: #FEF2F2; border-left: 4px solid #DC2626; padding: 20px; border-radius: 8px;">
+                <p style="color: #333333; font-size: 16px; line-height: 1.6; margin: 0; white-space: pre-wrap;">{{feedback}}</p>
+              </div>
+            </td>
+          </tr>
+
+          <!-- Action Buttons -->
+          <tr>
+            <td style="padding: 0 30px 30px 30px;">
+              <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                <tr>
+                  <td style="text-align: center;">
+                    <a href="tel:{{phone}}" style="display: inline-block; background: linear-gradient(135deg, #023E8A 0%, #0077B6 100%); color: #ffffff; text-decoration: none; padding: 14px 30px; border-radius: 8px; font-size: 16px; font-weight: 600; margin: 5px;">
+                      📞 Call Customer
+                    </a>
+                    <a href="sms:{{phone}}" style="display: inline-block; background: #10B981; color: #ffffff; text-decoration: none; padding: 14px 30px; border-radius: 8px; font-size: 16px; font-weight: 600; margin: 5px;">
+                      💬 Text Customer
                     </a>
                   </td>
                 </tr>
               </table>
-
-              <p style="color: #666666; font-size: 14px; line-height: 1.6; margin: 0; text-align: center;">
-                It only takes 30 seconds and means the world to us!
-              </p>
-            </td>
-          </tr>
-
-          <!-- Divider -->
-          <tr>
-            <td style="padding: 0 30px;">
-              <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 0;">
             </td>
           </tr>
 
           <!-- Footer -->
           <tr>
-            <td style="padding: 30px; text-align: center;">
-              <p style="color: #333333; font-size: 16px; font-weight: 600; margin: 0 0 10px 0;">
-                Mikah's Auto Detailing
-              </p>
-              <p style="color: #666666; font-size: 14px; margin: 0 0 5px 0;">
-                Mobile Detailing • Columbia, SC Area
-              </p>
-              <p style="color: #666666; font-size: 14px; margin: 0 0 20px 0;">
-                <a href="tel:+18036678731" style="color: #0077B6; text-decoration: none;">(803) 667-8731</a>
-              </p>
-
-              <!-- Social/Contact Links -->
-              <table role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin: 0 auto;">
-                <tr>
-                  <td style="padding: 0 10px;">
-                    <a href="https://mikahsmobiledetailingsc.com" style="color: #0077B6; text-decoration: none; font-size: 14px;">Website</a>
-                  </td>
-                  <td style="color: #cccccc;">|</td>
-                  <td style="padding: 0 10px;">
-                    <a href="https://mikahsmobiledetailingsc.com/book" style="color: #0077B6; text-decoration: none; font-size: 14px;">Book Again</a>
-                  </td>
-                </tr>
-              </table>
-
-              <p style="color: #999999; font-size: 12px; margin: 20px 0 0 0;">
-                © 2025 Mikah's Auto Detailing. All rights reserved.
+            <td style="background-color: #f9fafb; padding: 20px 30px; text-align: center; border-top: 1px solid #e0e0e0;">
+              <p style="color: #666666; font-size: 12px; margin: 0;">
+                This notification was sent from your Review Us page at mikahsmobiledetailingsc.com
               </p>
             </td>
           </tr>

@@ -10,6 +10,8 @@ const ReviewUsPage: React.FC = () => {
   const navigate = useNavigate();
   const [selectedRating, setSelectedRating] = useState<number | null>(null);
   const [hoveredRating, setHoveredRating] = useState<number | null>(null);
+  const [customerName, setCustomerName] = useState('');
+  const [customerPhone, setCustomerPhone] = useState('');
   const [feedback, setFeedback] = useState('');
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -37,6 +39,8 @@ const ReviewUsPage: React.FC = () => {
         },
         body: JSON.stringify({
           rating: selectedRating,
+          name: customerName.trim(),
+          phone: customerPhone.trim(),
           feedback: feedback.trim(),
           source: 'review-us-page',
           timestamp: new Date().toISOString(),
@@ -144,6 +148,24 @@ const ReviewUsPage: React.FC = () => {
                 </div>
 
                 <form onSubmit={handleFeedbackSubmit}>
+                  <div className="space-y-4 mb-4">
+                    <input
+                      type="text"
+                      value={customerName}
+                      onChange={(e) => setCustomerName(e.target.value)}
+                      placeholder="Your name"
+                      className="w-full p-4 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#023E8A] focus:border-transparent text-gray-700 placeholder-gray-400"
+                      required
+                    />
+                    <input
+                      type="tel"
+                      value={customerPhone}
+                      onChange={(e) => setCustomerPhone(e.target.value)}
+                      placeholder="Your phone number"
+                      className="w-full p-4 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#023E8A] focus:border-transparent text-gray-700 placeholder-gray-400"
+                      required
+                    />
+                  </div>
                   <textarea
                     value={feedback}
                     onChange={(e) => setFeedback(e.target.value)}
@@ -154,7 +176,7 @@ const ReviewUsPage: React.FC = () => {
 
                   <button
                     type="submit"
-                    disabled={isSubmitting || !feedback.trim()}
+                    disabled={isSubmitting || !feedback.trim() || !customerName.trim() || !customerPhone.trim()}
                     className="w-full mt-4 flex items-center justify-center gap-2 bg-gradient-to-r from-[#023E8A] to-[#0077B6] text-white px-6 py-4 rounded-xl font-semibold hover:opacity-90 transition-opacity disabled:opacity-50 disabled:cursor-not-allowed"
                   >
                     {isSubmitting ? (
