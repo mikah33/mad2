@@ -27,6 +27,7 @@ import ThankYouPage from './pages/ThankYouPage';
 import AccountPage from './pages/AccountPage';
 import GalleryPage from './pages/GalleryPage';
 import ReviewsPage from './pages/ReviewsPage';
+import ReviewUsPage from './pages/ReviewUsPage';
 import ErrorBoundary from './components/ErrorBoundary';
 
 export const router = createBrowserRouter([
@@ -135,6 +136,11 @@ export const router = createBrowserRouter([
   {
     path: '/reviews',
     element: <ReviewsPage />,
+    errorElement: <ErrorBoundary />,
+  },
+  {
+    path: '/review-us',
+    element: <ReviewUsPage />,
     errorElement: <ErrorBoundary />,
   },
   {
