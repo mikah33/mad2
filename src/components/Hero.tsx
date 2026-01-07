@@ -43,14 +43,14 @@ const Hero: React.FC = () => {
         style={{ backgroundImage: 'url(/exterior2.jpg)' }}
       />
 
-      {/* Video Background - Loads on top of fallback */}
+      {/* Video Background - Loads lazily after page */}
       <video
         ref={videoRef}
         autoPlay
         loop
         muted
         playsInline
-        preload="auto"
+        preload="none"
         poster="/exterior2.jpg"
         className="absolute inset-0 w-full h-full object-cover"
         webkit-playsinline="true"

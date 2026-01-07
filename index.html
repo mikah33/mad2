@@ -7,29 +7,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- Resource Hints for Performance -->
+    <link rel="preload" href="/exterior2.jpg" as="image">
     <link rel="preconnect" href="https://connect.facebook.net">
     <link rel="preconnect" href="https://www.facebook.com">
     <link rel="dns-prefetch" href="https://www.google-analytics.com">
     <link rel="dns-prefetch" href="https://www.googletagmanager.com">
 
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-WBS8H6B2');</script>
-    <!-- End Google Tag Manager -->
-
-    <!-- Google Ads (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16694998422"></script>
+    <!-- Defer third-party scripts for performance -->
     <script>
+      // Load tracking scripts after page load
+      window.addEventListener('load', function() {
+        // Google Tag Manager
+        setTimeout(function() {
+          (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+          })(window,document,'script','dataLayer','GTM-WBS8H6B2');
+        }, 2000);
+
+        // Google Ads
+        setTimeout(function() {
+          var s = document.createElement('script');
+          s.async = true;
+          s.src = 'https://www.googletagmanager.com/gtag/js?id=AW-16694998422';
+          document.head.appendChild(s);
+        }, 2500);
+      });
+
+      // Initialize dataLayer early for conversion tracking
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'AW-16694998422');
-    </script>
-    <!-- Google Ads Conversion Tracking -->
-    <script>
+
       function gtag_report_conversion(url) {
         var callback = function () {
           if (typeof(url) != 'undefined') {
@@ -43,7 +54,6 @@
         return false;
       }
     </script>
-    <!-- End Google Ads -->
 
     <!-- Primary Meta Tags -->
     <meta name="description" content="Mobile auto detailing in Columbia SC. Ceramic coating, paint correction, interior/exterior. IDA certified. Call (803) 667-8731 - We come to you!" />
@@ -84,18 +94,22 @@
     <!-- Schema is added via generate-all-pages-html.ts and generate-blog-html.ts -->
     <!-- DO NOT add schemas here - they will be injected during build -->
 
-    <!-- Meta Pixel Code -->
+    <!-- Meta Pixel Code - Deferred -->
     <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '1190223929628838');
-    fbq('track', 'PageView');
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '1190223929628838');
+        fbq('track', 'PageView');
+      }, 3000);
+    });
     </script>
     <!-- End Meta Pixel Code -->
   </head>
