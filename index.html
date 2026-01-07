@@ -52,14 +52,27 @@
         document.head.appendChild(s);
       }
 
-      // Use requestIdleCallback or fallback to setTimeout
-      if ('requestIdleCallback' in window) {
-        requestIdleCallback(loadTrackingScripts, { timeout: 4000 });
-      } else {
-        window.addEventListener('load', function() {
-          setTimeout(loadTrackingScripts, 3000);
-        });
+      // Load tracking on first user interaction OR after 5 seconds
+      var trackingLoaded = false;
+      function initTracking() {
+        if (trackingLoaded) return;
+        trackingLoaded = true;
+        loadTrackingScripts();
+        // Remove listeners
+        document.removeEventListener('scroll', initTracking);
+        document.removeEventListener('click', initTracking);
+        document.removeEventListener('touchstart', initTracking);
+        document.removeEventListener('keydown', initTracking);
       }
+
+      // Trigger on interaction
+      document.addEventListener('scroll', initTracking, { passive: true, once: true });
+      document.addEventListener('click', initTracking, { once: true });
+      document.addEventListener('touchstart', initTracking, { passive: true, once: true });
+      document.addEventListener('keydown', initTracking, { once: true });
+
+      // Fallback: load after 5 seconds regardless
+      setTimeout(initTracking, 5000);
     </script>
 
     <!-- Primary Meta Tags -->
@@ -115,13 +128,18 @@
       fbq('init', '1190223929628838');
       fbq('track', 'PageView');
     }
-    if ('requestIdleCallback' in window) {
-      requestIdleCallback(loadFacebookPixel, { timeout: 5000 });
-    } else {
-      window.addEventListener('load', function() {
-        setTimeout(loadFacebookPixel, 4000);
-      });
+    // Load FB Pixel on first interaction OR after 6 seconds
+    var fbLoaded = false;
+    function initFB() {
+      if (fbLoaded) return;
+      fbLoaded = true;
+      loadFacebookPixel();
+      document.removeEventListener('scroll', initFB);
+      document.removeEventListener('click', initFB);
     }
+    document.addEventListener('scroll', initFB, { passive: true, once: true });
+    document.addEventListener('click', initFB, { once: true });
+    setTimeout(initFB, 6000);
     </script>
     <!-- End Meta Pixel Code -->
   </head>
