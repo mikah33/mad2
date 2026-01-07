@@ -32,12 +32,10 @@ const ReviewUsPage: React.FC = () => {
     setIsSubmitting(true);
 
     try {
-      // Use no-cors mode to avoid CORS issues with n8n webhook
       await fetch('https://contractorai.app.n8n.cloud/webhook/3967e82b-b2d4-4024-8974-df91a3e6e61d', {
         method: 'POST',
-        mode: 'no-cors',
         headers: {
-          'Content-Type': 'text/plain',
+          'Content-Type': 'application/json',
         },
         body: JSON.stringify({
           rating: selectedRating,
