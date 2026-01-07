@@ -172,6 +172,46 @@ function generateSitemap(): string {
     priority: 0.8,
   });
 
+  // Review Us page
+  urls.push({
+    loc: `${SITE_URL}/review-us`,
+    lastmod: currentDate,
+    changefreq: 'monthly',
+    priority: 0.6,
+  });
+
+  // Reviews page
+  urls.push({
+    loc: `${SITE_URL}/reviews`,
+    lastmod: currentDate,
+    changefreq: 'weekly',
+    priority: 0.7,
+  });
+
+  // Gallery page
+  urls.push({
+    loc: `${SITE_URL}/gallery`,
+    lastmod: currentDate,
+    changefreq: 'weekly',
+    priority: 0.7,
+  });
+
+  // Pricing page
+  urls.push({
+    loc: `${SITE_URL}/pricing`,
+    lastmod: currentDate,
+    changefreq: 'monthly',
+    priority: 0.9,
+  });
+
+  // Booking page
+  urls.push({
+    loc: `${SITE_URL}/book`,
+    lastmod: currentDate,
+    changefreq: 'monthly',
+    priority: 0.9,
+  });
+
   // Deduplicate URLs by loc (keep first occurrence)
   const uniqueUrls = Array.from(
     new Map(urls.map(url => [url.loc, url])).values()
