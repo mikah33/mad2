@@ -3,6 +3,7 @@ import { Star, CheckCircle, Clock, DollarSign, Phone, ChevronRight } from 'lucid
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 import Chatbot from '../components/Chatbot';
+import { Breadcrumbs } from '../components/Breadcrumbs';
 import { SEOHead } from '../components/seo/SEOHead';
 import { generateProductSchema } from '../components/seo/StructuredData';
 import { generateEnhancedLocalBusinessSchema } from '../components/seo/EnhancedLocalBusinessSchema';
@@ -11,6 +12,11 @@ const InteriorDetailingPage: React.FC = () => {
   const scrollToQuote = () => {
     window.location.href = '/#quote';
   };
+
+  const breadcrumbItems = [
+    { label: 'Services', path: '/services' },
+    { label: 'Interior Detailing', path: '/services/interior-detailing' }
+  ];
 
   const productSchema = generateProductSchema({
     name: "Interior Car Detailing Service",
@@ -160,9 +166,9 @@ const InteriorDetailingPage: React.FC = () => {
   return (
     <>
       <SEOHead
-        title="Interior Car Detailing Columbia SC | Mobile Auto Detailing Services"
-        description="Professional interior car detailing in Columbia SC. Deep cleaning, stain removal, odor elimination, leather conditioning. Mobile service to your location. Book now!"
-        keywords="interior car detailing, car interior cleaning Columbia SC, interior detailing near me, leather conditioning, stain removal, odor elimination, pet hair removal, auto interior detailing Lexington SC, mobile car detailing, vehicle interior cleaning, car upholstery cleaning, dashboard cleaning, carpet cleaning Columbia"
+        title="Car Interior Detailing Near Me Columbia SC | Mobile Automotive Detail Service | Professional Interior Car Detailing"
+        description="Expert car interior detailing near me in Columbia SC! Professional mobile automotive detail service at your location. Deep cleaning, stain removal, leather conditioning, odor elimination. Best interior detailing near me - we come to you!"
+        keywords="car interior detailing, interior detailing near me, car interior cleaning Columbia SC, mobile car interior detailing, automotive interior detail near me, professional interior car detailing, leather conditioning, stain removal, odor elimination, pet hair removal, auto interior detailing Lexington SC, mobile car detailing, vehicle interior cleaning, car upholstery cleaning"
         canonical="https://mikahsmobiledetailingsc.com/services/interior-detailing"
         ogImage="https://mikahsmobiledetailingsc.com/interior1.jpg"
         ogImageAlt="Professional interior car detailing Columbia SC"
@@ -171,6 +177,10 @@ const InteriorDetailingPage: React.FC = () => {
 
       <div className="min-h-screen bg-white">
         <Navigation />
+
+        <div className="container mx-auto px-4 max-w-7xl">
+          <Breadcrumbs items={breadcrumbItems} className="py-4" />
+        </div>
 
         {/* Hero Section */}
         <section className="relative bg-gradient-to-br from-orange-600 to-orange-800 text-white py-20">

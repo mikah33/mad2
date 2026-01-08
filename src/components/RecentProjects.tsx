@@ -257,14 +257,20 @@ const RecentProjects: React.FC = () => {
                   Your browser does not support the video tag.
                 </video>
               ) : (
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  title={project.title}
-                  loading="lazy"
-                  itemProp="image"
-                  className="w-full h-64 md:h-80 object-cover hover:scale-105 transition-transform duration-300"
-                />
+                <picture>
+                  <source
+                    srcSet={project.image.replace('.jpg', '_optimized.webp')}
+                    type="image/webp"
+                  />
+                  <img
+                    src={project.image}
+                    alt={`${project.title} - Professional mobile auto detailing results in Columbia SC`}
+                    title={project.title}
+                    loading="lazy"
+                    itemProp="image"
+                    className="w-full h-64 md:h-80 object-cover hover:scale-105 transition-transform duration-300"
+                  />
+                </picture>
               )}
               <div className="p-4 bg-gray-50">
                 <h3 className="text-xl font-bold text-gray-800" itemProp="name">{project.title}</h3>

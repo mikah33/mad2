@@ -68,7 +68,10 @@ const PaintCorrectionPage: React.FC = () => {
               <Chatbot />
       </div>
               <div className="hidden md:block">
-                <img src="/exterior4.jpg" alt="Paint correction Columbia SC" className="rounded-lg shadow-2xl" loading="lazy" />
+                <picture>
+                  <source srcSet="/exterior4_optimized.webp" type="image/webp" />
+                  <img src="/exterior4.jpg" alt="Professional paint correction swirl removal scratch repair detailing Columbia SC" className="rounded-lg shadow-2xl" loading="lazy" />
+                </picture>
               <Chatbot />
       </div>
             <Chatbot />
@@ -103,7 +106,10 @@ const PaintCorrectionPage: React.FC = () => {
               <Chatbot />
       </div>
               <div>
-                <img src="/exterior5.jpg" alt="Paint correction results" className="rounded-lg shadow-lg mb-6" loading="lazy" />
+                <picture>
+                  <source srcSet="/exterior5_optimized.webp" type="image/webp" />
+                  <img src="/exterior5.jpg" alt="Complete mobile car detailing package ceramic coating application Columbia SC" className="rounded-lg shadow-lg mb-6" loading="lazy" />
+                </picture>
                 <div className="bg-white p-6 rounded-lg shadow-lg">
                   <h3 className="text-xl font-bold mb-4">Paint Correction Packages</h3>
                   <div className="space-y-3">

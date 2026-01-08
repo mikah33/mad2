@@ -43,7 +43,7 @@ const SITE_URL = 'https://mikahsmobiledetailingsc.com';
 const currentDate = new Date().toISOString().split('T')[0];
 
 /**
- * Generate sitemap.xml with all website URLs
+ * Generate sitemap.xml with mobile detailing business prioritization
  */
 function generateSitemap(): string {
   const urls: SitemapURL[] = [];
@@ -64,22 +64,35 @@ function generateSitemap(): string {
     priority: 0.9,
   });
 
-  // Individual service pages
-  const servicePages = [
-    'interior-detailing',
-    'exterior-detailing',
-    'ceramic-coating',
-    'paint-correction',
-    'full-detail',
-    'mobile-detailing'
+  // Mobile detailing service pages (HIGH PRIORITY - Primary Business Focus)
+  const mobileDetailingPages = [
+    'mobile-detailing',      // Primary service - highest priority
+    'interior-detailing',    // High-volume keyword target
+    'exterior-detailing',    // Core mobile service
+    'full-detail'           // Complete mobile package
   ];
 
-  servicePages.forEach((slug) => {
+  mobileDetailingPages.forEach((slug) => {
+    urls.push({
+      loc: `${SITE_URL}/services/${slug}`,
+      lastmod: currentDate,
+      changefreq: 'weekly',    // More frequent updates for primary services
+      priority: 0.95,         // Higher priority for mobile detailing focus
+    });
+  });
+
+  // Secondary service pages (Ceramic coating, paint correction - not primary focus)
+  const secondaryServicePages = [
+    'ceramic-coating',
+    'paint-correction'
+  ];
+
+  secondaryServicePages.forEach((slug) => {
     urls.push({
       loc: `${SITE_URL}/services/${slug}`,
       lastmod: currentDate,
       changefreq: 'monthly',
-      priority: 0.9,
+      priority: 0.7,          // Lower priority - secondary to mobile detailing
     });
   });
 

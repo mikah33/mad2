@@ -20,16 +20,16 @@ function App() {
   return (
     <>
       <Helmet>
-        <title>Professional Mobile Auto Detailing Columbia SC | Mikah's Auto Detailing</title>
-        <meta name="description" content="Premium mobile auto detailing services in Columbia, Lexington & Irmo SC. Professional ceramic coating, paint correction, interior/exterior detailing. We come to you! Book your free quote today." />
-        <meta name="keywords" content="auto detailing Columbia SC, mobile detailing Lexington SC, ceramic coating, paint correction, car detailing near me, interior detailing, exterior detailing, mobile car wash Columbia" />
+        <title>Mobile Car Detailing Near Me Columbia SC | Automotive Detail Service | Mikah's Auto Detailing</title>
+        <meta name="description" content="Top-rated mobile car detailing near me in Columbia SC! Professional automotive detail service at your location. Expert car interior detailing, exterior auto detailing, mobile detailing Columbia SC, ceramic coating. We come to you!" />
+        <meta name="keywords" content="mobile car detailing near me, detailing car near me, detailing auto near me, automotive detail near me, car interior detailing, mobile detailing columbia sc, auto detailing Columbia SC, mobile automotive detailing, professional car detailing near me, automotive detailing service, ceramic coating, paint correction" />
         <link rel="canonical" href="https://mikahsmobiledetailingsc.com" />
 
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://mikahsmobiledetailingsc.com" />
-        <meta property="og:title" content="Professional Mobile Auto Detailing Columbia SC | Mikah's Auto Detailing" />
-        <meta property="og:description" content="Premium mobile auto detailing services in Columbia, Lexington & Irmo SC. We come to you!" />
+        <meta property="og:title" content="Mobile Car Detailing Near Me Columbia SC | Automotive Detail Service | Mikah's Auto Detailing" />
+        <meta property="og:description" content="Top-rated mobile car detailing near me in Columbia SC! Professional automotive detail service at your location. Expert car interior detailing, exterior auto detailing. We come to you!" />
         <meta property="og:image" content={images.ogDefault.url} />
         <meta property="og:image:alt" content={images.ogDefault.alt} />
         <meta property="og:image:width" content={images.ogDefault.width.toString()} />
@@ -39,8 +39,8 @@ function App() {
 
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Professional Mobile Auto Detailing Columbia SC" />
-        <meta name="twitter:description" content="Premium mobile auto detailing services. We come to you!" />
+        <meta name="twitter:title" content="Mobile Car Detailing Near Me Columbia SC" />
+        <meta name="twitter:description" content="Top-rated mobile car detailing near me service in Columbia SC. Professional automotive detail at your location!" />
         <meta name="twitter:image" content={images.ogDefault.url} />
         <meta name="twitter:image:alt" content={images.ogDefault.alt} />
 

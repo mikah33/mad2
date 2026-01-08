@@ -11,16 +11,15 @@ import { dirname } from 'path';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-// Import schema generators
-import { generateEnhancedLocalBusinessSchema } from '../src/components/seo/EnhancedLocalBusinessSchema.js';
+// Import mobile detailing schema generators
+import { generatePageTypeSchema, generateSchemaScript } from '../src/components/seo/MobileDetailingMasterSchema.js';
 
 const distPath = path.join(__dirname, '../dist');
 const indexHtmlPath = path.join(distPath, 'index.html');
 const baseHtml = fs.readFileSync(indexHtmlPath, 'utf-8');
 const baseUrl = 'https://mikahsmobiledetailingsc.com';
 
-// Generate enhanced schema
-const enhancedSchema = generateEnhancedLocalBusinessSchema();
+// Generate mobile detailing focused schemas for different page types
 
 // OG Image mapping for each page
 const ogImageMap: Record<string, { image: string; width: number; height: number }> = {
@@ -107,10 +106,28 @@ routes.forEach(route => {
   const pageUrl = `${baseUrl}/${routePath}`;
   const fullTitle = `${route.title} | Mikah's Auto Detailing`;
 
-  // Create schema script tag
-  const schemaScript = `    <script type="application/ld+json">
-    ${JSON.stringify(enhancedSchema, null, 2)}
-    </script>`;
+  // Determine page type and service type for schema generation
+  let pageType = 'homepage';
+  let serviceType = undefined;
+
+  if (routePath === '') {
+    pageType = 'homepage';
+  } else if (routePath.startsWith('services/')) {
+    pageType = 'service';
+    serviceType = routePath.replace('services/', '');
+  } else if (routePath.startsWith('locations/')) {
+    pageType = 'location';
+  } else if (routePath.startsWith('faq')) {
+    pageType = 'faq';
+  } else if (routePath === 'gallery') {
+    pageType = 'gallery';
+  } else if (routePath === 'contact') {
+    pageType = 'contact';
+  }
+
+  // Generate mobile detailing focused schemas
+  const schemas = generatePageTypeSchema(pageType, serviceType);
+  const schemaScript = `    ${generateSchemaScript(schemas)}`;
 
   let html = baseHtml;
 

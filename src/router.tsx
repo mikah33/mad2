@@ -66,6 +66,10 @@ export const router = createBrowserRouter([
     element: <MobileDetailingPage />,
   },
   {
+    path: '/services/mobile-car-detailing',
+    element: <MobileDetailingPage />,
+  },
+  {
     path: '/blog',
     element: <BlogPage />,
   },

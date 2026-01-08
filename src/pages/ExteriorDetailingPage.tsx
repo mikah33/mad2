@@ -295,11 +295,14 @@ const ExteriorDetailingPage: React.FC = () => {
       </div>
 
               <div>
-                <img
+                <picture>
+                  <source srcSet="/exterior3_optimized.webp" type="image/webp" />
+                  <img
                   src="/exterior3.jpg"
-                  alt="Professional car washing and detailing process"
+                  alt="Mobile auto detailing premium exterior wash and ceramic coating prep Columbia SC"
                   className="rounded-lg shadow-lg mb-6"
                 />
+                </picture>
 
                 <div className="bg-blue-50 p-6 rounded-lg mb-6">
                   <div className="flex items-center gap-3 mb-3">
@@ -433,8 +436,14 @@ const ExteriorDetailingPage: React.FC = () => {
       </div>
 
             <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-              <img src="/exterior4.jpg" alt="Detailed car exterior showing paint correction results in Columbia SC" className="rounded-lg shadow-lg" loading="lazy" />
-              <img src="/exterior5.jpg" alt="Professional paint protection and wax application on vehicle in Columbia SC" className="rounded-lg shadow-lg" loading="lazy" />
+              <picture>
+                  <source srcSet="/exterior4_optimized.webp" type="image/webp" />
+                  <img src="/exterior4.jpg" alt="Professional paint correction swirl removal scratch repair detailing Columbia SC" className="rounded-lg shadow-lg" loading="lazy" />
+                </picture>
+              <picture>
+                  <source srcSet="/exterior5_optimized.webp" type="image/webp" />
+                  <img src="/exterior5.jpg" alt="Complete mobile car detailing package ceramic coating application Columbia SC" className="rounded-lg shadow-lg" loading="lazy" />
+                </picture>
               <img src="/exterior6.jpg" alt="Car detailing results showing mirror finish and ceramic coating in Columbia SC" className="rounded-lg shadow-lg" loading="lazy" />
             <Chatbot />
       </div>

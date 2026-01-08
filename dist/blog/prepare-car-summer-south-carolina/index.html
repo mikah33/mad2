@@ -7,37 +7,84 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- Resource Hints for Performance -->
+    <link rel="preload" href="/exterior2.jpg" as="image">
+    <link rel="preload" href="/exterior3.jpg" as="image">
+    <link rel="preload" href="/interior1.jpg" as="image">
     <link rel="preconnect" href="https://connect.facebook.net">
     <link rel="preconnect" href="https://www.facebook.com">
     <link rel="dns-prefetch" href="https://www.google-analytics.com">
     <link rel="dns-prefetch" href="https://www.googletagmanager.com">
 
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-WBS8H6B2');</script>
-    <!-- End Google Tag Manager -->
-
-    <!-- Google Ads (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16694998422"></script>
+    <!-- Defer third-party scripts for performance -->
     <script>
+      // Initialize dataLayer early for conversion tracking
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'AW-16694998422');
+
+      function gtag_report_conversion(url) {
+        var callback = function () {
+          if (typeof(url) != 'undefined') {
+            window.location = url;
+          }
+        };
+        gtag('event', 'conversion', {
+          'send_to': 'AW-16694998422/TihGCPrb_9sZEJbr5Zg-',
+          'event_callback': callback
+        });
+        return false;
+      }
+
+      // Load tracking scripts when browser is idle
+      function loadTrackingScripts() {
+        // Google Tag Manager
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-WBS8H6B2');
+
+        // Google Ads
+        var s = document.createElement('script');
+        s.async = true;
+        s.src = 'https://www.googletagmanager.com/gtag/js?id=AW-16694998422';
+        s.onload = function() {
+          gtag('js', new Date());
+          gtag('config', 'AW-16694998422');
+        };
+        document.head.appendChild(s);
+      }
+
+      // Load tracking on first user interaction OR after 5 seconds
+      var trackingLoaded = false;
+      function initTracking() {
+        if (trackingLoaded) return;
+        trackingLoaded = true;
+        loadTrackingScripts();
+        // Remove listeners
+        document.removeEventListener('scroll', initTracking);
+        document.removeEventListener('click', initTracking);
+        document.removeEventListener('touchstart', initTracking);
+        document.removeEventListener('keydown', initTracking);
+      }
+
+      // Trigger on interaction
+      document.addEventListener('scroll', initTracking, { passive: true, once: true });
+      document.addEventListener('click', initTracking, { once: true });
+      document.addEventListener('touchstart', initTracking, { passive: true, once: true });
+      document.addEventListener('keydown', initTracking, { once: true });
+
+      // Fallback: load after 5 seconds regardless
+      setTimeout(initTracking, 5000);
     </script>
-    <!-- End Google Ads -->
 
     <!-- Primary Meta Tags -->
-    <meta name="description" content="Mobile auto detailing in Columbia SC. Ceramic coating, paint correction, interior/exterior. IDA certified. Call (803) 667-8731 - We come to you!" />
-    <meta name="keywords" content="car detailing columbia sc, mobile detailing, ceramic coating, paint correction, auto detailing, mobile car wash, interior detailing, exterior detailing, lexington sc, irmo sc" />
+    <meta name="description" content="Top-rated mobile car detailing near me in Columbia SC! Professional automotive detail service at your location. Expert car interior detailing, mobile detailing Columbia SC, ceramic coating. IDA certified. Call (803) 667-8731!" />
+    <meta name="keywords" content="mobile car detailing near me, detailing car near me, detailing auto near me, automotive detail near me, car interior detailing, mobile detailing columbia sc, auto detailing columbia sc, mobile automotive detailing, professional car detailing near me, automotive detailing service, ceramic coating, paint correction" />
     <meta name="author" content="Mikah's Auto Detailing" />
 
     <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Mikah's Auto Detailing - Best Mobile Car Detailing in Columbia SC" />
-    <meta property="og:description" content="Professional mobile auto detailing serving Columbia, Lexington, and Irmo SC. Expert ceramic coating, paint correction, and comprehensive car care. IDA certified with 100% satisfaction guarantee." />
+    <meta property="og:title" content="Mobile Car Detailing Near Me Columbia SC | Professional Automotive Detail Service | Mikah's Auto Detailing" />
+    <meta property="og:description" content="Top-rated mobile car detailing near me in Columbia SC! Professional automotive detail service at your location. Expert car interior detailing, mobile detailing Columbia SC, ceramic coating. We come to you!" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://mikahsmobiledetailingsc.com" />
     <meta property="og:image" content="https://mikahsmobiledetailingsc.com/mclarens-og.jpg" />
@@ -47,8 +94,8 @@
 
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Mikah's Auto Detailing - Mobile Car Detailing Columbia SC" />
-    <meta name="twitter:description" content="Premium mobile auto detailing services in Columbia SC. Professional ceramic coating, paint correction, and expert car care brought to your location." />
+    <meta name="twitter:title" content="Mobile Car Detailing Near Me Columbia SC | Professional Automotive Detail Service" />
+    <meta name="twitter:description" content="Top-rated mobile car detailing near me in Columbia SC! Professional automotive detail service at your location. Expert car interior detailing, ceramic coating." />
     <meta name="twitter:image" content="https://mikahsmobiledetailingsc.com/mclarens-og.jpg" />
 
     <!-- Favicon (from logo) with cache-busting -->
@@ -69,23 +116,38 @@
     <!-- Schema is added via generate-all-pages-html.ts and generate-blog-html.ts -->
     <!-- DO NOT add schemas here - they will be injected during build -->
 
-    <!-- Meta Pixel Code -->
+    <!-- Meta Pixel Code - Deferred -->
     <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '1190223929628838');
-    fbq('track', 'PageView');
+    function loadFacebookPixel() {
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '1190223929628838');
+      fbq('track', 'PageView');
+    }
+    // Load FB Pixel on first interaction OR after 6 seconds
+    var fbLoaded = false;
+    function initFB() {
+      if (fbLoaded) return;
+      fbLoaded = true;
+      loadFacebookPixel();
+      document.removeEventListener('scroll', initFB);
+      document.removeEventListener('click', initFB);
+    }
+    document.addEventListener('scroll', initFB, { passive: true, once: true });
+    document.addEventListener('click', initFB, { once: true });
+    setTimeout(initFB, 6000);
     </script>
     <!-- End Meta Pixel Code -->
-    <script type="module" crossorigin src="/assets/index-7ee8f147.js"></script>
-    <link rel="modulepreload" crossorigin href="/assets/react-vendor-b90736c2.js">
-    <link rel="stylesheet" href="/assets/index-3abf63a8.css">
+    <script type="module" crossorigin src="/assets/index-534ef739.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/react-vendor-2ca3366f.js">
+    <link rel="modulepreload" crossorigin href="/assets/ui-vendor-16a8dbcc.js">
+    <link rel="stylesheet" href="/assets/index-3a2a1b40.css">
       <link rel="canonical" href="https://mikahsmobiledetailingsc.com/blog/prepare-car-summer-south-carolina"/>
       <script type="application/ld+json">
     {
@@ -172,13 +234,16 @@
     <script type="application/ld+json">
     {
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
+  "@type": [
+    "LocalBusiness",
+    "AutomotiveBusiness"
+  ],
   "@id": "https://mikahsmobiledetailingsc.com/#business",
   "name": "Mikah's Auto Detailing",
   "legalName": "Mikah's Auto Detailing and Services LLC",
   "alternateName": "Mikah's Mobile Detailing",
-  "slogan": "Mobile Detailing in Columbia SC - We Come to You",
-  "description": "Professional mobile auto detailing services in Columbia, Lexington, Irmo, and Cayce SC. Expert ceramic coating, paint correction, interior and exterior detailing. IDA certified with 5-star reviews. We bring premium car care to your doorstep.",
+  "slogan": "Premium Mobile Auto Detailing - We Come to You!",
+  "description": "Top-rated mobile auto detailing services in Columbia SC and surrounding areas. Specializing in mobile car detailing, interior detailing, exterior detailing, full-service automotive detailing packages. IDA certified mobile detailer serving Columbia, Lexington, Irmo, and Cayce. We bring professional car care directly to your location.",
   "url": "https://mikahsmobiledetailingsc.com",
   "telephone": "(803) 667-8731",
   "email": "mikahsautodetailing@gmail.com",
@@ -199,33 +264,48 @@
       "@type": "City",
       "name": "Columbia",
       "@id": "https://www.wikidata.org/wiki/Q49231",
-      "sameAs": "https://en.wikipedia.org/wiki/Columbia,_South_Carolina"
+      "sameAs": "https://en.wikipedia.org/wiki/Columbia,_South_Carolina",
+      "description": "Mobile car detailing Columbia SC - we come to you"
     },
     {
       "@type": "City",
       "name": "Lexington",
       "@id": "https://www.wikidata.org/wiki/Q2004821",
-      "sameAs": "https://en.wikipedia.org/wiki/Lexington,_South_Carolina"
+      "sameAs": "https://en.wikipedia.org/wiki/Lexington,_South_Carolina",
+      "description": "Mobile auto detailing Lexington SC - professional service"
     },
     {
       "@type": "City",
       "name": "Irmo",
       "@id": "https://www.wikidata.org/wiki/Q2004858",
-      "sameAs": "https://en.wikipedia.org/wiki/Irmo,_South_Carolina"
+      "sameAs": "https://en.wikipedia.org/wiki/Irmo,_South_Carolina",
+      "description": "Mobile detailing Irmo SC - convenient at-home service"
     },
     {
       "@type": "City",
       "name": "Cayce",
       "@id": "https://www.wikidata.org/wiki/Q2004694",
-      "sameAs": "https://en.wikipedia.org/wiki/Cayce,_South_Carolina"
+      "sameAs": "https://en.wikipedia.org/wiki/Cayce,_South_Carolina",
+      "description": "Mobile car detailing Cayce SC - premium mobile service"
     },
     {
       "@type": "State",
       "name": "South Carolina",
       "@id": "https://www.wikidata.org/wiki/Q1456",
-      "sameAs": "https://en.wikipedia.org/wiki/South_Carolina"
+      "sameAs": "https://en.wikipedia.org/wiki/South_Carolina",
+      "description": "Mobile detailing services throughout South Carolina"
     }
   ],
+  "serviceArea": {
+    "@type": "GeoCircle",
+    "geoMidpoint": {
+      "@type": "GeoCoordinates",
+      "latitude": "34.0007",
+      "longitude": "-81.0348"
+    },
+    "geoRadius": "25000",
+    "description": "Mobile auto detailing service area covering Columbia, Lexington, Irmo, Cayce and surrounding areas"
+  },
   "openingHoursSpecification": [
     {
       "@type": "OpeningHoursSpecification",
@@ -281,22 +361,33 @@
   ],
   "knowsAbout": [
     "Mobile Auto Detailing",
+    "Mobile Car Detailing Services",
+    "On-Site Vehicle Detailing",
+    "Interior Car Detailing",
+    "Exterior Auto Detailing",
+    "Full Service Mobile Detailing",
+    "Mobile Detailing Packages",
+    "Automotive Detail Services",
+    "Professional Car Cleaning",
+    "Mobile Car Wash and Detail",
+    "Interior Deep Cleaning",
+    "Upholstery Cleaning and Protection",
+    "Leather Conditioning",
+    "Dashboard and Console Cleaning",
+    "Carpet and Floor Mat Cleaning",
+    "Odor Elimination",
+    "Pet Hair Removal",
+    "Stain Removal and Treatment",
+    "Exterior Paint Cleaning",
+    "Wax and Sealant Application",
+    "Tire and Wheel Cleaning",
+    "Clay Bar Treatment",
+    "Engine Bay Cleaning",
+    "Headlight Restoration",
     "Ceramic Coating Application",
     "Paint Correction",
-    "Interior Detailing",
-    "Exterior Detailing",
-    "Paint Protection",
     "Swirl Mark Removal",
-    "Leather Conditioning",
-    "Engine Bay Detailing",
-    "Headlight Restoration",
-    "Scratch Removal",
-    "Clay Bar Treatment",
-    "Wax and Sealant Application",
-    "Steam Cleaning",
-    "Odor Removal",
-    "Pet Hair Removal",
-    "Stain Removal"
+    "Scratch Removal"
   ],
   "sameAs": [
     "https://www.facebook.com/mikahsautodetailing",
@@ -367,65 +458,260 @@
   "currenciesAccepted": "USD, BTC, ETH",
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
-    "name": "Auto Detailing Services",
+    "name": "Mobile Auto Detailing Services",
+    "description": "Professional mobile car detailing services brought to your location",
     "itemListElement": [
       {
         "@type": "Offer",
+        "@id": "https://mikahsmobiledetailingsc.com/services/mobile-detailing",
         "itemOffered": {
           "@type": "Service",
-          "name": "Mobile Auto Detailing",
-          "description": "Complete mobile detailing service brought to your location",
-          "serviceType": "Mobile Detailing"
+          "@id": "https://mikahsmobiledetailingsc.com/services/mobile-detailing#service",
+          "name": "Mobile Car Detailing Services",
+          "description": "Complete mobile car detailing service brought to your location. Interior and exterior detailing, vacuuming, cleaning, and protection.",
+          "serviceType": "MobileDetailingService",
+          "provider": {
+            "@type": "LocalBusiness",
+            "name": "Mikah's Auto Detailing"
+          },
+          "areaServed": [
+            "Columbia SC",
+            "Lexington SC",
+            "Irmo SC",
+            "Cayce SC"
+          ],
+          "url": "https://mikahsmobiledetailingsc.com/services/mobile-detailing"
+        },
+        "priceSpecification": {
+          "@type": "PriceSpecification",
+          "priceCurrency": "USD",
+          "price": "150-350"
         }
       },
       {
         "@type": "Offer",
+        "@id": "https://mikahsmobiledetailingsc.com/services/interior-detailing",
         "itemOffered": {
           "@type": "Service",
-          "name": "Ceramic Coating",
-          "description": "Professional ceramic coating application for long-lasting paint protection",
-          "serviceType": "Ceramic Coating"
+          "@id": "https://mikahsmobiledetailingsc.com/services/interior-detailing#service",
+          "name": "Car Interior Detailing",
+          "description": "Professional interior car detailing: deep cleaning, vacuuming, upholstery cleaning, leather conditioning, dashboard cleaning, and odor removal.",
+          "serviceType": "InteriorDetailingService",
+          "provider": {
+            "@type": "LocalBusiness",
+            "name": "Mikah's Auto Detailing"
+          },
+          "areaServed": [
+            "Columbia SC",
+            "Lexington SC",
+            "Irmo SC",
+            "Cayce SC"
+          ],
+          "url": "https://mikahsmobiledetailingsc.com/services/interior-detailing"
+        },
+        "priceSpecification": {
+          "@type": "PriceSpecification",
+          "priceCurrency": "USD",
+          "price": "100-200"
         }
       },
       {
         "@type": "Offer",
+        "@id": "https://mikahsmobiledetailingsc.com/services/exterior-detailing",
         "itemOffered": {
           "@type": "Service",
-          "name": "Paint Correction",
-          "description": "Multi-stage paint correction to remove swirl marks, scratches, and oxidation",
-          "serviceType": "Paint Correction"
+          "@id": "https://mikahsmobiledetailingsc.com/services/exterior-detailing#service",
+          "name": "Exterior Auto Detailing",
+          "description": "Professional exterior auto detailing: washing, clay bar treatment, polishing, waxing, tire cleaning, and paint protection.",
+          "serviceType": "ExteriorDetailingService",
+          "provider": {
+            "@type": "LocalBusiness",
+            "name": "Mikah's Auto Detailing"
+          },
+          "areaServed": [
+            "Columbia SC",
+            "Lexington SC",
+            "Irmo SC",
+            "Cayce SC"
+          ],
+          "url": "https://mikahsmobiledetailingsc.com/services/exterior-detailing"
+        },
+        "priceSpecification": {
+          "@type": "PriceSpecification",
+          "priceCurrency": "USD",
+          "price": "120-250"
         }
       },
       {
         "@type": "Offer",
+        "@id": "https://mikahsmobiledetailingsc.com/services/full-detail",
         "itemOffered": {
           "@type": "Service",
-          "name": "Interior Detailing",
-          "description": "Deep cleaning of interior surfaces, upholstery, and carpet",
-          "serviceType": "Interior Detailing"
+          "@id": "https://mikahsmobiledetailingsc.com/services/full-detail#service",
+          "name": "Full Service Automotive Detailing",
+          "description": "Complete automotive detailing package: full interior and exterior detailing, paint correction, waxing, and protection. Our most comprehensive mobile detailing service.",
+          "serviceType": "FullDetailService",
+          "provider": {
+            "@type": "LocalBusiness",
+            "name": "Mikah's Auto Detailing"
+          },
+          "areaServed": [
+            "Columbia SC",
+            "Lexington SC",
+            "Irmo SC",
+            "Cayce SC"
+          ],
+          "url": "https://mikahsmobiledetailingsc.com/services/full-detail"
+        },
+        "priceSpecification": {
+          "@type": "PriceSpecification",
+          "priceCurrency": "USD",
+          "price": "250-450"
         }
       },
       {
         "@type": "Offer",
+        "@id": "https://mikahsmobiledetailingsc.com/services/mobile-detailing-packages",
         "itemOffered": {
           "@type": "Service",
-          "name": "Exterior Detailing",
-          "description": "Thorough exterior wash, clay bar treatment, and wax protection",
-          "serviceType": "Exterior Detailing"
+          "@id": "https://mikahsmobiledetailingsc.com/services/mobile-detailing-packages#service",
+          "name": "Mobile Detailing Pricing Packages",
+          "description": "Flexible mobile car detailing packages to fit your budget. Basic, premium, and luxury mobile detailing options available.",
+          "serviceType": "MobileDetailingPackages",
+          "provider": {
+            "@type": "LocalBusiness",
+            "name": "Mikah's Auto Detailing"
+          },
+          "areaServed": [
+            "Columbia SC",
+            "Lexington SC",
+            "Irmo SC",
+            "Cayce SC"
+          ]
         }
       },
       {
         "@type": "Offer",
+        "@id": "https://mikahsmobiledetailingsc.com/services/ceramic-coating",
         "itemOffered": {
           "@type": "Service",
-          "name": "Full Detail Package",
-          "description": "Complete interior and exterior detailing service",
-          "serviceType": "Full Detail"
+          "@id": "https://mikahsmobiledetailingsc.com/services/ceramic-coating#service",
+          "name": "Ceramic Coating Application",
+          "description": "Professional ceramic coating application for long-lasting paint protection and enhanced shine.",
+          "serviceType": "CeramicCoatingService",
+          "provider": {
+            "@type": "LocalBusiness",
+            "name": "Mikah's Auto Detailing"
+          },
+          "areaServed": [
+            "Columbia SC",
+            "Lexington SC",
+            "Irmo SC",
+            "Cayce SC"
+          ],
+          "url": "https://mikahsmobiledetailingsc.com/services/ceramic-coating"
+        },
+        "priceSpecification": {
+          "@type": "PriceSpecification",
+          "priceCurrency": "USD",
+          "price": "800-1500"
+        }
+      },
+      {
+        "@type": "Offer",
+        "@id": "https://mikahsmobiledetailingsc.com/services/paint-correction",
+        "itemOffered": {
+          "@type": "Service",
+          "@id": "https://mikahsmobiledetailingsc.com/services/paint-correction#service",
+          "name": "Paint Correction Services",
+          "description": "Multi-stage paint correction to remove swirl marks, scratches, and oxidation.",
+          "serviceType": "PaintCorrectionService",
+          "provider": {
+            "@type": "LocalBusiness",
+            "name": "Mikah's Auto Detailing"
+          },
+          "areaServed": [
+            "Columbia SC",
+            "Lexington SC",
+            "Irmo SC",
+            "Cayce SC"
+          ],
+          "url": "https://mikahsmobiledetailingsc.com/services/paint-correction"
+        },
+        "priceSpecification": {
+          "@type": "PriceSpecification",
+          "priceCurrency": "USD",
+          "price": "400-800"
         }
       }
     ]
   },
-  "keywords": "car detailing near me, mobile car detailing, auto detailing, mobile auto detailing, car detailing columbia sc, mobile detailing columbia sc, auto detailing columbia sc, interior car detailing, mobile car detailing columbia sc, auto detailing near me, mobile detailing near me, car detailing services, automotive detailing, vehicle detailing, auto detailing services, car detail shops, mobile detailing, car detailing lexington sc, auto detailing lexington sc, vehicle detailing services, automotive detail, mobile automotive detailing, auto mobile detailing, car detailing irmo sc, mobile car wash, car cleaning services, ceramic coating, ceramic coating columbia sc, auto ceramic coating, car ceramic coating, automotive ceramic coating, ceramic coating service, professional ceramic coating, ceramic paint protection, ceramic paint coating, vehicle ceramic coating, ceramic detailing, car detailing ceramic coating, ceramic coating for cars",
+  "hasProduct": [
+    {
+      "@type": "Product",
+      "@id": "https://mikahsmobiledetailingsc.com/products/basic-mobile-detail",
+      "name": "Basic Mobile Detailing Package",
+      "description": "Essential mobile car detailing service including wash, vacuum, and basic interior cleaning.",
+      "category": "Mobile Car Detailing",
+      "brand": {
+        "@type": "Brand",
+        "name": "Mikah's Auto Detailing"
+      },
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "USD",
+        "price": "150",
+        "availability": "https://schema.org/InStock",
+        "seller": {
+          "@type": "LocalBusiness",
+          "name": "Mikah's Auto Detailing"
+        }
+      }
+    },
+    {
+      "@type": "Product",
+      "@id": "https://mikahsmobiledetailingsc.com/products/premium-mobile-detail",
+      "name": "Premium Mobile Detailing Package",
+      "description": "Comprehensive mobile auto detailing with interior deep clean, exterior wash, wax, and tire shine.",
+      "category": "Mobile Car Detailing",
+      "brand": {
+        "@type": "Brand",
+        "name": "Mikah's Auto Detailing"
+      },
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "USD",
+        "price": "250",
+        "availability": "https://schema.org/InStock",
+        "seller": {
+          "@type": "LocalBusiness",
+          "name": "Mikah's Auto Detailing"
+        }
+      }
+    },
+    {
+      "@type": "Product",
+      "@id": "https://mikahsmobiledetailingsc.com/products/luxury-mobile-detail",
+      "name": "Luxury Mobile Detailing Package",
+      "description": "Ultimate mobile car detailing experience with paint correction, ceramic coating prep, and premium protection.",
+      "category": "Mobile Car Detailing",
+      "brand": {
+        "@type": "Brand",
+        "name": "Mikah's Auto Detailing"
+      },
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "USD",
+        "price": "350",
+        "availability": "https://schema.org/InStock",
+        "seller": {
+          "@type": "LocalBusiness",
+          "name": "Mikah's Auto Detailing"
+        }
+      }
+    }
+  ],
+  "keywords": "detailing car near me, automotive detail near me, car interior detailing, mobile detailing columbia sc, mobile car detailing, mobile auto detailing, mobile detailing near me, mobile automotive detailing, mobile car wash and detail, car detailing near me, auto detailing near me, automotive detailing near me, vehicle detailing near me, mobile car detailing services, interior car detailing services, exterior car detailing services, full service mobile detailing, mobile detailing pricing, car detailing columbia sc, auto detailing columbia sc, ceramic coating columbia sc, ceramic coating near me, paint correction columbia sc, paint correction near me, ceramic coating and paint correction",
   "amenityFeature": [
     {
       "@type": "LocationFeatureSpecification",
