@@ -80,7 +80,7 @@ const Navigation: React.FC = () => {
 
       // Track the conversion with enhanced data
       (window as any).gtag('event', 'conversion', {
-        'send_to': 'AW-16694998422/nS2YCI30994bEJbr5Zg-',
+        'send_to': 'AW-16694998422/TihGCPrb_9sZEJbr5Zg-',
         'value': 200.0,
         'currency': 'USD',
         'event_callback': callback
