@@ -15,20 +15,62 @@
     <link rel="dns-prefetch" href="https://www.google-analytics.com">
     <link rel="dns-prefetch" href="https://www.googletagmanager.com">
 
-    <!-- Defer third-party scripts for performance -->
+    <!-- Google Analytics 4 and Google Ads with Consent Mode V2 (2026 Requirements) -->
     <script>
-      // Initialize dataLayer early for conversion tracking
+      // Initialize dataLayer and gtag function
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
 
+      // Configure Consent Mode V2 with default denied state (GDPR compliance)
+      gtag('consent', 'default', {
+        'ad_storage': 'denied',
+        'ad_user_data': 'denied',
+        'ad_personalization': 'denied',
+        'analytics_storage': 'denied'
+      });
+
+      // Initialize Google Analytics/Ads tracking
+      gtag('js', new Date());
+
+      // Configure Google Ads with Enhanced Conversions
+      gtag('config', 'AW-16694998422', {
+        'allow_enhanced_conversions': true,
+        'phone_conversion_number': '+18036678731'
+      });
+
+      // Auto-grant consent for US users (adjust based on your privacy policy)
+      // For EU users, implement a proper consent banner
+      var isEU = false; // Set to true if you have EU visitors requiring consent
+      if (!isEU) {
+        gtag('consent', 'update', {
+          'ad_storage': 'granted',
+          'ad_user_data': 'granted',
+          'ad_personalization': 'granted',
+          'analytics_storage': 'granted'
+        });
+      }
+
+      // Enhanced conversion tracking function (used by Navigation component)
       function gtag_report_conversion(url) {
         var callback = function () {
           if (typeof(url) != 'undefined') {
             window.location = url;
           }
         };
+
+        // Enhanced conversion data (add customer data when available)
+        var enhancedData = {};
+        // enhancedData.email = 'customer@example.com'; // Hash in production
+        // enhancedData.phone_number = '+18036678731';
+
+        if (Object.keys(enhancedData).length > 0) {
+          gtag('set', 'user_data', enhancedData);
+        }
+
         gtag('event', 'conversion', {
-          'send_to': 'AW-16694998422/TihGCPrb_9sZEJbr5Zg-',
+          'send_to': 'AW-16694998422/nS2YCI30994bEJbr5Zg-',
+          'value': 200.0,
+          'currency': 'USD',
           'event_callback': callback
         });
         return false;
@@ -43,18 +85,14 @@
         'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
         })(window,document,'script','dataLayer','GTM-WBS8H6B2');
 
-        // Google Ads
+        // Google Ads/Analytics gtag script
         var s = document.createElement('script');
         s.async = true;
         s.src = 'https://www.googletagmanager.com/gtag/js?id=AW-16694998422';
-        s.onload = function() {
-          gtag('js', new Date());
-          gtag('config', 'AW-16694998422');
-        };
         document.head.appendChild(s);
       }
 
-      // Load tracking on first user interaction OR after 5 seconds
+      // Load tracking on first user interaction OR after 3 seconds
       var trackingLoaded = false;
       function initTracking() {
         if (trackingLoaded) return;
@@ -73,8 +111,8 @@
       document.addEventListener('touchstart', initTracking, { passive: true, once: true });
       document.addEventListener('keydown', initTracking, { once: true });
 
-      // Fallback: load after 5 seconds regardless
-      setTimeout(initTracking, 5000);
+      // Fallback: load after 3 seconds (faster than before for conversion tracking)
+      setTimeout(initTracking, 3000);
     </script>
 
     <!-- Primary Meta Tags -->

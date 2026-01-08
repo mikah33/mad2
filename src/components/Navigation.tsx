@@ -19,7 +19,46 @@ const Navigation: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Google Ads conversion tracking for phone calls
+  // Initialize Google Ads with Consent Mode V2 (2026 requirements)
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      // Initialize gtag if not already loaded
+      if (!(window as any).gtag) {
+        (window as any).dataLayer = (window as any).dataLayer || [];
+        (window as any).gtag = function() {
+          (window as any).dataLayer.push(arguments);
+        };
+      }
+
+      // Configure Consent Mode V2 with default denied state
+      (window as any).gtag('consent', 'default', {
+        'ad_storage': 'denied',
+        'ad_user_data': 'denied',
+        'ad_personalization': 'denied',
+        'analytics_storage': 'denied'
+      });
+
+      // Configure Google Ads
+      (window as any).gtag('config', 'AW-16694998422', {
+        'allow_enhanced_conversions': true,
+        'phone_conversion_number': '+18036678731'
+      });
+
+      // Auto-grant consent for US users (adjust based on your privacy policy)
+      // For EU users, you'll need a proper consent banner
+      const isEU = false; // Set to true if you have EU visitors
+      if (!isEU) {
+        (window as any).gtag('consent', 'update', {
+          'ad_storage': 'granted',
+          'ad_user_data': 'granted',
+          'ad_personalization': 'granted',
+          'analytics_storage': 'granted'
+        });
+      }
+    }
+  }, []);
+
+  // Enhanced Google Ads conversion tracking for phone calls
   const gtag_report_conversion = (url?: string) => {
     const callback = () => {
       if (typeof(url) !== 'undefined') {
@@ -28,6 +67,18 @@ const Navigation: React.FC = () => {
     };
 
     if ((window as any).gtag) {
+      // Set enhanced conversion data if available
+      const enhancedData: any = {};
+
+      // You can add customer data here for enhanced conversions
+      // enhancedData.email = 'customer@example.com'; // Hash this in production
+      // enhancedData.phone_number = '+18036678731';
+
+      if (Object.keys(enhancedData).length > 0) {
+        (window as any).gtag('set', 'user_data', enhancedData);
+      }
+
+      // Track the conversion with enhanced data
       (window as any).gtag('event', 'conversion', {
         'send_to': 'AW-16694998422/nS2YCI30994bEJbr5Zg-',
         'value': 200.0,
