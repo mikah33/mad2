@@ -1,2 +1,9 @@
 # Local Netlify folder
 .netlify
+
+# Claude Flow
+.claude-flow/
+
+# Node modules and build cache
+node_modules/
+.vite/
