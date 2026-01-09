@@ -71,12 +71,22 @@ const LandingPage: React.FC = () => {
 
         {/* Hero Section - Video Background */}
         <section className="relative py-24 sm:py-32 px-4">
+          {/* Fallback Background Image - Shows immediately */}
+          <div
+            className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat"
+            style={{ backgroundImage: 'url(/exterior6.jpg)' }}
+          />
+
+          {/* Video Background - Loads with optimization */}
           <video
             autoPlay
             muted
             loop
             playsInline
+            preload="metadata"
+            poster="/exterior6.jpg"
             className="absolute inset-0 w-full h-full object-cover"
+            webkit-playsinline="true"
           >
             <source src="/lp-hero-video.mp4" type="video/mp4" />
           </video>
