@@ -1,9 +1,10 @@
 import React from 'react';
-import { Phone, Facebook } from 'lucide-react';
+import { Phone, Facebook, Instagram } from 'lucide-react';
+import StickyCallButton from './StickyCallButton';
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-gray-950 text-white pt-12 pb-6 w-full overflow-hidden">
+    <footer className="bg-gray-950 text-white pt-12 pb-20 md:pb-6 w-full overflow-hidden">
       <div className="container mx-auto px-4 max-w-7xl">
         {/* Mobile: CTA First */}
         <div className="md:hidden mb-8">
@@ -33,23 +34,33 @@ const Footer: React.FC = () => {
             <h4 className="text-lg font-bold mb-4 text-[#90E0EF]">Our Professional Services</h4>
             <ul className="space-y-3 text-gray-400 text-sm">
               <li>
-                <a href="/services/full-detail" className="hover:text-[#90E0EF] transition block">
-                  Full Auto Detailing Columbia SC
+                <a href="/services/mobile-detailing" className="hover:text-[#90E0EF] transition block">
+                  Mobile Car Detailing Near Me
                 </a>
               </li>
               <li>
-                <a href="/services/ceramic-coating" className="hover:text-[#90E0EF] transition block">
-                  Ceramic Coating Services
+                <a href="/services/ceramic-coating-columbia-lexington" className="hover:text-[#90E0EF] transition block">
+                  Ceramic Coating Columbia SC
+                </a>
+              </li>
+              <li>
+                <a href="/services/interior-detailing" className="hover:text-[#90E0EF] transition block">
+                  Car Interior Detailing
+                </a>
+              </li>
+              <li>
+                <a href="/services/exterior-detailing" className="hover:text-[#90E0EF] transition block">
+                  Exterior Auto Detailing
+                </a>
+              </li>
+              <li>
+                <a href="/services/full-detail" className="hover:text-[#90E0EF] transition block">
+                  Full Service Auto Detailing
                 </a>
               </li>
               <li>
                 <a href="/services/paint-correction" className="hover:text-[#90E0EF] transition block">
-                  Professional Paint Correction
-                </a>
-              </li>
-              <li>
-                <a href="/services/mobile-detailing" className="hover:text-[#90E0EF] transition block">
-                  Mobile Detailing Columbia SC
+                  Paint Correction Services
                 </a>
               </li>
               <li>
@@ -65,23 +76,28 @@ const Footer: React.FC = () => {
             <h4 className="text-lg font-bold mb-4 text-[#90E0EF]">Service Locations</h4>
             <ul className="space-y-3 text-gray-400 text-sm">
               <li>
-                <a href="/locations/columbia" className="hover:text-[#90E0EF] transition block">
-                  Auto Detailing Columbia SC
+                <a href="/locations/columbia-sc" className="hover:text-[#90E0EF] transition block">
+                  Mobile Detailing Columbia SC
                 </a>
               </li>
               <li>
-                <a href="/locations/lexington" className="hover:text-[#90E0EF] transition block">
-                  Auto Detailing Lexington SC
+                <a href="/locations/lexington-sc" className="hover:text-[#90E0EF] transition block">
+                  Mobile Detailing Lexington SC
                 </a>
               </li>
               <li>
-                <a href="/locations/irmo" className="hover:text-[#90E0EF] transition block">
-                  Auto Detailing Irmo SC
+                <a href="/locations/irmo-sc" className="hover:text-[#90E0EF] transition block">
+                  Mobile Detailing Irmo SC
                 </a>
               </li>
               <li>
                 <a href="/locations/west-columbia" className="hover:text-[#90E0EF] transition block">
-                  Auto Detailing West Columbia SC
+                  Mobile Detailing West Columbia SC
+                </a>
+              </li>
+              <li>
+                <a href="/locations/cayce-sc" className="hover:text-[#90E0EF] transition block">
+                  Mobile Detailing Cayce SC
                 </a>
               </li>
               <li>
@@ -162,19 +178,27 @@ const Footer: React.FC = () => {
               (803) 667-8731
             </a>
             <a
-              href="https://www.facebook.com"
+              href="https://www.instagram.com/mikahsautodetail_/"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center transition"
-              style={{}}
-              onMouseEnter={(e) => e.currentTarget.style.background = '#023E8A'}
-              onMouseLeave={(e) => e.currentTarget.style.background = ''}
+              className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center transition hover:bg-[#023E8A]"
+            >
+              <Instagram className="w-5 h-5" />
+            </a>
+            <a
+              href="https://www.facebook.com/MikahsDetailing"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center transition hover:bg-[#023E8A]"
             >
               <Facebook className="w-5 h-5" />
             </a>
           </div>
         </div>
       </div>
+
+      {/* Sticky Call Button - Mobile Only */}
+      <StickyCallButton />
     </footer>
   );
 };

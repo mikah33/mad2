@@ -126,7 +126,7 @@ const ExteriorDetailingPage: React.FC = () => {
         <Navigation />
 
         {/* Hero Section */}
-        <section className="relative bg-gradient-to-br from-blue-600 to-blue-800 text-white py-20">
+        <section className="relative bg-gradient-to-br from-blue-600 to-blue-800 text-white pt-20 pb-20 md:pt-24">
           <div className="container mx-auto px-4 max-w-7xl">
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div>

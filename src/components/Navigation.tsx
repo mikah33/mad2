@@ -121,15 +121,35 @@ const Navigation: React.FC = () => {
           {/* Desktop Navigation Links */}
           <div className="hidden lg:flex items-center space-x-3 xl:space-x-6">
             <a href="/#home" className="text-gray-700 hover:text-[#023E8A] transition text-sm xl:text-base font-medium">Home</a>
-            <a href="/services" className="text-gray-700 hover:text-[#023E8A] transition text-sm xl:text-base font-medium">Services</a>
+            <div className="relative group">
+              <a href="/services" className="text-gray-700 hover:text-[#023E8A] transition text-sm xl:text-base font-medium">Services</a>
+              <div className="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-xl border border-gray-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                <div className="p-3 space-y-2">
+                  <a href="/services/ceramic-coating-columbia-lexington" className="block px-3 py-2 text-sm text-gray-700 hover:text-[#023E8A] hover:bg-[#CAF0F8] rounded transition">Ceramic Coating</a>
+                  <a href="/services/interior-detailing" className="block px-3 py-2 text-sm text-gray-700 hover:text-[#023E8A] hover:bg-[#CAF0F8] rounded transition">Interior Detailing</a>
+                  <a href="/services/exterior-detailing" className="block px-3 py-2 text-sm text-gray-700 hover:text-[#023E8A] hover:bg-[#CAF0F8] rounded transition">Exterior Detailing</a>
+                  <a href="/services/mobile-detailing" className="block px-3 py-2 text-sm text-gray-700 hover:text-[#023E8A] hover:bg-[#CAF0F8] rounded transition">Mobile Detailing</a>
+                </div>
+              </div>
+            </div>
             <a href="/blog" className="text-gray-700 hover:text-[#023E8A] transition text-sm xl:text-base font-medium">Blog</a>
             <a href="/#projects" className="hidden xl:flex text-gray-700 hover:text-[#023E8A] transition text-sm xl:text-base font-medium">Recent Projects</a>
             <a href="/faq" className="text-gray-700 hover:text-[#023E8A] transition text-sm xl:text-base font-medium">FAQ</a>
             <a href="/#contact" className="text-gray-700 hover:text-[#023E8A] transition text-sm xl:text-base font-medium">Contact</a>
-            <a href="/locations" className="flex items-center text-gray-700 hover:text-[#023E8A] transition text-sm xl:text-base font-medium">
-              <MapPin className="w-4 h-4 mr-1" />
-              Locations
-            </a>
+            <div className="relative group">
+              <a href="/locations" className="flex items-center text-gray-700 hover:text-[#023E8A] transition text-sm xl:text-base font-medium">
+                <MapPin className="w-4 h-4 mr-1" />
+                Locations
+              </a>
+              <div className="absolute top-full left-0 mt-2 w-56 bg-white rounded-lg shadow-xl border border-gray-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                <div className="p-3 space-y-2">
+                  <a href="/locations/columbia-sc" className="block px-3 py-2 text-sm text-gray-700 hover:text-[#023E8A] hover:bg-[#CAF0F8] rounded transition">Columbia SC</a>
+                  <a href="/locations/lexington-sc" className="block px-3 py-2 text-sm text-gray-700 hover:text-[#023E8A] hover:bg-[#CAF0F8] rounded transition">Lexington SC</a>
+                  <a href="/locations/west-columbia" className="block px-3 py-2 text-sm text-gray-700 hover:text-[#023E8A] hover:bg-[#CAF0F8] rounded transition">West Columbia</a>
+                  <a href="/locations/irmo-sc" className="block px-3 py-2 text-sm text-gray-700 hover:text-[#023E8A] hover:bg-[#CAF0F8] rounded transition">Irmo SC</a>
+                </div>
+              </div>
+            </div>
           </div>
 
           {/* Desktop CTA Buttons */}
@@ -186,64 +206,64 @@ const Navigation: React.FC = () => {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="md:hidden border-t border-gray-700/30 bg-gray-900/95 backdrop-blur-md">
+          <div className="md:hidden border-t border-gray-300 bg-white shadow-lg">
             <div className="py-4 space-y-3">
               <a
                 href="/#home"
                 onClick={handleLinkClick}
-                className="block px-4 py-2 hover:bg-gold-500/20 hover:text-[#90E0EF] rounded transition font-medium"
+                className="block px-4 py-2 text-gray-700 hover:bg-[#CAF0F8] hover:text-[#023E8A] rounded transition font-medium"
               >
                 Home
               </a>
               <a
                 href="/services"
                 onClick={handleLinkClick}
-                className="block px-4 py-2 hover:bg-gold-500/20 hover:text-[#90E0EF] rounded transition font-medium"
+                className="block px-4 py-2 text-gray-700 hover:bg-[#CAF0F8] hover:text-[#023E8A] rounded transition font-medium"
               >
                 Services
               </a>
               <a
                 href="/blog"
                 onClick={handleLinkClick}
-                className="block px-4 py-2 hover:bg-gold-500/20 hover:text-[#90E0EF] rounded transition font-medium"
+                className="block px-4 py-2 text-gray-700 hover:bg-[#CAF0F8] hover:text-[#023E8A] rounded transition font-medium"
               >
                 Blog
               </a>
               <a
                 href="/#projects"
                 onClick={handleLinkClick}
-                className="block px-4 py-2 hover:bg-gold-500/20 hover:text-[#90E0EF] rounded transition font-medium"
+                className="block px-4 py-2 text-gray-700 hover:bg-[#CAF0F8] hover:text-[#023E8A] rounded transition font-medium"
               >
                 Recent Projects
               </a>
               <a
                 href="/faq"
                 onClick={handleLinkClick}
-                className="block px-4 py-2 hover:bg-gold-500/20 hover:text-[#90E0EF] rounded transition font-medium"
+                className="block px-4 py-2 text-gray-700 hover:bg-[#CAF0F8] hover:text-[#023E8A] rounded transition font-medium"
               >
                 FAQ
               </a>
               <a
                 href="/#contact"
                 onClick={handleLinkClick}
-                className="block px-4 py-2 hover:bg-gold-500/20 hover:text-[#90E0EF] rounded transition font-medium"
+                className="block px-4 py-2 text-gray-700 hover:bg-[#CAF0F8] hover:text-[#023E8A] rounded transition font-medium"
               >
                 Contact
               </a>
               <a
                 href="/locations"
                 onClick={handleLinkClick}
-                className="flex items-center px-4 py-2 hover:bg-gold-500/20 hover:text-[#90E0EF] rounded transition font-medium"
+                className="flex items-center px-4 py-2 text-gray-700 hover:bg-[#CAF0F8] hover:text-[#023E8A] rounded transition font-medium"
               >
                 <MapPin className="w-4 h-4 mr-2" />
                 Locations
               </a>
 
               {/* Mobile CTA Buttons */}
-              <div className="px-4 pt-4 space-y-3 border-t border-[#90E0EF]/20">
+              <div className="px-4 pt-4 space-y-3 border-t border-gray-200">
                 <button
                   onClick={() => gtag_report_conversion('tel:+18036678731')}
-                  className="w-full flex items-center justify-center px-4 py-3 bg-white/10 text-white border border-[#90E0EF]/30 rounded-lg hover:bg-gold-500/20 hover:border-[#90E0EF] transition font-semibold backdrop-blur-sm"
+                  className="w-full flex items-center justify-center px-4 py-3 bg-gray-100 text-gray-700 border border-gray-300 rounded-lg hover:bg-gray-200 transition font-semibold"
                 >
                   <Phone className="w-4 h-4 mr-2" />
                   Call Now

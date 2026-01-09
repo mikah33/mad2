@@ -294,6 +294,7 @@ export const generateMobileDetailingServiceSchema = (
 
 /**
  * Generate FAQ Schema for mobile detailing services
+ * Updated with critical "People Also Ask" questions for enhanced SEO
  */
 export const generateMobileDetailingFAQSchema = () => {
   return {
@@ -303,34 +304,82 @@ export const generateMobileDetailingFAQSchema = () => {
     mainEntity: [
       {
         '@type': 'Question',
-        name: 'Do you provide mobile car detailing near me?',
+        name: 'How much does mobile detailing cost?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Yes! We provide mobile car detailing services throughout Columbia SC, Lexington, Irmo, Cayce, and surrounding areas. We come directly to your location with all our professional equipment.'
+          text: 'Our mobile detailing services start at $75 for basic exterior washes and range up to $400+ for comprehensive packages. Pricing depends on vehicle size, service selected, and condition. We offer competitive rates with no hidden fees - get your personalized quote by calling (803) 667-8731.'
         }
       },
       {
         '@type': 'Question',
-        name: 'What does mobile auto detailing include?',
+        name: 'What is included in a mobile detailing service?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Our mobile auto detailing includes interior vacuuming and cleaning, exterior washing and waxing, tire cleaning, dashboard cleaning, and paint protection. We offer packages from basic to luxury detailing.'
+          text: 'Our mobile detailing packages include exterior wash and wax, interior vacuuming and cleaning, dashboard conditioning, window cleaning, tire shine, and wheel cleaning. Premium packages add paint correction, ceramic coating, deep interior shampooing, and leather conditioning. We bring all equipment, water, and eco-friendly products to your location.'
         }
       },
       {
         '@type': 'Question',
-        name: 'How much does mobile car detailing cost?',
+        name: 'How often should you detail your vehicle?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Mobile car detailing pricing ranges from $150-$350 depending on the package and vehicle size. We offer basic, premium, and luxury mobile detailing packages to fit your budget.'
+          text: 'Most vehicles should be professionally detailed every 3-6 months to maintain optimal appearance and protect resale value. Daily drivers in Columbia\'s climate may benefit from quarterly service, while garage-kept vehicles can go 6 months. Our subscription service provides convenient regular maintenance at discounted rates.'
         }
       },
       {
         '@type': 'Question',
-        name: 'Do you offer same-day mobile detailing service?',
+        name: 'What are the benefits of ceramic coating?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Yes, we often provide same-day mobile detailing service in Columbia SC area, subject to availability. Call (803) 667-8731 to schedule your mobile detailing appointment.'
+          text: 'Ceramic coating provides long-lasting paint protection, enhanced gloss, easier cleaning, and UV protection. It creates a hydrophobic barrier that repels water, dirt, and contaminants while maintaining your vehicle\'s showroom shine for years. Columbia\'s humid climate and intense sun make ceramic coating especially valuable for preserving your investment.'
+        }
+      },
+      {
+        '@type': 'Question',
+        name: 'How long does ceramic coating last?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Professional ceramic coating typically lasts 2-5 years depending on the product grade and maintenance. Our premium ceramic packages include 3-year warranties with proper care. The coating\'s durability makes it more cost-effective than traditional wax, which needs reapplication every 3-4 months.'
+        }
+      },
+      {
+        '@type': 'Question',
+        name: 'Do you provide mobile services in Lexington and Columbia, SC?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Yes! We specialize in mobile auto detailing throughout Lexington, Columbia, and surrounding South Carolina areas. We come directly to your home, office, or any convenient location with all professional equipment. Mobile service eliminates your travel time and provides ultimate convenience.'
+        }
+      },
+      {
+        '@type': 'Question',
+        name: 'How long does a typical detailing service take?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'The duration varies depending on the service selected. A basic detail typically takes 2-3 hours, while our comprehensive packages can take 4-6 hours. Ceramic coating applications require 6-8 hours. We\'ll provide a specific time estimate when you book.'
+        }
+      },
+      {
+        '@type': 'Question',
+        name: 'What areas do you serve in the Columbia region?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'We proudly serve Lexington, Columbia, West Columbia, Irmo, Cayce, Forest Acres, Blythewood, and surrounding Midlands areas. Our mobile service covers a 30-mile radius from Columbia, ensuring convenient professional detailing wherever you are in the greater Columbia metropolitan area.'
+        }
+      },
+      {
+        '@type': 'Question',
+        name: 'Is mobile detailing as effective as shop detailing?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Our mobile detailing delivers the same professional results as shop-based services. We use commercial-grade equipment, professional products, and bring our own water supply. Mobile service offers superior convenience while maintaining the highest quality standards - many clients prefer the personalized attention and time savings.'
+        }
+      },
+      {
+        '@type': 'Question',
+        name: 'What forms of payment do you accept?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'We accept cash, all major credit cards (Visa, MasterCard, American Express, Discover), and convenient digital payment methods including Venmo, Cash App, and Zelle. Payment is collected upon service completion to your satisfaction.'
         }
       }
     ]

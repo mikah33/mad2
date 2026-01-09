@@ -29,7 +29,7 @@ const Services: React.FC<{ onSelectService: (service: string) => void }> = ({ on
     {
       icon: <Sparkles className="w-8 h-8" />,
       title: 'Basic Detail Package',
-      price: '$200',
+      price: '$225',
       color: 'bg-[#0077B6]',
       description: [
         'Interior: Full wipe down, conditioner + UV protection, vacuum, disinfection, glass cleaned, door jambs cleaned & waxed',
@@ -39,7 +39,7 @@ const Services: React.FC<{ onSelectService: (service: string) => void }> = ({ on
     {
       icon: <Star className="w-8 h-8" />,
       title: 'Factory Reset Package',
-      price: '$325',
+      price: '$400',
       color: 'bg-[#0077B6]',
       description: [
         'Interior: Full wipe down, conditioner + UV protection, vacuum + disinfection, light stain removal, shampoo & extraction, glass cleaned, door jambs cleaned & waxed',
@@ -109,7 +109,7 @@ const Services: React.FC<{ onSelectService: (service: string) => void }> = ({ on
     {
       icon: <Gift className="w-8 h-8" />,
       title: 'Gift Card - Basic Detail',
-      price: '$200',
+      price: '$225',
       color: 'bg-[#D4AF37]',
       description: [
         '🎄 Perfect Holiday Gift!',

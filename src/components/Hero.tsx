@@ -64,14 +64,14 @@ const Hero: React.FC = () => {
       {/* Content */}
       <div className="container mx-auto px-4 text-center max-w-7xl relative z-10 pt-24 pb-12">
         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 leading-tight">
-          Expert Mobile Auto Detailing
+          Mobile Auto Detailing Lexington SC
           <br />
-          <span style={{color: '#90E0EF'}}>in Columbia, SC</span>
+          <span style={{color: '#90E0EF'}}>& Columbia, SC</span>
         </h1>
 
         <p className="text-base sm:text-lg md:text-xl mb-6 md:mb-8 max-w-3xl mx-auto text-gray-100 px-4">
-          Experience premium mobile car detailing services that come to you in
-          Columbia, South Carolina. We transform your vehicle at your home or office,
+          Experience premium mobile auto detailing services that come to you in
+          Lexington, Columbia, and throughout South Carolina. We transform your vehicle at your home or office,
           delivering professional results with ultimate convenience.
         </p>
 

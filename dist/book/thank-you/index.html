@@ -76,39 +76,6 @@
         return false;
       }
 
-      // AUTOMATIC BOOKING CONVERSION - Fire when thank you page loads
-      function fireBookingConversion() {
-        // Enhanced conversion data for booking completion
-        var enhancedData = {};
-        // Add customer data when available from booking form
-        // enhancedData.email = getCustomerEmail(); // Implement based on your form
-        // enhancedData.phone_number = getCustomerPhone();
-
-        if (Object.keys(enhancedData).length > 0) {
-          gtag('set', 'user_data', enhancedData);
-        }
-
-        // Fire booking completion conversion
-        gtag('event', 'conversion', {
-          'send_to': 'AW-16694998422/TihGCPrb_9sZEJbr5Zg-',
-          'value': 200.0,
-          'currency': 'USD',
-          'transaction_id': 'booking_' + Date.now() // Unique transaction ID
-        });
-
-        // Track as purchase event for Facebook Pixel
-        if (typeof fbq !== 'undefined') {
-          fbq('track', 'Purchase', {
-            value: 200.00,
-            currency: 'USD',
-            content_type: 'service',
-            content_name: 'Mobile Car Detailing Booking'
-          });
-        }
-
-        console.log('Booking conversion tracked successfully');
-      }
-
       // Load tracking scripts when browser is idle
       function loadTrackingScripts() {
         // Google Tag Manager
@@ -122,30 +89,30 @@
         var s = document.createElement('script');
         s.async = true;
         s.src = 'https://www.googletagmanager.com/gtag/js?id=AW-16694998422';
-        s.onload = function() {
-          // Fire booking conversion once gtag is loaded
-          setTimeout(fireBookingConversion, 1000);
-        };
         document.head.appendChild(s);
       }
 
-      // Load tracking immediately for thank you page (faster conversion tracking)
+      // Load tracking on first user interaction OR after 3 seconds
       var trackingLoaded = false;
       function initTracking() {
         if (trackingLoaded) return;
         trackingLoaded = true;
         loadTrackingScripts();
+        // Remove listeners
+        document.removeEventListener('scroll', initTracking);
+        document.removeEventListener('click', initTracking);
+        document.removeEventListener('touchstart', initTracking);
+        document.removeEventListener('keydown', initTracking);
       }
 
-      // Start tracking immediately on thank you page
-      initTracking();
+      // Trigger on interaction
+      document.addEventListener('scroll', initTracking, { passive: true, once: true });
+      document.addEventListener('click', initTracking, { once: true });
+      document.addEventListener('touchstart', initTracking, { passive: true, once: true });
+      document.addEventListener('keydown', initTracking, { once: true });
 
-      // Fallback: ensure conversion fires even if gtag is delayed
-      setTimeout(function() {
-        if (typeof gtag === 'function') {
-          fireBookingConversion();
-        }
-      }, 3000);
+      // Fallback: load after 3 seconds (faster than before for conversion tracking)
+      setTimeout(initTracking, 3000);
     </script>
 
     <!-- Primary Meta Tags -->
@@ -215,10 +182,10 @@
     setTimeout(initFB, 6000);
     </script>
     <!-- End Meta Pixel Code -->
-    <script type="module" crossorigin src="/assets/index-e9b9f7ca.js"></script>
+    <script type="module" crossorigin src="/assets/index-51703a2d.js"></script>
     <link rel="modulepreload" crossorigin href="/assets/react-vendor-2ca3366f.js">
     <link rel="modulepreload" crossorigin href="/assets/ui-vendor-16a8dbcc.js">
-    <link rel="stylesheet" href="/assets/index-3a2a1b40.css">
+    <link rel="stylesheet" href="/assets/index-623823d2.css">
       <link rel="canonical" href="https://mikahsmobiledetailingsc.com/book/thank-you"/>
       <script type="application/ld+json">
 [

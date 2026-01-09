@@ -20,9 +20,9 @@ function App() {
   return (
     <>
       <Helmet>
-        <title>Mobile Car Detailing Near Me Columbia SC | Automotive Detail Service | Mikah's Auto Detailing</title>
-        <meta name="description" content="Top-rated mobile car detailing near me in Columbia SC! Professional automotive detail service at your location. Expert car interior detailing, exterior auto detailing, mobile detailing Columbia SC, ceramic coating. We come to you!" />
-        <meta name="keywords" content="mobile car detailing near me, detailing car near me, detailing auto near me, automotive detail near me, car interior detailing, mobile detailing columbia sc, auto detailing Columbia SC, mobile automotive detailing, professional car detailing near me, automotive detailing service, ceramic coating, paint correction" />
+        <title>Mobile Auto Detailing Lexington SC | Car Detailing Columbia SC | Mikah's Auto Detailing</title>
+        <meta name="description" content="Professional mobile auto detailing Lexington SC & Columbia SC. Car detailing services brought to your location. Ceramic coating, paint correction & interior detailing. IDA certified. Book today (803) 667-8731!" />
+        <meta name="keywords" content="mobile auto detailing lexington sc, car detailing lexington sc, mobile car detailing near me, detailing car near me, automotive detail near me, car interior detailing, mobile detailing columbia sc, auto detailing Columbia SC, mobile automotive detailing, professional car detailing near me, automotive detailing service, ceramic coating, paint correction" />
         <link rel="canonical" href="https://mikahsmobiledetailingsc.com" />
 
         {/* Open Graph / Facebook */}

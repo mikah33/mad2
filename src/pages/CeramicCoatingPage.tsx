@@ -77,7 +77,7 @@ const CeramicCoatingPage: React.FC = () => {
         <Navigation />
 
         {/* Hero with Video */}
-        <section className="relative text-white min-h-[600px] w-full overflow-hidden flex items-center" style={{ marginTop: '-4rem' }}>
+        <section className="relative text-white min-h-[600px] w-full overflow-hidden flex items-center pt-16">
           {/* Video Background */}
           <video
             autoPlay

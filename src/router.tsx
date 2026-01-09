@@ -28,6 +28,7 @@ import AccountPage from './pages/AccountPage';
 import GalleryPage from './pages/GalleryPage';
 import ReviewsPage from './pages/ReviewsPage';
 import ReviewUsPage from './pages/ReviewUsPage';
+import LandingPage from './pages/LandingPage';
 import ErrorBoundary from './components/ErrorBoundary';
 
 export const router = createBrowserRouter([
@@ -158,5 +159,10 @@ export const router = createBrowserRouter([
   {
     path: '/terms',
     element: <TermsOfServicePage />,
+  },
+  {
+    path: '/lp',
+    element: <LandingPage />,
+    errorElement: <ErrorBoundary />,
   },
 ]);
