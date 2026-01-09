@@ -1,10 +1,21 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Phone, MessageCircle, X, Facebook, Instagram } from 'lucide-react';
 import BookingTimeline from '../components/BookingTimeline';
 
 const LandingPage: React.FC = () => {
   const [isContactPopupOpen, setIsContactPopupOpen] = useState(false);
+
+  // Track page view when component mounts
+  useEffect(() => {
+    if ((window as any).gtag) {
+      (window as any).gtag('event', 'page_view', {
+        page_title: 'Landing Page - Mobile Auto Detailing',
+        page_location: window.location.href,
+        send_to: 'AW-16694998422'
+      });
+    }
+  }, []);
 
   // Same tracking function as Navigation component
   const gtag_report_conversion = (url?: string) => {
@@ -40,9 +51,55 @@ const LandingPage: React.FC = () => {
         />
         <meta name="robots" content="noindex" />
         <link rel="canonical" href="https://mikahsmobiledetailingsc.com/lp" />
+
+        {/* Google Tag Manager */}
+        <script>{`
+          (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+          })(window,document,'script','dataLayer','GTM-WBS8H6B2');
+        `}</script>
+
+        {/* Google Ads gtag */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16694998422"></script>
+        <script>{`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+
+          // Consent Mode v2
+          gtag('consent', 'default', {
+            'ad_storage': 'denied',
+            'ad_user_data': 'denied',
+            'ad_personalization': 'denied',
+            'analytics_storage': 'denied'
+          });
+
+          gtag('js', new Date());
+          gtag('config', 'AW-16694998422', {
+            'enhanced_conversions': true,
+            'consent_mode': 'enabled'
+          });
+
+          // Auto-grant consent after page load for better conversion tracking
+          setTimeout(function() {
+            gtag('consent', 'update', {
+              'ad_storage': 'granted',
+              'ad_user_data': 'granted',
+              'ad_personalization': 'granted',
+              'analytics_storage': 'granted'
+            });
+          }, 3000);
+        `}</script>
       </Helmet>
 
       <div className="min-h-screen bg-[#023E8A]">
+        {/* Google Tag Manager (noscript) */}
+        <noscript>
+          <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WBS8H6B2"
+            height="0" width="0" style={{display: 'none', visibility: 'hidden'}}></iframe>
+        </noscript>
+
         {/* Header - White */}
         <header className="bg-white py-4 px-4">
           <div className="max-w-4xl mx-auto flex items-center justify-between">
