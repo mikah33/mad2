@@ -33,7 +33,7 @@ const LandingPage: React.FC = () => {
 
       (window as any).gtag('event', 'conversion', {
         'send_to': 'AW-16694998422/TihGCPrb_9sZEJbr5Zg-',
-        'value': 200.0,
+        'value': 225.0,
         'currency': 'USD',
         'event_callback': callback,
       });

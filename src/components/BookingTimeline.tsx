@@ -49,7 +49,7 @@ const BookingTimeline: React.FC = () => {
     {
       icon: <Sparkles className="w-8 h-8" />,
       title: 'Basic Detail',
-      price: '$200',
+      price: '$225',
       color: 'bg-[#0077B6]',
       slug: 'basic-detail',
       image: '/interior1.jpg',
@@ -81,7 +81,7 @@ const BookingTimeline: React.FC = () => {
     {
       icon: <Sparkles className="w-8 h-8" />,
       title: 'Interior Detail',
-      price: '$200',
+      price: 'Starting at $200',
       color: 'bg-[#0077B6]',
       slug: 'interior-detail',
       image: '/interior1.jpg',
@@ -267,7 +267,7 @@ const BookingTimeline: React.FC = () => {
       benefits: string[];
     }> = {
       'Basic Detail': {
-        fullDescription: '🚗 Our Basic Package Includes: ($200)\n\nPerfect for Columbia SC and Lexington SC customers who want professional mobile car detailing at an affordable price.',
+        fullDescription: '🚗 Our Basic Package Includes: ($225)\n\nPerfect for Columbia SC and Lexington SC customers who want professional mobile car detailing at an affordable price.',
         includes: [
           '**Interior:**',
           '✅ Full interior wipe down',
@@ -409,7 +409,7 @@ const BookingTimeline: React.FC = () => {
         benefits: []
       },
       'Interior Detail': {
-        fullDescription: '🧹 Interior Detail – $200\n\nComplete interior cleaning and protection for your vehicle.',
+        fullDescription: '🧹 Interior Detail – Starting at $200\n\nComplete interior cleaning and protection for your vehicle.',
         includes: [
           '**Interior Services:**',
           '✅ Full interior wipe down',
