@@ -123,18 +123,18 @@ const LandingPage: React.FC = () => {
               Mobile · Insured · Trusted By Columbia
             </p>
             <div className="flex items-center justify-center gap-4">
-              <a
-                href="/services"
+              <button
+                onClick={() => document.getElementById('booking-flow')?.scrollIntoView({ behavior: 'smooth' })}
                 className="bg-white/10 hover:bg-white/20 text-white font-semibold px-6 py-3 rounded-lg border border-white/30 transition"
               >
                 Pricing
-              </a>
-              <a
-                href="/book"
+              </button>
+              <button
+                onClick={() => document.getElementById('booking-flow')?.scrollIntoView({ behavior: 'smooth' })}
                 className="bg-[#023E8A] hover:bg-[#0077B6] text-white font-bold px-6 py-3 rounded-lg transition shadow-lg"
               >
                 Book Now
-              </a>
+              </button>
             </div>
           </div>
         </section>
@@ -156,7 +156,7 @@ const LandingPage: React.FC = () => {
         </div>
 
         {/* Booking Flow */}
-        <section className="bg-[#FAFAFA] py-12 px-4">
+        <section id="booking-flow" className="bg-[#FAFAFA] py-12 px-4">
           <div className="max-w-4xl mx-auto">
             <div className="relative mb-16 sm:mb-20 md:mb-24">
               {/* Text on left */}
@@ -236,14 +236,14 @@ const LandingPage: React.FC = () => {
         </footer>
 
         {/* Sticky Mobile CTA - Direct Call with Tracking */}
-        <div className="fixed bottom-0 left-0 right-0 bg-[#FFD700] py-2 px-3 md:hidden z-50 shadow-[0_-4px_20px_rgba(0,0,0,0.3)]">
+        <div className="fixed bottom-0 left-0 right-0 bg-[#FFD700] py-1 px-2 md:hidden z-50 shadow-[0_-2px_15px_rgba(0,0,0,0.2)]">
           <a
             href="tel:+18036678731"
             onClick={() => gtag_report_conversion()}
-            className="flex items-center justify-center gap-1 w-full text-[#023E8A] font-bold text-base"
+            className="flex items-center justify-center gap-1 w-full text-[#023E8A] font-semibold text-sm"
           >
-            <Phone className="w-4 h-4" />
-            Call Now: (803) 667-8731
+            <Phone className="w-3 h-3" />
+            Call: (803) 667-8731
           </a>
         </div>
 
