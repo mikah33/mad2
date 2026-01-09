@@ -171,8 +171,9 @@ const LandingPage: React.FC = () => {
                 className="absolute -top-12 sm:-top-16 md:-top-20 -right-20 sm:-right-16 md:-right-12 w-72 sm:w-88 md:w-[26rem] lg:w-[30rem] h-auto z-10 pointer-events-none"
               >
                 <img
-                  src="/mikah.png"
+                  src="/me3-optimized.png"
                   alt="Mikah - Your Local Detailer"
+                  loading="lazy"
                   className="w-full h-auto object-contain"
                   style={{
                     mixBlendMode: 'multiply'
