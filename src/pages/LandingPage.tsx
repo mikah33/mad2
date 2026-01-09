@@ -236,11 +236,11 @@ const LandingPage: React.FC = () => {
         </footer>
 
         {/* Sticky Mobile CTA - Direct Call with Tracking */}
-        <div className="fixed bottom-0 left-0 right-0 bg-[#FFD700] py-1 px-2 md:hidden z-50 shadow-[0_-2px_15px_rgba(0,0,0,0.2)]">
+        <div className="fixed bottom-0 left-0 right-0 bg-[#023E8A] py-1 px-2 md:hidden z-50 shadow-[0_-2px_15px_rgba(0,0,0,0.2)]">
           <a
             href="tel:+18036678731"
             onClick={() => gtag_report_conversion()}
-            className="flex items-center justify-center gap-1 w-full text-[#023E8A] font-semibold text-sm"
+            className="flex items-center justify-center gap-1 w-full text-white font-semibold text-sm"
           >
             <Phone className="w-3 h-3" />
             Call: (803) 667-8731
