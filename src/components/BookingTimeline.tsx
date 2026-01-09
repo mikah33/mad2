@@ -90,7 +90,7 @@ const BookingTimeline: React.FC = () => {
     {
       icon: <Droplet className="w-8 h-8" />,
       title: 'Exterior Detail',
-      price: '$100',
+      price: 'Starting at $100',
       color: 'bg-[#0077B6]',
       slug: 'exterior-detail',
       image: '/exterior2.jpg',
@@ -430,7 +430,7 @@ const BookingTimeline: React.FC = () => {
         benefits: []
       },
       'Exterior Detail': {
-        fullDescription: '✨ Exterior Detail – $100\n\nComplete exterior wash, decontamination, and protection.',
+        fullDescription: '✨ Exterior Detail – Starting at $100\n\nComplete exterior wash, decontamination, and protection.',
         includes: [
           '**Exterior Services:**',
           '🛞 Wheels decontaminated from brake dust',
