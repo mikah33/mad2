@@ -29,13 +29,15 @@ export const generateEnhancedLocalBusinessSchema = (
 
   // PRIMARY FOCUS: Mobile detailing keywords targeting high-volume searches
   const mobileDetailingKeywords = [
-    'detailing car near me',           // 500k searches
-    'automotive detail near me',       // 500k searches
-    'car interior detailing',          // 50k searches
-    'mobile detailing columbia sc',    // Local target
-    'mobile car detailing',
+    'mobile auto detailing lexington sc',     // Primary target keyword
+    'car detailing lexington sc',             // Secondary target keyword
+    'detailing car near me',                  // 500k searches
+    'automotive detail near me',              // 500k searches
+    'car interior detailing',                 // 50k searches
     'mobile auto detailing',
+    'mobile car detailing',
     'mobile detailing near me',
+    'mobile detailer near me',
     'mobile automotive detailing',
     'mobile car wash and detail',
     'car detailing near me',
@@ -47,15 +49,14 @@ export const generateEnhancedLocalBusinessSchema = (
     'exterior car detailing services',
     'full service mobile detailing',
     'mobile detailing pricing',
-    'car detailing columbia sc',
-    'auto detailing columbia sc'
+    'auto detailing lexington sc'
   ];
 
   // SECONDARY: Ceramic coating and paint correction (not primary focus)
   const secondaryServices = [
-    'ceramic coating columbia sc',
+    'ceramic coating lexington sc',        // Target keyword
     'ceramic coating near me',
-    'paint correction columbia sc',
+    'paint correction lexington sc',
     'paint correction near me',
     'ceramic coating and paint correction'
   ];

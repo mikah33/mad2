@@ -15,7 +15,7 @@ export const images: Record<string, ImageMetadata> = {
   // Logo & Branding
   logo: {
     url: `${baseUrl}/logo.png`,
-    alt: "Mikah's Auto Detailing - Professional Mobile Auto Detailing in Columbia SC",
+    alt: "Mikah's Mobile Auto Detailing - Professional Mobile Auto Detailing Services in Lexington SC",
     width: 512,
     height: 512,
     type: 'image/png',
@@ -44,7 +44,7 @@ export const images: Record<string, ImageMetadata> = {
   // Service Images
   exterior1: {
     url: `${baseUrl}/exterior1.jpg`,
-    alt: 'Professional exterior car detailing showing pristine paint finish',
+    alt: 'Professional mobile auto detailing exterior service in Lexington SC showing pristine paint finish',
     width: 800,
     height: 600,
     type: 'image/jpeg',

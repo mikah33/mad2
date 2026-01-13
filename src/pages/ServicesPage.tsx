@@ -202,9 +202,9 @@ export const ServicesPage = () => {
   return (
     <>
       <SEOHead
-        title="Auto Detailing Services | Mikah's Mobile Detailing SC"
-        description="Professional auto detailing services in Columbia, SC. Mobile detailing, interior/exterior cleaning, ceramic coating, paint correction, and more."
-        keywords="auto detailing services, mobile detailing Columbia SC, interior detailing, exterior detailing, ceramic coating, paint correction, car detailing services"
+        title="Mobile Auto Detailing Services in Lexington SC | Mikah's"
+        description="Explore our range of mobile auto detailing services including ceramic coating, paint correction, and more in Lexington SC!"
+        keywords="mobile auto detailing lexington sc, car detailing lexington sc, ceramic coating lexington sc, interior detailing, exterior detailing, paint correction, mobile detailer near me, auto detailing services"
         canonical="https://mikahsmobiledetailingsc.com/services"
         ogType="website"
         schema={schemas}
@@ -216,9 +216,9 @@ export const ServicesPage = () => {
       {/* Services Section */}
       <section className="pt-16 pb-8 md:pt-24 md:pb-20 bg-white w-full overflow-hidden">
         <div className="container mx-auto px-3 md:px-4 max-w-7xl">
-          <h1 className="text-2xl md:text-4xl font-bold text-center mb-2 md:mb-4">Our Services</h1>
+          <h1 className="text-2xl md:text-4xl font-bold text-center mb-2 md:mb-4">Mobile Auto Detailing Services in Lexington SC</h1>
           <p className="text-center text-gray-600 text-sm md:text-base mb-4 md:mb-12 max-w-2xl mx-auto">
-            Professional detailing services. Tap for details.
+            Professional car detailing and ceramic coating services. We bring mobile auto detailing to your location in Lexington SC with comprehensive detailing packages.
           </p>
 
           <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-8">

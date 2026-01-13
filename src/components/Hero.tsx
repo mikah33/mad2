@@ -64,33 +64,31 @@ const Hero: React.FC = () => {
       {/* Content */}
       <div className="container mx-auto px-4 text-center max-w-7xl relative z-10 pt-24 pb-12">
         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 leading-tight">
-          Mobile Auto Detailing Lexington SC
-          <br />
-          <span style={{color: '#90E0EF'}}>& Columbia, SC</span>
+          Mobile Auto Detailing Services in Lexington SC
         </h1>
 
         <p className="text-base sm:text-lg md:text-xl mb-6 md:mb-8 max-w-3xl mx-auto text-gray-100 px-4">
-          Experience premium mobile auto detailing services that come to you in
-          Lexington, Columbia, and throughout South Carolina. We transform your vehicle at your home or office,
-          delivering professional results with ultimate convenience.
+          Mikah's Mobile Detailing offers top-notch mobile auto detailing services in Lexington SC. We specialize in
+          ceramic coating, interior cleaning, and paint correction. Our mobile auto detailing services bring professional
+          car detailing to your location in Lexington SC, featuring detailing packages that include exterior wash and comprehensive care.
         </p>
 
         <p className="text-lg sm:text-xl md:text-2xl font-semibold mb-6 md:mb-8 text-[#90E0EF]">
-          ✨ Trusted. Convenient. Exceptional Results.
+          ✨ Premium Ceramic Coating Lexington SC | Professional Paint Correction
         </p>
 
         <div className="flex flex-wrap justify-center gap-3 md:gap-6 mb-8 md:mb-10 px-4">
           <div className="flex items-center bg-white/10 backdrop-blur-sm px-3 sm:px-4 md:px-6 py-2 md:py-3 rounded-lg text-sm md:text-base">
             <CheckCircle className="w-4 h-4 md:w-5 md:h-5 mr-1 md:mr-2 text-[#90E0EF] flex-shrink-0" />
-            <span>Professional Results</span>
+            <span>Interior Cleaning</span>
           </div>
           <div className="flex items-center bg-white/10 backdrop-blur-sm px-3 sm:px-4 md:px-6 py-2 md:py-3 rounded-lg text-sm md:text-base">
             <Shield className="w-4 h-4 md:w-5 md:h-5 mr-1 md:mr-2 text-[#90E0EF] flex-shrink-0" />
-            <span>Fully Insured</span>
+            <span>Detailing Packages</span>
           </div>
           <div className="flex items-center bg-white/10 backdrop-blur-sm px-3 sm:px-4 md:px-6 py-2 md:py-3 rounded-lg text-sm md:text-base">
             <Clock className="w-4 h-4 md:w-5 md:h-5 mr-1 md:mr-2 text-[#90E0EF] flex-shrink-0" />
-            <span>Fast Service</span>
+            <span>Exterior Wash</span>
           </div>
         </div>
 
