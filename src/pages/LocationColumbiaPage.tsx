@@ -31,14 +31,14 @@ export const LocationColumbiaPage = () => {
   const realServices = [
     {
       title: 'Basic Detail Package',
-      price: '$200',
+      price: '$225',
       duration: '2-3 hours',
       description: 'Interior full wipe down, conditioner + UV protection, vacuum, disinfection, glass cleaned. Exterior wheels decontaminated, foam wash, protective wax, wheels & tires dressed.',
       link: '/services/full-detail'
     },
     {
       title: 'Factory Reset Package',
-      price: '$325',
+      price: '$400',
       duration: '3-4 hours',
       description: 'Interior wipe down, conditioner + UV protection, vacuum + disinfection, light stain removal, shampoo & extraction, glass cleaned. Exterior foam wash, brake dust removal, protective wax, tires & rims dressed.',
       link: '/services/full-detail'
@@ -66,7 +66,7 @@ export const LocationColumbiaPage = () => {
     },
     {
       title: 'Routine Reset',
-      price: '$175/Month',
+      price: '$250/Month',
       duration: 'Monthly',
       description: '2x Exterior Details + 1x Interior Reset + 1x Engine Bay Cleaning per month. Priority scheduling. First 2 months: $300 upfront.',
       link: '/services/mobile-detailing'
@@ -77,7 +77,7 @@ export const LocationColumbiaPage = () => {
   const locationFAQs = [
     {
       question: 'How much does mobile detailing cost in Columbia SC?',
-      answer: 'Mobile detailing in Columbia SC starts at $200 for our Basic Detail Package and $325 for our Factory Reset Package. Ceramic coatings, paint corrections, and specialty services require quotes based on vehicle size and condition. We provide free quotes for all Columbia residents.'
+      answer: 'Mobile detailing in Columbia SC starts at $225 for our Basic Detail Package and $400 for our Factory Reset Package. Ceramic coatings, paint corrections, and specialty services require quotes based on vehicle size and condition. We provide free quotes for all Columbia residents.'
     },
     {
       question: 'What is the best mobile car detailing service in Columbia SC?',
@@ -97,7 +97,7 @@ export const LocationColumbiaPage = () => {
     },
     {
       question: 'Do you offer mobile car wash services in Columbia SC?',
-      answer: 'Yes! Our mobile car wash service in Columbia SC includes hand washing, waxing, and exterior detailing starting at $200 for our Basic Detail Package. We bring water, power, and all equipment needed. Perfect for Columbia residents who want professional results without leaving home.'
+      answer: 'Yes! Our mobile car wash service in Columbia SC includes hand washing, waxing, and exterior detailing starting at $225 for our Basic Detail Package. We bring water, power, and all equipment needed. Perfect for Columbia residents who want professional results without leaving home.'
     },
     {
       question: 'What areas of Columbia SC do you serve for mobile detailing?',

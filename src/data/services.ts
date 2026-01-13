@@ -36,7 +36,7 @@ export const services: Service[] = [
       'Protective wax application',
       'Tire and wheel dressing'
     ],
-    pricing: { starting: '325' },
+    pricing: { starting: '225' },
     duration: '3-4 hours',
     featured: true,
     popular: true
@@ -61,7 +61,7 @@ export const services: Service[] = [
       'Protective wax layer',
       'Tires & rims dressed'
     ],
-    pricing: { starting: '325' },
+    pricing: { starting: '400' },
     duration: '3-4 hours',
     featured: true,
     popular: true
@@ -163,7 +163,7 @@ export const services: Service[] = [
       '1x Interior Reset per Month',
       '1x Engine Bay Cleaning'
     ],
-    pricing: { starting: '175', range: '175/month' },
+    pricing: { starting: '250', range: '250/month' },
     duration: 'Monthly',
     featured: true,
     popular: true

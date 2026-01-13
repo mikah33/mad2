@@ -32,7 +32,7 @@ const LocationCayecPage = () => {
   const realServices = [
     {
       title: 'Basic Detail Package',
-      price: '$200',
+      price: '$225',
       duration: '2-3 hours',
       description: 'Interior full wipe down, conditioner + UV protection, vacuum, disinfection, glass cleaned, door jambs cleaned & waxed. Exterior: Wheels decontaminated, foam contact wash, protective wax layer, wheels & tires dressed.',
       features: [
@@ -50,7 +50,7 @@ const LocationCayecPage = () => {
     },
     {
       title: 'Factory Reset Package',
-      price: '$325',
+      price: '$400',
       duration: '3-4 hours',
       description: 'Everything in Basic Package PLUS: Shampoo seats/carpet, hot water extraction, steam clean, deep condition leather, bug removal, clay bar treatment, paint sealant.',
       features: [
@@ -84,7 +84,7 @@ const LocationCayecPage = () => {
     },
     {
       title: 'Routine Reset',
-      price: '$175/Month',
+      price: '$250/Month',
       duration: 'Monthly',
       description: 'Monthly maintenance package to keep your vehicle looking showroom fresh year-round. Perfect for busy professionals and car enthusiasts.',
       features: [
@@ -105,7 +105,7 @@ const LocationCayecPage = () => {
   const locationFAQs = [
     {
       question: 'How much does mobile detailing cost in Cayce SC?',
-      answer: 'Mobile detailing in Cayce SC starts at $200 for our Basic Detail Package and $325 for our Factory Reset Package. We also offer ceramic coating (custom quote) and monthly maintenance at $175/month. All services include professional products, experienced technicians, and satisfaction guarantee.'
+      answer: 'Mobile detailing in Cayce SC starts at $225 for our Basic Detail Package and $400 for our Factory Reset Package. We also offer ceramic coating (custom quote) and monthly maintenance at $250/month. All services include professional products, experienced technicians, and satisfaction guarantee.'
     },
     {
       question: 'Do you offer car detailing near West Columbia and Cayce?',
@@ -276,7 +276,7 @@ const LocationCayecPage = () => {
     <>
       <SEOHead
         title="Mobile Car Detailing Cayce SC | Ceramic Coating West Columbia | Mikah's Auto Detailing"
-        description="Professional mobile car detailing in Cayce & West Columbia SC. Ceramic coating, paint correction, interior/exterior detailing. $200 basic, $325 full detail. 5.0★ rating with 19 reviews. Call (803) 667-8731"
+        description="Professional mobile car detailing in Cayce & West Columbia SC. Ceramic coating, paint correction, interior/exterior detailing. $225 basic, $400 full detail. 5.0★ rating with 19 reviews. Call (803) 667-8731"
         keywords={allKeywords.join(', ')}
         canonical="https://mikahsmobiledetailingsc.com/locations/cayce-sc"
         schema={schemas}

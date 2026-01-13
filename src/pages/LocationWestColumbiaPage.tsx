@@ -18,7 +18,7 @@ export const LocationWestColumbiaPage = () => {
     },
     {
       question: "How much does car detailing cost in West Columbia SC?",
-      answer: "Our car detailing prices in West Columbia start at $200 for our Basic Detail Package and $325 for our Factory Reset Package. Mobile service is included - no extra fees for coming to your West Columbia location. We offer free quotes!"
+      answer: "Our car detailing prices in West Columbia start at $225 for our Basic Detail Package and $400 for our Factory Reset Package. Mobile service is included - no extra fees for coming to your West Columbia location. We offer free quotes!"
     },
     {
       question: "How do I book mobile detailing in West Columbia?",

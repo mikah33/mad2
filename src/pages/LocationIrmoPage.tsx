@@ -31,14 +31,14 @@ export const LocationIrmoPage = () => {
   const realServices = [
     {
       title: 'Basic Detail Package',
-      price: '$200',
+      price: '$225',
       duration: '2-3 hours',
       description: 'Interior full wipe down, conditioner + UV protection, vacuum, disinfection, glass cleaned. Exterior wheels decontaminated, foam wash, protective wax, wheels & tires dressed.',
       link: '/services/full-detail'
     },
     {
       title: 'Factory Reset Package',
-      price: '$325',
+      price: '$400',
       duration: '3-4 hours',
       description: 'Interior wipe down, conditioner + UV protection, vacuum + disinfection, light stain removal, shampoo & extraction, glass cleaned. Exterior foam wash, brake dust removal, protective wax, tires & rims dressed.',
       link: '/services/full-detail'
@@ -66,7 +66,7 @@ export const LocationIrmoPage = () => {
     },
     {
       title: 'Routine Reset',
-      price: '$175/Month',
+      price: '$250/Month',
       duration: 'Monthly',
       description: '2x Exterior Details + 1x Interior Reset + 1x Engine Bay Cleaning per month. Priority scheduling. First 2 months: $300 upfront.',
       link: '/services/mobile-detailing'
@@ -77,7 +77,7 @@ export const LocationIrmoPage = () => {
   const locationFAQs = [
     {
       question: 'How much does car detailing cost in Irmo SC?',
-      answer: 'Car detailing in Irmo SC starts at $200 for our Basic Detail Package and $325 for our Factory Reset Package. Ceramic coatings, paint corrections, and specialty services require quotes based on vehicle size and condition. We provide free quotes for all Irmo residents.'
+      answer: 'Car detailing in Irmo SC starts at $225 for our Basic Detail Package and $400 for our Factory Reset Package. Ceramic coatings, paint corrections, and specialty services require quotes based on vehicle size and condition. We provide free quotes for all Irmo residents.'
     },
     {
       question: 'What is the best mobile car detailing service in Irmo SC?',
@@ -97,7 +97,7 @@ export const LocationIrmoPage = () => {
     },
     {
       question: 'Do you offer mobile detailing in Irmo SC?',
-      answer: 'Yes! Our mobile detailing service in Irmo SC includes complete interior detailing, exterior detailing, and ceramic coating starting at $200 for our Basic Detail Package. We bring water, power, and all equipment needed. Perfect for Irmo residents who want professional results without leaving home.'
+      answer: 'Yes! Our mobile detailing service in Irmo SC includes complete interior detailing, exterior detailing, and ceramic coating starting at $225 for our Basic Detail Package. We bring water, power, and all equipment needed. Perfect for Irmo residents who want professional results without leaving home.'
     },
     {
       question: 'What areas of Irmo SC do you serve for auto detailing?',
@@ -175,7 +175,7 @@ export const LocationIrmoPage = () => {
     <>
       <SEOHead
         title="Mobile Detailing Irmo SC | Best Car Detailing & Ceramic Coating Harbison"
-        description="Best mobile detailing Irmo SC. Professional car detailing & ceramic coating at your location. $200+ Interior/exterior detailing. 5.0★ 19 reviews. Serving Harbison, Seven Oaks, Chapin. Free quotes!"
+        description="Best mobile detailing Irmo SC. Professional car detailing & ceramic coating at your location. $225+ Interior/exterior detailing. 5.0★ 19 reviews. Serving Harbison, Seven Oaks, Chapin. Free quotes!"
         keywords={allKeywords.join(', ')}
         canonical="https://mikahsmobiledetailingsc.com/locations/irmo-sc"
         schema={schemas}

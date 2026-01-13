@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- City-Specific SEO Meta Tags -->
+    <title>Mobile Auto Detailing in {CITY_NAME}, SC | Mikah's Mobile Detailing</title>
+    <meta name="description" content="Professional mobile auto detailing services in {CITY_NAME}, South Carolina. We come to you! Exterior wash, interior cleaning, ceramic coating & more. Book online today.">
+    <meta name="keywords" content="mobile auto detailing {CITY_LOWERCASE} sc, car detailing near me {CITY_LOWERCASE}, mobile car wash {CITY_LOWERCASE}, ceramic coating {CITY_LOWERCASE}, auto detailing services {CITY_LOWERCASE}">
+
+    <!-- Open Graph for Social Media -->
+    <meta property="og:title" content="Mobile Auto Detailing in {CITY_NAME}, SC | Mikah's Mobile Detailing">
+    <meta property="og:description" content="Professional mobile auto detailing services in {CITY_NAME}, South Carolina. We come to you!">
+    <meta property="og:url" content="https://mikahsmobiledetailingsc.com/services/mobile-auto-detailing-{CITY_LOWERCASE}-sc">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://mikahsmobiledetailingsc.com/{CITY_LOWERCASE}-detailing-og.jpg">
+
+    <!-- Local Business Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "AutoDetailing",
+        "name": "Mikah's Mobile Auto Detailing - {CITY_NAME}",
+        "description": "Professional mobile auto detailing services in {CITY_NAME}, SC",
+        "url": "https://mikahsmobiledetailingsc.com/services/mobile-auto-detailing-{CITY_LOWERCASE}-sc",
+        "telephone": "+18036678731",
+        "email": "info@mikahsmobiledetailingsc.com",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "{CITY_NAME}",
+            "addressRegion": "SC",
+            "addressCountry": "US"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "{CITY_LATITUDE}",
+            "longitude": "{CITY_LONGITUDE}"
+        },
+        "areaServed": {
+            "@type": "City",
+            "name": "{CITY_NAME}",
+            "addressRegion": "SC",
+            "addressCountry": "US"
+        },
+        "serviceType": [
+            "Mobile Auto Detailing",
+            "Exterior Car Washing",
+            "Interior Car Cleaning",
+            "Ceramic Coating",
+            "Paint Correction",
+            "Mobile Car Wash"
+        ],
+        "priceRange": "$$",
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "5.0",
+            "reviewCount": "50"
+        },
+        "openingHours": "Mo-Sa 08:00-18:00",
+        "paymentAccepted": "Cash, Credit Card, Venmo, CashApp"
+    }
+    </script>
+</head>
+<body>
+    <!-- Header with Navigation -->
+    <header>
+        <nav>
+            <!-- Standard navigation menu -->
+        </nav>
+    </header>
+
+    <!-- Hero Section with City-Specific Content -->
+    <section class="hero-section" style="background-image: url('/images/{CITY_LOWERCASE}-hero.jpg')">
+        <div class="hero-content">
+            <h1>Professional Mobile Auto Detailing in {CITY_NAME}, SC</h1>
+            <p>Premium car detailing services that come to you in {CITY_NAME}. We serve {LOCAL_NEIGHBORHOODS} and surrounding areas.</p>
+            <div class="hero-cta">
+                <button class="cta-button">Book Your {CITY_NAME} Detail Today</button>
+                <p class="service-area">Serving {CITY_NAME}, {NEARBY_AREAS}</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Local Service Area Map -->
+    <section class="service-area-section">
+        <h2>Mobile Auto Detailing Service Areas in {CITY_NAME}</h2>
+        <div class="service-map">
+            <div class="map-container">
+                <!-- Interactive map showing service areas -->
+                <div id="city-map" data-city="{CITY_LOWERCASE}"></div>
+            </div>
+            <div class="service-areas-list">
+                <h3>We Proudly Serve These {CITY_NAME} Areas:</h3>
+                <ul>
+                    {NEIGHBORHOOD_LIST}
+                </ul>
+                <p class="travel-time">Average travel time to {CITY_NAME}: {TRAVEL_TIME} minutes</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Offered in City -->
+    <section class="city-services">
+        <h2>Auto Detailing Services Available in {CITY_NAME}</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>Mobile Exterior Detailing</h3>
+                <p>Complete exterior wash and protection for your vehicle in {CITY_NAME}. Perfect for {CITY_WEATHER_CONTEXT}.</p>
+                <div class="service-price">{CITY_EXTERIOR_PRICE}</div>
+            </div>
+            <div class="service-card">
+                <h3>Interior Deep Cleaning</h3>
+                <p>Thorough interior cleaning and sanitizing. Ideal for {CITY_NAME} residents and commuters.</p>
+                <div class="service-price">{CITY_INTERIOR_PRICE}</div>
+            </div>
+            <div class="service-card">
+                <h3>Ceramic Coating Protection</h3>
+                <p>Long-lasting paint protection perfect for {CITY_NAME}'s climate conditions.</p>
+                <div class="service-price">{CITY_CERAMIC_PRICE}</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Local Testimonials -->
+    <section class="local-testimonials">
+        <h2>What {CITY_NAME} Customers Are Saying</h2>
+        <div class="testimonials-grid">
+            {CITY_SPECIFIC_TESTIMONIALS}
+        </div>
+    </section>
+
+    <!-- Local FAQ Section -->
+    <section class="city-faq">
+        <h2>Frequently Asked Questions - {CITY_NAME} Mobile Detailing</h2>
+        <div class="faq-list">
+            <div class="faq-item">
+                <h3>Do you provide mobile detailing services throughout {CITY_NAME}?</h3>
+                <p>Yes! We provide mobile auto detailing services to all areas of {CITY_NAME}, including {PRIMARY_NEIGHBORHOODS}. Our mobile unit comes fully equipped to your location.</p>
+            </div>
+            <div class="faq-item">
+                <h3>What's the best time for mobile detailing in {CITY_NAME}?</h3>
+                <p>We recommend scheduling during {OPTIMAL_TIMES} for the best results in {CITY_NAME}'s climate. We work around your schedule and local weather conditions.</p>
+            </div>
+            <div class="faq-item">
+                <h3>How long does mobile detailing take in {CITY_NAME}?</h3>
+                <p>Service times vary by package, typically {SERVICE_DURATION}. We account for {CITY_NAME} traffic patterns and parking availability when scheduling.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Local Contact Information -->
+    <section class="city-contact">
+        <h2>Book Your {CITY_NAME} Mobile Auto Detailing</h2>
+        <div class="contact-info">
+            <div class="phone-booking">
+                <h3>Call for {CITY_NAME} Service</h3>
+                <p class="phone-number">📞 (803) 667-8731</p>
+                <p class="service-hours">Serving {CITY_NAME}: Monday-Saturday 8AM-6PM</p>
+            </div>
+            <div class="online-booking">
+                <h3>Book Online for {CITY_NAME}</h3>
+                <button class="booking-button">Schedule {CITY_NAME} Detail</button>
+                <p class="booking-note">Same-day service available in {CITY_NAME}</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <!-- Standard footer content -->
+    </footer>
+
+    <!-- City-specific JavaScript for enhanced interactivity -->
+    <script>
+        // Initialize city-specific features
+        const cityData = {
+            name: '{CITY_NAME}',
+            coordinates: [{CITY_LATITUDE}, {CITY_LONGITUDE}],
+            serviceAreas: {NEIGHBORHOOD_COORDINATES}
+        };
+
+        // Load city-specific map and features
+        initializeCityPage(cityData);
+    </script>
+</body>
+</html>

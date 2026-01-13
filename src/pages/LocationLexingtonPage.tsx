@@ -31,14 +31,14 @@ export const LocationLexingtonPage = () => {
   const realServices = [
     {
       title: 'Basic Detail Package',
-      price: '$200',
+      price: '$225',
       duration: '2-3 hours',
       description: 'Interior full wipe down, conditioner + UV protection, vacuum, disinfection, glass cleaned. Exterior wheels decontaminated, foam wash, protective wax, wheels & tires dressed.',
       link: '/services/full-detail'
     },
     {
       title: 'Factory Reset Package',
-      price: '$325',
+      price: '$400',
       duration: '3-4 hours',
       description: 'Interior wipe down, conditioner + UV protection, vacuum + disinfection, light stain removal, shampoo & extraction, glass cleaned. Exterior foam wash, brake dust removal, protective wax, tires & rims dressed.',
       link: '/services/full-detail'
@@ -66,7 +66,7 @@ export const LocationLexingtonPage = () => {
     },
     {
       title: 'Routine Reset',
-      price: '$175/Month',
+      price: '$250/Month',
       duration: 'Monthly',
       description: '2x Exterior Details + 1x Interior Reset + 1x Engine Bay Cleaning per month. Priority scheduling. First 2 months: $300 upfront.',
       link: '/services/mobile-detailing'
@@ -77,7 +77,7 @@ export const LocationLexingtonPage = () => {
   const locationFAQs = [
     {
       question: 'How much does car detailing cost in Lexington SC?',
-      answer: 'Car detailing in Lexington SC starts at $200 for our Basic Detail Package and $325 for our Factory Reset Package. Ceramic coatings, paint corrections, and specialty services require quotes based on vehicle size and condition. We provide free quotes for all Lexington residents.'
+      answer: 'Car detailing in Lexington SC starts at $225 for our Basic Detail Package and $400 for our Factory Reset Package. Ceramic coatings, paint corrections, and specialty services require quotes based on vehicle size and condition. We provide free quotes for all Lexington residents.'
     },
     {
       question: 'What is the best mobile car detailing service in Lexington SC?',
@@ -97,7 +97,7 @@ export const LocationLexingtonPage = () => {
     },
     {
       question: 'Do you offer mobile detailing in Lexington SC?',
-      answer: 'Yes! Our mobile detailing service in Lexington SC includes complete interior detailing, exterior detailing, and ceramic coating starting at $200 for our Basic Detail Package. We bring water, power, and all equipment needed. Perfect for Lexington residents who want professional results without leaving home.'
+      answer: 'Yes! Our mobile detailing service in Lexington SC includes complete interior detailing, exterior detailing, and ceramic coating starting at $225 for our Basic Detail Package. We bring water, power, and all equipment needed. Perfect for Lexington residents who want professional results without leaving home.'
     },
     {
       question: 'What areas of Lexington SC do you serve for auto detailing?',
@@ -175,7 +175,7 @@ export const LocationLexingtonPage = () => {
     <>
       <SEOHead
         title="Mobile Detailing Lexington SC | Best Car Detailing & Ceramic Coating"
-        description="Best mobile detailing Lexington SC. Professional car detailing & ceramic coating at your location. $200+ Interior/exterior detailing. 5.0★ 19 reviews. Serving Lake Murray, Sunset Blvd. Free quotes!"
+        description="Best mobile detailing Lexington SC. Professional car detailing & ceramic coating at your location. $225+ Interior/exterior detailing. 5.0★ 19 reviews. Serving Lake Murray, Sunset Blvd. Free quotes!"
         keywords={allKeywords.join(', ')}
         canonical="https://mikahsmobiledetailingsc.com/locations/lexington-sc"
         schema={schemas}
