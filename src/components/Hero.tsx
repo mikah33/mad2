@@ -64,7 +64,7 @@ const Hero: React.FC = () => {
       {/* Content */}
       <div className="container mx-auto px-4 text-center max-w-7xl relative z-10 pt-24 pb-12">
         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 leading-tight">
-          Mobile Auto Detailing Services in Lexington SC
+          Mobile Auto Detailing in Lexington SC | We Come to You
         </h1>
 
         <p className="text-base sm:text-lg md:text-xl mb-6 md:mb-8 max-w-3xl mx-auto text-gray-100 px-4">

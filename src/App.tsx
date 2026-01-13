@@ -20,16 +20,16 @@ function App() {
   return (
     <>
       <Helmet>
-        <title>Mobile Auto Detailing in Lexington SC | Mikah's Mobile Detailing</title>
-        <meta name="description" content="Get the best mobile auto detailing services in Lexington SC. Perfect for your car!" />
+        <title>Mobile Auto Detailing Lexington SC 2026 | 200+ 5-Star Reviews</title>
+        <meta name="description" content="Mobile auto detailing in Lexington SC. Paint correction, ceramic coating & interior cleaning at your location. 200+ 5-star reviews. Book free quote!" />
         <meta name="keywords" content="mobile auto detailing lexington sc, car detailing lexington sc, ceramic coating lexington sc, detailing packages, paint correction, interior cleaning, exterior wash, mobile detailing services, auto detailing" />
         <link rel="canonical" href="https://mikahsmobiledetailingsc.com" />
 
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://mikahsmobiledetailingsc.com" />
-        <meta property="og:title" content="Mobile Auto Detailing in Lexington SC | Mikah's Mobile Detailing" />
-        <meta property="og:description" content="Get the best mobile auto detailing services in Lexington SC. Perfect for your car!" />
+        <meta property="og:title" content="Mobile Auto Detailing Lexington SC 2026 | 200+ 5-Star Reviews" />
+        <meta property="og:description" content="Mobile auto detailing in Lexington SC. Paint correction, ceramic coating & interior cleaning at your location. 200+ 5-star reviews. Book free quote!" />
         <meta property="og:image" content={images.ogDefault.url} />
         <meta property="og:image:alt" content={images.ogDefault.alt} />
         <meta property="og:image:width" content={images.ogDefault.width.toString()} />
@@ -39,8 +39,8 @@ function App() {
 
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Mobile Auto Detailing in Lexington SC | Mikah's Mobile Detailing" />
-        <meta name="twitter:description" content="Get the best mobile auto detailing services in Lexington SC. Perfect for your car!" />
+        <meta name="twitter:title" content="Mobile Auto Detailing Lexington SC 2026 | 200+ 5-Star Reviews" />
+        <meta name="twitter:description" content="Mobile auto detailing in Lexington SC. Paint correction, ceramic coating & interior cleaning at your location. 200+ 5-star reviews. Book free quote!" />
         <meta name="twitter:image" content={images.ogDefault.url} />
         <meta name="twitter:image:alt" content={images.ogDefault.alt} />
 
