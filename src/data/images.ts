@@ -33,7 +33,7 @@ export const images: Record<string, ImageMetadata> = {
   // Social Media & OG Images
   ogDefault: {
     url: `${baseUrl}/logo.png`,
-    alt: "Mikah's Auto Detailing - Premium Mobile Detailing Services",
+    alt: "Mikah's Mobile Auto Detailing - Premium Mobile Car Detailing Services in Lexington SC, Columbia & Irmo",
     width: 1200,
     height: 630,
     type: 'image/png',
@@ -53,77 +53,77 @@ export const images: Record<string, ImageMetadata> = {
   },
   exterior2: {
     url: `${baseUrl}/exterior2.jpg`,
-    alt: 'Clean vehicle exterior after professional detailing service',
+    alt: 'Mobile auto detailing service results in Lexington SC showing spotless exterior finish and professional car care',
     width: 800,
     height: 600,
     type: 'image/jpeg',
     category: 'service',
-    caption: 'Complete exterior wash and detail'
+    caption: 'Complete exterior wash and detail in Lexington SC'
   },
   exterior3: {
     url: `${baseUrl}/exterior3.jpg`,
-    alt: 'High-quality exterior auto detailing results',
+    alt: 'Professional mobile auto detailing results in Lexington SC - premium exterior car detailing service showcase',
     width: 1920,
     height: 1080,
     type: 'image/jpeg',
     category: 'project',
-    caption: 'Professional exterior detailing showcase'
+    caption: 'Professional exterior detailing showcase in Lexington SC'
   },
   exterior4: {
     url: `${baseUrl}/exterior4.jpg`,
-    alt: 'Luxury vehicle exterior detailing with ceramic coating',
+    alt: 'Ceramic coating application in Lexington SC - luxury vehicle mobile detailing service with premium paint protection',
     width: 1920,
     height: 1080,
     type: 'image/jpeg',
     category: 'project',
-    caption: 'Ceramic coating application on luxury vehicle'
+    caption: 'Ceramic coating application on luxury vehicle in Lexington SC'
   },
   exterior5: {
     url: `${baseUrl}/exterior5.jpg`,
-    alt: 'Paint correction and detailing on black vehicle',
+    alt: 'Paint correction service in Lexington SC - mobile auto detailing removing swirls and scratches for flawless finish',
     width: 1920,
     height: 1080,
     type: 'image/jpeg',
     category: 'project',
-    caption: 'Paint correction revealing deep gloss finish'
+    caption: 'Paint correction revealing deep gloss finish in Lexington SC'
   },
   exterior6: {
     url: `${baseUrl}/exterior6.jpg`,
-    alt: 'Professional mobile detailing service in progress',
+    alt: 'Mobile auto detailing service at customer location in Lexington SC - professional car detailing team at work',
     width: 1920,
     height: 1080,
     type: 'image/jpeg',
     category: 'project',
-    caption: 'On-site mobile detailing service'
+    caption: 'On-site mobile detailing service in Lexington SC'
   },
   exterior7: {
     url: `${baseUrl}/exterior7.jpg`,
-    alt: 'Detailed vehicle showing mirror-like paint finish',
+    alt: 'Mobile auto detailing results in Lexington SC - mirror-like paint finish from professional car detailing service',
     width: 1920,
     height: 1080,
     type: 'image/jpeg',
     category: 'project',
-    caption: 'Mirror finish achieved through professional detailing'
+    caption: 'Mirror finish achieved through professional detailing in Lexington SC'
   },
 
   // Interior Images
   interior1: {
     url: `${baseUrl}/interior1.jpg`,
-    alt: 'Professional interior car detailing - clean leather seats',
+    alt: 'Interior car detailing service in Lexington SC - deep cleaning of leather seats and dashboard by mobile detailing professionals',
     width: 800,
     height: 600,
     type: 'image/jpeg',
     category: 'service',
-    caption: 'Deep interior cleaning and conditioning'
+    caption: 'Deep interior cleaning and conditioning in Lexington SC'
   },
   interior2: {
     url: `${baseUrl}/interior2.jpg`,
-    alt: 'Spotless car interior after professional detailing',
+    alt: 'Mobile interior detailing results in Lexington SC - spotless car interior after professional automotive cleaning service',
     width: 800,
     height: 600,
     type: 'image/jpeg',
     category: 'service',
-    caption: 'Complete interior restoration'
+    caption: 'Complete interior restoration in Lexington SC'
   },
 
   // Favicons
