@@ -36,7 +36,7 @@ const Hero: React.FC = () => {
   }, []);
 
   return (
-    <div className="relative text-white h-[70vh] w-full overflow-hidden flex items-center">
+    <div className="relative text-white min-h-[70vh] max-h-screen w-full overflow-hidden flex items-center">
       {/* Fallback Background Image - Shows immediately */}
       <div
         className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat"
@@ -62,7 +62,7 @@ const Hero: React.FC = () => {
       <div className="absolute inset-0 bg-black bg-opacity-50"></div>
 
       {/* Content */}
-      <div className="container mx-auto px-4 text-center max-w-7xl relative z-10 pt-24 pb-12">
+      <div className="container mx-auto px-4 text-center max-w-7xl relative z-10 pt-20 pb-8">
         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 leading-tight">
           Mobile Auto Detailing in Lexington SC | We Come to You
         </h1>
