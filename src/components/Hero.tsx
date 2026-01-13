@@ -36,7 +36,7 @@ const Hero: React.FC = () => {
   }, []);
 
   return (
-    <div className="relative text-white min-h-screen w-full overflow-hidden flex items-center">
+    <div className="relative text-white h-[70vh] w-full overflow-hidden flex items-center">
       {/* Fallback Background Image - Shows immediately */}
       <div
         className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat"
@@ -74,7 +74,7 @@ const Hero: React.FC = () => {
         </p>
 
         <p className="text-lg sm:text-xl md:text-2xl font-semibold mb-6 md:mb-8 text-[#90E0EF]">
-          ✨ Premium Ceramic Coating Lexington SC | Professional Paint Correction
+          ✨ Professional Mobile Car Care | We Come To You
         </p>
 
         <div className="flex flex-wrap justify-center gap-3 md:gap-6 mb-8 md:mb-10 px-4">

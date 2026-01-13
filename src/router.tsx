@@ -29,6 +29,7 @@ import GalleryPage from './pages/GalleryPage';
 import ReviewsPage from './pages/ReviewsPage';
 import ReviewUsPage from './pages/ReviewUsPage';
 import LandingPage from './pages/LandingPage';
+import { NotFoundPage } from './pages/NotFoundPage';
 import ErrorBoundary from './components/ErrorBoundary';
 
 export const router = createBrowserRouter([
@@ -64,10 +65,6 @@ export const router = createBrowserRouter([
   },
   {
     path: '/services/mobile-detailing',
-    element: <MobileDetailingPage />,
-  },
-  {
-    path: '/services/mobile-car-detailing',
     element: <MobileDetailingPage />,
   },
   {
@@ -164,5 +161,9 @@ export const router = createBrowserRouter([
     path: '/lp',
     element: <LandingPage />,
     errorElement: <ErrorBoundary />,
+  },
+  {
+    path: '*',
+    element: <NotFoundPage />,
   },
 ]);
