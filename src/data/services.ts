@@ -21,7 +21,7 @@ export const services: Service[] = [
   {
     id: 'svc-001',
     name: 'Mobile Car Detailing Package',
-    slug: 'mobile-car-detailing',
+    slug: 'mobile-detailing',
     category: 'mobile',
     shortDescription: 'Professional mobile car detailing - complete interior and exterior detail at your location',
     description: 'Our most popular mobile car detailing package includes complete interior car detailing and exterior auto detailing service. We come to your location in Columbia SC with everything needed for professional automotive detail service.',
@@ -69,7 +69,7 @@ export const services: Service[] = [
   {
     id: 'svc-003',
     name: 'Car Interior Detailing',
-    slug: 'interior-car-detailing',
+    slug: 'interior-detailing',
     category: 'interior',
     shortDescription: 'Professional car interior detailing with deep cleaning and restoration of your vehicle interior',
     description: 'Complete car interior detailing service including steam cleaning, leather conditioning, stain removal, and UV protection. Perfect for customers searching "car interior detailing near me" in Columbia SC.',
@@ -90,7 +90,7 @@ export const services: Service[] = [
   {
     id: 'svc-004',
     name: 'Exterior Auto Detailing',
-    slug: 'exterior-auto-detailing',
+    slug: 'exterior-detailing',
     category: 'exterior',
     shortDescription: 'Professional exterior auto detailing with complete wash, polish, and paint protection',
     description: 'Comprehensive exterior auto detailing service including hand wash, paint decontamination, polishing, and protection. Expert automotive exterior detailing for Columbia SC customers.',

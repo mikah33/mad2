@@ -15,13 +15,13 @@
   <url>
     <loc>https://mikahsmobiledetailingsc.com/services/mobile-detailing</loc>
     <lastmod>2026-01-13</lastmod>
-    <changefreq>monthly</changefreq>
+    <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://mikahsmobiledetailingsc.com/services/interior-detailing</loc>
     <lastmod>2026-01-13</lastmod>
-    <changefreq>monthly</changefreq>
+    <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
@@ -33,38 +33,20 @@
   <url>
     <loc>https://mikahsmobiledetailingsc.com/services/full-detail</loc>
     <lastmod>2026-01-13</lastmod>
-    <changefreq>monthly</changefreq>
+    <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://mikahsmobiledetailingsc.com/services/ceramic-coating</loc>
     <lastmod>2026-01-13</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://mikahsmobiledetailingsc.com/services/paint-correction</loc>
     <lastmod>2026-01-13</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://mikahsmobiledetailingsc.com/services/mobile-car-detailing</loc>
-    <lastmod>2026-01-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://mikahsmobiledetailingsc.com/services/interior-car-detailing</loc>
-    <lastmod>2026-01-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://mikahsmobiledetailingsc.com/services/exterior-auto-detailing</loc>
-    <lastmod>2026-01-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://mikahsmobiledetailingsc.com/locations</loc>

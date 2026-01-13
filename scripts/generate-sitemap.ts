@@ -96,17 +96,8 @@ function generateSitemap(): string {
     });
   });
 
-  // Legacy service pages (if they exist from data file)
-  if (typeof services !== 'undefined') {
-    services.forEach((service) => {
-      urls.push({
-        loc: `${SITE_URL}/services/${service.slug}`,
-        lastmod: currentDate,
-        changefreq: 'monthly',
-        priority: 0.9,
-      });
-    });
-  }
+  // Note: Service URLs are handled by mobileDetailingPages and secondaryServicePages above
+  // Removed duplicate service URL generation from data file to prevent 404s
 
   // Locations listing page
   urls.push({
