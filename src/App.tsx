@@ -20,7 +20,7 @@ function App() {
   return (
     <>
       <Helmet>
-        <title>Mobile Auto Detailing Lexington SC 2026 | 200+ 5-Star Reviews</title>
+        <title>Mobile Auto Detailing Lexington SC | 200+ 5-Star Reviews</title>
         <meta name="description" content="Mobile auto detailing in Lexington SC. Paint correction, ceramic coating & interior cleaning at your location. 200+ 5-star reviews. Book free quote!" />
         <meta name="keywords" content="mobile auto detailing lexington sc, car detailing lexington sc, ceramic coating lexington sc, detailing packages, paint correction, interior cleaning, exterior wash, mobile detailing services, auto detailing" />
         <link rel="canonical" href="https://mikahsmobiledetailingsc.com" />
@@ -28,7 +28,7 @@ function App() {
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://mikahsmobiledetailingsc.com" />
-        <meta property="og:title" content="Mobile Auto Detailing Lexington SC 2026 | 200+ 5-Star Reviews" />
+        <meta property="og:title" content="Mobile Auto Detailing Lexington SC | 200+ 5-Star Reviews" />
         <meta property="og:description" content="Mobile auto detailing in Lexington SC. Paint correction, ceramic coating & interior cleaning at your location. 200+ 5-star reviews. Book free quote!" />
         <meta property="og:image" content={images.ogDefault.url} />
         <meta property="og:image:alt" content={images.ogDefault.alt} />
@@ -39,7 +39,7 @@ function App() {
 
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Mobile Auto Detailing Lexington SC 2026 | 200+ 5-Star Reviews" />
+        <meta name="twitter:title" content="Mobile Auto Detailing Lexington SC | 200+ 5-Star Reviews" />
         <meta name="twitter:description" content="Mobile auto detailing in Lexington SC. Paint correction, ceramic coating & interior cleaning at your location. 200+ 5-star reviews. Book free quote!" />
         <meta name="twitter:image" content={images.ogDefault.url} />
         <meta name="twitter:image:alt" content={images.ogDefault.alt} />
