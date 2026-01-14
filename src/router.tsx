@@ -21,6 +21,9 @@ import LocationLexingtonPage from './pages/LocationLexingtonPage';
 import LocationIrmoPage from './pages/LocationIrmoPage';
 import LocationCayecPage from './pages/LocationCayecPage';
 import LocationWestColumbiaPage from './pages/LocationWestColumbiaPage';
+import { LocationChapinPage } from './pages/LocationChapinPage';
+import { LocationSwanseaPage } from './pages/LocationSwanseaPage';
+import { LocationNewberryPage } from './pages/LocationNewberryPage';
 import PricingPage from './pages/PricingPage';
 import BookingPage from './pages/BookingPage';
 import ThankYouPage from './pages/ThankYouPage';
@@ -111,6 +114,22 @@ export const router = createBrowserRouter([
   {
     path: '/locations/west-columbia',
     element: <LocationWestColumbiaPage />,
+  },
+  {
+    path: '/locations/west-columbia-sc',
+    element: <LocationWestColumbiaPage />,
+  },
+  {
+    path: '/locations/chapin-sc',
+    element: <LocationChapinPage />,
+  },
+  {
+    path: '/locations/swansea-sc',
+    element: <LocationSwanseaPage />,
+  },
+  {
+    path: '/locations/newberry-sc',
+    element: <LocationNewberryPage />,
   },
   {
     path: '/pricing',

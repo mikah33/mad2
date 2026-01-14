@@ -10,6 +10,9 @@ import { aggregateRating, reviews } from '../data/reviews';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 import { Breadcrumbs } from '../components/Breadcrumbs';
+import { InternalLinkingMatrix } from '../components/seo/InternalLinkingMatrix';
+import { LandmarkContent } from '../components/seo/LandmarkContent';
+import { AdvancedSchemaMarkup, getLocationData } from '../components/seo/AdvancedSchemaMarkup';
 
 export const LocationIrmoPage = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -171,6 +174,9 @@ export const LocationIrmoPage = () => {
   const enhancedLocalBusinessSchema = generateEnhancedLocalBusinessSchema();
   const schemas = [gmbSchema, localBusinessSchema, faqSchema, enhancedLocalBusinessSchema];
 
+  // Get location-specific data for advanced schema
+  const locationData = getLocationData('irmo-sc');
+
   return (
     <>
       <SEOHead
@@ -179,6 +185,13 @@ export const LocationIrmoPage = () => {
         keywords={allKeywords.join(', ')}
         canonical="https://mikahsmobiledetailingsc.com/locations/irmo-sc"
         schema={schemas}
+      />
+
+      <AdvancedSchemaMarkup
+        location="Irmo SC"
+        locationData={locationData}
+        aggregateRating={aggregateRating}
+        reviews={reviews}
       />
 
       <Navigation />
@@ -321,6 +334,28 @@ export const LocationIrmoPage = () => {
                 </div>
               ))}
             </div>
+          </div>
+        </section>
+
+        {/* Internal Linking Matrix */}
+        <section className="py-16 bg-white">
+          <div className="container mx-auto px-4 max-w-6xl">
+            <InternalLinkingMatrix
+              currentLocation="Irmo SC"
+              currentSlug="irmo-sc"
+              showServiceAreas={true}
+              showNearbyServices={true}
+            />
+          </div>
+        </section>
+
+        {/* Landmark and Community Content */}
+        <section className="py-16 bg-gray-50">
+          <div className="container mx-auto px-4 max-w-6xl">
+            <LandmarkContent
+              location="Irmo SC"
+              locationSlug="irmo-sc"
+            />
           </div>
         </section>
 

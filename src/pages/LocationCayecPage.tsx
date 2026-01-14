@@ -11,6 +11,9 @@ import { aggregateRating, reviews } from '../data/reviews';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 import { Breadcrumbs } from '../components/Breadcrumbs';
+import { InternalLinkingMatrix } from '../components/seo/InternalLinkingMatrix';
+import { LandmarkContent } from '../components/seo/LandmarkContent';
+import { AdvancedSchemaMarkup, getLocationData } from '../components/seo/AdvancedSchemaMarkup';
 
 const LocationCayecPage = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -272,6 +275,9 @@ const LocationCayecPage = () => {
   const enhancedLocalBusinessSchema = generateEnhancedLocalBusinessSchema();
   const schemas = [gmbSchema, localBusinessSchema, faqSchema, enhancedLocalBusinessSchema];
 
+  // Get location-specific data for advanced schema
+  const locationData = getLocationData('cayce-sc');
+
   return (
     <>
       <SEOHead
@@ -280,6 +286,13 @@ const LocationCayecPage = () => {
         keywords={allKeywords.join(', ')}
         canonical="https://mikahsmobiledetailingsc.com/locations/cayce-sc"
         schema={schemas}
+      />
+
+      <AdvancedSchemaMarkup
+        location="Cayce SC"
+        locationData={locationData}
+        aggregateRating={aggregateRating}
+        reviews={reviews}
       />
 
       <div className="min-h-screen bg-gray-50">
@@ -488,6 +501,28 @@ const LocationCayecPage = () => {
             </div>
           </div>
         </div>
+
+        {/* Internal Linking Matrix */}
+        <section className="py-16 bg-white">
+          <div className="container mx-auto px-4 max-w-6xl">
+            <InternalLinkingMatrix
+              currentLocation="Cayce SC"
+              currentSlug="cayce-sc"
+              showServiceAreas={true}
+              showNearbyServices={true}
+            />
+          </div>
+        </section>
+
+        {/* Landmark and Community Content */}
+        <section className="py-16 bg-gray-50">
+          <div className="container mx-auto px-4 max-w-6xl">
+            <LandmarkContent
+              location="Cayce SC"
+              locationSlug="cayce-sc"
+            />
+          </div>
+        </section>
 
         {/* FAQ Section */}
         <div className="py-16 bg-gray-50">

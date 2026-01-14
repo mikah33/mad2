@@ -10,6 +10,7 @@ import FAQ from './components/FAQ'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 import Chatbot from './components/Chatbot'
+import { LocationDetection } from './components/seo/LocationDetection'
 import { images } from './data/images'
 
 function App() {
@@ -50,6 +51,17 @@ function App() {
       <div className="min-h-screen bg-white w-full overflow-x-hidden">
         <Navigation />
         <Hero />
+
+        {/* Location-based personalization */}
+        <section className="py-16 bg-gray-50">
+          <div className="container mx-auto px-4 max-w-6xl">
+            <LocationDetection
+              showNearestLocations={3}
+              showCallout={true}
+            />
+          </div>
+        </section>
+
         <BookingTimeline />
         <TrustBadges />
         <RecentProjects />

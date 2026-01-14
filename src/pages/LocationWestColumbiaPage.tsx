@@ -5,6 +5,9 @@ import { generateLocalBusinessSchema, generateFAQSchema } from '../components/se
 import { generateEnhancedLocalBusinessSchema } from '../components/seo/EnhancedLocalBusinessSchema';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
+import { InternalLinkingMatrix } from '../components/seo/InternalLinkingMatrix';
+import { LandmarkContent } from '../components/seo/LandmarkContent';
+import { AdvancedSchemaMarkup, getLocationData } from '../components/seo/AdvancedSchemaMarkup';
 
 export const LocationWestColumbiaPage = () => {
   const westColumbiaFAQs = [
@@ -79,6 +82,9 @@ export const LocationWestColumbiaPage = () => {
   const enhancedBusinessSchema = generateEnhancedLocalBusinessSchema();
   const schemas = [localBusinessSchema, faqSchema, enhancedBusinessSchema];
 
+  // Get location-specific data for advanced schema
+  const locationData = getLocationData('west-columbia-sc');
+
   return (
     <>
       <SEOHead
@@ -88,6 +94,13 @@ export const LocationWestColumbiaPage = () => {
         canonical="https://mikahsmobiledetailingsc.com/locations/west-columbia"
         ogType="website"
         schema={schemas}
+      />
+
+      <AdvancedSchemaMarkup
+        location="West Columbia SC"
+        locationData={locationData}
+        aggregateRating={{ ratingValue: 5.0, reviewCount: 19, bestRating: 5, worstRating: 1 }}
+        reviews={[]}
       />
 
       <Navigation />
@@ -206,6 +219,28 @@ export const LocationWestColumbiaPage = () => {
               <p className="text-gray-600">Same-day and weekend appointments available</p>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Internal Linking Matrix */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <InternalLinkingMatrix
+            currentLocation="West Columbia SC"
+            currentSlug="west-columbia-sc"
+            showServiceAreas={true}
+            showNearbyServices={true}
+          />
+        </div>
+      </section>
+
+      {/* Landmark and Community Content */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <LandmarkContent
+            location="West Columbia SC"
+            locationSlug="west-columbia-sc"
+          />
         </div>
       </section>
 

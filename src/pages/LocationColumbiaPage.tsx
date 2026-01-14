@@ -10,6 +10,9 @@ import { aggregateRating, reviews } from '../data/reviews';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 import { Breadcrumbs } from '../components/Breadcrumbs';
+import { InternalLinkingMatrix } from '../components/seo/InternalLinkingMatrix';
+import { LandmarkContent } from '../components/seo/LandmarkContent';
+import { AdvancedSchemaMarkup, getLocationData } from '../components/seo/AdvancedSchemaMarkup';
 
 export const LocationColumbiaPage = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -151,6 +154,9 @@ export const LocationColumbiaPage = () => {
   const enhancedLocalBusinessSchema = generateEnhancedLocalBusinessSchema();
   const schemas = [gmbSchema, localBusinessSchema, faqSchema, enhancedLocalBusinessSchema];
 
+  // Get location-specific data for advanced schema
+  const locationData = getLocationData('columbia-sc');
+
   return (
     <>
       <SEOHead
@@ -159,6 +165,13 @@ export const LocationColumbiaPage = () => {
         keywords="columbia detailing, columbia auto detail, auto detail columbia, columbia mobile detailing, detailing columbia sc, car detailing columbia sc, mobile auto detailing columbia sc, professional car detailing columbia, best columbia detailing"
         canonical="https://mikahsmobiledetailingsc.com/locations/columbia-sc"
         schema={schemas}
+      />
+
+      <AdvancedSchemaMarkup
+        location="Columbia SC"
+        locationData={locationData}
+        aggregateRating={aggregateRating}
+        reviews={reviews}
       />
 
       <Navigation />
@@ -300,6 +313,28 @@ export const LocationColumbiaPage = () => {
                 </div>
               ))}
             </div>
+          </div>
+        </section>
+
+        {/* Internal Linking Matrix */}
+        <section className="py-16 bg-white">
+          <div className="container mx-auto px-4 max-w-6xl">
+            <InternalLinkingMatrix
+              currentLocation="Columbia SC"
+              currentSlug="columbia-sc"
+              showServiceAreas={true}
+              showNearbyServices={true}
+            />
+          </div>
+        </section>
+
+        {/* Landmark and Community Content */}
+        <section className="py-16 bg-gray-50">
+          <div className="container mx-auto px-4 max-w-6xl">
+            <LandmarkContent
+              location="Columbia SC"
+              locationSlug="columbia-sc"
+            />
           </div>
         </section>
 
