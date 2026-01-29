@@ -93,7 +93,7 @@ const LandingPageSpecials: React.FC = () => {
         `}</script>
       </Helmet>
 
-      <div className="min-h-screen bg-[#023E8A]">
+      <div className="min-h-screen bg-[#D91656]">
         {/* Google Tag Manager (noscript) */}
         <noscript>
           <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WBS8H6B2"
@@ -118,7 +118,7 @@ const LandingPageSpecials: React.FC = () => {
               <p className="text-xs text-gray-600">Got questions? We're here to help you!</p>
               <button
                 onClick={() => setIsContactPopupOpen(true)}
-                className="text-xl sm:text-2xl font-bold text-[#023E8A] hover:text-[#0077B6] transition"
+                className="text-xl sm:text-2xl font-bold text-[#D91656] hover:text-[#E91E63] transition"
               >
                 (803) 667-8731
               </button>
@@ -150,7 +150,7 @@ const LandingPageSpecials: React.FC = () => {
           <div className="absolute inset-0 bg-black/50" />
           {/* Wave overlay at bottom of hero */}
           <svg
-            className="absolute bottom-0 left-0 w-full h-32 md:h-48 z-10"
+            className="absolute bottom-0 left-0 w-full h-40 md:h-56 z-10"
             viewBox="0 0 1440 200"
             preserveAspectRatio="none"
             fill="none"
@@ -158,9 +158,9 @@ const LandingPageSpecials: React.FC = () => {
           >
             <defs>
               <linearGradient id="waveGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                <stop offset="0%" stopColor="#1a2a3a" stopOpacity="0" />
-                <stop offset="50%" stopColor="#1a2a3a" stopOpacity="0.6" />
-                <stop offset="100%" stopColor="#1a2a3a" stopOpacity="1" />
+                <stop offset="0%" stopColor="#D91656" stopOpacity="0" />
+                <stop offset="50%" stopColor="#E91E63" stopOpacity="0.6" />
+                <stop offset="100%" stopColor="#D91656" stopOpacity="1" />
               </linearGradient>
             </defs>
             <path
@@ -170,8 +170,8 @@ const LandingPageSpecials: React.FC = () => {
           </svg>
           <div className="relative max-w-4xl mx-auto">
             {/* Yellow Headline */}
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-light tracking-wide text-[#FFD700] text-center mb-4 leading-tight" style={{ fontFamily: 'Georgia, "Times New Roman", serif' }}>
-              Special Offers<br />Limited Time Only!
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-light tracking-wide text-[#F8BBD9] text-center mb-4 leading-tight" style={{ fontFamily: 'Georgia, "Times New Roman", serif' }}>
+              Book a Valentines Day Detail!
             </h1>
             <p className="text-lg sm:text-xl text-white/90 text-center mb-4 tracking-wide">
               5 Years of 5-Star Service.
@@ -188,7 +188,7 @@ const LandingPageSpecials: React.FC = () => {
               </button>
               <button
                 onClick={() => document.getElementById('booking-flow')?.scrollIntoView({ behavior: 'smooth' })}
-                className="bg-[#023E8A] hover:bg-[#0077B6] text-white font-bold px-6 py-3 rounded-lg transition shadow-lg"
+                className="bg-[#D91656] hover:bg-[#E91E63] text-white font-bold px-6 py-3 rounded-lg transition shadow-lg"
               >
                 Book Now
               </button>
@@ -196,46 +196,61 @@ const LandingPageSpecials: React.FC = () => {
           </div>
         </section>
 
-        {/* Wave Divider */}
-        <div className="relative h-8 md:h-12 bg-[#FAFAFA]">
+        {/* Curvy Divider */}
+        <div className="relative h-16 md:h-24 bg-[#FAFAFA] -mb-1">
           <svg
             className="absolute top-0 left-0 w-full h-full"
-            viewBox="0 0 1440 100"
+            viewBox="0 0 1440 120"
             preserveAspectRatio="none"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              d="M0 0L48 8.3C96 16.7 192 33.3 288 41.7C384 50 480 50 576 45.8C672 41.7 768 33.3 864 29.2C960 25 1056 25 1152 29.2C1248 33.3 1344 41.7 1392 45.8L1440 50V0H1392C1344 0 1248 0 1152 0C1056 0 960 0 864 0C768 0 672 0 576 0C480 0 384 0 288 0C192 0 96 0 48 0H0Z"
-              fill="#1a2a3a"
+              d="M0 0L60 10C120 20 240 40 360 45C480 50 600 40 720 35C840 30 960 30 1080 35C1200 40 1320 50 1380 55L1440 60V0H1380C1320 0 1200 0 1080 0C960 0 840 0 720 0C600 0 480 0 360 0C240 0 120 0 60 0H0Z"
+              fill="#D91656"
             />
           </svg>
         </div>
 
         {/* Booking Flow */}
-        <section id="booking-flow" className="bg-[#FAFAFA] py-12 px-4">
+        <section id="booking-flow" className="bg-[#FAFAFA] pb-12 px-4">
           <div className="max-w-4xl mx-auto">
             <div className="relative mb-16 sm:mb-20 md:mb-24">
               {/* Text on left */}
               <div className="relative z-20 max-w-sm sm:max-w-md md:max-w-lg">
-                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-3 leading-tight">
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#D91656] mb-3 leading-tight" style={{ textShadow: '4px 4px 12px rgba(0,0,0,1), 2px 2px 8px rgba(0,0,0,0.9)' }}>
                   Special Offers<br />Available Now!
                 </h2>
-                <p className="text-xl sm:text-2xl text-gray-600">Choose your service:</p>
+                <p className="text-xl sm:text-2xl text-[#E91E63]" style={{ textShadow: '4px 4px 12px rgba(0,0,0,1), 2px 2px 8px rgba(0,0,0,0.9)' }}>Choose your service:</p>
               </div>
-              {/* Mikah cutout - positioned right */}
+              {/* Valentine's image with wavy pink background */}
               <div
-                className="absolute -top-12 sm:-top-16 md:-top-20 -right-20 sm:-right-16 md:-right-12 w-72 sm:w-88 md:w-[26rem] lg:w-[30rem] h-auto z-10 pointer-events-none"
+                className="absolute -top-8 sm:-top-12 md:-top-16 left-1/2 transform -translate-x-1/2 -translate-x-36 rotate-3 w-full max-w-6xl h-auto z-10 pointer-events-none"
               >
-                <img
-                  src="/me3-optimized.png"
-                  alt="Mikah - Your Local Detailer"
-                  loading="lazy"
-                  className="w-full h-auto object-contain"
+                {/* Pink wavy background */}
+                <div
+                  className="absolute inset-0 bg-gradient-to-br from-[#F8BBD9]/80 via-[#E91E63]/60 to-[#D91656]/80 rounded-3xl"
                   style={{
-                    mixBlendMode: 'multiply'
+                    clipPath: 'polygon(0% 20%, 15% 0%, 85% 5%, 100% 25%, 95% 75%, 80% 100%, 20% 95%, 5% 80%)'
                   }}
-                />
+                ></div>
+                {/* Image with soft edges */}
+                <div
+                  className="relative z-10 p-6"
+                  style={{
+                    clipPath: 'polygon(2% 18%, 18% 2%, 82% 8%, 98% 28%, 92% 72%, 78% 98%, 22% 92%, 8% 78%)'
+                  }}
+                >
+                  <img
+                    src="/girlvalentine.png"
+                    alt="Valentine's Day Special - Woman with Car"
+                    loading="lazy"
+                    className="w-full h-auto object-contain rounded-2xl"
+                    style={{
+                      filter: 'drop-shadow(0 10px 20px rgba(217, 22, 86, 0.3))'
+                    }}
+                  />
+                </div>
               </div>
             </div>
 
@@ -269,14 +284,14 @@ const LandingPageSpecials: React.FC = () => {
           </div>
         </section>
 
-        {/* Final CTA - Dark Blue */}
-        <section className="bg-[#012A5E] py-10 px-4">
+        {/* Final CTA - Pink */}
+        <section className="bg-[#D91656] py-10 px-4">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4">Ready to Get Started?</h2>
             <p className="text-[#90E0EF] mb-6">Call or text us now for your special pricing quote</p>
             <button
               onClick={() => setIsContactPopupOpen(true)}
-              className="inline-flex items-center gap-3 bg-white text-[#023E8A] font-bold py-4 px-8 rounded-lg text-xl hover:bg-[#E8E8E8] transition transform hover:scale-105 shadow-xl"
+              className="inline-flex items-center gap-3 bg-white text-[#D91656] font-bold py-4 px-8 rounded-lg text-xl hover:bg-[#E8E8E8] transition transform hover:scale-105 shadow-xl"
             >
               <Phone className="w-6 h-6" />
               (803) 667-8731
@@ -285,7 +300,7 @@ const LandingPageSpecials: React.FC = () => {
         </section>
 
         {/* Footer */}
-        <footer className="bg-[#012A5E] py-6 px-4 text-center text-[#90E0EF] text-sm border-t border-[#023E8A]">
+        <footer className="bg-[#D91656] py-6 px-4 text-center text-white text-sm">
           <p>&copy; {new Date().getFullYear()} Mikah's Auto Detailing • Columbia & Lexington SC</p>
           <div className="flex justify-center gap-4 mt-2">
             <a href="/privacy" className="hover:text-white transition">Privacy</a>
@@ -294,7 +309,7 @@ const LandingPageSpecials: React.FC = () => {
         </footer>
 
         {/* Sticky Mobile CTA - Direct Call with Tracking */}
-        <div className="fixed bottom-0 left-0 right-0 bg-[#023E8A] py-2 px-3 md:hidden z-50 shadow-[0_-2px_15px_rgba(0,0,0,0.2)]">
+        <div className="fixed bottom-0 left-0 right-0 bg-[#D91656] py-2 px-3 md:hidden z-50 shadow-[0_-2px_15px_rgba(0,0,0,0.2)]">
           <a
             href="tel:+18036678731"
             onClick={() => gtag_report_conversion()}

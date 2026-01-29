@@ -68,9 +68,7 @@ const Hero: React.FC = () => {
         </h1>
 
         <p className="text-base sm:text-lg md:text-xl mb-6 md:mb-8 max-w-3xl mx-auto text-gray-100 px-4">
-          Mikah's Mobile Detailing offers top-notch mobile auto detailing services in Lexington SC. We specialize in
-          ceramic coating, interior cleaning, and paint correction. Our mobile auto detailing services bring professional
-          car detailing to your location in Lexington SC, featuring detailing packages that include exterior wash and comprehensive care.
+          Professional mobile detailing in Lexington SC. We bring expert ceramic coating, paint correction, and interior cleaning directly to you.
         </p>
 
         <p className="text-lg sm:text-xl md:text-2xl font-semibold mb-6 md:mb-8 text-[#90E0EF]">

@@ -35,12 +35,6 @@ export default defineConfig({
   },
   server: {
     port: 4000,
-    proxy: {
-      '/.netlify/functions': {
-        target: 'https://contractorai.app.n8n.cloud',
-        changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/.netlify\/functions\/submit-form/, '/webhook/3dd95dd5-4308-4ece-8495-9c72239e2e4b'),
-      },
-    },
+    // Proxy removed - using direct webhook fallback in formSubmission.ts
   },
 })

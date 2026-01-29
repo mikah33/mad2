@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
+import { Menu, ChevronDown } from 'lucide-react';
 
 const RecentProjects: React.FC = () => {
   const [activeTab, setActiveTab] = useState('all');
   const [showAll, setShowAll] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const projects = [
     {
@@ -222,20 +224,39 @@ const RecentProjects: React.FC = () => {
           Take a look at our latest work and see the quality results we deliver for our clients.
         </p>
 
-        <div className="flex justify-center gap-4 mb-12 flex-wrap">
-          {tabs.map((tab) => (
+        {/* Filter Dropdown */}
+        <div className="flex justify-center mb-12">
+          <div className="relative">
             <button
-              key={tab.id}
-              onClick={() => setActiveTab(tab.id)}
-              className={`px-6 py-3 rounded-lg font-semibold transition ${
-                activeTab === tab.id
-                  ? 'bg-[#023E8A] text-white'
-                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-              }`}
+              onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+              className="flex items-center gap-3 px-6 py-3 bg-[#023E8A] text-white font-semibold rounded-lg hover:bg-[#0077B6] transition"
             >
-              {tab.label} ({tab.count})
+              <Menu className="w-5 h-5" />
+              {tabs.find(tab => tab.id === activeTab)?.label} ({tabs.find(tab => tab.id === activeTab)?.count})
+              <ChevronDown className={`w-4 h-4 transition-transform ${isDropdownOpen ? 'rotate-180' : ''}`} />
             </button>
-          ))}
+
+            {isDropdownOpen && (
+              <div className="absolute top-full left-0 mt-2 w-64 bg-white border border-gray-200 rounded-lg shadow-xl z-50">
+                {tabs.map((tab) => (
+                  <button
+                    key={tab.id}
+                    onClick={() => {
+                      setActiveTab(tab.id);
+                      setIsDropdownOpen(false);
+                    }}
+                    className={`w-full text-left px-4 py-3 hover:bg-gray-50 transition first:rounded-t-lg last:rounded-b-lg ${
+                      activeTab === tab.id
+                        ? 'bg-[#023E8A] text-white hover:bg-[#0077B6]'
+                        : 'text-gray-700'
+                    }`}
+                  >
+                    {tab.label} ({tab.count})
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">

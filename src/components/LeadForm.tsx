@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useEffect } from 'react';
 import { Mail, User, Phone, MapPin, Car, FileText, Briefcase } from 'lucide-react';
+import { submitForm } from '../utils/formSubmission';
 
 interface LeadFormProps {
   selectedService: string;
@@ -52,45 +53,35 @@ const LeadForm: React.FC<LeadFormProps> = ({ selectedService }) => {
     setSubmitStatus('idle');
 
     try {
-      // Use Netlify function as proxy to avoid CORS
-      const response = await fetch('/.netlify/functions/submit-form', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          fullName: formData.fullName,
-          email: formData.email,
-          phone: formData.phone,
-          location: formData.location,
-          vehicleDetails: formData.vehicleDetails,
-          service: formData.service || selectedService,
-          description: formData.description,
-          timestamp: new Date().toISOString(),
-          source: 'Mikahs Auto Detailing Website'
-        }),
+      const result = await submitForm({
+        fullName: formData.fullName,
+        email: formData.email,
+        phone: formData.phone,
+        location: formData.location,
+        vehicleDetails: formData.vehicleDetails || '',
+        service: formData.service || selectedService,
+        description: formData.description
       });
 
-      if (response.ok) {
-        setIsSubmitting(false);
-        setSubmitStatus('success');
+      console.log('Form submission successful:', result);
 
-        // Reset form after successful submission
-        setTimeout(() => {
-          setFormData({
-            fullName: '',
-            email: '',
-            phone: '',
-            location: '',
-            vehicleDetails: '',
-            service: '',
-            description: ''
-          });
-          setSubmitStatus('idle');
-        }, 3000);
-      } else {
-        throw new Error('Submission failed');
-      }
+      setIsSubmitting(false);
+      setSubmitStatus('success');
+
+      // Reset form after successful submission
+      setTimeout(() => {
+        setFormData({
+          fullName: '',
+          email: '',
+          phone: '',
+          location: '',
+          vehicleDetails: '',
+          service: '',
+          description: ''
+        });
+        setSubmitStatus('idle');
+      }, 3000);
+
     } catch (error) {
       console.error('Form submission error:', error);
       setIsSubmitting(false);
