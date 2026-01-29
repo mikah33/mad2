@@ -66,6 +66,7 @@ const Navigation: React.FC = () => {
       }
     };
 
+    // Google Ads conversion tracking
     if ((window as any).gtag) {
       // Set enhanced conversion data if available
       const enhancedData: any = {};
@@ -86,6 +87,17 @@ const Navigation: React.FC = () => {
         'event_callback': callback
       });
     }
+
+    // Meta Pixel lead conversion tracking
+    if (typeof (window as any).fbq === 'function') {
+      (window as any).fbq('track', 'Lead', {
+        content_name: 'Phone Call - Navigation',
+        content_category: 'Contact',
+        value: 275.0,
+        currency: 'USD'
+      });
+    }
+
     return false;
   };
 

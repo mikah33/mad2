@@ -246,12 +246,24 @@ const BookingTimelineSpecials: React.FC = () => {
       console.log('Booking submission successful:', result);
 
       setSubmitStatus('success');
-      // Track conversion
+
+      // Google Ads conversion tracking
       if ((window as any).gtag) {
         (window as any).gtag('event', 'conversion', {
           'send_to': 'AW-16694998422/TihGCPrb_9sZEJbr5Zg-',
           'value': 275.0,
           'currency': 'USD'
+        });
+      }
+
+      // Meta Pixel lead conversion tracking
+      if (typeof (window as any).fbq === 'function') {
+        (window as any).fbq('track', 'Lead', {
+          content_name: 'Contact Form Submission',
+          content_category: 'Contact',
+          value: 275.0,
+          currency: 'USD',
+          lead_event_source: 'website'
         });
       }
       // Redirect to thank you page after success

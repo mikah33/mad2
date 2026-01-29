@@ -25,6 +25,7 @@ const LandingPageSpecials: React.FC = () => {
       }
     };
 
+    // Google Ads conversion tracking
     if ((window as any).gtag) {
       const enhancedData: any = {};
       if (Object.keys(enhancedData).length > 0) {
@@ -38,6 +39,17 @@ const LandingPageSpecials: React.FC = () => {
         'event_callback': callback,
       });
     }
+
+    // Meta Pixel lead conversion tracking
+    if (typeof (window as any).fbq === 'function') {
+      (window as any).fbq('track', 'Lead', {
+        content_name: 'Phone Call',
+        content_category: 'Contact',
+        value: 275.0,
+        currency: 'USD'
+      });
+    }
+
     return false;
   };
 
