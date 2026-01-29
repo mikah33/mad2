@@ -41,6 +41,10 @@ const BookingTimelineSpecials: React.FC = () => {
     description: ''
   });
 
+  // Autofill states
+  const [isGettingLocation, setIsGettingLocation] = useState(false);
+  const [showSavedData, setShowSavedData] = useState(false);
+
   const [openModal, setOpenModal] = useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
@@ -77,6 +81,51 @@ const BookingTimelineSpecials: React.FC = () => {
     }
   }, [currentStep]);
 
+  // Autofill from URL parameters and localStorage on mount
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const savedData = localStorage.getItem('mikah-auto-form-data');
+
+    let urlData: any = {};
+    let savedFormData: any = {};
+
+    // Parse URL parameters
+    if (params.get('name')) urlData.fullName = params.get('name');
+    if (params.get('email')) urlData.email = params.get('email');
+    if (params.get('phone')) urlData.phone = params.get('phone');
+    if (params.get('location')) urlData.location = params.get('location');
+
+    // Parse saved data
+    if (savedData) {
+      try {
+        savedFormData = JSON.parse(savedData);
+        setShowSavedData(true);
+      } catch (e) {
+        console.log('Error parsing saved form data');
+      }
+    }
+
+    // URL parameters take priority over saved data
+    const combinedData = { ...savedFormData, ...urlData };
+    if (Object.keys(combinedData).length > 0) {
+      setFormData(prev => ({ ...prev, ...combinedData }));
+    }
+  }, []);
+
+  // Autofill and save to localStorage when reaching step 5
+  useEffect(() => {
+    if (currentStep === 5) {
+      // Save current session data for next time
+      const sessionData = {
+        vehicleType,
+        lastDetailTiming,
+        cleanlinessLevel,
+        selectedService
+      };
+      localStorage.setItem('mikah-auto-session', JSON.stringify(sessionData));
+    }
+  }, [currentStep, vehicleType, lastDetailTiming, cleanlinessLevel, selectedService]);
+
   // Step 1: Package Selection -> Step 2
   const handleServiceSelect = (serviceTitle: string) => {
     setSelectedService(serviceTitle);
@@ -109,10 +158,70 @@ const BookingTimelineSpecials: React.FC = () => {
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({
+    const newData = {
       ...formData,
       [e.target.name]: e.target.value
-    });
+    };
+    setFormData(newData);
+
+    // Save to localStorage as user types (debounced)
+    localStorage.setItem('mikah-auto-form-data', JSON.stringify(newData));
+  };
+
+  // Geolocation autofill
+  const handleGeolocationFill = () => {
+    setIsGettingLocation(true);
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        async (position) => {
+          try {
+            const { latitude, longitude } = position.coords;
+            const response = await fetch(`https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${latitude}&longitude=${longitude}&localityLanguage=en`);
+            const data = await response.json();
+
+            const location = `${data.city || data.locality || ''}, ${data.principalSubdivision || ''} ${data.postcode || ''}`.trim().replace(/^,\s*/, '');
+            setFormData(prev => ({ ...prev, location }));
+            setIsGettingLocation(false);
+          } catch (error) {
+            console.error('Error getting location details:', error);
+            setIsGettingLocation(false);
+            alert('Could not get your location details. Please enter manually.');
+          }
+        },
+        (error) => {
+          setIsGettingLocation(false);
+          alert('Location access denied. Please enter your location manually.');
+        }
+      );
+    } else {
+      setIsGettingLocation(false);
+      alert('Geolocation is not supported by this browser.');
+    }
+  };
+
+  // Quick fill common locations
+  const handleQuickFillLocation = (location: string) => {
+    setFormData(prev => ({ ...prev, location }));
+  };
+
+  // Load saved form data
+  const handleLoadSavedData = () => {
+    const savedData = localStorage.getItem('mikah-auto-form-data');
+    if (savedData) {
+      try {
+        const parsedData = JSON.parse(savedData);
+        setFormData(prev => ({ ...prev, ...parsedData }));
+        setShowSavedData(false);
+      } catch (e) {
+        console.log('Error loading saved data');
+      }
+    }
+  };
+
+  // Clear saved data
+  const handleClearSavedData = () => {
+    localStorage.removeItem('mikah-auto-form-data');
+    setShowSavedData(false);
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -414,71 +523,130 @@ const BookingTimelineSpecials: React.FC = () => {
               <p className="text-sm text-gray-500">Redirecting to confirmation page...</p>
             </div>
           ) : (
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    <User className="w-4 h-4 inline mr-1" />
-                    Full Name *
-                  </label>
-                  <input
-                    type="text"
-                    name="fullName"
-                    value={formData.fullName}
-                    onChange={handleChange}
-                    required
-                    className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#0077B6] focus:border-[#0077B6] transition"
-                  />
+            <>
+              {/* Saved Data Prompt */}
+              {showSavedData && (
+                <div className="mb-6 p-4 bg-blue-50 border border-blue-200 rounded-lg">
+                  <div className="flex items-center justify-between">
+                    <p className="text-sm text-blue-800">We found your previous information. Would you like to use it?</p>
+                    <div className="flex gap-2">
+                      <button
+                        type="button"
+                        onClick={handleLoadSavedData}
+                        className="px-3 py-1 bg-blue-600 text-white text-sm rounded hover:bg-blue-700 transition"
+                      >
+                        Use Saved Info
+                      </button>
+                      <button
+                        type="button"
+                        onClick={handleClearSavedData}
+                        className="px-3 py-1 bg-gray-300 text-gray-700 text-sm rounded hover:bg-gray-400 transition"
+                      >
+                        Dismiss
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      <User className="w-4 h-4 inline mr-1" />
+                      Full Name *
+                    </label>
+                    <input
+                      type="text"
+                      name="fullName"
+                      value={formData.fullName}
+                      onChange={handleChange}
+                      required
+                      autoComplete="name"
+                      placeholder="Enter your full name"
+                      className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#0077B6] focus:border-[#0077B6] transition"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      <Phone className="w-4 h-4 inline mr-1" />
+                      Phone Number *
+                    </label>
+                    <input
+                      type="tel"
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      required
+                      autoComplete="tel"
+                      placeholder="(803) 555-1234"
+                      className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#0077B6] focus:border-[#0077B6] transition"
+                    />
+                  </div>
                 </div>
 
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    <Phone className="w-4 h-4 inline mr-1" />
-                    Phone Number *
-                  </label>
-                  <input
-                    type="tel"
-                    name="phone"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    required
-                    className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#0077B6] focus:border-[#0077B6] transition"
-                  />
-                </div>
-              </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      <Mail className="w-4 h-4 inline mr-1" />
+                      Email Address *
+                    </label>
+                    <input
+                      type="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      required
+                      autoComplete="email"
+                      placeholder="your.email@example.com"
+                      className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#0077B6] focus:border-[#0077B6] transition"
+                    />
+                  </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    <Mail className="w-4 h-4 inline mr-1" />
-                    Email Address *
-                  </label>
-                  <input
-                    type="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                    className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#0077B6] focus:border-[#0077B6] transition"
-                  />
-                </div>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      <MapPin className="w-4 h-4 inline mr-1" />
+                      Location/Address *
+                    </label>
+                    <div className="space-y-2">
+                      <input
+                        type="text"
+                        name="location"
+                        value={formData.location}
+                        onChange={handleChange}
+                        required
+                        autoComplete="address-line1"
+                        placeholder="Where should we come to you?"
+                        className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#0077B6] focus:border-[#0077B6] transition"
+                      />
 
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    <MapPin className="w-4 h-4 inline mr-1" />
-                    Location/Address *
-                  </label>
-                  <input
-                    type="text"
-                    name="location"
-                    value={formData.location}
-                    onChange={handleChange}
-                    required
-                    placeholder="Where should we come to you?"
-                    className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#0077B6] focus:border-[#0077B6] transition"
-                  />
+                      {/* Location Autofill Options */}
+                      <div className="flex flex-wrap gap-2">
+                        <button
+                          type="button"
+                          onClick={handleGeolocationFill}
+                          disabled={isGettingLocation}
+                          className="flex items-center gap-1 px-2 py-1 bg-green-100 text-green-700 text-xs rounded hover:bg-green-200 transition disabled:opacity-50"
+                        >
+                          <MapPin className="w-3 h-3" />
+                          {isGettingLocation ? 'Getting location...' : 'Use my location'}
+                        </button>
+
+                        {['Columbia SC', 'Lexington SC', 'Irmo SC', 'West Columbia SC'].map((loc) => (
+                          <button
+                            key={loc}
+                            type="button"
+                            onClick={() => handleQuickFillLocation(loc)}
+                            className="px-2 py-1 bg-blue-100 text-blue-700 text-xs rounded hover:bg-blue-200 transition"
+                          >
+                            {loc}
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
                 </div>
-              </div>
 
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
