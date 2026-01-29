@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Phone, MessageCircle, X, Facebook, Instagram } from 'lucide-react';
-import BookingTimeline from '../components/BookingTimeline';
+import BookingTimelineSpecials from '../components/BookingTimelineSpecials';
 
-const LandingPage: React.FC = () => {
+const LandingPageSpecials: React.FC = () => {
   const [isContactPopupOpen, setIsContactPopupOpen] = useState(false);
 
   // Track page view when component mounts
   useEffect(() => {
     if ((window as any).gtag) {
       (window as any).gtag('event', 'page_view', {
-        page_title: 'Landing Page - Mobile Auto Detailing',
+        page_title: 'Special Offers - Mobile Auto Detailing',
         page_location: window.location.href,
         send_to: 'AW-16694998422'
       });
@@ -33,7 +33,7 @@ const LandingPage: React.FC = () => {
 
       (window as any).gtag('event', 'conversion', {
         'send_to': 'AW-16694998422/TihGCPrb_9sZEJbr5Zg-',
-        'value': 225.0,
+        'value': 275.0,
         'currency': 'USD',
         'event_callback': callback,
       });
@@ -44,13 +44,13 @@ const LandingPage: React.FC = () => {
   return (
     <>
       <Helmet>
-        <title>Mobile Auto Detailing Columbia SC | Free Quote | Mikah's Detailing</title>
+        <title>Special Offers - Mobile Auto Detailing Columbia SC | Mikah's Detailing</title>
         <meta
           name="description"
-          content="Professional mobile auto detailing in Columbia & Lexington SC. We come to you! Same-day service, 5-star rated, fully insured. Get your free quote now. Call (803) 667-8731"
+          content="Special pricing on mobile auto detailing in Columbia & Lexington SC. Basic Detail $199, Factory Reset $350. We come to you! Same-day service, 5-star rated."
         />
         <meta name="robots" content="noindex" />
-        <link rel="canonical" href="https://mikahsmobiledetailingsc.com/lp" />
+        <link rel="canonical" href="https://mikahsmobiledetailingsc.com/lp-specials" />
 
         {/* Google Tag Manager */}
         <script>{`
@@ -171,7 +171,7 @@ const LandingPage: React.FC = () => {
           <div className="relative max-w-4xl mx-auto">
             {/* Yellow Headline */}
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-light tracking-wide text-[#FFD700] text-center mb-4 leading-tight" style={{ fontFamily: 'Georgia, "Times New Roman", serif' }}>
-              Columbia's Best<br />Car Detailing Team.
+              Special Offers<br />Limited Time Only!
             </h1>
             <p className="text-lg sm:text-xl text-white/90 text-center mb-4 tracking-wide">
               5 Years of 5-Star Service.
@@ -184,7 +184,7 @@ const LandingPage: React.FC = () => {
                 onClick={() => document.getElementById('booking-flow')?.scrollIntoView({ behavior: 'smooth' })}
                 className="bg-white/10 hover:bg-white/20 text-white font-semibold px-6 py-3 rounded-lg border border-white/30 transition"
               >
-                Pricing
+                View Specials
               </button>
               <button
                 onClick={() => document.getElementById('booking-flow')?.scrollIntoView({ behavior: 'smooth' })}
@@ -219,7 +219,7 @@ const LandingPage: React.FC = () => {
               {/* Text on left */}
               <div className="relative z-20 max-w-sm sm:max-w-md md:max-w-lg">
                 <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-3 leading-tight">
-                  Get Started<br />With Your<br />Local Detailer.
+                  Special Offers<br />Available Now!
                 </h2>
                 <p className="text-xl sm:text-2xl text-gray-600">Choose your service:</p>
               </div>
@@ -238,9 +238,10 @@ const LandingPage: React.FC = () => {
                 />
               </div>
             </div>
+
             <div className="relative">
               <div className="relative z-10">
-                <BookingTimeline />
+                <BookingTimelineSpecials />
               </div>
             </div>
 
@@ -272,7 +273,7 @@ const LandingPage: React.FC = () => {
         <section className="bg-[#012A5E] py-10 px-4">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4">Ready to Get Started?</h2>
-            <p className="text-[#90E0EF] mb-6">Call or text us now for your free quote</p>
+            <p className="text-[#90E0EF] mb-6">Call or text us now for your special pricing quote</p>
             <button
               onClick={() => setIsContactPopupOpen(true)}
               className="inline-flex items-center gap-3 bg-white text-[#023E8A] font-bold py-4 px-8 rounded-lg text-xl hover:bg-[#E8E8E8] transition transform hover:scale-105 shadow-xl"
@@ -381,4 +382,4 @@ const LandingPage: React.FC = () => {
   );
 };
 
-export default LandingPage;
+export default LandingPageSpecials;
