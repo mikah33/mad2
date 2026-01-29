@@ -5,10 +5,22 @@ const Hero: React.FC = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
-    // Force play on mobile devices
+    // iOS-optimized video autoplay handling
     const playVideo = async () => {
       if (videoRef.current) {
         try {
+          // Ensure video is muted and ready
+          videoRef.current.muted = true;
+          videoRef.current.defaultMuted = true;
+
+          // For iOS, we need to load the video first
+          if (videoRef.current.readyState < 3) {
+            videoRef.current.load();
+          }
+
+          // Small delay to ensure video is ready on iOS
+          await new Promise(resolve => setTimeout(resolve, 100));
+
           await videoRef.current.play();
         } catch (error) {
           console.log('Autoplay prevented:', error);
@@ -16,22 +28,27 @@ const Hero: React.FC = () => {
       }
     };
 
+    // Try to play immediately
     playVideo();
 
-    // Retry play on user interaction (for browsers that block autoplay)
+    // iOS requires user interaction for autoplay, so we listen for any touch/click
     const handleInteraction = () => {
       playVideo();
-      // Remove listeners after first interaction
+      // Remove listeners after first successful interaction
       document.removeEventListener('touchstart', handleInteraction);
       document.removeEventListener('click', handleInteraction);
+      document.removeEventListener('scroll', handleInteraction);
     };
 
+    // Listen for various user interaction events
     document.addEventListener('touchstart', handleInteraction);
     document.addEventListener('click', handleInteraction);
+    document.addEventListener('scroll', handleInteraction);
 
     return () => {
       document.removeEventListener('touchstart', handleInteraction);
       document.removeEventListener('click', handleInteraction);
+      document.removeEventListener('scroll', handleInteraction);
     };
   }, []);
 
@@ -53,7 +70,7 @@ const Hero: React.FC = () => {
         preload="none"
         poster="/exterior2.jpg"
         className="absolute inset-0 w-full h-full object-cover"
-        webkit-playsinline="true"
+        style={{ WebkitPlaysinline: true } as any}
       >
         <source src="/hero-video.mp4" type="video/mp4" />
       </video>
