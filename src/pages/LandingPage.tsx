@@ -181,13 +181,13 @@ const LandingPage: React.FC = () => {
             </p>
             <div className="flex items-center justify-center gap-4">
               <button
-                onClick={() => document.getElementById('booking-flow')?.scrollIntoView({ behavior: 'smooth' })}
+                onClick={() => document.getElementById('step-1')?.scrollIntoView({ behavior: 'smooth', block: 'center' })}
                 className="bg-white/10 hover:bg-white/20 text-white font-semibold px-6 py-3 rounded-lg border border-white/30 transition"
               >
                 Pricing
               </button>
               <button
-                onClick={() => document.getElementById('booking-flow')?.scrollIntoView({ behavior: 'smooth' })}
+                onClick={() => document.getElementById('step-1')?.scrollIntoView({ behavior: 'smooth', block: 'center' })}
                 className="bg-[#023E8A] hover:bg-[#0077B6] text-white font-bold px-6 py-3 rounded-lg transition shadow-lg"
               >
                 Book Now

@@ -100,7 +100,7 @@ const TrustBadges: React.FC = () => {
             </a>
 
             <button
-              onClick={() => document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' })}
+              onClick={() => document.getElementById('step-1')?.scrollIntoView({ behavior: 'smooth', block: 'center' })}
               className="w-full sm:w-auto px-4 md:px-8 py-3 md:py-4 bg-[#90E0EF] text-[#023E8A] font-bold rounded-lg hover:bg-white transition-all shadow-lg transform hover:scale-105 text-sm md:text-base"
             >
               Get Free Quote Online

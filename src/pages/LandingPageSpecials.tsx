@@ -193,13 +193,13 @@ const LandingPageSpecials: React.FC = () => {
             </p>
             <div className="flex items-center justify-center gap-4">
               <button
-                onClick={() => document.getElementById('booking-flow')?.scrollIntoView({ behavior: 'smooth' })}
+                onClick={() => document.getElementById('step-1')?.scrollIntoView({ behavior: 'smooth', block: 'center' })}
                 className="bg-white/10 hover:bg-white/20 text-white font-semibold px-6 py-3 rounded-lg border border-white/30 transition"
               >
                 View Specials
               </button>
               <button
-                onClick={() => document.getElementById('booking-flow')?.scrollIntoView({ behavior: 'smooth' })}
+                onClick={() => document.getElementById('step-1')?.scrollIntoView({ behavior: 'smooth', block: 'center' })}
                 className="bg-[#D91656] hover:bg-[#E91E63] text-white font-bold px-6 py-3 rounded-lg transition shadow-lg"
               >
                 Book Now
