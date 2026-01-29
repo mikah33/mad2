@@ -660,7 +660,7 @@ const BookingTimelineSpecials: React.FC = () => {
                   </div>
                 </div>
 
-              <div>
+                <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
                   <FileText className="w-4 h-4 inline mr-1" />
                   Additional Details (Optional)
@@ -693,6 +693,7 @@ const BookingTimelineSpecials: React.FC = () => {
                 By submitting, you agree to receive text messages about your service. Standard rates may apply.
               </p>
             </form>
+          </>
           )}
 
           <div className="mt-6 p-4 bg-blue-50 rounded-lg border border-blue-200">
