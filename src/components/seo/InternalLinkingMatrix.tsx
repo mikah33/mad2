@@ -210,7 +210,7 @@ export const InternalLinkingMatrix: React.FC<InternalLinkingMatrixProps> = ({
   };
 
   // Service area connections
-  const serviceAreaConnections = {
+  const serviceAreaConnections: Record<string, string[]> = {
     'lexington-sc': [
       'Lake Murray Shores Auto Detailing',
       'Sunset Boulevard Mobile Service',
@@ -348,7 +348,7 @@ export const InternalLinkingMatrix: React.FC<InternalLinkingMatrixProps> = ({
           </p>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
-            {serviceAreas.map((area, idx) => (
+            {serviceAreas.map((area: string, idx: number) => (
               <div key={idx} className="flex items-center bg-white p-3 rounded-lg shadow-sm">
                 <Star className="w-4 h-4 text-primary-600 mr-2 flex-shrink-0" />
                 <span className="text-sm font-medium">{area}</span>
