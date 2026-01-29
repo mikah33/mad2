@@ -180,7 +180,7 @@ const LandingPageSpecials: React.FC = () => {
               fill="url(#waveGradient)"
             />
           </svg>
-          <div className="relative max-w-4xl mx-auto">
+          <div className="relative max-w-4xl mx-auto z-20">
             {/* Yellow Headline */}
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-light tracking-wide text-[#F8BBD9] text-center mb-4 leading-tight" style={{ fontFamily: 'Georgia, "Times New Roman", serif' }}>
               Book a Valentines Day Detail!
@@ -193,13 +193,29 @@ const LandingPageSpecials: React.FC = () => {
             </p>
             <div className="flex items-center justify-center gap-4">
               <button
-                onClick={() => document.getElementById('step-1')?.scrollIntoView({ behavior: 'smooth', block: 'center' })}
+                onClick={() => {
+                  const target = document.getElementById('step-1') || document.getElementById('booking-flow');
+                  if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                  } else {
+                    console.log('Scroll target not found, trying fallback');
+                    window.scrollTo({ top: window.innerHeight, behavior: 'smooth' });
+                  }
+                }}
                 className="bg-white/10 hover:bg-white/20 text-white font-semibold px-6 py-3 rounded-lg border border-white/30 transition"
               >
                 View Specials
               </button>
               <button
-                onClick={() => document.getElementById('step-1')?.scrollIntoView({ behavior: 'smooth', block: 'center' })}
+                onClick={() => {
+                  const target = document.getElementById('step-1') || document.getElementById('booking-flow');
+                  if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                  } else {
+                    console.log('Scroll target not found, trying fallback');
+                    window.scrollTo({ top: window.innerHeight, behavior: 'smooth' });
+                  }
+                }}
                 className="bg-[#D91656] hover:bg-[#E91E63] text-white font-bold px-6 py-3 rounded-lg transition shadow-lg"
               >
                 Book Now
