@@ -154,32 +154,18 @@
     <!-- Schema is added via generate-all-pages-html.ts and generate-blog-html.ts -->
     <!-- DO NOT add schemas here - they will be injected during build -->
 
-    <!-- Meta Pixel Code - Deferred -->
+    <!-- Meta Pixel Code -->
     <script>
-    function loadFacebookPixel() {
-      !function(f,b,e,v,n,t,s)
-      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-      n.queue=[];t=b.createElement(e);t.async=!0;
-      t.src=v;s=b.getElementsByTagName(e)[0];
-      s.parentNode.insertBefore(t,s)}(window, document,'script',
-      'https://connect.facebook.net/en_US/fbevents.js');
-      fbq('init', '1190223929628838');
-      fbq('track', 'PageView');
-    }
-    // Load FB Pixel on first interaction OR after 6 seconds
-    var fbLoaded = false;
-    function initFB() {
-      if (fbLoaded) return;
-      fbLoaded = true;
-      loadFacebookPixel();
-      document.removeEventListener('scroll', initFB);
-      document.removeEventListener('click', initFB);
-    }
-    document.addEventListener('scroll', initFB, { passive: true, once: true });
-    document.addEventListener('click', initFB, { once: true });
-    setTimeout(initFB, 6000);
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1190223929628838');
+    fbq('track', 'PageView');
     </script>
     <!-- End Meta Pixel Code -->
   </head>
