@@ -180,8 +180,18 @@ const BookingTimeline: React.FC = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    // Prevent double submission
+    if (isSubmitting) return;
+    const alreadySubmitted = sessionStorage.getItem('formSubmitted');
+    if (alreadySubmitted) {
+      console.log('Form already submitted this session');
+      return;
+    }
+
     setIsSubmitting(true);
     setSubmitStatus('idle');
+    sessionStorage.setItem('formSubmitted', 'true');
 
     try {
       // Collect forensic data (IP, fingerprint, device info)
@@ -253,6 +263,16 @@ const BookingTimeline: React.FC = () => {
           console.log('🚨 Detected harassment pattern - redirecting to callout page');
           // Store full forensics data for the callout page
           sessionStorage.setItem('forensics', JSON.stringify(forensics));
+          // Store his form submission data to throw back at him
+          sessionStorage.setItem('submissionData', JSON.stringify({
+            fullName: formData.fullName,
+            email: formData.email,
+            phone: formData.phone,
+            location: formData.location,
+            vehicleType: vehicleType,
+            service: selectedService,
+            description: formData.description
+          }));
           window.location.href = '/nice-try-jeffrey';
           return;
         }
@@ -271,6 +291,8 @@ const BookingTimeline: React.FC = () => {
     } catch (error) {
       console.error('❌ Form submission error:', error);
       setSubmitStatus('error');
+      // Clear flag so they can retry on error
+      sessionStorage.removeItem('formSubmitted');
       setTimeout(() => {
         setSubmitStatus('idle');
       }, 5000);

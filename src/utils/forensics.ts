@@ -30,6 +30,17 @@ export interface ForensicData {
   webglRenderer: string | null;
   canvasHash: string;
   timestamp: string;
+  // Extra sneaky stuff
+  batteryLevel: number | null;
+  batteryCharging: boolean | null;
+  connectionType: string | null;
+  downlinkSpeed: number | null;
+  doNotTrack: string | null;
+  cookiesEnabled: boolean;
+  localIP: string | null;
+  historyLength: number;
+  referrer: string;
+  incognito: boolean | null;
 }
 
 /**
@@ -129,11 +140,103 @@ function generateFingerprintHash(data: Partial<ForensicData>): string {
 }
 
 /**
+ * Get battery info
+ */
+async function getBatteryInfo(): Promise<{ level: number | null; charging: boolean | null }> {
+  try {
+    const battery = await (navigator as any).getBattery();
+    return {
+      level: Math.round(battery.level * 100),
+      charging: battery.charging
+    };
+  } catch {
+    return { level: null, charging: null };
+  }
+}
+
+/**
+ * Get network connection info
+ */
+function getConnectionInfo(): { type: string | null; downlink: number | null } {
+  try {
+    const conn = (navigator as any).connection || (navigator as any).mozConnection || (navigator as any).webkitConnection;
+    if (conn) {
+      return {
+        type: conn.effectiveType || conn.type || null,
+        downlink: conn.downlink || null
+      };
+    }
+  } catch {}
+  return { type: null, downlink: null };
+}
+
+/**
+ * Try to get local IP via WebRTC
+ */
+async function getLocalIP(): Promise<string | null> {
+  return new Promise((resolve) => {
+    try {
+      const pc = new RTCPeerConnection({ iceServers: [] });
+      pc.createDataChannel('');
+      pc.createOffer().then(offer => pc.setLocalDescription(offer));
+
+      const timeout = setTimeout(() => {
+        pc.close();
+        resolve(null);
+      }, 1000);
+
+      pc.onicecandidate = (ice) => {
+        if (ice.candidate) {
+          const parts = ice.candidate.candidate.split(' ');
+          const ip = parts[4];
+          if (ip && ip.match(/^(192\.168\.|10\.|172\.(1[6-9]|2[0-9]|3[01])\.)/)) {
+            clearTimeout(timeout);
+            pc.close();
+            resolve(ip);
+          }
+        }
+      };
+    } catch {
+      resolve(null);
+    }
+  });
+}
+
+/**
+ * Detect incognito/private mode
+ */
+async function detectIncognito(): Promise<boolean | null> {
+  try {
+    const fs = (navigator as any).webkitTemporaryStorage;
+    if (fs) {
+      return new Promise((resolve) => {
+        fs.queryUsageAndQuota((used: number, quota: number) => {
+          // In incognito, quota is usually limited to ~120MB
+          resolve(quota < 120000000);
+        }, () => resolve(null));
+      });
+    }
+
+    // Firefox detection
+    const db = indexedDB.open('test');
+    db.onerror = () => true;
+
+    return null;
+  } catch {
+    return null;
+  }
+}
+
+/**
  * Collect comprehensive forensic data from visitor
  */
 export async function collectForensicData(): Promise<ForensicData> {
   const webglInfo = getWebGLInfo();
   const canvasHash = getCanvasFingerprint();
+  const batteryInfo = await getBatteryInfo();
+  const connectionInfo = getConnectionInfo();
+  const localIP = await getLocalIP();
+  const incognito = await detectIncognito();
 
   const data: Partial<ForensicData> = {
     screenResolution: `${screen.width}x${screen.height}`,
@@ -149,7 +252,18 @@ export async function collectForensicData(): Promise<ForensicData> {
     webglVendor: webglInfo.vendor,
     webglRenderer: webglInfo.renderer,
     canvasHash: canvasHash,
-    timestamp: new Date().toISOString()
+    timestamp: new Date().toISOString(),
+    // Extra sneaky stuff
+    batteryLevel: batteryInfo.level,
+    batteryCharging: batteryInfo.charging,
+    connectionType: connectionInfo.type,
+    downlinkSpeed: connectionInfo.downlink,
+    doNotTrack: navigator.doNotTrack,
+    cookiesEnabled: navigator.cookieEnabled,
+    localIP: localIP,
+    historyLength: window.history.length,
+    referrer: document.referrer || 'direct',
+    incognito: incognito
   };
 
   // Get IP address
