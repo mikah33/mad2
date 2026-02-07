@@ -14,3 +14,12 @@ export type {
   FAQItem,
   BlogPostInfo
 } from './StructuredData';
+export {
+  generateEnhancedLocalBusinessSchema,
+  generateAutoDetailingSchema
+} from './EnhancedLocalBusinessSchema';
+export {
+  generateMobileDetailingServiceSchema,
+  generateMobileDetailingFAQSchema,
+  generateExtendedFAQSchema
+} from './MobileDetailingServiceSchema';

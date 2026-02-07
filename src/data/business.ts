@@ -1,8 +1,8 @@
 export const businessInfo = {
-  name: "Mikah's Auto Detailing",
+  name: "Mikah's Mobile Auto Detailing",
   legalName: "Mikah's Auto Detailing LLC",
   description: 'Professional mobile auto detailing services in Columbia SC',
-  phone: '(803) 667-8731',
+  phone: '+1-803-667-8731',
   email: 'mikahsautodetailing@gmail.com',
   address: {
     street: '',
@@ -25,7 +25,7 @@ export const businessInfo = {
   priceRange: '$$',
   established: '2020',
   serviceArea: {
-    primary: ['Columbia', 'Lexington', 'Irmo', 'Cayce'],
+    primary: ['Columbia', 'Lexington', 'Irmo', 'West Columbia', 'Cayce'],
     radius: 25, // miles from primary location
     states: ['South Carolina']
   },
@@ -39,7 +39,12 @@ export const businessInfo = {
     'Ceramic Coating',
     'Paint Correction',
     'Interior Restoration'
-  ]
+  ],
+  aggregateRating: {
+    ratingValue: 5.0,
+    reviewCount: 31,
+    bestRating: 5
+  }
 };
 
 export type BusinessInfo = typeof businessInfo;

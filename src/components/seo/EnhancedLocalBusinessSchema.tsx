@@ -14,6 +14,61 @@ export interface EnhancedLocalBusinessSchemaOptions {
 }
 
 /**
+ * Generate the primary AutoDetailing LocalBusiness schema
+ * This is the main schema for Google Business Profile and rich results
+ */
+export const generateAutoDetailingSchema = () => {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'AutoDetailing',
+    name: "Mikah's Mobile Auto Detailing",
+    image: `${baseUrl}/logo.png`,
+    url: baseUrl,
+    telephone: '+1-803-667-8731',
+    priceRange: '$$',
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'Columbia',
+      addressRegion: 'SC',
+      postalCode: '29072',
+      addressCountry: 'US'
+    },
+    geo: {
+      '@type': 'GeoCoordinates',
+      latitude: 34.0007,
+      longitude: -81.0348
+    },
+    areaServed: [
+      { '@type': 'City', name: 'Columbia, SC' },
+      { '@type': 'City', name: 'Lexington, SC' },
+      { '@type': 'City', name: 'Irmo, SC' },
+      { '@type': 'City', name: 'West Columbia, SC' },
+      { '@type': 'City', name: 'Cayce, SC' }
+    ],
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '5.0',
+      reviewCount: '31',
+      bestRating: '5'
+    },
+    openingHoursSpecification: [
+      {
+        '@type': 'OpeningHoursSpecification',
+        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+        opens: '08:00',
+        closes: '18:00'
+      },
+      {
+        '@type': 'OpeningHoursSpecification',
+        dayOfWeek: ['Saturday'],
+        opens: '09:00',
+        closes: '17:00'
+      }
+    ]
+  };
+};
+
+/**
  * Generate ultra-comprehensive LocalBusiness schema with ALL business details
  */
 export const generateEnhancedLocalBusinessSchema = (
@@ -69,7 +124,7 @@ export const generateEnhancedLocalBusinessSchema = (
     '@id': `${baseUrl}/#business`,
 
     // Basic Information
-    name: "Mikah's Auto Detailing",
+    name: "Mikah's Mobile Auto Detailing",
     legalName: "Mikah's Auto Detailing and Services LLC",
     alternateName: "Mikah's Mobile Detailing",
 
@@ -79,7 +134,7 @@ export const generateEnhancedLocalBusinessSchema = (
 
     // Contact Information
     url: baseUrl,
-    telephone: '(803) 667-8731',
+    telephone: '+1-803-667-8731',
     email: 'mikahsautodetailing@gmail.com',
 
     // Physical Address
@@ -94,46 +149,44 @@ export const generateEnhancedLocalBusinessSchema = (
     // Geographic Coordinates
     geo: {
       '@type': 'GeoCoordinates',
-      latitude: '34.0007',
-      longitude: '-81.0348'
+      latitude: 34.0007,
+      longitude: -81.0348
     },
 
     // Service Area - Mobile Detailing Coverage for "detailing near me" searches
     areaServed: [
       {
         '@type': 'City',
-        name: 'Columbia',
+        name: 'Columbia, SC',
         '@id': 'https://www.wikidata.org/wiki/Q49231',
         sameAs: 'https://en.wikipedia.org/wiki/Columbia,_South_Carolina',
         description: 'Mobile car detailing Columbia SC - we come to you'
       },
       {
         '@type': 'City',
-        name: 'Lexington',
+        name: 'Lexington, SC',
         '@id': 'https://www.wikidata.org/wiki/Q2004821',
         sameAs: 'https://en.wikipedia.org/wiki/Lexington,_South_Carolina',
         description: 'Mobile auto detailing Lexington SC - professional service'
       },
       {
         '@type': 'City',
-        name: 'Irmo',
+        name: 'Irmo, SC',
         '@id': 'https://www.wikidata.org/wiki/Q2004858',
         sameAs: 'https://en.wikipedia.org/wiki/Irmo,_South_Carolina',
         description: 'Mobile detailing Irmo SC - convenient at-home service'
       },
       {
         '@type': 'City',
-        name: 'Cayce',
+        name: 'West Columbia, SC',
+        description: 'Mobile car detailing West Columbia SC - premium mobile service'
+      },
+      {
+        '@type': 'City',
+        name: 'Cayce, SC',
         '@id': 'https://www.wikidata.org/wiki/Q2004694',
         sameAs: 'https://en.wikipedia.org/wiki/Cayce,_South_Carolina',
         description: 'Mobile car detailing Cayce SC - premium mobile service'
-      },
-      {
-        '@type': 'State',
-        name: 'South Carolina',
-        '@id': 'https://www.wikidata.org/wiki/Q1456',
-        sameAs: 'https://en.wikipedia.org/wiki/South_Carolina',
-        description: 'Mobile detailing services throughout South Carolina'
       }
     ],
 
@@ -142,18 +195,24 @@ export const generateEnhancedLocalBusinessSchema = (
       '@type': 'GeoCircle',
       geoMidpoint: {
         '@type': 'GeoCoordinates',
-        latitude: '34.0007',
-        longitude: '-81.0348'
+        latitude: 34.0007,
+        longitude: -81.0348
       },
       geoRadius: '25000', // 25km radius from Columbia SC
-      description: 'Mobile auto detailing service area covering Columbia, Lexington, Irmo, Cayce and surrounding areas'
+      description: 'Mobile auto detailing service area covering Columbia, Lexington, Irmo, West Columbia, Cayce and surrounding areas'
     },
 
-    // Business Hours (9 AM - 5 PM Every Day)
+    // Business Hours (Mon-Fri 8-6, Sat 9-5)
     openingHoursSpecification: [
       {
         '@type': 'OpeningHoursSpecification',
-        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+        opens: '08:00',
+        closes: '18:00'
+      },
+      {
+        '@type': 'OpeningHoursSpecification',
+        dayOfWeek: ['Saturday'],
         opens: '09:00',
         closes: '17:00'
       }
@@ -263,11 +322,11 @@ export const generateEnhancedLocalBusinessSchema = (
     }
   };
 
-  // Add Aggregate Rating (12 Facebook + 19 Google = 31 total reviews, average 4.95 stars)
+  // Add Aggregate Rating (31 total reviews, 5.0 average stars)
   if (includeReviews) {
     schema.aggregateRating = {
       '@type': 'AggregateRating',
-      ratingValue: '4.95',
+      ratingValue: '5.0',
       bestRating: '5',
       worstRating: '1',
       ratingCount: '31',
@@ -579,5 +638,6 @@ export const generateEnhancedLocalBusinessSchema = (
 };
 
 export default {
-  generateEnhancedLocalBusinessSchema
+  generateEnhancedLocalBusinessSchema,
+  generateAutoDetailingSchema
 };

@@ -54,7 +54,7 @@ export function generateLocalBusinessSchema(
     image: businessInfo.image,
     '@id': `${businessInfo.website}/locations/${location.slug}`,
     url: `${businessInfo.website}/locations/${location.slug}`,
-    telephone: businessInfo.phone,
+    telephone: '+1-803-667-8731',
     priceRange: '$$',
     address: {
       '@type': 'PostalAddress',
@@ -80,7 +80,7 @@ export function generateLocalBusinessSchema(
         '@type': 'OpeningHoursSpecification',
         dayOfWeek: ['Saturday'],
         opens: '09:00',
-        closes: '16:00',
+        closes: '17:00',
       },
     ],
     sameAs: businessInfo.socialLinks,

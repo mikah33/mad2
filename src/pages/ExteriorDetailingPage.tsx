@@ -113,7 +113,7 @@ const ExteriorDetailingPage: React.FC = () => {
   return (
     <>
       <SEOHead
-        title="Exterior Car Detailing Columbia SC | Mobile Auto Detailing Near Me"
+        title="Exterior Auto Detailing Columbia SC | Hand Wash & Wax | From $200"
         description="Professional exterior car detailing in Columbia SC. Hand wash, clay bar, wax protection, paint enhancement. Mobile service to your location in Lexington, Irmo, Cayce. Book today!"
         keywords="exterior car detailing, car wash Columbia SC, auto detailing near me, hand car wash, clay bar treatment, car wax, paint protection, mobile car wash Lexington SC, vehicle detailing, car polishing, wheel detailing, exterior detailing near me"
         canonical="https://mikahsmobiledetailingsc.com/services/exterior-detailing"

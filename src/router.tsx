@@ -24,6 +24,7 @@ import LocationWestColumbiaPage from './pages/LocationWestColumbiaPage';
 import { LocationChapinPage } from './pages/LocationChapinPage';
 import { LocationSwanseaPage } from './pages/LocationSwanseaPage';
 import { LocationNewberryPage } from './pages/LocationNewberryPage';
+import { LocationBlythewoodPage } from './pages/LocationBlythewoodPage';
 import PricingPage from './pages/PricingPage';
 import BookingPage from './pages/BookingPage';
 import ThankYouPage from './pages/ThankYouPage';
@@ -131,6 +132,10 @@ export const router = createBrowserRouter([
   {
     path: '/locations/newberry-sc',
     element: <LocationNewberryPage />,
+  },
+  {
+    path: '/locations/blythewood-sc',
+    element: <LocationBlythewoodPage />,
   },
   {
     path: '/pricing',

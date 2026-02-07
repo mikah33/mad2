@@ -294,7 +294,7 @@ export const generateMobileDetailingServiceSchema = (
 
 /**
  * Generate FAQ Schema for mobile detailing services
- * Updated with critical "People Also Ask" questions for enhanced SEO
+ * Primary FAQs targeting high-value "People Also Ask" questions for Columbia SC
  */
 export const generateMobileDetailingFAQSchema = () => {
   return {
@@ -304,10 +304,64 @@ export const generateMobileDetailingFAQSchema = () => {
     mainEntity: [
       {
         '@type': 'Question',
-        name: 'How much does mobile detailing cost?',
+        name: 'How much does mobile car detailing cost in Columbia SC?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Our mobile detailing services start at $75 for basic exterior washes and range up to $400+ for comprehensive packages. Pricing depends on vehicle size, service selected, and condition. We offer competitive rates with no hidden fees - get your personalized quote by calling (803) 667-8731.'
+          text: 'Mobile car detailing in Columbia SC starts at $200 for interior or exterior, and $225 for full detail packages. We offer free quotes for all services.'
+        }
+      },
+      {
+        '@type': 'Question',
+        name: 'Do you come to my location?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Yes! We provide mobile detailing throughout Columbia, Lexington, Irmo, West Columbia, Cayce, and surrounding areas. We come to your home, office, or anywhere convenient.'
+        }
+      },
+      {
+        '@type': 'Question',
+        name: 'How long does a full detail take?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'A full interior and exterior detail typically takes 2-4 hours depending on vehicle size and condition. We work efficiently while maintaining our high quality standards.'
+        }
+      }
+    ]
+  };
+};
+
+/**
+ * Generate comprehensive FAQ Schema with additional questions
+ * Extended version for FAQ pages with more detailed answers
+ */
+export const generateExtendedFAQSchema = () => {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    '@id': `${baseUrl}/faq`,
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: 'How much does mobile car detailing cost in Columbia SC?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Mobile car detailing in Columbia SC starts at $200 for interior or exterior, and $225 for full detail packages. We offer free quotes for all services.'
+        }
+      },
+      {
+        '@type': 'Question',
+        name: 'Do you come to my location?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Yes! We provide mobile detailing throughout Columbia, Lexington, Irmo, West Columbia, Cayce, and surrounding areas. We come to your home, office, or anywhere convenient.'
+        }
+      },
+      {
+        '@type': 'Question',
+        name: 'How long does a full detail take?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'A full interior and exterior detail typically takes 2-4 hours depending on vehicle size and condition. We work efficiently while maintaining our high quality standards.'
         }
       },
       {
@@ -344,22 +398,6 @@ export const generateMobileDetailingFAQSchema = () => {
       },
       {
         '@type': 'Question',
-        name: 'Do you provide mobile services in Lexington and Columbia, SC?',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: 'Yes! We specialize in mobile auto detailing throughout Lexington, Columbia, and surrounding South Carolina areas. We come directly to your home, office, or any convenient location with all professional equipment. Mobile service eliminates your travel time and provides ultimate convenience.'
-        }
-      },
-      {
-        '@type': 'Question',
-        name: 'How long does a typical detailing service take?',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: 'The duration varies depending on the service selected. A basic detail typically takes 2-3 hours, while our comprehensive packages can take 4-6 hours. Ceramic coating applications require 6-8 hours. We\'ll provide a specific time estimate when you book.'
-        }
-      },
-      {
-        '@type': 'Question',
         name: 'What areas do you serve in the Columbia region?',
         acceptedAnswer: {
           '@type': 'Answer',
@@ -388,5 +426,6 @@ export const generateMobileDetailingFAQSchema = () => {
 
 export default {
   generateMobileDetailingServiceSchema,
-  generateMobileDetailingFAQSchema
+  generateMobileDetailingFAQSchema,
+  generateExtendedFAQSchema
 };

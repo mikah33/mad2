@@ -12,9 +12,11 @@ interface SEOHeadProps {
   ogImageWidth?: number;
   ogImageHeight?: number;
   ogUrl?: string;
+  ogDescription?: string;
   twitterCard?: 'summary' | 'summary_large_image';
   twitterImage?: string;
   twitterImageAlt?: string;
+  twitterDescription?: string;
   noindex?: boolean;
   schema?: object | object[];
   ogVideo?: string;
@@ -35,9 +37,11 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
   ogImageWidth,
   ogImageHeight,
   ogUrl,
+  ogDescription,
   twitterCard = 'summary_large_image',
   twitterImage,
   twitterImageAlt,
+  twitterDescription,
   noindex = false,
   schema,
   ogVideo,
@@ -72,7 +76,7 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
       <meta property="og:type" content={ogType} />
       <meta property="og:url" content={currentUrl} />
       <meta property="og:title" content={fullTitle} />
-      <meta property="og:description" content={description} />
+      <meta property="og:description" content={ogDescription || description} />
       <meta property="og:image" content={finalOgImage} />
       <meta property="og:image:alt" content={finalOgImageAlt} />
       <meta property="og:image:width" content={finalOgImageWidth.toString()} />
@@ -85,7 +89,7 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
       <meta name="twitter:card" content={twitterCard} />
       <meta name="twitter:url" content={currentUrl} />
       <meta name="twitter:title" content={fullTitle} />
-      <meta name="twitter:description" content={description} />
+      <meta name="twitter:description" content={twitterDescription || description} />
       <meta name="twitter:image" content={finalTwitterImage} />
       <meta name="twitter:image:alt" content={finalTwitterImageAlt} />
 

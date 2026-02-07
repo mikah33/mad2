@@ -57,7 +57,7 @@ const FullDetailPage: React.FC = () => {
   return (
     <>
       <SEOHead
-        title="Full Car Detailing Columbia SC | Complete Auto Detailing Package | Mobile Service"
+        title="Full Car Detail Columbia SC | Interior + Exterior | From $225"
         description="Complete full car detailing in Columbia SC. Interior + exterior detailing package. Professional cleaning, protection, and restoration. Mobile service to Lexington, Irmo, Cayce. Book now!"
         keywords="full car detailing, complete auto detailing Columbia SC, interior exterior detailing, full detail package, car detailing near me, mobile auto detailing Lexington SC, vehicle detailing services, comprehensive car cleaning"
         canonical="https://mikahsmobiledetailingsc.com/services/full-detail"

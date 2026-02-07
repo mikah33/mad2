@@ -180,10 +180,12 @@ export const LocationIrmoPage = () => {
   return (
     <>
       <SEOHead
-        title="Mobile Detailing Irmo SC | Best Car Detailing & Ceramic Coating Harbison"
-        description="Best mobile detailing Irmo SC. Professional car detailing & ceramic coating at your location. $225+ Interior/exterior detailing. 5.0★ 19 reviews. Serving Harbison, Seven Oaks, Chapin. Free quotes!"
+        title="Mobile Auto Detailing Irmo SC | 5-Star Service | Free Quote"
+        description="Irmo's trusted mobile car detailing service. Interior & exterior packages from $200. We come to you - home or office. 5-star rated. Book today - (803) 667-8731!"
         keywords={allKeywords.join(', ')}
         canonical="https://mikahsmobiledetailingsc.com/locations/irmo-sc"
+        ogDescription="Irmo's trusted mobile car detailing service. Interior & exterior packages from $200. We come to you - home or office. 5-star rated. Book today - (803) 667-8731!"
+        twitterDescription="Irmo's trusted mobile car detailing service. Interior & exterior packages from $200. We come to you - home or office. 5-star rated. Book today - (803) 667-8731!"
         schema={schemas}
       />
 

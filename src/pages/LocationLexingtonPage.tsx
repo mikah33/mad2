@@ -180,10 +180,12 @@ export const LocationLexingtonPage = () => {
   return (
     <>
       <SEOHead
-        title="Mobile Detailing Lexington SC | Best Car Detailing & Ceramic Coating"
-        description="Best mobile detailing Lexington SC. Professional car detailing & ceramic coating at your location. $225+ Interior/exterior detailing. 5.0★ 19 reviews. Serving Lake Murray, Sunset Blvd. Free quotes!"
+        title="Car Detailing Lexington SC | Mobile Service | Book Today"
+        description="Lexington SC's top-rated mobile detailing service. Full interior/exterior details from $200. We bring professional equipment to you. Free quotes - call (803) 667-8731!"
         keywords={allKeywords.join(', ')}
         canonical="https://mikahsmobiledetailingsc.com/locations/lexington-sc"
+        ogDescription="Lexington SC's top-rated mobile detailing service. Full interior/exterior details from $200. We bring professional equipment to you. Free quotes - call (803) 667-8731!"
+        twitterDescription="Lexington SC's top-rated mobile detailing service. Full interior/exterior details from $200. We bring professional equipment to you. Free quotes - call (803) 667-8731!"
         schema={schemas}
       />
 

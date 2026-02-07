@@ -160,10 +160,12 @@ export const LocationColumbiaPage = () => {
   return (
     <>
       <SEOHead
-        title="Columbia Detailing | Professional Auto Detail Columbia SC | 5.0★ Rated"
-        description="Columbia detailing & auto detail services. Professional mobile car detailing at your Columbia location. Interior/exterior, ceramic coating, paint correction. 5.0★ 19 reviews. Columbia auto detail experts!"
+        title="Mobile Car Detailing Columbia SC | We Come to You | Mikah's"
+        description="Columbia's #1 mobile auto detailing service. Interior & exterior details from $200. We come to your home or office. 5-star rated. Call (803) 667-8731 for free quote!"
         keywords="columbia detailing, columbia auto detail, auto detail columbia, columbia mobile detailing, detailing columbia sc, car detailing columbia sc, mobile auto detailing columbia sc, professional car detailing columbia, best columbia detailing"
         canonical="https://mikahsmobiledetailingsc.com/locations/columbia-sc"
+        ogDescription="Columbia's #1 mobile auto detailing service. Interior & exterior details from $200. We come to your home or office. 5-star rated. Call (803) 667-8731 for free quote!"
+        twitterDescription="Columbia's #1 mobile auto detailing service. Interior & exterior details from $200. We come to your home or office. 5-star rated. Call (803) 667-8731 for free quote!"
         schema={schemas}
       />
 

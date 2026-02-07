@@ -6,6 +6,7 @@ import { businessInfo } from '../data/business';
 import { reviews, aggregateRating } from '../data/reviews';
 import { faqs } from '../data/faqs-comprehensive';
 import { services, getFeaturedServices } from '../data/services';
+import { Star, CheckCircle, Phone, MapPin, Clock } from 'lucide-react';
 
 export const HomePage = () => {
   // Get top FAQs for homepage (most common questions)
@@ -66,10 +67,13 @@ export const HomePage = () => {
   // Combine schemas
   const schemas = [gmbSchema, localBusinessSchema, enhancedBusinessSchema, faqSchema, videoSchema, itemListSchema];
 
+  // Get featured testimonials for social proof section
+  const featuredTestimonials = reviews.slice(0, 4);
+
   return (
     <>
       <SEOHead
-        title="Mobile Auto Detailing Columbia & Lexington SC | Mikah's Auto Detailing"
+        title="Mobile Car Detailing Columbia & Lexington SC | 5-Star Rated | Mikah's"
         description="#1 mobile auto detailing in Columbia & Lexington SC. Interior/exterior detailing from $225. 5.0★ rated. Same day available. Call (803) 667-8731 for free quote!"
         keywords="mobile auto detailing columbia sc, mobile car detailing lexington sc, car detailing near me, interior car detailing columbia, exterior auto detailing, same day car detailing, mobile detailing services"
         canonical="https://mikahsmobiledetailingsc.com"
@@ -77,23 +81,50 @@ export const HomePage = () => {
       />
 
       <div className="home-page">
-        {/* Hero Section */}
-        <section className="relative bg-gradient-to-br from-blue-600 to-indigo-800 text-white py-20">
+        {/* Hero Section - Now handled by Hero component, keeping for SEO fallback */}
+        <section className="relative bg-gradient-to-br from-[#023E8A] to-[#0077B6] text-white py-20">
           <div className="container mx-auto px-4 max-w-7xl">
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div>
+                {/* Trust Signals - Above the Fold */}
+                <div className="flex flex-wrap gap-3 mb-6">
+                  <div className="flex items-center bg-yellow-400/20 px-3 py-1.5 rounded-full border border-yellow-400/40">
+                    <div className="flex mr-1.5">
+                      {[...Array(5)].map((_, i) => (
+                        <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                      ))}
+                    </div>
+                    <span className="text-sm font-semibold">5.0 Rated</span>
+                  </div>
+                  <div className="flex items-center bg-white/15 px-3 py-1.5 rounded-full">
+                    <span className="text-sm font-medium">100+ Happy Customers</span>
+                  </div>
+                  <div className="flex items-center bg-green-400/20 px-3 py-1.5 rounded-full border border-green-400/40">
+                    <Clock className="w-4 h-4 mr-1 text-green-300" />
+                    <span className="text-sm text-green-100">Same Day Available</span>
+                  </div>
+                </div>
+
                 <h1 className="text-4xl md:text-5xl font-bold mb-6">Mobile Auto Detailing in Columbia & Lexington SC</h1>
-                <p className="text-xl mb-8 text-blue-100">
-                  We come to you - same day appointments available. Professional interior & exterior detailing from $225. Serving Columbia, Lexington, Irmo, and surrounding areas.
+                <p className="text-xl mb-6 text-blue-100">
+                  We come to you - same day appointments available. Professional interior & exterior detailing from <span className="font-bold text-white">$225</span>.
                 </p>
-                <div className="flex flex-wrap gap-4">
-                  <a href="#quote" className="bg-white text-blue-600 px-8 py-4 rounded-lg font-bold hover:bg-blue-50 transition">
-                    Get Free Quote
-                  </a>
-                  <a href="tel:+18036678731" className="bg-blue-700 text-white px-8 py-4 rounded-lg font-bold hover:bg-blue-600 transition">
-                    Call (803) 667-8731
+
+                {/* Single Clear CTA */}
+                <div className="flex flex-col sm:flex-row gap-4 mb-6">
+                  <a href="#booking" className="inline-block">
+                    <button className="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-green-500 to-green-600 text-white text-lg font-bold rounded-lg hover:from-green-600 hover:to-green-700 transition shadow-xl transform hover:scale-105">
+                      Get Your Free Quote Now
+                    </button>
                   </a>
                 </div>
+
+                {/* Phone Number - Prominent */}
+                <a href="tel:+18036678731" className="inline-flex items-center gap-2 text-white hover:text-blue-200 transition">
+                  <Phone className="w-5 h-5" />
+                  <span className="text-xl font-bold">(803) 667-8731</span>
+                  <span className="text-sm text-blue-200">- Call or Text</span>
+                </a>
               </div>
               <div className="hidden md:block">
                 <picture>
@@ -105,72 +136,197 @@ export const HomePage = () => {
           </div>
         </section>
 
-        {/* About Section */}
-        <section className="py-16 bg-white">
-          <div className="container mx-auto px-4 max-w-4xl">
+        {/* Social Proof Section - Immediately After Hero */}
+        <section className="py-10 bg-gradient-to-b from-gray-50 to-white">
+          <div className="container mx-auto px-4 max-w-7xl">
+            {/* Trust Header */}
             <div className="text-center mb-8">
-              <h2 className="text-3xl font-bold mb-4">Columbia & Lexington's Mobile Detailing Experts</h2>
+              <div className="flex items-center justify-center gap-2 mb-3">
+                <div className="flex">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-6 h-6 fill-yellow-400 text-yellow-400" />
+                  ))}
+                </div>
+                <span className="text-xl font-bold text-gray-800">5.0</span>
+                <a
+                  href="https://g.page/r/CdSqpNXvv_3aEBM/review"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#0077B6] hover:underline text-sm"
+                >
+                  (19 Google Reviews)
+                </a>
+              </div>
+              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
+                Trusted by 100+ Columbia & Lexington Residents
+              </h2>
+              <p className="text-gray-600">See why customers choose Mikah's for their auto detailing needs</p>
             </div>
-            <div className="prose prose-lg max-w-none text-gray-700">
-              <p className="mb-4">
-                Mikah's Auto Detailing brings professional mobile car care directly to your location in Columbia, Lexington, Irmo, and Cayce SC. We specialize in interior detailing, exterior hand washing, paint correction, and full-service packages - all at your home, office, or anywhere convenient.
-              </p>
-              <p className="mb-4">
-                Unlike traditional detail shops, we save you time by coming to you. No drop-off, no waiting rooms, no disruption to your day. Our detailers use professional-grade products to deliver showroom results.
-              </p>
-              <p className="mb-4">
-                <strong>Services:</strong> Deep interior cleaning, pet hair removal, odor elimination, exterior hand wash, clay bar treatment, paint correction, and protective wax application.
-              </p>
-              <p className="mb-6">
-                <strong>Serving:</strong> Columbia, Lexington, Irmo, West Columbia, Cayce, Forest Acres, Five Points, Lake Murray area, and surrounding communities.
-              </p>
-              <p className="text-center">
-                <strong className="text-blue-600 text-xl">Same-day appointments available. Call or text (803) 667-8731.</strong>
-              </p>
+
+            {/* Testimonial Cards */}
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+              {featuredTestimonials.map((review, index) => (
+                <div key={index} className="bg-white rounded-xl shadow-lg p-5 border border-gray-100 hover:shadow-xl transition">
+                  <div className="flex items-center mb-3">
+                    <div className="w-10 h-10 rounded-full bg-[#023E8A] text-white flex items-center justify-center font-bold mr-3 text-sm">
+                      {review.authorInitials}
+                    </div>
+                    <div>
+                      <p className="font-semibold text-gray-800 text-sm">{review.author}</p>
+                      <div className="flex items-center gap-1">
+                        <div className="flex">
+                          {[...Array(review.rating)].map((_, i) => (
+                            <Star key={i} className="w-3.5 h-3.5 fill-yellow-400 text-yellow-400" />
+                          ))}
+                        </div>
+                        <span className="text-xs text-gray-500">Google</span>
+                      </div>
+                    </div>
+                  </div>
+                  <p className="text-gray-700 text-sm italic line-clamp-4">"{review.reviewText}"</p>
+                </div>
+              ))}
+            </div>
+
+            {/* Google Review Badge & CTA */}
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <a
+                href="https://g.page/r/CdSqpNXvv_3aEBM/review"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 bg-white px-4 py-2 rounded-lg shadow border border-gray-200 hover:shadow-md transition"
+              >
+                <img src="https://www.google.com/favicon.ico" alt="Google" className="w-5 h-5" />
+                <span className="font-medium text-gray-700">View All Google Reviews</span>
+              </a>
+              <a href="#booking">
+                <button className="px-6 py-3 bg-[#023E8A] text-white font-bold rounded-lg hover:bg-[#0077B6] transition shadow">
+                  Get Your Free Quote
+                </button>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        {/* Why Choose Us - Quick Benefits */}
+        <section className="py-8 bg-white border-b">
+          <div className="container mx-auto px-4 max-w-5xl">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+              <div className="p-4">
+                <div className="w-12 h-12 bg-[#CAF0F8] rounded-full flex items-center justify-center mx-auto mb-2">
+                  <MapPin className="w-6 h-6 text-[#023E8A]" />
+                </div>
+                <p className="font-bold text-gray-800">We Come To You</p>
+                <p className="text-sm text-gray-600">Mobile service at your location</p>
+              </div>
+              <div className="p-4">
+                <div className="w-12 h-12 bg-[#CAF0F8] rounded-full flex items-center justify-center mx-auto mb-2">
+                  <Clock className="w-6 h-6 text-[#023E8A]" />
+                </div>
+                <p className="font-bold text-gray-800">Same Day Service</p>
+                <p className="text-sm text-gray-600">Book today, detailed today</p>
+              </div>
+              <div className="p-4">
+                <div className="w-12 h-12 bg-[#CAF0F8] rounded-full flex items-center justify-center mx-auto mb-2">
+                  <CheckCircle className="w-6 h-6 text-[#023E8A]" />
+                </div>
+                <p className="font-bold text-gray-800">100% Satisfaction</p>
+                <p className="text-sm text-gray-600">Not happy? We make it right</p>
+              </div>
+              <div className="p-4">
+                <div className="w-12 h-12 bg-[#CAF0F8] rounded-full flex items-center justify-center mx-auto mb-2">
+                  <Star className="w-6 h-6 text-[#023E8A]" />
+                </div>
+                <p className="font-bold text-gray-800">5-Star Rated</p>
+                <p className="text-sm text-gray-600">Perfect reviews on Google</p>
+              </div>
             </div>
           </div>
         </section>
 
         {/* Services Overview */}
-        <section className="py-16 bg-gray-50">
+        <section className="py-12 bg-gray-50">
           <div className="container mx-auto px-4 max-w-7xl">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold mb-4">Mobile Detailing Services Near You</h2>
-              <p className="text-xl text-gray-600">Professional automotive detail services that come to your location in Columbia, SC</p>
+            <div className="text-center mb-10">
+              <h2 className="text-3xl font-bold mb-3">Mobile Detailing Services</h2>
+              <p className="text-lg text-gray-600">Professional auto detailing that comes to your Columbia or Lexington location</p>
             </div>
-            <div className="grid md:grid-cols-3 gap-8">
-              <div className="bg-white p-8 rounded-lg shadow-lg text-center">
-                <h3 className="text-2xl font-bold mb-4">Car Interior Detailing</h3>
-                <p className="text-gray-600 mb-6">Deep cleaning, conditioning, and protection for your vehicle's interior</p>
-                <ul className="text-left text-gray-600 space-y-2 mb-6">
-                  <li>• Steam cleaning and sanitization</li>
-                  <li>• Leather conditioning and protection</li>
-                  <li>• Stain and odor removal</li>
-                  <li>• Vacuum and disinfection</li>
+            <div className="grid md:grid-cols-3 gap-6">
+              <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition border border-gray-100">
+                <div className="text-center mb-4">
+                  <span className="inline-block bg-[#CAF0F8] text-[#023E8A] px-3 py-1 rounded-full text-sm font-medium mb-2">Most Popular</span>
+                  <h3 className="text-xl font-bold">Interior Detailing</h3>
+                </div>
+                <p className="text-gray-600 mb-4 text-center">Deep cleaning & conditioning for your vehicle's interior</p>
+                <ul className="text-gray-600 space-y-2 mb-4 text-sm">
+                  <li className="flex items-center"><CheckCircle className="w-4 h-4 mr-2 text-green-500 flex-shrink-0" />Steam cleaning & sanitization</li>
+                  <li className="flex items-center"><CheckCircle className="w-4 h-4 mr-2 text-green-500 flex-shrink-0" />Leather conditioning</li>
+                  <li className="flex items-center"><CheckCircle className="w-4 h-4 mr-2 text-green-500 flex-shrink-0" />Stain & odor removal</li>
                 </ul>
-                <p className="font-bold text-blue-600">Starting at $200</p>
+                <div className="text-center">
+                  <p className="font-bold text-[#023E8A] text-xl mb-3">From $200</p>
+                  <a href="#booking" className="block w-full py-2 bg-[#023E8A] text-white font-semibold rounded-lg hover:bg-[#0077B6] transition text-center">
+                    Get Quote
+                  </a>
+                </div>
               </div>
-              <div className="bg-white p-8 rounded-lg shadow-lg text-center">
-                <h3 className="text-2xl font-bold mb-4">Exterior Auto Detailing</h3>
-                <p className="text-gray-600 mb-6">Complete exterior wash, polish, and protection services</p>
-                <ul className="text-left text-gray-600 space-y-2 mb-6">
-                  <li>• Hand wash and foam contact wash</li>
-                  <li>• Wheel decontamination</li>
-                  <li>• Protective wax application</li>
-                  <li>• Tire and wheel dressing</li>
+              <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition border-2 border-[#0077B6] relative">
+                <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
+                  <span className="bg-[#0077B6] text-white px-4 py-1 rounded-full text-sm font-bold">Best Value</span>
+                </div>
+                <div className="text-center mb-4 pt-2">
+                  <h3 className="text-xl font-bold">Full Detail Package</h3>
+                </div>
+                <p className="text-gray-600 mb-4 text-center">Complete interior + exterior detailing</p>
+                <ul className="text-gray-600 space-y-2 mb-4 text-sm">
+                  <li className="flex items-center"><CheckCircle className="w-4 h-4 mr-2 text-green-500 flex-shrink-0" />Complete interior detail</li>
+                  <li className="flex items-center"><CheckCircle className="w-4 h-4 mr-2 text-green-500 flex-shrink-0" />Full exterior detail</li>
+                  <li className="flex items-center"><CheckCircle className="w-4 h-4 mr-2 text-green-500 flex-shrink-0" />Engine bay cleaning</li>
+                  <li className="flex items-center"><CheckCircle className="w-4 h-4 mr-2 text-green-500 flex-shrink-0" />Protective wax application</li>
                 </ul>
-                <p className="font-bold text-blue-600">Starting at $200</p>
+                <div className="text-center">
+                  <p className="font-bold text-[#023E8A] text-xl mb-3">From $325</p>
+                  <a href="#booking" className="block w-full py-2 bg-gradient-to-r from-[#023E8A] to-[#0077B6] text-white font-semibold rounded-lg hover:from-[#0077B6] hover:to-[#023E8A] transition text-center">
+                    Get Quote
+                  </a>
+                </div>
               </div>
-              <div className="bg-white p-8 rounded-lg shadow-lg text-center">
-                <h3 className="text-2xl font-bold mb-4">Full Service Mobile Detailing</h3>
-                <p className="text-gray-600 mb-6">Complete interior and exterior detailing packages</p>
-                <ul className="text-left text-gray-600 space-y-2 mb-6">
-                  <li>• Complete interior detailing</li>
-                  <li>• Full exterior detailing</li>
-                  <li>• Engine bay cleaning</li>
-                  <li>• Monthly maintenance plans</li>
+              <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition border border-gray-100">
+                <div className="text-center mb-4">
+                  <span className="inline-block bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm font-medium mb-2">Premium</span>
+                  <h3 className="text-xl font-bold">Ceramic Coating</h3>
+                </div>
+                <p className="text-gray-600 mb-4 text-center">Long-lasting protection & showroom shine</p>
+                <ul className="text-gray-600 space-y-2 mb-4 text-sm">
+                  <li className="flex items-center"><CheckCircle className="w-4 h-4 mr-2 text-green-500 flex-shrink-0" />Paint correction</li>
+                  <li className="flex items-center"><CheckCircle className="w-4 h-4 mr-2 text-green-500 flex-shrink-0" />Ceramic coating application</li>
+                  <li className="flex items-center"><CheckCircle className="w-4 h-4 mr-2 text-green-500 flex-shrink-0" />2-5 year protection</li>
                 </ul>
-                <p className="font-bold text-blue-600">Starting at $325</p>
+                <div className="text-center">
+                  <p className="font-bold text-[#023E8A] text-xl mb-3">Custom Quote</p>
+                  <a href="#booking" className="block w-full py-2 bg-[#023E8A] text-white font-semibold rounded-lg hover:bg-[#0077B6] transition text-center">
+                    Get Quote
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* Urgency CTA */}
+            <div className="mt-10 text-center">
+              <div className="inline-flex items-center gap-2 bg-green-100 text-green-800 px-4 py-2 rounded-full mb-4">
+                <Clock className="w-5 h-5" />
+                <span className="font-medium">Same-day appointments available - Book now!</span>
+              </div>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <a href="#booking">
+                  <button className="px-8 py-4 bg-gradient-to-r from-green-500 to-green-600 text-white text-lg font-bold rounded-lg hover:from-green-600 hover:to-green-700 transition shadow-lg transform hover:scale-105">
+                    Get Your Free Quote Now
+                  </button>
+                </a>
+                <a href="tel:+18036678731" className="flex items-center gap-2 text-[#023E8A] font-semibold hover:text-[#0077B6] transition">
+                  <Phone className="w-5 h-5" />
+                  <span>Or call (803) 667-8731</span>
+                </a>
               </div>
             </div>
           </div>

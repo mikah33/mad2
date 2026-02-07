@@ -157,8 +157,10 @@ const Navigation: React.FC = () => {
                 <div className="p-3 space-y-2">
                   <a href="/locations/columbia-sc" className="block px-3 py-2 text-sm text-gray-700 hover:text-[#023E8A] hover:bg-[#CAF0F8] rounded transition">Columbia SC</a>
                   <a href="/locations/lexington-sc" className="block px-3 py-2 text-sm text-gray-700 hover:text-[#023E8A] hover:bg-[#CAF0F8] rounded transition">Lexington SC</a>
-                  <a href="/locations/west-columbia" className="block px-3 py-2 text-sm text-gray-700 hover:text-[#023E8A] hover:bg-[#CAF0F8] rounded transition">West Columbia</a>
+                  <a href="/locations/west-columbia-sc" className="block px-3 py-2 text-sm text-gray-700 hover:text-[#023E8A] hover:bg-[#CAF0F8] rounded transition">West Columbia SC</a>
                   <a href="/locations/irmo-sc" className="block px-3 py-2 text-sm text-gray-700 hover:text-[#023E8A] hover:bg-[#CAF0F8] rounded transition">Irmo SC</a>
+                  <a href="/locations/cayce-sc" className="block px-3 py-2 text-sm text-gray-700 hover:text-[#023E8A] hover:bg-[#CAF0F8] rounded transition">Cayce SC</a>
+                  <a href="/locations/blythewood-sc" className="block px-3 py-2 text-sm text-gray-700 hover:text-[#023E8A] hover:bg-[#CAF0F8] rounded transition">Blythewood SC</a>
                 </div>
               </div>
             </div>
@@ -270,6 +272,14 @@ const Navigation: React.FC = () => {
                 <MapPin className="w-4 h-4 mr-2" />
                 Locations
               </a>
+              <div className="pl-8 space-y-1">
+                <a href="/locations/columbia-sc" onClick={handleLinkClick} className="block px-4 py-1.5 text-sm text-gray-600 hover:text-[#023E8A] hover:bg-[#CAF0F8] rounded transition">Columbia SC</a>
+                <a href="/locations/lexington-sc" onClick={handleLinkClick} className="block px-4 py-1.5 text-sm text-gray-600 hover:text-[#023E8A] hover:bg-[#CAF0F8] rounded transition">Lexington SC</a>
+                <a href="/locations/west-columbia-sc" onClick={handleLinkClick} className="block px-4 py-1.5 text-sm text-gray-600 hover:text-[#023E8A] hover:bg-[#CAF0F8] rounded transition">West Columbia SC</a>
+                <a href="/locations/irmo-sc" onClick={handleLinkClick} className="block px-4 py-1.5 text-sm text-gray-600 hover:text-[#023E8A] hover:bg-[#CAF0F8] rounded transition">Irmo SC</a>
+                <a href="/locations/cayce-sc" onClick={handleLinkClick} className="block px-4 py-1.5 text-sm text-gray-600 hover:text-[#023E8A] hover:bg-[#CAF0F8] rounded transition">Cayce SC</a>
+                <a href="/locations/blythewood-sc" onClick={handleLinkClick} className="block px-4 py-1.5 text-sm text-gray-600 hover:text-[#023E8A] hover:bg-[#CAF0F8] rounded transition">Blythewood SC</a>
+              </div>
 
               {/* Mobile CTA Buttons */}
               <div className="px-4 pt-4 space-y-3 border-t border-gray-200">

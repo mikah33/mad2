@@ -166,7 +166,7 @@ const InteriorDetailingPage: React.FC = () => {
   return (
     <>
       <SEOHead
-        title="Car Interior Detailing Near Me Columbia SC | Mobile Automotive Detail Service | Professional Interior Car Detailing"
+        title="Interior Car Detailing Columbia SC | Deep Clean | From $200"
         description="Expert car interior detailing near me in Columbia SC! Professional mobile automotive detail service at your location. Deep cleaning, stain removal, leather conditioning, odor elimination. Best interior detailing near me - we come to you!"
         keywords="car interior detailing, interior detailing near me, car interior cleaning Columbia SC, mobile car interior detailing, automotive interior detail near me, professional interior car detailing, leather conditioning, stain removal, odor elimination, pet hair removal, auto interior detailing Lexington SC, mobile car detailing, vehicle interior cleaning, car upholstery cleaning"
         canonical="https://mikahsmobiledetailingsc.com/services/interior-detailing"

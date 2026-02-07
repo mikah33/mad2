@@ -39,7 +39,8 @@ export const AdvancedSchemaMarkup: React.FC<AdvancedSchemaMarkupProps> = ({
     'cayce-sc': { lat: 33.9613, lng: -81.0748 },
     'chapin-sc': { lat: 34.1645, lng: -81.3454 },
     'swansea-sc': { lat: 33.7365, lng: -81.1093 },
-    'newberry-sc': { lat: 34.2742, lng: -81.6187 }
+    'newberry-sc': { lat: 34.2742, lng: -81.6187 },
+    'blythewood-sc': { lat: 34.2140, lng: -80.9743 }
   };
 
   // Advanced LocalBusiness Schema with enhanced features
@@ -705,6 +706,48 @@ export const getLocationData = (locationSlug: string): LocationSpecificData => {
         'Student Vehicle Care Packages',
         'Faculty and Staff Service',
         'Town Center Mobile Detailing'
+      ],
+      pricing: {
+        basic: '225',
+        premium: '400',
+        ceramic: 'Quote',
+        paintCorrection: 'Quote'
+      }
+    },
+    'blythewood-sc': {
+      locationSlug: 'blythewood-sc',
+      coordinates: { lat: 34.2140, lng: -80.9743 },
+      serviceRadius: 25,
+      neighborhoods: [
+        'Blythewood Town Center',
+        'Killian',
+        'Ridgewood',
+        'Longtown',
+        'Cobblestone Park',
+        'The Summit',
+        'Richland Northeast',
+        'Doko Manor'
+      ],
+      landmarks: [
+        'Blythewood High School',
+        'Doko Meadows Park',
+        'Cobblestone Park Golf Club',
+        'Blythewood Town Center',
+        'Richland Northeast High School'
+      ],
+      localKeywords: [
+        'Blythewood luxury auto detailing',
+        'Killian mobile detailing',
+        'Ridgewood car care',
+        'Longtown vehicle detailing',
+        'upscale Blythewood car service'
+      ],
+      specificServices: [
+        'Luxury Vehicle Detailing',
+        'Executive Auto Care',
+        'Premium Mobile Service',
+        'Country Club Vehicle Care',
+        'High-End Vehicle Specialists'
       ],
       pricing: {
         basic: '225',

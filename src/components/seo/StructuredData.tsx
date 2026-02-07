@@ -86,8 +86,8 @@ export const generateLocalBusinessSchema = (
     },
     geo: {
       '@type': 'GeoCoordinates',
-      latitude: 33.9981,
-      longitude: -81.0320
+      latitude: 34.0007,
+      longitude: -81.0348
     },
     url: 'https://mikahsmobiledetailingsc.com',
     priceRange: business.priceRange || '$$',
@@ -108,18 +108,27 @@ export const generateLocalBusinessSchema = (
     areaServed: [
       {
         '@type': 'City',
-        name: 'Columbia',
+        name: 'Columbia, SC',
         '@id': 'https://en.wikipedia.org/wiki/Columbia,_South_Carolina'
       },
       {
         '@type': 'City',
-        name: 'Lexington',
+        name: 'Lexington, SC',
         '@id': 'https://en.wikipedia.org/wiki/Lexington,_South_Carolina'
       },
       {
         '@type': 'City',
-        name: 'Irmo',
+        name: 'Irmo, SC',
         '@id': 'https://en.wikipedia.org/wiki/Irmo,_South_Carolina'
+      },
+      {
+        '@type': 'City',
+        name: 'West Columbia, SC'
+      },
+      {
+        '@type': 'City',
+        name: 'Cayce, SC',
+        '@id': 'https://en.wikipedia.org/wiki/Cayce,_South_Carolina'
       }
     ],
     hasOfferCatalog: {
@@ -201,19 +210,24 @@ export const generateServiceSchema = (
     serviceType: service.name,
     description: service.description,
     provider: {
-      '@type': 'LocalBusiness',
-      name: business.name,
-      telephone: business.phone,
+      '@type': 'AutoDetailing',
+      name: "Mikah's Mobile Auto Detailing",
+      telephone: '+1-803-667-8731',
       address: {
         '@type': 'PostalAddress',
-        addressLocality: business.address.city,
-        addressRegion: business.address.state
+        addressLocality: 'Columbia',
+        addressRegion: 'SC',
+        postalCode: '29072',
+        addressCountry: 'US'
       }
     },
-    areaServed: {
-      '@type': 'City',
-      name: business.address.city
-    },
+    areaServed: [
+      { '@type': 'City', name: 'Columbia, SC' },
+      { '@type': 'City', name: 'Lexington, SC' },
+      { '@type': 'City', name: 'Irmo, SC' },
+      { '@type': 'City', name: 'West Columbia, SC' },
+      { '@type': 'City', name: 'Cayce, SC' }
+    ],
     offers: service.price ? {
       '@type': 'Offer',
       price: service.price,

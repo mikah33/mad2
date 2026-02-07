@@ -82,6 +82,22 @@ export const LocationsPage = () => {
         'Knox Abbott Drive'
       ],
       landmarks: ['Riverbanks Zoo', 'Columbia Metropolitan Airport', 'West Columbia Riverwalk']
+    },
+    {
+      city: 'Blythewood',
+      citySlug: 'blythewood-sc',
+      description: 'Premium mobile detailing for Blythewood\'s upscale communities',
+      neighborhoods: [
+        'Blythewood Town Center',
+        'Killian',
+        'Ridgewood',
+        'Longtown',
+        'Cobblestone Park',
+        'The Summit',
+        'Richland Northeast',
+        'Doko Manor'
+      ],
+      landmarks: ['Blythewood High School', 'Doko Meadows Park', 'Cobblestone Park Golf Club']
     }
   ];
 
