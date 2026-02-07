@@ -34,27 +34,35 @@ import BookingTimeline from '../../components/BookingTimeline';
 
 // Icon mapping for landmark types
 const getLandmarkIcon = (type: Landmark['type']) => {
-  const iconMap = {
+  const iconMap: Record<string, JSX.Element> = {
     park: <Trees className="w-5 h-5" />,
     school: <GraduationCap className="w-5 h-5" />,
     shopping: <ShoppingBag className="w-5 h-5" />,
     restaurant: <Building className="w-5 h-5" />,
     community: <Users className="w-5 h-5" />,
     recreation: <Waves className="w-5 h-5" />,
-    business: <Building className="w-5 h-5" />
+    business: <Building className="w-5 h-5" />,
+    government: <Building className="w-5 h-5" />,
+    transport: <MapPin className="w-5 h-5" />,
+    medical: <Building className="w-5 h-5" />,
+    culture: <Building className="w-5 h-5" />
   };
   return iconMap[type] || <MapPin className="w-5 h-5" />;
 };
 
 const getLandmarkColor = (type: Landmark['type']) => {
-  const colorMap = {
+  const colorMap: Record<string, string> = {
     park: 'text-green-600 bg-green-50 border-green-200',
     school: 'text-purple-600 bg-purple-50 border-purple-200',
     shopping: 'text-orange-600 bg-orange-50 border-orange-200',
     restaurant: 'text-red-600 bg-red-50 border-red-200',
     community: 'text-blue-600 bg-blue-50 border-blue-200',
     recreation: 'text-teal-600 bg-teal-50 border-teal-200',
-    business: 'text-gray-600 bg-gray-50 border-gray-200'
+    business: 'text-gray-600 bg-gray-50 border-gray-200',
+    government: 'text-indigo-600 bg-indigo-50 border-indigo-200',
+    transport: 'text-cyan-600 bg-cyan-50 border-cyan-200',
+    medical: 'text-rose-600 bg-rose-50 border-rose-200',
+    culture: 'text-amber-600 bg-amber-50 border-amber-200'
   };
   return colorMap[type] || 'text-gray-600 bg-gray-50 border-gray-200';
 };

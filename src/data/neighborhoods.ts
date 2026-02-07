@@ -6,7 +6,7 @@
 // Core Interfaces
 export interface Landmark {
   name: string;
-  type: 'park' | 'school' | 'shopping' | 'restaurant' | 'community' | 'recreation' | 'business';
+  type: 'park' | 'school' | 'shopping' | 'restaurant' | 'community' | 'recreation' | 'business' | 'government' | 'transport' | 'medical' | 'culture';
   description: string;
   detailingNote: string;
 }
