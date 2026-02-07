@@ -81,29 +81,29 @@ const Hero: React.FC = () => {
       {/* Content */}
       <div className="container mx-auto px-4 text-center max-w-7xl relative z-10 pt-20 pb-8">
         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 leading-tight">
-          Mobile Auto Detailing in Lexington SC | We Come to You
+          Mobile Auto Detailing in Columbia & Lexington SC
         </h1>
 
         <p className="text-base sm:text-lg md:text-xl mb-6 md:mb-8 max-w-3xl mx-auto text-gray-100 px-4">
-          Professional mobile detailing in Lexington SC. We bring expert ceramic coating, paint correction, and interior cleaning directly to you.
+          We Come To You - Same Day Appointments Available
         </p>
 
         <p className="text-lg sm:text-xl md:text-2xl font-semibold mb-6 md:mb-8 text-[#90E0EF]">
-          ✨ Professional Mobile Car Care | We Come To You
+          5.0★ Rated | Interior & Exterior Detailing from $225
         </p>
 
         <div className="flex flex-wrap justify-center gap-3 md:gap-6 mb-8 md:mb-10 px-4">
           <div className="flex items-center bg-white/10 backdrop-blur-sm px-3 sm:px-4 md:px-6 py-2 md:py-3 rounded-lg text-sm md:text-base">
             <CheckCircle className="w-4 h-4 md:w-5 md:h-5 mr-1 md:mr-2 text-[#90E0EF] flex-shrink-0" />
-            <span>Interior Cleaning</span>
+            <span>We Come To You</span>
           </div>
           <div className="flex items-center bg-white/10 backdrop-blur-sm px-3 sm:px-4 md:px-6 py-2 md:py-3 rounded-lg text-sm md:text-base">
             <Shield className="w-4 h-4 md:w-5 md:h-5 mr-1 md:mr-2 text-[#90E0EF] flex-shrink-0" />
-            <span>Detailing Packages</span>
+            <span>Same Day Available</span>
           </div>
           <div className="flex items-center bg-white/10 backdrop-blur-sm px-3 sm:px-4 md:px-6 py-2 md:py-3 rounded-lg text-sm md:text-base">
             <Clock className="w-4 h-4 md:w-5 md:h-5 mr-1 md:mr-2 text-[#90E0EF] flex-shrink-0" />
-            <span>Exterior Wash</span>
+            <span>Free Quotes</span>
           </div>
         </div>
 

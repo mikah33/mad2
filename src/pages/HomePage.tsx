@@ -69,9 +69,9 @@ export const HomePage = () => {
   return (
     <>
       <SEOHead
-        title="Professional Mobile Car Detailing in Columbia, SC | Detailing Car Near Me"
-        description="#1 mobile car detailing in Columbia SC. Professional automotive detail near me service - we come to you! Interior car detailing, exterior auto detailing, mobile detailing packages. Get a free quote today!"
-        keywords="detailing car near me, detailing auto near me, automotive detail near me, car interior detailing, mobile detailing columbia sc, auto detailing columbia sc, mobile car detailing columbia sc, professional mobile detailing, automotive detailing near me"
+        title="Mobile Auto Detailing Columbia & Lexington SC | Mikah's Auto Detailing"
+        description="#1 mobile auto detailing in Columbia & Lexington SC. Interior/exterior detailing from $225. 5.0★ rated. Same day available. Call (803) 667-8731 for free quote!"
+        keywords="mobile auto detailing columbia sc, mobile car detailing lexington sc, car detailing near me, interior car detailing columbia, exterior auto detailing, same day car detailing, mobile detailing services"
         canonical="https://mikahsmobiledetailingsc.com"
         schema={schemas}
       />
@@ -82,16 +82,16 @@ export const HomePage = () => {
           <div className="container mx-auto px-4 max-w-7xl">
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div>
-                <h1 className="text-4xl md:text-5xl font-bold mb-6">Professional Mobile Car Detailing in Columbia, SC</h1>
+                <h1 className="text-4xl md:text-5xl font-bold mb-6">Mobile Auto Detailing in Columbia & Lexington SC</h1>
                 <p className="text-xl mb-8 text-blue-100">
-                  #1 rated mobile car detailing service in Columbia, SC. Professional automotive detail near me - we bring expert car interior detailing, exterior auto detailing, and mobile detailing packages directly to your location.
+                  We come to you - same day appointments available. Professional interior & exterior detailing from $225. Serving Columbia, Lexington, Irmo, and surrounding areas.
                 </p>
                 <div className="flex flex-wrap gap-4">
                   <a href="#quote" className="bg-white text-blue-600 px-8 py-4 rounded-lg font-bold hover:bg-blue-50 transition">
                     Get Free Quote
                   </a>
-                  <a href="tel:5551234567" className="bg-blue-700 text-white px-8 py-4 rounded-lg font-bold hover:bg-blue-600 transition">
-                    Call (555) 123-4567
+                  <a href="tel:+18036678731" className="bg-blue-700 text-white px-8 py-4 rounded-lg font-bold hover:bg-blue-600 transition">
+                    Call (803) 667-8731
                   </a>
                 </div>
               </div>
@@ -101,6 +101,32 @@ export const HomePage = () => {
                   <img src="/exterior3.jpg" alt="Mobile auto detailing premium exterior wash and ceramic coating prep Columbia SC" className="rounded-lg shadow-2xl" loading="lazy" />
                 </picture>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* About Section */}
+        <section className="py-16 bg-white">
+          <div className="container mx-auto px-4 max-w-4xl">
+            <div className="text-center mb-8">
+              <h2 className="text-3xl font-bold mb-4">Columbia & Lexington's Mobile Detailing Experts</h2>
+            </div>
+            <div className="prose prose-lg max-w-none text-gray-700">
+              <p className="mb-4">
+                Mikah's Auto Detailing brings professional mobile car care directly to your location in Columbia, Lexington, Irmo, and Cayce SC. We specialize in interior detailing, exterior hand washing, paint correction, and full-service packages - all at your home, office, or anywhere convenient.
+              </p>
+              <p className="mb-4">
+                Unlike traditional detail shops, we save you time by coming to you. No drop-off, no waiting rooms, no disruption to your day. Our detailers use professional-grade products to deliver showroom results.
+              </p>
+              <p className="mb-4">
+                <strong>Services:</strong> Deep interior cleaning, pet hair removal, odor elimination, exterior hand wash, clay bar treatment, paint correction, and protective wax application.
+              </p>
+              <p className="mb-6">
+                <strong>Serving:</strong> Columbia, Lexington, Irmo, West Columbia, Cayce, Forest Acres, Five Points, Lake Murray area, and surrounding communities.
+              </p>
+              <p className="text-center">
+                <strong className="text-blue-600 text-xl">Same-day appointments available. Call or text (803) 667-8731.</strong>
+              </p>
             </div>
           </div>
         </section>
