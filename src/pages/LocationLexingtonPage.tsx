@@ -13,6 +13,7 @@ import { Breadcrumbs } from '../components/Breadcrumbs';
 import { InternalLinkingMatrix } from '../components/seo/InternalLinkingMatrix';
 import { LandmarkContent } from '../components/seo/LandmarkContent';
 import { AdvancedSchemaMarkup, getLocationData } from '../components/seo/AdvancedSchemaMarkup';
+import { lexingtonNeighborhoods } from '../data/neighborhoods';
 
 export const LocationLexingtonPage = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -198,7 +199,7 @@ export const LocationLexingtonPage = () => {
 
       <Navigation />
 
-      <div className="bg-gray-50">
+      <div className="bg-primary-50 border-b border-primary-100">
         <div className="container mx-auto px-4 max-w-7xl">
           <Breadcrumbs
             items={[
@@ -316,21 +317,71 @@ export const LocationLexingtonPage = () => {
           </div>
         </section>
 
-        {/* Service Areas */}
+        {/* Lexington Neighborhoods - Detailed Pages */}
         <section className="py-16 bg-white">
           <div className="container mx-auto px-4 max-w-6xl">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
-              Lexington SC Areas We Serve
+              Lexington SC Neighborhoods We Serve
             </h2>
             <p className="text-center text-gray-600 mb-12">
-              Professional mobile detailing service throughout greater Lexington & Lake Murray
+              Click any neighborhood for detailed service information, local landmarks, and booking
+            </p>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {lexingtonNeighborhoods.map((neighborhood) => (
+                <Link
+                  key={neighborhood.slug}
+                  to={`/locations/lexington-sc/${neighborhood.slug}`}
+                  className="group bg-gray-50 rounded-xl p-6 hover:bg-primary-50 hover:shadow-lg transition border border-gray-200 hover:border-primary-300"
+                >
+                  <div className="flex items-start justify-between mb-3">
+                    <h3 className="text-xl font-bold group-hover:text-primary-700 transition">
+                      {neighborhood.name}
+                    </h3>
+                    <ArrowRight className="w-5 h-5 text-primary-600 group-hover:translate-x-1 transition" />
+                  </div>
+                  <p className="text-gray-600 text-sm mb-4">{neighborhood.shortDescription}</p>
+                  <div className="flex flex-wrap gap-2">
+                    {neighborhood.popularServices.map((service, i) => (
+                      <span
+                        key={i}
+                        className="bg-white text-primary-700 px-2 py-1 rounded text-xs font-medium border border-primary-200"
+                      >
+                        {service}
+                      </span>
+                    ))}
+                  </div>
+                </Link>
+              ))}
+            </div>
+
+            <div className="text-center mt-8">
+              <Link
+                to="/locations/lexington-sc/neighborhoods"
+                className="inline-flex items-center text-primary-600 hover:text-primary-800 font-semibold transition"
+              >
+                View all Lexington neighborhoods
+                <ArrowRight className="w-4 h-4 ml-2" />
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* Service Areas */}
+        <section className="py-16 bg-gray-50">
+          <div className="container mx-auto px-4 max-w-6xl">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
+              Additional Lexington SC Areas
+            </h2>
+            <p className="text-center text-gray-600 mb-12">
+              We also serve these locations throughout greater Lexington & Lake Murray
             </p>
 
             <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-4">
               {['Lake Murray Shores', 'Spence Island', 'River Club', 'Oak Grove', 'Red Bank',
                 'Gilbert', 'Pelion', 'Batesburg-Leesville', 'Summit', 'Cottages at Murray',
                 'Sunset Boulevard', 'Lexington Medical Center'].map((area, i) => (
-                <div key={i} className="bg-gray-50 rounded-lg p-4 hover:bg-gray-100 transition">
+                <div key={i} className="bg-white rounded-lg p-4 hover:bg-gray-50 transition border border-gray-200">
                   <MapPin className="w-5 h-5 text-primary-700 mb-2" />
                   <div className="font-semibold">{area}</div>
                 </div>

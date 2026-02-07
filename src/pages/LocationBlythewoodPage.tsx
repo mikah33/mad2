@@ -12,6 +12,7 @@ import { Breadcrumbs } from '../components/Breadcrumbs';
 import { InternalLinkingMatrix } from '../components/seo/InternalLinkingMatrix';
 import { LandmarkContent } from '../components/seo/LandmarkContent';
 import { AdvancedSchemaMarkup, getLocationData } from '../components/seo/AdvancedSchemaMarkup';
+import { blythewoodNeighborhoods } from '../data/neighborhoods';
 
 export const LocationBlythewoodPage = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -140,7 +141,7 @@ export const LocationBlythewoodPage = () => {
 
       <Navigation />
 
-      <div className="bg-gray-50">
+      <div className="bg-primary-50 border-b border-primary-100">
         <div className="container mx-auto px-4 max-w-7xl">
           <Breadcrumbs
             items={[
@@ -223,8 +224,58 @@ export const LocationBlythewoodPage = () => {
           </div>
         </div>
 
-        {/* Professional Detailing for Blythewood Residents */}
+        {/* Blythewood Neighborhoods */}
         <section className="py-16 bg-white">
+          <div className="container mx-auto px-4 max-w-6xl">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
+              Blythewood SC Neighborhoods We Serve
+            </h2>
+            <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+              Premium mobile detailing service throughout Blythewood's finest communities. We come to you!
+            </p>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {blythewoodNeighborhoods.map((neighborhood) => (
+                <Link
+                  key={neighborhood.slug}
+                  to={`/locations/blythewood-sc/${neighborhood.slug}`}
+                  className="group bg-gray-50 rounded-xl p-6 hover:bg-primary-50 transition-all hover:shadow-lg border border-gray-100 hover:border-primary-200"
+                >
+                  <div className="flex items-start gap-4">
+                    <div className="p-3 bg-white rounded-lg shadow-sm group-hover:bg-primary-100 transition">
+                      <MapPin className="w-6 h-6 text-primary-600" />
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="text-xl font-bold mb-2 group-hover:text-primary-700 transition">
+                        {neighborhood.name}
+                      </h3>
+                      <p className="text-gray-600 text-sm mb-3 line-clamp-2">
+                        {neighborhood.shortDescription}
+                      </p>
+                      <div className="flex items-center text-primary-600 font-medium text-sm">
+                        View Services
+                        <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition" />
+                      </div>
+                    </div>
+                  </div>
+                </Link>
+              ))}
+            </div>
+
+            <div className="text-center mt-8">
+              <Link
+                to="/locations/blythewood-sc/neighborhoods"
+                className="inline-flex items-center gap-2 text-primary-600 hover:text-primary-700 font-semibold"
+              >
+                View All Blythewood Neighborhoods
+                <ArrowRight className="w-5 h-5" />
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* Professional Detailing for Blythewood Residents */}
+        <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 max-w-6xl">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
               Professional Detailing for Blythewood Residents

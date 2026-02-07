@@ -36,164 +36,177 @@ import LandingPage from './pages/LandingPage';
 import LandingPageSpecials from './pages/LandingPageSpecials';
 import { NotFoundPage } from './pages/NotFoundPage';
 import ErrorBoundary from './components/ErrorBoundary';
+import { NeighborhoodPage, CityHubPage } from './pages/neighborhoods';
+import RootLayout from './components/RootLayout';
 
 export const router = createBrowserRouter([
   {
-    path: '/',
-    element: <App />,
+    element: <RootLayout />,
     errorElement: <ErrorBoundary />,
-  },
-  {
-    path: '/services',
-    element: <ServicesPage />,
-    errorElement: <ErrorBoundary />,
-  },
-  {
-    path: '/services/interior-detailing',
-    element: <InteriorDetailingPage />,
-  },
-  {
-    path: '/services/exterior-detailing',
-    element: <ExteriorDetailingPage />,
-  },
-  {
-    path: '/services/ceramic-coating',
-    element: <CeramicCoatingPage />,
-  },
-  {
-    path: '/services/paint-correction',
-    element: <PaintCorrectionPage />,
-  },
-  {
-    path: '/services/full-detail',
-    element: <FullDetailPage />,
-  },
-  {
-    path: '/services/mobile-detailing',
-    element: <MobileDetailingPage />,
-  },
-  {
-    path: '/blog',
-    element: <BlogPage />,
-  },
-  {
-    path: '/blog/:slug',
-    element: <BlogPostPage />,
-    errorElement: <ErrorBoundary />,
-  },
-  {
-    path: '/faq',
-    element: <FAQPage />,
-  },
-  {
-    path: '/faq/ceramic-coating',
-    element: <CeramicCoatingFAQPage />,
-  },
-  {
-    path: '/faq/mobile-detailing',
-    element: <MobileDetailingFAQPage />,
-  },
-  {
-    path: '/locations',
-    element: <LocationsPage />,
-  },
-  {
-    path: '/locations/columbia-sc',
-    element: <LocationColumbiaPage />,
-  },
-  {
-    path: '/locations/lexington-sc',
-    element: <LocationLexingtonPage />,
-  },
-  {
-    path: '/locations/irmo-sc',
-    element: <LocationIrmoPage />,
-  },
-  {
-    path: '/locations/cayce-sc',
-    element: <LocationCayecPage />,
-  },
-  {
-    path: '/locations/west-columbia',
-    element: <LocationWestColumbiaPage />,
-  },
-  {
-    path: '/locations/west-columbia-sc',
-    element: <LocationWestColumbiaPage />,
-  },
-  {
-    path: '/locations/chapin-sc',
-    element: <LocationChapinPage />,
-  },
-  {
-    path: '/locations/swansea-sc',
-    element: <LocationSwanseaPage />,
-  },
-  {
-    path: '/locations/newberry-sc',
-    element: <LocationNewberryPage />,
-  },
-  {
-    path: '/locations/blythewood-sc',
-    element: <LocationBlythewoodPage />,
-  },
-  {
-    path: '/pricing',
-    element: <PricingPage />,
-  },
-  {
-    path: '/book',
-    element: <BookingPage />,
-    errorElement: <ErrorBoundary />,
-  },
-  {
-    path: '/book/thank-you',
-    element: <ThankYouPage />,
-  },
-  {
-    path: '/account',
-    element: <AccountPage />,
-    errorElement: <ErrorBoundary />,
-  },
-  {
-    path: '/gallery',
-    element: <GalleryPage />,
-    errorElement: <ErrorBoundary />,
-  },
-  {
-    path: '/reviews',
-    element: <ReviewsPage />,
-    errorElement: <ErrorBoundary />,
-  },
-  {
-    path: '/review-us',
-    element: <ReviewUsPage />,
-    errorElement: <ErrorBoundary />,
-  },
-  {
-    path: '/resources',
-    element: <ResourcesPage />,
-  },
-  {
-    path: '/privacy',
-    element: <PrivacyPolicyPage />,
-  },
-  {
-    path: '/terms',
-    element: <TermsOfServicePage />,
-  },
-  {
-    path: '/lp',
-    element: <LandingPage />,
-    errorElement: <ErrorBoundary />,
-  },
-  {
-    path: '/lp-specials',
-    element: <LandingPageSpecials />,
-    errorElement: <ErrorBoundary />,
-  },
-  {
-    path: '*',
-    element: <NotFoundPage />,
+    children: [
+      {
+        path: '/',
+        element: <App />,
+      },
+      {
+        path: '/services',
+        element: <ServicesPage />,
+      },
+      {
+        path: '/services/interior-detailing',
+        element: <InteriorDetailingPage />,
+      },
+      {
+        path: '/services/exterior-detailing',
+        element: <ExteriorDetailingPage />,
+      },
+      {
+        path: '/services/ceramic-coating',
+        element: <CeramicCoatingPage />,
+      },
+      {
+        path: '/services/paint-correction',
+        element: <PaintCorrectionPage />,
+      },
+      {
+        path: '/services/full-detail',
+        element: <FullDetailPage />,
+      },
+      {
+        path: '/services/mobile-detailing',
+        element: <MobileDetailingPage />,
+      },
+      {
+        path: '/blog',
+        element: <BlogPage />,
+      },
+      {
+        path: '/blog/:slug',
+        element: <BlogPostPage />,
+      },
+      {
+        path: '/faq',
+        element: <FAQPage />,
+      },
+      {
+        path: '/faq/ceramic-coating',
+        element: <CeramicCoatingFAQPage />,
+      },
+      {
+        path: '/faq/mobile-detailing',
+        element: <MobileDetailingFAQPage />,
+      },
+      {
+        path: '/locations',
+        element: <LocationsPage />,
+      },
+      {
+        path: '/locations/columbia-sc',
+        element: <LocationColumbiaPage />,
+      },
+      {
+        path: '/locations/lexington-sc',
+        element: <LocationLexingtonPage />,
+      },
+      {
+        path: '/locations/irmo-sc',
+        element: <LocationIrmoPage />,
+      },
+      {
+        path: '/locations/cayce-sc',
+        element: <LocationCayecPage />,
+      },
+      {
+        path: '/locations/west-columbia',
+        element: <LocationWestColumbiaPage />,
+      },
+      {
+        path: '/locations/west-columbia-sc',
+        element: <LocationWestColumbiaPage />,
+      },
+      {
+        path: '/locations/chapin-sc',
+        element: <LocationChapinPage />,
+      },
+      {
+        path: '/locations/swansea-sc',
+        element: <LocationSwanseaPage />,
+      },
+      {
+        path: '/locations/newberry-sc',
+        element: <LocationNewberryPage />,
+      },
+      {
+        path: '/locations/blythewood-sc',
+        element: <LocationBlythewoodPage />,
+      },
+      {
+        path: '/pricing',
+        element: <PricingPage />,
+      },
+      {
+        path: '/book',
+        element: <BookingPage />,
+      },
+      {
+        path: '/book/thank-you',
+        element: <ThankYouPage />,
+      },
+      {
+        path: '/account',
+        element: <AccountPage />,
+      },
+      {
+        path: '/gallery',
+        element: <GalleryPage />,
+      },
+      {
+        path: '/reviews',
+        element: <ReviewsPage />,
+      },
+      {
+        path: '/review-us',
+        element: <ReviewUsPage />,
+      },
+      {
+        path: '/resources',
+        element: <ResourcesPage />,
+      },
+      {
+        path: '/privacy',
+        element: <PrivacyPolicyPage />,
+      },
+      {
+        path: '/terms',
+        element: <TermsOfServicePage />,
+      },
+      {
+        path: '/lp',
+        element: <LandingPage />,
+      },
+      {
+        path: '/lp-specials',
+        element: <LandingPageSpecials />,
+      },
+      // Neighborhood landing pages (SEO-optimized URL structure)
+      {
+        path: '/locations/:citySlug/:neighborhoodSlug',
+        element: <NeighborhoodPage />,
+      },
+      // City hub pages (shows all neighborhoods in a city)
+      {
+        path: '/locations/:citySlug/neighborhoods',
+        element: <CityHubPage />,
+      },
+      // Legacy neighborhood routes (redirect support)
+      {
+        path: '/neighborhoods/:neighborhoodSlug',
+        element: <NeighborhoodPage />,
+      },
+      {
+        path: '*',
+        element: <NotFoundPage />,
+      },
+    ],
   },
 ]);
