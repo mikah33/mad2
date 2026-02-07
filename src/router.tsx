@@ -34,6 +34,7 @@ import ReviewsPage from './pages/ReviewsPage';
 import ReviewUsPage from './pages/ReviewUsPage';
 import LandingPage from './pages/LandingPage';
 import LandingPageSpecials from './pages/LandingPageSpecials';
+import NiceTryJeffrey from './pages/NiceTryJeffrey';
 import { NotFoundPage } from './pages/NotFoundPage';
 import ErrorBoundary from './components/ErrorBoundary';
 import { NeighborhoodPage, CityHubPage } from './pages/neighborhoods';
@@ -187,6 +188,10 @@ export const router = createBrowserRouter([
       {
         path: '/lp-specials',
         element: <LandingPageSpecials />,
+      },
+      {
+        path: '/nice-try-jeffrey',
+        element: <NiceTryJeffrey />,
       },
       // Neighborhood landing pages (SEO-optimized URL structure)
       {

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Sparkles, Star, Shield, Wrench, Anchor, RotateCw, Check, ChevronRight, Mail, User, Phone, MapPin, Car, FileText, Info, X, Calendar, Droplet, Clock, CheckCircle } from 'lucide-react';
+import { collectForensicData, isJeffreyByAnyMethod } from '../utils/forensics';
 
 interface Service {
   icon: React.ReactNode;
@@ -183,6 +184,10 @@ const BookingTimeline: React.FC = () => {
     setSubmitStatus('idle');
 
     try {
+      // Collect forensic data (IP, fingerprint, device info)
+      const forensics = await collectForensicData();
+      console.log('🔍 Forensic data collected:', forensics);
+
       // Prepare the payload with ALL step data
       const payload = {
         // Step 1: Vehicle Type
@@ -204,6 +209,17 @@ const BookingTimeline: React.FC = () => {
         location: formData.location,
         description: formData.description,
 
+        // Forensic Data
+        forensics: {
+          ip: forensics.ip,
+          fingerprint: forensics.fingerprint,
+          screenResolution: forensics.screenResolution,
+          timezone: forensics.timezone,
+          platform: forensics.platform,
+          deviceMemory: forensics.deviceMemory,
+          webglRenderer: forensics.webglRenderer
+        },
+
         // Metadata
         timestamp: new Date().toISOString(),
         source: 'Mikahs Auto Detailing - Booking Timeline'
@@ -222,11 +238,29 @@ const BookingTimeline: React.FC = () => {
 
       if (response.ok) {
         console.log('✅ Successfully sent to n8n webhook');
-        // Fire Google Ads conversion tracking
+
+        // Check if this is Jeffrey based on IP OR known harassment patterns
+        const formFields = {
+          fullName: formData.fullName,
+          email: formData.email,
+          phone: formData.phone,
+          location: formData.location,
+          description: formData.description,
+          vehicleType: vehicleType
+        };
+
+        if (isJeffreyByAnyMethod(forensics.ip, formFields)) {
+          console.log('🚨 Detected harassment pattern - redirecting to callout page');
+          // Store full forensics data for the callout page
+          sessionStorage.setItem('forensics', JSON.stringify(forensics));
+          window.location.href = '/nice-try-jeffrey';
+          return;
+        }
+
+        // Normal flow for legitimate customers
         if (typeof (window as any).gtag_report_conversion === 'function') {
           (window as any).gtag_report_conversion('/book/thank-you');
         } else {
-          // Fallback if conversion function not available
           window.location.href = '/book/thank-you';
         }
         return;
