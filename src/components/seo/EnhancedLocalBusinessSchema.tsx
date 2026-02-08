@@ -536,6 +536,7 @@ export const generateEnhancedLocalBusinessSchema = (
         '@id': `${baseUrl}/products/basic-mobile-detail`,
         name: 'Basic Mobile Detailing Package',
         description: 'Essential mobile car detailing service including wash, vacuum, and basic interior cleaning.',
+        image: `${baseUrl}/exterior1.jpg`,
         category: 'Mobile Car Detailing',
         brand: {
           '@type': 'Brand',
@@ -546,6 +547,7 @@ export const generateEnhancedLocalBusinessSchema = (
           priceCurrency: 'USD',
           price: '150',
           availability: 'https://schema.org/InStock',
+          url: `${baseUrl}/book`,
           seller: {
             '@type': 'LocalBusiness',
             name: "Mikah's Auto Detailing"
@@ -557,6 +559,7 @@ export const generateEnhancedLocalBusinessSchema = (
         '@id': `${baseUrl}/products/premium-mobile-detail`,
         name: 'Premium Mobile Detailing Package',
         description: 'Comprehensive mobile auto detailing with interior deep clean, exterior wash, wax, and tire shine.',
+        image: `${baseUrl}/mclarens.jpg`,
         category: 'Mobile Car Detailing',
         brand: {
           '@type': 'Brand',
@@ -567,6 +570,7 @@ export const generateEnhancedLocalBusinessSchema = (
           priceCurrency: 'USD',
           price: '250',
           availability: 'https://schema.org/InStock',
+          url: `${baseUrl}/book`,
           seller: {
             '@type': 'LocalBusiness',
             name: "Mikah's Auto Detailing"
@@ -578,6 +582,7 @@ export const generateEnhancedLocalBusinessSchema = (
         '@id': `${baseUrl}/products/luxury-mobile-detail`,
         name: 'Luxury Mobile Detailing Package',
         description: 'Ultimate mobile car detailing experience with paint correction, ceramic coating prep, and premium protection.',
+        image: `${baseUrl}/mclarens.jpg`,
         category: 'Mobile Car Detailing',
         brand: {
           '@type': 'Brand',
@@ -588,6 +593,7 @@ export const generateEnhancedLocalBusinessSchema = (
           priceCurrency: 'USD',
           price: '350',
           availability: 'https://schema.org/InStock',
+          url: `${baseUrl}/book`,
           seller: {
             '@type': 'LocalBusiness',
             name: "Mikah's Auto Detailing"
