@@ -10,6 +10,8 @@ const __dirname = dirname(__filename);
 let services: any[] = [];
 let locations: any[] = [];
 let blogPosts: any[] = [];
+let neighborhoods: any[] = [];
+let cities: any[] = [];
 
 try {
   const servicesModule = await import('../src/data/services.js');
@@ -30,6 +32,14 @@ try {
   blogPosts = blogModule.blogPosts || [];
 } catch (e) {
   console.log('⚠️  Blog posts not found, skipping blog URLs');
+}
+
+try {
+  const neighborhoodsModule = await import('../src/data/neighborhoods.js');
+  neighborhoods = neighborhoodsModule.neighborhoods || [];
+  cities = neighborhoodsModule.cities || [];
+} catch (e) {
+  console.log('⚠️  Neighborhoods not found, skipping neighborhood URLs');
 }
 
 interface SitemapURL {
@@ -116,6 +126,30 @@ function generateSitemap(): string {
       priority: 0.9,
     });
   });
+
+  // City hub pages (neighborhoods overview for each city)
+  if (cities.length > 0) {
+    cities.forEach((city: any) => {
+      urls.push({
+        loc: `${SITE_URL}/locations/${city.slug}/neighborhoods`,
+        lastmod: currentDate,
+        changefreq: 'monthly',
+        priority: 0.85,
+      });
+    });
+  }
+
+  // Individual neighborhood pages
+  if (neighborhoods.length > 0) {
+    neighborhoods.forEach((neighborhood: any) => {
+      urls.push({
+        loc: `${SITE_URL}/locations/${neighborhood.citySlug}/${neighborhood.slug}`,
+        lastmod: currentDate,
+        changefreq: 'monthly',
+        priority: 0.8,
+      });
+    });
+  }
 
   // Blog listing page
   urls.push({
