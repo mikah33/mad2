@@ -283,33 +283,41 @@ export const generateAutomotiveBusinessSchema = (
     ];
   }
 
-  // Add professional equipment if requested
+  // Add professional equipment if requested (using Thing type to avoid Product schema requirements)
   if (includeEquipment) {
-    schema.hasEquipment = [
+    schema.knowsAbout = [
+      'Professional Mobile Detailing Trailer',
+      'Pressure Washing Equipment',
+      'Steam Cleaning Equipment',
+      'Paint Correction Tools',
+      'Ceramic Coating Application Equipment'
+    ];
+
+    schema.additionalProperty = [
       {
-        '@type': 'Product',
-        name: 'Professional Mobile Detailing Trailer',
-        description: 'Fully equipped mobile detailing unit with water supply and power'
+        '@type': 'PropertyValue',
+        name: 'Equipment',
+        value: 'Professional mobile detailing trailer with water supply and power'
       },
       {
-        '@type': 'Product',
-        name: 'Pressure Washing Equipment',
-        description: 'High-quality pressure washers and foam cannons'
+        '@type': 'PropertyValue',
+        name: 'Equipment',
+        value: 'High-quality pressure washers and foam cannons'
       },
       {
-        '@type': 'Product',
-        name: 'Steam Cleaning Equipment',
-        description: 'Professional steam cleaners for interior detailing'
+        '@type': 'PropertyValue',
+        name: 'Equipment',
+        value: 'Professional steam cleaners for interior detailing'
       },
       {
-        '@type': 'Product',
-        name: 'Paint Correction Tools',
-        description: 'Professional polishers, buffers, and correction compounds'
+        '@type': 'PropertyValue',
+        name: 'Equipment',
+        value: 'Professional polishers, buffers, and correction compounds'
       },
       {
-        '@type': 'Product',
-        name: 'Ceramic Coating Application Equipment',
-        description: 'Specialized tools for ceramic coating application'
+        '@type': 'PropertyValue',
+        name: 'Equipment',
+        value: 'Specialized tools for ceramic coating application'
       }
     ];
   }

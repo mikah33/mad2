@@ -198,14 +198,15 @@ export const generateMobileDetailingProductSchemas = (
       keywords: 'car interior detailing, interior cleaning service, upholstery cleaning, leather conditioning',
       ...baseProduct,
       offers: {
-        '@type': 'Offer',
+        '@type': 'AggregateOffer',
         '@id': `${baseUrl}/products/interior-detailing-service/offer`,
-        price: '100-200',
+        lowPrice: '100',
+        highPrice: '200',
         priceCurrency: 'USD',
+        offerCount: '3',
         availability: 'https://schema.org/InStock',
         validFrom: new Date().toISOString().split('T')[0],
         validThrough: '2026-12-31',
-        itemCondition: 'https://schema.org/NewCondition',
         url: `${baseUrl}/services/interior-detailing`
       }
     }
@@ -312,10 +313,12 @@ export const generateMobileDetailingPackageListSchema = () => {
           '@type': 'Product',
           name: 'Basic Mobile Detailing',
           description: 'Essential mobile car detailing package',
+          image: `${baseUrl}/exterior1.jpg`,
           offers: {
             '@type': 'Offer',
             price: '150',
-            priceCurrency: 'USD'
+            priceCurrency: 'USD',
+            availability: 'https://schema.org/InStock'
           }
         }
       },
@@ -326,10 +329,12 @@ export const generateMobileDetailingPackageListSchema = () => {
           '@type': 'Product',
           name: 'Premium Mobile Detailing',
           description: 'Comprehensive mobile auto detailing',
+          image: `${baseUrl}/mclarens.jpg`,
           offers: {
             '@type': 'Offer',
             price: '250',
-            priceCurrency: 'USD'
+            priceCurrency: 'USD',
+            availability: 'https://schema.org/InStock'
           }
         }
       },
@@ -340,10 +345,12 @@ export const generateMobileDetailingPackageListSchema = () => {
           '@type': 'Product',
           name: 'Luxury Mobile Detailing',
           description: 'Ultimate mobile car detailing experience',
+          image: `${baseUrl}/mclarens.jpg`,
           offers: {
             '@type': 'Offer',
             price: '350',
-            priceCurrency: 'USD'
+            priceCurrency: 'USD',
+            availability: 'https://schema.org/InStock'
           }
         }
       },
@@ -354,10 +361,12 @@ export const generateMobileDetailingPackageListSchema = () => {
           '@type': 'Product',
           name: 'Interior Detailing Service',
           description: 'Specialized interior car detailing',
+          image: `${baseUrl}/interior1.jpg`,
           offers: {
             '@type': 'Offer',
-            price: '100-200',
-            priceCurrency: 'USD'
+            price: '100',
+            priceCurrency: 'USD',
+            availability: 'https://schema.org/InStock'
           }
         }
       }
