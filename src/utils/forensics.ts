@@ -10,7 +10,9 @@ export const BLOCKED_IP_PREFIXES = [
 // Known harassment patterns (links, phrases, etc.)
 export const BLOCKED_PATTERNS = [
   'tumblr.com/buttcheekbitch',
-  'buttcheekbitch'
+  'buttcheekbitch',
+  'cuck',
+  'cuk'
 ];
 
 export interface ForensicData {
