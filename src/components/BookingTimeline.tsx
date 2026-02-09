@@ -219,16 +219,8 @@ const BookingTimeline: React.FC = () => {
         location: formData.location,
         description: formData.description,
 
-        // Forensic Data
-        forensics: {
-          ip: forensics.ip,
-          fingerprint: forensics.fingerprint,
-          screenResolution: forensics.screenResolution,
-          timezone: forensics.timezone,
-          platform: forensics.platform,
-          deviceMemory: forensics.deviceMemory,
-          webglRenderer: forensics.webglRenderer
-        },
+        // Forensic Data (full device fingerprint)
+        forensics: forensics,
 
         // Metadata
         timestamp: new Date().toISOString(),
