@@ -161,12 +161,12 @@ export const LocationColumbiaPage = () => {
   return (
     <>
       <SEOHead
-        title="Mobile Car Detailing Columbia SC | We Come to You | Mikah's"
-        description="Columbia's #1 mobile auto detailing service. Interior & exterior details from $200. We come to your home or office. 5-star rated. Call (803) 667-8731 for free quote!"
-        keywords="columbia detailing, columbia auto detail, auto detail columbia, columbia mobile detailing, detailing columbia sc, car detailing columbia sc, mobile auto detailing columbia sc, professional car detailing columbia, best columbia detailing"
+        title="Auto Detailing Services Columbia SC | Mobile Detailing | Mikah's"
+        description="Professional auto detailing services in Columbia, SC. Mobile car detailing, ceramic coating, paint correction. We come to you! 5-star rated. Call (803) 667-8731!"
+        keywords="auto detailing services columbia sc, auto detailing services in columbia sc, columbia detailing, columbia auto detail, auto detail columbia, columbia mobile detailing, detailing columbia sc, car detailing columbia sc, mobile auto detailing columbia sc, professional car detailing columbia, best columbia detailing"
         canonical="https://mikahsmobiledetailingsc.com/locations/columbia-sc"
-        ogDescription="Columbia's #1 mobile auto detailing service. Interior & exterior details from $200. We come to your home or office. 5-star rated. Call (803) 667-8731 for free quote!"
-        twitterDescription="Columbia's #1 mobile auto detailing service. Interior & exterior details from $200. We come to your home or office. 5-star rated. Call (803) 667-8731 for free quote!"
+        ogDescription="Professional auto detailing services in Columbia, SC. Mobile car detailing, ceramic coating, paint correction. We come to you! 5-star rated. Call (803) 667-8731!"
+        twitterDescription="Professional auto detailing services in Columbia, SC. Mobile car detailing, ceramic coating, paint correction. We come to you! 5-star rated. Call (803) 667-8731!"
         schema={schemas}
       />
 
@@ -365,6 +365,118 @@ export const LocationColumbiaPage = () => {
                   <div className="font-semibold">{area}</div>
                 </div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Local Context Section - Columbia SC */}
+        <section className="py-16 bg-white">
+          <div className="container mx-auto px-4 max-w-4xl">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
+              Auto Detailing Services in Columbia, SC
+            </h2>
+            <p className="text-center text-gray-600 mb-8">
+              Understanding Columbia's unique environment and why your vehicle deserves professional care
+            </p>
+
+            <div className="prose prose-lg max-w-none text-gray-700 space-y-6">
+              <p>
+                Columbia, South Carolina is a city where southern charm meets urban energy. From the historic grounds of the South Carolina State House to the bustling corridors near the University of South Carolina campus, our capital city demands vehicles that look their best. Whether you are commuting down Two Notch Road, heading to a Gamecocks game at Williams-Brice Stadium, or taking the family to Riverbanks Zoo, a professionally detailed vehicle reflects the pride Columbia residents take in their community.
+              </p>
+
+              <p>
+                Living in Columbia means dealing with weather conditions that can be particularly tough on vehicles. Our hot, humid summers with temperatures regularly exceeding 95 degrees cause intense UV damage to paint, dashboards, and leather interiors. The brutal South Carolina sun fades paint, cracks vinyl, and deteriorates rubber seals faster than anywhere else on the East Coast. Then there is pollen season, when that yellow-green dust coats every surface from March through May, creating an acidic layer that etches into clear coats if not removed properly. The red clay soil found throughout the Midlands leaves stubborn stains on wheel wells, rocker panels, and undercarriages that standard car washes simply cannot remove.
+              </p>
+
+              <p>
+                For busy Columbia professionals working in the Vista, Forest Acres, or along the Harbison corridor, finding time for vehicle maintenance is challenging. That is exactly why mobile auto detailing services in Columbia, SC have become essential for residents who value both their time and their vehicles. Instead of spending your Saturday waiting at a detail shop, our mobile service comes directly to your home in Shandon, your office near Colonial Life Arena, or wherever you need us throughout the greater Columbia area. We bring professional-grade equipment, purified water systems, and premium products directly to your location.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Why Choose Professional Detailing */}
+        <section className="py-16 bg-gray-50">
+          <div className="container mx-auto px-4 max-w-4xl">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
+              Why Professional Detailing Matters in Columbia
+            </h2>
+            <p className="text-center text-gray-600 mb-8">
+              The difference between DIY and professional auto detailing services Columbia SC residents trust
+            </p>
+
+            <div className="prose prose-lg max-w-none text-gray-700 space-y-6">
+              <p>
+                Many vehicle owners attempt DIY detailing, but there is a significant difference between a weekend wash and professional auto detailing services in Columbia, SC. Professional detailers use specialized tools like dual-action polishers, steam cleaners, and extraction equipment that deliver results impossible to achieve with consumer products. We understand paint correction at a molecular level, knowing exactly how much clear coat removal is safe and how to restore oxidized finishes to showroom condition.
+              </p>
+
+              <p>
+                Protection against South Carolina's relentless sun damage requires more than drugstore wax. Professional ceramic coatings and paint sealants create a sacrificial barrier that absorbs UV rays before they reach your clear coat. This protection is critical for vehicles parked outside in Columbia, where daily sun exposure accelerates paint deterioration. Our ceramic coating services provide 2-5 years of protection, far exceeding the few weeks you might get from consumer wax products.
+              </p>
+
+              <p>
+                Maintaining your vehicle's value is another compelling reason to invest in professional detailing. In the Columbia automotive market, well-maintained vehicles command significantly higher resale prices. A vehicle with documented professional detailing history signals to buyers that the owner cared for their investment. Regular professional detailing prevents permanent damage from contamination, bird droppings, tree sap, and industrial fallout that cannot be reversed once it bonds with your paint. Our Factory Reset Package restores vehicles to near-original condition, addressing the specific challenges Columbia vehicles face daily.
+              </p>
+
+              <p>
+                The convenience factor of mobile service cannot be overstated for Columbia residents. Rather than driving to a shop, waiting for hours, then driving home, you can continue your normal routine while we work. Work from home while we detail your car in the driveway. Stay productive at your office near Main Street while we transform your vehicle in the parking lot. This time savings alone makes professional mobile detailing the smart choice for busy Columbia professionals and families.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Our Columbia Commitment */}
+        <section className="py-16 bg-white">
+          <div className="container mx-auto px-4 max-w-4xl">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
+              Our Commitment to Columbia
+            </h2>
+            <p className="text-center text-gray-600 mb-8">
+              Local business, local owner, exceptional results
+            </p>
+
+            <div className="prose prose-lg max-w-none text-gray-700 space-y-6">
+              <p>
+                Mikah's Auto Detailing is not a franchise or corporate chain. We are a locally owned and operated business serving the Columbia community with the personal attention that only a local business can provide. As a Columbia area resident, I understand the specific challenges our vehicles face and take pride in helping my neighbors protect their investments.
+              </p>
+
+              <p>
+                We offer same-day service availability for most appointments because we know life happens and schedules change. Need your car detailed before an important meeting downtown? Have unexpected guests arriving and want your vehicle presentable? We work to accommodate the real scheduling needs of Columbia residents. Our service area covers not just Columbia proper, but extends throughout the Midlands including West Columbia, Cayce, Lexington, Irmo, Blythewood, and everywhere in between.
+              </p>
+
+              <p>
+                Being IDA certified means we adhere to the highest standards in the detailing industry. We carry full insurance coverage for your peace of mind, and we stand behind every detail with a satisfaction guarantee. When you choose our auto detailing services in Columbia, SC, you are supporting a local business that reinvests in this community. From sponsoring local youth sports to participating in community events, we are committed to Columbia beyond just the services we provide.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Detailed Service Breakdown */}
+        <section className="py-16 bg-gray-50">
+          <div className="container mx-auto px-4 max-w-4xl">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
+              What Our Columbia Detail Services Include
+            </h2>
+            <p className="text-center text-gray-600 mb-8">
+              Comprehensive auto detailing tailored for Columbia area vehicles
+            </p>
+
+            <div className="prose prose-lg max-w-none text-gray-700 space-y-6">
+              <p>
+                Our Basic Detail Package at $225 addresses the everyday challenges Columbia vehicles face. The interior service includes a thorough wipe-down of all surfaces, application of UV-protective conditioner to prevent the dashboard cracking common in South Carolina heat, complete vacuuming, sanitization to eliminate bacteria and allergens, and streak-free glass cleaning. The exterior portion includes wheel decontamination to remove brake dust buildup, a foam wash using pH-balanced soap that is safe for all finishes, application of protective wax to guard against UV damage, and wheel and tire dressing for that fresh, finished look.
+              </p>
+
+              <p>
+                The Factory Reset Package at $400 takes detailing to the next level for vehicles that need deeper restoration. This service includes everything in the Basic Package plus light stain removal targeting those coffee spills and food marks that accumulate over time, full carpet and upholstery shampoo with hot water extraction to pull embedded dirt from fabric fibers, and comprehensive brake dust removal that addresses the iron contamination embedded in your wheels. This package is particularly popular among Columbia residents dealing with red clay staining and the accumulated pollen residue that builds up during our extended allergy season.
+              </p>
+
+              <p>
+                Our Ceramic Coating service provides the ultimate protection for Columbia's harsh conditions. We begin with thorough decontamination including clay bar treatment to remove bonded surface contamination. Paint correction follows if needed, removing swirl marks and light scratches that detract from the finish. The professional-grade ceramic coating is then applied in a controlled environment, creating a semi-permanent bond with your paint that provides hydrophobic water-beading, enhanced gloss, and protection from UV rays, bird droppings, and tree sap for years rather than weeks. For vehicles regularly parked under Columbia's oak trees or exposed to the intense summer sun, ceramic coating is the best investment you can make in paint protection.
+              </p>
+
+              <p>
+                Paint Correction services restore damaged finishes that have accumulated swirl marks, scratches, and oxidation over time. Using professional-grade compounds and polishes with dual-action and rotary polishers, we carefully remove clear coat imperfections to reveal the original depth and clarity of your paint. Single-stage correction addresses light damage while our two-stage correction is reserved for heavily marred finishes requiring more aggressive treatment. Every paint correction includes finishing polish and protection to maintain results.
+              </p>
             </div>
           </div>
         </section>

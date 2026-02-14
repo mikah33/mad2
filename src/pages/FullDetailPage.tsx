@@ -90,7 +90,7 @@ const FullDetailPage: React.FC = () => {
               <Chatbot />
       </div>
               <div className="hidden md:block">
-                <img src="/exterior1.jpg" alt="Full car detailing Columbia SC" className="rounded-lg shadow-2xl" loading="lazy" />
+                <img src="/exterior1.jpg" alt="Full auto detailing services columbia sc - complete interior and exterior car detail" className="rounded-lg shadow-2xl" loading="lazy" />
               <Chatbot />
       </div>
             <Chatbot />

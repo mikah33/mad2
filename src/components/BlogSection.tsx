@@ -55,7 +55,7 @@ const BlogSection: React.FC = () => {
               <div className="relative">
                 <img
                   src={blog.image}
-                  alt={`${blog.title} - Mobile car detailing blog post image`}
+                  alt={`${blog.title} - Auto detailing services columbia sc blog`}
                   className="w-full h-48 md:h-56 object-cover group-hover:scale-105 transition-transform duration-300"
                   loading="lazy"
                 />

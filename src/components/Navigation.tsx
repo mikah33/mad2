@@ -123,7 +123,7 @@ const Navigation: React.FC = () => {
           <a href="/" className="flex items-center gap-3 hover:opacity-80 transition">
             <img
               src="/logo.jpg"
-              alt="M.A.Detailing Logo"
+              alt="Mikah's Auto Detailing Columbia SC - Professional auto detailing services columbia sc"
               className="h-10 w-10 sm:h-12 sm:w-12 rounded-full object-cover shadow-md"
               loading="eager"
             />

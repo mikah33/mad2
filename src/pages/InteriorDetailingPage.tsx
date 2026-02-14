@@ -166,12 +166,12 @@ const InteriorDetailingPage: React.FC = () => {
   return (
     <>
       <SEOHead
-        title="Interior Car Detailing Columbia SC | Deep Clean | From $200"
-        description="Expert car interior detailing near me in Columbia SC! Professional mobile automotive detail service at your location. Deep cleaning, stain removal, leather conditioning, odor elimination. Best interior detailing near me - we come to you!"
-        keywords="car interior detailing, interior detailing near me, car interior cleaning Columbia SC, mobile car interior detailing, automotive interior detail near me, professional interior car detailing, leather conditioning, stain removal, odor elimination, pet hair removal, auto interior detailing Lexington SC, mobile car detailing, vehicle interior cleaning, car upholstery cleaning"
+        title="Interior Detailing Columbia SC | Auto Detailing Services | From $200"
+        description="Professional auto detailing services in Columbia, SC. Interior deep cleaning, stain removal, leather conditioning, odor elimination. Mobile service. 5-star rated. Call (803) 667-8731!"
+        keywords="auto detailing services columbia sc, car interior detailing, interior detailing columbia sc, auto detailing services in columbia sc, mobile car interior detailing, professional interior car detailing, leather conditioning, stain removal, odor elimination, pet hair removal"
         canonical="https://mikahsmobiledetailingsc.com/services/interior-detailing"
         ogImage="https://mikahsmobiledetailingsc.com/interior1.jpg"
-        ogImageAlt="Professional interior car detailing Columbia SC"
+        ogImageAlt="Professional interior auto detailing services in Columbia SC"
         schema={schemas}
       />
 
@@ -214,7 +214,7 @@ const InteriorDetailingPage: React.FC = () => {
               <div className="hidden md:block">
                 <img
                   src="/interior1.jpg"
-                  alt="Professional interior car detailing Columbia SC"
+                  alt="Interior car detailing service columbia sc - professional leather seat cleaning and dashboard detail"
                   className="rounded-lg shadow-2xl"
                   loading="lazy"
                 />
@@ -459,7 +459,7 @@ const InteriorDetailingPage: React.FC = () => {
                 </ul>
                 <img
                   src="/interior2.jpg"
-                  alt="Car interior before detailing"
+                  alt="Interior auto detailing services columbia sc - before cleaning showing stains and dirt"
                   className="mt-6 rounded-lg shadow-lg w-full"
                   loading="lazy"
                 />
@@ -499,7 +499,7 @@ const InteriorDetailingPage: React.FC = () => {
                 </ul>
                 <img
                   src="/interior1.jpg"
-                  alt="Car interior after professional detailing"
+                  alt="Interior auto detailing services columbia sc - after professional deep cleaning results"
                   className="mt-6 rounded-lg shadow-lg w-full"
                   loading="lazy"
                 />

@@ -15,7 +15,7 @@ export const images: Record<string, ImageMetadata> = {
   // Logo & Branding
   logo: {
     url: `${baseUrl}/logo.png`,
-    alt: "Mikah's Mobile Auto Detailing - Professional Mobile Auto Detailing Services in Lexington SC",
+    alt: "Mikah's Auto Detailing Columbia SC - Professional auto detailing services columbia sc logo",
     width: 512,
     height: 512,
     type: 'image/png',
@@ -23,7 +23,7 @@ export const images: Record<string, ImageMetadata> = {
   },
   logoJpg: {
     url: `${baseUrl}/logo.jpg`,
-    alt: "Mikah's Auto Detailing Logo",
+    alt: "Mikah's Auto Detailing Columbia SC - Professional auto detailing services columbia sc business logo",
     width: 400,
     height: 400,
     type: 'image/jpeg',
@@ -33,18 +33,18 @@ export const images: Record<string, ImageMetadata> = {
   // Social Media & OG Images
   ogDefault: {
     url: `${baseUrl}/logo.png`,
-    alt: "Mikah's Mobile Auto Detailing - Premium Mobile Car Detailing Services in Lexington SC, Columbia & Irmo",
+    alt: "Mikah's Auto Detailing - Premium auto detailing services columbia sc serving Lexington and Irmo",
     width: 1200,
     height: 630,
     type: 'image/png',
     category: 'social',
-    caption: 'Professional mobile auto detailing serving Columbia, Lexington, and Irmo SC'
+    caption: 'Professional auto detailing services columbia sc serving Lexington, and Irmo SC'
   },
 
   // Service Images
   exterior1: {
     url: `${baseUrl}/exterior1.jpg`,
-    alt: 'Professional mobile auto detailing exterior service in Lexington SC showing pristine paint finish',
+    alt: 'Professional exterior auto detailing services columbia sc - pristine paint finish with ceramic shine',
     width: 800,
     height: 600,
     type: 'image/jpeg',
@@ -53,77 +53,77 @@ export const images: Record<string, ImageMetadata> = {
   },
   exterior2: {
     url: `${baseUrl}/exterior2.jpg`,
-    alt: 'Mobile auto detailing service results in Lexington SC showing spotless exterior finish and professional car care',
+    alt: 'Auto detailing services columbia sc results - spotless exterior finish and professional car care',
     width: 800,
     height: 600,
     type: 'image/jpeg',
     category: 'service',
-    caption: 'Complete exterior wash and detail in Lexington SC'
+    caption: 'Complete exterior wash and detail in Columbia SC'
   },
   exterior3: {
     url: `${baseUrl}/exterior3.jpg`,
-    alt: 'Professional mobile auto detailing results in Lexington SC - premium exterior car detailing service showcase',
+    alt: 'Professional auto detailing services columbia sc - premium exterior car detailing with ceramic coating prep',
     width: 1920,
     height: 1080,
     type: 'image/jpeg',
     category: 'project',
-    caption: 'Professional exterior detailing showcase in Lexington SC'
+    caption: 'Professional exterior detailing showcase in Columbia SC'
   },
   exterior4: {
     url: `${baseUrl}/exterior4.jpg`,
-    alt: 'Ceramic coating application in Lexington SC - luxury vehicle mobile detailing service with premium paint protection',
+    alt: 'Auto detailing services columbia sc - ceramic coating application on luxury vehicle with paint protection',
     width: 1920,
     height: 1080,
     type: 'image/jpeg',
     category: 'project',
-    caption: 'Ceramic coating application on luxury vehicle in Lexington SC'
+    caption: 'Ceramic coating application on luxury vehicle in Columbia SC'
   },
   exterior5: {
     url: `${baseUrl}/exterior5.jpg`,
-    alt: 'Paint correction service in Lexington SC - mobile auto detailing removing swirls and scratches for flawless finish',
+    alt: 'Auto detailing services columbia sc - paint correction removing swirls and scratches for flawless finish',
     width: 1920,
     height: 1080,
     type: 'image/jpeg',
     category: 'project',
-    caption: 'Paint correction revealing deep gloss finish in Lexington SC'
+    caption: 'Paint correction revealing deep gloss finish in Columbia SC'
   },
   exterior6: {
     url: `${baseUrl}/exterior6.jpg`,
-    alt: 'Mobile auto detailing service at customer location in Lexington SC - professional car detailing team at work',
+    alt: 'Mobile auto detailing services columbia sc - professional car detailing team at customer location',
     width: 1920,
     height: 1080,
     type: 'image/jpeg',
     category: 'project',
-    caption: 'On-site mobile detailing service in Lexington SC'
+    caption: 'On-site mobile detailing service in Columbia SC'
   },
   exterior7: {
     url: `${baseUrl}/exterior7.jpg`,
-    alt: 'Mobile auto detailing results in Lexington SC - mirror-like paint finish from professional car detailing service',
+    alt: 'Auto detailing results columbia sc - mirror-like paint finish from professional car detailing service',
     width: 1920,
     height: 1080,
     type: 'image/jpeg',
     category: 'project',
-    caption: 'Mirror finish achieved through professional detailing in Lexington SC'
+    caption: 'Mirror finish achieved through professional detailing in Columbia SC'
   },
 
   // Interior Images
   interior1: {
     url: `${baseUrl}/interior1.jpg`,
-    alt: 'Interior car detailing service in Lexington SC - deep cleaning of leather seats and dashboard by mobile detailing professionals',
+    alt: 'Interior car detailing service columbia sc - deep cleaning of leather seats and dashboard by mobile detailing professionals',
     width: 800,
     height: 600,
     type: 'image/jpeg',
     category: 'service',
-    caption: 'Deep interior cleaning and conditioning in Lexington SC'
+    caption: 'Deep interior cleaning and conditioning in Columbia SC'
   },
   interior2: {
     url: `${baseUrl}/interior2.jpg`,
-    alt: 'Mobile interior detailing results in Lexington SC - spotless car interior after professional automotive cleaning service',
+    alt: 'Interior auto detailing services columbia sc - spotless car interior after professional automotive cleaning service',
     width: 800,
     height: 600,
     type: 'image/jpeg',
     category: 'service',
-    caption: 'Complete interior restoration in Lexington SC'
+    caption: 'Complete interior restoration in Columbia SC'
   },
 
   // Favicons

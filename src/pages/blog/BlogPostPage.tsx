@@ -99,7 +99,7 @@ export const BlogPostPage = () => {
 
       <Navigation />
 
-      <div className="min-h-screen bg-white">
+      <div className="min-h-screen bg-white pt-16">
         {/* Header */}
         <div className="bg-gray-900 text-white py-8 md:py-12">
           <div className="container mx-auto px-4 max-w-4xl">

@@ -31,7 +31,7 @@ export const MobileDetailingFAQPage: React.FC = () => {
             <div className="relative mb-8 rounded-xl overflow-hidden shadow-2xl">
               <img
                 src="/exterior1.jpg"
-                alt="Mobile car detailing service in Columbia SC"
+                alt="Mobile auto detailing services columbia sc - professional car detailing at your location"
                 className="w-full h-64 md:h-96 object-cover"
                 loading="eager"
               />

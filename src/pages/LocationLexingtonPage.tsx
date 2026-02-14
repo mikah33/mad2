@@ -181,12 +181,12 @@ export const LocationLexingtonPage = () => {
   return (
     <>
       <SEOHead
-        title="Car Detailing Lexington SC | Mobile Service | Book Today"
-        description="Lexington SC's top-rated mobile detailing service. Full interior/exterior details from $200. We bring professional equipment to you. Free quotes - call (803) 667-8731!"
-        keywords={allKeywords.join(', ')}
+        title="Auto Detailing Services Lexington SC | Mobile Detailing | Mikah's"
+        description="Professional auto detailing services in Lexington, SC near Columbia. Mobile car detailing, ceramic coating, paint correction. 5-star rated. Call (803) 667-8731!"
+        keywords={allKeywords.join(', ') + ', auto detailing services columbia sc'}
         canonical="https://mikahsmobiledetailingsc.com/locations/lexington-sc"
-        ogDescription="Lexington SC's top-rated mobile detailing service. Full interior/exterior details from $200. We bring professional equipment to you. Free quotes - call (803) 667-8731!"
-        twitterDescription="Lexington SC's top-rated mobile detailing service. Full interior/exterior details from $200. We bring professional equipment to you. Free quotes - call (803) 667-8731!"
+        ogDescription="Professional auto detailing services in Lexington, SC near Columbia. Mobile car detailing, ceramic coating, paint correction. 5-star rated. Call (803) 667-8731!"
+        twitterDescription="Professional auto detailing services in Lexington, SC near Columbia. Mobile car detailing, ceramic coating, paint correction. 5-star rated. Call (803) 667-8731!"
         schema={schemas}
       />
 
@@ -386,6 +386,118 @@ export const LocationLexingtonPage = () => {
                   <div className="font-semibold">{area}</div>
                 </div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Local Context Section - Lexington SC */}
+        <section className="py-16 bg-white">
+          <div className="container mx-auto px-4 max-w-4xl">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
+              Auto Detailing Services for Lexington and Lake Murray
+            </h2>
+            <p className="text-center text-gray-600 mb-8">
+              Understanding the unique needs of vehicles in the Lake Murray area
+            </p>
+
+            <div className="prose prose-lg max-w-none text-gray-700 space-y-6">
+              <p>
+                Lexington, South Carolina offers the perfect blend of small-town charm and modern convenience, centered around the beautiful shores of Lake Murray. This 50,000-acre reservoir is the crown jewel of our community, drawing boaters, fishermen, and outdoor enthusiasts throughout the year. For vehicle owners in Lexington, proximity to the lake brings specific detailing challenges that require professional attention. Boats being towed, jet skis on trailers, and frequent trips down dusty lake access roads all take their toll on vehicles that need extra care.
+              </p>
+
+              <p>
+                The Lake Murray lifestyle means vehicles in Lexington face unique environmental factors. Humidity levels near the water accelerate oxidation on paint and metal components. Sand and grit from lake access points scratch interiors and accumulate in carpet fibers where vacuuming alone cannot reach them. Salt and minerals from lake water splash onto exteriors during boat loading and unloading at marinas like Dreher Island State Park and Spence Island. Our mobile auto detailing service addresses these specific challenges, bringing professional-grade equipment directly to homes throughout the Lake Murray Shores community, Sunset Boulevard corridor, and all Lexington neighborhoods.
+              </p>
+
+              <p>
+                Living along the Sunset Boulevard shopping corridor means convenience is never far away, but finding time for vehicle maintenance between work, family, and recreation can still be difficult. Lexington families juggling school drop-offs at Lexington High School, activities at the YMCA, and weekends at the lake appreciate the convenience of mobile detailing. Instead of adding another errand to your busy schedule, our service comes to your home in River Club, your office near Lexington Medical Center, or anywhere throughout the Lexington County area. Professional results without leaving your property.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Why Choose Professional Detailing - Lexington */}
+        <section className="py-16 bg-gray-50">
+          <div className="container mx-auto px-4 max-w-4xl">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
+              Why Lexington Vehicles Need Professional Care
+            </h2>
+            <p className="text-center text-gray-600 mb-8">
+              The benefits of expert detailing for Lake Murray area residents
+            </p>
+
+            <div className="prose prose-lg max-w-none text-gray-700 space-y-6">
+              <p>
+                Professional detailing provides protection that DIY methods simply cannot match, especially important for vehicles exposed to the Lake Murray environment. Our ceramic coating service creates a hydrophobic barrier that repels water, mud, and lake minerals before they can bond with your paint. This protection is invaluable for vehicles that regularly tow boats or spend time near the water where splash and spray are inevitable.
+              </p>
+
+              <p>
+                The South Carolina sun beats down on Lexington just as intensely as Columbia, and vehicles parked without garage protection suffer accelerated paint fade and interior deterioration. Professional UV-protective treatments applied during our detail services shield dashboards, leather seats, and rubber seals from the cracking and fading that prematurely age interiors. Regular professional maintenance extends the life of these components significantly compared to untreated vehicles.
+              </p>
+
+              <p>
+                For boat owners and outdoor enthusiasts who store equipment in their vehicles, interior detailing becomes particularly important. Sand tracked in from lake beaches, moisture from wet gear, and the general wear from active lifestyles accumulate quickly. Our extraction equipment removes embedded debris from carpet and upholstery fibers, while our ozone treatment option eliminates musty odors that develop from damp conditions. The Factory Reset Package is especially popular among Lexington residents who want to restore interiors worn by lake lifestyle usage.
+              </p>
+
+              <p>
+                Vehicle resale values in Lexington remain strong, and maintaining your investment through professional detailing protects that value. Whether you drive a family SUV along Sunset Boulevard, a luxury vehicle through the River Club community, or a truck that tows your boat to Dreher Island, regular professional detailing keeps your vehicle looking its best and preserves its market value for when the time comes to sell or trade.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Our Lexington Commitment */}
+        <section className="py-16 bg-white">
+          <div className="container mx-auto px-4 max-w-4xl">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
+              Serving the Lexington Community
+            </h2>
+            <p className="text-center text-gray-600 mb-8">
+              Your local mobile detailing partner
+            </p>
+
+            <div className="prose prose-lg max-w-none text-gray-700 space-y-6">
+              <p>
+                As a locally owned business serving Lexington County, we understand that this community values quality, reliability, and personal service. We are not a distant corporate operation but rather your neighbors who take pride in helping Lexington residents maintain their vehicles. Every detail we perform reflects our commitment to excellence and our appreciation for the trust you place in our service.
+              </p>
+
+              <p>
+                Our mobile service covers all of Lexington including Lake Murray communities, Gilbert, Pelion, Batesburg-Leesville, and everywhere in between. We offer flexible scheduling including same-day appointments when available, understanding that Lexington families have busy schedules between work, school, and weekend lake activities. Early morning and evening appointments can be arranged to work around your commitments.
+              </p>
+
+              <p>
+                Being IDA certified demonstrates our commitment to professional standards and ongoing education in the latest detailing techniques. We carry comprehensive insurance for your protection and stand behind our work with a satisfaction guarantee. When you choose our service for your Lexington vehicle, you are choosing a local business invested in this community, from supporting local sports teams to participating in Lake Murray area events.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Detailed Service Breakdown - Lexington */}
+        <section className="py-16 bg-gray-50">
+          <div className="container mx-auto px-4 max-w-4xl">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
+              Detail Services for Lexington Vehicles
+            </h2>
+            <p className="text-center text-gray-600 mb-8">
+              Professional packages addressing Lake Murray area conditions
+            </p>
+
+            <div className="prose prose-lg max-w-none text-gray-700 space-y-6">
+              <p>
+                The Basic Detail Package at $225 provides comprehensive care for vehicles maintained on a regular schedule. Interior service includes complete surface cleaning with UV-protective conditioner application, thorough vacuuming, sanitization, and glass cleaning. The exterior receives wheel decontamination, foam wash with pH-balanced products, protective wax application, and wheel and tire dressing. This package is ideal for Lexington residents who want to maintain their vehicle between more intensive services.
+              </p>
+
+              <p>
+                Our Factory Reset Package at $400 addresses the deeper restoration needs of vehicles exposed to Lake Murray conditions. This includes everything in the Basic Package plus stain removal, full carpet and upholstery shampoo with hot water extraction, and comprehensive brake dust removal. For vehicles that have accumulated sand, lake residue, or wear from outdoor activities, this package restores interiors and exteriors to near-original condition.
+              </p>
+
+              <p>
+                Ceramic Coating provides long-term protection particularly valuable for Lake Murray area vehicles. After thorough decontamination and any needed paint correction, professional ceramic coating creates a durable barrier against water, minerals, UV rays, and environmental contamination. For boat owners and lake enthusiasts whose vehicles face regular exposure to water and road debris, ceramic coating reduces maintenance effort while providing superior protection lasting years rather than weeks.
+              </p>
+
+              <p>
+                Paint Correction restores finishes damaged by swirl marks, scratches, and oxidation. Lexington vehicles frequently develop these imperfections from automatic car washes, improper washing techniques, or environmental exposure. Our correction process uses professional compounds and polishes to carefully remove clear coat damage, revealing the original depth and clarity of your paint. Single-stage correction handles light damage while two-stage correction addresses more severe marring.
+              </p>
             </div>
           </div>
         </section>

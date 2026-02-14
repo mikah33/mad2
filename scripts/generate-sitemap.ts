@@ -117,7 +117,7 @@ function generateSitemap(): string {
     priority: 0.9,
   });
 
-  // Individual location pages
+  // Individual location pages from data file
   locations.forEach((location) => {
     urls.push({
       loc: `${SITE_URL}/locations/${location.slug}`,
@@ -125,6 +125,32 @@ function generateSitemap(): string {
       changefreq: 'monthly',
       priority: 0.9,
     });
+  });
+
+  // Additional location pages (hardcoded to ensure all are included)
+  const additionalLocationSlugs = [
+    'columbia-sc',
+    'lexington-sc',
+    'irmo-sc',
+    'cayce-sc',
+    'west-columbia-sc',
+    'chapin-sc',
+    'swansea-sc',
+    'newberry-sc',
+    'blythewood-sc'
+  ];
+
+  additionalLocationSlugs.forEach((slug) => {
+    const url = `${SITE_URL}/locations/${slug}`;
+    // Only add if not already in urls
+    if (!urls.find(u => u.loc === url)) {
+      urls.push({
+        loc: url,
+        lastmod: currentDate,
+        changefreq: 'monthly',
+        priority: 0.9,
+      });
+    }
   });
 
   // City hub pages (neighborhoods overview for each city)
@@ -248,6 +274,44 @@ function generateSitemap(): string {
     lastmod: currentDate,
     changefreq: 'monthly',
     priority: 0.9,
+  });
+
+  // SEO Landing Pages (High Priority - Target Keywords)
+  urls.push({
+    loc: `${SITE_URL}/auto-detailing-services-columbia-sc`,
+    lastmod: currentDate,
+    changefreq: 'weekly',
+    priority: 0.95,
+  });
+
+  // Marketing Landing Pages
+  urls.push({
+    loc: `${SITE_URL}/lp`,
+    lastmod: currentDate,
+    changefreq: 'weekly',
+    priority: 0.9,
+  });
+
+  urls.push({
+    loc: `${SITE_URL}/lp-specials`,
+    lastmod: currentDate,
+    changefreq: 'weekly',
+    priority: 0.9,
+  });
+
+  // Legal Pages
+  urls.push({
+    loc: `${SITE_URL}/privacy`,
+    lastmod: currentDate,
+    changefreq: 'yearly',
+    priority: 0.3,
+  });
+
+  urls.push({
+    loc: `${SITE_URL}/terms`,
+    lastmod: currentDate,
+    changefreq: 'yearly',
+    priority: 0.3,
   });
 
   // Deduplicate URLs by loc (keep first occurrence)

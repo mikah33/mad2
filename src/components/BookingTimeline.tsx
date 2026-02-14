@@ -12,6 +12,7 @@ interface Service {
   slug: string;
   image: string;
   isPopular?: boolean;
+  altText?: string;
 }
 
 const BookingTimeline: React.FC = () => {
@@ -54,7 +55,8 @@ const BookingTimeline: React.FC = () => {
       color: 'bg-[#0077B6]',
       slug: 'basic-detail',
       image: '/interior1.jpg',
-      description: 'Full interior & exterior detail with wax protection'
+      description: 'Full interior & exterior detail with wax protection',
+      altText: 'Auto detailing services columbia sc - basic detail package interior and exterior'
     },
     {
       icon: <Star className="w-8 h-8" />,
@@ -64,7 +66,8 @@ const BookingTimeline: React.FC = () => {
       slug: 'factory-reset',
       image: '/exterior2.jpg',
       description: 'Deep clean with shampoo, extraction & restoration',
-      isPopular: true
+      isPopular: true,
+      altText: 'Auto detailing services columbia sc - factory reset deep clean package'
     },
     {
       icon: <Anchor className="w-8 h-8" />,
@@ -73,7 +76,8 @@ const BookingTimeline: React.FC = () => {
       color: 'bg-[#023E8A]',
       slug: 'marine-rv',
       image: '/marine.jpg',
-      description: 'Boats, RVs, motorcycles & specialty vehicles'
+      description: 'Boats, RVs, motorcycles & specialty vehicles',
+      altText: 'Auto detailing services columbia sc - marine and RV detailing'
     }
   ];
 
@@ -86,7 +90,8 @@ const BookingTimeline: React.FC = () => {
       color: 'bg-[#0077B6]',
       slug: 'interior-detail',
       image: '/interior1.jpg',
-      description: 'Complete interior cleaning & protection'
+      description: 'Complete interior cleaning & protection',
+      altText: 'Interior auto detailing services columbia sc - complete cleaning and protection'
     },
     {
       icon: <Droplet className="w-8 h-8" />,
@@ -95,7 +100,8 @@ const BookingTimeline: React.FC = () => {
       color: 'bg-[#0077B6]',
       slug: 'exterior-detail',
       image: '/exterior2.jpg',
-      description: 'Full exterior wash, wax & protection'
+      description: 'Full exterior wash, wax & protection',
+      altText: 'Exterior auto detailing services columbia sc - wash wax and paint protection'
     }
   ];
 
@@ -107,7 +113,8 @@ const BookingTimeline: React.FC = () => {
       color: 'bg-[#0077B6]',
       slug: 'paint-correction',
       image: '/paintcorrection.jpg',
-      description: '1-step & 2-step correction available'
+      description: '1-step & 2-step correction available',
+      altText: 'Auto detailing services columbia sc - paint correction swirl removal'
     },
     {
       icon: <Shield className="w-8 h-8" />,
@@ -116,7 +123,8 @@ const BookingTimeline: React.FC = () => {
       color: 'bg-[#023E8A]',
       slug: 'ceramic-coating',
       image: '/ceramic.jpg',
-      description: 'Long-lasting paint protection (2-5 years)'
+      description: 'Long-lasting paint protection (2-5 years)',
+      altText: 'Auto detailing services columbia sc - ceramic coating paint protection'
     }
   ];
 
@@ -127,7 +135,8 @@ const BookingTimeline: React.FC = () => {
     color: 'bg-[#0077B6]',
     slug: 'routine-reset',
     image: '/mclarens.jpg',
-    description: '1 interior + 2 exterior details monthly'
+    description: '1 interior + 2 exterior details monthly',
+    altText: 'Auto detailing services columbia sc - monthly routine reset subscription'
   };
 
 
@@ -750,7 +759,7 @@ const BookingTimeline: React.FC = () => {
                   <div className="relative h-44 sm:h-52 md:h-64 overflow-hidden">
                     <img
                       src={service.image}
-                      alt={service.title}
+                      alt={service.altText || service.title}
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
@@ -815,7 +824,7 @@ const BookingTimeline: React.FC = () => {
                   <div className="relative h-44 sm:h-52 md:h-64 overflow-hidden">
                     <img
                       src={service.image}
-                      alt={service.title}
+                      alt={service.altText || service.title}
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
@@ -871,7 +880,7 @@ const BookingTimeline: React.FC = () => {
                   <div className="relative h-44 sm:h-52 md:h-64 overflow-hidden">
                     <img
                       src={service.image}
-                      alt={service.title}
+                      alt={service.altText || service.title}
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
@@ -927,7 +936,7 @@ const BookingTimeline: React.FC = () => {
                   <div className="relative h-44 sm:h-52 md:h-64 overflow-hidden">
                     <img
                       src={service.image}
-                      alt={service.title}
+                      alt={service.altText || service.title}
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />

@@ -42,12 +42,12 @@ const MobileDetailingPage: React.FC = () => {
   return (
     <>
       <SEOHead
-        title="Mobile Car Detailing Near Me Columbia SC | Automotive Detail Service | Professional Car Interior Detailing"
-        description="Top-rated mobile car detailing near me service in Columbia SC! Professional automotive detail near me - we come to your location. Expert car interior detailing, exterior auto detailing, and mobile automotive detailing services. Book now!"
-        keywords="mobile car detailing near me, detailing car near me, detailing auto near me, automotive detail near me, car interior detailing, mobile detailing columbia sc, auto detailing columbia sc, mobile automotive detailing, professional car detailing near me, automotive detailing service, mobile car detailing service"
+        title="Mobile Auto Detailing Services Columbia SC | We Come To You | Mikah's"
+        description="Professional auto detailing services in Columbia, SC. Mobile car detailing at your home or office. Interior detailing, exterior wash, ceramic prep. 5-star rated. Call (803) 667-8731!"
+        keywords="auto detailing services columbia sc, mobile car detailing near me, detailing car near me, automotive detail near me, car interior detailing, mobile detailing columbia sc, auto detailing services in columbia sc, mobile automotive detailing, professional car detailing columbia sc"
         canonical="https://mikahsmobiledetailingsc.com/services/mobile-detailing"
         ogImage="https://mikahsmobiledetailingsc.com/exterior3.jpg"
-        ogImageAlt="Professional mobile car detailing Columbia SC - detailing car near me service"
+        ogImageAlt="Professional mobile auto detailing services in Columbia SC"
         schema={schemas}
       />
 
@@ -78,7 +78,7 @@ const MobileDetailingPage: React.FC = () => {
               <div className="hidden md:block">
                 <picture>
                   <source srcSet="/exterior3_optimized.webp" type="image/webp" />
-                  <img src="/exterior3.jpg" alt="Mobile auto detailing premium exterior wash and ceramic coating prep Columbia SC" className="rounded-lg shadow-2xl" loading="lazy" />
+                  <img src="/exterior3.jpg" alt="Mobile auto detailing services columbia sc - premium exterior wash and ceramic coating prep" className="rounded-lg shadow-2xl" loading="lazy" />
                 </picture>
               </div>
             </div>

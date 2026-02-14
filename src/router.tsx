@@ -34,6 +34,7 @@ import ReviewsPage from './pages/ReviewsPage';
 import ReviewUsPage from './pages/ReviewUsPage';
 import LandingPage from './pages/LandingPage';
 import LandingPageSpecials from './pages/LandingPageSpecials';
+import AutoDetailingServicesColumbiaPage from './pages/AutoDetailingServicesColumbiaPage';
 import NiceTryJeffrey from './pages/NiceTryJeffrey';
 import { NotFoundPage } from './pages/NotFoundPage';
 import ErrorBoundary from './components/ErrorBoundary';
@@ -188,6 +189,10 @@ export const router = createBrowserRouter([
       {
         path: '/lp-specials',
         element: <LandingPageSpecials />,
+      },
+      {
+        path: '/auto-detailing-services-columbia-sc',
+        element: <AutoDetailingServicesColumbiaPage />,
       },
       {
         path: '/nice-try-jeffrey',

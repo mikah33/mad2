@@ -255,9 +255,9 @@ export const PricingPage = () => {
   return (
     <>
       <SEOHead
-        title="Car Detailing Prices Columbia SC | Packages & Pricing | Mikah's"
-        description="Transparent car detailing prices in Columbia SC. Interior from $200, Exterior from $200, Full Detail from $225. Mobile service included. Get your free quote today!"
-        keywords="car detailing prices, auto detailing prices, car detailing prices columbia sc, auto detailing prices columbia sc, mobile detailing prices, detailing packages, interior detailing prices, exterior detailing prices, full detail cost"
+        title="Auto Detailing Services Pricing Columbia SC | Packages | Mikah's"
+        description="Affordable auto detailing services in Columbia, SC. Interior from $200, Exterior from $200, Full Detail from $225. Mobile service included. Call (803) 667-8731!"
+        keywords="auto detailing services columbia sc, car detailing prices, auto detailing prices columbia sc, auto detailing services in columbia sc, mobile detailing prices, detailing packages columbia sc, interior detailing prices, exterior detailing prices"
         canonical="https://mikahsmobiledetailingsc.com/pricing"
         ogType="website"
         schema={schemas}

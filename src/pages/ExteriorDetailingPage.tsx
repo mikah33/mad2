@@ -113,12 +113,12 @@ const ExteriorDetailingPage: React.FC = () => {
   return (
     <>
       <SEOHead
-        title="Exterior Auto Detailing Columbia SC | Hand Wash & Wax | From $200"
-        description="Professional exterior car detailing in Columbia SC. Hand wash, clay bar, wax protection, paint enhancement. Mobile service to your location in Lexington, Irmo, Cayce. Book today!"
-        keywords="exterior car detailing, car wash Columbia SC, auto detailing near me, hand car wash, clay bar treatment, car wax, paint protection, mobile car wash Lexington SC, vehicle detailing, car polishing, wheel detailing, exterior detailing near me"
+        title="Exterior Detailing Columbia SC | Auto Detailing Services | Hand Wash"
+        description="Professional auto detailing services in Columbia, SC. Exterior hand wash, clay bar, wax protection, paint enhancement. Mobile service. 5-star rated. Call (803) 667-8731!"
+        keywords="auto detailing services columbia sc, exterior car detailing, car wash Columbia SC, auto detailing services in columbia sc, hand car wash, clay bar treatment, car wax, paint protection, mobile car wash columbia sc, exterior detailing"
         canonical="https://mikahsmobiledetailingsc.com/services/exterior-detailing"
         ogImage="https://mikahsmobiledetailingsc.com/exterior1.jpg"
-        ogImageAlt="Professional exterior car detailing Columbia SC"
+        ogImageAlt="Professional exterior auto detailing services in Columbia SC"
         schema={schemas}
       />
 
@@ -157,7 +157,7 @@ const ExteriorDetailingPage: React.FC = () => {
               <div className="hidden md:block">
                 <img
                   src="/exterior1.jpg"
-                  alt="Professional exterior car detailing Columbia SC"
+                  alt="Professional exterior auto detailing services columbia sc - ceramic shine and paint protection"
                   className="rounded-lg shadow-2xl"
                 />
               <Chatbot />
@@ -299,7 +299,7 @@ const ExteriorDetailingPage: React.FC = () => {
                   <source srcSet="/exterior3_optimized.webp" type="image/webp" />
                   <img
                   src="/exterior3.jpg"
-                  alt="Mobile auto detailing premium exterior wash and ceramic coating prep Columbia SC"
+                  alt="Professional exterior auto detailing services columbia sc - premium wash and ceramic coating prep"
                   className="rounded-lg shadow-lg mb-6"
                 />
                 </picture>
@@ -392,7 +392,7 @@ const ExteriorDetailingPage: React.FC = () => {
                 </ul>
                 <img
                   src="/exterior2.jpg"
-                  alt="Car before exterior detailing"
+                  alt="Exterior auto detailing services columbia sc - before treatment showing dull paint and contaminants"
                   className="rounded-lg shadow-lg w-full"
                 />
               <Chatbot />
@@ -427,7 +427,7 @@ const ExteriorDetailingPage: React.FC = () => {
                 </ul>
                 <img
                   src="/exterior1.jpg"
-                  alt="Car after professional exterior detailing"
+                  alt="Exterior auto detailing services columbia sc - after professional treatment with mirror shine"
                   className="rounded-lg shadow-lg w-full"
                 />
               <Chatbot />
@@ -438,13 +438,13 @@ const ExteriorDetailingPage: React.FC = () => {
             <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
               <picture>
                   <source srcSet="/exterior4_optimized.webp" type="image/webp" />
-                  <img src="/exterior4.jpg" alt="Professional paint correction swirl removal scratch repair detailing Columbia SC" className="rounded-lg shadow-lg" loading="lazy" />
+                  <img src="/exterior4.jpg" alt="Auto detailing services columbia sc - paint correction with swirl removal and scratch repair" className="rounded-lg shadow-lg" loading="lazy" />
                 </picture>
               <picture>
                   <source srcSet="/exterior5_optimized.webp" type="image/webp" />
-                  <img src="/exterior5.jpg" alt="Complete mobile car detailing package ceramic coating application Columbia SC" className="rounded-lg shadow-lg" loading="lazy" />
+                  <img src="/exterior5.jpg" alt="Auto detailing services columbia sc - ceramic coating application for paint protection" className="rounded-lg shadow-lg" loading="lazy" />
                 </picture>
-              <img src="/exterior6.jpg" alt="Car detailing results showing mirror finish and ceramic coating in Columbia SC" className="rounded-lg shadow-lg" loading="lazy" />
+              <img src="/exterior6.jpg" alt="Auto detailing services columbia sc results - mirror finish with ceramic coating protection" className="rounded-lg shadow-lg" loading="lazy" />
             <Chatbot />
       </div>
           <Chatbot />

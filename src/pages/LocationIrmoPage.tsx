@@ -181,12 +181,12 @@ export const LocationIrmoPage = () => {
   return (
     <>
       <SEOHead
-        title="Mobile Auto Detailing Irmo SC | 5-Star Service | Free Quote"
-        description="Irmo's trusted mobile car detailing service. Interior & exterior packages from $200. We come to you - home or office. 5-star rated. Book today - (803) 667-8731!"
-        keywords={allKeywords.join(', ')}
+        title="Auto Detailing Services Irmo SC | Mobile Detailing | Mikah's"
+        description="Professional auto detailing services in Irmo, SC near Columbia. Mobile car detailing, ceramic coating, paint correction. 5-star rated. Call (803) 667-8731!"
+        keywords={allKeywords.join(', ') + ', auto detailing services columbia sc'}
         canonical="https://mikahsmobiledetailingsc.com/locations/irmo-sc"
-        ogDescription="Irmo's trusted mobile car detailing service. Interior & exterior packages from $200. We come to you - home or office. 5-star rated. Book today - (803) 667-8731!"
-        twitterDescription="Irmo's trusted mobile car detailing service. Interior & exterior packages from $200. We come to you - home or office. 5-star rated. Book today - (803) 667-8731!"
+        ogDescription="Professional auto detailing services in Irmo, SC near Columbia. Mobile car detailing, ceramic coating, paint correction. 5-star rated. Call (803) 667-8731!"
+        twitterDescription="Professional auto detailing services in Irmo, SC near Columbia. Mobile car detailing, ceramic coating, paint correction. 5-star rated. Call (803) 667-8731!"
         schema={schemas}
       />
 
@@ -386,6 +386,118 @@ export const LocationIrmoPage = () => {
                   <div className="font-semibold">{area}</div>
                 </div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Local Context Section - Irmo SC */}
+        <section className="py-16 bg-white">
+          <div className="container mx-auto px-4 max-w-4xl">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
+              Auto Detailing Services for Irmo and Harbison
+            </h2>
+            <p className="text-center text-gray-600 mb-8">
+              Professional mobile detailing for Northwest Columbia communities
+            </p>
+
+            <div className="prose prose-lg max-w-none text-gray-700 space-y-6">
+              <p>
+                Irmo, South Carolina represents one of the most desirable suburban communities in the greater Columbia area. Known for excellent schools in the Dutch Fork district, convenient access to Lake Murray, and the thriving Harbison Boulevard retail corridor, Irmo attracts families and professionals who take pride in their properties and vehicles. The Columbiana Centre and surrounding shopping areas make Irmo a hub of activity, while the natural beauty of Harbison State Forest provides outdoor recreation just minutes from home.
+              </p>
+
+              <p>
+                Vehicles in Irmo face the same South Carolina environmental challenges as the rest of the Midlands, but with some unique considerations. The wooded neighborhoods near Seven Oaks and Harbison State Forest mean tree sap, pollen, and bird droppings are constant concerns. The red clay soil prevalent throughout Dutch Fork area sticks to wheel wells and undercarriages during wet weather, leaving stubborn stains that resist ordinary washing. Summer temperatures regularly exceed 95 degrees, subjecting vehicles parked in driveways and retail parking lots to intense UV exposure that fades paint and damages interiors.
+              </p>
+
+              <p>
+                For Irmo residents balancing careers, family activities at Dutch Fork schools, weekend trips to Lake Murray, and shopping along Harbison Boulevard, finding time for vehicle maintenance feels like one more task on an endless list. That is why mobile auto detailing has become the preferred choice for Irmo families. Instead of driving to a detail shop and waiting for hours, our service comes directly to your home in Ballentine, your office near Lake Murray Boulevard, or anywhere throughout the Irmo and Chapin areas. Professional equipment, premium products, and expert technique delivered to your location.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Why Choose Professional Detailing - Irmo */}
+        <section className="py-16 bg-gray-50">
+          <div className="container mx-auto px-4 max-w-4xl">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
+              Why Irmo Vehicles Need Professional Detailing
+            </h2>
+            <p className="text-center text-gray-600 mb-8">
+              The advantages of expert care for Dutch Fork area residents
+            </p>
+
+            <div className="prose prose-lg max-w-none text-gray-700 space-y-6">
+              <p>
+                Professional detailing delivers results that consumer products and drive-through car washes cannot match. Our ceramic coating service provides multi-year protection against UV damage, tree sap, bird droppings, and the pollen that blankets Irmo each spring. This hydrophobic barrier causes water to bead and roll off, taking dirt and contaminants with it and reducing the frequency of washing required to maintain your vehicle's appearance.
+              </p>
+
+              <p>
+                The intense South Carolina sun causes significant damage to unprotected vehicles over time. Paint oxidizes, clear coats fail, dashboards crack, leather seats fade and dry out, and rubber seals deteriorate. Professional detailing includes UV-protective treatments for both interior and exterior surfaces that significantly slow this damage. Regular professional maintenance can add years to your vehicle's appearance and protect the components most vulnerable to sun exposure.
+              </p>
+
+              <p>
+                Interior cleanliness matters especially for families with children participating in Dutch Fork youth sports, pets that love trips to Harbison State Forest, or anyone who spends significant time in their vehicle. Our extraction equipment removes dirt, allergens, and bacteria embedded deep in carpet fibers and upholstery where vacuuming cannot reach. The Factory Reset Package includes full shampoo and extraction that restores interiors to like-new condition, eliminating odors and allergens while refreshing fabric and leather surfaces.
+              </p>
+
+              <p>
+                Protecting your vehicle's resale value is another compelling reason to invest in professional detailing. The Irmo automotive market remains strong, and well-maintained vehicles command premium prices when sold or traded. A documented history of professional detailing signals to buyers that the vehicle received proper care throughout its life. Regular professional maintenance prevents the permanent damage from neglected contamination that devalues vehicles regardless of mechanical condition.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Our Irmo Commitment */}
+        <section className="py-16 bg-white">
+          <div className="container mx-auto px-4 max-w-4xl">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
+              Committed to the Irmo Community
+            </h2>
+            <p className="text-center text-gray-600 mb-8">
+              Local service, personal attention
+            </p>
+
+            <div className="prose prose-lg max-w-none text-gray-700 space-y-6">
+              <p>
+                As a locally owned and operated business serving the Irmo community, we provide the personal attention and accountability that national chains cannot match. We live in this community and take genuine pride in helping our neighbors maintain their vehicles. Every detail we perform represents our reputation, and we hold ourselves to the highest standards of quality and professionalism.
+              </p>
+
+              <p>
+                Our mobile service covers all of Irmo including Seven Oaks, Harbison, Ballentine, Chapin, and everywhere in between. We understand that Irmo families have busy schedules between school activities, work, and recreation, so we offer flexible appointment times including same-day service when available. Early morning appointments before work and evening appointments after activities can be arranged to fit your schedule.
+              </p>
+
+              <p>
+                Being IDA certified means we maintain professional standards and stay current with the latest detailing techniques and products. We carry comprehensive insurance for your protection and guarantee satisfaction with every service. When you choose our mobile detailing for your Irmo vehicle, you support a local business that reinvests in this community through youth sports sponsorships and participation in local events.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Detailed Service Breakdown - Irmo */}
+        <section className="py-16 bg-gray-50">
+          <div className="container mx-auto px-4 max-w-4xl">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
+              Detail Services for Irmo Vehicles
+            </h2>
+            <p className="text-center text-gray-600 mb-8">
+              Comprehensive packages for Dutch Fork and Harbison area vehicles
+            </p>
+
+            <div className="prose prose-lg max-w-none text-gray-700 space-y-6">
+              <p>
+                The Basic Detail Package at $225 delivers complete interior and exterior care for vehicles on a regular maintenance schedule. Interior service includes thorough cleaning of all surfaces, UV-protective conditioner to guard against sun damage, complete vacuuming, sanitization, and streak-free glass cleaning. Exterior work includes wheel decontamination, foam wash using pH-balanced products safe for all finishes, protective wax application, and wheel and tire dressing for that fresh, finished appearance.
+              </p>
+
+              <p>
+                Our Factory Reset Package at $400 provides deep restoration for vehicles needing more intensive attention. Everything in the Basic Package is included, plus targeted stain removal, full carpet and upholstery shampoo with hot water extraction, and comprehensive brake dust removal. This package is particularly popular with Irmo families whose vehicles have accumulated wear from kids, pets, and the active lifestyle that makes Dutch Fork communities so appealing.
+              </p>
+
+              <p>
+                Ceramic Coating delivers the ultimate protection for Irmo vehicles facing daily exposure to sun, pollen, and tree debris. Following thorough decontamination and any necessary paint correction, professional ceramic coating creates a semi-permanent bond with your paint that provides years of protection. The coating repels water, resists UV damage, and makes maintenance washing far easier. For vehicles regularly exposed to the elements in Irmo driveways or Harbison parking lots, ceramic coating is the best investment in long-term paint protection.
+              </p>
+
+              <p>
+                Paint Correction addresses the swirl marks, scratches, and oxidation that accumulate over time. Many Irmo vehicles develop these imperfections from automatic car washes, improper washing techniques, or years of environmental exposure. Our correction process uses professional-grade compounds and polishes applied with dual-action and rotary polishers to carefully remove clear coat damage, revealing the original depth and clarity hidden beneath surface imperfections. Single-stage correction handles light damage while two-stage correction restores heavily marred finishes.
+              </p>
             </div>
           </div>
         </section>

@@ -11,8 +11,8 @@ const RecentProjects: React.FC = () => {
     {
       id: 1,
       image: '/exterior1.jpg',
-      title: 'Professional Exterior Detail Columbia SC',
-      description: 'Premium exterior auto detailing service in Columbia, SC. Complete wash, wax, and paint protection.',
+      title: 'Professional Exterior Auto Detailing Services Columbia SC',
+      description: 'Premium exterior auto detailing services columbia sc. Complete wash, wax, and paint protection.',
       category: 'exterior-detail',
       subcategory: 'exterior',
       type: 'image',
@@ -21,8 +21,8 @@ const RecentProjects: React.FC = () => {
     {
       id: 2,
       image: '/exterior2.jpg',
-      title: 'Ceramic Coating Application Columbia SC',
-      description: 'Professional ceramic coating service providing long-lasting paint protection in Columbia, SC.',
+      title: 'Auto Detailing Services Columbia SC - Ceramic Coating',
+      description: 'Professional auto detailing services columbia sc providing ceramic coating paint protection.',
       category: 'ceramic-coating',
       subcategory: 'exterior',
       type: 'image',
@@ -31,8 +31,8 @@ const RecentProjects: React.FC = () => {
     {
       id: 3,
       image: '/exterior3.jpg',
-      title: 'Premium Exterior Wash Columbia SC',
-      description: 'High-quality exterior wash and detailing service in Columbia, SC area.',
+      title: 'Auto Detailing Services Columbia SC - Premium Wash',
+      description: 'High-quality auto detailing services columbia sc with premium exterior wash.',
       category: 'exterior-detail',
       subcategory: 'exterior',
       type: 'image',
@@ -41,8 +41,8 @@ const RecentProjects: React.FC = () => {
     {
       id: 4,
       image: '/exterior4.jpg',
-      title: 'Paint Correction and Polish Columbia SC',
-      description: 'Expert paint correction and polishing service removing swirls and scratches in Columbia, SC.',
+      title: 'Auto Detailing Services Columbia SC - Paint Correction',
+      description: 'Expert auto detailing services columbia sc with paint correction removing swirls and scratches.',
       category: 'paint-correction',
       subcategory: 'exterior',
       type: 'image',
@@ -51,8 +51,8 @@ const RecentProjects: React.FC = () => {
     {
       id: 5,
       image: '/exterior5.jpg',
-      title: 'Full Exterior Auto Detailing Columbia SC',
-      description: 'Complete exterior detailing package including wash, clay bar, polish, and wax in Columbia, SC.',
+      title: 'Full Exterior Auto Detailing Services Columbia SC',
+      description: 'Complete auto detailing services columbia sc including wash, clay bar, polish, and wax.',
       category: 'exterior-detail',
       subcategory: 'exterior',
       type: 'image',
@@ -61,8 +61,8 @@ const RecentProjects: React.FC = () => {
     {
       id: 6,
       image: '/exterior6.jpg',
-      title: 'Ceramic Coating Installation Columbia SC',
-      description: 'Professional ceramic coating installation providing years of paint protection in Columbia, SC.',
+      title: 'Auto Detailing Services Columbia SC - Ceramic Installation',
+      description: 'Professional auto detailing services columbia sc with ceramic coating installation.',
       category: 'ceramic-coating',
       subcategory: 'exterior',
       type: 'image',
@@ -71,8 +71,8 @@ const RecentProjects: React.FC = () => {
     {
       id: 7,
       image: '/exterior7.jpg',
-      title: 'Complete Exterior Restoration Columbia SC',
-      description: 'Full exterior restoration service bringing back original shine to your vehicle in Columbia, SC.',
+      title: 'Auto Detailing Services Columbia SC - Exterior Restoration',
+      description: 'Full auto detailing services columbia sc with exterior restoration bringing back original shine.',
       category: 'exterior-detail',
       subcategory: 'exterior',
       type: 'image',
@@ -81,8 +81,8 @@ const RecentProjects: React.FC = () => {
     {
       id: 8,
       image: '/ceramic-video1.mov',
-      title: 'Ceramic Coating Process Video Columbia SC',
-      description: 'Watch our professional ceramic coating application process in Columbia, SC.',
+      title: 'Auto Detailing Services Columbia SC - Ceramic Coating Video',
+      description: 'Watch our professional auto detailing services columbia sc ceramic coating application.',
       category: 'ceramic-coating',
       subcategory: 'exterior',
       type: 'video',
@@ -91,8 +91,8 @@ const RecentProjects: React.FC = () => {
     {
       id: 9,
       image: '/ceramic-video2.mov',
-      title: 'Professional Ceramic Application Columbia SC',
-      description: 'See how we apply ceramic coating for maximum protection in Columbia, SC.',
+      title: 'Auto Detailing Services Columbia SC - Application Process',
+      description: 'See how we apply ceramic coating in our auto detailing services columbia sc.',
       category: 'ceramic-coating',
       subcategory: 'exterior',
       type: 'video',
@@ -101,8 +101,8 @@ const RecentProjects: React.FC = () => {
     {
       id: 10,
       image: '/interior1.jpg',
-      title: 'Interior Restoration Detail Columbia SC',
-      description: 'Complete interior restoration and detailing service in Columbia, SC.',
+      title: 'Interior Car Detailing Service Columbia SC',
+      description: 'Complete interior car detailing service columbia sc with leather restoration.',
       category: 'interior',
       subcategory: 'interior',
       type: 'image',
@@ -111,8 +111,8 @@ const RecentProjects: React.FC = () => {
     {
       id: 11,
       image: '/interior2.jpg',
-      title: 'Complete Interior Auto Detail Columbia SC',
-      description: 'Full interior detailing including deep cleaning, conditioning, and protection in Columbia, SC.',
+      title: 'Interior Auto Detailing Services Columbia SC',
+      description: 'Full interior auto detailing services columbia sc including deep cleaning and conditioning.',
       category: 'interior',
       subcategory: 'interior',
       type: 'image',
@@ -285,7 +285,7 @@ const RecentProjects: React.FC = () => {
                   />
                   <img
                     src={project.image}
-                    alt={`${project.title} - Professional mobile auto detailing results in Columbia SC`}
+                    alt={`${project.title} - Professional auto detailing services columbia sc results`}
                     title={project.title}
                     loading="lazy"
                     itemProp="image"

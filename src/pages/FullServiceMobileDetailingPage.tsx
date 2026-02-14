@@ -66,7 +66,7 @@ const FullServiceMobileDetailingPage: React.FC = () => {
                 </div>
               </div>
               <div className="hidden md:block">
-                <img src="/full-service-detailing.jpg" alt="Full service mobile detailing Columbia SC - complete car care" className="rounded-lg shadow-2xl" loading="lazy" />
+                <img src="/full-service-detailing.jpg" alt="Full service auto detailing services columbia sc - complete interior and exterior mobile car care" className="rounded-lg shadow-2xl" loading="lazy" />
               </div>
             </div>
           </div>

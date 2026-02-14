@@ -118,7 +118,7 @@ const LandingPageSpecials: React.FC = () => {
             <div className="flex items-center gap-3">
               <img
                 src="/logo.jpg"
-                alt="Mikah's Auto Detailing"
+                alt="Mikah's Auto Detailing Columbia SC - Professional auto detailing services columbia sc"
                 className="h-10 w-10 sm:h-12 sm:w-12 rounded-full object-cover shadow-md"
               />
               <div className="hidden sm:block">
@@ -271,7 +271,7 @@ const LandingPageSpecials: React.FC = () => {
                 >
                   <img
                     src="/girlvalentine.png"
-                    alt="Valentine's Day Special - Woman with Car"
+                    alt="Valentine's Day Auto Detailing Services Columbia SC - Special gift detailing package"
                     loading="lazy"
                     className="w-full h-auto object-contain rounded-2xl"
                     style={{

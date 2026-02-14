@@ -64,12 +64,12 @@ const CeramicCoatingPage: React.FC = () => {
   return (
     <>
       <SEOHead
-        title="Ceramic Coating Columbia SC | Paint Protection Near Me | Ceramic Pro Installer"
-        description="Professional ceramic coating in Columbia SC. Multi-year paint protection with 2-7 year warranties. Authorized Ceramic Pro installer. Serving Lexington, Irmo, Cayce. Call today!"
-        keywords="ceramic coating Columbia SC, ceramic coating near me, paint protection Columbia, Ceramic Pro Columbia, ceramic coating Lexington SC, car ceramic coating, paint sealant, hydrophobic coating, nano coating, ceramic coating installer, long-term paint protection, ceramic paint protection"
+        title="Ceramic Coating Columbia SC | Auto Detailing Services | Paint Protection"
+        description="Premium auto detailing services in Columbia, SC. Professional ceramic coating with 2-7 year warranties. Mobile service to your location. 5-star rated. Call (803) 667-8731!"
+        keywords="auto detailing services columbia sc, ceramic coating Columbia SC, ceramic coating near me, paint protection Columbia, auto detailing services in columbia sc, car ceramic coating, ceramic coating installer, long-term paint protection, ceramic paint protection"
         canonical="https://mikahsmobiledetailingsc.com/services/ceramic-coating"
         ogImage="https://mikahsmobiledetailingsc.com/exterior3.jpg"
-        ogImageAlt="Professional ceramic coating application - Mikah's Auto Detailing Columbia SC"
+        ogImageAlt="Professional ceramic coating auto detailing services in Columbia SC"
         schema={schemas}
       />
 
@@ -302,7 +302,7 @@ const CeramicCoatingPage: React.FC = () => {
               <div>
                 <picture>
                   <source srcSet="/exterior3_optimized.webp" type="image/webp" />
-                  <img src="/exterior3.jpg" alt="Mobile auto detailing premium exterior wash and ceramic coating prep Columbia SC" className="rounded-lg shadow-lg mb-4" loading="lazy" />
+                  <img src="/exterior3.jpg" alt="Auto detailing services columbia sc - ceramic coating preparation and premium exterior wash" className="rounded-lg shadow-lg mb-4" loading="lazy" />
                 </picture>
                 <div className="bg-white p-6 rounded-lg shadow-lg">
                   <h3 className="font-bold text-lg mb-3">What Makes Ceramic Coating Different?</h3>

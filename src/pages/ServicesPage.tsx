@@ -55,7 +55,7 @@ export const ServicesPage = () => {
         'Add-On Services: Weather Stripping Restoration ($50), Scratch Removal ($80/panel)'
       ],
       image: '/exterior3.jpg',
-      imageAlt: 'Factory reset complete auto detailing package in Columbia SC',
+      imageAlt: 'Auto detailing services columbia sc - factory reset complete detail package',
       popular: true
     },
     {
@@ -68,7 +68,7 @@ export const ServicesPage = () => {
         'Exterior: Wheels decontaminated, foam contact wash, protective wax layer, wheels & tires dressed'
       ],
       image: '/exterior1.jpg',
-      imageAlt: 'Basic auto detailing package showing clean exterior and interior in Columbia SC'
+      imageAlt: 'Auto detailing services columbia sc - basic detail package interior and exterior'
     },
     {
       icon: <Zap className="w-8 h-8" />,
@@ -83,7 +83,7 @@ export const ServicesPage = () => {
         'Door jambs cleaned & waxed'
       ],
       image: '/interior1.jpg',
-      imageAlt: 'Professional interior car detailing service in Columbia SC'
+      imageAlt: 'Interior auto detailing services columbia sc - professional cleaning and conditioning'
     },
     {
       icon: <Zap className="w-8 h-8" />,
@@ -98,7 +98,7 @@ export const ServicesPage = () => {
         'Door jambs cleaned'
       ],
       image: '/exterior2.jpg',
-      imageAlt: 'Professional exterior car detailing service in Columbia SC'
+      imageAlt: 'Exterior auto detailing services columbia sc - professional wash and wax'
     },
     {
       icon: <Wrench className="w-8 h-8" />,
@@ -111,7 +111,7 @@ export const ServicesPage = () => {
         'Ensures maximum durability and an incredible shine that lasts'
       ],
       image: '/ceramic.jpg',
-      imageAlt: 'Professional ceramic coating application on vehicle in Columbia SC'
+      imageAlt: 'Auto detailing services columbia sc - ceramic coating paint protection'
     },
     {
       icon: <Anchor className="w-8 h-8" />,
@@ -124,7 +124,7 @@ export const ServicesPage = () => {
         'Single-stage or two-stage correction options bring back original luster'
       ],
       image: '/exterior7.jpg',
-      imageAlt: 'Paint correction and polishing service removing swirls in Columbia SC'
+      imageAlt: 'Auto detailing services columbia sc - paint correction swirl removal'
     },
     {
       icon: <Zap className="w-8 h-8" />,
@@ -137,7 +137,7 @@ export const ServicesPage = () => {
         'Engine Bay Detail'
       ],
       image: '/interior1.jpg',
-      imageAlt: 'Specialty auto detailing services including interior and engine bay in Columbia SC'
+      imageAlt: 'Auto detailing services columbia sc - specialty detailing and engine bay'
     },
     {
       icon: <Anchor className="w-8 h-8" />,
@@ -150,7 +150,7 @@ export const ServicesPage = () => {
         'Motorcycle Detailing'
       ],
       image: '/exterior5.jpg',
-      imageAlt: 'Marine, RV, and motorcycle detailing services in Columbia SC'
+      imageAlt: 'Auto detailing services columbia sc - marine RV and motorcycle detailing'
     },
     {
       icon: <RotateCw className="w-8 h-8" />,
@@ -167,7 +167,7 @@ export const ServicesPage = () => {
         '⚠️ Want to stay consistently clean without falling behind? The Routine Reset is your system.'
       ],
       image: '/exterior6.jpg',
-      imageAlt: 'Monthly auto detailing subscription service in Columbia SC'
+      imageAlt: 'Auto detailing services columbia sc - monthly subscription routine reset'
     }
   ];
 
@@ -202,9 +202,9 @@ export const ServicesPage = () => {
   return (
     <>
       <SEOHead
-        title="Mobile Detailing Services Columbia SC | Pricing & Packages | Mikah's"
-        description="Explore our range of mobile auto detailing services including ceramic coating, paint correction, and more in Columbia SC!"
-        keywords="mobile auto detailing lexington sc, car detailing lexington sc, ceramic coating lexington sc, interior detailing, exterior detailing, paint correction, mobile detailer near me, auto detailing services"
+        title="Auto Detailing Services Columbia SC | Packages & Pricing | Mikah's"
+        description="Professional auto detailing services in Columbia, SC. Mobile detailing, ceramic coating, paint correction, interior & exterior packages. 5-star rated. Call (803) 667-8731!"
+        keywords="auto detailing services columbia sc, auto detailing services in columbia sc, mobile auto detailing columbia sc, car detailing columbia sc, ceramic coating columbia sc, interior detailing, exterior detailing, paint correction, mobile detailer near me"
         canonical="https://mikahsmobiledetailingsc.com/services"
         ogType="website"
         schema={schemas}
@@ -216,9 +216,9 @@ export const ServicesPage = () => {
       {/* Services Section */}
       <section className="pt-16 pb-8 md:pt-24 md:pb-20 bg-white w-full overflow-hidden">
         <div className="container mx-auto px-3 md:px-4 max-w-7xl">
-          <h1 className="text-2xl md:text-4xl font-bold text-center mb-2 md:mb-4">Mobile Auto Detailing Services in Lexington SC</h1>
+          <h1 className="text-2xl md:text-4xl font-bold text-center mb-2 md:mb-4">Auto Detailing Services in Columbia SC</h1>
           <p className="text-center text-gray-600 text-sm md:text-base mb-4 md:mb-12 max-w-2xl mx-auto">
-            Professional car detailing and ceramic coating services. We bring mobile auto detailing to your location in Lexington SC with comprehensive detailing packages.
+            Professional auto detailing services in Columbia, SC. We bring mobile car detailing, ceramic coating, and paint correction to your location with comprehensive detailing packages.
           </p>
 
           <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-8">

@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Map Pack Rank Tracker - Mikah's Auto Detailing</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f5f5f5; padding: 20px; }
+    .container { max-width: 1400px; margin: 0 auto; }
+
+    header { background: linear-gradient(135deg, #023E8A, #0077B6); color: white; padding: 24px; border-radius: 12px; margin-bottom: 24px; }
+    header h1 { font-size: 24px; margin-bottom: 8px; }
+    header p { opacity: 0.9; }
+
+    .controls { background: white; padding: 16px; border-radius: 8px; margin-bottom: 24px; display: flex; gap: 16px; flex-wrap: wrap; align-items: center; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+    .controls label { font-weight: 600; color: #333; }
+    .controls select, .controls input { padding: 8px 12px; border: 1px solid #ddd; border-radius: 6px; font-size: 14px; }
+    .controls select { min-width: 200px; }
+    .controls input[type="date"] { min-width: 150px; }
+
+    .grid-container { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+    @media (max-width: 1000px) { .grid-container { grid-template-columns: 1fr; } }
+
+    .keyword-card { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,0.1); }
+    .keyword-header { background: #023E8A; color: white; padding: 16px; }
+    .keyword-header h3 { font-size: 16px; margin-bottom: 4px; }
+    .keyword-header .search-volume { font-size: 12px; opacity: 0.8; }
+
+    .rank-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 2px; padding: 12px; background: #f0f0f0; }
+    .rank-cell {
+      aspect-ratio: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 14px;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    .rank-cell:hover { transform: scale(1.1); z-index: 10; }
+    .rank-cell.rank-1 { background: #22c55e; color: white; }
+    .rank-cell.rank-2 { background: #84cc16; color: white; }
+    .rank-cell.rank-3 { background: #eab308; color: white; }
+    .rank-cell.rank-4 { background: #f97316; color: white; }
+    .rank-cell.rank-5 { background: #ef4444; color: white; }
+    .rank-cell.rank-6, .rank-cell.rank-7 { background: #dc2626; color: white; }
+    .rank-cell.rank-none { background: #e5e5e5; color: #999; }
+    .rank-cell.rank-20 { background: #991b1b; color: white; }
+
+    .location-label { font-size: 10px; color: #666; text-align: center; padding: 2px; }
+
+    .legend { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 8px; padding: 12px; background: #fafafa; border-top: 1px solid #eee; }
+    .legend-item { display: flex; align-items: center; gap: 6px; font-size: 12px; color: #666; }
+    .legend-color { width: 16px; height: 16px; border-radius: 3px; }
+
+    .summary { background: white; border-radius: 12px; padding: 20px; margin-top: 24px; box-shadow: 0 2px 12px rgba(0,0,0,0.1); }
+    .summary h2 { margin-bottom: 16px; color: #023E8A; }
+    .summary-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 16px; }
+    .stat-card { background: #f8fafc; padding: 16px; border-radius: 8px; text-align: center; }
+    .stat-value { font-size: 32px; font-weight: 700; color: #023E8A; }
+    .stat-label { font-size: 12px; color: #666; margin-top: 4px; }
+
+    .locations-key { background: white; border-radius: 12px; padding: 20px; margin-top: 24px; box-shadow: 0 2px 12px rgba(0,0,0,0.1); }
+    .locations-key h2 { margin-bottom: 16px; color: #023E8A; }
+    .locations-list { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; }
+    .location-item { background: #f0f0f0; padding: 8px; border-radius: 4px; text-align: center; font-size: 11px; }
+    .location-item strong { display: block; font-size: 14px; color: #023E8A; }
+
+    .edit-mode { background: #fef3c7; border: 2px dashed #f59e0b; }
+    .instructions { background: #dbeafe; border-left: 4px solid #3b82f6; padding: 16px; border-radius: 0 8px 8px 0; margin-bottom: 24px; }
+    .instructions h3 { color: #1e40af; margin-bottom: 8px; }
+    .instructions p { color: #1e3a5f; font-size: 14px; line-height: 1.6; }
+
+    .btn { padding: 10px 20px; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; transition: all 0.2s; }
+    .btn-primary { background: #023E8A; color: white; }
+    .btn-primary:hover { background: #0077B6; }
+    .btn-secondary { background: #e5e5e5; color: #333; }
+
+    .last-updated { font-size: 12px; color: #666; margin-top: 24px; text-align: center; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Map Pack Rank Tracker</h1>
+      <p>Mikah's Auto Detailing - Columbia & Lexington SC</p>
+    </header>
+
+    <div class="instructions">
+      <h3>How to Use</h3>
+      <p>Click any cell in the grid to update your ranking position (1-7, or 20+ for not in pack). Each cell represents a geographic point around your service area. Track rankings weekly to monitor progress. Data is saved in your browser.</p>
+    </div>
+
+    <div class="controls">
+      <label>Date:</label>
+      <input type="date" id="trackingDate" />
+      <button class="btn btn-primary" onclick="saveData()">Save Rankings</button>
+      <button class="btn btn-secondary" onclick="exportData()">Export CSV</button>
+    </div>
+
+    <div class="grid-container" id="keywordGrids">
+      <!-- Grids will be generated by JavaScript -->
+    </div>
+
+    <div class="summary">
+      <h2>Summary Statistics</h2>
+      <div class="summary-grid">
+        <div class="stat-card">
+          <div class="stat-value" id="avgRank">-</div>
+          <div class="stat-label">Avg. Position</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value" id="top3Count">-</div>
+          <div class="stat-label">Top 3 Rankings</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value" id="packCount">-</div>
+          <div class="stat-label">In Map Pack</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value" id="notRanking">-</div>
+          <div class="stat-label">Not Ranking</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="locations-key">
+      <h2>Grid Locations (5x5 around Columbia)</h2>
+      <div class="locations-list" id="locationsList">
+        <!-- Generated by JS -->
+      </div>
+    </div>
+
+    <p class="last-updated">Last updated: <span id="lastUpdated">Never</span></p>
+  </div>
+
+  <script>
+    // Keywords to track
+    const keywords = [
+      { term: "mobile auto detailing columbia sc", volume: "320/mo" },
+      { term: "car detailing near me columbia", volume: "480/mo" },
+      { term: "mobile car wash columbia sc", volume: "210/mo" },
+      { term: "ceramic coating columbia sc", volume: "140/mo" },
+      { term: "auto detailing lexington sc", volume: "170/mo" },
+      { term: "mobile detailing near me", volume: "590/mo" },
+      { term: "car detailing lexington sc", volume: "110/mo" },
+      { term: "interior car detailing columbia", volume: "90/mo" }
+    ];
+
+    // 5x5 grid locations around Columbia SC
+    const gridLocations = [
+      ["Chapin", "Irmo North", "Blythewood", "NE Columbia", "Elgin"],
+      ["Lake Murray", "Irmo", "Harbison", "Forest Acres", "Dentsville"],
+      ["Lexington West", "Lexington", "W Columbia", "Downtown", "Rosewood"],
+      ["Gilbert", "Red Bank", "Cayce", "S Columbia", "Hopkins"],
+      ["Batesburg", "Pelion", "Swansea", "Gaston", "Eastover"]
+    ];
+
+    // Initialize data structure
+    let rankingData = JSON.parse(localStorage.getItem('mapPackRankings') || '{}');
+
+    // Set today's date
+    document.getElementById('trackingDate').valueAsDate = new Date();
+
+    // Generate location key
+    function generateLocationKey() {
+      const container = document.getElementById('locationsList');
+      let html = '';
+      let cellNum = 1;
+      gridLocations.flat().forEach(loc => {
+        html += `<div class="location-item"><strong>${cellNum}</strong>${loc}</div>`;
+        cellNum++;
+      });
+      container.innerHTML = html;
+    }
+
+    // Generate keyword grids
+    function generateGrids() {
+      const container = document.getElementById('keywordGrids');
+      let html = '';
+
+      keywords.forEach((kw, kwIndex) => {
+        html += `
+          <div class="keyword-card">
+            <div class="keyword-header">
+              <h3>"${kw.term}"</h3>
+              <div class="search-volume">Est. ${kw.volume}</div>
+            </div>
+            <div class="rank-grid" id="grid-${kwIndex}">
+              ${generateCells(kwIndex)}
+            </div>
+            <div class="legend">
+              <div class="legend-item"><div class="legend-color" style="background:#22c55e"></div>#1</div>
+              <div class="legend-item"><div class="legend-color" style="background:#84cc16"></div>#2</div>
+              <div class="legend-item"><div class="legend-color" style="background:#eab308"></div>#3</div>
+              <div class="legend-item"><div class="legend-color" style="background:#f97316"></div>#4-5</div>
+              <div class="legend-item"><div class="legend-color" style="background:#ef4444"></div>#6-7</div>
+              <div class="legend-item"><div class="legend-color" style="background:#e5e5e5"></div>Not in pack</div>
+            </div>
+          </div>
+        `;
+      });
+
+      container.innerHTML = html;
+    }
+
+    function generateCells(kwIndex) {
+      let cells = '';
+      for (let i = 0; i < 25; i++) {
+        const date = document.getElementById('trackingDate').value;
+        const key = `${date}-${kwIndex}-${i}`;
+        const rank = rankingData[key] || 0;
+        const rankClass = rank === 0 ? 'rank-none' : (rank > 7 ? 'rank-20' : `rank-${rank}`);
+        const display = rank === 0 ? '-' : (rank > 7 ? '20+' : rank);
+        cells += `<div class="rank-cell ${rankClass}" data-kw="${kwIndex}" data-cell="${i}" onclick="cycleRank(this)">${display}</div>`;
+      }
+      return cells;
+    }
+
+    function cycleRank(cell) {
+      const kw = cell.dataset.kw;
+      const cellIndex = cell.dataset.cell;
+      const date = document.getElementById('trackingDate').value;
+      const key = `${date}-${kw}-${cellIndex}`;
+
+      let currentRank = rankingData[key] || 0;
+      // Cycle: 0 -> 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 20 -> 0
+      const sequence = [0, 1, 2, 3, 4, 5, 6, 7, 20];
+      const nextIndex = (sequence.indexOf(currentRank) + 1) % sequence.length;
+      const newRank = sequence[nextIndex];
+
+      rankingData[key] = newRank;
+
+      // Update display
+      const rankClass = newRank === 0 ? 'rank-none' : (newRank > 7 ? 'rank-20' : `rank-${newRank}`);
+      cell.className = `rank-cell ${rankClass}`;
+      cell.textContent = newRank === 0 ? '-' : (newRank > 7 ? '20+' : newRank);
+
+      updateStats();
+    }
+
+    function updateStats() {
+      const date = document.getElementById('trackingDate').value;
+      let totalRank = 0;
+      let rankCount = 0;
+      let top3 = 0;
+      let inPack = 0;
+      let notRanking = 0;
+
+      keywords.forEach((_, kwIndex) => {
+        for (let i = 0; i < 25; i++) {
+          const key = `${date}-${kwIndex}-${i}`;
+          const rank = rankingData[key] || 0;
+
+          if (rank > 0 && rank <= 7) {
+            totalRank += rank;
+            rankCount++;
+            inPack++;
+            if (rank <= 3) top3++;
+          } else if (rank > 7) {
+            notRanking++;
+          } else {
+            notRanking++;
+          }
+        }
+      });
+
+      document.getElementById('avgRank').textContent = rankCount > 0 ? (totalRank / rankCount).toFixed(1) : '-';
+      document.getElementById('top3Count').textContent = top3;
+      document.getElementById('packCount').textContent = inPack;
+      document.getElementById('notRanking').textContent = notRanking;
+    }
+
+    function saveData() {
+      localStorage.setItem('mapPackRankings', JSON.stringify(rankingData));
+      const now = new Date().toLocaleString();
+      localStorage.setItem('mapPackLastUpdated', now);
+      document.getElementById('lastUpdated').textContent = now;
+      alert('Rankings saved!');
+    }
+
+    function exportData() {
+      const date = document.getElementById('trackingDate').value;
+      let csv = 'Keyword,Location,Rank\n';
+
+      keywords.forEach((kw, kwIndex) => {
+        const locs = gridLocations.flat();
+        for (let i = 0; i < 25; i++) {
+          const key = `${date}-${kwIndex}-${i}`;
+          const rank = rankingData[key] || 0;
+          csv += `"${kw.term}","${locs[i]}",${rank === 0 ? 'N/A' : rank}\n`;
+        }
+      });
+
+      const blob = new Blob([csv], { type: 'text/csv' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `map-pack-rankings-${date}.csv`;
+      a.click();
+    }
+
+    // Date change handler
+    document.getElementById('trackingDate').addEventListener('change', () => {
+      generateGrids();
+      updateStats();
+    });
+
+    // Initialize
+    generateLocationKey();
+    generateGrids();
+    updateStats();
+
+    const lastUpdated = localStorage.getItem('mapPackLastUpdated');
+    if (lastUpdated) {
+      document.getElementById('lastUpdated').textContent = lastUpdated;
+    }
+  </script>
+</body>
+</html>

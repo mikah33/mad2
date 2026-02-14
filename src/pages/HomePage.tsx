@@ -129,7 +129,7 @@ export const HomePage = () => {
               <div className="hidden md:block">
                 <picture>
                   <source srcSet="/exterior3_optimized.webp" type="image/webp" />
-                  <img src="/exterior3.jpg" alt="Mobile auto detailing premium exterior wash and ceramic coating prep Columbia SC" className="rounded-lg shadow-2xl" loading="lazy" />
+                  <img src="/exterior3.jpg" alt="Professional exterior auto detailing services columbia sc - premium wash with ceramic coating prep" className="rounded-lg shadow-2xl" loading="lazy" />
                 </picture>
               </div>
             </div>
@@ -196,7 +196,7 @@ export const HomePage = () => {
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 bg-white px-4 py-2 rounded-lg shadow border border-gray-200 hover:shadow-md transition"
               >
-                <img src="https://www.google.com/favicon.ico" alt="Google" className="w-5 h-5" />
+                <img src="https://www.google.com/favicon.ico" alt="Google Reviews for auto detailing services columbia sc" className="w-5 h-5" />
                 <span className="font-medium text-gray-700">View All Google Reviews</span>
               </a>
               <a href="#booking">

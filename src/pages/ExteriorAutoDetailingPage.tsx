@@ -65,7 +65,7 @@ const ExteriorAutoDetailingPage: React.FC = () => {
                 </div>
               </div>
               <div className="hidden md:block">
-                <img src="/exterior-detailing.jpg" alt="Professional exterior auto detailing Columbia SC" className="rounded-lg shadow-2xl" loading="lazy" />
+                <img src="/exterior-detailing.jpg" alt="Professional exterior auto detailing services columbia sc - paint protection and ceramic shine" className="rounded-lg shadow-2xl" loading="lazy" />
               </div>
             </div>
           </div>
@@ -156,7 +156,7 @@ const ExteriorAutoDetailingPage: React.FC = () => {
                 </div>
               </div>
               <div>
-                <img src="/exterior-washing-process.jpg" alt="Exterior auto detailing process Columbia SC" className="rounded-lg shadow-lg" loading="lazy" />
+                <img src="/exterior-washing-process.jpg" alt="Exterior auto detailing services columbia sc process - professional hand wash and paint prep" className="rounded-lg shadow-lg" loading="lazy" />
               </div>
             </div>
           </div>

@@ -106,7 +106,7 @@ const LandingPage: React.FC = () => {
             <div className="flex items-center gap-3">
               <img
                 src="/logo.jpg"
-                alt="Mikah's Auto Detailing"
+                alt="Mikah's Auto Detailing Columbia SC - Professional auto detailing services columbia sc"
                 className="h-10 w-10 sm:h-12 sm:w-12 rounded-full object-cover shadow-md"
               />
               <div className="hidden sm:block">
@@ -229,7 +229,7 @@ const LandingPage: React.FC = () => {
               >
                 <img
                   src="/me3-optimized.png"
-                  alt="Mikah - Your Local Detailer"
+                  alt="Mikah's Auto Detailing Columbia SC - Your local auto detailing services columbia sc professional"
                   loading="lazy"
                   className="w-full h-auto object-contain"
                   style={{

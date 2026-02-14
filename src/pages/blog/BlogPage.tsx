@@ -50,12 +50,12 @@ export const BlogPage = () => {
 
       <Navigation />
 
-      <div className="min-h-screen bg-white">
+      <div className="min-h-screen bg-white pt-16">
         {/* Hero Section */}
         <div className="bg-gradient-to-b from-gray-900 to-gray-800 text-white py-16 md:py-24">
           <div className="container mx-auto px-4 max-w-7xl">
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 mt-8">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
               Auto Detailing Blog & Resources
             </h1>
             <p className="text-xl md:text-2xl text-gray-300 max-w-3xl">

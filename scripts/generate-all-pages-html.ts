@@ -53,6 +53,13 @@ const ogImageMap: Record<string, { image: string; width: number; height: number 
   'gallery': { image: 'mclarens.jpg', width: 1200, height: 630 },
   'book': { image: 'logo.jpg', width: 1200, height: 630 },
   'book/thank-you': { image: 'logo.jpg', width: 1200, height: 630 },
+
+  // SEO Landing Pages
+  'auto-detailing-services-columbia-sc': { image: 'exterior1.jpg', width: 1200, height: 630 },
+
+  // Marketing Landing Pages
+  'lp': { image: 'mclarens-og.jpg', width: 1200, height: 630 },
+  'lp-specials': { image: 'mclarens-og.jpg', width: 1200, height: 630 },
 };
 
 console.log('\n🚀 Generating pre-rendered HTML files for ALL pages...\n');
@@ -90,6 +97,13 @@ const routes = [
   { path: 'gallery', title: 'Gallery | Our Work', description: 'See our professional auto detailing results. Before and after photos of ceramic coating, paint correction, and interior detailing.' },
   { path: 'book', title: 'Book Your Detail | Schedule Online', description: 'Book your professional mobile auto detailing appointment online. Easy scheduling for Columbia, Lexington, and Irmo SC.' },
   { path: 'book/thank-you', title: 'Thank You | Booking Confirmed', description: 'Thank you for booking with Mikah\'s Auto Detailing. We\'ll contact you shortly to confirm your appointment.' },
+
+  // SEO Landing Pages
+  { path: 'auto-detailing-services-columbia-sc', title: 'Auto Detailing Services in Columbia, SC | Mobile Detailing', description: 'Professional auto detailing services in Columbia, SC. Mobile detailing, ceramic coating, paint correction, interior & exterior packages. 5-star rated. Call (803) 667-8731!' },
+
+  // Marketing Landing Pages
+  { path: 'lp', title: 'Mobile Auto Detailing Columbia SC | Special Offer', description: 'Professional mobile auto detailing in Columbia & Lexington SC. Interior/exterior detailing from $225. 5-star rated. Same day available. Call (803) 667-8731!' },
+  { path: 'lp-specials', title: 'Auto Detailing Specials Columbia SC | Limited Time', description: 'Exclusive auto detailing specials in Columbia SC. Save on ceramic coating, full details, and more. Limited time offers!' },
 ];
 
 let generatedCount = 0;
@@ -134,10 +148,10 @@ routes.forEach(route => {
   // Update title
   html = html.replace(/<title>.*?<\/title>/, `<title>${fullTitle}</title>`);
 
-  // Update meta description
+  // Update meta description (handle both " />" and "/>" formats)
   html = html.replace(
-    /<meta name="description" content=".*?"\/>/,
-    `<meta name="description" content="${route.description.replace(/"/g, '&quot;')}"/>`
+    /<meta name="description" content="[^"]*"[^>]*>/,
+    `<meta name="description" content="${route.description.replace(/"/g, '&quot;')}" />`
   );
 
   // Update canonical
@@ -154,15 +168,15 @@ routes.forEach(route => {
   const ogImageData = ogImageMap[routePath] || { image: 'mclarens-og.jpg', width: 1200, height: 630 };
   const ogImageUrl = `${baseUrl}/${ogImageData.image}`;
 
-  // Update OG tags
-  html = html.replace(/<meta property="og:title" content=".*?"\/>/g, `<meta property="og:title" content="${fullTitle.replace(/"/g, '&quot;')}"/>`);
+  // Update OG tags (flexible regex to handle both " />" and "/>" formats)
+  html = html.replace(/<meta property="og:title" content="[^"]*"[^>]*>/g, `<meta property="og:title" content="${fullTitle.replace(/"/g, '&quot;')}" />`);
   html = html.replace(
-    /<meta property="og:description" content=".*?"\/>/g,
-    `<meta property="og:description" content="${route.description.replace(/"/g, '&quot;')}"/>`
+    /<meta property="og:description" content="[^"]*"[^>]*>/g,
+    `<meta property="og:description" content="${route.description.replace(/"/g, '&quot;')}" />`
   );
-  html = html.replace(/<meta property="og:url" content=".*?"\/>/g, `<meta property="og:url" content="${pageUrl}"/>`);
+  html = html.replace(/<meta property="og:url" content="[^"]*"[^>]*>/g, `<meta property="og:url" content="${pageUrl}" />`);
 
-  // Update OG image (use more flexible regex to match various formats)
+  // Update OG image
   html = html.replace(
     /<meta property="og:image" content="[^"]*"[^>]*>/g,
     `<meta property="og:image" content="${ogImageUrl}" />`
@@ -178,11 +192,11 @@ routes.forEach(route => {
     `<meta property="og:image:height" content="${ogImageData.height}" />`
   );
 
-  // Update Twitter tags (including image)
-  html = html.replace(/<meta name="twitter:title" content=".*?"\/>/g, `<meta name="twitter:title" content="${fullTitle.replace(/"/g, '&quot;')}"/>`);
+  // Update Twitter tags
+  html = html.replace(/<meta name="twitter:title" content="[^"]*"[^>]*>/g, `<meta name="twitter:title" content="${fullTitle.replace(/"/g, '&quot;')}" />`);
   html = html.replace(
-    /<meta name="twitter:description" content=".*?"\/>/g,
-    `<meta name="twitter:description" content="${route.description.replace(/"/g, '&quot;')}"/>`
+    /<meta name="twitter:description" content="[^"]*"[^>]*>/g,
+    `<meta name="twitter:description" content="${route.description.replace(/"/g, '&quot;')}" />`
   );
 
   // Update Twitter image tag

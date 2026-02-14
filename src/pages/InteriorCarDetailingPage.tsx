@@ -65,7 +65,7 @@ const InteriorCarDetailingPage: React.FC = () => {
                 </div>
               </div>
               <div className="hidden md:block">
-                <img src="/interior-detailing.jpg" alt="Professional car interior detailing Columbia SC" className="rounded-lg shadow-2xl" loading="lazy" />
+                <img src="/interior-detailing.jpg" alt="Interior car detailing service columbia sc - professional leather cleaning and dashboard detail" className="rounded-lg shadow-2xl" loading="lazy" />
               </div>
             </div>
           </div>
@@ -156,7 +156,7 @@ const InteriorCarDetailingPage: React.FC = () => {
                 </div>
               </div>
               <div>
-                <img src="/interior-cleaning-process.jpg" alt="Car interior detailing process Columbia SC" className="rounded-lg shadow-lg" loading="lazy" />
+                <img src="/interior-cleaning-process.jpg" alt="Interior car detailing service columbia sc process - steam cleaning and leather conditioning" className="rounded-lg shadow-lg" loading="lazy" />
               </div>
             </div>
           </div>

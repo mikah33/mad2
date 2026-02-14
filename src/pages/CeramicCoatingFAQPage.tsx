@@ -31,7 +31,7 @@ export const CeramicCoatingFAQPage: React.FC = () => {
             <div className="relative mb-8 rounded-xl overflow-hidden shadow-2xl">
               <img
                 src="/exterior3.jpg"
-                alt="Professional ceramic coating application on vehicle in Columbia SC"
+                alt="Auto detailing services columbia sc - professional ceramic coating application and paint protection"
                 className="w-full h-64 md:h-96 object-cover"
                 loading="eager"
               />
