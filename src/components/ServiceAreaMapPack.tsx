@@ -78,10 +78,11 @@ export const ServiceAreaMapPack = () => {
 
   // Generate Google Maps embed URL centered on selected area or Columbia
   const center = selectedArea?.coordinates || serviceAreas[0].coordinates;
-  const mapUrl = `https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&q=Mikah's+Auto+Detailing+Columbia+SC&center=${center.lat},${center.lng}&zoom=11`;
+  const mapsApiKey = import.meta.env.VITE_GOOGLE_MAPS_API_KEY || '';
+  const mapUrl = mapsApiKey ? `https://www.google.com/maps/embed/v1/place?key=${mapsApiKey}&q=Mikah's+Auto+Detailing+Columbia+SC&center=${center.lat},${center.lng}&zoom=11` : '';
 
   // Fallback static map for performance
-  const staticMapUrl = `https://maps.googleapis.com/maps/api/staticmap?center=${center.lat},${center.lng}&zoom=10&size=600x400&maptype=roadmap&markers=color:blue%7C${serviceAreas.map(a => `${a.coordinates.lat},${a.coordinates.lng}`).join('|')}&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8`;
+  const staticMapUrl = mapsApiKey ? `https://maps.googleapis.com/maps/api/staticmap?center=${center.lat},${center.lng}&zoom=10&size=600x400&maptype=roadmap&markers=color:blue%7C${serviceAreas.map(a => `${a.coordinates.lat},${a.coordinates.lng}`).join('|')}&key=${mapsApiKey}` : '';
 
   const displayedAreas = showAllAreas ? serviceAreas : serviceAreas.slice(0, 3);
 
