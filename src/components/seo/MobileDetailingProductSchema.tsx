@@ -50,7 +50,6 @@ export const generateMobileDetailingProductSchemas = (
       name: 'Basic Mobile Car Detailing Package',
       description: 'Essential mobile car detailing service perfect for regular maintenance. Includes exterior wash, interior vacuum, basic cleaning, and tire shine. Great value for keeping your car clean.',
       sku: 'MAD-BASIC-001',
-      gtin: '123456789012',
       image: [
         `${baseUrl}/exterior1.jpg`,
         `${baseUrl}/interior1.jpg`
@@ -97,7 +96,6 @@ export const generateMobileDetailingProductSchemas = (
       name: 'Premium Mobile Car Detailing Package',
       description: 'Comprehensive mobile auto detailing for the discerning car owner. Includes deep interior cleaning, exterior wash and wax, tire and wheel detailing, dashboard conditioning, and paint protection.',
       sku: 'MAD-PREMIUM-002',
-      gtin: '123456789013',
       image: [
         `${baseUrl}/mclarens.jpg`,
         `${baseUrl}/exterior2.jpg`
@@ -144,7 +142,6 @@ export const generateMobileDetailingProductSchemas = (
       name: 'Luxury Mobile Car Detailing Package',
       description: 'Ultimate mobile car detailing experience for luxury and exotic vehicles. Includes paint correction, premium wax application, interior deep cleaning, leather conditioning, engine bay cleaning, and ceramic coating preparation.',
       sku: 'MAD-LUXURY-003',
-      gtin: '123456789014',
       image: [
         `${baseUrl}/mclarens.jpg`,
         `${baseUrl}/exterior3.jpg`
@@ -191,7 +188,6 @@ export const generateMobileDetailingProductSchemas = (
       name: 'Car Interior Detailing Service',
       description: 'Specialized interior car detailing focusing on deep cleaning, stain removal, upholstery protection, and odor elimination. Perfect for maintaining your vehicle\'s interior.',
       sku: 'MAD-INTERIOR-004',
-      gtin: '123456789015',
       image: [
         `${baseUrl}/interior1.jpg`
       ],
@@ -226,10 +222,15 @@ export const generateMobileDetailingProductSchemas = (
       product.review = [
         {
           '@type': 'Review',
+          itemReviewed: {
+            '@type': 'Product',
+            name: product.name
+          },
           reviewRating: {
             '@type': 'Rating',
             ratingValue: '5',
-            bestRating: '5'
+            bestRating: '5',
+            worstRating: '1'
           },
           author: {
             '@type': 'Person',
@@ -240,10 +241,15 @@ export const generateMobileDetailingProductSchemas = (
         },
         {
           '@type': 'Review',
+          itemReviewed: {
+            '@type': 'Product',
+            name: product.name
+          },
           reviewRating: {
             '@type': 'Rating',
             ratingValue: '5',
-            bestRating: '5'
+            bestRating: '5',
+            worstRating: '1'
           },
           author: {
             '@type': 'Person',
@@ -314,11 +320,17 @@ export const generateMobileDetailingPackageListSchema = () => {
           name: 'Basic Mobile Detailing',
           description: 'Essential mobile car detailing package',
           image: `${baseUrl}/exterior1.jpg`,
+          brand: {
+            '@type': 'Brand',
+            name: "Mikah's Auto Detailing"
+          },
           offers: {
             '@type': 'Offer',
             price: '150',
             priceCurrency: 'USD',
-            availability: 'https://schema.org/InStock'
+            availability: 'https://schema.org/InStock',
+            priceValidUntil: '2026-12-31',
+            url: `${baseUrl}/book`
           }
         }
       },
@@ -330,11 +342,17 @@ export const generateMobileDetailingPackageListSchema = () => {
           name: 'Premium Mobile Detailing',
           description: 'Comprehensive mobile auto detailing',
           image: `${baseUrl}/mclarens.jpg`,
+          brand: {
+            '@type': 'Brand',
+            name: "Mikah's Auto Detailing"
+          },
           offers: {
             '@type': 'Offer',
             price: '250',
             priceCurrency: 'USD',
-            availability: 'https://schema.org/InStock'
+            availability: 'https://schema.org/InStock',
+            priceValidUntil: '2026-12-31',
+            url: `${baseUrl}/book`
           }
         }
       },
@@ -346,11 +364,17 @@ export const generateMobileDetailingPackageListSchema = () => {
           name: 'Luxury Mobile Detailing',
           description: 'Ultimate mobile car detailing experience',
           image: `${baseUrl}/mclarens.jpg`,
+          brand: {
+            '@type': 'Brand',
+            name: "Mikah's Auto Detailing"
+          },
           offers: {
             '@type': 'Offer',
             price: '350',
             priceCurrency: 'USD',
-            availability: 'https://schema.org/InStock'
+            availability: 'https://schema.org/InStock',
+            priceValidUntil: '2026-12-31',
+            url: `${baseUrl}/book`
           }
         }
       },
@@ -362,11 +386,17 @@ export const generateMobileDetailingPackageListSchema = () => {
           name: 'Interior Detailing Service',
           description: 'Specialized interior car detailing',
           image: `${baseUrl}/interior1.jpg`,
+          brand: {
+            '@type': 'Brand',
+            name: "Mikah's Auto Detailing"
+          },
           offers: {
             '@type': 'Offer',
             price: '100',
             priceCurrency: 'USD',
-            availability: 'https://schema.org/InStock'
+            availability: 'https://schema.org/InStock',
+            priceValidUntil: '2026-12-31',
+            url: `${baseUrl}/services/interior-detailing`
           }
         }
       }

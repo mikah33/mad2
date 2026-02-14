@@ -176,6 +176,10 @@ export const generateLocalBusinessSchema = (
   if (reviews && reviews.length > 0) {
     baseSchema.review = reviews.map(review => ({
       '@type': 'Review',
+      itemReviewed: {
+        '@type': 'LocalBusiness',
+        name: business.name
+      },
       author: {
         '@type': 'Person',
         name: review.author
@@ -249,6 +253,10 @@ export const generateServiceSchema = (
   if (reviews && reviews.length > 0) {
     baseSchema.review = reviews.map(review => ({
       '@type': 'Review',
+      itemReviewed: {
+        '@type': 'Service',
+        name: service.name
+      },
       author: {
         '@type': 'Person',
         name: review.author
@@ -477,6 +485,10 @@ export const generateProductSchema = (product: {
   if (product.reviews && product.reviews.length > 0) {
     baseSchema.review = product.reviews.map(review => ({
       '@type': 'Review',
+      itemReviewed: {
+        '@type': 'Product',
+        name: product.name
+      },
       author: {
         '@type': 'Person',
         name: review.author
