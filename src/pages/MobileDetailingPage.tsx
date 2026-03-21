@@ -37,13 +37,37 @@ const MobileDetailingPage: React.FC = () => {
     category: "Auto Detailing Services"
   });
 
-  const schemas = [productSchema, generateEnhancedLocalBusinessSchema()];
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Mobile Car Detailing Near Me - Columbia & Lexington SC",
+    "serviceType": "Auto Detailing",
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": "Mikah's Auto Detailing",
+      "telephone": "(803) 667-8731"
+    },
+    "areaServed": [
+      { "@type": "City", "name": "Columbia", "addressRegion": "SC" },
+      { "@type": "City", "name": "Lexington", "addressRegion": "SC" }
+    ],
+    "offers": {
+      "@type": "Offer",
+      "price": "225",
+      "priceCurrency": "USD",
+      "description": "Basic Detail Package - Interior & Exterior"
+    },
+    "description": "Professional mobile car detailing service in Columbia and Lexington SC. We come to your location with all equipment needed.",
+    "url": "https://mikahsmobiledetailingsc.com/services/mobile-detailing"
+  };
+
+  const schemas = [productSchema, serviceSchema, generateEnhancedLocalBusinessSchema()];
 
   return (
     <>
       <SEOHead
-        title="Mobile Auto Detailing Services Columbia SC | We Come To You | Mikah's"
-        description="Professional auto detailing services in Columbia, SC. Mobile car detailing at your home or office. Interior detailing, exterior wash, ceramic prep. 5-star rated. Call (803) 667-8731!"
+        title="Mobile Detailing Near Me | Columbia & Lexington SC | Mikah's"
+        description="Mobile car detailing near you in Columbia & Lexington SC. We come to your home or office from $225. Same day available. 5-star rated. Call (803) 667-8731."
         keywords="auto detailing services columbia sc, mobile car detailing near me, detailing car near me, automotive detail near me, car interior detailing, mobile detailing columbia sc, auto detailing services in columbia sc, mobile automotive detailing, professional car detailing columbia sc"
         canonical="https://mikahsmobiledetailingsc.com/services/mobile-detailing"
         ogImage="https://mikahsmobiledetailingsc.com/exterior3.jpg"

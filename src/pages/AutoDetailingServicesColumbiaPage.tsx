@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { Phone, MessageCircle, X, Facebook, Instagram, Star, CheckCircle, MapPin, Clock, Shield, Award, ArrowRight } from 'lucide-react';
 import { SEOHead } from '../components/seo/SEOHead';
 import { generateLocalBusinessSchema, generateFAQSchema } from '../components/seo/StructuredData';
@@ -6,6 +7,7 @@ import { generateEnhancedLocalBusinessSchema } from '../components/seo/EnhancedL
 import { aggregateRating, reviews } from '../data/reviews';
 import BookingTimeline from '../components/BookingTimeline';
 import Footer from '../components/Footer';
+import { Breadcrumbs } from '../components/Breadcrumbs';
 
 const AutoDetailingServicesColumbiaPage: React.FC = () => {
   const [isContactPopupOpen, setIsContactPopupOpen] = useState(false);
@@ -98,8 +100,8 @@ const AutoDetailingServicesColumbiaPage: React.FC = () => {
   return (
     <>
       <SEOHead
-        title="Auto Detailing Services in Columbia, SC | Mobile Detailing | Mikah's"
-        description="Professional auto detailing services in Columbia, SC. Mobile detailing, ceramic coating, paint correction, interior & exterior packages. 5-star rated. Call (803) 667-8731!"
+        title="Auto Detailing Services in Columbia SC | Packages from $225"
+        description="Complete auto detailing services in Columbia, SC. Mobile interior & exterior detailing, ceramic coating, paint correction. 5.0-star rated. From $225. Call (803) 667-8731."
         keywords="auto detailing services in columbia sc, auto detailing services columbia sc, car detailing columbia sc, mobile auto detailing columbia, professional auto detailing columbia sc, auto detailing near me columbia"
         canonical="https://mikahsmobiledetailingsc.com/auto-detailing-services-columbia-sc"
         schema={schemas}
@@ -133,6 +135,19 @@ const AutoDetailingServicesColumbiaPage: React.FC = () => {
             </div>
           </div>
         </header>
+
+        {/* ============================================ */}
+        {/* BREADCRUMBS */}
+        {/* ============================================ */}
+        <div className="bg-white px-4">
+          <div className="max-w-4xl mx-auto">
+            <Breadcrumbs
+              items={[
+                { label: 'Auto Detailing Services Columbia SC', path: '/auto-detailing-services-columbia-sc' }
+              ]}
+            />
+          </div>
+        </div>
 
         {/* ============================================ */}
         {/* SECTION 2: Hero - Identical to LandingPage */}
@@ -369,6 +384,177 @@ const AutoDetailingServicesColumbiaPage: React.FC = () => {
                   Complete interior + exterior auto detailing packages starting at $225. Everything your car needs.
                 </p>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ============================================ */}
+        {/* SERVICE COMPARISON TABLE */}
+        {/* ============================================ */}
+        <section className="bg-white py-16 px-4">
+          <div className="max-w-5xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-4">
+              Compare Our Auto Detailing Packages
+            </h2>
+            <p className="text-lg text-gray-700 text-center max-w-3xl mx-auto mb-10">
+              Not sure which package is right for your vehicle? Use this side-by-side comparison to find the best
+              auto detailing service for your needs and budget in Columbia, SC.
+            </p>
+            <div className="overflow-x-auto rounded-xl shadow-lg">
+              <table className="w-full text-sm border-collapse">
+                <thead>
+                  <tr className="bg-[#023E8A] text-white">
+                    <th className="text-left px-4 py-4 font-semibold min-w-[180px]">Feature</th>
+                    <th className="text-center px-4 py-4 font-semibold min-w-[140px]">Basic Detail<br /><span className="text-[#90E0EF] font-normal">$225</span></th>
+                    <th className="text-center px-4 py-4 font-semibold min-w-[140px]">Factory Reset<br /><span className="text-[#90E0EF] font-normal">$400</span></th>
+                    <th className="text-center px-4 py-4 font-semibold min-w-[140px]">Ceramic Coating<br /><span className="text-[#90E0EF] font-normal">Quote</span></th>
+                    <th className="text-center px-4 py-4 font-semibold min-w-[140px]">Paint Correction<br /><span className="text-[#90E0EF] font-normal">Quote</span></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {[
+                    { feature: 'Interior Wipe Down',      basic: true,  factory: true,  ceramic: true,  paint: true  },
+                    { feature: 'UV Protection',           basic: true,  factory: true,  ceramic: true,  paint: false },
+                    { feature: 'Vacuum & Disinfect',      basic: true,  factory: true,  ceramic: true,  paint: false },
+                    { feature: 'Glass Cleaned',           basic: true,  factory: true,  ceramic: true,  paint: true  },
+                    { feature: 'Stain Removal',           basic: false, factory: true,  ceramic: false, paint: false },
+                    { feature: 'Shampoo & Extraction',    basic: false, factory: true,  ceramic: false, paint: false },
+                    { feature: 'Foam Wash',               basic: true,  factory: true,  ceramic: true,  paint: true  },
+                    { feature: 'Protective Wax',          basic: true,  factory: true,  ceramic: false, paint: false },
+                    { feature: 'Brake Dust Removal',      basic: true,  factory: true,  ceramic: true,  paint: true  },
+                    { feature: 'Ceramic Application',     basic: false, factory: false, ceramic: true,  paint: false },
+                    { feature: 'Swirl Mark Removal',      basic: false, factory: false, ceramic: false, paint: true  },
+                    { feature: 'Duration',
+                      basicText: '2–3 hrs', factoryText: '3–4 hrs', ceramicText: '1–2 days', paintText: '4–8 hrs',
+                      isText: true },
+                  ].map((row, i) => (
+                    <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
+                      <td className="px-4 py-3 font-medium text-gray-900 border-b border-gray-100">{row.feature}</td>
+                      {row.isText ? (
+                        <>
+                          <td className="px-4 py-3 text-center text-gray-700 border-b border-gray-100">{row.basicText}</td>
+                          <td className="px-4 py-3 text-center text-gray-700 border-b border-gray-100">{row.factoryText}</td>
+                          <td className="px-4 py-3 text-center text-gray-700 border-b border-gray-100">{row.ceramicText}</td>
+                          <td className="px-4 py-3 text-center text-gray-700 border-b border-gray-100">{row.paintText}</td>
+                        </>
+                      ) : (
+                        <>
+                          <td className="px-4 py-3 text-center border-b border-gray-100">
+                            {row.basic ? <span className="text-green-600 font-bold text-base">&#10003;</span> : <span className="text-gray-300 font-bold">&#8212;</span>}
+                          </td>
+                          <td className="px-4 py-3 text-center border-b border-gray-100">
+                            {row.factory ? <span className="text-green-600 font-bold text-base">&#10003;</span> : <span className="text-gray-300 font-bold">&#8212;</span>}
+                          </td>
+                          <td className="px-4 py-3 text-center border-b border-gray-100">
+                            {row.ceramic ? <span className="text-green-600 font-bold text-base">&#10003;</span> : <span className="text-gray-300 font-bold">&#8212;</span>}
+                          </td>
+                          <td className="px-4 py-3 text-center border-b border-gray-100">
+                            {row.paint ? <span className="text-green-600 font-bold text-base">&#10003;</span> : <span className="text-gray-300 font-bold">&#8212;</span>}
+                          </td>
+                        </>
+                      )}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <p className="text-center text-sm text-gray-500 mt-4">
+              All packages include mobile service — we come to your location in Columbia, SC.
+            </p>
+          </div>
+        </section>
+
+        {/* ============================================ */}
+        {/* AUTO DETAILING SERVICES WE OFFER SECTION */}
+        {/* ============================================ */}
+        <section className="bg-gray-50 py-16 px-4">
+          <div className="max-w-5xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-4">
+              Auto Detailing Services We Offer in Columbia
+            </h2>
+            <p className="text-lg text-gray-700 text-center max-w-3xl mx-auto mb-14">
+              From deep interior cleans to long-lasting ceramic protection, our full menu of services covers every
+              vehicle need. Explore each service below to learn what sets our Columbia detailing apart.
+            </p>
+
+            {/* Mobile Interior Detailing */}
+            <div className="bg-white rounded-xl shadow-md p-8 mb-8">
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">Mobile Interior Detailing Columbia SC</h3>
+              <p className="text-gray-700 leading-relaxed mb-4">
+                Our <Link to="/services/interior-detailing" className="text-[#023E8A] underline hover:text-[#0077B6] transition">interior detailing</Link> service
+                is one of the most thorough in the Columbia area. We start by removing all floor mats and loose
+                items, then perform a full vacuuming of carpets, seats, trunk, and door pockets. Every hard surface —
+                dash, center console, door panels, door jambs, and vents — is wiped down with a pH-balanced interior
+                cleaner and dressed with a UV-protectant to prevent cracking and fading in South Carolina's relentless
+                heat. Leather seats are cleaned and conditioned to stay soft and supple despite the region's high
+                humidity. Fabric seats and carpets are treated with a hot-water extractor that lifts embedded dirt,
+                pet hair, and ground-in stains that vacuuming alone cannot remove. All interior glass is polished
+                streak-free from the inside. We also treat headliners and pillars with appropriate cleaners, and
+                apply an odor neutralizer rather than masking it with fragrance. The result is a cabin that looks,
+                feels, and smells like new — without you ever leaving your Columbia home or office. Our{' '}
+                <Link to="/locations/columbia-sc" className="text-[#023E8A] underline hover:text-[#0077B6] transition">mobile car detailing in Columbia SC</Link>{' '}
+                means all of this comes directly to your driveway with professional equipment loaded on our van.
+              </p>
+            </div>
+
+            {/* Exterior Detailing & Protection */}
+            <div className="bg-white rounded-xl shadow-md p-8 mb-8">
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">Exterior Detailing &amp; Protection</h3>
+              <p className="text-gray-700 leading-relaxed mb-4">
+                South Carolina's environment is tough on automotive paint. Red clay roads, tree sap, pollen,
+                industrial fallout, and months of intense UV radiation degrade your clear coat and dull your finish
+                faster than almost anywhere in the country. Our{' '}
+                <Link to="/services/exterior-detailing" className="text-[#023E8A] underline hover:text-[#0077B6] transition">exterior detailing</Link>{' '}
+                service begins with a foam pre-soak to loosen road grime, followed by a two-bucket hand wash using
+                pH-neutral shampoo to prevent swirl marks. Wheels, wheel wells, and brake calipers are decontaminated
+                separately with iron remover, then scrubbed and dressed with a long-lasting tire shine. Painted
+                surfaces are clay-barred to remove bonded contaminants that washing cannot address, leaving the
+                paint glassy smooth to the touch. We then apply a high-quality carnauba wax or synthetic paint
+                sealant — your choice — to add 3–6 months of hydrophobic protection. Exterior trim is restored
+                with a UV-blocking dressing to prevent fading, and all glass is polished with a water-spot
+                remover for crystal clarity. The final result is a vehicle that turns heads wherever you drive
+                around Columbia.
+              </p>
+            </div>
+
+            {/* Ceramic Coating Columbia SC */}
+            <div className="bg-white rounded-xl shadow-md p-8 mb-8">
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">Ceramic Coating Columbia SC</h3>
+              <p className="text-gray-700 leading-relaxed mb-4">
+                If you want the longest-lasting paint protection available for Columbia's climate, professional{' '}
+                <Link to="/services/ceramic-coating" className="text-[#023E8A] underline hover:text-[#0077B6] transition">ceramic coating</Link>{' '}
+                is the answer. Unlike wax or sealant, a properly applied ceramic coating bonds directly to your
+                clear coat at a molecular level, creating a hard, semi-permanent shell that lasts 2–5 years with
+                proper maintenance. This matters enormously in South Carolina, where summer temperatures regularly
+                exceed 95°F and UV index levels are among the highest in the nation. Ceramic coatings are rated
+                to withstand sustained heat and provide a UPF-equivalent barrier that prevents oxidation, color
+                fading, and UV hazing. The coating's hydrophobic properties cause rain and car-wash water to bead
+                and sheet off the surface, carrying away pollen, dirt, and road grime with minimal effort.
+                Columbia's notorious pollen seasons become a minor inconvenience rather than a detailing headache
+                when your vehicle is ceramic-coated. All of our ceramic coating services include a full paint
+                decontamination and single-stage polish before application to ensure the coating bonds correctly
+                and maximizes gloss.
+              </p>
+            </div>
+
+            {/* Paint Correction Services */}
+            <div className="bg-white rounded-xl shadow-md p-8 mb-8">
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">Paint Correction Services</h3>
+              <p className="text-gray-700 leading-relaxed mb-4">
+                Swirl marks, water spot etching, light scratches, and oxidized paint make even a clean car look
+                dull and neglected. Our{' '}
+                <Link to="/services/paint-correction" className="text-[#023E8A] underline hover:text-[#0077B6] transition">paint correction</Link>{' '}
+                service uses professional-grade dual-action and rotary polishers with a progression of cutting
+                and finishing compounds to safely remove these defects from your clear coat. A single-stage
+                polish removes light swirling and improves overall gloss by 60–70%. A two-stage correction
+                targets deeper scratches and heavy water-spot etching left by SC's hard well water and
+                summer afternoon thunderstorms. For vehicles with severe oxidation — common on older cars
+                parked outdoors in Columbia's year-round sun — we can restore the paint to a level that avoids
+                costly repainting. After correction, the paint surface is wiped down with a panel wipe to
+                remove all oils, leaving it in the optimal state to receive a protective coating or sealant.
+                Paint correction results are genuinely transformative, and we encourage you to view our before
+                and after gallery to see the difference professional polishing makes on Columbia area vehicles.
+              </p>
             </div>
           </div>
         </section>

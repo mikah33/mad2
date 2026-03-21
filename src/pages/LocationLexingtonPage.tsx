@@ -110,6 +110,10 @@ export const LocationLexingtonPage = () => {
     {
       question: 'Can I find reviews for mobile detailing in Lexington SC?',
       answer: 'Yes! We have 19 verified Google reviews with a perfect 5.0-star rating. Customers praise our professional mobile service, attention to detail, and convenient at-home detailing. Search "Mikah\'s Auto Detailing Lexington SC" on Google to read our reviews.'
+    },
+    {
+      question: 'Do you detail boats or RVs near Lake Murray?',
+      answer: 'Yes! We offer detailing for boats, RVs, and larger vehicles throughout the Lake Murray and Lexington SC area. Our mobile unit comes equipped for larger vehicle detailing. Water spots, mineral deposits, and oxidation from lake exposure are common issues we address. Contact us at (803) 667-8731 for a custom quote based on your vehicle size.'
     }
   ];
 
@@ -181,12 +185,12 @@ export const LocationLexingtonPage = () => {
   return (
     <>
       <SEOHead
-        title="Auto Detailing Services Lexington SC | Mobile Detailing | Mikah's"
-        description="Professional auto detailing services in Lexington, SC near Columbia. Mobile car detailing, ceramic coating, paint correction. 5-star rated. Call (803) 667-8731!"
+        title="Mobile Car Detailing Lexington SC | From $225 | 5-Star Rated"
+        description="Lexington SC's top mobile car detailing service. Interior, exterior, ceramic coating from $225. Lake Murray area. Call (803) 667-8731."
         keywords={allKeywords.join(', ') + ', auto detailing services columbia sc'}
         canonical="https://mikahsmobiledetailingsc.com/locations/lexington-sc"
-        ogDescription="Professional auto detailing services in Lexington, SC near Columbia. Mobile car detailing, ceramic coating, paint correction. 5-star rated. Call (803) 667-8731!"
-        twitterDescription="Professional auto detailing services in Lexington, SC near Columbia. Mobile car detailing, ceramic coating, paint correction. 5-star rated. Call (803) 667-8731!"
+        ogDescription="Lexington SC's top mobile car detailing service. Interior, exterior, ceramic coating from $225. Lake Murray area. Call (803) 667-8731."
+        twitterDescription="Lexington SC's top mobile car detailing service. Interior, exterior, ceramic coating from $225. Lake Murray area. Call (803) 667-8731."
         schema={schemas}
       />
 
@@ -238,14 +242,13 @@ export const LocationLexingtonPage = () => {
             </div>
 
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 leading-tight">
-              Professional Auto Detailing
+              Mobile Car Detailing
               <br />
-              <span className="text-primary-300">Lexington, SC</span>
+              <span className="text-primary-300">Lexington SC</span>
             </h1>
 
             <p className="text-base sm:text-lg md:text-xl mb-6 md:mb-8 max-w-3xl mx-auto text-gray-100 px-4">
-              Expert mobile car detailing serving Lexington & Lake Murray. Ceramic coating, interior
-              detailing, paint correction. 5.0★ rated with 19 reviews. We come to you!
+              Lexington SC's top-rated mobile car detailing. Interior & exterior detailing, ceramic coating, paint correction at your location. Serving Lake Murray & all of Lexington County. 5.0★ rated. From $225.
             </p>
 
             <p className="text-lg sm:text-xl md:text-2xl font-semibold mb-6 md:mb-8 text-primary-300">
@@ -386,6 +389,14 @@ export const LocationLexingtonPage = () => {
                   <div className="font-semibold">{area}</div>
                 </div>
               ))}
+            </div>
+
+            {/* Near Me SEO Block */}
+            <div className="mt-12 bg-primary-50 rounded-xl p-8 border border-primary-100">
+              <h3 className="text-2xl font-bold mb-4 text-primary-800">Mobile Detailing Near Me in Lexington SC</h3>
+              <p className="text-gray-700">
+                Searching for mobile detailing near me in Lexington? Mikah's Auto Detailing brings professional car detailing directly to your home or office anywhere in Lexington County. From Lake Murray Shores to Sunset Boulevard, Gilbert to Red Bank — we're your local mobile detailer. Same day availability, from $225. <a href="tel:8036678731" className="text-primary-700 font-semibold hover:underline">Call (803) 667-8731</a> for your free quote.
+              </p>
             </div>
           </div>
         </section>

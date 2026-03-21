@@ -161,12 +161,12 @@ export const LocationColumbiaPage = () => {
   return (
     <>
       <SEOHead
-        title="Auto Detailing Services Columbia SC | Mobile Detailing | Mikah's"
-        description="Professional auto detailing services in Columbia, SC. Mobile car detailing, ceramic coating, paint correction. We come to you! 5-star rated. Call (803) 667-8731!"
+        title="Mobile Car Detailing Columbia SC | From $225 | We Come to You"
+        description="5-star rated mobile car detailing in Columbia SC. Interior + exterior packages from $225. Ceramic coating & paint correction. Call (803) 667-8731."
         keywords="auto detailing services columbia sc, auto detailing services in columbia sc, columbia detailing, columbia auto detail, auto detail columbia, columbia mobile detailing, detailing columbia sc, car detailing columbia sc, mobile auto detailing columbia sc, professional car detailing columbia, best columbia detailing"
         canonical="https://mikahsmobiledetailingsc.com/locations/columbia-sc"
-        ogDescription="Professional auto detailing services in Columbia, SC. Mobile car detailing, ceramic coating, paint correction. We come to you! 5-star rated. Call (803) 667-8731!"
-        twitterDescription="Professional auto detailing services in Columbia, SC. Mobile car detailing, ceramic coating, paint correction. We come to you! 5-star rated. Call (803) 667-8731!"
+        ogDescription="5-star rated mobile car detailing in Columbia SC. Interior + exterior packages from $225. Ceramic coating & paint correction. Call (803) 667-8731."
+        twitterDescription="5-star rated mobile car detailing in Columbia SC. Interior + exterior packages from $225. Ceramic coating & paint correction. Call (803) 667-8731."
         schema={schemas}
       />
 
@@ -217,14 +217,13 @@ export const LocationColumbiaPage = () => {
             </div>
 
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 leading-tight">
-              Columbia Detailing | Auto Detail
+              Mobile Car Detailing
               <br />
-              <span className="text-primary-300">Columbia, SC</span>
+              <span className="text-primary-300">Columbia SC</span>
             </h1>
 
             <p className="text-base sm:text-lg md:text-xl mb-6 md:mb-8 max-w-3xl mx-auto text-gray-100 px-4">
-              Columbia's premier auto detailing service. Professional columbia detailing for interior, exterior,
-              ceramic coating & more. 5.0★ rated columbia mobile detailing - we come to you!
+              Columbia's #1 mobile car detailing service. Interior & exterior detailing, ceramic coating, paint correction — we come to your location. 5.0★ rated with 19 Google reviews. From $225.
             </p>
 
             <p className="text-lg sm:text-xl md:text-2xl font-semibold mb-6 md:mb-8 text-primary-300">
@@ -365,6 +364,14 @@ export const LocationColumbiaPage = () => {
                   <div className="font-semibold">{area}</div>
                 </div>
               ))}
+            </div>
+
+            {/* Near Me SEO Block */}
+            <div className="mt-12 bg-primary-50 rounded-xl p-8 border border-primary-100">
+              <h3 className="text-2xl font-bold mb-4 text-primary-800">Looking for Car Detailing Near Me in Columbia SC?</h3>
+              <p className="text-gray-700">
+                Mikah's Auto Detailing is the highest-rated mobile car detailing near me service in Columbia SC. We bring professional detailing equipment, purified water, and premium products directly to your driveway, apartment complex, or office parking lot. No need to search for "mobile detailing near me" — we serve all of Columbia, from Downtown to Northeast Columbia, same day availability. <a href="tel:8036678731" className="text-primary-700 font-semibold hover:underline">Call (803) 667-8731</a> for a free quote.
+              </p>
             </div>
           </div>
         </section>
