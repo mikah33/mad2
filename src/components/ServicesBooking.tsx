@@ -47,7 +47,7 @@ const ServicesBooking: React.FC = () => {
     {
       icon: <Star className="w-6 h-6" />,
       title: 'Factory Reset Package',
-      price: '$325',
+      price: '$400',
       color: 'bg-[#0077B6]',
       slug: 'factory-reset',
       description: [

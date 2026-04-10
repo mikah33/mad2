@@ -185,8 +185,8 @@ export const LocationLexingtonPage = () => {
   return (
     <>
       <SEOHead
-        title="Mobile Car Detailing Lexington SC | From $225 | 5-Star Rated"
-        description="Lexington SC's top mobile car detailing service. Interior, exterior, ceramic coating from $225. Lake Murray area. Call (803) 667-8731."
+        title="Mobile Car Detailing Lexington SC | Mobile Detailing From $225 | Mikah's"
+        description="Top-rated mobile car detailing in Lexington SC. Mobile detailing from $225 with 5.0★ Google rating. Interior, exterior, ceramic coating. We come to you! Call (803) 667-8731."
         keywords={allKeywords.join(', ') + ', auto detailing services columbia sc'}
         canonical="https://mikahsmobiledetailingsc.com/locations/lexington-sc"
         ogDescription="Lexington SC's top mobile car detailing service. Interior, exterior, ceramic coating from $225. Lake Murray area. Call (803) 667-8731."
@@ -244,11 +244,11 @@ export const LocationLexingtonPage = () => {
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 leading-tight">
               Mobile Car Detailing
               <br />
-              <span className="text-primary-300">Lexington SC</span>
+              <span className="text-primary-300">in Lexington SC</span>
             </h1>
 
             <p className="text-base sm:text-lg md:text-xl mb-6 md:mb-8 max-w-3xl mx-auto text-gray-100 px-4">
-              Lexington SC's top-rated mobile car detailing. Interior & exterior detailing, ceramic coating, paint correction at your location. Serving Lake Murray & all of Lexington County. 5.0★ rated. From $225.
+              Lexington SC's #1 mobile detailing service. Professional mobile car detailing for interior, exterior, ceramic coating & paint correction — all at your location. Serving Lake Murray & all of Lexington County. 5.0★ rated with 19 Google reviews. From $225.
             </p>
 
             <p className="text-lg sm:text-xl md:text-2xl font-semibold mb-6 md:mb-8 text-primary-300">
@@ -290,14 +290,25 @@ export const LocationLexingtonPage = () => {
           </div>
         </div>
 
+        {/* Intro content targeting both keyword variations */}
+        <section className="py-12 bg-white">
+          <div className="container mx-auto px-4 max-w-4xl">
+            <div className="prose prose-lg max-w-none text-gray-700">
+              <p>
+                Looking for <strong>mobile car detailing in Lexington SC</strong>? Mikah's Auto Detailing is the highest-rated <strong>mobile detailing</strong> service in the Lexington area, bringing professional-grade equipment and products directly to your home, office, or any location in Lexington County. Whether you're near Lake Murray, Sunset Boulevard, or anywhere along the I-20 corridor, our fully self-contained mobile unit comes to you — no need to drop off your vehicle or wait at a shop. With a perfect 5.0-star Google rating from 19 verified reviews, Lexington residents trust us for everything from basic maintenance details to full ceramic coating installations. Our <strong>mobile detailing in Lexington SC</strong> starts at just $225, and every package includes the convenience of at-your-door service at no extra charge.
+              </p>
+            </div>
+          </div>
+        </section>
+
         {/* Services with ACTUAL pricing */}
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 max-w-6xl">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
-              Auto Detailing Services & Prices - Lexington SC
+              Mobile Car Detailing Services & Prices — Lexington SC
             </h2>
             <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
-              Professional car detailing at your Lexington, Lake Murray, or Sunset Blvd location. All prices include mobile service.
+              Professional mobile detailing at your Lexington, Lake Murray, or Sunset Blvd location. All prices include mobile service — we come to you.
             </p>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">

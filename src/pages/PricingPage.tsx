@@ -10,6 +10,10 @@ export const PricingPage = () => {
   // Pricing FAQ targeting "auto detailing prices" and "car detailing prices" keywords
   const pricingFAQs = [
     {
+      question: "How much does car detailing cost?",
+      answer: "Car detailing costs depend on the service type and vehicle size. At Mikah's Auto Detailing in Columbia SC, interior detailing starts at $200, exterior detailing at $200, and full detail packages at $225 for sedans. SUVs and trucks start at $225 for interior and $275 for full detail. Ceramic coating and paint correction are quoted individually based on vehicle condition. All prices include mobile service — we come to your location."
+    },
+    {
       question: "Why is mobile detailing worth it?",
       answer: "Mobile detailing saves you time and hassle by bringing professional car detailing directly to your home or office in Columbia and Lexington SC. You don't need to drive anywhere, wait at a shop, or arrange transportation. Our mobile service is included in all prices at no extra charge, and you get the same professional-grade products and equipment as a fixed-location detail shop. Plus, we can work on your vehicle while you're at work, home, or anywhere convenient for you."
     },
@@ -32,6 +36,22 @@ export const PricingPage = () => {
     {
       question: "What's included in your auto detailing prices?",
       answer: "All our car detailing prices include mobile service (we come to you), professional-grade products, and our satisfaction guarantee. Interior Detail includes deep clean, vacuum, surfaces, and windows. Exterior Detail includes hand wash, clay bar treatment, wax, and tire dressing. Full Detail combines both services at a discounted rate."
+    },
+    {
+      question: "How much does car detailing cost on average?",
+      answer: "Car detailing prices average between $150 and $400 for standard services. A basic interior or exterior detail typically costs $150-$250, while a full detail (interior + exterior) ranges from $225-$400. Premium services like ceramic coating run $600-$2,500 and paint correction $400-$1,000+. At Mikah's, our prices start at $200 for interior, $200 for exterior, and $225 for a full detail."
+    },
+    {
+      question: "Is professional auto detailing worth the price?",
+      answer: "Yes — professional auto detailing protects your vehicle's value and appearance far better than DIY methods. Professional detailers use commercial-grade products, specialized equipment, and trained techniques that deliver longer-lasting results. Regular professional detailing can add $500-$2,000 to your vehicle's resale value and prevent costly paint damage from UV exposure, contamination, and environmental wear."
+    },
+    {
+      question: "Why do car detailing prices vary so much?",
+      answer: "Car detailing prices vary based on vehicle size (sedan vs. SUV/truck), current condition, service level chosen, and product quality. A well-maintained sedan needing a basic detail costs much less than a heavily soiled SUV needing deep extraction and paint correction. Geographic location, whether mobile or shop-based, and detailer experience also affect pricing."
+    },
+    {
+      question: "What is the cheapest car detailing option?",
+      answer: "Our most affordable option is the Interior Detail starting at $200 for sedans or the Exterior Detail also starting at $200. For the best value, our Full Detail Package starts at $225 and combines interior + exterior service. All prices include mobile service — we come to your location in Columbia, Lexington, or surrounding SC areas at no extra charge."
     }
   ];
 
@@ -255,9 +275,9 @@ export const PricingPage = () => {
   return (
     <>
       <SEOHead
-        title="Auto Detailing Services Pricing Columbia SC | Packages | Mikah's"
-        description="Affordable auto detailing services in Columbia, SC. Interior from $200, Exterior from $200, Full Detail from $225. Mobile service included. Call (803) 667-8731!"
-        keywords="auto detailing services columbia sc, car detailing prices, auto detailing prices columbia sc, auto detailing services in columbia sc, mobile detailing prices, detailing packages columbia sc, interior detailing prices, exterior detailing prices"
+        title="Car Detailing Prices 2026 | Auto Detailing Cost Guide | Columbia SC"
+        description="Car detailing prices from $200. See our complete auto detailing prices for interior, exterior, ceramic coating & paint correction. Mobile service included. Columbia & Lexington SC."
+        keywords="car detailing prices, auto detailing prices, how much does car detailing cost, car detailing prices columbia sc, auto detailing prices columbia sc, mobile detailing prices, interior detailing cost, exterior detailing prices, detailing packages pricing"
         canonical="https://mikahsmobiledetailingsc.com/pricing"
         ogType="website"
         schema={schemas}
@@ -270,14 +290,14 @@ export const PricingPage = () => {
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="text-center">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-              Mobile Auto Detailing Prices in Columbia & Lexington SC
+              Car Detailing Prices: How Much Does Auto Detailing Cost?
             </h1>
             <p className="text-xl md:text-2xl text-gray-300 mb-4">
-              Transparent, upfront pricing with no hidden fees
+              Transparent auto detailing prices with no hidden fees
             </p>
             <p className="text-lg text-gray-400 max-w-3xl mx-auto mb-8">
-              Professional car detailing prices that include mobile service at your location.
-              We come to you in Columbia, Lexington, Irmo, West Columbia, Cayce, and surrounding areas!
+              Complete car detailing prices for every service we offer. All prices include mobile service at your location
+              in Columbia, Lexington, Irmo, West Columbia, Cayce, and surrounding SC areas.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <a
@@ -342,8 +362,49 @@ export const PricingPage = () => {
         </div>
       </section>
 
+      {/* Car Detailing Prices Guide - SEO content for national keywords */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">How Much Does Car Detailing Cost?</h2>
+          <div className="prose prose-lg max-w-none text-gray-700 space-y-6">
+            <p>
+              <strong>Car detailing prices</strong> vary widely depending on the type of service, vehicle size, condition, and whether you choose mobile or shop-based detailing. On average, professional car detailing costs between $150 and $500 for standard services, with premium services like ceramic coating and paint correction ranging from $500 to $2,500+.
+            </p>
+
+            <h3 className="text-2xl font-bold text-gray-900">Auto Detailing Prices by Service Type</h3>
+            <p>
+              Understanding <strong>auto detailing prices</strong> starts with knowing what each service includes. Here's a breakdown of typical car detailing costs:
+            </p>
+            <ul className="space-y-2">
+              <li><strong>Interior Detailing:</strong> $150–$250. Includes deep vacuuming, surface cleaning and conditioning, glass cleaning, and UV protection. Adds stain removal and extraction for higher-tier packages.</li>
+              <li><strong>Exterior Detailing:</strong> $100–$250. Includes hand wash, clay bar decontamination, wax or sealant protection, and wheel/tire dressing.</li>
+              <li><strong>Full Detail (Interior + Exterior):</strong> $225–$400. Combines both services at a discounted rate compared to booking separately.</li>
+              <li><strong>Ceramic Coating:</strong> $600–$2,500. Includes paint correction prep, professional-grade ceramic application, and multi-year protection.</li>
+              <li><strong>Paint Correction:</strong> $400–$1,000+. Single-stage or multi-stage correction to remove swirl marks, scratches, and oxidation.</li>
+            </ul>
+
+            <h3 className="text-2xl font-bold text-gray-900">What Affects Car Detailing Prices?</h3>
+            <p>
+              Several factors determine how much you'll pay for auto detailing:
+            </p>
+            <ul className="space-y-2">
+              <li><strong>Vehicle size:</strong> Sedans and coupes cost less than SUVs, trucks, and vans due to additional surface area and interior space.</li>
+              <li><strong>Vehicle condition:</strong> A regularly maintained vehicle costs less to detail than a heavily soiled or neglected one. Pet hair, heavy stains, and years of buildup add time and effort.</li>
+              <li><strong>Service level:</strong> Basic maintenance details cost less than deep restoration packages. Premium products and coatings also increase pricing.</li>
+              <li><strong>Location:</strong> Pricing varies by region. Columbia, SC detailing prices tend to be 10-20% lower than major metro areas while maintaining the same quality standards.</li>
+              <li><strong>Mobile vs. shop:</strong> Mobile detailing may cost slightly more due to travel, though many services (including ours) include mobile service in the base price.</li>
+            </ul>
+
+            <h3 className="text-2xl font-bold text-gray-900">Mobile Detailing Prices vs. Shop Prices</h3>
+            <p>
+              Mobile auto detailing prices are generally comparable to shop pricing, with the added benefit of convenience. You save time by not driving to a shop, waiting, and returning for pickup. At Mikah's Auto Detailing, our car detailing prices include mobile service at no extra charge — the price you see is the price you pay, whether we come to your home in Columbia, your office in Lexington, or anywhere in the Midlands SC area.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Pricing Cards Section */}
-      <section className="py-16 md:py-20 bg-gray-50">
+      <section className="py-16 md:py-20 bg-white">
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Detailing Packages</h2>
@@ -473,9 +534,9 @@ export const PricingPage = () => {
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4 max-w-4xl">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Pricing FAQs</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Car Detailing Prices FAQ</h2>
             <p className="text-gray-600 text-lg">
-              Common questions about our car detailing prices
+              Common questions about auto detailing prices and what they include
             </p>
           </div>
 

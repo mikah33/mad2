@@ -350,7 +350,7 @@ const BookingTimeline: React.FC = () => {
         benefits: []
       },
       'Factory Reset': {
-        fullDescription: '🏭 Factory Reset Package – $325\n\nOur Factory Reset is an enhanced version of the Basic Maintenance Detail, designed to get your vehicle looking as close to factory condition as possible.',
+        fullDescription: '🏭 Factory Reset Package – $400\n\nOur Factory Reset is an enhanced version of the Basic Maintenance Detail, designed to get your vehicle looking as close to factory condition as possible.',
         includes: [
           '**Interior:**',
           '✅ Full interior wipe down',

@@ -100,8 +100,8 @@ const AutoDetailingServicesColumbiaPage: React.FC = () => {
   return (
     <>
       <SEOHead
-        title="Auto Detailing Services in Columbia SC | Packages from $225"
-        description="Complete auto detailing services in Columbia, SC. Mobile interior & exterior detailing, ceramic coating, paint correction. 5.0-star rated. From $225. Call (803) 667-8731."
+        title="Auto Detailing Services in Columbia, SC | From $225 | Mikah's"
+        description="Professional auto detailing services in Columbia, SC. Mobile interior & exterior detailing, ceramic coating, paint correction. 5.0★ rated. From $225. Call (803) 667-8731!"
         keywords="auto detailing services in columbia sc, auto detailing services columbia sc, car detailing columbia sc, mobile auto detailing columbia, professional auto detailing columbia sc, auto detailing near me columbia"
         canonical="https://mikahsmobiledetailingsc.com/auto-detailing-services-columbia-sc"
         schema={schemas}
@@ -273,6 +273,20 @@ const AutoDetailingServicesColumbiaPage: React.FC = () => {
                 <p className="font-bold text-gray-900">Same Day</p>
                 <p className="text-sm text-gray-600">Appointments Available</p>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* SEO intro targeting "auto detailing services in columbia, sc" */}
+        <section className="bg-white py-12 px-4">
+          <div className="max-w-4xl mx-auto">
+            <div className="prose prose-lg max-w-none text-gray-700">
+              <p>
+                Mikah's Auto Detailing offers a full range of <strong>auto detailing services in Columbia, SC</strong> — from basic maintenance details to premium ceramic coating installations. As the Midlands' highest-rated mobile detailing service, we bring professional-grade equipment and commercial products directly to your location anywhere in the Columbia metro area. Our auto detailing services include interior deep cleaning with hot water extraction, exterior decontamination and paint protection, ceramic coating for long-term durability, and multi-stage paint correction to restore factory-fresh finishes. Every service is performed by IDA-certified technicians using products you won't find at consumer retail stores.
+              </p>
+              <p>
+                Whether you need a routine detail to keep your daily driver looking sharp or a complete restoration for a neglected vehicle, our <strong>auto detailing services in Columbia, SC</strong> deliver results that rival the best fixed-location shops — with the added convenience of mobile service at no extra charge. Packages start at $225 for our Basic Detail and $400 for our comprehensive Factory Reset.
+              </p>
             </div>
           </div>
         </section>

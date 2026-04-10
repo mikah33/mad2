@@ -113,10 +113,10 @@ export const blogPosts: BlogPost[] = [
   },
   {
     id: 'blog-006',
-    title: 'Best Car Detailing in Lexington SC',
+    title: 'Mobile Car Detailing Lexington SC: Best Services & Prices (2026)',
     slug: 'best-car-detailing-lexington-sc',
-    excerpt: 'Discover why Lexington SC residents choose professional mobile detailing for their vehicles',
-    metaDescription: 'Best car detailing Lexington SC. Top-rated mobile detailing services in Lexington County. Professional auto detailing near me serves Lake Murray area. Free quotes!',
+    excerpt: 'Discover why Lexington SC residents choose professional mobile car detailing for their vehicles',
+    metaDescription: 'Mobile car detailing in Lexington SC from $225. Top-rated mobile detailing in Lexington County with 5.0★ rating. Lake Murray area. Call (803) 667-8731 for free quote!',
     author: 'Mikah',
     authorJobTitle: 'Professional Auto Detailer',
     datePublished: '2024-03-10',

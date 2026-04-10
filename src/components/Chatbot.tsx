@@ -210,7 +210,7 @@ const Chatbot: React.FC = () => {
     if (input.includes('basic detail')) {
       setLeadData((prev) => ({ ...prev, service: 'Basic Detail Package - $200' }));
     } else if (input.includes('factory reset')) {
-      setLeadData((prev) => ({ ...prev, service: 'Factory Reset Package - $325' }));
+      setLeadData((prev) => ({ ...prev, service: 'Factory Reset Package - $400' }));
     } else if (input.includes('ceramic')) {
       setLeadData((prev) => ({ ...prev, service: 'Ceramic Coating' }));
     } else if (input.includes('paint correction')) {

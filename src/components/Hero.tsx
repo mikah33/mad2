@@ -192,7 +192,7 @@ const Hero: React.FC = () => {
                 <select className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#0077B6] focus:border-transparent text-gray-800 bg-white">
                   <option value="">Select a Service</option>
                   <option value="basic">Basic Detail - $200</option>
-                  <option value="factory">Factory Reset - $325</option>
+                  <option value="factory">Factory Reset - $400</option>
                   <option value="ceramic">Ceramic Coating</option>
                   <option value="other">Other Services</option>
                 </select>

@@ -311,6 +311,22 @@ export const HomePage = () => {
               </div>
             </div>
 
+            {/* Service Areas */}
+            <div className="mt-10 text-center text-gray-600">
+              <p className="mb-2 font-medium">We serve all Midlands SC locations:</p>
+              <div className="flex flex-wrap justify-center gap-x-4 gap-y-1 text-sm">
+                <a href="/locations/columbia-sc" className="text-[#0077B6] hover:underline">Car Detailing Columbia SC</a>
+                <span>|</span>
+                <a href="/locations/lexington-sc" className="text-[#0077B6] hover:underline">Mobile Car Detailing Lexington SC</a>
+                <span>|</span>
+                <a href="/locations/irmo-sc" className="text-[#0077B6] hover:underline">Irmo SC</a>
+                <span>|</span>
+                <a href="/locations/west-columbia-sc" className="text-[#0077B6] hover:underline">West Columbia SC</a>
+                <span>|</span>
+                <a href="/locations/cayce-sc" className="text-[#0077B6] hover:underline">Cayce SC</a>
+              </div>
+            </div>
+
             {/* Urgency CTA */}
             <div className="mt-10 text-center">
               <div className="inline-flex items-center gap-2 bg-green-100 text-green-800 px-4 py-2 rounded-full mb-4">

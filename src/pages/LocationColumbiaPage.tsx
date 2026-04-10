@@ -110,6 +110,14 @@ export const LocationColumbiaPage = () => {
     {
       question: 'Can I find reviews for mobile detailing in Columbia SC?',
       answer: 'Yes! We have 19 verified Google reviews with a perfect 5.0-star rating. Customers praise our professional mobile service, attention to detail, and convenient at-home detailing. Search "Mikah\'s Auto Detailing Columbia SC" on Google to read our reviews.'
+    },
+    {
+      question: 'Where can I get car detailing in Columbia SC?',
+      answer: "Mikah's Auto Detailing offers professional car detailing throughout Columbia SC. As a mobile service, we come directly to your home, office, or any location in the Columbia area. We serve Downtown, Five Points, The Vista, Shandon, Forest Acres, Harbison, Northeast Columbia, and all surrounding neighborhoods. No need to drop off your vehicle — we bring everything to you. Call (803) 667-8731 to schedule."
+    },
+    {
+      question: "What's the best mobile detailing service in Columbia SC?",
+      answer: "Mikah's Auto Detailing is Columbia SC's highest-rated mobile detailing service with a perfect 5.0-star Google rating from 19 verified reviews. We're IDA certified, fully insured, and offer comprehensive mobile detailing packages starting at $225. Our mobile unit is fully self-contained with onboard water, power, and professional-grade equipment — we can detail your vehicle anywhere in Columbia SC."
     }
   ];
 
@@ -161,12 +169,12 @@ export const LocationColumbiaPage = () => {
   return (
     <>
       <SEOHead
-        title="Mobile Car Detailing Columbia SC | From $225 | We Come to You"
-        description="5-star rated mobile car detailing in Columbia SC. Interior + exterior packages from $225. Ceramic coating & paint correction. Call (803) 667-8731."
+        title="Car Detailing Columbia SC | Mobile Detailing From $225 | Mikah's"
+        description="Best car detailing in Columbia SC. 5.0★ rated mobile detailing from $225. Interior, exterior, ceramic coating & paint correction — we come to you! Call (803) 667-8731."
         keywords="auto detailing services columbia sc, auto detailing services in columbia sc, columbia detailing, columbia auto detail, auto detail columbia, columbia mobile detailing, detailing columbia sc, car detailing columbia sc, mobile auto detailing columbia sc, professional car detailing columbia, best columbia detailing"
         canonical="https://mikahsmobiledetailingsc.com/locations/columbia-sc"
-        ogDescription="5-star rated mobile car detailing in Columbia SC. Interior + exterior packages from $225. Ceramic coating & paint correction. Call (803) 667-8731."
-        twitterDescription="5-star rated mobile car detailing in Columbia SC. Interior + exterior packages from $225. Ceramic coating & paint correction. Call (803) 667-8731."
+        ogDescription="Best car detailing in Columbia SC. 5.0★ rated mobile detailing from $225. Interior, exterior, ceramic coating & paint correction — we come to you! Call (803) 667-8731."
+        twitterDescription="Best car detailing in Columbia SC. 5.0★ rated mobile detailing from $225. Interior, exterior, ceramic coating & paint correction — we come to you! Call (803) 667-8731."
         schema={schemas}
       />
 
@@ -217,13 +225,13 @@ export const LocationColumbiaPage = () => {
             </div>
 
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 leading-tight">
-              Mobile Car Detailing
+              Car Detailing
               <br />
               <span className="text-primary-300">Columbia SC</span>
             </h1>
 
             <p className="text-base sm:text-lg md:text-xl mb-6 md:mb-8 max-w-3xl mx-auto text-gray-100 px-4">
-              Columbia's #1 mobile car detailing service. Interior & exterior detailing, ceramic coating, paint correction — we come to your location. 5.0★ rated with 19 Google reviews. From $225.
+              Columbia SC's #1 car detailing service — mobile detailing that comes to you. Interior & exterior detailing, ceramic coating, paint correction at your location. 5.0★ rated with 19 Google reviews. From $225.
             </p>
 
             <p className="text-lg sm:text-xl md:text-2xl font-semibold mb-6 md:mb-8 text-primary-300">
@@ -264,6 +272,17 @@ export const LocationColumbiaPage = () => {
             </div>
           </div>
         </div>
+
+        {/* Intro content targeting broader "car detailing columbia sc" keyword */}
+        <section className="py-12 bg-white">
+          <div className="container mx-auto px-4 max-w-4xl">
+            <div className="prose prose-lg max-w-none text-gray-700">
+              <p>
+                Looking for professional <strong>car detailing in Columbia SC</strong>? Mikah's Auto Detailing is the top-rated <strong>mobile detailing in Columbia SC</strong> — we bring the detail shop to your driveway, office parking lot, or anywhere in the Columbia metro. Our fully equipped mobile unit handles everything from basic maintenance details to full ceramic coating installations without you ever leaving home. With a perfect 5.0-star Google rating, IDA certification, and packages starting at just $225, Columbia residents trust us for <strong>mobile car detailing</strong> that delivers shop-quality results with unmatched convenience. Whether you're in Five Points, Forest Acres, Harbison, or anywhere along the I-20 or I-26 corridors, we come to you — no drop-offs, no waiting rooms, no hassle.
+              </p>
+            </div>
+          </div>
+        </section>
 
         {/* Columbia Neighborhoods */}
         <section className="py-16 bg-white">
