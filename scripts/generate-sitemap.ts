@@ -133,7 +133,7 @@ function generateSitemap(): string {
     'lexington-sc',
     'irmo-sc',
     'cayce-sc',
-    'west-columbia-sc',
+    'west-columbia',
     'chapin-sc',
     'swansea-sc',
     'newberry-sc',

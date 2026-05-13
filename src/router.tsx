@@ -123,10 +123,6 @@ export const router = createBrowserRouter([
         element: <LocationWestColumbiaPage />,
       },
       {
-        path: '/locations/west-columbia-sc',
-        element: <LocationWestColumbiaPage />,
-      },
-      {
         path: '/locations/chapin-sc',
         element: <LocationChapinPage />,
       },

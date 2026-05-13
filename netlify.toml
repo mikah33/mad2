@@ -3,6 +3,21 @@
   publish = "dist"
   functions = "netlify/functions"
 
+# Canonical: collapse /locations/west-columbia-sc → /locations/west-columbia
+[[redirects]]
+  from = "/locations/west-columbia-sc"
+  to = "/locations/west-columbia"
+  status = 301
+  force = true
+
+# Canonical: strip trailing slashes site-wide (e.g., /locations/irmo-sc/ → /locations/irmo-sc)
+[[redirects]]
+  from = "/*/"
+  to = "/:splat"
+  status = 301
+  force = true
+
+# SPA fallback (must be last)
 [[redirects]]
   from = "/*"
   to = "/index.html"
