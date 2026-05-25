@@ -207,12 +207,12 @@ export const LocationWestColumbiaPage = () => {
   return (
     <>
       <SEOHead
-        title="Auto Detailing West Columbia SC | Mobile Service | Mikah's Detailing"
-        description="West Columbia's premier mobile detailing service. Full car details from $200. We bring the detail shop to you. 5-star rated. Book now - (803) 667-8731!"
+        title="Auto Detailing Services West Columbia & Columbia SC | Mobile | From $200"
+        description="Mobile auto detailing services in West Columbia & Columbia SC. Interior/exterior from $200. We come to you — same day available. 5-star rated. Call (803) 667-8731!"
         keywords={allKeywords.join(', ')}
         canonical="https://mikahsmobiledetailingsc.com/locations/west-columbia"
-        ogDescription="West Columbia's premier mobile detailing service. Full car details from $200. We bring the detail shop to you. 5-star rated. Book now - (803) 667-8731!"
-        twitterDescription="West Columbia's premier mobile detailing service. Full car details from $200. We bring the detail shop to you. 5-star rated. Book now - (803) 667-8731!"
+        ogDescription="Mobile auto detailing services in West Columbia & Columbia SC. Interior/exterior from $200. We come to you — same day available. 5-star rated. Call (803) 667-8731!"
+        twitterDescription="Mobile auto detailing services in West Columbia & Columbia SC. Interior/exterior from $200. We come to you — same day available. 5-star rated. Call (803) 667-8731!"
         schema={schemas}
       />
 
