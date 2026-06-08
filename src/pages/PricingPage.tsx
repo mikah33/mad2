@@ -275,8 +275,8 @@ export const PricingPage = () => {
   return (
     <>
       <SEOHead
-        title="Car Detailing Prices 2026 | Auto Detailing Cost Guide | Columbia SC"
-        description="Car detailing prices from $200. See our complete auto detailing prices for interior, exterior, ceramic coating & paint correction. Mobile service included. Columbia & Lexington SC."
+        title="Car Detailing Prices Columbia SC 2026 — Interior from $200 | Mikah's"
+        description="How much does car detailing cost? Interior from $200, full detail from $225. Mobile detailing in Columbia &amp; Lexington SC — we come to you. Free quote: (803) 667-8731."
         keywords="car detailing prices, auto detailing prices, how much does car detailing cost, car detailing prices columbia sc, auto detailing prices columbia sc, mobile detailing prices, interior detailing cost, exterior detailing prices, detailing packages pricing"
         canonical="https://mikahsmobiledetailingsc.com/pricing"
         ogType="website"
