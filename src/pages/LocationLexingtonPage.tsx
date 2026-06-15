@@ -185,12 +185,12 @@ export const LocationLexingtonPage = () => {
   return (
     <>
       <SEOHead
-        title="Mobile Car Detailing Lexington SC | Auto Detailing From $225 | Mikah's"
-        description="Best mobile car &amp; auto detailing in Lexington SC — we come to you! Serving Lake Murray, Irmo, and surrounding areas. Interior &amp; exterior from $225. 5.0★ rating. Call (803) 667-8731."
+        title="Mobile Car Detailing Lexington SC | 5.0★ Rated | We Come to You | From $225"
+        description="5.0★ mobile car detailing in Lexington SC — we come to your home or office. Full details from $225. Serving Lake Murray, Chapin &amp; Irmo. Same-week booking: (803) 667-8731."
         keywords={allKeywords.join(', ') + ', auto detailing services columbia sc'}
         canonical="https://mikahsmobiledetailingsc.com/locations/lexington-sc"
-        ogDescription="Lexington SC's top mobile car detailing service. Interior, exterior, ceramic coating from $225. Lake Murray area. Call (803) 667-8731."
-        twitterDescription="Lexington SC's top mobile car detailing service. Interior, exterior, ceramic coating from $225. Lake Murray area. Call (803) 667-8731."
+        ogDescription="5.0★ mobile car detailing in Lexington SC — we come to you. Full details from $225. Serving Lake Murray, Chapin &amp; Irmo. Call (803) 667-8731."
+        twitterDescription="5.0★ mobile car detailing in Lexington SC — we come to you. Full details from $225. Serving Lake Murray, Chapin &amp; Irmo. Call (803) 667-8731."
         schema={schemas}
       />
 
