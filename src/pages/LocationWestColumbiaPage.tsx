@@ -207,12 +207,12 @@ export const LocationWestColumbiaPage = () => {
   return (
     <>
       <SEOHead
-        title="Auto Detailing West Columbia SC | Mobile Service | Mikah's Detailing"
-        description="West Columbia's premier mobile detailing service. Full car details from $200. We bring the detail shop to you. 5-star rated. Book now - (803) 667-8731!"
+        title="Mobile Car Detailing West Columbia SC | 5.0★ | We Come to You | From $200"
+        description="5.0★ mobile car detailing in West Columbia SC — we come to your home or office. Interior &amp; exterior from $200. Serving Triangle City, Cayce &amp; Brookland. Call (803) 667-8731."
         keywords={allKeywords.join(', ')}
         canonical="https://mikahsmobiledetailingsc.com/locations/west-columbia"
-        ogDescription="West Columbia's premier mobile detailing service. Full car details from $200. We bring the detail shop to you. 5-star rated. Book now - (803) 667-8731!"
-        twitterDescription="West Columbia's premier mobile detailing service. Full car details from $200. We bring the detail shop to you. 5-star rated. Book now - (803) 667-8731!"
+        ogDescription="5.0★ mobile car detailing in West Columbia SC — we come to you. Interior &amp; exterior from $200. Serving Triangle City, Cayce &amp; Brookland. Call (803) 667-8731."
+        twitterDescription="5.0★ mobile car detailing in West Columbia SC — we come to you. Interior &amp; exterior from $200. Serving Triangle City, Cayce &amp; Brookland. Call (803) 667-8731."
         schema={schemas}
       />
 
