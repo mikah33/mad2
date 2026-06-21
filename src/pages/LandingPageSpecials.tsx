@@ -17,41 +17,8 @@ const LandingPageSpecials: React.FC = () => {
     }
   }, []);
 
-  // Same tracking function as Navigation component
-  const gtag_report_conversion = (url?: string) => {
-    const callback = () => {
-      if (typeof url !== 'undefined') {
-        window.location.href = url;
-      }
-    };
-
-    // Google Ads conversion tracking
-    if ((window as any).gtag) {
-      const enhancedData: any = {};
-      if (Object.keys(enhancedData).length > 0) {
-        (window as any).gtag('set', 'user_data', enhancedData);
-      }
-
-      (window as any).gtag('event', 'conversion', {
-        'send_to': 'AW-16694998422/TihGCPrb_9sZEJbr5Zg-',
-        'value': 275.0,
-        'currency': 'USD',
-        'event_callback': callback,
-      });
-    }
-
-    // Meta Pixel lead conversion tracking
-    if (typeof (window as any).fbq === 'function') {
-      (window as any).fbq('track', 'Lead', {
-        content_name: 'Phone Call',
-        content_category: 'Contact',
-        value: 275.0,
-        currency: 'USD'
-      });
-    }
-
-    return false;
-  };
+  // Call/text clicks are tracked centrally by EngagementTracker's global
+  // tel:/sms: listener (see src/utils/analytics.ts) — no per-link wiring needed.
 
   return (
     <>
@@ -340,7 +307,6 @@ const LandingPageSpecials: React.FC = () => {
         <div className="fixed bottom-0 left-0 right-0 bg-[#D91656] py-2 px-3 md:hidden z-50 shadow-[0_-2px_15px_rgba(0,0,0,0.2)]">
           <a
             href="tel:+18036678731"
-            onClick={() => gtag_report_conversion()}
             className="flex items-center justify-center gap-1 w-full text-white font-bold text-base"
           >
             <Phone className="w-4 h-4" />
@@ -374,10 +340,7 @@ const LandingPageSpecials: React.FC = () => {
                 {/* Call Option */}
                 <a
                   href="tel:+18036678731"
-                  onClick={() => {
-                    gtag_report_conversion();
-                    setIsContactPopupOpen(false);
-                  }}
+                  onClick={() => setIsContactPopupOpen(false)}
                   className="flex items-center gap-4 p-4 bg-[#E8E8E8] hover:bg-[#90E0EF] rounded-xl transition group"
                 >
                   <div className="p-3 bg-[#0077B6] text-white rounded-full group-hover:bg-[#023E8A] transition">
@@ -392,10 +355,7 @@ const LandingPageSpecials: React.FC = () => {
                 {/* Text Option */}
                 <a
                   href="sms:+18036678731"
-                  onClick={() => {
-                    gtag_report_conversion();
-                    setIsContactPopupOpen(false);
-                  }}
+                  onClick={() => setIsContactPopupOpen(false)}
                   className="flex items-center gap-4 p-4 bg-[#E8E8E8] hover:bg-[#90E0EF] rounded-xl transition group"
                 >
                   <div className="p-3 bg-[#0077B6] text-white rounded-full group-hover:bg-[#023E8A] transition">

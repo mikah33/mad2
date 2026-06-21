@@ -3,24 +3,26 @@ import { Helmet } from 'react-helmet-async';
 import { CheckCircle, Phone, Home } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import BottomNavbar from '../components/BottomNavbar';
-
-// Declare gtag for TypeScript
-declare global {
-  interface Window {
-    gtag?: (...args: any[]) => void;
-  }
-}
+import { trackLeadSubmit, LeadData } from '../utils/analytics';
 
 const ThankYouPage: React.FC = () => {
   const navigate = useNavigate();
 
-  // Google Ads Conversion Tracking
+  // Single source of truth for the booking-form lead conversion.
+  // Fires GA4 generate_lead + Google Ads conversion + Meta Lead, with
+  // Enhanced Conversions data from the submitted form (if available).
   useEffect(() => {
-    if (window.gtag) {
-      window.gtag('event', 'conversion', {
-        'send_to': 'AW-16694998422/TihGCPrb_9sZEJbr5Zg-'
-      });
+    let lead: LeadData | undefined;
+    try {
+      const stored = sessionStorage.getItem('lead_ec');
+      if (stored) {
+        lead = JSON.parse(stored);
+        sessionStorage.removeItem('lead_ec');
+      }
+    } catch {
+      /* ignore parse/storage errors */
     }
+    trackLeadSubmit(lead);
   }, []);
 
   return (

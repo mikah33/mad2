@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { CheckCircle, Shield, Clock, Star, Phone, Users } from 'lucide-react';
+import { trackPhoneClick } from '../utils/analytics';
 
 const Hero: React.FC = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -53,19 +54,7 @@ const Hero: React.FC = () => {
   }, []);
 
   const handlePhoneClick = () => {
-    // Google Ads conversion tracking
-    if (typeof (window as any).gtag_report_conversion === 'function') {
-      (window as any).gtag_report_conversion();
-    }
-    // Meta Pixel lead conversion tracking
-    if (typeof (window as any).fbq === 'function') {
-      (window as any).fbq('track', 'Lead', {
-        content_name: 'Phone Call - Hero',
-        content_category: 'Contact',
-        value: 275.0,
-        currency: 'USD'
-      });
-    }
+    trackPhoneClick('hero');
   };
 
   return (

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Phone, Calendar, MessageCircle, X } from 'lucide-react';
+import { trackBookingClick } from '../utils/analytics';
 
 const StickyMobileCTA: React.FC = () => {
   const [isVisible, setIsVisible] = useState(true);
@@ -31,25 +32,6 @@ const StickyMobileCTA: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const gtag_report_conversion = (conversionType: 'call' | 'text' | 'book') => {
-    if ((window as any).gtag) {
-      (window as any).gtag('event', 'conversion', {
-        'send_to': 'AW-16694998422/TihGCPrb_9sZEJbr5Zg-',
-        'value': conversionType === 'book' ? 150.0 : 200.0,
-        'currency': 'USD',
-      });
-    }
-    // Meta Pixel tracking
-    if (typeof (window as any).fbq === 'function') {
-      (window as any).fbq('track', 'Lead', {
-        content_name: `${conversionType === 'call' ? 'Phone Call' : conversionType === 'text' ? 'Text Message' : 'Book Online'} - Sticky CTA`,
-        content_category: 'Contact',
-        value: 275.0,
-        currency: 'USD'
-      });
-    }
-  };
-
   if (!isVisible) return null;
 
   return (
@@ -72,7 +54,7 @@ const StickyMobileCTA: React.FC = () => {
           {/* Book Online Button */}
           <a
             href="/book"
-            onClick={() => gtag_report_conversion('book')}
+            onClick={() => trackBookingClick('sticky_cta')}
             className="flex-1 flex items-center justify-center gap-2 py-3.5 text-white font-semibold text-sm transition-all active:opacity-80"
           >
             <Calendar className="w-4 h-4" />
@@ -107,10 +89,7 @@ const StickyMobileCTA: React.FC = () => {
               {/* Call Option */}
               <a
                 href="tel:+18036678731"
-                onClick={() => {
-                  gtag_report_conversion('call');
-                  setIsContactPopupOpen(false);
-                }}
+                onClick={() => setIsContactPopupOpen(false)}
                 className="flex items-center gap-4 p-4 bg-[#CAF0F8] hover:bg-[#90E0EF] rounded-xl transition group"
               >
                 <div className="p-3 bg-[#0077B6] text-white rounded-full group-hover:bg-[#023E8A] transition">
@@ -125,10 +104,7 @@ const StickyMobileCTA: React.FC = () => {
               {/* Text Option */}
               <a
                 href="sms:+18036678731"
-                onClick={() => {
-                  gtag_report_conversion('text');
-                  setIsContactPopupOpen(false);
-                }}
+                onClick={() => setIsContactPopupOpen(false)}
                 className="flex items-center gap-4 p-4 bg-[#CAF0F8] hover:bg-[#90E0EF] rounded-xl transition group"
               >
                 <div className="p-3 bg-[#0077B6] text-white rounded-full group-hover:bg-[#023E8A] transition">

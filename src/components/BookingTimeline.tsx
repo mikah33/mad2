@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Sparkles, Star, Shield, Wrench, Anchor, RotateCw, Check, ChevronRight, Mail, User, Phone, MapPin, Car, FileText, Info, X, Calendar, Droplet, Clock, CheckCircle } from 'lucide-react';
 import { collectForensicData, isJeffreyByAnyMethod } from '../utils/forensics';
+import { trackPhoneClick, getClickIds, getLeadSource } from '../utils/analytics';
 
 interface Service {
   icon: React.ReactNode;
@@ -231,6 +232,12 @@ const BookingTimeline: React.FC = () => {
         // Forensic Data (full device fingerprint)
         forensics: forensics,
 
+        // Ad click IDs (gclid/gbraid/wbraid) for Offline Conversion Import
+        ...getClickIds(),
+
+        // Lead source: submit page, landing page, referrer, UTMs
+        ...getLeadSource(),
+
         // Metadata
         timestamp: new Date().toISOString(),
         source: 'Mikahs Auto Detailing - Booking Timeline'
@@ -278,12 +285,18 @@ const BookingTimeline: React.FC = () => {
           return;
         }
 
-        // Normal flow for legitimate customers
-        if (typeof (window as any).gtag_report_conversion === 'function') {
-          (window as any).gtag_report_conversion('/book/thank-you');
-        } else {
-          window.location.href = '/book/thank-you';
+        // Normal flow for legitimate customers.
+        // Store lead details for Enhanced Conversions; the conversion itself
+        // fires once on the Thank-You page (single source of truth).
+        try {
+          sessionStorage.setItem(
+            'lead_ec',
+            JSON.stringify({ email: formData.email, phone: formData.phone, fullName: formData.fullName })
+          );
+        } catch {
+          /* ignore storage errors */
         }
+        window.location.href = '/book/thank-you';
         return;
       } else {
         console.error('❌ n8n webhook failed:', response.status, response.statusText);
@@ -1108,7 +1121,7 @@ const BookingTimeline: React.FC = () => {
                   </button>
 
                   <p className="text-xs text-gray-500 text-center mt-3">
-                    Or call us: <a href="tel:8036678731" onClick={() => (window as any).gtag_report_conversion && (window as any).gtag_report_conversion()} className="text-[#023E8A] font-semibold hover:underline">(803) 667-8731</a>
+                    Or call us: <a href="tel:8036678731" onClick={() => trackPhoneClick('booking_form')} className="text-[#023E8A] font-semibold hover:underline">(803) 667-8731</a>
                   </p>
                 </form>
 

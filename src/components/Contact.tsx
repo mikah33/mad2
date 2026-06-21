@@ -1,13 +1,10 @@
 import React from 'react';
 import { Phone, Globe, MapPin, Clock, Star, CheckCircle, MessageCircle } from 'lucide-react';
+import { trackPhoneClick, trackTextClick } from '../utils/analytics';
 
 const Contact: React.FC = () => {
-  const handlePhoneClick = () => {
-    // Track conversion
-    if (typeof (window as any).gtag_report_conversion === 'function') {
-      (window as any).gtag_report_conversion();
-    }
-  };
+  const handlePhoneClick = () => trackPhoneClick('contact');
+  const handleTextClick = () => trackTextClick('contact');
 
   return (
     <section id="contact" className="py-12 md:py-20 bg-gray-900 text-white w-full overflow-hidden">
@@ -76,7 +73,7 @@ const Contact: React.FC = () => {
 
                 <a
                   href="sms:+18036678731?body=Hi! I'd like to book a mobile detailing service. When is your next available slot?"
-                  onClick={handlePhoneClick}
+                  onClick={handleTextClick}
                   className="flex items-center justify-center px-6 py-3 bg-[#90E0EF] text-[#023E8A] font-bold rounded-lg hover:bg-white transition-all shadow-lg transform hover:scale-105"
                 >
                   <MessageCircle className="w-5 h-5 mr-2" />

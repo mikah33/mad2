@@ -247,25 +247,17 @@ const BookingTimelineSpecials: React.FC = () => {
 
       setSubmitStatus('success');
 
-      // Google Ads conversion tracking
-      if ((window as any).gtag) {
-        (window as any).gtag('event', 'conversion', {
-          'send_to': 'AW-16694998422/TihGCPrb_9sZEJbr5Zg-',
-          'value': 275.0,
-          'currency': 'USD'
-        });
+      // Store lead details for Enhanced Conversions; the lead conversion
+      // (GA4 + Google Ads + Meta) fires once on the Thank-You page.
+      try {
+        sessionStorage.setItem(
+          'lead_ec',
+          JSON.stringify({ email: formData.email, phone: formData.phone, fullName: formData.fullName })
+        );
+      } catch {
+        /* ignore storage errors */
       }
 
-      // Meta Pixel lead conversion tracking
-      if (typeof (window as any).fbq === 'function') {
-        (window as any).fbq('track', 'Lead', {
-          content_name: 'Contact Form Submission',
-          content_category: 'Contact',
-          value: 275.0,
-          currency: 'USD',
-          lead_event_source: 'website'
-        });
-      }
       // Redirect to thank you page after success
       setTimeout(() => {
         navigate('/book/thank-you');

@@ -1,6 +1,7 @@
 /**
  * Form submission utility with CORS handling
  */
+import { getClickIds, getLeadSource } from './analytics';
 
 interface FormData {
   fullName: string;
@@ -38,6 +39,8 @@ interface SubmissionResponse {
 export async function submitForm(formData: FormData): Promise<SubmissionResponse> {
   const payload = {
     ...formData,
+    ...getClickIds(),
+    ...getLeadSource(),
     timestamp: new Date().toISOString(),
     source: 'Mikahs Auto Detailing Website'
   };
@@ -117,6 +120,8 @@ export async function submitForm(formData: FormData): Promise<SubmissionResponse
 export async function submitBookingForm(formData: BookingFormData): Promise<SubmissionResponse> {
   const payload = {
     ...formData,
+    ...getClickIds(),
+    ...getLeadSource(),
     timestamp: new Date().toISOString(),
     source: formData.source || 'Mikahs Auto Detailing Website'
   };

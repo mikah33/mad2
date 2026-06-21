@@ -1,22 +1,10 @@
 import React from 'react';
 import { CheckCircle, Truck, ThumbsUp, Star, Phone, Shield, Clock } from 'lucide-react';
+import { trackPhoneClick } from '../utils/analytics';
 
 const TrustBadges: React.FC = () => {
   const handlePhoneClick = () => {
-    // Google Ads conversion tracking (if global function exists)
-    if (typeof (window as any).gtag_report_conversion === 'function') {
-      (window as any).gtag_report_conversion();
-    }
-
-    // Meta Pixel lead conversion tracking
-    if (typeof (window as any).fbq === 'function') {
-      (window as any).fbq('track', 'Lead', {
-        content_name: 'Phone Call - TrustBadges',
-        content_category: 'Contact',
-        value: 275.0,
-        currency: 'USD'
-      });
-    }
+    trackPhoneClick('trust_badges');
   };
 
   return (

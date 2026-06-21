@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Phone, MapPin, Menu, X, MessageCircle } from 'lucide-react';
+import { trackPhoneClick, trackTextClick } from '../utils/analytics';
 
 const Navigation: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -58,46 +59,12 @@ const Navigation: React.FC = () => {
     }
   }, []);
 
-  // Enhanced Google Ads conversion tracking for phone calls
+  // Phone-call conversion tracking for the nav Call buttons (they are
+  // <button>s, so we track then navigate to the tel:/sms: URL ourselves).
   const gtag_report_conversion = (url?: string) => {
-    const callback = () => {
-      if (typeof(url) !== 'undefined') {
-        window.location.href = url;
-      }
-    };
-
-    // Google Ads conversion tracking
-    if ((window as any).gtag) {
-      // Set enhanced conversion data if available
-      const enhancedData: any = {};
-
-      // You can add customer data here for enhanced conversions
-      // enhancedData.email = 'customer@example.com'; // Hash this in production
-      // enhancedData.phone_number = '+18036678731';
-
-      if (Object.keys(enhancedData).length > 0) {
-        (window as any).gtag('set', 'user_data', enhancedData);
-      }
-
-      // Track the conversion with enhanced data
-      (window as any).gtag('event', 'conversion', {
-        'send_to': 'AW-16694998422/TihGCPrb_9sZEJbr5Zg-',
-        'value': 200.0,
-        'currency': 'USD',
-        'event_callback': callback
-      });
-    }
-
-    // Meta Pixel lead conversion tracking
-    if (typeof (window as any).fbq === 'function') {
-      (window as any).fbq('track', 'Lead', {
-        content_name: 'Phone Call - Navigation',
-        content_category: 'Contact',
-        value: 275.0,
-        currency: 'USD'
-      });
-    }
-
+    if (url && url.startsWith('sms:')) trackTextClick('nav');
+    else trackPhoneClick('nav');
+    if (url) window.location.href = url;
     return false;
   };
 
@@ -338,10 +305,7 @@ const Navigation: React.FC = () => {
               {/* Call Option */}
               <a
                 href="tel:+18036678731"
-                onClick={() => {
-                  gtag_report_conversion();
-                  setIsContactPopupOpen(false);
-                }}
+                onClick={() => setIsContactPopupOpen(false)}
                 className="flex items-center gap-4 p-4 bg-[#CAF0F8] hover:bg-[#90E0EF] rounded-xl transition group"
               >
                 <div className="p-3 bg-[#0077B6] text-white rounded-full group-hover:bg-[#023E8A] transition">
@@ -356,10 +320,7 @@ const Navigation: React.FC = () => {
               {/* Text Option */}
               <a
                 href="sms:+18036678731"
-                onClick={() => {
-                  gtag_report_conversion();
-                  setIsContactPopupOpen(false);
-                }}
+                onClick={() => setIsContactPopupOpen(false)}
                 className="flex items-center gap-4 p-4 bg-[#CAF0F8] hover:bg-[#90E0EF] rounded-xl transition group"
               >
                 <div className="p-3 bg-[#0077B6] text-white rounded-full group-hover:bg-[#023E8A] transition">
