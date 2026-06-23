@@ -38,8 +38,8 @@ const ADS_ID = 'AW-16694998422';
  */
 const ADS_LABELS: Record<'lead_form' | 'phone_call' | 'text_message', string> = {
   lead_form: 'TihGCPrb_9sZEJbr5Zg-', // existing "Submit lead form" action
-  phone_call: '', // TODO: create "Phone Call Click" action, paste label here
-  text_message: '', // TODO: create "Text/SMS Click" action, paste label here
+  phone_call: '', // intentionally empty: phone calls are tracked via Google's "calls from website" action ("Booking Page Phone Calls") using phone_conversion_number in index.html. A click-based label here would double-count.
+  text_message: 'qcEACPCj9MMcEJbr5Zg-', // "Text Message Click" website conversion action (created 2026-06-22)
 };
 
 /** Default conversion values (USD). */
