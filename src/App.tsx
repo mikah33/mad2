@@ -10,7 +10,6 @@ import Testimonials from './components/Testimonials'
 import FAQ from './components/FAQ'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
-import Chatbot from './components/Chatbot'
 import { images } from './data/images'
 
 function App() {
@@ -79,7 +78,7 @@ function App() {
 
       <Contact />
       <Footer />
-      <Chatbot />
+      
       </div>
     </>
   )

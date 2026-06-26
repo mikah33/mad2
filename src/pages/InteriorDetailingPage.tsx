@@ -2,7 +2,6 @@ import React from 'react';
 import { Star, CheckCircle, Clock, DollarSign, Phone, ChevronRight } from 'lucide-react';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
-import Chatbot from '../components/Chatbot';
 import { Breadcrumbs } from '../components/Breadcrumbs';
 import { SEOHead } from '../components/seo/SEOHead';
 import { generateProductSchema } from '../components/seo/StructuredData';
@@ -207,9 +206,9 @@ const InteriorDetailingPage: React.FC = () => {
                   >
                     <Phone className="w-5 h-5" /> (555) 123-4567
                   </a>
-                <Chatbot />
+                
       </div>
-              <Chatbot />
+              
       </div>
               <div className="hidden md:block">
                 <img
@@ -218,11 +217,11 @@ const InteriorDetailingPage: React.FC = () => {
                   className="rounded-lg shadow-2xl"
                   loading="lazy"
                 />
-              <Chatbot />
+              
       </div>
-            <Chatbot />
+            
       </div>
-          <Chatbot />
+          
       </div>
         </section>
 
@@ -240,7 +239,7 @@ const InteriorDetailingPage: React.FC = () => {
                   Professional steam cleaning and hot water extraction remove dirt, allergens, and bacteria that
                   regular vacuuming can't touch. We clean every crevice, vent, and surface.
                 </p>
-              <Chatbot />
+              
       </div>
               <div className="bg-white p-6 rounded-lg shadow-lg">
                 <CheckCircle className="w-12 h-12 text-orange-500 mb-4" />
@@ -249,7 +248,7 @@ const InteriorDetailingPage: React.FC = () => {
                   Remove stubborn stains, pet odors, smoke smell, and mildew using professional-grade treatments
                   and enzymatic cleaners. Ozone treatment available for severe odors.
                 </p>
-              <Chatbot />
+              
       </div>
               <div className="bg-white p-6 rounded-lg shadow-lg">
                 <Phone className="w-12 h-12 text-orange-500 mb-4" />
@@ -258,11 +257,11 @@ const InteriorDetailingPage: React.FC = () => {
                   We come to your location in Columbia, Lexington, West Columbia, Irmo, or Cayce.
                   No need to waste time at a car wash - we bring everything needed.
                 </p>
-              <Chatbot />
+              
       </div>
-            <Chatbot />
+            
       </div>
-          <Chatbot />
+          
       </div>
         </section>
 
@@ -282,7 +281,7 @@ const InteriorDetailingPage: React.FC = () => {
                     <div>
                       <strong>Complete Vacuum Service:</strong> Deep vacuum of all surfaces including seats, carpets,
                       trunk, and under seats. Compressed air removes debris from crevices.
-                    <Chatbot />
+                    
       </div>
                   </li>
                   <li className="flex items-start gap-3">
@@ -290,7 +289,7 @@ const InteriorDetailingPage: React.FC = () => {
                     <div>
                       <strong>Professional Steam Cleaning:</strong> Steam kills 99.9% of bacteria while deep cleaning
                       all surfaces, vents, and hard-to-reach areas.
-                    <Chatbot />
+                    
       </div>
                   </li>
                   <li className="flex items-start gap-3">
@@ -298,7 +297,7 @@ const InteriorDetailingPage: React.FC = () => {
                     <div>
                       <strong>Stain Removal:</strong> Professional spot removers and hot water extraction tackle
                       coffee, food, grease, and other stubborn stains.
-                    <Chatbot />
+                    
       </div>
                   </li>
                   <li className="flex items-start gap-3">
@@ -306,7 +305,7 @@ const InteriorDetailingPage: React.FC = () => {
                     <div>
                       <strong>Leather Treatment:</strong> pH-balanced leather cleaner removes dirt without damage.
                       Premium conditioner prevents cracking and fading.
-                    <Chatbot />
+                    
       </div>
                   </li>
                   <li className="flex items-start gap-3">
@@ -314,14 +313,14 @@ const InteriorDetailingPage: React.FC = () => {
                     <div>
                       <strong>Dashboard & Console Detail:</strong> All plastics, vinyl, and trim cleaned and dressed.
                       Cup holders and storage compartments detailed.
-                    <Chatbot />
+                    
       </div>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle className="w-6 h-6 text-orange-500 flex-shrink-0 mt-1" />
                     <div>
                       <strong>Door Panels & Pockets:</strong> Complete cleaning of door panels, handles, and storage areas.
-                    <Chatbot />
+                    
       </div>
                   </li>
                   <li className="flex items-start gap-3">
@@ -329,14 +328,14 @@ const InteriorDetailingPage: React.FC = () => {
                     <div>
                       <strong>Window Cleaning:</strong> All interior windows cleaned to crystal clarity with
                       streak-free finish.
-                    <Chatbot />
+                    
       </div>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle className="w-6 h-6 text-orange-500 flex-shrink-0 mt-1" />
                     <div>
                       <strong>Air Vent Cleaning:</strong> All vents cleaned and treated to improve air quality.
-                    <Chatbot />
+                    
       </div>
                   </li>
                   <li className="flex items-start gap-3">
@@ -344,11 +343,11 @@ const InteriorDetailingPage: React.FC = () => {
                     <div>
                       <strong>UV Protection:</strong> Final protectant application on dashboard and trim prevents
                       fading and cracking.
-                    <Chatbot />
+                    
       </div>
                   </li>
                 </ul>
-              <Chatbot />
+              
       </div>
 
               <div>
@@ -358,35 +357,35 @@ const InteriorDetailingPage: React.FC = () => {
                     <CheckCircle className="w-6 h-6 text-green-500 flex-shrink-0 mt-1" />
                     <div>
                       <strong>Pet Hair Removal:</strong> Specialized tools extract embedded pet hair from all surfaces.
-                    <Chatbot />
+                    
       </div>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle className="w-6 h-6 text-green-500 flex-shrink-0 mt-1" />
                     <div>
                       <strong>Smoke Odor Elimination:</strong> Ozone treatment removes smoke smell effectively.
-                    <Chatbot />
+                    
       </div>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle className="w-6 h-6 text-green-500 flex-shrink-0 mt-1" />
                     <div>
                       <strong>Mold & Mildew Treatment:</strong> Antimicrobial treatments eliminate mold and odors.
-                    <Chatbot />
+                    
       </div>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle className="w-6 h-6 text-green-500 flex-shrink-0 mt-1" />
                     <div>
                       <strong>Fabric Protection:</strong> Scotchgard or ceramic coating helps prevent future stains.
-                    <Chatbot />
+                    
       </div>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle className="w-6 h-6 text-green-500 flex-shrink-0 mt-1" />
                     <div>
                       <strong>Car Seat Cleaning:</strong> Safe cleaning for infant seats and car seats.
-                    <Chatbot />
+                    
       </div>
                   </li>
                 </ul>
@@ -395,7 +394,7 @@ const InteriorDetailingPage: React.FC = () => {
                   <div className="flex items-center gap-3 mb-3">
                     <DollarSign className="w-8 h-8 text-orange-600" />
                     <h4 className="text-xl font-bold">Pricing</h4>
-                  <Chatbot />
+                  
       </div>
                   <p className="text-gray-700 mb-2">
                     <strong>Starting at $149-$249</strong>
@@ -406,15 +405,15 @@ const InteriorDetailingPage: React.FC = () => {
                   <div className="flex items-center gap-3">
                     <Clock className="w-6 h-6 text-orange-600" />
                     <span className="font-semibold">Duration: 2-3 hours</span>
-                  <Chatbot />
+                  
       </div>
-                <Chatbot />
+                
       </div>
-              <Chatbot />
+              
       </div>
-            <Chatbot />
+            
       </div>
-          <Chatbot />
+          
       </div>
         </section>
 
@@ -463,7 +462,7 @@ const InteriorDetailingPage: React.FC = () => {
                   className="mt-6 rounded-lg shadow-lg w-full"
                   loading="lazy"
                 />
-              <Chatbot />
+              
       </div>
               <div>
                 <h3 className="text-xl font-bold mb-4 text-center">After Interior Detailing</h3>
@@ -503,11 +502,11 @@ const InteriorDetailingPage: React.FC = () => {
                   className="mt-6 rounded-lg shadow-lg w-full"
                   loading="lazy"
                 />
-              <Chatbot />
+              
       </div>
-            <Chatbot />
+            
       </div>
-          <Chatbot />
+          
       </div>
         </section>
 
@@ -532,7 +531,7 @@ const InteriorDetailingPage: React.FC = () => {
                   <li>• Irmo, SC</li>
                   <li>• Forest Acres, SC</li>
                 </ul>
-              <Chatbot />
+              
       </div>
               <div className="bg-orange-50 p-6 rounded-lg">
                 <h3 className="font-bold text-lg mb-3">Extended Areas</h3>
@@ -544,7 +543,7 @@ const InteriorDetailingPage: React.FC = () => {
                   <li>• Ballentine, SC</li>
                   <li>• St. Andrews, SC</li>
                 </ul>
-              <Chatbot />
+              
       </div>
               <div className="bg-orange-50 p-6 rounded-lg">
                 <h3 className="font-bold text-lg mb-3">Lake Communities</h3>
@@ -556,11 +555,11 @@ const InteriorDetailingPage: React.FC = () => {
                   <li>• Dentsville</li>
                   <li>• Within 25-mile radius</li>
                 </ul>
-              <Chatbot />
+              
       </div>
-            <Chatbot />
+            
       </div>
-          <Chatbot />
+          
       </div>
         </section>
 
@@ -575,12 +574,12 @@ const InteriorDetailingPage: React.FC = () => {
                 <div key={index} className="bg-white p-6 rounded-lg shadow-lg">
                   <h3 className="text-xl font-bold mb-3">{faq.question}</h3>
                   <p className="text-gray-600">{faq.answer}</p>
-                <Chatbot />
+                
       </div>
               ))}
-            <Chatbot />
+            
       </div>
-          <Chatbot />
+          
       </div>
         </section>
 
@@ -607,14 +606,14 @@ const InteriorDetailingPage: React.FC = () => {
               >
                 <Phone className="w-5 h-5" /> Call (555) 123-4567
               </a>
-            <Chatbot />
+            
       </div>
-          <Chatbot />
+          
       </div>
         </section>
 
         <Footer />
-      <Chatbot />
+      
       </div>
     </>
   );

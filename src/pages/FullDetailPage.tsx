@@ -2,7 +2,6 @@ import React from 'react';
 import { Star, Phone, ChevronRight, CheckCircle } from 'lucide-react';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
-import Chatbot from '../components/Chatbot';
 import { SEOHead } from '../components/seo/SEOHead';
 import { generateProductSchema } from '../components/seo/StructuredData';
 import { generateEnhancedLocalBusinessSchema } from '../components/seo/EnhancedLocalBusinessSchema';
@@ -85,17 +84,17 @@ const FullDetailPage: React.FC = () => {
                   <a href="tel:5551234567" className="bg-orange-700 text-white px-8 py-4 rounded-lg font-bold hover:bg-orange-600 transition">
                     <Phone className="w-5 h-5 inline" /> (555) 123-4567
                   </a>
-                <Chatbot />
+                
       </div>
-              <Chatbot />
+              
       </div>
               <div className="hidden md:block">
                 <img src="/exterior1.jpg" alt="Full auto detailing services columbia sc - complete interior and exterior car detail" className="rounded-lg shadow-2xl" loading="lazy" />
-              <Chatbot />
+              
       </div>
-            <Chatbot />
+            
       </div>
-          <Chatbot />
+          
       </div>
         </section>
 
@@ -124,15 +123,15 @@ const FullDetailPage: React.FC = () => {
                     <li className="flex gap-2"><CheckCircle className="w-5 h-5 text-orange-500 flex-shrink-0" />Protective wax layer</li>
                     <li className="flex gap-2"><CheckCircle className="w-5 h-5 text-orange-500 flex-shrink-0" />Wheels & tires dressed</li>
                   </ul>
-                <Chatbot />
+                
       </div>
-              <Chatbot />
+              
       </div>
 
               <div className="bg-gradient-to-br from-orange-50 to-orange-100 p-8 rounded-lg shadow-xl border-4 border-orange-500 relative">
                 <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-orange-500 text-white px-4 py-1 rounded-full text-sm font-bold">
                   MOST POPULAR
-                <Chatbot />
+                
       </div>
                 <h3 className="text-2xl font-bold mb-2">Factory Reset Package</h3>
                 <p className="text-3xl font-bold text-orange-600 mb-4">$325</p>
@@ -159,13 +158,13 @@ const FullDetailPage: React.FC = () => {
                     <li className="flex gap-2"><CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />Weather Stripping Restoration (+$50)</li>
                     <li className="flex gap-2"><CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />Scratch Removal (+$80/panel)</li>
                   </ul>
-                <Chatbot />
+                
       </div>
-              <Chatbot />
+              
       </div>
-            <Chatbot />
+            
       </div>
-          <Chatbot />
+          
       </div>
         </section>
 
@@ -177,23 +176,23 @@ const FullDetailPage: React.FC = () => {
                 <Star className="w-16 h-16 text-orange-500 mx-auto mb-4" />
                 <h3 className="text-xl font-bold mb-3">Complete Care</h3>
                 <p className="text-gray-600">Every inch of your vehicle cleaned, protected, and restored inside and out. Nothing overlooked.</p>
-              <Chatbot />
+              
       </div>
               <div className="text-center">
                 <CheckCircle className="w-16 h-16 text-orange-500 mx-auto mb-4" />
                 <h3 className="text-xl font-bold mb-3">Best Value</h3>
                 <p className="text-gray-600">Save $30-50 compared to booking interior and exterior separately. Maximum results for your investment.</p>
-              <Chatbot />
+              
       </div>
               <div className="text-center">
                 <Phone className="w-16 h-16 text-orange-500 mx-auto mb-4" />
                 <h3 className="text-xl font-bold mb-3">Mobile Convenience</h3>
                 <p className="text-gray-600">We come to you in Columbia, Lexington, West Columbia, Irmo, Cayce. Work from home while we transform your vehicle.</p>
-              <Chatbot />
+              
       </div>
-            <Chatbot />
+            
       </div>
-          <Chatbot />
+          
       </div>
         </section>
 
@@ -204,26 +203,26 @@ const FullDetailPage: React.FC = () => {
               <div className="bg-white p-6 rounded-lg shadow-lg">
                 <h3 className="text-xl font-bold mb-3">How long does full detailing take?</h3>
                 <p className="text-gray-600">Basic Detail Package takes 2-4 hours. Factory Reset Package takes 3-5 hours depending on vehicle size and condition.</p>
-              <Chatbot />
+              
       </div>
               <div className="bg-white p-6 rounded-lg shadow-lg">
                 <h3 className="text-xl font-bold mb-3">What's the difference between Basic and Factory Reset?</h3>
                 <p className="text-gray-600">Basic is perfect for regular maintenance. Factory Reset includes deep shampooing, extraction, stain removal, and brake dust removal - ideal for vehicles needing more intensive cleaning.</p>
-              <Chatbot />
+              
       </div>
               <div className="bg-white p-6 rounded-lg shadow-lg">
                 <h3 className="text-xl font-bold mb-3">Do you come to my location?</h3>
                 <p className="text-gray-600">Yes! We're a mobile auto detailing service serving Columbia, Lexington, West Columbia, Irmo, Cayce, and all surrounding SC areas within 25 miles. We bring all equipment, water, and power.</p>
-              <Chatbot />
+              
       </div>
               <div className="bg-white p-6 rounded-lg shadow-lg">
                 <h3 className="text-xl font-bold mb-3">How often should I get full detailing?</h3>
                 <p className="text-gray-600">We recommend full detailing every 3-4 months for optimal protection and appearance. More frequent if you have pets, children, or drive extensively.</p>
-              <Chatbot />
+              
       </div>
-            <Chatbot />
+            
       </div>
-          <Chatbot />
+          
       </div>
         </section>
 
@@ -236,14 +235,14 @@ const FullDetailPage: React.FC = () => {
             <div className="flex flex-wrap gap-4 justify-center">
               <button onClick={scrollToQuote} className="bg-white text-orange-600 px-8 py-4 rounded-lg font-bold hover:bg-orange-50 transition">Get Free Quote</button>
               <a href="tel:5551234567" className="bg-orange-700 text-white px-8 py-4 rounded-lg font-bold hover:bg-orange-600 transition">Call (555) 123-4567</a>
-            <Chatbot />
+            
       </div>
-          <Chatbot />
+          
       </div>
         </section>
 
         <Footer />
-      <Chatbot />
+      
       </div>
     </>
   );

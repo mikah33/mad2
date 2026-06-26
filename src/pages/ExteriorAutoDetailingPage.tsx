@@ -2,7 +2,6 @@ import React from 'react';
 import { Car, Shield, Droplets, Star, Phone, ChevronRight, CheckCircle, Clock, Sparkles } from 'lucide-react';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
-import Chatbot from '../components/Chatbot';
 import { SEOHead } from '../components/seo/SEOHead';
 import { generateProductSchema } from '../components/seo/StructuredData';
 import { generateEnhancedLocalBusinessSchema } from '../components/seo/EnhancedLocalBusinessSchema';
@@ -346,7 +345,7 @@ const ExteriorAutoDetailingPage: React.FC = () => {
         </section>
 
         <Footer />
-        <Chatbot />
+        
       </div>
     </>
   );

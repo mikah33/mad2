@@ -2,7 +2,6 @@ import React from 'react';
 import { Truck, Phone, ChevronRight, CheckCircle, MapPin, Clock } from 'lucide-react';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
-import Chatbot from '../components/Chatbot';
 import { Breadcrumbs } from '../components/Breadcrumbs';
 import { SEOHead } from '../components/seo/SEOHead';
 import { generateProductSchema } from '../components/seo/StructuredData';
@@ -351,7 +350,7 @@ const MobileDetailingPage: React.FC = () => {
         </section>
 
         <Footer />
-        <Chatbot />
+        
       </div>
     </>
   );

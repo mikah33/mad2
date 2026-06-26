@@ -2,7 +2,6 @@ import React from 'react';
 import { Shield, CheckCircle, Clock, DollarSign, Phone, ChevronRight, Award, Droplets, Sun } from 'lucide-react';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
-import Chatbot from '../components/Chatbot';
 import { SEOHead } from '../components/seo/SEOHead';
 import { generateProductSchema } from '../components/seo/StructuredData';
 import { generateEnhancedLocalBusinessSchema } from '../components/seo/EnhancedLocalBusinessSchema';
@@ -373,7 +372,7 @@ const CeramicCoatingPage: React.FC = () => {
         </section>
 
         <Footer />
-        <Chatbot />
+        
       </div>
     </>
   );

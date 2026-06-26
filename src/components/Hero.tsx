@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { CheckCircle, Shield, Clock, Star, Phone, Users } from 'lucide-react';
+import { CheckCircle, Clock, Phone } from 'lucide-react';
 import { trackPhoneClick } from '../utils/analytics';
 
 const Hero: React.FC = () => {
@@ -88,26 +88,6 @@ const Hero: React.FC = () => {
         <div className="grid md:grid-cols-2 gap-8 items-center">
           {/* Left Column - Main Content */}
           <div className="text-center md:text-left">
-            {/* Trust Signals - Immediately Visible */}
-            <div className="flex flex-wrap justify-center md:justify-start gap-2 md:gap-4 mb-4">
-              <div className="flex items-center bg-yellow-400/20 backdrop-blur-sm px-3 py-1.5 rounded-full border border-yellow-400/40">
-                <div className="flex mr-1.5">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-3.5 h-3.5 fill-yellow-400 text-yellow-400" />
-                  ))}
-                </div>
-                <span className="text-sm font-semibold text-yellow-100">5.0 Rated</span>
-              </div>
-              <div className="flex items-center bg-white/15 backdrop-blur-sm px-3 py-1.5 rounded-full border border-white/30">
-                <Users className="w-3.5 h-3.5 mr-1.5 text-[#90E0EF]" />
-                <span className="text-sm font-medium">100+ Happy Customers</span>
-              </div>
-              <div className="flex items-center bg-green-400/20 backdrop-blur-sm px-3 py-1.5 rounded-full border border-green-400/40">
-                <Clock className="w-3.5 h-3.5 mr-1.5 text-green-300" />
-                <span className="text-sm font-medium text-green-100">Same Day Available</span>
-              </div>
-            </div>
-
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-bold mb-4 leading-tight">
               Mobile Auto Detailing in Columbia & Lexington SC
             </h1>
@@ -115,22 +95,6 @@ const Hero: React.FC = () => {
             <p className="text-lg md:text-xl mb-4 text-gray-100 max-w-xl">
               We come to your home or office. Professional interior & exterior detailing from <span className="font-bold text-white">$225</span>.
             </p>
-
-            {/* Feature Pills */}
-            <div className="flex flex-wrap justify-center md:justify-start gap-2 mb-6">
-              <div className="flex items-center bg-white/10 backdrop-blur-sm px-3 py-2 rounded-lg text-sm">
-                <CheckCircle className="w-4 h-4 mr-1.5 text-[#90E0EF] flex-shrink-0" />
-                <span>We Come To You</span>
-              </div>
-              <div className="flex items-center bg-white/10 backdrop-blur-sm px-3 py-2 rounded-lg text-sm">
-                <Shield className="w-4 h-4 mr-1.5 text-[#90E0EF] flex-shrink-0" />
-                <span>Fully Insured</span>
-              </div>
-              <div className="flex items-center bg-white/10 backdrop-blur-sm px-3 py-2 rounded-lg text-sm">
-                <CheckCircle className="w-4 h-4 mr-1.5 text-[#90E0EF] flex-shrink-0" />
-                <span>Free Quotes</span>
-              </div>
-            </div>
 
             {/* Primary CTA - Single Clear Action */}
             <div className="flex flex-col sm:flex-row gap-3 justify-center md:justify-start items-center mb-4">

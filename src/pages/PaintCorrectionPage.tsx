@@ -2,7 +2,6 @@ import React from 'react';
 import { Wrench, CheckCircle, Phone, ChevronRight } from 'lucide-react';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
-import Chatbot from '../components/Chatbot';
 import { SEOHead } from '../components/seo/SEOHead';
 import { generateProductSchema } from '../components/seo/StructuredData';
 import { generateEnhancedLocalBusinessSchema } from '../components/seo/EnhancedLocalBusinessSchema';
@@ -63,20 +62,20 @@ const PaintCorrectionPage: React.FC = () => {
                   <a href="tel:5551234567" className="bg-purple-700 text-white px-8 py-4 rounded-lg font-bold hover:bg-purple-600 transition">
                     <Phone className="w-5 h-5 inline" /> (555) 123-4567
                   </a>
-                <Chatbot />
+                
       </div>
-              <Chatbot />
+              
       </div>
               <div className="hidden md:block">
                 <picture>
                   <source srcSet="/exterior4_optimized.webp" type="image/webp" />
                   <img src="/exterior4.jpg" alt="Auto detailing services columbia sc - professional paint correction with swirl and scratch removal" className="rounded-lg shadow-2xl" loading="lazy" />
                 </picture>
-              <Chatbot />
+              
       </div>
-            <Chatbot />
+            
       </div>
-          <Chatbot />
+          
       </div>
         </section>
 
@@ -103,7 +102,7 @@ const PaintCorrectionPage: React.FC = () => {
                   <li className="flex gap-2"><CheckCircle className="w-5 h-5 text-purple-500 flex-shrink-0 mt-1" />Holograms from improper polishing</li>
                   <li className="flex gap-2"><CheckCircle className="w-5 h-5 text-purple-500 flex-shrink-0 mt-1" />Bird dropping and bug etching</li>
                 </ul>
-              <Chatbot />
+              
       </div>
               <div>
                 <picture>
@@ -117,38 +116,38 @@ const PaintCorrectionPage: React.FC = () => {
                       <div className="flex justify-between items-center mb-2">
                         <strong>Single Stage</strong>
                         <span className="text-purple-600 font-bold">$399-$499</span>
-                      <Chatbot />
+                      
       </div>
                       <p className="text-sm text-gray-600">Removes 50-60% of defects, enhances gloss</p>
-                    <Chatbot />
+                    
       </div>
                     <div className="border-b pb-3">
                       <div className="flex justify-between items-center mb-2">
                         <strong>Two Stage</strong>
                         <span className="text-purple-600 font-bold">$599-$699</span>
-                      <Chatbot />
+                      
       </div>
                       <p className="text-sm text-gray-600">Removes 70-85% of defects, significant improvement</p>
-                    <Chatbot />
+                    
       </div>
                     <div>
                       <div className="flex justify-between items-center mb-2">
                         <strong>Multi Stage</strong>
                         <span className="text-purple-600 font-bold">$799-$899</span>
-                      <Chatbot />
+                      
       </div>
                       <p className="text-sm text-gray-600">Removes 90-95%+ of defects, show car finish</p>
-                    <Chatbot />
+                    
       </div>
-                  <Chatbot />
+                  
       </div>
-                <Chatbot />
+                
       </div>
-              <Chatbot />
+              
       </div>
-            <Chatbot />
+            
       </div>
-          <Chatbot />
+          
       </div>
         </section>
 
@@ -157,68 +156,68 @@ const PaintCorrectionPage: React.FC = () => {
             <h2 className="text-3xl font-bold text-center mb-12">Our Paint Correction Process</h2>
             <div className="max-w-3xl mx-auto space-y-4">
               <div className="flex gap-4">
-                <div className="bg-purple-500 text-white rounded-full w-10 h-10 flex items-center justify-center flex-shrink-0 font-bold">1<Chatbot />
+                <div className="bg-purple-500 text-white rounded-full w-10 h-10 flex items-center justify-center flex-shrink-0 font-bold">1
       </div>
                 <div>
                   <h3 className="font-bold mb-1">Complete Wash & Decontamination</h3>
                   <p className="text-gray-600">Thorough wash, iron remover, and clay bar treatment to remove all surface contaminants before polishing.</p>
-                <Chatbot />
+                
       </div>
-              <Chatbot />
+              
       </div>
               <div className="flex gap-4">
-                <div className="bg-purple-500 text-white rounded-full w-10 h-10 flex items-center justify-center flex-shrink-0 font-bold">2<Chatbot />
+                <div className="bg-purple-500 text-white rounded-full w-10 h-10 flex items-center justify-center flex-shrink-0 font-bold">2
       </div>
                 <div>
                   <h3 className="font-bold mb-1">Paint Depth Measurement</h3>
                   <p className="text-gray-600">Paint thickness gauge ensures we safely remove only what's necessary without compromising clear coat integrity.</p>
-                <Chatbot />
+                
       </div>
-              <Chatbot />
+              
       </div>
               <div className="flex gap-4">
-                <div className="bg-purple-500 text-white rounded-full w-10 h-10 flex items-center justify-center flex-shrink-0 font-bold">3<Chatbot />
+                <div className="bg-purple-500 text-white rounded-full w-10 h-10 flex items-center justify-center flex-shrink-0 font-bold">3
       </div>
                 <div>
                   <h3 className="font-bold mb-1">Test Spot & Lighting Inspection</h3>
                   <p className="text-gray-600">Test small area to determine correct compounds and pads. High-intensity LED lights identify all imperfections.</p>
-                <Chatbot />
+                
       </div>
-              <Chatbot />
+              
       </div>
               <div className="flex gap-4">
-                <div className="bg-purple-500 text-white rounded-full w-10 h-10 flex items-center justify-center flex-shrink-0 font-bold">4<Chatbot />
+                <div className="bg-purple-500 text-white rounded-full w-10 h-10 flex items-center justify-center flex-shrink-0 font-bold">4
       </div>
                 <div>
                   <h3 className="font-bold mb-1">Multi-Stage Polishing</h3>
                   <p className="text-gray-600">Heavy cutting compound removes deeper imperfections. Medium polish refines surface. Fine polish creates final clarity and gloss.</p>
-                <Chatbot />
+                
       </div>
-              <Chatbot />
+              
       </div>
               <div className="flex gap-4">
-                <div className="bg-purple-500 text-white rounded-full w-10 h-10 flex items-center justify-center flex-shrink-0 font-bold">5<Chatbot />
+                <div className="bg-purple-500 text-white rounded-full w-10 h-10 flex items-center justify-center flex-shrink-0 font-bold">5
       </div>
                 <div>
                   <h3 className="font-bold mb-1">Panel-by-Panel Inspection</h3>
                   <p className="text-gray-600">Each panel inspected with LED lights between stages to ensure perfection.</p>
-                <Chatbot />
+                
       </div>
-              <Chatbot />
+              
       </div>
               <div className="flex gap-4">
-                <div className="bg-purple-500 text-white rounded-full w-10 h-10 flex items-center justify-center flex-shrink-0 font-bold">6<Chatbot />
+                <div className="bg-purple-500 text-white rounded-full w-10 h-10 flex items-center justify-center flex-shrink-0 font-bold">6
       </div>
                 <div>
                   <h3 className="font-bold mb-1">Paint Protection Application</h3>
                   <p className="text-gray-600">Wax, sealant, or ceramic coating applied to lock in the perfect finish and protect your investment.</p>
-                <Chatbot />
+                
       </div>
-              <Chatbot />
+              
       </div>
-            <Chatbot />
+            
       </div>
-          <Chatbot />
+          
       </div>
         </section>
 
@@ -235,7 +234,7 @@ const PaintCorrectionPage: React.FC = () => {
                   <li className="flex gap-2"><span className="text-red-500">✗</span>Water spots etched into clear coat</li>
                   <li className="flex gap-2"><span className="text-red-500">✗</span>Oxidation making paint look old</li>
                 </ul>
-              <Chatbot />
+              
       </div>
               <div>
                 <h3 className="text-xl font-bold mb-4 text-center">After Paint Correction</h3>
@@ -246,11 +245,11 @@ const PaintCorrectionPage: React.FC = () => {
                   <li className="flex gap-2"><span className="text-green-500">✓</span>Smooth, defect-free surface</li>
                   <li className="flex gap-2"><span className="text-green-500">✓</span>Like-new showroom appearance</li>
                 </ul>
-              <Chatbot />
+              
       </div>
-            <Chatbot />
+            
       </div>
-          <Chatbot />
+          
       </div>
         </section>
 
@@ -263,14 +262,14 @@ const PaintCorrectionPage: React.FC = () => {
             <div className="flex flex-wrap gap-4 justify-center">
               <button onClick={scrollToQuote} className="bg-white text-purple-600 px-8 py-4 rounded-lg font-bold hover:bg-purple-50 transition">Get Free Quote</button>
               <a href="tel:5551234567" className="bg-purple-700 text-white px-8 py-4 rounded-lg font-bold hover:bg-purple-600 transition">Call (555) 123-4567</a>
-            <Chatbot />
+            
       </div>
-          <Chatbot />
+          
       </div>
         </section>
 
         <Footer />
-      <Chatbot />
+      
       </div>
     </>
   );

@@ -2,7 +2,6 @@ import React from 'react';
 import { Sparkles, CheckCircle, Clock, DollarSign, Phone, ChevronRight, Droplets } from 'lucide-react';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
-import Chatbot from '../components/Chatbot';
 import { SEOHead } from '../components/seo/SEOHead';
 import { generateProductSchema } from '../components/seo/StructuredData';
 import { generateEnhancedLocalBusinessSchema } from '../components/seo/EnhancedLocalBusinessSchema';
@@ -150,9 +149,9 @@ const ExteriorDetailingPage: React.FC = () => {
                   >
                     <Phone className="w-5 h-5" /> (555) 123-4567
                   </a>
-                <Chatbot />
+                
       </div>
-              <Chatbot />
+              
       </div>
               <div className="hidden md:block">
                 <img
@@ -160,11 +159,11 @@ const ExteriorDetailingPage: React.FC = () => {
                   alt="Professional exterior auto detailing services columbia sc - ceramic shine and paint protection"
                   className="rounded-lg shadow-2xl"
                 />
-              <Chatbot />
+              
       </div>
-            <Chatbot />
+            
       </div>
-          <Chatbot />
+          
       </div>
         </section>
 
@@ -182,7 +181,7 @@ const ExteriorDetailingPage: React.FC = () => {
                   Hand washing and polishing restore deep gloss and mirror-like reflections. Our process
                   enhances paint depth and clarity far beyond automatic car washes.
                 </p>
-              <Chatbot />
+              
       </div>
               <div className="bg-white p-6 rounded-lg shadow-lg">
                 <Droplets className="w-12 h-12 text-blue-500 mb-4" />
@@ -191,7 +190,7 @@ const ExteriorDetailingPage: React.FC = () => {
                   Premium wax or sealant creates a protective barrier against UV rays, contaminants,
                   water spots, and environmental damage. Keeps your vehicle looking newer longer.
                 </p>
-              <Chatbot />
+              
       </div>
               <div className="bg-white p-6 rounded-lg shadow-lg">
                 <CheckCircle className="w-12 h-12 text-blue-500 mb-4" />
@@ -200,11 +199,11 @@ const ExteriorDetailingPage: React.FC = () => {
                   Clay bar treatment safely removes bonded contaminants like tree sap, rail dust, tar,
                   and industrial fallout that washing alone can't eliminate.
                 </p>
-              <Chatbot />
+              
       </div>
-            <Chatbot />
+            
       </div>
-          <Chatbot />
+          
       </div>
         </section>
 
@@ -220,78 +219,78 @@ const ExteriorDetailingPage: React.FC = () => {
                 <h3 className="text-2xl font-bold mb-6">Complete Service Includes</h3>
                 <div className="space-y-4">
                   <div className="flex items-start gap-3">
-                    <div className="bg-blue-500 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 font-bold">1<Chatbot />
+                    <div className="bg-blue-500 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 font-bold">1
       </div>
                     <div>
                       <strong className="block">Pre-Rinse & Wheel Cleaning</strong>
                       <p className="text-gray-600">Thorough pre-rinse removes loose dirt. Wheels deep cleaned with acid-free cleaners to remove brake dust and grime.</p>
-                    <Chatbot />
+                    
       </div>
-                  <Chatbot />
+                  
       </div>
                   <div className="flex items-start gap-3">
-                    <div className="bg-blue-500 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 font-bold">2<Chatbot />
+                    <div className="bg-blue-500 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 font-bold">2
       </div>
                     <div>
                       <strong className="block">Two-Bucket Hand Wash</strong>
                       <p className="text-gray-600">Professional two-bucket method using premium microfiber mitts and pH-neutral soap prevents scratches and swirls.</p>
-                    <Chatbot />
+                    
       </div>
-                  <Chatbot />
+                  
       </div>
                   <div className="flex items-start gap-3">
-                    <div className="bg-blue-500 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 font-bold">3<Chatbot />
+                    <div className="bg-blue-500 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 font-bold">3
       </div>
                     <div>
                       <strong className="block">Clay Bar Treatment</strong>
                       <p className="text-gray-600">Removes bonded contaminants including tree sap, rail dust, tar, and industrial fallout for smooth-as-glass paint.</p>
-                    <Chatbot />
+                    
       </div>
-                  <Chatbot />
+                  
       </div>
                   <div className="flex items-start gap-3">
-                    <div className="bg-blue-500 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 font-bold">4<Chatbot />
+                    <div className="bg-blue-500 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 font-bold">4
       </div>
                     <div>
                       <strong className="block">Hand Polish</strong>
                       <p className="text-gray-600">Removes minor imperfections and enhances gloss for deep, wet-look shine.</p>
-                    <Chatbot />
+                    
       </div>
-                  <Chatbot />
+                  
       </div>
                   <div className="flex items-start gap-3">
-                    <div className="bg-blue-500 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 font-bold">5<Chatbot />
+                    <div className="bg-blue-500 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 font-bold">5
       </div>
                     <div>
                       <strong className="block">Wax or Sealant Application</strong>
                       <p className="text-gray-600">Premium carnauba wax or synthetic sealant hand-applied for maximum protection and water beading.</p>
-                    <Chatbot />
+                    
       </div>
-                  <Chatbot />
+                  
       </div>
                   <div className="flex items-start gap-3">
-                    <div className="bg-blue-500 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 font-bold">6<Chatbot />
+                    <div className="bg-blue-500 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 font-bold">6
       </div>
                     <div>
                       <strong className="block">Trim & Tire Dressing</strong>
                       <p className="text-gray-600">Plastic and rubber trim restored to deep black. Tires dressed for clean, professional finish.</p>
-                    <Chatbot />
+                    
       </div>
-                  <Chatbot />
+                  
       </div>
                   <div className="flex items-start gap-3">
-                    <div className="bg-blue-500 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 font-bold">7<Chatbot />
+                    <div className="bg-blue-500 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 font-bold">7
       </div>
                     <div>
                       <strong className="block">Glass Treatment & Final Inspection</strong>
                       <p className="text-gray-600">Exterior glass cleaned and treated with rain repellent. Comprehensive quality check ensures perfection.</p>
-                    <Chatbot />
+                    
       </div>
-                  <Chatbot />
+                  
       </div>
-                <Chatbot />
+                
       </div>
-              <Chatbot />
+              
       </div>
 
               <div>
@@ -308,7 +307,7 @@ const ExteriorDetailingPage: React.FC = () => {
                   <div className="flex items-center gap-3 mb-3">
                     <DollarSign className="w-8 h-8 text-blue-600" />
                     <h4 className="text-xl font-bold">Pricing</h4>
-                  <Chatbot />
+                  
       </div>
                   <p className="text-gray-700 mb-2">
                     <strong>Starting at $99-$199</strong>
@@ -319,9 +318,9 @@ const ExteriorDetailingPage: React.FC = () => {
                   <div className="flex items-center gap-3">
                     <Clock className="w-6 h-6 text-blue-600" />
                     <span className="font-semibold">Duration: 2-3 hours</span>
-                  <Chatbot />
+                  
       </div>
-                <Chatbot />
+                
       </div>
 
                 <h3 className="text-xl font-bold mb-4">Additional Services</h3>
@@ -347,11 +346,11 @@ const ExteriorDetailingPage: React.FC = () => {
                     <span><strong>Chrome Polishing:</strong> Included</span>
                   </li>
                 </ul>
-              <Chatbot />
+              
       </div>
-            <Chatbot />
+            
       </div>
-          <Chatbot />
+          
       </div>
         </section>
 
@@ -395,7 +394,7 @@ const ExteriorDetailingPage: React.FC = () => {
                   alt="Exterior auto detailing services columbia sc - before treatment showing dull paint and contaminants"
                   className="rounded-lg shadow-lg w-full"
                 />
-              <Chatbot />
+              
       </div>
               <div>
                 <h3 className="text-xl font-bold mb-4 text-center">After Professional Detailing</h3>
@@ -430,9 +429,9 @@ const ExteriorDetailingPage: React.FC = () => {
                   alt="Exterior auto detailing services columbia sc - after professional treatment with mirror shine"
                   className="rounded-lg shadow-lg w-full"
                 />
-              <Chatbot />
+              
       </div>
-            <Chatbot />
+            
       </div>
 
             <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
@@ -445,9 +444,9 @@ const ExteriorDetailingPage: React.FC = () => {
                   <img src="/exterior5.jpg" alt="Auto detailing services columbia sc - ceramic coating application for paint protection" className="rounded-lg shadow-lg" loading="lazy" />
                 </picture>
               <img src="/exterior6.jpg" alt="Auto detailing services columbia sc results - mirror finish with ceramic coating protection" className="rounded-lg shadow-lg" loading="lazy" />
-            <Chatbot />
+            
       </div>
-          <Chatbot />
+          
       </div>
         </section>
 
@@ -460,25 +459,25 @@ const ExteriorDetailingPage: React.FC = () => {
               within 25 miles. We bring professional exterior detailing to your location.
             </p>
             <div className="grid md:grid-cols-4 gap-4 max-w-4xl mx-auto text-center">
-              <div className="bg-blue-50 p-4 rounded-lg">Columbia SC<Chatbot />
+              <div className="bg-blue-50 p-4 rounded-lg">Columbia SC
       </div>
-              <div className="bg-blue-50 p-4 rounded-lg">Lexington SC<Chatbot />
+              <div className="bg-blue-50 p-4 rounded-lg">Lexington SC
       </div>
-              <div className="bg-blue-50 p-4 rounded-lg">West Columbia SC<Chatbot />
+              <div className="bg-blue-50 p-4 rounded-lg">West Columbia SC
       </div>
-              <div className="bg-blue-50 p-4 rounded-lg">Irmo SC<Chatbot />
+              <div className="bg-blue-50 p-4 rounded-lg">Irmo SC
       </div>
-              <div className="bg-blue-50 p-4 rounded-lg">Cayce SC<Chatbot />
+              <div className="bg-blue-50 p-4 rounded-lg">Cayce SC
       </div>
-              <div className="bg-blue-50 p-4 rounded-lg">Forest Acres SC<Chatbot />
+              <div className="bg-blue-50 p-4 rounded-lg">Forest Acres SC
       </div>
-              <div className="bg-blue-50 p-4 rounded-lg">Blythewood SC<Chatbot />
+              <div className="bg-blue-50 p-4 rounded-lg">Blythewood SC
       </div>
-              <div className="bg-blue-50 p-4 rounded-lg">Lake Murray Area<Chatbot />
+              <div className="bg-blue-50 p-4 rounded-lg">Lake Murray Area
       </div>
-            <Chatbot />
+            
       </div>
-          <Chatbot />
+          
       </div>
         </section>
 
@@ -493,12 +492,12 @@ const ExteriorDetailingPage: React.FC = () => {
                 <div key={index} className="bg-white p-6 rounded-lg shadow-lg">
                   <h3 className="text-xl font-bold mb-3">{faq.question}</h3>
                   <p className="text-gray-600">{faq.answer}</p>
-                <Chatbot />
+                
       </div>
               ))}
-            <Chatbot />
+            
       </div>
-          <Chatbot />
+          
       </div>
         </section>
 
@@ -525,14 +524,14 @@ const ExteriorDetailingPage: React.FC = () => {
               >
                 Call (555) 123-4567
               </a>
-            <Chatbot />
+            
       </div>
-          <Chatbot />
+          
       </div>
         </section>
 
         <Footer />
-      <Chatbot />
+      
       </div>
     </>
   );
