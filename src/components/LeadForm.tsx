@@ -21,13 +21,13 @@ const LeadForm: React.FC<LeadFormProps> = ({ selectedService }) => {
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
   const serviceOptions = [
-    'Basic Detail Package - $200',
+    'Basic Detail Package - $225',
     'Factory Reset Package - $400',
     'Ceramic Coatings',
     'Paint Corrections',
     'Specialty Services',
     'Marine & RV Detailing',
-    'Routine Reset - $175/Month'
+    'Routine Reset - $225/Month'
   ];
 
   useEffect(() => {

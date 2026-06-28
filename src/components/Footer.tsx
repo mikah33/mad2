@@ -19,7 +19,7 @@ const Footer: React.FC = () => {
                 Call (803) 667-8731
               </a>
               <a
-                href="/#booking"
+                href="/book"
                 className="px-4 py-3 bg-[#90E0EF] text-[#023E8A] font-bold rounded-lg transition text-center hover:bg-white"
               >
                 Request Free Quote
@@ -39,7 +39,7 @@ const Footer: React.FC = () => {
                 </a>
               </li>
               <li>
-                <a href="/services/ceramic-coating-columbia-lexington" className="hover:text-[#90E0EF] transition block">
+                <a href="/services/ceramic-coating" className="hover:text-[#90E0EF] transition block">
                   Ceramic Coating Columbia SC
                 </a>
               </li>
@@ -133,7 +133,7 @@ const Footer: React.FC = () => {
                 </a>
               </li>
               <li>
-                <a href="/#booking" className="hover:text-[#90E0EF] transition block font-semibold">
+                <a href="/book" className="hover:text-[#90E0EF] transition block font-semibold">
                   Book Your Detail Today →
                 </a>
               </li>
@@ -153,7 +153,7 @@ const Footer: React.FC = () => {
                   Call (803) 667-8731
                 </a>
                 <a
-                  href="/#booking"
+                  href="/book"
                   className="px-4 py-3 bg-[#90E0EF] text-[#023E8A] font-bold rounded-lg transition text-center hover:bg-white"
                 >
                   Request Free Quote

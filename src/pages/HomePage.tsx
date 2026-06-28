@@ -112,6 +112,11 @@ export const HomePage = () => {
 
                 {/* Single Clear CTA */}
                 <div className="flex flex-col sm:flex-row gap-4 mb-6">
+                  <a href="/book" className="inline-block">
+                    <button className="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-green-500 to-green-600 text-white text-lg font-bold rounded-lg hover:from-green-600 hover:to-green-700 transition shadow-xl transform hover:scale-105">
+                      Book Online
+                    </button>
+                  </a>
                   <a href="#booking" className="inline-block">
                     <button className="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-green-500 to-green-600 text-white text-lg font-bold rounded-lg hover:from-green-600 hover:to-green-700 transition shadow-xl transform hover:scale-105">
                       Get Your Free Quote Now
@@ -285,7 +290,7 @@ export const HomePage = () => {
                   <li className="flex items-center"><CheckCircle className="w-4 h-4 mr-2 text-green-500 flex-shrink-0" />Protective wax application</li>
                 </ul>
                 <div className="text-center">
-                  <p className="font-bold text-[#023E8A] text-xl mb-3">From $325</p>
+                  <p className="font-bold text-[#023E8A] text-xl mb-3">From $225</p>
                   <a href="#booking" className="block w-full py-2 bg-gradient-to-r from-[#023E8A] to-[#0077B6] text-white font-semibold rounded-lg hover:from-[#0077B6] hover:to-[#023E8A] transition text-center">
                     Get Quote
                   </a>
@@ -321,7 +326,7 @@ export const HomePage = () => {
                 <span>|</span>
                 <a href="/locations/irmo-sc" className="text-[#0077B6] hover:underline">Irmo SC</a>
                 <span>|</span>
-                <a href="/locations/west-columbia-sc" className="text-[#0077B6] hover:underline">West Columbia SC</a>
+                <a href="/locations/west-columbia" className="text-[#0077B6] hover:underline">West Columbia SC</a>
                 <span>|</span>
                 <a href="/locations/cayce-sc" className="text-[#0077B6] hover:underline">Cayce SC</a>
               </div>
@@ -334,6 +339,11 @@ export const HomePage = () => {
                 <span className="font-medium">Same-day appointments available - Book now!</span>
               </div>
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <a href="/book">
+                  <button className="px-8 py-4 bg-gradient-to-r from-green-500 to-green-600 text-white text-lg font-bold rounded-lg hover:from-green-600 hover:to-green-700 transition shadow-lg transform hover:scale-105">
+                    Book Online
+                  </button>
+                </a>
                 <a href="#booking">
                   <button className="px-8 py-4 bg-gradient-to-r from-green-500 to-green-600 text-white text-lg font-bold rounded-lg hover:from-green-600 hover:to-green-700 transition shadow-lg transform hover:scale-105">
                     Get Your Free Quote Now

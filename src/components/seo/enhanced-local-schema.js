@@ -200,7 +200,7 @@ export function generateEnhancedLocalSchema(city, serviceType = 'full') {
         "@type": "Offer",
         "name": `${cityInfo.name} Mobile Detailing Special`,
         "description": `Professional mobile auto detailing service in ${cityInfo.name}, SC`,
-        "price": "Starting at $75",
+        "price": "Starting at $100",
         "priceCurrency": "USD",
         "availability": "InStock",
         "validFrom": new Date().toISOString(),

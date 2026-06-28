@@ -55,11 +55,14 @@ const InteriorCarDetailingPage: React.FC = () => {
                   Expert car interior detailing service that restores, protects, and maintains your vehicle's interior. Professional steam cleaning, leather conditioning, stain removal, and complete interior protection in Columbia and Lexington SC.
                 </p>
                 <div className="flex flex-wrap gap-4">
+                  <a href="/book?service=interior-detail" className="bg-white text-purple-600 px-8 py-4 rounded-lg font-bold hover:bg-purple-50 transition">
+                    Book Online <ChevronRight className="w-5 h-5 inline" />
+                  </a>
                   <button onClick={scrollToQuote} className="bg-white text-purple-600 px-8 py-4 rounded-lg font-bold hover:bg-purple-50 transition">
                     Get Free Quote <ChevronRight className="w-5 h-5 inline" />
                   </button>
-                  <a href="tel:5551234567" className="bg-purple-700 text-white px-8 py-4 rounded-lg font-bold hover:bg-purple-600 transition">
-                    <Phone className="w-5 h-5 inline" /> (555) 123-4567
+                  <a href="tel:+18036678731" className="bg-purple-700 text-white px-8 py-4 rounded-lg font-bold hover:bg-purple-600 transition">
+                    <Phone className="w-5 h-5 inline" /> (803) 667-8731
                   </a>
                 </div>
               </div>
@@ -201,7 +204,7 @@ const InteriorCarDetailingPage: React.FC = () => {
                   <span className="bg-purple-500 text-white px-4 py-2 rounded-full font-bold">Most Popular</span>
                 </div>
                 <h3 className="text-2xl font-bold mb-4">Complete Interior Detail</h3>
-                <div className="text-3xl font-bold text-purple-600 mb-6">$325</div>
+                <div className="text-3xl font-bold text-purple-600 mb-6">From $200</div>
                 <ul className="space-y-3 mb-8">
                   <li className="flex items-center gap-2">
                     <CheckCircle className="w-5 h-5 text-green-500" />
@@ -295,8 +298,9 @@ const InteriorCarDetailingPage: React.FC = () => {
               Professional car interior detailing in Columbia SC. Book your appointment today for expert cleaning and protection.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
+              <a href="/book?service=interior-detail" className="bg-white text-purple-600 px-8 py-4 rounded-lg font-bold hover:bg-purple-50 transition">Book Online</a>
               <button onClick={scrollToQuote} className="bg-white text-purple-600 px-8 py-4 rounded-lg font-bold hover:bg-purple-50 transition">Get Free Quote</button>
-              <a href="tel:5551234567" className="bg-purple-700 text-white px-8 py-4 rounded-lg font-bold hover:bg-purple-600 transition">Call (555) 123-4567</a>
+              <a href="tel:+18036678731" className="bg-purple-700 text-white px-8 py-4 rounded-lg font-bold hover:bg-purple-600 transition">Call (803) 667-8731</a>
             </div>
           </div>
         </section>

@@ -104,7 +104,7 @@ const Navigation: React.FC = () => {
               <a href="/services" className="text-gray-700 hover:text-[#023E8A] transition text-sm xl:text-base font-medium">Services</a>
               <div className="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-xl border border-gray-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
                 <div className="p-3 space-y-2">
-                  <a href="/services/ceramic-coating-columbia-lexington" className="block px-3 py-2 text-sm text-gray-700 hover:text-[#023E8A] hover:bg-[#CAF0F8] rounded transition">Ceramic Coating</a>
+                  <a href="/services/ceramic-coating" className="block px-3 py-2 text-sm text-gray-700 hover:text-[#023E8A] hover:bg-[#CAF0F8] rounded transition">Ceramic Coating</a>
                   <a href="/services/interior-detailing" className="block px-3 py-2 text-sm text-gray-700 hover:text-[#023E8A] hover:bg-[#CAF0F8] rounded transition">Interior Detailing</a>
                   <a href="/services/exterior-detailing" className="block px-3 py-2 text-sm text-gray-700 hover:text-[#023E8A] hover:bg-[#CAF0F8] rounded transition">Exterior Detailing</a>
                   <a href="/services/mobile-detailing" className="block px-3 py-2 text-sm text-gray-700 hover:text-[#023E8A] hover:bg-[#CAF0F8] rounded transition">Mobile Detailing</a>
@@ -124,7 +124,7 @@ const Navigation: React.FC = () => {
                 <div className="p-3 space-y-2">
                   <a href="/locations/columbia-sc" className="block px-3 py-2 text-sm text-gray-700 hover:text-[#023E8A] hover:bg-[#CAF0F8] rounded transition">Columbia SC</a>
                   <a href="/locations/lexington-sc" className="block px-3 py-2 text-sm text-gray-700 hover:text-[#023E8A] hover:bg-[#CAF0F8] rounded transition">Lexington SC</a>
-                  <a href="/locations/west-columbia-sc" className="block px-3 py-2 text-sm text-gray-700 hover:text-[#023E8A] hover:bg-[#CAF0F8] rounded transition">West Columbia SC</a>
+                  <a href="/locations/west-columbia" className="block px-3 py-2 text-sm text-gray-700 hover:text-[#023E8A] hover:bg-[#CAF0F8] rounded transition">West Columbia SC</a>
                   <a href="/locations/irmo-sc" className="block px-3 py-2 text-sm text-gray-700 hover:text-[#023E8A] hover:bg-[#CAF0F8] rounded transition">Irmo SC</a>
                   <a href="/locations/cayce-sc" className="block px-3 py-2 text-sm text-gray-700 hover:text-[#023E8A] hover:bg-[#CAF0F8] rounded transition">Cayce SC</a>
                   <a href="/locations/blythewood-sc" className="block px-3 py-2 text-sm text-gray-700 hover:text-[#023E8A] hover:bg-[#CAF0F8] rounded transition">Blythewood SC</a>
@@ -143,9 +143,9 @@ const Navigation: React.FC = () => {
               <span className="hidden lg:inline">Call Now</span>
               <span className="lg:hidden">Call</span>
             </button>
-            <button
-              onClick={() => document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' })}
-              className="px-2 lg:px-4 xl:px-6 py-2 text-white rounded-lg transition font-bold text-xs lg:text-sm xl:text-base whitespace-nowrap shadow-lg"
+            <a
+              href="/book"
+              className="flex items-center px-2 lg:px-4 xl:px-6 py-2 text-white rounded-lg transition font-bold text-xs lg:text-sm xl:text-base whitespace-nowrap shadow-lg"
               style={{
                 background: 'linear-gradient(to right, #023E8A, #0077B6)',
                 boxShadow: '0 10px 15px -3px rgba(0, 119, 182, 0.3)'
@@ -157,9 +157,9 @@ const Navigation: React.FC = () => {
                 e.currentTarget.style.background = 'linear-gradient(to right, #023E8A, #0077B6)';
               }}
             >
-              <span className="hidden lg:inline">Get Free Quote</span>
-              <span className="lg:hidden">Quote</span>
-            </button>
+              <span className="hidden lg:inline">Book Now</span>
+              <span className="lg:hidden">Book</span>
+            </a>
           </div>
 
           {/* Mobile Contact & Hamburger Buttons */}
@@ -242,7 +242,7 @@ const Navigation: React.FC = () => {
               <div className="pl-8 space-y-1">
                 <a href="/locations/columbia-sc" onClick={handleLinkClick} className="block px-4 py-1.5 text-sm text-gray-600 hover:text-[#023E8A] hover:bg-[#CAF0F8] rounded transition">Columbia SC</a>
                 <a href="/locations/lexington-sc" onClick={handleLinkClick} className="block px-4 py-1.5 text-sm text-gray-600 hover:text-[#023E8A] hover:bg-[#CAF0F8] rounded transition">Lexington SC</a>
-                <a href="/locations/west-columbia-sc" onClick={handleLinkClick} className="block px-4 py-1.5 text-sm text-gray-600 hover:text-[#023E8A] hover:bg-[#CAF0F8] rounded transition">West Columbia SC</a>
+                <a href="/locations/west-columbia" onClick={handleLinkClick} className="block px-4 py-1.5 text-sm text-gray-600 hover:text-[#023E8A] hover:bg-[#CAF0F8] rounded transition">West Columbia SC</a>
                 <a href="/locations/irmo-sc" onClick={handleLinkClick} className="block px-4 py-1.5 text-sm text-gray-600 hover:text-[#023E8A] hover:bg-[#CAF0F8] rounded transition">Irmo SC</a>
                 <a href="/locations/cayce-sc" onClick={handleLinkClick} className="block px-4 py-1.5 text-sm text-gray-600 hover:text-[#023E8A] hover:bg-[#CAF0F8] rounded transition">Cayce SC</a>
                 <a href="/locations/blythewood-sc" onClick={handleLinkClick} className="block px-4 py-1.5 text-sm text-gray-600 hover:text-[#023E8A] hover:bg-[#CAF0F8] rounded transition">Blythewood SC</a>
@@ -257,9 +257,10 @@ const Navigation: React.FC = () => {
                   <Phone className="w-4 h-4 mr-2" />
                   Call Now
                 </button>
-                <button
-                  onClick={() => document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' })}
-                  className="w-full px-4 py-3 text-white rounded-lg transition font-bold shadow-lg"
+                <a
+                  href="/book"
+                  onClick={handleLinkClick}
+                  className="block text-center w-full px-4 py-3 text-white rounded-lg transition font-bold shadow-lg"
                   style={{
                     background: 'linear-gradient(to right, #023E8A, #0077B6)',
                     boxShadow: '0 10px 15px -3px rgba(0, 119, 182, 0.3)'
@@ -271,8 +272,8 @@ const Navigation: React.FC = () => {
                     e.currentTarget.style.background = 'linear-gradient(to right, #023E8A, #0077B6)';
                   }}
                 >
-                  Get Free Quote
-                </button>
+                  Book Now
+                </a>
               </div>
             </div>
           </div>

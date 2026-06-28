@@ -89,7 +89,7 @@ const LocationCayecPage = () => {
     },
     {
       title: 'Routine Reset',
-      price: '$250/Month',
+      price: '$225/Month',
       duration: 'Monthly',
       description: 'Monthly maintenance package to keep your vehicle looking showroom fresh year-round. Perfect for busy professionals and car enthusiasts.',
       features: [
@@ -110,7 +110,7 @@ const LocationCayecPage = () => {
   const locationFAQs = [
     {
       question: 'How much does mobile detailing cost in Cayce SC?',
-      answer: 'Mobile detailing in Cayce SC starts at $225 for our Basic Detail Package and $400 for our Factory Reset Package. We also offer ceramic coating (custom quote) and monthly maintenance at $250/month. All services include professional products, experienced technicians, and satisfaction guarantee.'
+      answer: 'Mobile detailing in Cayce SC starts at $225 for our Basic Detail Package and $400 for our Factory Reset Package. We also offer ceramic coating (custom quote) and monthly maintenance at $225/month. All services include professional products, experienced technicians, and satisfaction guarantee.'
     },
     {
       question: 'Do you offer car detailing near West Columbia and Cayce?',
@@ -361,6 +361,12 @@ const LocationCayecPage = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center px-4">
+              <a
+                href="/book"
+                className="w-full sm:w-auto px-8 py-4 bg-primary-700 text-white font-bold rounded-lg hover:bg-primary-800 transition text-center shadow-lg hover:shadow-xl"
+              >
+                Book Online
+              </a>
               <a
                 href="/#quote"
                 className="w-full sm:w-auto px-8 py-4 bg-primary-700 text-white font-bold rounded-lg hover:bg-primary-800 transition text-center shadow-lg hover:shadow-xl"
@@ -634,7 +640,7 @@ const LocationCayecPage = () => {
                   5.0
                 </div>
                 <p className="text-primary-100 text-lg">Average Rating</p>
-                <p className="text-primary-200 text-sm mt-1">Based on 19 Google reviews</p>
+                <p className="text-primary-200 text-sm mt-1">Based on 31 Google reviews</p>
               </div>
               <div>
                 <div className="text-5xl font-bold mb-2 flex items-center justify-center gap-2">
@@ -678,6 +684,12 @@ const LocationCayecPage = () => {
               Experience the best mobile car detailing in Cayce & West Columbia. Professional service, premium results, 100% satisfaction guaranteed.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a
+                href="/book"
+                className="px-8 py-4 bg-primary-700 text-white font-bold rounded-lg hover:bg-primary-800 transition shadow-lg hover:shadow-xl"
+              >
+                Book Online
+              </a>
               <a
                 href="/#quote"
                 className="px-8 py-4 bg-primary-700 text-white font-bold rounded-lg hover:bg-primary-800 transition shadow-lg hover:shadow-xl"

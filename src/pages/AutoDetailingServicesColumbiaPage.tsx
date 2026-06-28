@@ -183,7 +183,13 @@ const AutoDetailingServicesColumbiaPage: React.FC = () => {
             <p className="text-sm sm:text-base text-white/70 text-center mb-8 tracking-widest uppercase" style={{ fontFamily: 'Georgia, "Times New Roman", serif' }}>
               Mobile · Insured · Trusted By Columbia
             </p>
-            <div className="flex items-center justify-center gap-4">
+            <div className="flex flex-wrap items-center justify-center gap-4">
+              <a
+                href="/book"
+                className="bg-[#023E8A] hover:bg-[#0077B6] text-white font-bold px-6 py-3 rounded-lg transition shadow-lg"
+              >
+                Book Online
+              </a>
               <button
                 onClick={() => document.getElementById('booking-section')?.scrollIntoView({ behavior: 'smooth', block: 'center' })}
                 className="bg-white/10 hover:bg-white/20 text-white font-semibold px-6 py-3 rounded-lg border border-white/30 transition"
@@ -753,13 +759,21 @@ const AutoDetailingServicesColumbiaPage: React.FC = () => {
               Ready for Professional Auto Detailing Services?
             </h2>
             <p className="text-[#90E0EF] mb-6">Call or text us now for your free quote in Columbia, SC</p>
-            <button
-              onClick={() => setIsContactPopupOpen(true)}
-              className="inline-flex items-center gap-3 bg-white text-[#023E8A] font-bold py-4 px-8 rounded-lg text-xl hover:bg-[#E8E8E8] transition transform hover:scale-105 shadow-xl"
-            >
-              <Phone className="w-6 h-6" />
-              (803) 667-8731
-            </button>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <a
+                href="/book"
+                className="inline-flex items-center gap-3 bg-white text-[#023E8A] font-bold py-4 px-8 rounded-lg text-xl hover:bg-[#E8E8E8] transition transform hover:scale-105 shadow-xl"
+              >
+                Book Online
+              </a>
+              <button
+                onClick={() => setIsContactPopupOpen(true)}
+                className="inline-flex items-center gap-3 bg-white text-[#023E8A] font-bold py-4 px-8 rounded-lg text-xl hover:bg-[#E8E8E8] transition transform hover:scale-105 shadow-xl"
+              >
+                <Phone className="w-6 h-6" />
+                (803) 667-8731
+              </button>
+            </div>
           </div>
         </section>
 

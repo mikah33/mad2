@@ -230,7 +230,7 @@ export const LocationWestColumbiaPage = () => {
           <Breadcrumbs
             items={[
               { label: 'Locations', path: '/locations' },
-              { label: 'West Columbia SC', path: '/locations/west-columbia-sc' }
+              { label: 'West Columbia SC', path: '/locations/west-columbia' }
             ]}
           />
         </div>
@@ -326,7 +326,7 @@ export const LocationWestColumbiaPage = () => {
               {westColumbiaNeighborhoods.map((neighborhood) => (
                 <Link
                   key={neighborhood.slug}
-                  to={`/locations/west-columbia-sc/${neighborhood.slug}`}
+                  to={`/locations/west-columbia/${neighborhood.slug}`}
                   className="group bg-gray-50 rounded-xl p-6 hover:bg-primary-50 transition-all hover:shadow-lg border border-gray-100 hover:border-primary-200"
                 >
                   <div className="flex items-start gap-4">
@@ -352,7 +352,7 @@ export const LocationWestColumbiaPage = () => {
 
             <div className="text-center mt-8">
               <Link
-                to="/locations/west-columbia-sc/neighborhoods"
+                to="/locations/west-columbia/neighborhoods"
                 className="inline-flex items-center gap-2 text-primary-600 hover:text-primary-700 font-semibold"
               >
                 View All West Columbia Neighborhoods

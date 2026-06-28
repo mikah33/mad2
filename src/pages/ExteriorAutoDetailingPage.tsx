@@ -12,7 +12,7 @@ const ExteriorAutoDetailingPage: React.FC = () => {
   const productSchema = generateProductSchema({
     name: "Exterior Auto Detailing Service",
     description: "Professional exterior auto detailing service in Columbia SC. Hand wash, polish, wax, paint protection, and wheel detailing for your vehicle.",
-    price: "200",
+    price: "100",
     features: [
       "Hand wash and foam contact wash",
       "Wheel decontamination and cleaning",
@@ -55,11 +55,14 @@ const ExteriorAutoDetailingPage: React.FC = () => {
                   Expert exterior auto detailing service that protects, enhances, and maintains your vehicle's exterior appearance. Professional hand washing, paint protection, wax application, and wheel detailing in Columbia and Lexington SC.
                 </p>
                 <div className="flex flex-wrap gap-4">
+                  <a href="/book?service=exterior-detail" className="bg-white text-green-600 px-8 py-4 rounded-lg font-bold hover:bg-green-50 transition">
+                    Book Online <ChevronRight className="w-5 h-5 inline" />
+                  </a>
                   <button onClick={scrollToQuote} className="bg-white text-green-600 px-8 py-4 rounded-lg font-bold hover:bg-green-50 transition">
                     Get Free Quote <ChevronRight className="w-5 h-5 inline" />
                   </button>
-                  <a href="tel:5551234567" className="bg-green-700 text-white px-8 py-4 rounded-lg font-bold hover:bg-green-600 transition">
-                    <Phone className="w-5 h-5 inline" /> (555) 123-4567
+                  <a href="tel:+18036678731" className="bg-green-700 text-white px-8 py-4 rounded-lg font-bold hover:bg-green-600 transition">
+                    <Phone className="w-5 h-5 inline" /> (803) 667-8731
                   </a>
                 </div>
               </div>
@@ -172,7 +175,7 @@ const ExteriorAutoDetailingPage: React.FC = () => {
             <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
               <div className="bg-white p-8 rounded-lg shadow-lg">
                 <h3 className="text-2xl font-bold mb-4">Basic Exterior Wash</h3>
-                <div className="text-3xl font-bold text-green-600 mb-6">$150</div>
+                <div className="text-3xl font-bold text-green-600 mb-6">$100</div>
                 <ul className="space-y-3 mb-8">
                   <li className="flex items-center gap-2">
                     <CheckCircle className="w-5 h-5 text-green-500" />
@@ -201,7 +204,7 @@ const ExteriorAutoDetailingPage: React.FC = () => {
                   <span className="bg-green-500 text-white px-4 py-2 rounded-full font-bold">Most Popular</span>
                 </div>
                 <h3 className="text-2xl font-bold mb-4">Complete Exterior Detail</h3>
-                <div className="text-3xl font-bold text-green-600 mb-6">$250</div>
+                <div className="text-3xl font-bold text-green-600 mb-6">From $100</div>
                 <ul className="space-y-3 mb-8">
                   <li className="flex items-center gap-2">
                     <CheckCircle className="w-5 h-5 text-green-500" />
@@ -338,8 +341,9 @@ const ExteriorAutoDetailingPage: React.FC = () => {
               Professional exterior auto detailing in Columbia SC. Book your appointment today for expert paint protection and enhancement.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
+              <a href="/book?service=exterior-detail" className="bg-white text-green-600 px-8 py-4 rounded-lg font-bold hover:bg-green-50 transition">Book Online</a>
               <button onClick={scrollToQuote} className="bg-white text-green-600 px-8 py-4 rounded-lg font-bold hover:bg-green-50 transition">Get Free Quote</button>
-              <a href="tel:5551234567" className="bg-green-700 text-white px-8 py-4 rounded-lg font-bold hover:bg-green-600 transition">Call (555) 123-4567</a>
+              <a href="tel:+18036678731" className="bg-green-700 text-white px-8 py-4 rounded-lg font-bold hover:bg-green-600 transition">Call (803) 667-8731</a>
             </div>
           </div>
         </section>

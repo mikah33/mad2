@@ -118,7 +118,7 @@ const serviceContent: Record<string, {
   },
   'ceramic-coating': {
     fullDescription: 'Professional ceramic coating application providing 2-5 years of superior paint protection. Our nano-ceramic coatings create a permanent bond with your paint, offering extreme gloss, hydrophobic properties, UV protection, and chemical resistance. Ideal for Columbia SC\'s intense sun and environmental challenges.',
-    metaDescription: 'Best ceramic coating Columbia SC. Professional nano-ceramic paint protection 2-5 years. $599-$1299. Paint correction included. Mobile ceramic coating available. Free quotes!',
+    metaDescription: 'Best ceramic coating Columbia SC. Professional nano-ceramic paint protection 2-5 years. From $999. Paint correction included. Mobile ceramic coating available. Free quotes!',
     keywords: ['ceramic coating Columbia SC', 'ceramic coating near me', 'nano ceramic paint protection', 'professional ceramic coating', 'ceramic car coating', 'paint protection coating'],
     benefits: [
       '2-5 year protection guarantee',
@@ -147,7 +147,7 @@ const serviceContent: Record<string, {
   },
   'paint-correction': {
     fullDescription: 'Multi-stage paint correction to remove swirls, scratches, oxidation, and water spots. Using precision machine polishing and professional compounds, we restore paint clarity and depth that makes 5-year-old vehicles look brand new. Essential preparation for ceramic coating and recommended for all vehicles showing paint imperfections.',
-    metaDescription: 'Professional paint correction Columbia SC. Remove swirls, scratches, oxidation. $399-$899. Before/after photos. Multi-stage polishing. Mobile service available. Free quotes!',
+    metaDescription: 'Professional paint correction Columbia SC. Remove swirls, scratches, oxidation. From $599. Before/after photos. Multi-stage polishing. Mobile service available. Free quotes!',
     keywords: ['paint correction Columbia SC', 'paint correction near me', 'swirl mark removal', 'scratch removal detailing', 'paint restoration', 'machine polishing'],
     benefits: [
       'Remove 80-95% of imperfections',
@@ -176,7 +176,7 @@ const serviceContent: Record<string, {
   },
   'headlight-restoration': {
     fullDescription: 'Professional headlight restoration to remove oxidation, yellowing, and haze. Using progressive wet-sanding and polishing techniques, we restore up to 90% of original clarity. Finished with UV-resistant coating for long-lasting results. Improves nighttime visibility and vehicle appearance.',
-    metaDescription: 'Professional headlight restoration Columbia SC. Remove yellowing and oxidation. $79-$129. Restore clarity 90%. UV protection coating. Mobile service available. Book now!',
+    metaDescription: 'Professional headlight restoration Columbia SC. Remove yellowing and oxidation. Restore clarity 90%. UV protection coating. Mobile service available. Book now!',
     keywords: ['headlight restoration Columbia SC', 'restore foggy headlights', 'headlight cleaning near me', 'yellow headlight fix', 'headlight oxidation removal', 'headlight polishing'],
     benefits: [
       'Restore 90% of original clarity',
@@ -335,6 +335,12 @@ export const ServiceDetailPage = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
+              <a
+                href={`/book?service=${service.slug}`}
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-primary-700 font-bold rounded-lg hover:bg-gray-100 transition shadow-lg hover:shadow-xl transform hover:scale-105 text-center"
+              >
+                Book Online
+              </a>
               <a
                 href="tel:8036678731"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-primary-700 font-bold rounded-lg hover:bg-gray-100 transition shadow-lg hover:shadow-xl transform hover:scale-105"
@@ -496,6 +502,12 @@ export const ServiceDetailPage = () => {
               Get your free quote today and see why Columbia SC trusts Mikah's Auto Detailing
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a
+                href={`/book?service=${service.slug}`}
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-primary-700 font-bold rounded-lg hover:bg-gray-100 transition shadow-lg text-center"
+              >
+                Book Online
+              </a>
               <a
                 href="tel:8036678731"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-primary-700 font-bold rounded-lg hover:bg-gray-100 transition shadow-lg"

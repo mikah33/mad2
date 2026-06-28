@@ -118,8 +118,7 @@ const InteriorDetailingPage: React.FC = () => {
       "@type": "Offer",
       "priceSpecification": {
         "@type": "PriceSpecification",
-        "minPrice": "149",
-        "maxPrice": "249",
+        "minPrice": "200",
         "priceCurrency": "USD"
       }
     }
@@ -194,6 +193,12 @@ const InteriorDetailingPage: React.FC = () => {
                   and premium protection. Mobile service throughout Columbia, Lexington, and surrounding areas.
                 </p>
                 <div className="flex flex-wrap gap-4">
+                  <a
+                    href="/book?service=interior-detail"
+                    className="bg-white text-orange-600 px-8 py-4 rounded-lg font-bold hover:bg-orange-50 transition flex items-center gap-2"
+                  >
+                    Book Online <ChevronRight className="w-5 h-5" />
+                  </a>
                   <button
                     onClick={scrollToQuote}
                     className="bg-white text-orange-600 px-8 py-4 rounded-lg font-bold hover:bg-orange-50 transition flex items-center gap-2"
@@ -201,10 +206,10 @@ const InteriorDetailingPage: React.FC = () => {
                     Get Free Quote <ChevronRight className="w-5 h-5" />
                   </button>
                   <a
-                    href="tel:5551234567"
+                    href="tel:+18036678731"
                     className="bg-orange-700 text-white px-8 py-4 rounded-lg font-bold hover:bg-orange-600 transition flex items-center gap-2"
                   >
-                    <Phone className="w-5 h-5" /> (555) 123-4567
+                    <Phone className="w-5 h-5" /> (803) 667-8731
                   </a>
                 
       </div>
@@ -397,10 +402,10 @@ const InteriorDetailingPage: React.FC = () => {
                   
       </div>
                   <p className="text-gray-700 mb-2">
-                    <strong>Starting at $149-$249</strong>
+                    <strong>Starting at $200</strong>
                   </p>
                   <p className="text-sm text-gray-600 mb-3">
-                    Pricing varies by vehicle size and condition. SUVs and trucks typically $20-40 more than sedans.
+                    Pricing varies by vehicle condition.
                   </p>
                   <div className="flex items-center gap-3">
                     <Clock className="w-6 h-6 text-orange-600" />
@@ -594,6 +599,12 @@ const InteriorDetailingPage: React.FC = () => {
               Mobile service means we come to you!
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
+              <a
+                href="/book?service=interior-detail"
+                className="bg-white text-orange-600 px-8 py-4 rounded-lg font-bold hover:bg-orange-50 transition flex items-center gap-2"
+              >
+                Book Online <ChevronRight className="w-5 h-5" />
+              </a>
               <button
                 onClick={scrollToQuote}
                 className="bg-white text-orange-600 px-8 py-4 rounded-lg font-bold hover:bg-orange-50 transition flex items-center gap-2"
@@ -601,10 +612,10 @@ const InteriorDetailingPage: React.FC = () => {
                 Get Free Quote <ChevronRight className="w-5 h-5" />
               </button>
               <a
-                href="tel:5551234567"
+                href="tel:+18036678731"
                 className="bg-orange-700 text-white px-8 py-4 rounded-lg font-bold hover:bg-orange-600 transition flex items-center gap-2"
               >
-                <Phone className="w-5 h-5" /> Call (555) 123-4567
+                <Phone className="w-5 h-5" /> Call (803) 667-8731
               </a>
             
       </div>

@@ -66,7 +66,7 @@ const Testimonials: React.FC = () => {
               rel="noopener noreferrer"
               className="px-8 py-4 text-[#023E8A] font-semibold rounded-lg hover:text-[#0077B6] transition flex items-center"
             >
-              View all 19 Google reviews →
+              View all 31 Google reviews →
             </a>
           </div>
         </div>

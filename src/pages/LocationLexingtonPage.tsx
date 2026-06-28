@@ -70,9 +70,9 @@ export const LocationLexingtonPage = () => {
     },
     {
       title: 'Routine Reset',
-      price: '$250/Month',
+      price: '$225/Month',
       duration: 'Monthly',
-      description: '2x Exterior Details + 1x Interior Reset + 1x Engine Bay Cleaning per month. Priority scheduling. First 2 months: $300 upfront.',
+      description: '1x Interior Detail + 2x Exterior Details per month. Cancel anytime.',
       link: '/services/mobile-detailing'
     }
   ];
@@ -85,7 +85,7 @@ export const LocationLexingtonPage = () => {
     },
     {
       question: 'What is the best mobile car detailing service in Lexington SC?',
-      answer: "Mikah's Auto Detailing is the top-rated mobile detailing service in Lexington SC with a 5.0-star rating from 19 Google reviews. We're IDA certified, fully insured, and bring professional equipment directly to your location anywhere in Lexington, Lake Murray, or surrounding areas."
+      answer: "Mikah's Auto Detailing is the top-rated mobile detailing service in Lexington SC with a 5.0-star rating from 31 Google reviews. We're IDA certified, fully insured, and bring professional equipment directly to your location anywhere in Lexington, Lake Murray, or surrounding areas."
     },
     {
       question: 'Do you offer ceramic coating in Lexington SC?',
@@ -109,7 +109,7 @@ export const LocationLexingtonPage = () => {
     },
     {
       question: 'Can I find reviews for mobile detailing in Lexington SC?',
-      answer: 'Yes! We have 19 verified Google reviews with a perfect 5.0-star rating. Customers praise our professional mobile service, attention to detail, and convenient at-home detailing. Search "Mikah\'s Auto Detailing Lexington SC" on Google to read our reviews.'
+      answer: 'Yes! We have 31 verified Google reviews with a perfect 5.0-star rating. Customers praise our professional mobile service, attention to detail, and convenient at-home detailing. Search "Mikah\'s Auto Detailing Lexington SC" on Google to read our reviews.'
     },
     {
       question: 'Do you detail boats or RVs near Lake Murray?',
@@ -161,7 +161,7 @@ export const LocationLexingtonPage = () => {
   const localBusinessSchema = generateLocalBusinessSchema(
     {
       name: "Mikah's Auto Detailing - Lexington SC",
-      description: 'Professional mobile car detailing in Lexington SC. Interior detailing, exterior detailing, ceramic coating, paint correction. 5.0★ rated with 19 reviews.',
+      description: 'Professional mobile car detailing in Lexington SC. Interior detailing, exterior detailing, ceramic coating, paint correction. 5.0★ rated with 31 reviews.',
       phone: '(803) 667-8731',
       email: 'mikahsautodetailing@gmail.com',
       address: {
@@ -248,7 +248,7 @@ export const LocationLexingtonPage = () => {
             </h1>
 
             <p className="text-base sm:text-lg md:text-xl mb-6 md:mb-8 max-w-3xl mx-auto text-gray-100 px-4">
-              Lexington SC's #1 mobile detailing service. Professional mobile car detailing for interior, exterior, ceramic coating & paint correction — all at your location. Serving Lake Murray & all of Lexington County. 5.0★ rated with 19 Google reviews. From $225.
+              Lexington SC's #1 mobile detailing service. Professional mobile car detailing for interior, exterior, ceramic coating & paint correction — all at your location. Serving Lake Murray & all of Lexington County. 5.0★ rated with 31 Google reviews. From $225.
             </p>
 
             <p className="text-lg sm:text-xl md:text-2xl font-semibold mb-6 md:mb-8 text-primary-300">
@@ -275,6 +275,11 @@ export const LocationLexingtonPage = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center px-4">
+              <a href="/book">
+                <button className="w-full sm:w-auto px-6 md:px-8 py-3 md:py-4 bg-primary-700 text-white text-base md:text-lg font-bold rounded-lg hover:bg-primary-800 transition shadow-lg hover:shadow-xl transform hover:scale-105">
+                  Book Online
+                </button>
+              </a>
               <a href="tel:8036678731">
                 <button className="w-full sm:w-auto px-6 md:px-8 py-3 md:py-4 bg-white text-primary-700 text-base md:text-lg font-bold rounded-lg hover:bg-gray-100 transition shadow-lg hover:shadow-xl transform hover:scale-105 flex items-center justify-center gap-2">
                   <Phone className="w-5 h-5" />
@@ -295,7 +300,7 @@ export const LocationLexingtonPage = () => {
           <div className="container mx-auto px-4 max-w-4xl">
             <div className="prose prose-lg max-w-none text-gray-700">
               <p>
-                Looking for <strong>mobile car detailing in Lexington SC</strong>? Mikah's Auto Detailing is the highest-rated <strong>mobile detailing</strong> service in the Lexington area, bringing professional-grade equipment and products directly to your home, office, or any location in Lexington County. Whether you're near Lake Murray, Sunset Boulevard, or anywhere along the I-20 corridor, our fully self-contained mobile unit comes to you — no need to drop off your vehicle or wait at a shop. With a perfect 5.0-star Google rating from 19 verified reviews, Lexington residents trust us for everything from basic maintenance details to full ceramic coating installations. Our <strong>mobile detailing in Lexington SC</strong> starts at just $225, and every package includes the convenience of at-your-door service at no extra charge.
+                Looking for <strong>mobile car detailing in Lexington SC</strong>? Mikah's Auto Detailing is the highest-rated <strong>mobile detailing</strong> service in the Lexington area, bringing professional-grade equipment and products directly to your home, office, or any location in Lexington County. Whether you're near Lake Murray, Sunset Boulevard, or anywhere along the I-20 corridor, our fully self-contained mobile unit comes to you — no need to drop off your vehicle or wait at a shop. With a perfect 5.0-star Google rating from 31 verified reviews, Lexington residents trust us for everything from basic maintenance details to full ceramic coating installations. Our <strong>mobile detailing in Lexington SC</strong> starts at just $225, and every package includes the convenience of at-your-door service at no extra charge.
               </p>
             </div>
           </div>
@@ -570,9 +575,15 @@ export const LocationLexingtonPage = () => {
               Ready for Professional Auto Detailing?
             </h2>
             <p className="text-xl text-primary-100 mb-8">
-              Best mobile car detailing in Lexington SC. 5.0★ rating from 19 reviews. We come to you!
+              Best mobile car detailing in Lexington SC. 5.0★ rating from 31 reviews. We come to you!
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a
+                href="/book"
+                className="px-8 py-4 bg-primary-600 text-white font-bold rounded-lg hover:bg-primary-500 transition shadow-lg"
+              >
+                Book Online
+              </a>
               <a
                 href="tel:8036678731"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-primary-700 font-bold rounded-lg hover:bg-gray-100 transition shadow-lg"

@@ -117,7 +117,7 @@ export const mobileDetailingFAQs: FAQ[] = [
   // Pricing & Value (4 FAQs)
   {
     question: "How much does mobile car detailing cost in Columbia SC?",
-    answer: "Mobile car detailing columbia sc pricing typically ranges from $150-$600 depending on vehicle size and services selected. Basic mobile auto detailing packages for sedans start around $150-200, while full interior and exterior detailing runs $300-400. Premium services including paint correction and ceramic coating cost $500-600+. Mobile detailing near me prices are competitive with shop rates, with slight premiums for convenience in some cases. Our auto detailing columbia sc service provides transparent quotes before booking, so you know exactly what to expect. Factors affecting car detailing services pricing include vehicle size, condition, and selected package level.",
+    answer: "Mobile car detailing columbia sc uses simple flat pricing that doesn't change with your vehicle's size. An Exterior Detail starts at $100 and an Interior Detail at $200, while our Basic Detail—a full interior and exterior with wax—is $225. The Factory Reset deep-clean package is $400. Premium services like paint correction start at $599 and ceramic coating starts at $999. Mobile detailing near me prices are competitive with shop rates and include the convenience of coming to you. Our auto detailing columbia sc service provides transparent quotes before booking, so you know exactly what to expect with no size surcharges or hidden fees.",
     keywords: ["mobile car detailing columbia sc", "mobile auto detailing", "mobile detailing near me", "auto detailing columbia sc", "car detailing services"],
     category: "Pricing & Value"
   },
@@ -135,7 +135,7 @@ export const mobileDetailingFAQs: FAQ[] = [
   },
   {
     question: "What factors affect the cost of auto detailing?",
-    answer: "Several factors influence mobile car detailing pricing in Columbia SC. Vehicle size is primary - SUVs and trucks cost more than sedans due to increased surface area and time required. Vehicle condition significantly affects cost; heavily soiled or neglected vehicles require extra time and products. Service package selected (basic, standard, or premium) determines baseline pricing. Add-on services like pet hair removal, odor elimination, or ceramic coating increase costs. Our mobile auto detailing columbia sc team provides accurate quotes after discussing your vehicle and needs. Car detailing near me transparency ensures you understand pricing before we begin, with no hidden fees or surprises.",
+    answer: "Our pricing in Columbia SC is flat, so the package you choose is the main factor—not your vehicle's size. We charge the same rate whether you drive a sedan, an SUV, or a truck. The service package you select (such as our $100 Exterior Detail, $200 Interior Detail, $225 Basic Detail, or $400 Factory Reset) sets your price. Add-on services like pet hair removal, odor elimination, engine bay cleaning, or scratch removal are quoted separately—just call for a quote on those. Premium services like paint correction (from $599) and ceramic coating (from $999) are priced on their own. Our mobile auto detailing columbia sc team provides accurate quotes after discussing your needs. Car detailing near me transparency ensures you understand pricing before we begin, with no hidden fees or surprises.",
     keywords: ["mobile car detailing", "mobile auto detailing columbia sc", "car detailing near me", "auto detailing columbia sc", "car detailing services"],
     category: "Pricing & Value"
   },

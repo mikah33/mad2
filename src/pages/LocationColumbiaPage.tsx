@@ -70,9 +70,9 @@ export const LocationColumbiaPage = () => {
     },
     {
       title: 'Routine Reset',
-      price: '$250/Month',
+      price: '$225/Month',
       duration: 'Monthly',
-      description: '2x Exterior Details + 1x Interior Reset + 1x Engine Bay Cleaning per month. Priority scheduling. First 2 months: $300 upfront.',
+      description: '1x Interior Detail + 2x Exterior Details per month. Cancel anytime.',
       link: '/services/mobile-detailing'
     }
   ];
@@ -85,7 +85,7 @@ export const LocationColumbiaPage = () => {
     },
     {
       question: 'What is the best mobile car detailing service in Columbia SC?',
-      answer: "Mikah's Auto Detailing is the top-rated mobile detailing service in Columbia SC with a 5.0-star rating from 19 Google reviews. We're IDA certified, fully insured, and bring professional equipment directly to your location anywhere in Columbia, Lexington, or Irmo."
+      answer: "Mikah's Auto Detailing is the top-rated mobile detailing service in Columbia SC with a 5.0-star rating from 31 Google reviews. We're IDA certified, fully insured, and bring professional equipment directly to your location anywhere in Columbia, Lexington, or Irmo."
     },
     {
       question: 'Do you offer mobile car detailing in Lexington SC?',
@@ -109,7 +109,7 @@ export const LocationColumbiaPage = () => {
     },
     {
       question: 'Can I find reviews for mobile detailing in Columbia SC?',
-      answer: 'Yes! We have 19 verified Google reviews with a perfect 5.0-star rating. Customers praise our professional mobile service, attention to detail, and convenient at-home detailing. Search "Mikah\'s Auto Detailing Columbia SC" on Google to read our reviews.'
+      answer: 'Yes! We have 31 verified Google reviews with a perfect 5.0-star rating. Customers praise our professional mobile service, attention to detail, and convenient at-home detailing. Search "Mikah\'s Auto Detailing Columbia SC" on Google to read our reviews.'
     },
     {
       question: 'Where can I get car detailing in Columbia SC?',
@@ -117,7 +117,7 @@ export const LocationColumbiaPage = () => {
     },
     {
       question: "What's the best mobile detailing service in Columbia SC?",
-      answer: "Mikah's Auto Detailing is Columbia SC's highest-rated mobile detailing service with a perfect 5.0-star Google rating from 19 verified reviews. We're IDA certified, fully insured, and offer comprehensive mobile detailing packages starting at $225. Our mobile unit is fully self-contained with onboard water, power, and professional-grade equipment — we can detail your vehicle anywhere in Columbia SC."
+      answer: "Mikah's Auto Detailing is Columbia SC's highest-rated mobile detailing service with a perfect 5.0-star Google rating from 31 verified reviews. We're IDA certified, fully insured, and offer comprehensive mobile detailing packages starting at $225. Our mobile unit is fully self-contained with onboard water, power, and professional-grade equipment — we can detail your vehicle anywhere in Columbia SC."
     }
   ];
 
@@ -145,7 +145,7 @@ export const LocationColumbiaPage = () => {
   const localBusinessSchema = generateLocalBusinessSchema(
     {
       name: "Mikah's Auto Detailing - Columbia SC",
-      description: 'Professional mobile car detailing in Columbia SC. Interior detailing, exterior detailing, ceramic coating, paint correction. 5.0★ rated with 19 reviews.',
+      description: 'Professional mobile car detailing in Columbia SC. Interior detailing, exterior detailing, ceramic coating, paint correction. 5.0★ rated with 31 reviews.',
       phone: '(803) 667-8731',
       email: 'mikahsautodetailing@gmail.com',
       address: {
@@ -231,7 +231,7 @@ export const LocationColumbiaPage = () => {
             </h1>
 
             <p className="text-base sm:text-lg md:text-xl mb-6 md:mb-8 max-w-3xl mx-auto text-gray-100 px-4">
-              Columbia SC's #1 car detailing service — mobile detailing that comes to you. Interior & exterior detailing, ceramic coating, paint correction at your location. 5.0★ rated with 19 Google reviews. From $225.
+              Columbia SC's #1 car detailing service — mobile detailing that comes to you. Interior & exterior detailing, ceramic coating, paint correction at your location. 5.0★ rated with 31 Google reviews. From $225.
             </p>
 
             <p className="text-lg sm:text-xl md:text-2xl font-semibold mb-6 md:mb-8 text-primary-300">
@@ -258,6 +258,11 @@ export const LocationColumbiaPage = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center px-4">
+              <a href="/book">
+                <button className="w-full sm:w-auto px-6 md:px-8 py-3 md:py-4 bg-primary-700 text-white text-base md:text-lg font-bold rounded-lg hover:bg-primary-800 transition shadow-lg hover:shadow-xl transform hover:scale-105">
+                  Book Online
+                </button>
+              </a>
               <a href="tel:8036678731">
                 <button className="w-full sm:w-auto px-6 md:px-8 py-3 md:py-4 bg-white text-primary-700 text-base md:text-lg font-bold rounded-lg hover:bg-gray-100 transition shadow-lg hover:shadow-xl transform hover:scale-105 flex items-center justify-center gap-2">
                   <Phone className="w-5 h-5" />
@@ -553,9 +558,15 @@ export const LocationColumbiaPage = () => {
               Ready for Professional Mobile Detailing?
             </h2>
             <p className="text-xl text-primary-100 mb-8">
-              Best mobile car detailing in Columbia SC. 5.0★ rating from 19 reviews. We come to you!
+              Best mobile car detailing in Columbia SC. 5.0★ rating from 31 reviews. We come to you!
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a
+                href="/book"
+                className="px-8 py-4 bg-primary-600 text-white font-bold rounded-lg hover:bg-primary-500 transition shadow-lg"
+              >
+                Book Online
+              </a>
               <a
                 href="tel:8036678731"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-primary-700 font-bold rounded-lg hover:bg-gray-100 transition shadow-lg"

@@ -12,7 +12,7 @@ const FullDetailPage: React.FC = () => {
   const basicPackageSchema = generateProductSchema({
     name: "Basic Detail Package",
     description: "Complete interior and exterior detail. Full wipe down, conditioning, vacuum, disinfection, foam wash, wheels decontaminated, protective wax layer.",
-    price: "200",
+    price: "225",
     features: [
       "Interior full wipe down",
       "Conditioner + UV protection",
@@ -33,7 +33,7 @@ const FullDetailPage: React.FC = () => {
   const factoryResetSchema = generateProductSchema({
     name: "Factory Reset Package",
     description: "Deep interior and exterior restoration. Includes shampoo & extraction, light stain removal, brake dust removal, and complete protection.",
-    price: "325",
+    price: "400",
     features: [
       "Full wipe down + conditioner + UV protection",
       "Vacuum + disinfection",
@@ -78,11 +78,14 @@ const FullDetailPage: React.FC = () => {
                   Mobile service throughout Columbia, Lexington, West Columbia, Irmo, and Cayce.
                 </p>
                 <div className="flex flex-wrap gap-4">
+                  <a href="/book?service=basic-detail" className="bg-white text-orange-600 px-8 py-4 rounded-lg font-bold hover:bg-orange-50 transition">
+                    Book Online <ChevronRight className="w-5 h-5 inline" />
+                  </a>
                   <button onClick={scrollToQuote} className="bg-white text-orange-600 px-8 py-4 rounded-lg font-bold hover:bg-orange-50 transition">
                     Get Free Quote <ChevronRight className="w-5 h-5 inline" />
                   </button>
-                  <a href="tel:5551234567" className="bg-orange-700 text-white px-8 py-4 rounded-lg font-bold hover:bg-orange-600 transition">
-                    <Phone className="w-5 h-5 inline" /> (555) 123-4567
+                  <a href="tel:+18036678731" className="bg-orange-700 text-white px-8 py-4 rounded-lg font-bold hover:bg-orange-600 transition">
+                    <Phone className="w-5 h-5 inline" /> (803) 667-8731
                   </a>
                 
       </div>
@@ -104,7 +107,7 @@ const FullDetailPage: React.FC = () => {
             <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
               <div className="bg-white p-8 rounded-lg shadow-xl border-2 border-orange-200">
                 <h3 className="text-2xl font-bold mb-2">Basic Detail Package</h3>
-                <p className="text-3xl font-bold text-orange-600 mb-4">$200</p>
+                <p className="text-3xl font-bold text-orange-600 mb-4">$225</p>
                 <p className="text-sm text-gray-600 mb-4">Perfect for regular maintenance</p>
                 <div className="space-y-3 mb-6">
                   <h4 className="font-bold">Interior:</h4>
@@ -134,7 +137,7 @@ const FullDetailPage: React.FC = () => {
                 
       </div>
                 <h3 className="text-2xl font-bold mb-2">Factory Reset Package</h3>
-                <p className="text-3xl font-bold text-orange-600 mb-4">$325</p>
+                <p className="text-3xl font-bold text-orange-600 mb-4">$400</p>
                 <p className="text-sm text-gray-600 mb-4">Complete restoration experience</p>
                 <div className="space-y-3 mb-6">
                   <h4 className="font-bold">Interior:</h4>
@@ -155,8 +158,8 @@ const FullDetailPage: React.FC = () => {
                   </ul>
                   <h4 className="font-bold pt-3">Add-On Options:</h4>
                   <ul className="space-y-2 text-sm">
-                    <li className="flex gap-2"><CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />Weather Stripping Restoration (+$50)</li>
-                    <li className="flex gap-2"><CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />Scratch Removal (+$80/panel)</li>
+                    <li className="flex gap-2"><CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />Weather Stripping Restoration (call for a quote)</li>
+                    <li className="flex gap-2"><CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />Scratch Removal (call for a quote)</li>
                   </ul>
                 
       </div>
@@ -181,7 +184,7 @@ const FullDetailPage: React.FC = () => {
               <div className="text-center">
                 <CheckCircle className="w-16 h-16 text-orange-500 mx-auto mb-4" />
                 <h3 className="text-xl font-bold mb-3">Best Value</h3>
-                <p className="text-gray-600">Save $30-50 compared to booking interior and exterior separately. Maximum results for your investment.</p>
+                <p className="text-gray-600">Save $75 compared to booking interior and exterior separately. Maximum results for your investment.</p>
               
       </div>
               <div className="text-center">
@@ -233,8 +236,9 @@ const FullDetailPage: React.FC = () => {
               Book full car detailing in Columbia, Lexington, or surrounding areas. Mobile service means we come to you!
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
+              <a href="/book?service=basic-detail" className="bg-white text-orange-600 px-8 py-4 rounded-lg font-bold hover:bg-orange-50 transition">Book Online</a>
               <button onClick={scrollToQuote} className="bg-white text-orange-600 px-8 py-4 rounded-lg font-bold hover:bg-orange-50 transition">Get Free Quote</button>
-              <a href="tel:5551234567" className="bg-orange-700 text-white px-8 py-4 rounded-lg font-bold hover:bg-orange-600 transition">Call (555) 123-4567</a>
+              <a href="tel:+18036678731" className="bg-orange-700 text-white px-8 py-4 rounded-lg font-bold hover:bg-orange-600 transition">Call (803) 667-8731</a>
             
       </div>
           

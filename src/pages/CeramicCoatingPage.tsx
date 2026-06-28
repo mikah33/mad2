@@ -13,18 +13,18 @@ const CeramicCoatingPage: React.FC = () => {
 
   const productSchema = generateProductSchema({
     name: "Professional Ceramic Coating Service",
-    description: "Professional ceramic coating installation in Columbia SC. Multi-year paint protection with hydrophobic properties. Authorized Ceramic Pro installer. 2-7 year warranties available.",
-    price: "Quote",
+    description: "Professional ceramic coating installation in Columbia SC. Multi-year paint protection with hydrophobic properties. Starting at $999, custom quoted by vehicle and condition.",
+    price: "999",
     features: [
-      "Multi-year protection (2-7 years)",
+      "Multi-year protection (2-5 years)",
       "UV resistance",
       "Chemical resistance",
       "Enhanced gloss",
       "Hydrophobic properties",
       "Professional-grade application",
       "Complete decontamination",
-      "Paint correction included (Gold & Platinum)",
-      "Warranty included"
+      "Required paint correction prep included",
+      "Starting at $999 (custom quote)"
     ],
     image: "https://mikahsmobiledetailingsc.com/exterior3.jpg",
     url: "https://mikahsmobiledetailingsc.com/services/ceramic-coating",
@@ -46,13 +46,12 @@ const CeramicCoatingPage: React.FC = () => {
       },
       "areaServed": ["Columbia SC", "Lexington SC", "West Columbia SC", "Irmo SC", "Cayce SC"]
     },
-    "description": "Professional ceramic coating installation in Columbia SC. Multi-year paint protection with hydrophobic properties. Authorized Ceramic Pro installer. 2-7 year warranties available.",
+    "description": "Professional ceramic coating installation in Columbia SC. Multi-year paint protection with hydrophobic properties. Starting at $999, custom quoted by vehicle and condition.",
     "offers": {
       "@type": "Offer",
       "priceSpecification": {
         "@type": "PriceSpecification",
-        "minPrice": "599",
-        "maxPrice": "1299",
+        "minPrice": "999",
         "priceCurrency": "USD"
       }
     }
@@ -64,7 +63,7 @@ const CeramicCoatingPage: React.FC = () => {
     <>
       <SEOHead
         title="Ceramic Coating Columbia SC | Auto Detailing Services | Paint Protection"
-        description="Premium auto detailing services in Columbia, SC. Professional ceramic coating with 2-7 year warranties. Mobile service to your location. 5-star rated. Call (803) 667-8731!"
+        description="Professional ceramic coating in Columbia, SC from $999. 2–5 year paint protection, custom quoted to your vehicle. Mobile service to your location. 5-star rated. Call (803) 667-8731!"
         keywords="auto detailing services columbia sc, ceramic coating Columbia SC, ceramic coating near me, paint protection Columbia, auto detailing services in columbia sc, car ceramic coating, ceramic coating installer, long-term paint protection, ceramic paint protection"
         canonical="https://mikahsmobiledetailingsc.com/services/ceramic-coating"
         ogImage="https://mikahsmobiledetailingsc.com/exterior3.jpg"
@@ -96,7 +95,7 @@ const CeramicCoatingPage: React.FC = () => {
             <div className="max-w-3xl">
               <div className="flex items-center gap-2 mb-4">
                 <Award className="w-8 h-8 text-yellow-400" />
-                <span className="text-yellow-400 font-bold text-lg">Authorized Ceramic Pro Installer</span>
+                <span className="text-yellow-400 font-bold text-lg">Professional Ceramic Coating</span>
               </div>
               <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
                 Ultimate Paint Protection
@@ -109,10 +108,13 @@ const CeramicCoatingPage: React.FC = () => {
                 and permanent UV protection. Mobile service throughout Columbia and Lexington.
               </p>
               <div className="flex flex-wrap gap-4">
+                <a href="/book?service=ceramic-coating" className="bg-gradient-to-r from-green-500 to-emerald-600 text-white px-8 py-4 rounded-lg font-bold hover:from-green-600 hover:to-emerald-700 transition shadow-xl transform hover:scale-105">
+                  Book Online <ChevronRight className="w-5 h-5 inline" />
+                </a>
                 <button onClick={scrollToQuote} className="bg-gradient-to-r from-green-500 to-emerald-600 text-white px-8 py-4 rounded-lg font-bold hover:from-green-600 hover:to-emerald-700 transition shadow-xl transform hover:scale-105">
                   Get Free Quote <ChevronRight className="w-5 h-5 inline" />
                 </button>
-                <a href="tel:8036678731" className="bg-white/10 backdrop-blur-sm border-2 border-white/30 text-white px-8 py-4 rounded-lg font-bold hover:bg-white/20 transition">
+                <a href="tel:+18036678731" className="bg-white/10 backdrop-blur-sm border-2 border-white/30 text-white px-8 py-4 rounded-lg font-bold hover:bg-white/20 transition">
                   <Phone className="w-5 h-5 inline" /> (803) 667-8731
                 </a>
               </div>
@@ -129,7 +131,7 @@ const CeramicCoatingPage: React.FC = () => {
                 <Shield className="w-12 h-12 text-green-500 mb-4" />
                 <h3 className="text-xl font-bold mb-3">Multi-Year Protection</h3>
                 <p className="text-gray-600">
-                  Unlike wax that lasts weeks or sealant that lasts months, ceramic coating provides 2-7 years
+                  Unlike wax that lasts weeks or sealant that lasts months, ceramic coating provides 2-5 years
                   of superior protection against environmental damage, UV rays, and chemicals.
                 </p>
               </div>
@@ -153,104 +155,37 @@ const CeramicCoatingPage: React.FC = () => {
           </div>
         </section>
 
-        {/* Packages */}
+        {/* Pricing */}
         <section className="py-16 bg-gradient-to-b from-white to-gray-50">
           <div className="container mx-auto px-4 max-w-7xl">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">Ceramic Coating Packages</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">Ceramic Coating Pricing</h2>
             <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
-              Choose the perfect level of protection for your investment. All packages include professional application and warranty.
+              Ceramic coating starts at $999. Every job is custom quoted based on your vehicle's size, paint
+              condition, and the level of correction needed — so you only pay for what your vehicle actually needs.
             </p>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-
-              {/* Bronze Package */}
-              <div className="bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-green-500 hover:shadow-xl transition transform hover:-translate-y-1">
-                <div className="text-center mb-4">
-                  <div className="inline-block p-3 bg-gradient-to-br from-orange-100 to-orange-200 rounded-full mb-3">
-                    <Shield className="w-8 h-8 text-orange-600" />
-                  </div>
-                  <h3 className="text-2xl font-bold mb-2">Bronze</h3>
-                  <p className="text-4xl font-bold text-green-600 mb-1">$599</p>
-                  <div className="text-sm font-semibold text-green-700 bg-green-50 px-3 py-1 rounded-full inline-block">2-Year Warranty</div>
+            <div className="max-w-2xl mx-auto">
+              <div className="bg-gradient-to-br from-white to-green-50 border-2 border-green-500 rounded-2xl p-8 shadow-lg text-center">
+                <div className="inline-block p-3 bg-gradient-to-br from-yellow-100 to-yellow-300 rounded-full mb-4">
+                  <Award className="w-8 h-8 text-yellow-700" />
                 </div>
-                <ul className="space-y-3 text-sm">
-                  <li className="flex gap-2"><CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" /><span>Premium ceramic protection</span></li>
-                  <li className="flex gap-2"><CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" /><span>Complete decontamination</span></li>
-                  <li className="flex gap-2"><CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" /><span>Professional paint prep</span></li>
-                  <li className="flex gap-2"><CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" /><span>Hydrophobic water beading</span></li>
-                  <li className="flex gap-2"><CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" /><span>UV protection</span></li>
+                <h3 className="text-2xl font-bold mb-2">Professional Ceramic Coating</h3>
+                <p className="text-5xl font-bold text-green-600 mb-1">Starting at $999</p>
+                <p className="text-gray-600 mb-6">Final price quoted after we inspect your vehicle</p>
+                <ul className="space-y-3 text-sm text-left max-w-md mx-auto mb-8">
+                  <li className="flex gap-2"><CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" /><span>Complete decontamination &amp; clay bar treatment</span></li>
+                  <li className="flex gap-2"><CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" /><span>Required paint correction prep (1-step or 2-step)</span></li>
+                  <li className="flex gap-2"><CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" /><span>Professional-grade ceramic coating application</span></li>
+                  <li className="flex gap-2"><CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" /><span>2–5 year protection with hydrophobic water beading</span></li>
+                  <li className="flex gap-2"><CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" /><span>Enhanced gloss with UV &amp; chemical resistance</span></li>
                 </ul>
-                <button onClick={scrollToQuote} className="w-full mt-6 py-3 bg-gray-100 text-gray-800 rounded-lg font-semibold hover:bg-green-500 hover:text-white transition">
-                  Get Started
-                </button>
-              </div>
-
-              {/* Silver Package */}
-              <div className="bg-white border-2 border-gray-300 rounded-xl p-6 hover:border-green-500 hover:shadow-xl transition transform hover:-translate-y-1">
-                <div className="text-center mb-4">
-                  <div className="inline-block p-3 bg-gradient-to-br from-gray-100 to-gray-300 rounded-full mb-3">
-                    <Shield className="w-8 h-8 text-gray-600" />
-                  </div>
-                  <h3 className="text-2xl font-bold mb-2">Silver</h3>
-                  <p className="text-4xl font-bold text-green-600 mb-1">$799</p>
-                  <div className="text-sm font-semibold text-green-700 bg-green-50 px-3 py-1 rounded-full inline-block">3-Year Warranty</div>
+                <div className="flex flex-col sm:flex-row gap-3 justify-center">
+                  <a href="/book?service=ceramic-coating" className="px-6 py-3 bg-gradient-to-r from-green-500 to-emerald-600 text-white rounded-lg font-bold hover:from-green-600 hover:to-emerald-700 transition shadow-md">
+                    Book Online
+                  </a>
+                  <button onClick={scrollToQuote} className="px-6 py-3 bg-gray-100 text-gray-800 rounded-lg font-semibold hover:bg-green-500 hover:text-white transition">
+                    Get a Custom Quote
+                  </button>
                 </div>
-                <ul className="space-y-3 text-sm">
-                  <li className="flex gap-2"><CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" /><span>Enhanced ceramic coating</span></li>
-                  <li className="flex gap-2"><CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" /><span>Deep decontamination process</span></li>
-                  <li className="flex gap-2"><CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" /><span>Advanced surface preparation</span></li>
-                  <li className="flex gap-2"><CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" /><span>Extended gloss enhancement</span></li>
-                  <li className="flex gap-2"><CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" /><span>Chemical resistance</span></li>
-                </ul>
-                <button onClick={scrollToQuote} className="w-full mt-6 py-3 bg-gray-100 text-gray-800 rounded-lg font-semibold hover:bg-green-500 hover:text-white transition">
-                  Get Started
-                </button>
-              </div>
-
-              {/* Gold Package - POPULAR */}
-              <div className="bg-gradient-to-br from-white to-green-50 border-2 border-green-500 rounded-xl p-6 relative shadow-lg transform scale-105">
-                <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-green-500 to-emerald-600 text-white px-4 py-1 rounded-full text-sm font-bold shadow-md">
-                  ⭐ MOST POPULAR
-                </div>
-                <div className="text-center mb-4 mt-2">
-                  <div className="inline-block p-3 bg-gradient-to-br from-yellow-100 to-yellow-300 rounded-full mb-3">
-                    <Award className="w-8 h-8 text-yellow-700" />
-                  </div>
-                  <h3 className="text-2xl font-bold mb-2">Gold</h3>
-                  <p className="text-4xl font-bold text-green-600 mb-1">$999</p>
-                  <div className="text-sm font-semibold text-green-700 bg-green-100 px-3 py-1 rounded-full inline-block">5-Year Warranty</div>
-                </div>
-                <ul className="space-y-3 text-sm">
-                  <li className="flex gap-2"><CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" /><span className="font-medium">Premium multi-coat protection</span></li>
-                  <li className="flex gap-2"><CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" /><span className="font-medium">Wheels ceramic coated</span></li>
-                  <li className="flex gap-2"><CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" /><span className="font-medium">Light paint correction included</span></li>
-                  <li className="flex gap-2"><CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" /><span className="font-medium">Maximum gloss & depth</span></li>
-                  <li className="flex gap-2"><CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" /><span className="font-medium">Superior scratch resistance</span></li>
-                </ul>
-                <button onClick={scrollToQuote} className="w-full mt-6 py-3 bg-gradient-to-r from-green-500 to-emerald-600 text-white rounded-lg font-bold hover:from-green-600 hover:to-emerald-700 transition shadow-md">
-                  Get Started →
-                </button>
-              </div>
-
-              {/* Platinum Package */}
-              <div className="bg-gradient-to-br from-slate-50 to-slate-100 border-2 border-slate-400 rounded-xl p-6 hover:border-green-500 hover:shadow-xl transition transform hover:-translate-y-1">
-                <div className="text-center mb-4">
-                  <div className="inline-block p-3 bg-gradient-to-br from-slate-200 to-slate-300 rounded-full mb-3">
-                    <Award className="w-8 h-8 text-slate-700" />
-                  </div>
-                  <h3 className="text-2xl font-bold mb-2">Platinum</h3>
-                  <p className="text-4xl font-bold text-green-600 mb-1">$1,299</p>
-                  <div className="text-sm font-semibold text-green-700 bg-green-50 px-3 py-1 rounded-full inline-block">7-Year Warranty</div>
-                </div>
-                <ul className="space-y-3 text-sm">
-                  <li className="flex gap-2"><CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" /><span className="font-medium">Ultimate ceramic protection</span></li>
-                  <li className="flex gap-2"><CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" /><span className="font-medium">Wheels + windows coated</span></li>
-                  <li className="flex gap-2"><CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" /><span className="font-medium">Full paint correction</span></li>
-                  <li className="flex gap-2"><CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" /><span className="font-medium">Show-car finish quality</span></li>
-                  <li className="flex gap-2"><CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" /><span className="font-medium">Maximum longevity</span></li>
-                </ul>
-                <button onClick={scrollToQuote} className="w-full mt-6 py-3 bg-gray-100 text-gray-800 rounded-lg font-semibold hover:bg-green-500 hover:text-white transition">
-                  Get Started
-                </button>
               </div>
             </div>
           </div>
@@ -272,7 +207,7 @@ const CeramicCoatingPage: React.FC = () => {
                 <div className="flex gap-4">
                   <div className="bg-green-500 text-white rounded-full w-10 h-10 flex items-center justify-center flex-shrink-0 font-bold">2</div>
                   <div>
-                    <h3 className="font-bold mb-1">Paint Correction (if included)</h3>
+                    <h3 className="font-bold mb-1">Paint Correction Prep</h3>
                     <p className="text-gray-600">Remove swirls, scratches, and imperfections for perfect surface.</p>
                   </div>
                 </div>
@@ -326,7 +261,11 @@ const CeramicCoatingPage: React.FC = () => {
             <div className="space-y-6">
               <div className="bg-white p-6 rounded-lg shadow-lg">
                 <h3 className="text-xl font-bold mb-3">How long does ceramic coating last?</h3>
-                <p className="text-gray-600">Depending on the package, ceramic coatings last 2-7 years with proper maintenance. We offer Bronze (2yr), Silver (3yr), Gold (5yr), and Platinum (7yr) packages with corresponding warranties.</p>
+                <p className="text-gray-600">Ceramic coatings last 2–5 years with proper maintenance, depending on the product used and how the vehicle is driven and stored. We'll recommend the right option for your vehicle when we quote the job.</p>
+              </div>
+              <div className="bg-white p-6 rounded-lg shadow-lg">
+                <h3 className="text-xl font-bold mb-3">How much does ceramic coating cost?</h3>
+                <p className="text-gray-600">Ceramic coating starts at $999. Because every vehicle's size and paint condition is different, we provide a custom quote after inspecting your paint — the price includes the required paint correction prep and professional application.</p>
               </div>
               <div className="bg-white p-6 rounded-lg shadow-lg">
                 <h3 className="text-xl font-bold mb-3">Is ceramic coating worth it?</h3>
@@ -334,7 +273,7 @@ const CeramicCoatingPage: React.FC = () => {
               </div>
               <div className="bg-white p-6 rounded-lg shadow-lg">
                 <h3 className="text-xl font-bold mb-3">Do I need paint correction before ceramic coating?</h3>
-                <p className="text-gray-600">For best results, yes. Ceramic coating locks in the current condition of your paint. If you have swirls or scratches, the coating will seal them in place. Paint correction creates a perfect surface for the coating. Our Gold and Platinum packages include paint correction.</p>
+                <p className="text-gray-600">For best results, yes. Ceramic coating locks in the current condition of your paint. If you have swirls or scratches, the coating will seal them in place. Paint correction creates a perfect surface for the coating — that's why the required paint correction prep is included in every ceramic coating job.</p>
               </div>
               <div className="bg-white p-6 rounded-lg shadow-lg">
                 <h3 className="text-xl font-bold mb-3">Can I wash my car after ceramic coating?</h3>
@@ -358,21 +297,24 @@ const CeramicCoatingPage: React.FC = () => {
             <h2 className="text-3xl md:text-4xl font-bold mb-6">Protect Your Investment with Ceramic Coating</h2>
             <p className="text-xl mb-8 text-green-100">
               Multi-year protection, incredible gloss, and hydrophobic self-cleaning properties.
-              Authorized Ceramic Pro installer serving Columbia and Lexington SC.
+              Professional ceramic coating serving Columbia and Lexington SC.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
+              <a href="/book?service=ceramic-coating" className="bg-white text-green-600 px-8 py-4 rounded-lg font-bold hover:bg-green-50 transition">
+                Book Online
+              </a>
               <button onClick={scrollToQuote} className="bg-white text-green-600 px-8 py-4 rounded-lg font-bold hover:bg-green-50 transition">
                 Get Free Quote
               </button>
-              <a href="tel:5551234567" className="bg-green-700 text-white px-8 py-4 rounded-lg font-bold hover:bg-green-600 transition">
-                Call (555) 123-4567
+              <a href="tel:+18036678731" className="bg-green-700 text-white px-8 py-4 rounded-lg font-bold hover:bg-green-600 transition">
+                Call (803) 667-8731
               </a>
             </div>
           </div>
         </section>
 
         <Footer />
-        
+
       </div>
     </>
   );

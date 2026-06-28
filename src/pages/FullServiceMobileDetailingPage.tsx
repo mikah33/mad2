@@ -12,7 +12,7 @@ const FullServiceMobileDetailingPage: React.FC = () => {
   const productSchema = generateProductSchema({
     name: "Full Service Mobile Detailing",
     description: "Complete mobile car detailing service combining professional car interior detailing and exterior auto detailing. Full service automotive detail at your location in Columbia SC.",
-    price: "325",
+    price: "225",
     features: [
       "Complete car interior detailing",
       "Professional exterior auto detailing",
@@ -56,11 +56,14 @@ const FullServiceMobileDetailingPage: React.FC = () => {
                   Complete mobile car detailing service combining professional car interior detailing and exterior auto detailing. Best value full service automotive detail package - we bring everything needed to your location in Columbia and Lexington SC.
                 </p>
                 <div className="flex flex-wrap gap-4">
+                  <a href="/book?service=basic-detail" className="bg-white text-indigo-600 px-8 py-4 rounded-lg font-bold hover:bg-indigo-50 transition">
+                    Book Online <ChevronRight className="w-5 h-5 inline" />
+                  </a>
                   <button onClick={scrollToQuote} className="bg-white text-indigo-600 px-8 py-4 rounded-lg font-bold hover:bg-indigo-50 transition">
                     Get Free Quote <ChevronRight className="w-5 h-5 inline" />
                   </button>
-                  <a href="tel:5551234567" className="bg-indigo-700 text-white px-8 py-4 rounded-lg font-bold hover:bg-indigo-600 transition">
-                    <Phone className="w-5 h-5 inline" /> (555) 123-4567
+                  <a href="tel:+18036678731" className="bg-indigo-700 text-white px-8 py-4 rounded-lg font-bold hover:bg-indigo-600 transition">
+                    <Phone className="w-5 h-5 inline" /> (803) 667-8731
                   </a>
                 </div>
               </div>
@@ -231,7 +234,7 @@ const FullServiceMobileDetailingPage: React.FC = () => {
                 <div className="text-center mb-6">
                   <Package className="w-16 h-16 text-indigo-500 mx-auto mb-4" />
                   <h3 className="text-2xl font-bold mb-2">Standard Full Service</h3>
-                  <div className="text-3xl font-bold text-indigo-600">$325</div>
+                  <div className="text-3xl font-bold text-indigo-600">$225</div>
                 </div>
                 <ul className="space-y-3 mb-8">
                   <li className="flex items-center gap-2">
@@ -412,8 +415,9 @@ const FullServiceMobileDetailingPage: React.FC = () => {
               Full service mobile detailing in Columbia SC - professional car interior detailing and exterior auto detailing at your location. Book today for the ultimate automotive detail experience!
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
+              <a href="/book?service=basic-detail" className="bg-white text-indigo-600 px-8 py-4 rounded-lg font-bold hover:bg-indigo-50 transition">Book Online</a>
               <button onClick={scrollToQuote} className="bg-white text-indigo-600 px-8 py-4 rounded-lg font-bold hover:bg-indigo-50 transition">Get Free Quote</button>
-              <a href="tel:5551234567" className="bg-indigo-700 text-white px-8 py-4 rounded-lg font-bold hover:bg-indigo-600 transition">Call (555) 123-4567</a>
+              <a href="tel:+18036678731" className="bg-indigo-700 text-white px-8 py-4 rounded-lg font-bold hover:bg-indigo-600 transition">Call (803) 667-8731</a>
             </div>
           </div>
         </section>

@@ -213,7 +213,7 @@ export const generateMobileDetailingProductSchemas = (
     products.forEach((product: any) => {
       product.aggregateRating = {
         '@type': 'AggregateRating',
-        ratingValue: '4.95',
+        ratingValue: '5.0',
         bestRating: '5',
         worstRating: '1',
         ratingCount: '31'

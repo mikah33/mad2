@@ -60,7 +60,7 @@ export const faqs: FAQ[] = [
     id: 'gen-4',
     category: 'General Detailing',
     question: 'Is car detailing worth the cost?',
-    answer: 'Absolutely! Professional detailing is an investment that pays dividends. Regular detailing can increase your vehicle\'s resale value by $500-$2,000 and prevents costly damage from neglect. Our Columbia SC customers report that proper detailing extends paint life, prevents interior wear, and maintains that new car feeling. When you consider that paint correction can cost $800-$1,500 to fix oxidation and scratches that regular detailing prevents, the $150-$300 quarterly investment is minimal for long-term protection.',
+    answer: 'Absolutely! Professional detailing is an investment that pays dividends. Regular detailing can increase your vehicle\'s resale value and prevents costly damage from neglect. Our Columbia SC customers report that proper detailing extends paint life, prevents interior wear, and maintains that new car feeling. When you consider that paint correction (which starts at $599) restores oxidation and scratches that regular detailing prevents, routine care is a minimal investment for long-term protection. Our Basic Detail is just $225, so staying ahead of damage is far more affordable than fixing it later.',
     keywords: ['is car detailing worth it', 'detailing value', 'resale value Columbia SC'],
     relatedServices: ['packages', 'ceramic-coating']
   },
@@ -76,7 +76,7 @@ export const faqs: FAQ[] = [
     id: 'gen-6',
     category: 'General Detailing',
     question: 'Do you detail trucks and SUVs?',
-    answer: 'Yes! We specialize in detailing all vehicle types including trucks, SUVs, vans, and luxury vehicles throughout Columbia and Lexington SC. Larger vehicles require additional time and materials, reflected in our pricing structure. We\'re experienced with lifted trucks, work trucks with heavy dirt accumulation, family SUVs with child-related messes, and everything in between. Our mobile service means we bring professional detailing to your location, whether residential or commercial.',
+    answer: 'Yes! We specialize in detailing all vehicle types including trucks, SUVs, vans, and luxury vehicles throughout Columbia and Lexington SC. We charge flat rates regardless of vehicle size, so a truck or SUV costs the same as a sedan. We\'re experienced with lifted trucks, work trucks with heavy dirt accumulation, family SUVs with child-related messes, and everything in between. Our mobile service means we bring professional detailing to your location, whether residential or commercial.',
     keywords: ['truck detailing Columbia SC', 'SUV detailing', 'large vehicle detailing'],
     relatedServices: ['mobile-detailing', 'pricing']
   },
@@ -118,7 +118,7 @@ export const faqs: FAQ[] = [
     id: 'mob-1',
     category: 'Mobile Detailing',
     question: 'How much does mobile car detailing cost in Columbia SC?',
-    answer: 'Mobile car detailing in Columbia SC typically ranges from $150-$400 depending on vehicle size and service level. Our basic packages start at $150 for sedans, $175 for SUVs, and $200 for trucks. Premium packages with paint correction and ceramic coating range from $300-$600. Mobile service includes the same quality as shop detailing but with added convenience—no travel time or waiting. We serve Columbia, Lexington, Irmo, Forest Acres, and surrounding areas with no additional travel fees within 20 miles.',
+    answer: 'We charge flat rates that don\'t change with your vehicle\'s size. An Exterior Detail starts at $100 and an Interior Detail at $200, while our Basic Detail—a full interior and exterior with wax—is $225. The Factory Reset deep-clean package is $400, paint correction starts at $599, and ceramic coating starts at $999. Mobile service includes the same quality as shop detailing but with added convenience—no travel time or waiting. We serve Columbia, Lexington, Irmo, Forest Acres, and surrounding areas with no additional travel fees within 20 miles.',
     keywords: ['mobile car detailing cost Columbia SC', 'car detailing prices', 'mobile detailing Columbia'],
     relatedServices: ['pricing', 'packages']
   },
@@ -324,7 +324,7 @@ export const faqs: FAQ[] = [
     id: 'cer-2',
     category: 'Ceramic Coating',
     question: 'What is ceramic coating and is it worth it?',
-    answer: 'Ceramic coating is a liquid polymer that chemically bonds to paint, creating a protective layer that\'s harder than clear coat. Benefits include extreme gloss, hydrophobic properties (water beads and rolls off), protection from UV rays, chemical resistance, easier cleaning, and scratch resistance. For Columbia SC vehicles exposed to intense sun, pollen, and environmental contaminants, ceramic coating is absolutely worth the investment. While professional application costs $500-$1,500, you save on frequent waxing, paint correction, and potential damage. Most customers recoup costs through reduced maintenance and increased resale value.',
+    answer: 'Ceramic coating is a liquid polymer that chemically bonds to paint, creating a protective layer that\'s harder than clear coat. Benefits include extreme gloss, hydrophobic properties (water beads and rolls off), protection from UV rays, chemical resistance, easier cleaning, and scratch resistance. For Columbia SC vehicles exposed to intense sun, pollen, and environmental contaminants, ceramic coating is absolutely worth the investment. While professional application starts at $999 (with premium packages up to ~$1,299), you save on frequent waxing, paint correction, and potential damage. Most customers recoup costs through reduced maintenance and increased resale value.',
     keywords: ['what is ceramic coating', 'ceramic coating worth it Columbia SC', 'paint protection benefits'],
     relatedServices: ['ceramic-coating', 'packages']
   },
@@ -332,7 +332,7 @@ export const faqs: FAQ[] = [
     id: 'cer-3',
     category: 'Ceramic Coating',
     question: 'How much does ceramic coating cost in Columbia SC?',
-    answer: 'Ceramic coating costs in Columbia SC range from $500-$1,500 depending on vehicle size, coating quality, and preparation required. Sedans typically start at $600, SUVs at $800, and trucks at $900. This includes full paint correction, decontamination, coating application (usually 2 layers), and 24-hour cure time. Premium coatings with longer warranties cost more. DIY kits cost $50-$100 but lack professional preparation and application expertise, resulting in inferior results. Professional application at Mikahs Auto Detailing includes warranty, proper prep, and expertise that DIY cannot match.',
+    answer: 'Ceramic coating starts at $999, with premium packages up to ~$1,299 depending on coating quality, condition, and preparation required. This includes full paint correction, decontamination, coating application (usually 2 layers), and 24-hour cure time. Premium coatings with longer warranties fall at the higher end of that range. DIY kits are cheaper but lack professional preparation and application expertise, resulting in inferior results. Professional application at Mikahs Auto Detailing includes warranty, proper prep, and expertise that DIY cannot match.',
     keywords: ['ceramic coating cost Columbia SC', 'ceramic coating price', 'professional coating cost'],
     relatedServices: ['ceramic-coating', 'pricing']
   },
@@ -382,7 +382,7 @@ export const faqs: FAQ[] = [
     id: 'pri-1',
     category: 'Pricing & Packages',
     question: 'How much does car detailing cost in Columbia SC?',
-    answer: 'Car detailing in Columbia SC ranges from $150-$600 depending on vehicle size, condition, and service level. Basic packages (wash, interior vacuum, windows) start at $150 for sedans. Mid-tier packages with full interior and exterior detailing run $250-$350. Premium services including paint correction and ceramic coating cost $400-$600+. We offer transparent pricing with no hidden fees. Mobile service is included at no extra charge within 20 miles. First-time customers receive 10% off, and we offer package discounts for regular maintenance. Exact pricing provided during booking.',
+    answer: 'We use simple flat pricing that doesn\'t change with your vehicle\'s size. An Exterior Detail starts at $100 and an Interior Detail at $200. Our Basic Detail—a full interior and exterior with wax—is $225, and the Factory Reset deep-clean package is $400. For paint protection, paint correction starts at $599 and ceramic coating starts at $999. We offer transparent pricing with no hidden fees. Mobile service is included at no extra charge within 20 miles. First-time customers receive 10% off, and we offer package discounts for regular maintenance. Exact pricing provided during booking.',
     keywords: ['car detailing cost Columbia SC', 'detailing prices', 'how much is car detailing'],
     relatedServices: ['pricing', 'packages']
   },
@@ -398,7 +398,7 @@ export const faqs: FAQ[] = [
     id: 'pri-3',
     category: 'Pricing & Packages',
     question: 'What is your most popular detailing package?',
-    answer: 'Our "Complete Detail Package" is most popular with Columbia SC customers. It includes full interior deep cleaning with extraction, complete exterior wash and clay bar treatment, tire and wheel detailing, trim restoration, and 6-month sealant protection. Priced at $275 for sedans, $325 for SUVs, and $375 for trucks, it provides exceptional value with comprehensive coverage inside and out. Most customers choose this quarterly for maintenance. The package takes 3-4 hours and leaves vehicles looking showroom-new. We customize based on condition—heavily soiled vehicles may need deep cleaning add-on.',
+    answer: 'Our Factory Reset is the most popular package with Columbia SC customers. This deep-clean package includes full interior deep cleaning with extraction, complete exterior wash and clay bar treatment, tire and wheel detailing, trim restoration, and sealant protection. Priced at a flat $400 regardless of vehicle size, it provides exceptional value with comprehensive coverage inside and out. Customers who want comprehensive care on a smaller budget often choose our Basic Detail at $225, a full interior and exterior with wax. Most customers schedule a detail quarterly for maintenance. The Factory Reset takes 3-4 hours and leaves vehicles looking showroom-new.',
     keywords: ['best car detailing package Columbia SC', 'popular detailing service', 'full detail package'],
     relatedServices: ['packages', 'full-detail']
   },
@@ -414,7 +414,7 @@ export const faqs: FAQ[] = [
     id: 'pri-5',
     category: 'Pricing & Packages',
     question: 'Is there a difference in price for SUVs and trucks?',
-    answer: 'Yes, larger vehicles cost more due to increased surface area, time, and materials. Our pricing structure: sedans and coupes are base price, SUVs and crossovers are +$50, full-size trucks and vans are +$75-100, and oversized vehicles (Suburbans, Expeditions, crew-cab trucks) are +$100-150. For example, our Complete Detail is $275 for sedans, $325 for SUVs, and $375 for trucks. Size directly impacts time (3 hours vs 4-5 hours) and product usage. Columbia SC customers find the pricing fair and proportional to vehicle size.',
+    answer: 'No—we charge the same flat rate no matter what you drive, whether it\'s a sedan, an SUV, or a full-size truck. Our prices are fixed: an Exterior Detail is $100, an Interior Detail is $200, the Basic Detail (full interior and exterior with wax) is $225, and the Factory Reset deep-clean package is $400. Paint correction starts at $599 and ceramic coating starts at $999. There are no size surcharges and no surprises—you pay the listed price regardless of vehicle size. Columbia SC customers appreciate this straightforward, transparent pricing.',
     keywords: ['SUV detailing cost Columbia SC', 'truck detailing price', 'large vehicle pricing'],
     relatedServices: ['pricing', 'vehicle-types']
   },
@@ -422,7 +422,7 @@ export const faqs: FAQ[] = [
     id: 'pri-6',
     category: 'Pricing & Packages',
     question: 'Can I get just interior or just exterior detailing?',
-    answer: 'Absolutely! We offer interior-only and exterior-only packages for customers with specific needs. Interior-only detailing starts at $125 (perfect for new cars or when exterior is fine). Exterior-only starts at $100 (great for maintained interiors or quick refresh). Many Columbia SC customers alternate—interior in summer (AC season) and exterior in spring/fall. Some prefer interior quarterly and exterior twice yearly. We customize to your needs and budget. Bundling interior + exterior saves 10-15% versus separate services, but we never push services you don\'t need.',
+    answer: 'Absolutely! We offer interior-only and exterior-only packages for customers with specific needs. Interior-only detailing starts at $200 (perfect for new cars or when the exterior is fine), and exterior-only starts at $100 (great for maintained interiors or a quick refresh). Our Basic Detail bundles both for $225, so combining them is the most economical choice. Many Columbia SC customers alternate—interior in summer (AC season) and exterior in spring/fall. Some prefer interior quarterly and exterior twice yearly. We customize to your needs and budget, and we never push services you don\'t need.',
     keywords: ['interior only detailing Columbia SC', 'exterior only car cleaning', 'partial detailing'],
     relatedServices: ['interior-detailing', 'exterior-detailing', 'packages']
   },

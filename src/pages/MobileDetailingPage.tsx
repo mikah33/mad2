@@ -90,6 +90,9 @@ const MobileDetailingPage: React.FC = () => {
                   #1 mobile automotive detail near me service in Columbia SC. Professional car interior detailing and exterior auto detailing at your location. No need to waste time at car washes - we bring everything needed directly to you throughout Columbia and Lexington SC.
                 </p>
                 <div className="flex flex-wrap gap-4">
+                  <a href="/book" className="bg-white text-blue-600 px-8 py-4 rounded-lg font-bold hover:bg-blue-50 transition">
+                    Book Online <ChevronRight className="w-5 h-5 inline" />
+                  </a>
                   <button onClick={scrollToQuote} className="bg-white text-blue-600 px-8 py-4 rounded-lg font-bold hover:bg-blue-50 transition">
                     Get Free Quote <ChevronRight className="w-5 h-5 inline" />
                   </button>
@@ -339,6 +342,9 @@ const MobileDetailingPage: React.FC = () => {
               Save time, get superior results with our expert car interior detailing and exterior auto detailing services.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
+              <a href="/book" className="bg-white text-blue-600 px-8 py-4 rounded-lg font-bold hover:bg-blue-50 transition">
+                Book Online
+              </a>
               <button onClick={scrollToQuote} className="bg-white text-blue-600 px-8 py-4 rounded-lg font-bold hover:bg-blue-50 transition">
                 Get Free Mobile Detailing Quote
               </button>

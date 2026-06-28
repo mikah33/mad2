@@ -143,7 +143,7 @@ export const ceramicCoatingFAQs: FAQ[] = [
   // Pricing & Value in Columbia SC (4 FAQs)
   {
     question: "How much does ceramic coating cost in Columbia SC?",
-    answer: "Ceramic coating service in Columbia SC typically ranges from $500 to $2,500 depending on your vehicle's size, condition, and the coating package selected. Professional ceramic coating prices include paint preparation, correction, the coating application, and often a warranty. While auto ceramic coating requires an upfront investment, it eliminates the need for regular waxing and helps preserve your vehicle's resale value. Our car ceramic coating packages in Columbia SC are priced competitively and include everything needed to properly protect your vehicle, from thorough decontamination to multi-layer automotive ceramic coating application with guaranteed results.",
+    answer: "Ceramic coating service in Columbia SC starts at $999, with premium packages up to ~$1,299 depending on your vehicle's condition and the coating package selected. Professional ceramic coating prices include paint preparation, correction, the coating application, and often a warranty. While auto ceramic coating requires an upfront investment, it eliminates the need for regular waxing and helps preserve your vehicle's resale value. Our car ceramic coating packages in Columbia SC are priced competitively and include everything needed to properly protect your vehicle, from thorough decontamination to multi-layer automotive ceramic coating application with guaranteed results.",
     keywords: ["ceramic coating service", "professional ceramic coating", "auto ceramic coating", "car ceramic coating", "automotive ceramic coating", "ceramic coating columbia sc"],
     category: "Pricing & Value"
   },

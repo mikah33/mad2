@@ -13,7 +13,7 @@ const FAQ: React.FC = () => {
   const faqs: FAQItem[] = [
     {
       question: 'How much does mobile detailing cost?',
-      answer: 'Our mobile detailing services start at $75 for basic exterior washes and range up to $400+ for comprehensive packages. Pricing depends on vehicle size, service selected, and condition. We offer competitive rates with no hidden fees - get your personalized quote by calling (803) 667-8731.',
+      answer: 'Our mobile detailing services start at $100 for an exterior detail and range up to $999+ for ceramic coating. We use simple flat pricing—the package you choose sets your price, not your vehicle\'s size. We offer competitive rates with no hidden fees - get your personalized quote by calling (803) 667-8731.',
     },
     {
       question: 'What is included in a mobile detailing service?',

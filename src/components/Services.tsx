@@ -44,7 +44,7 @@ const Services: React.FC<{ onSelectService: (service: string) => void }> = ({ on
       description: [
         'Interior: Full wipe down, conditioner + UV protection, vacuum + disinfection, light stain removal, shampoo & extraction, glass cleaned, door jambs cleaned & waxed',
         'Exterior: Foam contact wash, brake dust removal, protective wax layer, tires & rims dressed',
-        'Add-On Services: Weather Stripping Restoration ($50), Scratch Removal ($80/panel)'
+        'Add-On Services: Weather Stripping Restoration, Scratch Removal (call for a quote)'
       ]
     },
     {

@@ -56,11 +56,14 @@ const PaintCorrectionPage: React.FC = () => {
                   flawless finish. Mobile service throughout Columbia, Lexington, and surrounding areas.
                 </p>
                 <div className="flex flex-wrap gap-4">
+                  <a href="/book?service=paint-correction" className="bg-white text-purple-600 px-8 py-4 rounded-lg font-bold hover:bg-purple-50 transition">
+                    Book Online <ChevronRight className="w-5 h-5 inline" />
+                  </a>
                   <button onClick={scrollToQuote} className="bg-white text-purple-600 px-8 py-4 rounded-lg font-bold hover:bg-purple-50 transition">
                     Get Free Quote <ChevronRight className="w-5 h-5 inline" />
                   </button>
-                  <a href="tel:5551234567" className="bg-purple-700 text-white px-8 py-4 rounded-lg font-bold hover:bg-purple-600 transition">
-                    <Phone className="w-5 h-5 inline" /> (555) 123-4567
+                  <a href="tel:+18036678731" className="bg-purple-700 text-white px-8 py-4 rounded-lg font-bold hover:bg-purple-600 transition">
+                    <Phone className="w-5 h-5 inline" /> (803) 667-8731
                   </a>
                 
       </div>
@@ -115,7 +118,7 @@ const PaintCorrectionPage: React.FC = () => {
                     <div className="border-b pb-3">
                       <div className="flex justify-between items-center mb-2">
                         <strong>Single Stage</strong>
-                        <span className="text-purple-600 font-bold">$399-$499</span>
+                        <span className="text-purple-600 font-bold">Starting at $599</span>
                       
       </div>
                       <p className="text-sm text-gray-600">Removes 50-60% of defects, enhances gloss</p>
@@ -124,7 +127,7 @@ const PaintCorrectionPage: React.FC = () => {
                     <div className="border-b pb-3">
                       <div className="flex justify-between items-center mb-2">
                         <strong>Two Stage</strong>
-                        <span className="text-purple-600 font-bold">$599-$699</span>
+                        <span className="text-purple-600 font-bold">Custom Quote</span>
                       
       </div>
                       <p className="text-sm text-gray-600">Removes 70-85% of defects, significant improvement</p>
@@ -133,7 +136,7 @@ const PaintCorrectionPage: React.FC = () => {
                     <div>
                       <div className="flex justify-between items-center mb-2">
                         <strong>Multi Stage</strong>
-                        <span className="text-purple-600 font-bold">$799-$899</span>
+                        <span className="text-purple-600 font-bold">Custom Quote</span>
                       
       </div>
                       <p className="text-sm text-gray-600">Removes 90-95%+ of defects, show car finish</p>
@@ -260,8 +263,9 @@ const PaintCorrectionPage: React.FC = () => {
               Expert paint correction removes years of damage. Mobile service in Columbia, Lexington, and surrounding SC areas.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
+              <a href="/book?service=paint-correction" className="bg-white text-purple-600 px-8 py-4 rounded-lg font-bold hover:bg-purple-50 transition">Book Online</a>
               <button onClick={scrollToQuote} className="bg-white text-purple-600 px-8 py-4 rounded-lg font-bold hover:bg-purple-50 transition">Get Free Quote</button>
-              <a href="tel:5551234567" className="bg-purple-700 text-white px-8 py-4 rounded-lg font-bold hover:bg-purple-600 transition">Call (555) 123-4567</a>
+              <a href="tel:+18036678731" className="bg-purple-700 text-white px-8 py-4 rounded-lg font-bold hover:bg-purple-600 transition">Call (803) 667-8731</a>
             
       </div>
           

@@ -52,7 +52,7 @@ export const ServicesPage = () => {
       description: [
         'Interior: Full wipe down, conditioner + UV protection, vacuum + disinfection, light stain removal, shampoo & extraction, glass cleaned, door jambs cleaned & waxed',
         'Exterior: Foam contact wash, brake dust removal, protective wax layer, tires & rims dressed',
-        'Add-On Services: Weather Stripping Restoration ($50), Scratch Removal ($80/panel)'
+        'Add-On Services: Weather Stripping Restoration, Scratch Removal (call for a quote)'
       ],
       image: '/exterior3.jpg',
       imageAlt: 'Auto detailing services columbia sc - factory reset complete detail package',
@@ -217,9 +217,18 @@ export const ServicesPage = () => {
       <section className="pt-16 pb-8 md:pt-24 md:pb-20 bg-white w-full overflow-hidden">
         <div className="container mx-auto px-3 md:px-4 max-w-7xl">
           <h1 className="text-2xl md:text-4xl font-bold text-center mb-2 md:mb-4">Auto Detailing Services in Columbia SC</h1>
-          <p className="text-center text-gray-600 text-sm md:text-base mb-4 md:mb-12 max-w-2xl mx-auto">
+          <p className="text-center text-gray-600 text-sm md:text-base mb-4 md:mb-8 max-w-2xl mx-auto">
             Professional auto detailing services in Columbia, SC. We bring mobile car detailing, ceramic coating, and paint correction to your location with comprehensive detailing packages.
           </p>
+
+          <div className="flex justify-center mb-8 md:mb-12">
+            <a
+              href="/book"
+              className="inline-block py-3 px-8 bg-primary-700 text-white text-sm md:text-base font-semibold rounded-lg hover:bg-primary-800 transition text-center"
+            >
+              Book Online
+            </a>
+          </div>
 
           <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-8">
             {services.map((service, index) => (
@@ -280,6 +289,30 @@ export const ServicesPage = () => {
                 </div>
               </article>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Bottom CTA Section */}
+      <section className="py-12 md:py-16 bg-primary-700 text-white">
+        <div className="container mx-auto px-4 max-w-4xl text-center">
+          <h2 className="text-2xl md:text-3xl font-bold mb-4">Ready to Book Your Detail?</h2>
+          <p className="text-base md:text-lg text-primary-100 mb-8">
+            Schedule your auto detailing service online in minutes — we come to you anywhere in Columbia, SC.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <a
+              href="/book"
+              className="inline-block py-3 px-8 bg-white text-primary-700 text-sm md:text-base font-semibold rounded-lg hover:bg-gray-100 transition text-center"
+            >
+              Book Online
+            </a>
+            <a
+              href="tel:+18036678731"
+              className="inline-block py-3 px-8 bg-primary-800 text-white text-sm md:text-base font-semibold rounded-lg hover:bg-primary-900 transition text-center"
+            >
+              Call (803) 667-8731
+            </a>
           </div>
         </div>
       </section>

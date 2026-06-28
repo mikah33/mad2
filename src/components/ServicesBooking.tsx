@@ -103,14 +103,14 @@ const ServicesBooking: React.FC = () => {
       color: 'bg-[#0077B6]',
       slug: 'specialty',
       description: [
-        'Interior-Only Detail ($150)',
-        'Exterior-Only Detail ($125)',
-        'Weather Stripping Restoration ($50)',
-        'Scratch Removal ($80/panel)',
-        'Engine Bay Detail ($75)',
-        'Pet Hair Removal ($50)',
-        'Odor Removal / Ozone Treatment ($100)',
-        'Headlight Restoration ($80)'
+        'Interior-Only Detail (from $200)',
+        'Exterior-Only Detail (from $100)',
+        'Weather Stripping Restoration (call for a quote)',
+        'Scratch Removal (call for a quote)',
+        'Engine Bay Detail (call for a quote)',
+        'Pet Hair Removal (call for a quote)',
+        'Odor Removal / Ozone Treatment (call for a quote)',
+        'Headlight Restoration (call for a quote)'
       ]
     },
     {
@@ -132,17 +132,14 @@ const ServicesBooking: React.FC = () => {
     {
       icon: <RotateCw className="w-6 h-6" />,
       title: 'Routine Reset',
-      price: '$175/Month',
+      price: '$225/Month',
       color: 'bg-[#0077B6]',
       slug: 'routine-reset',
       description: [
+        '1x Interior Detail per Month',
         '2x Exterior Details per Month',
-        '1x Interior Reset per Month',
-        '1x Engine Bay Cleaning',
         'Priority Scheduling',
         'Cancel Anytime',
-        'First 2 Months: $300 Upfront',
-        'After: $175/Month',
         'Stay Consistently Clean'
       ]
     },

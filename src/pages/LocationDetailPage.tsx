@@ -71,12 +71,12 @@ export const LocationDetailPage = () => {
   const schemas = [localBusinessSchema, breadcrumbSchema, faqSchema];
 
   const services = [
-    { name: 'Mobile Auto Detailing', price: 'from $150', icon: '🚗' },
-    { name: 'Ceramic Coating', price: '$500-$1,500', icon: '🛡️' },
-    { name: 'Paint Correction', price: '$300-$800', icon: '✨' },
-    { name: 'Interior Detailing', price: 'from $125', icon: '🧽' },
+    { name: 'Mobile Auto Detailing', price: 'from $100', icon: '🚗' },
+    { name: 'Ceramic Coating', price: 'from $999', icon: '🛡️' },
+    { name: 'Paint Correction', price: 'from $599', icon: '✨' },
+    { name: 'Interior Detailing', price: 'from $200', icon: '🧽' },
     { name: 'Exterior Detailing', price: 'from $100', icon: '💦' },
-    { name: 'Full Detail Package', price: '$275-$375', icon: '⭐' }
+    { name: 'Full Detail Package', price: '$225', icon: '⭐' }
   ];
 
   return (
@@ -255,6 +255,12 @@ export const LocationDetailPage = () => {
               Get your free quote today and experience the best mobile detailing in {location.city}, SC
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a
+                href="/book"
+                className="px-8 py-4 bg-primary-600 text-white font-bold rounded-lg hover:bg-primary-500 transition shadow-lg"
+              >
+                Book Online
+              </a>
               <a
                 href="tel:8036678731"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-primary-700 font-bold rounded-lg hover:bg-gray-100 transition shadow-lg"

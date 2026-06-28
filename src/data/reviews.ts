@@ -86,7 +86,7 @@ export const reviews: Review[] = [
 // Calculate aggregate rating
 export const aggregateRating = {
   ratingValue: 5.0, // Your actual Google rating
-  reviewCount: 19, // Your actual Google review count
+  reviewCount: 31, // Your actual Google review count
   bestRating: 5,
   worstRating: 1  // Worst possible rating (not worst received)
 };

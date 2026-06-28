@@ -68,9 +68,9 @@ export const LocationChapinPage = () => {
     },
     {
       title: 'Routine Reset',
-      price: '$250/Month',
+      price: '$225/Month',
       duration: 'Monthly',
-      description: '2x Exterior Details + 1x Interior Reset + 1x Engine Bay Cleaning per month. Priority scheduling. First 2 months: $300 upfront.',
+      description: '1x Interior Detail + 2x Exterior Details per month. Cancel anytime.',
       link: '/services/mobile-detailing'
     }
   ];
@@ -125,7 +125,7 @@ export const LocationChapinPage = () => {
     <>
       <SEOHead
         title="Mobile Detailing Chapin SC | Lake Murray Auto Detailing & Ceramic Coating"
-        description="Best mobile detailing Chapin SC. Professional auto detailing & ceramic coating for Lake Murray west side. $225+ Interior/exterior detailing. 5.0★ 19 reviews. Serving Timberlake, Little Mountain. Free quotes!"
+        description="Best mobile detailing Chapin SC. Professional auto detailing & ceramic coating for Lake Murray west side. $225+ Interior/exterior detailing. 5.0★ 31 reviews. Serving Timberlake, Little Mountain. Free quotes!"
         keywords="mobile auto detailing chapin sc, car detailing chapin sc, lake murray auto detailing, chapin mobile detailing, timberlake car care, lake house vehicle detailing, luxury auto detailing chapin"
         canonical="https://mikahsmobiledetailingsc.com/locations/chapin-sc"
         schema={schemas}
@@ -181,7 +181,7 @@ export const LocationChapinPage = () => {
             </h1>
 
             <p className="text-base sm:text-lg md:text-xl mb-6 md:mb-8 max-w-3xl mx-auto text-gray-100 px-4">
-              Expert mobile car detailing serving Chapin & Lake Murray west side. Ceramic coating, luxury vehicle care, lake house detailing. 5.0★ rated with 19 reviews.
+              Expert mobile car detailing serving Chapin & Lake Murray west side. Ceramic coating, luxury vehicle care, lake house detailing. 5.0★ rated with 31 reviews.
             </p>
 
             <p className="text-lg sm:text-xl md:text-2xl font-semibold mb-6 md:mb-8 text-primary-300">
@@ -208,6 +208,11 @@ export const LocationChapinPage = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center px-4">
+              <a href="/book">
+                <button className="w-full sm:w-auto px-6 md:px-8 py-3 md:py-4 bg-primary-700 text-white text-base md:text-lg font-bold rounded-lg hover:bg-primary-800 transition shadow-lg hover:shadow-xl transform hover:scale-105">
+                  Book Online
+                </button>
+              </a>
               <a href="tel:8036678731">
                 <button className="w-full sm:w-auto px-6 md:px-8 py-3 md:py-4 bg-white text-primary-700 text-base md:text-lg font-bold rounded-lg hover:bg-gray-100 transition shadow-lg hover:shadow-xl transform hover:scale-105 flex items-center justify-center gap-2">
                   <Phone className="w-5 h-5" />
@@ -322,9 +327,15 @@ export const LocationChapinPage = () => {
               Ready for Professional Auto Detailing?
             </h2>
             <p className="text-xl text-primary-100 mb-8">
-              Best mobile car detailing in Chapin SC. 5.0★ rating from 19 reviews. We come to your lake house!
+              Best mobile car detailing in Chapin SC. 5.0★ rating from 31 reviews. We come to your lake house!
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a
+                href="/book"
+                className="px-8 py-4 bg-primary-600 text-white font-bold rounded-lg hover:bg-primary-500 transition shadow-lg"
+              >
+                Book Online
+              </a>
               <a
                 href="tel:8036678731"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-primary-700 font-bold rounded-lg hover:bg-gray-100 transition shadow-lg"

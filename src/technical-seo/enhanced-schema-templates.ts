@@ -158,30 +158,30 @@ export function generateEnhancedLocalBusinessSchema(cityKey: string) {
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
-            "name": "Basic Mobile Detail",
-            "description": "Exterior wash, interior vacuum, and basic detailing"
+            "name": "Basic Detail",
+            "description": "Full interior and exterior detail with wax protection"
           },
-          "price": "75",
+          "price": "225",
           "priceCurrency": "USD"
         },
         {
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
-            "name": "Full Service Detail",
-            "description": "Complete exterior and interior detailing with protection"
+            "name": "Factory Reset",
+            "description": "Deep-clean package with shampoo, extraction, and restoration"
           },
-          "price": "150",
+          "price": "400",
           "priceCurrency": "USD"
         },
         {
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
-            "name": "Premium Ceramic Coating",
+            "name": "Ceramic Coating",
             "description": "Paint correction and ceramic coating application"
           },
-          "price": "500",
+          "price": "999",
           "priceCurrency": "USD"
         }
       ]
@@ -251,9 +251,9 @@ export function generateServiceSchema(cityKey: string) {
     "offers": [
       {
         "@type": "Offer",
-        "name": "Basic Mobile Detail Package",
-        "description": "Exterior wash and wax, interior vacuum and wipe down",
-        "price": "75",
+        "name": "Basic Detail",
+        "description": "Full interior and exterior detail with wax protection",
+        "price": "225",
         "priceCurrency": "USD",
         "validIn": {
           "@type": "City",
@@ -262,9 +262,9 @@ export function generateServiceSchema(cityKey: string) {
       },
       {
         "@type": "Offer",
-        "name": "Full Service Detail Package",
-        "description": "Complete exterior detail, interior deep clean, protection application",
-        "price": "150",
+        "name": "Factory Reset",
+        "description": "Deep-clean package with shampoo, extraction, and restoration",
+        "price": "400",
         "priceCurrency": "USD",
         "validIn": {
           "@type": "City",
@@ -329,7 +329,7 @@ export function generateFAQSchema(cityKey: string) {
         "name": `What is the cost of mobile auto detailing in ${city.name}?`,
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": `Our mobile auto detailing services in ${city.name} start at $75 for basic packages and range up to $500+ for premium ceramic coating services. Pricing depends on vehicle size and service level selected.`
+          "text": `Our mobile auto detailing in ${city.name} starts at $100 for an exterior detail, $200 for an interior detail, and $225 for our Basic Detail package. Ceramic coating starts at $999. Pricing depends on the service selected.`
         }
       },
       {
@@ -421,7 +421,7 @@ export function generateAggregateRatingSchema(cityKey: string) {
     "itemReviewed": {
       "@id": `https://mikahsmobiledetailingsc.com/locations/${city.slug}/#business`
     },
-    "ratingValue": "4.9",
+    "ratingValue": "5.0",
     "bestRating": "5",
     "worstRating": "1",
     "ratingCount": "47"

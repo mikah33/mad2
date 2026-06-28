@@ -83,7 +83,7 @@ export const services: Service[] = [
       'UV protection treatment',
       'Window cleaning (interior)'
     ],
-    pricing: { starting: '200', range: '200-450' },
+    pricing: { starting: '200' },
     duration: '2-4 hours',
     featured: true
   },
@@ -104,7 +104,7 @@ export const services: Service[] = [
       'Chrome and trim polishing',
       'Brake dust removal'
     ],
-    pricing: { starting: '200', range: '200-400' },
+    pricing: { starting: '100' },
     duration: '2-5 hours',
     featured: true
   },
@@ -124,7 +124,7 @@ export const services: Service[] = [
       'Professional-grade application',
       'Requires exterior detailing first'
     ],
-    pricing: { starting: 'Quote' },
+    pricing: { starting: '999' },
     duration: '4-8 hours additional',
     featured: false,
     popular: false
@@ -144,7 +144,7 @@ export const services: Service[] = [
       'Paint depth restoration',
       'Single or two-stage options'
     ],
-    pricing: { starting: 'Quote' },
+    pricing: { starting: '599' },
     duration: '4-8 hours',
     featured: true
   },
@@ -154,16 +154,15 @@ export const services: Service[] = [
     slug: 'mobile-detailing',
     category: 'mobile',
     shortDescription: 'Professional detailing that comes to you',
-    description: 'Routine Reset: 2x Exterior Details + 1x Interior Reset + 1x Engine Bay Cleaning per month. Priority scheduling.',
+    description: 'Routine Reset: 1x Interior Detail + 2x Exterior Details per month. Cancel anytime.',
     features: [
       'On-location service',
       'Flexible scheduling',
       'Commercial and residential',
-      '2x Exterior Details per Month',
-      '1x Interior Reset per Month',
-      '1x Engine Bay Cleaning'
+      '1x Interior Detail per Month',
+      '2x Exterior Details per Month'
     ],
-    pricing: { starting: '250', range: '250/month' },
+    pricing: { starting: '225', range: '225/month' },
     duration: 'Monthly',
     featured: true,
     popular: true

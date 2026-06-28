@@ -14,7 +14,7 @@ const ExteriorDetailingPage: React.FC = () => {
   const productSchema = generateProductSchema({
     name: "Exterior Car Detailing Service",
     description: "Professional exterior car detailing in Columbia SC. Hand wash, clay bar treatment, paint correction, wax protection, and wheel detailing. Mobile service available.",
-    price: "200",
+    price: "100",
     features: [
       "Hand wash using premium products",
       "Wheel and tire deep cleaning",
@@ -65,8 +65,7 @@ const ExteriorDetailingPage: React.FC = () => {
       "@type": "Offer",
       "priceSpecification": {
         "@type": "PriceSpecification",
-        "minPrice": "99",
-        "maxPrice": "199",
+        "minPrice": "100",
         "priceCurrency": "USD"
       }
     }
@@ -137,6 +136,12 @@ const ExteriorDetailingPage: React.FC = () => {
                   polishing, and protective wax. Mobile service throughout Columbia, Lexington, and beyond.
                 </p>
                 <div className="flex flex-wrap gap-4">
+                  <a
+                    href="/book?service=exterior-detail"
+                    className="bg-white text-blue-600 px-8 py-4 rounded-lg font-bold hover:bg-blue-50 transition flex items-center gap-2"
+                  >
+                    Book Online <ChevronRight className="w-5 h-5" />
+                  </a>
                   <button
                     onClick={scrollToQuote}
                     className="bg-white text-blue-600 px-8 py-4 rounded-lg font-bold hover:bg-blue-50 transition flex items-center gap-2"
@@ -144,10 +149,10 @@ const ExteriorDetailingPage: React.FC = () => {
                     Get Free Quote <ChevronRight className="w-5 h-5" />
                   </button>
                   <a
-                    href="tel:5551234567"
+                    href="tel:+18036678731"
                     className="bg-blue-700 text-white px-8 py-4 rounded-lg font-bold hover:bg-blue-600 transition flex items-center gap-2"
                   >
-                    <Phone className="w-5 h-5" /> (555) 123-4567
+                    <Phone className="w-5 h-5" /> (803) 667-8731
                   </a>
                 
       </div>
@@ -310,10 +315,7 @@ const ExteriorDetailingPage: React.FC = () => {
                   
       </div>
                   <p className="text-gray-700 mb-2">
-                    <strong>Starting at $99-$199</strong>
-                  </p>
-                  <p className="text-sm text-gray-600 mb-3">
-                    Pricing varies by vehicle size. SUVs and trucks $20-40 more than sedans.
+                    <strong>Starting at $100</strong>
                   </p>
                   <div className="flex items-center gap-3">
                     <Clock className="w-6 h-6 text-blue-600" />
@@ -327,7 +329,7 @@ const ExteriorDetailingPage: React.FC = () => {
                 <ul className="space-y-2">
                   <li className="flex items-start gap-2">
                     <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-1" />
-                    <span><strong>Headlight Restoration:</strong> $79-$129</span>
+                    <span><strong>Headlight Restoration:</strong> call for a quote</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-1" />
@@ -512,6 +514,12 @@ const ExteriorDetailingPage: React.FC = () => {
               Mobile service throughout Columbia and Lexington SC.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
+              <a
+                href="/book?service=exterior-detail"
+                className="bg-white text-blue-600 px-8 py-4 rounded-lg font-bold hover:bg-blue-50 transition"
+              >
+                Book Online
+              </a>
               <button
                 onClick={scrollToQuote}
                 className="bg-white text-blue-600 px-8 py-4 rounded-lg font-bold hover:bg-blue-50 transition"
@@ -519,10 +527,10 @@ const ExteriorDetailingPage: React.FC = () => {
                 Get Free Quote
               </button>
               <a
-                href="tel:5551234567"
+                href="tel:+18036678731"
                 className="bg-blue-700 text-white px-8 py-4 rounded-lg font-bold hover:bg-blue-600 transition"
               >
-                Call (555) 123-4567
+                Call (803) 667-8731
               </a>
             
       </div>

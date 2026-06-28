@@ -138,14 +138,14 @@ export const FAQPage = () => {
               Can't find what you're looking for? Our team is here to help with any questions about our mobile detailing services in Columbia, Lexington, and Irmo.
             </p>
             <div className="faq-cta-buttons">
-              <a href="/contact" className="faq-cta-btn faq-cta-btn-primary">
+              <a href="/book" className="faq-cta-btn faq-cta-btn-primary">
+                Book Online
+              </a>
+              <a href="/contact" className="faq-cta-btn faq-cta-btn-secondary">
                 Contact Us
               </a>
-              <a href="tel:+18035551234" className="faq-cta-btn faq-cta-btn-secondary">
-                Call (803) 555-1234
-              </a>
-              <a href="/booking" className="faq-cta-btn faq-cta-btn-secondary">
-                Book Online
+              <a href="tel:+18036678731" className="faq-cta-btn faq-cta-btn-secondary">
+                Call (803) 667-8731
               </a>
             </div>
           </div>
