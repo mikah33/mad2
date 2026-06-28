@@ -46,8 +46,9 @@ const BookingTimeline: React.FC = () => {
     description: ''
   });
 
-  // SMS marketing consent (A2P 10DLC opt-in) — optional, not a condition of service
-  const [smsConsent, setSmsConsent] = useState(false);
+  // SMS consent (A2P 10DLC) — two separate, optional opt-ins; neither is required to submit
+  const [smsTransactional, setSmsTransactional] = useState(false);
+  const [smsMarketing, setSmsMarketing] = useState(false);
 
   const [openModal, setOpenModal] = useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -260,11 +261,13 @@ const BookingTimeline: React.FC = () => {
         location: formData.location,
         description: formData.description,
 
-        // SMS marketing consent (A2P 10DLC opt-in proof)
-        smsConsent: smsConsent,
-        smsConsentText: smsConsent
-          ? "I agree to receive text messages from Mikah's Auto Detailing at the number provided, including appointment updates and promotional offers. Msg & data rates may apply. Reply STOP to opt out."
-          : '',
+        // SMS consent (A2P 10DLC opt-in proof) — separate transactional & marketing
+        smsConsentTransactional: smsTransactional,
+        smsConsentMarketing: smsMarketing,
+        smsConsentText: [
+          smsTransactional ? 'TRANSACTIONAL: consented to appointment/service text updates' : '',
+          smsMarketing ? 'MARKETING: consented to promotional text messages' : '',
+        ].filter(Boolean).join(' | '),
 
         // Forensic Data (full device fingerprint)
         forensics: forensics,
@@ -1149,22 +1152,41 @@ const BookingTimeline: React.FC = () => {
                     />
                   </div>
 
-                  {/* SMS Consent (A2P 10DLC opt-in) — optional, not required to submit */}
-                  <div className="flex items-start gap-2">
-                    <input
-                      type="checkbox"
-                      id="smsConsent"
-                      name="smsConsent"
-                      checked={smsConsent}
-                      onChange={(e) => setSmsConsent(e.target.checked)}
-                      disabled={isSubmitting}
-                      className="mt-0.5 h-4 w-4 flex-shrink-0 rounded border-gray-300 text-[#0077B6] focus:ring-[#90E0EF]"
-                    />
-                    <label htmlFor="smsConsent" className="text-xs text-gray-600 leading-relaxed">
-                      I agree to receive text messages from Mikah's Auto Detailing at the number provided, including appointment updates and promotional offers. Msg &amp; data rates may apply. Msg frequency varies. Reply STOP to opt out, HELP for help. Consent is not a condition of purchase. See our{' '}
-                      <a href="/privacy" className="text-[#023E8A] font-semibold hover:underline">Privacy Policy</a> &amp;{' '}
-                      <a href="/terms" className="text-[#023E8A] font-semibold hover:underline">Terms</a>.
+                  {/* SMS Consent (A2P 10DLC) — two separate, optional opt-ins; neither required to submit */}
+                  <div className="space-y-2 rounded-lg bg-gray-50 border border-gray-200 p-3">
+                    <label htmlFor="smsTransactional" className="flex items-start gap-2 cursor-pointer">
+                      <input
+                        type="checkbox"
+                        id="smsTransactional"
+                        name="smsTransactional"
+                        checked={smsTransactional}
+                        onChange={(e) => setSmsTransactional(e.target.checked)}
+                        disabled={isSubmitting}
+                        className="mt-0.5 h-4 w-4 flex-shrink-0 rounded border-gray-300 text-[#0077B6] focus:ring-[#90E0EF]"
+                      />
+                      <span className="text-xs text-gray-600 leading-relaxed">
+                        I consent to receive transactional text messages (appointment confirmations and service updates) from Mikah's Auto Detailing at the phone number provided. Message frequency may vary. Message &amp; data rates may apply. Reply HELP for help or STOP to opt out.
+                      </span>
                     </label>
+                    <label htmlFor="smsMarketing" className="flex items-start gap-2 cursor-pointer">
+                      <input
+                        type="checkbox"
+                        id="smsMarketing"
+                        name="smsMarketing"
+                        checked={smsMarketing}
+                        onChange={(e) => setSmsMarketing(e.target.checked)}
+                        disabled={isSubmitting}
+                        className="mt-0.5 h-4 w-4 flex-shrink-0 rounded border-gray-300 text-[#0077B6] focus:ring-[#90E0EF]"
+                      />
+                      <span className="text-xs text-gray-600 leading-relaxed">
+                        I consent to receive marketing and promotional text messages from Mikah's Auto Detailing at the phone number provided. Message frequency may vary. Message &amp; data rates may apply. Reply HELP for help or STOP to opt out.
+                      </span>
+                    </label>
+                    <p className="text-[11px] text-gray-500 leading-relaxed pt-1 border-t border-gray-200">
+                      Consent is not a condition of purchase. See our{' '}
+                      <a href="/privacy" className="text-[#023E8A] font-semibold hover:underline">Privacy Policy</a> &amp;{' '}
+                      <a href="/terms" className="text-[#023E8A] font-semibold hover:underline">Terms of Service</a>.
+                    </p>
                   </div>
 
                   <button
