@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Get a Text Quote | Mikah's Auto Detailing</title>
+  <meta name="description" content="Request a quote from Mikah's Auto Detailing and opt in to text updates. Mobile auto detailing in Lexington & Columbia, SC." />
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: 'Montserrat', Arial, sans-serif; background: #f5f7fa; color: #1f2937; }
+    .wrap { max-width: 560px; margin: 0 auto; padding: 24px 16px 48px; }
+    .header { background: linear-gradient(135deg, #023E8A 0%, #0077B6 100%); color: #fff; border-radius: 14px; padding: 28px 24px; text-align: center; }
+    .header h1 { margin: 0 0 6px; font-size: 24px; }
+    .header p { margin: 0; color: #CAF0F8; font-size: 14px; }
+    form { background: #fff; border: 1px solid #e5e7eb; border-radius: 14px; padding: 22px; margin-top: 18px; box-shadow: 0 4px 10px rgba(0,0,0,.05); }
+    label.field { display: block; font-size: 13px; font-weight: 600; margin: 14px 0 6px; }
+    input[type=text], input[type=tel], input[type=email], textarea {
+      width: 100%; padding: 12px 14px; border: 1px solid #d1d5db; border-radius: 9px; font-size: 15px; background: #f9fafb;
+    }
+    .req { color: #dc2626; }
+    .consent { display: flex; gap: 10px; align-items: flex-start; margin-top: 16px; background: #f8fafc; border: 1px solid #e5e7eb; border-radius: 10px; padding: 12px; }
+    .consent input { margin-top: 3px; width: 18px; height: 18px; flex: 0 0 auto; }
+    .consent span { font-size: 12px; color: #4b5563; line-height: 1.55; }
+    .fine { font-size: 11px; color: #6b7280; margin-top: 12px; line-height: 1.55; }
+    .fine a { color: #023E8A; font-weight: 600; }
+    button { width: 100%; margin-top: 18px; padding: 14px; border: 0; border-radius: 10px; background: linear-gradient(135deg, #023E8A 0%, #0077B6 100%); color: #fff; font-size: 16px; font-weight: 700; cursor: pointer; }
+    .ok { display:none; background:#ecfdf5; border:1px solid #a7f3d0; color:#065f46; padding:12px; border-radius:10px; margin-bottom:12px; font-size:14px; }
+    .err { display:none; background:#fef2f2; border:1px solid #fecaca; color:#991b1b; padding:12px; border-radius:10px; margin-bottom:12px; font-size:14px; }
+    .back { display:block; text-align:center; margin-top:18px; color:#023E8A; font-size:13px; font-weight:600; text-decoration:none; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="header">
+      <h1>Get a Text Quote</h1>
+      <p>Mikah's Auto Detailing — mobile detailing in Lexington &amp; Columbia, SC</p>
+    </div>
+
+    <form id="optinForm">
+      <div class="ok" id="okMsg">Thanks! We received your request and will reach out shortly.</div>
+      <div class="err" id="errMsg">Something went wrong. Please call or text (803) 667-8731.</div>
+
+      <label class="field" for="fullName">Full Name <span class="req">*</span></label>
+      <input type="text" id="fullName" name="fullName" autocomplete="name" required />
+
+      <label class="field" for="phone">Phone Number <span class="req">*</span></label>
+      <input type="tel" id="phone" name="phone" autocomplete="tel" required />
+
+      <label class="field" for="email">Email</label>
+      <input type="email" id="email" name="email" autocomplete="email" />
+
+      <label class="field" for="message">What does your vehicle need?</label>
+      <textarea id="message" name="message" rows="3"></textarea>
+
+      <!-- Transactional consent: unchecked, optional, not required to submit -->
+      <label class="consent" for="smsTransactional">
+        <input type="checkbox" id="smsTransactional" name="smsTransactional" />
+        <span>I consent to receive transactional text messages (appointment confirmations and service updates) from Mikah's Auto Detailing at the phone number provided. Message frequency may vary. Message &amp; data rates may apply. Reply HELP for help or STOP to opt out.</span>
+      </label>
+
+      <!-- Marketing consent: unchecked, optional, not required to submit -->
+      <label class="consent" for="smsMarketing">
+        <input type="checkbox" id="smsMarketing" name="smsMarketing" />
+        <span>I consent to receive marketing and promotional text messages from Mikah's Auto Detailing at the phone number provided. Message frequency may vary. Message &amp; data rates may apply. Reply HELP for help or STOP to opt out.</span>
+      </label>
+
+      <p class="fine">
+        Consent to receive text messages is not a condition of any purchase. Message and data rates may apply. Message frequency may vary. Reply STOP to opt out or HELP for help. See our
+        <a href="/privacy">Privacy Policy</a> and <a href="/terms">Terms of Service</a>.
+      </p>
+
+      <button type="submit" id="submitBtn">Request My Quote</button>
+    </form>
+
+    <a class="back" href="/">← Back to mikahsmobiledetailingsc.com</a>
+  </div>
+
+  <script>
+    document.getElementById('optinForm').addEventListener('submit', async function (e) {
+      e.preventDefault();
+      var btn = document.getElementById('submitBtn');
+      var ok = document.getElementById('okMsg');
+      var err = document.getElementById('errMsg');
+      ok.style.display = 'none'; err.style.display = 'none';
+      btn.disabled = true; btn.textContent = 'Sending...';
+      var smsT = document.getElementById('smsTransactional').checked;
+      var smsM = document.getElementById('smsMarketing').checked;
+      var payload = {
+        fullName: document.getElementById('fullName').value,
+        phone: document.getElementById('phone').value,
+        email: document.getElementById('email').value,
+        description: document.getElementById('message').value,
+        service: 'Text Quote Request',
+        smsConsentTransactional: smsT,
+        smsConsentMarketing: smsM,
+        smsConsentText: [smsT ? 'TRANSACTIONAL' : '', smsM ? 'MARKETING' : ''].filter(Boolean).join(' | '),
+        source: "Mikah's Auto Detailing - SMS Opt-in Form",
+        timestamp: new Date().toISOString()
+      };
+      try {
+        var r = await fetch('https://contractorai.app.n8n.cloud/webhook/41d626b4-d245-4ef6-82b1-575c623e02d6', {
+          method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload)
+        });
+        if (!r.ok) throw new Error('bad status');
+        ok.style.display = 'block';
+        document.getElementById('optinForm').reset();
+      } catch (e2) {
+        err.style.display = 'block';
+      } finally {
+        btn.disabled = false; btn.textContent = 'Request My Quote';
+      }
+    });
+  </script>
+</body>
+</html>
