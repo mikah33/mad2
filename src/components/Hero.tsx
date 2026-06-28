@@ -98,7 +98,7 @@ const Hero: React.FC = () => {
 
             {/* Primary CTA - Single Clear Action */}
             <div className="flex flex-col sm:flex-row gap-3 justify-center md:justify-start items-center mb-4">
-              <a href="#booking" className="w-full sm:w-auto">
+              <a href="/book" className="w-full sm:w-auto">
                 <button className="w-full sm:w-auto px-8 py-4 text-white text-lg font-bold rounded-lg transition shadow-xl hover:shadow-2xl transform hover:scale-105 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 animate-pulse hover:animate-none">
                   Get Your Free Quote Now
                 </button>
@@ -131,33 +131,29 @@ const Hero: React.FC = () => {
                 <p className="text-sm text-gray-600">Same-day appointments available</p>
               </div>
 
-              <form className="space-y-3" action="#booking" method="get">
-                <input
-                  type="text"
-                  placeholder="Your Name"
-                  className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#0077B6] focus:border-transparent text-gray-800"
-                />
-                <input
-                  type="tel"
-                  placeholder="Phone Number"
-                  className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#0077B6] focus:border-transparent text-gray-800"
-                />
-                <select className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#0077B6] focus:border-transparent text-gray-800 bg-white">
-                  <option value="">Select a Service</option>
-                  <option value="basic">Basic Detail - $200</option>
-                  <option value="factory">Factory Reset - $400</option>
-                  <option value="ceramic">Ceramic Coating</option>
-                  <option value="other">Other Services</option>
-                </select>
-                <a href="#booking" className="block">
+              {/* CTA card (no on-page form — single opt-in lives on /book for A2P compliance) */}
+              <div className="space-y-3">
+                <ul className="space-y-2 text-sm text-gray-700">
+                  <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" /> Interior &amp; exterior detailing from $225</li>
+                  <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" /> We come to your home or office</li>
+                  <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" /> Pick your package &amp; get an instant quote</li>
+                </ul>
+                <a href="/book" className="block">
                   <button
                     type="button"
                     className="w-full py-4 bg-gradient-to-r from-[#023E8A] to-[#0077B6] text-white font-bold rounded-lg hover:from-[#0077B6] hover:to-[#023E8A] transition shadow-lg transform hover:scale-[1.02]"
                   >
-                    Get My Free Quote
+                    Book Your Detail
                   </button>
                 </a>
-              </form>
+                <a
+                  href="tel:+18036678731"
+                  onClick={handlePhoneClick}
+                  className="block text-center text-sm font-semibold text-[#023E8A] hover:underline"
+                >
+                  or call / text (803) 667-8731
+                </a>
+              </div>
 
               <div className="mt-4 pt-4 border-t border-gray-200">
                 <div className="flex items-center justify-center gap-4 text-sm text-gray-600">
