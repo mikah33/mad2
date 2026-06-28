@@ -164,11 +164,25 @@ const Footer: React.FC = () => {
         </div>
 
         <div className="border-t border-gray-800 pt-6 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-gray-400 text-sm mb-4 md:mb-0">
-            © 2025 Mikah's Auto Detailing. All rights reserved.
-            <br />
-            <span className="text-xs">Professional auto detailing services in Columbia, SC</span>
-          </p>
+          <div className="text-gray-400 text-sm mb-4 md:mb-0 text-center md:text-left">
+            <p className="font-semibold text-gray-300">Mikahs Auto Detailing and Services LLC</p>
+            <p className="text-xs mt-1">
+              Mobile auto detailing serving Lexington, Columbia &amp; surrounding areas · Lexington, SC 29072
+            </p>
+            <p className="text-xs mt-1">
+              <a href="mailto:mikahsautodetailing@gmail.com" className="hover:text-[#90E0EF] transition">
+                mikahsautodetailing@gmail.com
+              </a>
+              {' '}·{' '}
+              <a href="tel:+18036678731" className="hover:text-[#90E0EF] transition">(803) 667-8731</a>
+            </p>
+            <p className="text-xs mt-2">
+              © 2026 Mikahs Auto Detailing and Services LLC. All rights reserved.{' '}
+              <a href="/privacy" className="hover:text-[#90E0EF] underline">Privacy Policy</a>
+              {' '}·{' '}
+              <a href="/terms" className="hover:text-[#90E0EF] underline">Terms of Service</a>
+            </p>
+          </div>
           <div className="flex items-center gap-4">
             <a
               href="tel:+18036678731"
