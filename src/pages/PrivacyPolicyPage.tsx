@@ -23,7 +23,7 @@ export const PrivacyPolicyPage = () => {
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <h1 className="text-4xl md:text-5xl font-bold mb-4">Privacy Policy</h1>
             <p className="text-xl text-gray-300">
-              Last Updated: January 26, 2025
+              Last Updated: June 28, 2026
             </p>
           </div>
         </div>
@@ -87,6 +87,20 @@ export const PrivacyPolicyPage = () => {
               <li><strong>Legal Requirements:</strong> We may disclose your information if required by law or in response to valid requests by public authorities.</li>
               <li><strong>With Your Consent:</strong> We may share your information for any other purpose with your consent.</li>
             </ul>
+
+            <h2>Text Messaging (SMS) Communications</h2>
+            <p>
+              By providing your mobile phone number and checking the SMS consent box on our booking or contact forms, you consent to receive text messages from Mikah's Auto Detailing. These may include appointment confirmations, scheduling and service updates, quotes, and promotional offers.
+            </p>
+            <ul>
+              <li><strong>Message frequency varies</strong> based on your interactions with us.</li>
+              <li><strong>Message and data rates may apply.</strong></li>
+              <li>Reply <strong>STOP</strong> at any time to opt out of text messages. Reply <strong>HELP</strong> for assistance, or call us at (803) 667-8731.</li>
+              <li>Consent to receive text messages is <strong>not a condition</strong> of purchasing any goods or services.</li>
+            </ul>
+            <p>
+              <strong>We do not sell, rent, or share your mobile phone number or SMS opt-in information with any third parties or affiliates for their own marketing or promotional purposes.</strong> Mobile opt-in data and consent are never shared with third parties. The above carve-out for text messaging information applies notwithstanding anything to the contrary in the "How We Share Your Information" section above.
+            </p>
 
             <h2>Cookies and Tracking Technologies</h2>
             <p>

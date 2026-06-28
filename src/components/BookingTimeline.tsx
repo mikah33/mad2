@@ -43,6 +43,9 @@ const BookingTimeline: React.FC = () => {
     description: ''
   });
 
+  // SMS marketing consent (A2P 10DLC opt-in) — optional, not a condition of service
+  const [smsConsent, setSmsConsent] = useState(false);
+
   const [openModal, setOpenModal] = useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
@@ -228,6 +231,12 @@ const BookingTimeline: React.FC = () => {
         phone: formData.phone,
         location: formData.location,
         description: formData.description,
+
+        // SMS marketing consent (A2P 10DLC opt-in proof)
+        smsConsent: smsConsent,
+        smsConsentText: smsConsent
+          ? "I agree to receive text messages from Mikah's Auto Detailing at the number provided, including appointment updates and promotional offers. Msg & data rates may apply. Reply STOP to opt out."
+          : '',
 
         // Forensic Data (full device fingerprint)
         forensics: forensics,
@@ -1110,6 +1119,24 @@ const BookingTimeline: React.FC = () => {
                       placeholder="Additional Details (Optional)"
                       disabled={isSubmitting}
                     />
+                  </div>
+
+                  {/* SMS Consent (A2P 10DLC opt-in) — optional, not required to submit */}
+                  <div className="flex items-start gap-2">
+                    <input
+                      type="checkbox"
+                      id="smsConsent"
+                      name="smsConsent"
+                      checked={smsConsent}
+                      onChange={(e) => setSmsConsent(e.target.checked)}
+                      disabled={isSubmitting}
+                      className="mt-0.5 h-4 w-4 flex-shrink-0 rounded border-gray-300 text-[#0077B6] focus:ring-[#90E0EF]"
+                    />
+                    <label htmlFor="smsConsent" className="text-xs text-gray-600 leading-relaxed">
+                      I agree to receive text messages from Mikah's Auto Detailing at the number provided, including appointment updates and promotional offers. Msg &amp; data rates may apply. Msg frequency varies. Reply STOP to opt out, HELP for help. Consent is not a condition of purchase. See our{' '}
+                      <a href="/privacy" className="text-[#023E8A] font-semibold hover:underline">Privacy Policy</a> &amp;{' '}
+                      <a href="/terms" className="text-[#023E8A] font-semibold hover:underline">Terms</a>.
+                    </label>
                   </div>
 
                   <button
