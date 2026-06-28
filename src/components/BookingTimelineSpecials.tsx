@@ -584,7 +584,7 @@ const BookingTimelineSpecials: React.FC = () => {
                       onChange={handleChange}
                       required
                       autoComplete="tel"
-                      placeholder="(803) 555-1234"
+                      placeholder="(803) 667-8731"
                       className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#0077B6] focus:border-[#0077B6] transition"
                     />
                   </div>
