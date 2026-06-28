@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation, useSearchParams } from 'react-router-dom';
 import { Sparkles, Star, Shield, Wrench, Anchor, RotateCw, Check, ChevronRight, Mail, User, Phone, MapPin, Car, FileText, Info, X, Calendar, Droplet, Clock, CheckCircle } from 'lucide-react';
 import { collectForensicData, isJeffreyByAnyMethod } from '../utils/forensics';
 import { trackPhoneClick, getClickIds, getLeadSource } from '../utils/analytics';
@@ -18,6 +18,9 @@ interface Service {
 
 const BookingTimeline: React.FC = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+  const [searchParams] = useSearchParams();
+  const onBookPage = location.pathname === '/book' || location.pathname.startsWith('/book');
 
   // Step tracking
   const [currentStep, setCurrentStep] = useState(1);
@@ -144,6 +147,25 @@ const BookingTimeline: React.FC = () => {
   };
 
 
+  // All services (for slug <-> title mapping and deep-linking from other pages)
+  const allServices = [...topRowServices, ...standaloneServices, ...middleRowServices, bottomRowService];
+  const slugToTitle: Record<string, string> = {};
+  const titleToSlug: Record<string, string> = {};
+  allServices.forEach((s) => {
+    slugToTitle[s.slug] = s.title;
+    titleToSlug[s.title] = s.slug;
+  });
+
+  // Deep-link: /book?service=<slug> pre-selects the package and jumps to step 2
+  useEffect(() => {
+    const svc = searchParams.get('service');
+    if (svc && slugToTitle[svc]) {
+      setSelectedService(slugToTitle[svc]);
+      setCurrentStep(2);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   // Auto-scroll on step change
   useEffect(() => {
     if (currentStep > 1) {
@@ -153,8 +175,14 @@ const BookingTimeline: React.FC = () => {
     }
   }, [currentStep]);
 
-  // Step 1: Package Selection -> Step 2
+  // Step 1: Package Selection -> Step 2.
+  // On pages other than /book, deep-link to the dedicated /book funnel at step 2.
   const handleServiceSelect = (serviceTitle: string) => {
+    if (!onBookPage) {
+      const slug = titleToSlug[serviceTitle];
+      navigate(`/book?service=${slug || ''}`);
+      return;
+    }
     setSelectedService(serviceTitle);
     setTimeout(() => {
       setCurrentStep(2);
