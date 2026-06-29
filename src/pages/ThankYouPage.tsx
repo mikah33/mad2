@@ -52,47 +52,12 @@ const ThankYouPage: React.FC = () => {
         <meta name="robots" content="noindex, nofollow" />
       </Helmet>
 
-      <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-gray-50 pb-20 flex flex-col items-center justify-center px-4 py-10">
-        <div className="max-w-md w-full text-center">
-          {/* Success Icon */}
-          <div className="mb-6">
-            <div className="inline-flex items-center justify-center w-20 h-20 bg-green-100 rounded-full">
-              <CheckCircle className="w-12 h-12 text-green-600" />
-            </div>
-          </div>
+      <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-gray-50 pb-20 flex items-center justify-center px-4 py-10">
+        <div className="w-full max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">
 
-          {/* Thank You Message */}
-          <h1 className="text-3xl font-bold text-gray-800 mb-3">
-            Thank You!
-          </h1>
-          <p className="text-lg text-gray-600 mb-6">
-            Your booking request has been received. We'll contact you within a few minutes!
-          </p>
-
-          {/* What's Next */}
-          <div className="bg-white rounded-xl shadow-lg p-6 mb-6 text-left">
-            <h2 className="font-bold text-gray-800 mb-3">What happens next?</h2>
-            <ul className="space-y-3 text-gray-600 text-sm">
-              <li className="flex items-start gap-2">
-                <span className="text-[#0077B6] font-bold">1.</span>
-                <span>We'll review your request and vehicle details</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-[#0077B6] font-bold">2.</span>
-                <span>You'll receive a call or text to confirm your appointment</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-[#0077B6] font-bold">3.</span>
-                <span>We'll come to you at your scheduled time!</span>
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        {/* Optional: Self-schedule now. Wider container so the calendar's
-            date + time columns have room to breathe on desktop. */}
-        <div className="max-w-2xl w-full mb-6">
-          <div className="bg-white rounded-xl shadow-lg p-4 sm:p-6 border border-gray-100">
+          {/* LEFT (desktop): Optional self-schedule calendar. On mobile it drops
+              below the thank-you content via the order utilities. */}
+          <div className="order-2 lg:order-1 bg-white rounded-xl shadow-lg p-4 sm:p-6 border border-gray-100">
             <div className="flex items-center justify-center gap-2 mb-1">
               <Calendar className="w-5 h-5 text-[#0077B6]" />
               <h2 className="font-bold text-gray-800 text-lg text-center">
@@ -102,7 +67,7 @@ const ThankYouPage: React.FC = () => {
             <p className="text-gray-600 text-sm text-center mb-4">
               <span className="font-semibold">Optional.</span> Reserve your appointment instantly with a{' '}
               <span className="font-semibold">$25 non-refundable deposit</span> (applied toward your total).
-              Prefer to wait? No problem — we'll still reach out using the steps above.
+              Prefer to wait? No problem — we'll still reach out using the steps shown here.
             </p>
             <div className="rounded-lg overflow-hidden">
               <iframe
@@ -110,30 +75,66 @@ const ThankYouPage: React.FC = () => {
                 title="Book your detailing appointment"
                 scrolling="no"
                 id="LjeRjfzqnTtUi0ACqHZ2_booking"
-                style={{ width: '100%', border: 'none', overflow: 'hidden', minHeight: '640px' }}
+                style={{ width: '100%', border: 'none', overflow: 'hidden', minHeight: '720px' }}
               />
             </div>
           </div>
-        </div>
 
-        <div className="max-w-md w-full">
-          {/* Action Buttons */}
-          <div className="space-y-3">
-            <button
-              onClick={() => navigate('/')}
-              className="w-full flex items-center justify-center gap-2 bg-[#023E8A] text-white font-semibold py-3 px-6 rounded-lg hover:bg-[#0077B6] transition-colors"
-            >
-              <Home className="w-5 h-5" />
-              Back to Home
-            </button>
-            <a
-              href="tel:+18036678731"
-              className="w-full flex items-center justify-center gap-2 bg-gray-100 text-gray-800 font-semibold py-3 px-6 rounded-lg hover:bg-gray-200 transition-colors"
-            >
-              <Phone className="w-5 h-5" />
-              Call (803) 667-8731
-            </a>
+          {/* RIGHT (desktop): Thank-you confirmation, next steps, and actions. */}
+          <div className="order-1 lg:order-2 text-center">
+            {/* Success Icon */}
+            <div className="mb-6">
+              <div className="inline-flex items-center justify-center w-20 h-20 bg-green-100 rounded-full">
+                <CheckCircle className="w-12 h-12 text-green-600" />
+              </div>
+            </div>
+
+            {/* Thank You Message */}
+            <h1 className="text-3xl font-bold text-gray-800 mb-3">
+              Thank You!
+            </h1>
+            <p className="text-lg text-gray-600 mb-6">
+              Your booking request has been received. We'll contact you within a few minutes!
+            </p>
+
+            {/* What's Next */}
+            <div className="bg-white rounded-xl shadow-lg p-6 mb-6 text-left">
+              <h2 className="font-bold text-gray-800 mb-3">What happens next?</h2>
+              <ul className="space-y-3 text-gray-600 text-sm">
+                <li className="flex items-start gap-2">
+                  <span className="text-[#0077B6] font-bold">1.</span>
+                  <span>We'll review your request and vehicle details</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-[#0077B6] font-bold">2.</span>
+                  <span>You'll receive a call or text to confirm your appointment</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-[#0077B6] font-bold">3.</span>
+                  <span>We'll come to you at your scheduled time!</span>
+                </li>
+              </ul>
+            </div>
+
+            {/* Action Buttons */}
+            <div className="space-y-3">
+              <button
+                onClick={() => navigate('/')}
+                className="w-full flex items-center justify-center gap-2 bg-[#023E8A] text-white font-semibold py-3 px-6 rounded-lg hover:bg-[#0077B6] transition-colors"
+              >
+                <Home className="w-5 h-5" />
+                Back to Home
+              </button>
+              <a
+                href="tel:+18036678731"
+                className="w-full flex items-center justify-center gap-2 bg-gray-100 text-gray-800 font-semibold py-3 px-6 rounded-lg hover:bg-gray-200 transition-colors"
+              >
+                <Phone className="w-5 h-5" />
+                Call (803) 667-8731
+              </a>
+            </div>
           </div>
+
         </div>
       </div>
 
