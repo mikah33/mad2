@@ -1,9 +1,17 @@
 import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
-import { CheckCircle, Phone, Home } from 'lucide-react';
+import { CheckCircle, Phone, Home, Calendar } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import BottomNavbar from '../components/BottomNavbar';
 import { trackLeadSubmit, LeadData } from '../utils/analytics';
+
+// GoHighLevel booking widget for the "Book Your Detail" calendar.
+// Optional self-scheduling: the lead is already captured (sent to n8n) before
+// this page loads, so booking here is a bonus — it lets the customer lock in a
+// date and pay the $25 non-refundable deposit (via Square) instead of waiting
+// for a callback.
+const GHL_BOOKING_URL = 'https://api.leadconnectorhq.com/widget/booking/LjeRjfzqnTtUi0ACqHZ2';
+const GHL_EMBED_SCRIPT = 'https://link.msgsndr.com/js/form_embed.js';
 
 const ThankYouPage: React.FC = () => {
   const navigate = useNavigate();
@@ -25,6 +33,17 @@ const ThankYouPage: React.FC = () => {
     trackLeadSubmit(lead);
   }, []);
 
+  // Load the GoHighLevel embed script once. It auto-resizes the booking iframe
+  // via postMessage so the calendar fits its content without an inner scrollbar.
+  useEffect(() => {
+    if (!document.querySelector(`script[src="${GHL_EMBED_SCRIPT}"]`)) {
+      const s = document.createElement('script');
+      s.src = GHL_EMBED_SCRIPT;
+      s.async = true;
+      document.body.appendChild(s);
+    }
+  }, []);
+
   return (
     <>
       <Helmet>
@@ -33,7 +52,7 @@ const ThankYouPage: React.FC = () => {
         <meta name="robots" content="noindex, nofollow" />
       </Helmet>
 
-      <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-gray-50 pb-20 flex flex-col items-center justify-center px-4">
+      <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-gray-50 pb-20 flex flex-col items-center justify-center px-4 py-10">
         <div className="max-w-md w-full text-center">
           {/* Success Icon */}
           <div className="mb-6">
@@ -68,7 +87,36 @@ const ThankYouPage: React.FC = () => {
               </li>
             </ul>
           </div>
+        </div>
 
+        {/* Optional: Self-schedule now. Wider container so the calendar's
+            date + time columns have room to breathe on desktop. */}
+        <div className="max-w-2xl w-full mb-6">
+          <div className="bg-white rounded-xl shadow-lg p-4 sm:p-6 border border-gray-100">
+            <div className="flex items-center justify-center gap-2 mb-1">
+              <Calendar className="w-5 h-5 text-[#0077B6]" />
+              <h2 className="font-bold text-gray-800 text-lg text-center">
+                Want to lock in your date now?
+              </h2>
+            </div>
+            <p className="text-gray-600 text-sm text-center mb-4">
+              <span className="font-semibold">Optional.</span> Reserve your appointment instantly with a{' '}
+              <span className="font-semibold">$25 non-refundable deposit</span> (applied toward your total).
+              Prefer to wait? No problem — we'll still reach out using the steps above.
+            </p>
+            <div className="rounded-lg overflow-hidden">
+              <iframe
+                src={GHL_BOOKING_URL}
+                title="Book your detailing appointment"
+                scrolling="no"
+                id="LjeRjfzqnTtUi0ACqHZ2_booking"
+                style={{ width: '100%', border: 'none', overflow: 'hidden', minHeight: '640px' }}
+              />
+            </div>
+          </div>
+        </div>
+
+        <div className="max-w-md w-full">
           {/* Action Buttons */}
           <div className="space-y-3">
             <button
