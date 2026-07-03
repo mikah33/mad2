@@ -39,6 +39,12 @@
         'phone_conversion_number': '+18036678731'
       });
 
+      // Configure GA4 directly. Without this, gtag('event', ...) calls only
+      // reach the Ads (AW-) tag and never land in GA4 — GTM only handles the
+      // page_views it fires itself. SPA page_views are sent from
+      // PageViewTracker, so the automatic one is disabled here.
+      gtag('config', 'G-RYC8XZ9D02', { 'send_page_view': false });
+
       // Auto-grant consent for US users (adjust based on your privacy policy)
       // For EU users, implement a proper consent banner
       var isEU = false; // Set to true if you have EU visitors requiring consent
@@ -117,13 +123,13 @@
     </script>
 
     <!-- Primary Meta Tags -->
-    <meta name="description" content="5.0&#9733; mobile car detailing in Lexington SC — we come to your home or office. Full details from $225. Serving Lake Murray, Chapin &amp; Irmo. Same-week booking: (803) 667-8731." />
-    <meta name="keywords" content="mobile car detailing lexington sc, auto detailing lexington sc, mobile detailing lexington sc, car detailing lexington, car wash lexington sc, mobile auto detailing lexington sc, car detailing near me lexington, same day car detailing lexington sc" />
+    <meta name="description" content="Top-rated mobile car detailing in Lexington SC. Professional auto detailing brought to your door." />
+    <meta name="keywords" content="mobile auto detailing columbia sc, mobile car detailing lexington sc, car detailing near me columbia, interior car detailing, exterior auto detailing, paint correction columbia sc, mobile detailing services, auto detailing lexington sc, same day car detailing" />
     <meta name="author" content="Mikah's Auto Detailing" />
 
     <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Mobile Car Detailing Lexington SC | 5.0★ Rated | We Come to You | Mikah's" />
-    <meta property="og:description" content="5.0★ mobile car detailing in Lexington SC — we come to you. Full details from $225. Serving Lake Murray, Chapin &amp; Irmo. Call (803) 667-8731." />
+    <meta property="og:title" content="Car Detailing Lexington SC | Mobile Service | Mikah's Auto Detailing" />
+    <meta property="og:description" content="Top-rated mobile car detailing in Lexington SC. Professional auto detailing brought to your door." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://mikahsmobiledetailingsc.com/locations/lexington-sc" />
     <meta property="og:image" content="https://mikahsmobiledetailingsc.com/exterior2.jpg" />
@@ -133,8 +139,8 @@
 
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Mobile Car Detailing Lexington SC | 5.0★ Rated | We Come to You | Mikah's" />
-    <meta name="twitter:description" content="5.0★ mobile car detailing in Lexington SC — we come to you. Full details from $225. Serving Lake Murray, Chapin &amp; Irmo. Call (803) 667-8731." />
+    <meta name="twitter:title" content="Car Detailing Lexington SC | Mobile Service | Mikah's Auto Detailing" />
+    <meta name="twitter:description" content="Top-rated mobile car detailing in Lexington SC. Professional auto detailing brought to your door." />
     <meta name="twitter:image" content="https://mikahsmobiledetailingsc.com/exterior2.jpg" />
 
     <!-- Favicon (from logo) with cache-busting -->
@@ -150,7 +156,7 @@
     <link rel="manifest" href="/site.webmanifest?v=8" />
     <meta name="theme-color" content="#023E8A" />
 
-    <title>Mobile Car Detailing Lexington SC | 5.0★ Rated | We Come to You | From $225</title>
+    <title>Car Detailing Lexington SC | Mobile Service | Mikah's Auto Detailing</title>
 
     <!-- Schema is added via generate-all-pages-html.ts and generate-blog-html.ts -->
     <!-- DO NOT add schemas here - they will be injected during build -->
@@ -169,10 +175,10 @@
     fbq('track', 'PageView');
     </script>
     <!-- End Meta Pixel Code -->
-    <script type="module" crossorigin src="/assets/index-a178270f.js"></script>
-    <link rel="modulepreload" crossorigin href="/assets/react-vendor-9ec0ebb4.js">
-    <link rel="modulepreload" crossorigin href="/assets/ui-vendor-f2c38a9a.js">
-    <link rel="stylesheet" href="/assets/index-e8a7f9df.css">
+    <script type="module" crossorigin src="/assets/index-51aca410.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/react-vendor-437fce4c.js">
+    <link rel="modulepreload" crossorigin href="/assets/ui-vendor-de41dfdc.js">
+    <link rel="stylesheet" href="/assets/index-fe97f21b.css">
       <link rel="canonical" href="https://mikahsmobiledetailingsc.com/locations/lexington-sc"/>
       <script type="application/ld+json">
 [
@@ -816,7 +822,7 @@
     ],
     "aggregateRating": {
       "@type": "AggregateRating",
-      "ratingValue": "4.95",
+      "ratingValue": "5.0",
       "bestRating": "5",
       "worstRating": "1",
       "ratingCount": "31",
@@ -1144,14 +1150,14 @@
     "offers": {
       "@type": "Offer",
       "priceCurrency": "USD",
-      "price": "150-350",
+      "price": "100-400",
       "availability": "https://schema.org/InStock",
-      "validFrom": "2026-02-14",
+      "validFrom": "2026-07-03",
       "priceSpecification": {
         "@type": "PriceSpecification",
         "priceCurrency": "USD",
-        "minPrice": "150",
-        "maxPrice": "350",
+        "minPrice": "100",
+        "maxPrice": "400",
         "valueAddedTaxIncluded": false
       },
       "seller": {
@@ -1173,7 +1179,7 @@
           "priceSpecification": {
             "@type": "PriceSpecification",
             "priceCurrency": "USD",
-            "price": "150"
+            "price": "225"
           }
         },
         {
@@ -1186,7 +1192,7 @@
           "priceSpecification": {
             "@type": "PriceSpecification",
             "priceCurrency": "USD",
-            "price": "250"
+            "price": "400"
           }
         },
         {
@@ -1199,7 +1205,7 @@
           "priceSpecification": {
             "@type": "PriceSpecification",
             "priceCurrency": "USD",
-            "price": "350"
+            "price": "599"
           }
         }
       ]

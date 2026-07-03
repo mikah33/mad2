@@ -39,6 +39,12 @@
         'phone_conversion_number': '+18036678731'
       });
 
+      // Configure GA4 directly. Without this, gtag('event', ...) calls only
+      // reach the Ads (AW-) tag and never land in GA4 — GTM only handles the
+      // page_views it fires itself. SPA page_views are sent from
+      // PageViewTracker, so the automatic one is disabled here.
+      gtag('config', 'G-RYC8XZ9D02', { 'send_page_view': false });
+
       // Auto-grant consent for US users (adjust based on your privacy policy)
       // For EU users, implement a proper consent banner
       var isEU = false; // Set to true if you have EU visitors requiring consent
@@ -117,13 +123,13 @@
     </script>
 
     <!-- Primary Meta Tags -->
-    <meta name="description" content="Mobile detailing vs shop in Columbia &amp; Lexington SC — compare real costs, convenience, quality &amp; results. Which option saves Midlands drivers the most? Full breakdown." />
+    <meta name="description" content="#1 mobile auto detailing in Columbia, Lexington &amp; Irmo SC. We come to you! Interior/exterior from $225. 5.0★ rated, 30+ reviews. Same-day available. Free quote: (803) 667-8731." />
     <meta name="keywords" content="mobile auto detailing columbia sc, mobile car detailing lexington sc, car detailing near me columbia, interior car detailing, exterior auto detailing, paint correction columbia sc, mobile detailing services, auto detailing lexington sc, same day car detailing" />
     <meta name="author" content="Mikah's Auto Detailing" />
 
     <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Mobile vs Shop Car Detailing in Columbia SC: Which Is Better? (2026)" />
-    <meta property="og:description" content="Mobile detailing vs shop in Columbia &amp; Lexington SC — compare real costs, convenience &amp; results. Full breakdown for Midlands drivers." />
+    <meta property="og:title" content="Mobile Auto Detailing Columbia & Lexington SC | Mikah's Auto Detailing" />
+    <meta property="og:description" content="#1 mobile auto detailing in Columbia, Lexington &amp; Irmo SC. We come to you! Interior/exterior from $225. 5.0★ rated, 30+ reviews. Free quote: (803) 667-8731." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://mikahsmobiledetailingsc.com" />
     <meta property="og:image" content="https://mikahsmobiledetailingsc.com/mclarens-og.jpg" />
@@ -133,8 +139,8 @@
 
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Mobile vs Shop Car Detailing in Columbia SC: Which Is Better? (2026)" />
-    <meta name="twitter:description" content="Mobile detailing vs shop in Columbia &amp; Lexington SC — compare real costs, convenience &amp; results. Full breakdown for Midlands drivers." />
+    <meta name="twitter:title" content="Mobile Auto Detailing Columbia & Lexington SC | Mikah's Auto Detailing" />
+    <meta name="twitter:description" content="#1 mobile auto detailing in Columbia, Lexington &amp; Irmo SC. We come to you! Interior/exterior from $225. 5.0★ rated, 30+ reviews. Free quote: (803) 667-8731." />
     <meta name="twitter:image" content="https://mikahsmobiledetailingsc.com/mclarens-og.jpg" />
 
     <!-- Favicon (from logo) with cache-busting -->
@@ -150,7 +156,7 @@
     <link rel="manifest" href="/site.webmanifest?v=8" />
     <meta name="theme-color" content="#023E8A" />
 
-    <title>Mobile vs Shop Car Detailing in Columbia SC: Which Is Better? (2026)</title>
+    <title>Mobile vs Shop Detailing: Comparison | Mikah's Auto Detailing</title>
 
     <!-- Schema is added via generate-all-pages-html.ts and generate-blog-html.ts -->
     <!-- DO NOT add schemas here - they will be injected during build -->
@@ -169,10 +175,10 @@
     fbq('track', 'PageView');
     </script>
     <!-- End Meta Pixel Code -->
-    <script type="module" crossorigin src="/assets/index-a178270f.js"></script>
-    <link rel="modulepreload" crossorigin href="/assets/react-vendor-9ec0ebb4.js">
-    <link rel="modulepreload" crossorigin href="/assets/ui-vendor-f2c38a9a.js">
-    <link rel="stylesheet" href="/assets/index-e8a7f9df.css">
+    <script type="module" crossorigin src="/assets/index-51aca410.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/react-vendor-437fce4c.js">
+    <link rel="modulepreload" crossorigin href="/assets/ui-vendor-de41dfdc.js">
+    <link rel="stylesheet" href="/assets/index-fe97f21b.css">
       <link rel="canonical" href="https://mikahsmobiledetailingsc.com/blog/mobile-vs-shop-detailing-comparison"/>
       <script type="application/ld+json">
     {

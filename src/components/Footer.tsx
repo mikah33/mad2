@@ -118,6 +118,11 @@ const Footer: React.FC = () => {
                 </a>
               </li>
               <li>
+                <a href="/pricing" className="hover:text-[#90E0EF] transition block">
+                  Car Detailing Prices
+                </a>
+              </li>
+              <li>
                 <a href="/faq" className="hover:text-[#90E0EF] transition block">
                   Frequently Asked Questions
                 </a>

@@ -111,6 +111,7 @@ const Navigation: React.FC = () => {
                 </div>
               </div>
             </div>
+            <a href="/pricing" className="text-gray-700 hover:text-[#023E8A] transition text-sm xl:text-base font-medium">Pricing</a>
             <a href="/blog" className="text-gray-700 hover:text-[#023E8A] transition text-sm xl:text-base font-medium">Blog</a>
             <a href="/#projects" className="hidden xl:flex text-gray-700 hover:text-[#023E8A] transition text-sm xl:text-base font-medium">Recent Projects</a>
             <a href="/faq" className="text-gray-700 hover:text-[#023E8A] transition text-sm xl:text-base font-medium">FAQ</a>
@@ -202,6 +203,13 @@ const Navigation: React.FC = () => {
                 className="block px-4 py-2 text-gray-700 hover:bg-[#CAF0F8] hover:text-[#023E8A] rounded transition font-medium"
               >
                 Services
+              </a>
+              <a
+                href="/pricing"
+                onClick={handleLinkClick}
+                className="block px-4 py-2 text-gray-700 hover:bg-[#CAF0F8] hover:text-[#023E8A] rounded transition font-medium"
+              >
+                Pricing
               </a>
               <a
                 href="/blog"

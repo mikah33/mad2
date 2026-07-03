@@ -39,6 +39,12 @@
         'phone_conversion_number': '+18036678731'
       });
 
+      // Configure GA4 directly. Without this, gtag('event', ...) calls only
+      // reach the Ads (AW-) tag and never land in GA4 — GTM only handles the
+      // page_views it fires itself. SPA page_views are sent from
+      // PageViewTracker, so the automatic one is disabled here.
+      gtag('config', 'G-RYC8XZ9D02', { 'send_page_view': false });
+
       // Auto-grant consent for US users (adjust based on your privacy policy)
       // For EU users, implement a proper consent banner
       var isEU = false; // Set to true if you have EU visitors requiring consent
@@ -169,10 +175,10 @@
     fbq('track', 'PageView');
     </script>
     <!-- End Meta Pixel Code -->
-    <script type="module" crossorigin src="/assets/index-a178270f.js"></script>
-    <link rel="modulepreload" crossorigin href="/assets/react-vendor-9ec0ebb4.js">
-    <link rel="modulepreload" crossorigin href="/assets/ui-vendor-f2c38a9a.js">
-    <link rel="stylesheet" href="/assets/index-e8a7f9df.css">
+    <script type="module" crossorigin src="/assets/index-51aca410.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/react-vendor-437fce4c.js">
+    <link rel="modulepreload" crossorigin href="/assets/ui-vendor-de41dfdc.js">
+    <link rel="stylesheet" href="/assets/index-fe97f21b.css">
       <link rel="canonical" href="https://mikahsmobiledetailingsc.com/services/full-detail"/>
       <script type="application/ld+json">
 [
@@ -816,7 +822,7 @@
     ],
     "aggregateRating": {
       "@type": "AggregateRating",
-      "ratingValue": "4.95",
+      "ratingValue": "5.0",
       "bestRating": "5",
       "worstRating": "1",
       "ratingCount": "31",
@@ -1144,14 +1150,14 @@
     "offers": {
       "@type": "Offer",
       "priceCurrency": "USD",
-      "price": "250-450",
+      "price": "225-400",
       "availability": "https://schema.org/InStock",
-      "validFrom": "2026-02-14",
+      "validFrom": "2026-07-03",
       "priceSpecification": {
         "@type": "PriceSpecification",
         "priceCurrency": "USD",
-        "minPrice": "250",
-        "maxPrice": "450",
+        "minPrice": "225",
+        "maxPrice": "400",
         "valueAddedTaxIncluded": false
       },
       "seller": {
@@ -1166,7 +1172,6 @@
     "name": "Basic Mobile Car Detailing Package",
     "description": "Essential mobile car detailing service perfect for regular maintenance. Includes exterior wash, interior vacuum, basic cleaning, and tire shine. Great value for keeping your car clean.",
     "sku": "MAD-BASIC-001",
-    "gtin": "123456789012",
     "image": [
       "https://mikahsmobiledetailingsc.com/exterior1.jpg",
       "https://mikahsmobiledetailingsc.com/interior1.jpg"
@@ -1195,7 +1200,7 @@
       "price": "150",
       "priceCurrency": "USD",
       "availability": "https://schema.org/InStock",
-      "validFrom": "2026-02-14",
+      "validFrom": "2026-07-03",
       "validThrough": "2026-12-31",
       "itemCondition": "https://schema.org/NewCondition",
       "url": "https://mikahsmobiledetailingsc.com/book",
@@ -1235,7 +1240,7 @@
     },
     "aggregateRating": {
       "@type": "AggregateRating",
-      "ratingValue": "4.95",
+      "ratingValue": "5.0",
       "bestRating": "5",
       "worstRating": "1",
       "ratingCount": "31"
@@ -1243,10 +1248,15 @@
     "review": [
       {
         "@type": "Review",
+        "itemReviewed": {
+          "@type": "Product",
+          "name": "Basic Mobile Car Detailing Package"
+        },
         "reviewRating": {
           "@type": "Rating",
           "ratingValue": "5",
-          "bestRating": "5"
+          "bestRating": "5",
+          "worstRating": "1"
         },
         "author": {
           "@type": "Person",
@@ -1257,10 +1267,15 @@
       },
       {
         "@type": "Review",
+        "itemReviewed": {
+          "@type": "Product",
+          "name": "Basic Mobile Car Detailing Package"
+        },
         "reviewRating": {
           "@type": "Rating",
           "ratingValue": "5",
-          "bestRating": "5"
+          "bestRating": "5",
+          "worstRating": "1"
         },
         "author": {
           "@type": "Person",
@@ -1286,7 +1301,6 @@
     "name": "Premium Mobile Car Detailing Package",
     "description": "Comprehensive mobile auto detailing for the discerning car owner. Includes deep interior cleaning, exterior wash and wax, tire and wheel detailing, dashboard conditioning, and paint protection.",
     "sku": "MAD-PREMIUM-002",
-    "gtin": "123456789013",
     "image": [
       "https://mikahsmobiledetailingsc.com/mclarens.jpg",
       "https://mikahsmobiledetailingsc.com/exterior2.jpg"
@@ -1315,7 +1329,7 @@
       "price": "250",
       "priceCurrency": "USD",
       "availability": "https://schema.org/InStock",
-      "validFrom": "2026-02-14",
+      "validFrom": "2026-07-03",
       "validThrough": "2026-12-31",
       "itemCondition": "https://schema.org/NewCondition",
       "url": "https://mikahsmobiledetailingsc.com/book",
@@ -1355,7 +1369,7 @@
     },
     "aggregateRating": {
       "@type": "AggregateRating",
-      "ratingValue": "4.95",
+      "ratingValue": "5.0",
       "bestRating": "5",
       "worstRating": "1",
       "ratingCount": "31"
@@ -1363,10 +1377,15 @@
     "review": [
       {
         "@type": "Review",
+        "itemReviewed": {
+          "@type": "Product",
+          "name": "Premium Mobile Car Detailing Package"
+        },
         "reviewRating": {
           "@type": "Rating",
           "ratingValue": "5",
-          "bestRating": "5"
+          "bestRating": "5",
+          "worstRating": "1"
         },
         "author": {
           "@type": "Person",
@@ -1377,10 +1396,15 @@
       },
       {
         "@type": "Review",
+        "itemReviewed": {
+          "@type": "Product",
+          "name": "Premium Mobile Car Detailing Package"
+        },
         "reviewRating": {
           "@type": "Rating",
           "ratingValue": "5",
-          "bestRating": "5"
+          "bestRating": "5",
+          "worstRating": "1"
         },
         "author": {
           "@type": "Person",
@@ -1406,7 +1430,6 @@
     "name": "Luxury Mobile Car Detailing Package",
     "description": "Ultimate mobile car detailing experience for luxury and exotic vehicles. Includes paint correction, premium wax application, interior deep cleaning, leather conditioning, engine bay cleaning, and ceramic coating preparation.",
     "sku": "MAD-LUXURY-003",
-    "gtin": "123456789014",
     "image": [
       "https://mikahsmobiledetailingsc.com/mclarens.jpg",
       "https://mikahsmobiledetailingsc.com/exterior3.jpg"
@@ -1435,7 +1458,7 @@
       "price": "350",
       "priceCurrency": "USD",
       "availability": "https://schema.org/InStock",
-      "validFrom": "2026-02-14",
+      "validFrom": "2026-07-03",
       "validThrough": "2026-12-31",
       "itemCondition": "https://schema.org/NewCondition",
       "url": "https://mikahsmobiledetailingsc.com/book",
@@ -1475,7 +1498,7 @@
     },
     "aggregateRating": {
       "@type": "AggregateRating",
-      "ratingValue": "4.95",
+      "ratingValue": "5.0",
       "bestRating": "5",
       "worstRating": "1",
       "ratingCount": "31"
@@ -1483,10 +1506,15 @@
     "review": [
       {
         "@type": "Review",
+        "itemReviewed": {
+          "@type": "Product",
+          "name": "Luxury Mobile Car Detailing Package"
+        },
         "reviewRating": {
           "@type": "Rating",
           "ratingValue": "5",
-          "bestRating": "5"
+          "bestRating": "5",
+          "worstRating": "1"
         },
         "author": {
           "@type": "Person",
@@ -1497,10 +1525,15 @@
       },
       {
         "@type": "Review",
+        "itemReviewed": {
+          "@type": "Product",
+          "name": "Luxury Mobile Car Detailing Package"
+        },
         "reviewRating": {
           "@type": "Rating",
           "ratingValue": "5",
-          "bestRating": "5"
+          "bestRating": "5",
+          "worstRating": "1"
         },
         "author": {
           "@type": "Person",
@@ -1526,7 +1559,6 @@
     "name": "Car Interior Detailing Service",
     "description": "Specialized interior car detailing focusing on deep cleaning, stain removal, upholstery protection, and odor elimination. Perfect for maintaining your vehicle's interior.",
     "sku": "MAD-INTERIOR-004",
-    "gtin": "123456789015",
     "image": [
       "https://mikahsmobiledetailingsc.com/interior1.jpg"
     ],
@@ -1556,7 +1588,7 @@
       "priceCurrency": "USD",
       "offerCount": "3",
       "availability": "https://schema.org/InStock",
-      "validFrom": "2026-02-14",
+      "validFrom": "2026-07-03",
       "validThrough": "2026-12-31",
       "url": "https://mikahsmobiledetailingsc.com/services/interior-detailing",
       "deliveryMethod": {
@@ -1573,7 +1605,7 @@
     },
     "aggregateRating": {
       "@type": "AggregateRating",
-      "ratingValue": "4.95",
+      "ratingValue": "5.0",
       "bestRating": "5",
       "worstRating": "1",
       "ratingCount": "31"
@@ -1581,10 +1613,15 @@
     "review": [
       {
         "@type": "Review",
+        "itemReviewed": {
+          "@type": "Product",
+          "name": "Car Interior Detailing Service"
+        },
         "reviewRating": {
           "@type": "Rating",
           "ratingValue": "5",
-          "bestRating": "5"
+          "bestRating": "5",
+          "worstRating": "1"
         },
         "author": {
           "@type": "Person",
@@ -1595,10 +1632,15 @@
       },
       {
         "@type": "Review",
+        "itemReviewed": {
+          "@type": "Product",
+          "name": "Car Interior Detailing Service"
+        },
         "reviewRating": {
           "@type": "Rating",
           "ratingValue": "5",
-          "bestRating": "5"
+          "bestRating": "5",
+          "worstRating": "1"
         },
         "author": {
           "@type": "Person",
@@ -1634,11 +1676,17 @@
           "name": "Basic Mobile Detailing",
           "description": "Essential mobile car detailing package",
           "image": "https://mikahsmobiledetailingsc.com/exterior1.jpg",
+          "brand": {
+            "@type": "Brand",
+            "name": "Mikah's Auto Detailing"
+          },
           "offers": {
             "@type": "Offer",
             "price": "150",
             "priceCurrency": "USD",
-            "availability": "https://schema.org/InStock"
+            "availability": "https://schema.org/InStock",
+            "priceValidUntil": "2026-12-31",
+            "url": "https://mikahsmobiledetailingsc.com/book"
           }
         }
       },
@@ -1650,11 +1698,17 @@
           "name": "Premium Mobile Detailing",
           "description": "Comprehensive mobile auto detailing",
           "image": "https://mikahsmobiledetailingsc.com/mclarens.jpg",
+          "brand": {
+            "@type": "Brand",
+            "name": "Mikah's Auto Detailing"
+          },
           "offers": {
             "@type": "Offer",
             "price": "250",
             "priceCurrency": "USD",
-            "availability": "https://schema.org/InStock"
+            "availability": "https://schema.org/InStock",
+            "priceValidUntil": "2026-12-31",
+            "url": "https://mikahsmobiledetailingsc.com/book"
           }
         }
       },
@@ -1666,11 +1720,17 @@
           "name": "Luxury Mobile Detailing",
           "description": "Ultimate mobile car detailing experience",
           "image": "https://mikahsmobiledetailingsc.com/mclarens.jpg",
+          "brand": {
+            "@type": "Brand",
+            "name": "Mikah's Auto Detailing"
+          },
           "offers": {
             "@type": "Offer",
             "price": "350",
             "priceCurrency": "USD",
-            "availability": "https://schema.org/InStock"
+            "availability": "https://schema.org/InStock",
+            "priceValidUntil": "2026-12-31",
+            "url": "https://mikahsmobiledetailingsc.com/book"
           }
         }
       },
@@ -1682,11 +1742,17 @@
           "name": "Interior Detailing Service",
           "description": "Specialized interior car detailing",
           "image": "https://mikahsmobiledetailingsc.com/interior1.jpg",
+          "brand": {
+            "@type": "Brand",
+            "name": "Mikah's Auto Detailing"
+          },
           "offers": {
             "@type": "Offer",
             "price": "100",
             "priceCurrency": "USD",
-            "availability": "https://schema.org/InStock"
+            "availability": "https://schema.org/InStock",
+            "priceValidUntil": "2026-12-31",
+            "url": "https://mikahsmobiledetailingsc.com/services/interior-detailing"
           }
         }
       }

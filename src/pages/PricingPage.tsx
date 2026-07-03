@@ -14,6 +14,10 @@ export const PricingPage = () => {
   // Pricing FAQ — answers reflect real booking-form prices only
   const pricingFAQs = [
     {
+      question: "How much does car detailing cost on average in 2026?",
+      answer: "In 2026, most U.S. drivers pay $150–$300 for a full car detail, $125–$250 for interior-only, and $75–$150 for exterior-only service, with larger vehicles at the higher end. At Mikah's Auto Detailing in Columbia SC, a full interior and exterior Basic Detail is a flat $225 with mobile service included — no travel fees in the Midlands area."
+    },
+    {
       question: "How much does car detailing cost at Mikah's?",
       answer: "Our pricing is flat and transparent. Exterior Detail starts at $100, Interior Detail starts at $200, our Basic Detail (full interior + exterior with wax) is $225, and the Factory Reset deep-clean package is $400. Paint Correction starts at $599 and Ceramic Coating at $999. Every price includes mobile service — we come to you in Columbia, Lexington, and the surrounding Midlands SC area."
     },
@@ -59,6 +63,17 @@ export const PricingPage = () => {
     { service: 'Marine & RV', price: 'Custom Quote', description: 'Boats, RVs, motorcycles & specialty vehicles' }
   ];
 
+  // 2026 national averages vs. our flat prices — targets "average car
+  // detailing cost 2026" searches (ranges are widely cited industry figures)
+  const costComparison = [
+    { service: 'Exterior detail', usRange: '$75 – $150', ourPrice: 'From $100', link: '/services/exterior-detailing' },
+    { service: 'Interior detail', usRange: '$125 – $250', ourPrice: 'From $200', link: '/services/interior-detailing' },
+    { service: 'Full detail (interior + exterior)', usRange: '$150 – $300', ourPrice: '$225 flat', link: '/services/full-detail' },
+    { service: 'Deep-clean / restoration detail', usRange: '$250 – $450', ourPrice: '$400 flat', link: '/services/full-detail' },
+    { service: 'Paint correction', usRange: '$500 – $1,500+', ourPrice: 'From $599', link: '/services/paint-correction' },
+    { service: 'Ceramic coating', usRange: '$1,000 – $3,000', ourPrice: 'From $999', link: '/services/ceramic-coating' }
+  ];
+
   // Service package cards — names, prices, and features all from the booking form
   const packages = [
     {
@@ -66,6 +81,7 @@ export const PricingPage = () => {
       price: '$225',
       priceNote: 'flat',
       slug: 'basic-detail',
+      servicePage: '/services/full-detail',
       popular: false,
       description: 'Full interior & exterior detail with wax protection',
       features: [
@@ -83,6 +99,7 @@ export const PricingPage = () => {
       price: '$400',
       priceNote: 'flat',
       slug: 'factory-reset',
+      servicePage: '/services/full-detail',
       popular: true,
       description: 'Deep clean to get your vehicle close to factory condition',
       features: [
@@ -99,6 +116,7 @@ export const PricingPage = () => {
       price: 'From $200',
       priceNote: 'starting at',
       slug: 'interior-detail',
+      servicePage: '/services/interior-detailing',
       popular: false,
       description: 'Complete interior cleaning & protection',
       features: [
@@ -115,6 +133,7 @@ export const PricingPage = () => {
       price: 'From $100',
       priceNote: 'starting at',
       slug: 'exterior-detail',
+      servicePage: '/services/exterior-detailing',
       popular: false,
       description: 'Full exterior wash, wax & protection',
       features: [
@@ -130,6 +149,7 @@ export const PricingPage = () => {
       price: 'From $599',
       priceNote: 'starting at',
       slug: 'paint-correction',
+      servicePage: '/services/paint-correction',
       popular: false,
       description: '1-step & 2-step correction available',
       features: [
@@ -146,6 +166,7 @@ export const PricingPage = () => {
       price: 'From $999',
       priceNote: 'starting at',
       slug: 'ceramic-coating',
+      servicePage: '/services/ceramic-coating',
       popular: false,
       description: 'Long-lasting paint protection (2–5 years)',
       features: [
@@ -162,6 +183,7 @@ export const PricingPage = () => {
       price: '$225',
       priceNote: 'per month',
       slug: 'routine-reset',
+      servicePage: '/services/mobile-detailing',
       popular: false,
       description: '1 interior + 2 exterior details every month',
       features: [
@@ -177,6 +199,7 @@ export const PricingPage = () => {
       price: 'Custom',
       priceNote: 'quote',
       slug: 'marine-rv',
+      servicePage: '/services',
       popular: false,
       description: 'Boats, RVs, motorcycles & specialty vehicles',
       features: [
@@ -205,7 +228,6 @@ export const PricingPage = () => {
     }
   };
   const makeOffer = (name: string, description: string, price: string) => ({
-    '@context': 'https://schema.org',
     '@type': 'Offer',
     name,
     description,
@@ -215,9 +237,15 @@ export const PricingPage = () => {
     availability: 'https://schema.org/InStock',
     validFrom: '2026-01-01',
     priceValidUntil: '2026-12-31',
-    seller
+    itemOffered: {
+      '@type': 'Service',
+      name,
+      serviceType: 'Auto detailing',
+      provider: seller,
+      areaServed: ['Columbia SC', 'Lexington SC', 'Irmo SC', 'West Columbia SC', 'Cayce SC']
+    }
   });
-  const offerSchemas = [
+  const offers = [
     makeOffer('Exterior Detail', 'Exterior wash, decontamination, wax, and trim/tire dressing. Starting price.', '100'),
     makeOffer('Interior Detail', 'Complete interior cleaning, disinfection, conditioning, and UV protection. Starting price.', '200'),
     makeOffer('Basic Detail', 'Full interior and exterior detail with wax protection.', '225'),
@@ -226,13 +254,24 @@ export const PricingPage = () => {
     makeOffer('Ceramic Coating', '2–5 year ceramic paint protection including required paint correction prep. Starting price.', '999')
   ];
 
-  const schemas = [faqSchema, enhancedBusinessSchema, ...offerSchemas];
+  // One coherent LocalBusiness entity carrying the price catalog (instead of
+  // six disconnected top-level Offers, which can't earn rich results)
+  const businessWithOffers = {
+    ...enhancedBusinessSchema,
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: 'Mobile Auto Detailing Price List 2026',
+      itemListElement: offers
+    }
+  };
+
+  const schemas = [faqSchema, businessWithOffers];
 
   return (
     <>
       <SEOHead
-        title="Car Detailing Prices Columbia SC — Exterior from $100, Basic Detail $225 | Mikah's"
-        description="Transparent mobile detailing prices in Columbia &amp; Lexington SC: Exterior from $100, Interior from $200, Basic Detail $225, Factory Reset $400. We come to you. Free quote: (803) 667-8731."
+        title="Car Detailing Prices 2026 — Columbia SC Price List | Mikah's"
+        description="2026 car detailing price list for Columbia &amp; Lexington SC: Exterior from $100, Interior from $200, Basic Detail $225, Factory Reset $400. Mobile — we come to you. Free quote: (803) 667-8731."
         keywords="car detailing prices, auto detailing prices, how much does car detailing cost, car detailing prices columbia sc, auto detailing prices columbia sc, mobile detailing prices, interior detailing cost, exterior detailing prices, detailing packages pricing"
         canonical="https://mikahsmobiledetailingsc.com/pricing"
         ogType="website"
@@ -245,6 +284,9 @@ export const PricingPage = () => {
       <section className="bg-gradient-to-br from-gray-900 via-gray-800 to-primary-900 text-white py-16 md:py-24 mt-16">
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="text-center">
+            <div className="inline-block bg-orange-500/20 text-orange-300 border border-orange-400/40 px-4 py-1 rounded-full text-sm font-semibold mb-4">
+              2026 Price List — Updated July 2026
+            </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
               Car Detailing Prices in Columbia &amp; Lexington SC
             </h1>
@@ -306,8 +348,56 @@ export const PricingPage = () => {
         </div>
       </section>
 
+      {/* 2026 Average Cost Section — targets "how much does car detailing cost" searches */}
+      <section className="py-12 bg-gray-50">
+        <div className="container mx-auto px-4 max-w-5xl">
+          <div className="text-center mb-8">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">How Much Does Car Detailing Cost in 2026?</h2>
+          </div>
+
+          <p className="text-gray-700 text-lg leading-relaxed max-w-3xl mx-auto mb-8">
+            In 2026, most U.S. drivers pay between <strong>$150 and $300</strong> for a full car detail,
+            depending on vehicle size and condition. Interior-only details typically run $125–$250 and
+            exterior-only $75–$150, while paint correction and ceramic coating range from $500 into the
+            thousands. At Mikah's Auto Detailing, our flat <strong>$225 Basic Detail</strong> covers the full
+            interior and exterior — with mobile service to your driveway included, not extra.
+          </p>
+
+          <div className="overflow-x-auto mb-8">
+            <table className="w-full border-collapse bg-white rounded-xl overflow-hidden shadow-lg">
+              <thead>
+                <tr className="bg-gray-800 text-white">
+                  <th className="px-6 py-4 text-left font-bold">Service</th>
+                  <th className="px-6 py-4 text-center font-bold">Typical U.S. Range (2026)</th>
+                  <th className="px-6 py-4 text-center font-bold">Our Price</th>
+                </tr>
+              </thead>
+              <tbody>
+                {costComparison.map((row, index) => (
+                  <tr key={index} className={`border-b border-gray-200 ${index % 2 === 0 ? 'bg-white' : 'bg-gray-50'}`}>
+                    <td className="px-6 py-4 font-semibold text-gray-800">
+                      <a href={row.link} className="hover:text-primary-600 hover:underline">{row.service}</a>
+                    </td>
+                    <td className="px-6 py-4 text-center text-gray-600 whitespace-nowrap">{row.usRange}</td>
+                    <td className="px-6 py-4 text-center text-primary-600 font-bold whitespace-nowrap">{row.ourPrice}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+
+          <p className="text-gray-600 leading-relaxed max-w-3xl mx-auto text-center">
+            Prices vary with vehicle size, condition, and location — a heavily soiled SUV costs more to
+            detail than a maintained sedan anywhere you go. Ours are flat, published rates for the
+            Midlands: see what's included on each <a href="/services" className="text-primary-600 font-semibold hover:underline">service page</a>,
+            or check <a href="/locations" className="text-primary-600 font-semibold hover:underline">our service areas</a> across
+            Columbia, Lexington, Irmo, West Columbia, and Cayce.
+          </p>
+        </div>
+      </section>
+
       {/* Pricing Cards Section */}
-      <section className="py-16 md:py-20 bg-gray-50">
+      <section className="py-16 md:py-20 bg-white">
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Detailing Packages</h2>
@@ -363,6 +453,12 @@ export const PricingPage = () => {
                     }`}
                   >
                     Book {pkg.name}
+                  </a>
+                  <a
+                    href={pkg.servicePage}
+                    className="block text-center text-sm text-primary-600 hover:underline mt-3"
+                  >
+                    What's included in {pkg.name} →
                   </a>
                 </div>
               </div>

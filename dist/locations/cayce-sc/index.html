@@ -39,6 +39,12 @@
         'phone_conversion_number': '+18036678731'
       });
 
+      // Configure GA4 directly. Without this, gtag('event', ...) calls only
+      // reach the Ads (AW-) tag and never land in GA4 — GTM only handles the
+      // page_views it fires itself. SPA page_views are sent from
+      // PageViewTracker, so the automatic one is disabled here.
+      gtag('config', 'G-RYC8XZ9D02', { 'send_page_view': false });
+
       // Auto-grant consent for US users (adjust based on your privacy policy)
       // For EU users, implement a proper consent banner
       var isEU = false; // Set to true if you have EU visitors requiring consent
@@ -169,10 +175,10 @@
     fbq('track', 'PageView');
     </script>
     <!-- End Meta Pixel Code -->
-    <script type="module" crossorigin src="/assets/index-a178270f.js"></script>
-    <link rel="modulepreload" crossorigin href="/assets/react-vendor-9ec0ebb4.js">
-    <link rel="modulepreload" crossorigin href="/assets/ui-vendor-f2c38a9a.js">
-    <link rel="stylesheet" href="/assets/index-e8a7f9df.css">
+    <script type="module" crossorigin src="/assets/index-51aca410.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/react-vendor-437fce4c.js">
+    <link rel="modulepreload" crossorigin href="/assets/ui-vendor-de41dfdc.js">
+    <link rel="stylesheet" href="/assets/index-fe97f21b.css">
       <link rel="canonical" href="https://mikahsmobiledetailingsc.com/locations/cayce-sc"/>
       <script type="application/ld+json">
 [
@@ -816,7 +822,7 @@
     ],
     "aggregateRating": {
       "@type": "AggregateRating",
-      "ratingValue": "4.95",
+      "ratingValue": "5.0",
       "bestRating": "5",
       "worstRating": "1",
       "ratingCount": "31",
@@ -1144,14 +1150,14 @@
     "offers": {
       "@type": "Offer",
       "priceCurrency": "USD",
-      "price": "150-350",
+      "price": "100-400",
       "availability": "https://schema.org/InStock",
-      "validFrom": "2026-02-14",
+      "validFrom": "2026-07-03",
       "priceSpecification": {
         "@type": "PriceSpecification",
         "priceCurrency": "USD",
-        "minPrice": "150",
-        "maxPrice": "350",
+        "minPrice": "100",
+        "maxPrice": "400",
         "valueAddedTaxIncluded": false
       },
       "seller": {
@@ -1173,7 +1179,7 @@
           "priceSpecification": {
             "@type": "PriceSpecification",
             "priceCurrency": "USD",
-            "price": "150"
+            "price": "225"
           }
         },
         {
@@ -1186,7 +1192,7 @@
           "priceSpecification": {
             "@type": "PriceSpecification",
             "priceCurrency": "USD",
-            "price": "250"
+            "price": "400"
           }
         },
         {
@@ -1199,7 +1205,7 @@
           "priceSpecification": {
             "@type": "PriceSpecification",
             "priceCurrency": "USD",
-            "price": "350"
+            "price": "599"
           }
         }
       ]

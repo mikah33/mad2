@@ -42,6 +42,7 @@ const ogImageMap: Record<string, { image: string; width: number; height: number 
   'locations/cayce-sc': { image: 'interior1.jpg', width: 1200, height: 630 },
 
   // Main pages
+  'pricing': { image: 'exterior2.jpg', width: 1200, height: 630 },
   'contact': { image: 'logo.jpg', width: 1200, height: 630 },
   'faq': { image: 'exterior4.jpg', width: 1200, height: 630 },
   'faq/ceramic-coating': { image: 'mclarens.jpg', width: 1200, height: 630 },
@@ -87,6 +88,7 @@ const routes = [
 
   // Main pages
   { path: 'contact', title: 'Contact Us | Book Your Detail', description: 'Contact Mikah\'s Auto Detailing for a free quote. Call (803) 667-8731 or book online.' },
+  { path: 'pricing', title: 'Car Detailing Prices 2026 — Columbia SC Price List', description: '2026 car detailing price list for Columbia & Lexington SC: Exterior from $100, Interior from $200, Basic Detail $225, Factory Reset $400. Mobile — we come to you. Free quote: (803) 667-8731.' },
   { path: 'faq', title: 'Frequently Asked Questions | Auto Detailing', description: 'Common questions about auto detailing, ceramic coating, pricing, and our mobile service.' },
   { path: 'faq/ceramic-coating', title: 'Ceramic Coating FAQ | Common Questions', description: 'Frequently asked questions about ceramic coating, application, maintenance, and benefits.' },
   { path: 'faq/mobile-detailing', title: 'Mobile Detailing FAQ | Common Questions', description: 'Frequently asked questions about our mobile detailing service and process.' },

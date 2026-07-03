@@ -39,6 +39,12 @@
         'phone_conversion_number': '+18036678731'
       });
 
+      // Configure GA4 directly. Without this, gtag('event', ...) calls only
+      // reach the Ads (AW-) tag and never land in GA4 — GTM only handles the
+      // page_views it fires itself. SPA page_views are sent from
+      // PageViewTracker, so the automatic one is disabled here.
+      gtag('config', 'G-RYC8XZ9D02', { 'send_page_view': false });
+
       // Auto-grant consent for US users (adjust based on your privacy policy)
       // For EU users, implement a proper consent banner
       var isEU = false; // Set to true if you have EU visitors requiring consent
@@ -117,25 +123,25 @@
     </script>
 
     <!-- Primary Meta Tags -->
-    <meta name="description" content="Mobile detailing Columbia SC prices 2025. Best mobile car detailing packages from $129-$599. Professional mobile detailing near me with transparent pricing. Same-day available!" />
-    <meta name="keywords" content="mobile detailing columbia sc prices, mobile car detailing cost columbia sc, mobile detailing prices 2025, mobile detailing near me cost, auto detailing prices columbia sc, mobile detailing packages columbia sc" />
+    <meta name="description" content="#1 mobile auto detailing in Columbia, Lexington &amp; Irmo SC. We come to you! Interior/exterior from $225. 5.0★ rated, 30+ reviews. Same-day available. Free quote: (803) 667-8731." />
+    <meta name="keywords" content="mobile auto detailing columbia sc, mobile car detailing lexington sc, car detailing near me columbia, interior car detailing, exterior auto detailing, paint correction columbia sc, mobile detailing services, auto detailing lexington sc, same day car detailing" />
     <meta name="author" content="Mikah's Auto Detailing" />
 
     <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Mobile Detailing in Columbia SC Prices: Complete Cost Guide 2025 | Mikah's Auto Detailing" />
-    <meta property="og:description" content="Mobile detailing Columbia SC prices 2025. Packages from $129-$599. Transparent pricing, same-day available. Call (803) 667-8731!" />
-    <meta property="og:type" content="article" />
-    <meta property="og:url" content="https://mikahsmobiledetailingsc.com/blog/mobile-detailing-columbia-sc-prices-2025/" />
-    <meta property="og:image" content="https://mikahsmobiledetailingsc.com/exterior3.jpg" />
+    <meta property="og:title" content="Mobile Auto Detailing Columbia & Lexington SC | Mikah's Auto Detailing" />
+    <meta property="og:description" content="#1 mobile auto detailing in Columbia, Lexington &amp; Irmo SC. We come to you! Interior/exterior from $225. 5.0★ rated, 30+ reviews. Free quote: (803) 667-8731." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://mikahsmobiledetailingsc.com" />
+    <meta property="og:image" content="https://mikahsmobiledetailingsc.com/mclarens-og.jpg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:locale" content="en_US" />
 
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Mobile Detailing in Columbia SC Prices: Complete Cost Guide 2025 | Mikah's Auto Detailing" />
-    <meta name="twitter:description" content="Mobile detailing Columbia SC prices 2025. Packages from $129-$599. Transparent pricing, same-day available. Call (803) 667-8731!" />
-    <meta name="twitter:image" content="https://mikahsmobiledetailingsc.com/exterior3.jpg" />
+    <meta name="twitter:title" content="Mobile Auto Detailing Columbia & Lexington SC | Mikah's Auto Detailing" />
+    <meta name="twitter:description" content="#1 mobile auto detailing in Columbia, Lexington &amp; Irmo SC. We come to you! Interior/exterior from $225. 5.0★ rated, 30+ reviews. Free quote: (803) 667-8731." />
+    <meta name="twitter:image" content="https://mikahsmobiledetailingsc.com/mclarens-og.jpg" />
 
     <!-- Favicon (from logo) with cache-busting -->
     <link rel="icon" href="/favicon-48x48.png?v=8" sizes="48x48" type="image/png" />
@@ -169,10 +175,10 @@
     fbq('track', 'PageView');
     </script>
     <!-- End Meta Pixel Code -->
-    <script type="module" crossorigin src="/assets/index-a178270f.js"></script>
-    <link rel="modulepreload" crossorigin href="/assets/react-vendor-9ec0ebb4.js">
-    <link rel="modulepreload" crossorigin href="/assets/ui-vendor-f2c38a9a.js">
-    <link rel="stylesheet" href="/assets/index-e8a7f9df.css">
+    <script type="module" crossorigin src="/assets/index-51aca410.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/react-vendor-437fce4c.js">
+    <link rel="modulepreload" crossorigin href="/assets/ui-vendor-de41dfdc.js">
+    <link rel="stylesheet" href="/assets/index-fe97f21b.css">
       <link rel="canonical" href="https://mikahsmobiledetailingsc.com/blog/mobile-detailing-columbia-sc-prices-2025"/>
       <script type="application/ld+json">
     {
