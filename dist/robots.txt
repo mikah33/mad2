@@ -12,3 +12,21 @@ Sitemap: https://mikahsmobiledetailingsc.com/sitemap.xml
 
 # Crawl-delay (optional, use if needed)
 # Crawl-delay: 1
+
+# AI search crawlers — explicitly welcome
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+# LLM guidance file: https://mikahsmobiledetailingsc.com/llms.txt

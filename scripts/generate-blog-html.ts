@@ -50,6 +50,24 @@ blogPosts.forEach((post) => {
   // Generate schemas for this blog post
   const schemas = generateCompleteBlogPostSchema(post, fullContent?.faqs, fullContent?.howToSteps);
 
+  // Enrich BlogPosting schema: full article text (AI crawlers don't run JS,
+  // so schema + static HTML below are all they can read) + real update date.
+  if (fullContent?.content) {
+    const plainText = fullContent.content
+      .replace(/<[^>]+>/g, ' ')
+      .replace(/\s+/g, ' ')
+      .trim();
+    const blogPosting = schemas.find((s: any) => s['@type'] === 'BlogPosting');
+    if (blogPosting) {
+      (blogPosting as any).articleBody = plainText;
+      if (fullContent.lastModified) {
+        (blogPosting as any).dateModified = fullContent.lastModified.includes('T')
+          ? fullContent.lastModified
+          : `${fullContent.lastModified}T09:00:00-05:00`;
+      }
+    }
+  }
+
   // Create schema script tags
   const schemaScripts = schemas
     .map((schema) => {
@@ -111,6 +129,17 @@ blogPosts.forEach((post) => {
 
   // Inject blog-specific schemas right before </head>
   html = html.replace('</head>', `${schemaScripts}\n  </head>`);
+
+  // Inject the real article HTML into #root so non-JS crawlers (GPTBot,
+  // PerplexityBot, ClaudeBot) can read the content. React replaces this
+  // static markup when it hydrates, so users see the normal app.
+  if (fullContent?.content) {
+    const faqHtml = (fullContent.faqs || [])
+      .map((f: any) => `<h3>${f.question}</h3><p>${f.answer}</p>`)
+      .join('\n');
+    const staticBody = `<div id="root"><main><article><h1>${post.title}</h1><p>By ${post.author} — updated ${fullContent.lastModified || post.datePublished}</p>${fullContent.content}${faqHtml ? `<section><h2>Frequently Asked Questions</h2>${faqHtml}</section>` : ''}</article></main></div>`;
+    html = html.replace('<div id="root"></div>', staticBody);
+  }
 
   // Write the HTML file
   const outputPath = path.join(postDir, 'index.html');
