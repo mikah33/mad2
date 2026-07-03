@@ -220,6 +220,32 @@ routes.forEach(route => {
   // Inject enhanced schema
   html = html.replace('</head>', `${schemaScript}\n  </head>`);
 
+  // City-specific facts so each location page reads uniquely to AI crawlers
+  // (grounded in the same local data the React pages use)
+  const cityFacts: Record<string, string> = {
+    'locations/columbia-sc':
+      'We detail vehicles across downtown Columbia, The Vista, Five Points, Shandon, Forest Acres, and Rosewood — at homes, offices, and apartment complexes near the University of South Carolina and Fort Jackson.',
+    'locations/lexington-sc':
+      'Serving Lexington and the Lake Murray shoreline, including neighborhoods off Highway 378 and Sunset Boulevard. Lake Murray boat owners: we also detail marine vessels dockside with a custom quote.',
+    'locations/irmo-sc':
+      'Covering Irmo, the Harbison corridor, and Lake Murray communities off Broad River Road. Popular with commuters near Columbiana Centre who want their vehicle detailed while they work.',
+    'locations/cayce-sc':
+      'Serving Cayce and the Riverland Park area along the Congaree River, plus neighborhoods near Airport Boulevard and the SC Farmers Market. Minutes from our Columbia and West Columbia routes.',
+    'locations/west-columbia':
+      'We come to West Columbia homes and businesses from the State Street river district to Saluda Gardens and Westover Acres, plus offices along Sunset Boulevard (US-378) and near Lexington Medical Center.',
+    'locations/chapin-sc':
+      'Serving Chapin — the Capital of Lake Murray — including Timberlake and lakefront communities. We detail daily drivers, trucks, and boats at your home or dock.',
+    'locations/swansea-sc':
+      'Mobile detailing for Swansea and southern Lexington County. Rural properties welcome — we bring water and power for a full detail at your home, farm, or business.',
+    'locations/newberry-sc':
+      "Serving Newberry, from the historic downtown around the Newberry Opera House to Newberry College and surrounding Highway 34 communities. Worth the drive — mobile service included.",
+    'locations/blythewood-sc':
+      'Covering Blythewood and northeast Richland County, including Cobblestone Park, Longcreek, and the I-77 corridor. Convenient scheduling for Blythewood commuters and families.',
+  };
+  const cityBlock = cityFacts[routePath]
+    ? `\n      <h2>Local Mobile Detailing in ${route.title.split('|')[0].replace('Car Detailing', '').trim()}</h2>\n      <p>${cityFacts[routePath]}</p>`
+    : '';
+
   // Inject static, crawler-readable content into #root. AI crawlers (GPTBot,
   // PerplexityBot, ClaudeBot) don't execute JavaScript, so without this every
   // page body is empty to them. React replaces this markup on hydration.
@@ -238,7 +264,7 @@ routes.forEach(route => {
       </table>` : '';
   const staticBody = `<div id="root"><main>
       <h1>${h1}</h1>
-      <p>${route.description}</p>${pricingTable}
+      <p>${route.description}</p>${cityBlock}${pricingTable}
       <h2>Services &amp; 2026 Prices</h2>
       <ul>
         <li><a href="/services/exterior-detailing">Exterior Detail</a> — from $100</li>

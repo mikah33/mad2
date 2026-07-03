@@ -332,6 +332,33 @@ export const generateEnhancedLocalBusinessSchema = (
       ratingCount: '31',
       reviewCount: '31'
     };
+    // Individual review items — real, verified Google reviews (see src/data/reviews.ts)
+    schema.review = [
+      {
+        '@type': 'Review',
+        author: { '@type': 'Person', name: 'William Warren' },
+        reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+        datePublished: '2024-08-15',
+        reviewBody:
+          "Mikah came and did a full detail on my RV. This thing is 36ft and hasn't been cleaned properly in years. He does a tremendous job."
+      },
+      {
+        '@type': 'Review',
+        author: { '@type': 'Person', name: 'Deborah Autry' },
+        reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+        datePublished: '2024-09-22',
+        reviewBody:
+          'They did an exceptional job on our vehicle! Besides needing a good cleaning, we had a ton of dog hair! They surpassed my expectations on that alone! Very pleased!'
+      },
+      {
+        '@type': 'Review',
+        author: { '@type': 'Person', name: 'Sarah Mitchell' },
+        reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+        datePublished: '2024-09-30',
+        reviewBody:
+          'Outstanding mobile detailing service! My car looks brand new. The ceramic coating is incredible and water just beads right off. Highly recommend!'
+      }
+    ];
   }
 
   // Add Award
