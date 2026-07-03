@@ -2,7 +2,27 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation, useSearchParams } from 'react-router-dom';
 import { Sparkles, Star, Shield, Wrench, Anchor, RotateCw, Check, ChevronRight, Mail, User, Phone, MapPin, Car, FileText, Info, X, Calendar, Droplet, Clock, CheckCircle } from 'lucide-react';
 import { collectForensicData, isJeffreyByAnyMethod } from '../utils/forensics';
-import { trackPhoneClick, getClickIds, getLeadSource } from '../utils/analytics';
+import {
+  trackPhoneClick,
+  getClickIds,
+  getLeadSource,
+  trackFunnelStep,
+  trackFieldInteraction,
+  trackFormSubmitAttempt,
+  trackFormSubmitResult,
+  trackServiceSelect,
+  flushFunnelAbandon,
+} from '../utils/analytics';
+
+/** GA4 funnel identifiers for this form. */
+const FUNNEL_ID = 'booking_main';
+const STEP_NAMES: Record<number, string> = {
+  1: 'package_selection',
+  2: 'last_detail_timing',
+  3: 'cleanliness_level',
+  4: 'vehicle_type',
+  5: 'contact_details',
+};
 
 interface Service {
   icon: React.ReactNode;
@@ -176,9 +196,24 @@ const BookingTimeline: React.FC = () => {
     }
   }, [currentStep]);
 
+  // GA4 funnel: report each step reached (only track the real funnel on /book;
+  // on other pages step 1 just deep-links into /book).
+  useEffect(() => {
+    if (onBookPage) trackFunnelStep(FUNNEL_ID, currentStep, STEP_NAMES[currentStep] || `step_${currentStep}`);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [currentStep, onBookPage]);
+
+  // GA4 funnel: user navigated away mid-funnel (SPA route change).
+  useEffect(() => {
+    if (!onBookPage) return;
+    return () => flushFunnelAbandon('route_change');
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [onBookPage]);
+
   // Step 1: Package Selection -> Step 2.
   // On pages other than /book, deep-link to the dedicated /book funnel at step 2.
   const handleServiceSelect = (serviceTitle: string) => {
+    trackServiceSelect(FUNNEL_ID, serviceTitle);
     if (!onBookPage) {
       const slug = titleToSlug[serviceTitle];
       navigate(`/book?service=${slug || ''}`);
@@ -214,6 +249,7 @@ const BookingTimeline: React.FC = () => {
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    trackFieldInteraction(FUNNEL_ID, e.target.name);
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
@@ -234,6 +270,7 @@ const BookingTimeline: React.FC = () => {
     setIsSubmitting(true);
     setSubmitStatus('idle');
     sessionStorage.setItem('formSubmitted', 'true');
+    trackFormSubmitAttempt(FUNNEL_ID);
 
     try {
       // Collect forensic data (IP, fingerprint, device info)
@@ -296,6 +333,8 @@ const BookingTimeline: React.FC = () => {
 
       if (response.ok) {
         console.log('✅ Successfully sent to n8n webhook');
+        // Must fire BEFORE the redirect below so the funnel isn't counted as abandoned.
+        trackFormSubmitResult(FUNNEL_ID, true);
 
         // Check if this is Jeffrey based on IP OR known harassment patterns
         const formFields = {
@@ -344,6 +383,7 @@ const BookingTimeline: React.FC = () => {
       }
     } catch (error) {
       console.error('❌ Form submission error:', error);
+      trackFormSubmitResult(FUNNEL_ID, false, error instanceof Error ? error.message : String(error));
       setSubmitStatus('error');
       // Clear flag so they can retry on error
       sessionStorage.removeItem('formSubmitted');

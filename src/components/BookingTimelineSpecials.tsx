@@ -2,6 +2,24 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Sparkles, Star, Check, ChevronRight, Mail, User, Phone, MapPin, Car, FileText, Info, X, Calendar, Droplet, Clock, CheckCircle } from 'lucide-react';
 import { submitBookingForm } from '../utils/formSubmission';
+import {
+  trackFunnelStep,
+  trackFieldInteraction,
+  trackFormSubmitAttempt,
+  trackFormSubmitResult,
+  trackServiceSelect,
+  flushFunnelAbandon,
+} from '../utils/analytics';
+
+/** GA4 funnel identifiers for the specials landing-page form. */
+const FUNNEL_ID = 'booking_specials';
+const STEP_NAMES: Record<number, string> = {
+  1: 'package_selection',
+  2: 'last_detail_timing',
+  3: 'cleanliness_level',
+  4: 'vehicle_type',
+  5: 'contact_details',
+};
 
 interface Service {
   icon: React.ReactNode;
@@ -81,6 +99,12 @@ const BookingTimelineSpecials: React.FC = () => {
     }
   }, [currentStep]);
 
+  // GA4 funnel: report each step reached, and route-away drop-offs.
+  useEffect(() => {
+    trackFunnelStep(FUNNEL_ID, currentStep, STEP_NAMES[currentStep] || `step_${currentStep}`);
+  }, [currentStep]);
+  useEffect(() => () => flushFunnelAbandon('route_change'), []);
+
   // Autofill from URL parameters and localStorage on mount
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
@@ -128,6 +152,7 @@ const BookingTimelineSpecials: React.FC = () => {
 
   // Step 1: Package Selection -> Step 2
   const handleServiceSelect = (serviceTitle: string) => {
+    trackServiceSelect(FUNNEL_ID, serviceTitle);
     setSelectedService(serviceTitle);
     setTimeout(() => {
       setCurrentStep(2);
@@ -158,6 +183,7 @@ const BookingTimelineSpecials: React.FC = () => {
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    trackFieldInteraction(FUNNEL_ID, e.target.name);
     const newData = {
       ...formData,
       [e.target.name]: e.target.value
@@ -228,6 +254,7 @@ const BookingTimelineSpecials: React.FC = () => {
     e.preventDefault();
     setIsSubmitting(true);
     setSubmitStatus('idle');
+    trackFormSubmitAttempt(FUNNEL_ID);
 
     try {
       const result = await submitBookingForm({
@@ -245,6 +272,8 @@ const BookingTimelineSpecials: React.FC = () => {
 
       console.log('Booking submission successful:', result);
 
+      // Must fire BEFORE the redirect so the funnel isn't counted as abandoned.
+      trackFormSubmitResult(FUNNEL_ID, true);
       setSubmitStatus('success');
 
       // Store lead details for Enhanced Conversions; the lead conversion
@@ -265,6 +294,7 @@ const BookingTimelineSpecials: React.FC = () => {
 
     } catch (error) {
       console.error('Booking submission error:', error);
+      trackFormSubmitResult(FUNNEL_ID, false, error instanceof Error ? error.message : String(error));
       setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);

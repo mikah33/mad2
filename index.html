@@ -39,6 +39,12 @@
         'phone_conversion_number': '+18036678731'
       });
 
+      // Configure GA4 directly. Without this, gtag('event', ...) calls only
+      // reach the Ads (AW-) tag and never land in GA4 — GTM only handles the
+      // page_views it fires itself. SPA page_views are sent from
+      // PageViewTracker, so the automatic one is disabled here.
+      gtag('config', 'G-RYC8XZ9D02', { 'send_page_view': false });
+
       // Auto-grant consent for US users (adjust based on your privacy policy)
       // For EU users, implement a proper consent banner
       var isEU = false; // Set to true if you have EU visitors requiring consent

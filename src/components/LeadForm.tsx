@@ -2,6 +2,15 @@ import React, { useState } from 'react';
 import { useEffect } from 'react';
 import { Mail, User, Phone, MapPin, Car, FileText, Briefcase } from 'lucide-react';
 import { submitForm } from '../utils/formSubmission';
+import {
+  trackLeadSubmit,
+  trackFieldInteraction,
+  trackFormSubmitAttempt,
+  trackFormSubmitResult,
+} from '../utils/analytics';
+
+/** GA4 form identifier for the "Get Your Free Quote" form. */
+const FORM_ID = 'lead_form_quote';
 
 interface LeadFormProps {
   selectedService: string;
@@ -41,6 +50,7 @@ const LeadForm: React.FC<LeadFormProps> = ({ selectedService }) => {
   }, [selectedService]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    trackFieldInteraction(FORM_ID, e.target.name);
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
@@ -51,6 +61,7 @@ const LeadForm: React.FC<LeadFormProps> = ({ selectedService }) => {
     e.preventDefault();
     setIsSubmitting(true);
     setSubmitStatus('idle');
+    trackFormSubmitAttempt(FORM_ID);
 
     try {
       const result = await submitForm({
@@ -64,6 +75,11 @@ const LeadForm: React.FC<LeadFormProps> = ({ selectedService }) => {
       });
 
       console.log('Form submission successful:', result);
+
+      trackFormSubmitResult(FORM_ID, true);
+      // This form shows success inline (no Thank-You page redirect), so the
+      // lead conversion (GA4 + Google Ads + Meta) must fire here.
+      trackLeadSubmit({ email: formData.email, phone: formData.phone, fullName: formData.fullName });
 
       setIsSubmitting(false);
       setSubmitStatus('success');
@@ -84,6 +100,7 @@ const LeadForm: React.FC<LeadFormProps> = ({ selectedService }) => {
 
     } catch (error) {
       console.error('Form submission error:', error);
+      trackFormSubmitResult(FORM_ID, false, error instanceof Error ? error.message : String(error));
       setIsSubmitting(false);
       setSubmitStatus('error');
 

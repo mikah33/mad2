@@ -26,6 +26,13 @@ declare global {
 const ADS_ID = 'AW-16694998422';
 
 /**
+ * GA4 measurement id. Configured directly in index.html (gtag) so that every
+ * ga4() event below actually reaches GA4 — GTM (GTM-WBS8H6B2) also contains
+ * this property but only handles its own page_view tags.
+ */
+export const GA4_ID = 'G-RYC8XZ9D02';
+
+/**
  * Google Ads conversion LABELS, one per action.
  *
  * `lead_form` already exists in the Google Ads account ("Submit lead form").
@@ -285,19 +292,59 @@ export function trackPageEngagement(pagePath: string): () => void {
   };
   window.addEventListener('scroll', onScroll, { passive: true });
 
-  // --- Section visibility ---
+  // --- Section visibility + dwell time ---
+  // section_view fires once when a section first becomes >=50% visible.
+  // section_time fires with the accumulated visible seconds when the section
+  // leaves the viewport, the tab is hidden, or the user leaves the page —
+  // so GA4 can answer "how long do people actually look at each section".
   let observer: IntersectionObserver | null = null;
   const seenSections = new Set<string>();
+  const currentlyVisible = new Set<string>();
+  const visibleSince = new Map<string, number>();
+  const dwellMs = new Map<string, number>();
+
+  const closeInterval = (id: string) => {
+    const since = visibleSince.get(id);
+    if (since !== undefined) {
+      dwellMs.set(id, (dwellMs.get(id) || 0) + (Date.now() - since));
+      visibleSince.delete(id);
+    }
+  };
+
+  /** Report accumulated dwell per section (>=1s) and reset the counters. */
+  const flushSectionTime = () => {
+    for (const id of currentlyVisible) closeInterval(id);
+    for (const [id, ms] of dwellMs) {
+      const seconds = Math.round(ms / 1000);
+      if (seconds >= 1) {
+        ga4('section_time', {
+          section_id: id,
+          seconds,
+          page_path: pagePath,
+          transport_type: 'beacon',
+        });
+      }
+    }
+    dwellMs.clear();
+  };
+
   if ('IntersectionObserver' in window) {
     observer = new IntersectionObserver(
       (entries) => {
         for (const entry of entries) {
-          if (!entry.isIntersecting) continue;
           const el = entry.target as HTMLElement;
           const id = el.id || el.dataset.gaSection || '';
-          if (id && !seenSections.has(id)) {
-            seenSections.add(id);
-            ga4('section_view', { section_id: id, page_path: pagePath });
+          if (!id) continue;
+          if (entry.isIntersecting) {
+            currentlyVisible.add(id);
+            if (document.visibilityState === 'visible') visibleSince.set(id, Date.now());
+            if (!seenSections.has(id)) {
+              seenSections.add(id);
+              ga4('section_view', { section_id: id, page_path: pagePath });
+            }
+          } else {
+            currentlyVisible.delete(id);
+            closeInterval(id);
           }
         }
       },
@@ -311,8 +358,226 @@ export function trackPageEngagement(pagePath: string): () => void {
     }, 600);
   }
 
+  // Pause dwell timers while the tab is hidden; flush on real page exit.
+  const onVisibility = () => {
+    if (document.visibilityState === 'hidden') {
+      flushSectionTime();
+    } else {
+      const now = Date.now();
+      for (const id of currentlyVisible) visibleSince.set(id, now);
+    }
+  };
+  document.addEventListener('visibilitychange', onVisibility);
+  window.addEventListener('pagehide', flushSectionTime);
+
   return () => {
     window.removeEventListener('scroll', onScroll);
+    document.removeEventListener('visibilitychange', onVisibility);
+    window.removeEventListener('pagehide', flushSectionTime);
+    flushSectionTime(); // report dwell for the page being navigated away from
     observer?.disconnect();
   };
+}
+
+/* ------------------------------------------------------------------ */
+/* Universal CTA / button click tracking                               */
+/* ------------------------------------------------------------------ */
+
+declare global {
+  interface Window {
+    __ctaTrackingInstalled?: boolean;
+  }
+}
+
+/**
+ * One delegated listener that fires `cta_click` for EVERY <a> and <button>
+ * click site-wide, with the button text, type, destination, and the section
+ * it lives in. Answers "which exact buttons get clicked, where". Specific
+ * events (phone_call_click / text_message_click) still fire separately.
+ *
+ * Add data-ga-label="..." to any element to override the reported text.
+ */
+export function installCtaClickTracking(): void {
+  if (typeof document === 'undefined' || window.__ctaTrackingInstalled) return;
+  window.__ctaTrackingInstalled = true;
+
+  document.addEventListener(
+    'click',
+    (e) => {
+      const target = e.target as HTMLElement | null;
+      const el = target?.closest?.('a[href], button') as HTMLElement | null;
+      if (!el) return;
+
+      const isLink = el.tagName === 'A';
+      const href = isLink ? el.getAttribute('href') || '' : '';
+      let ctaType = 'button';
+      if (href.startsWith('tel:')) ctaType = 'phone';
+      else if (href.startsWith('sms:')) ctaType = 'sms';
+      else if (href.startsWith('mailto:')) ctaType = 'email';
+      else if (isLink) {
+        ctaType =
+          href.startsWith('http') && !href.includes(window.location.hostname)
+            ? 'outbound_link'
+            : 'link';
+      }
+
+      const text = (el.getAttribute('data-ga-label') || el.textContent || '')
+        .trim()
+        .replace(/\s+/g, ' ')
+        .slice(0, 60);
+
+      const sectionEl = el.closest('section[id], [data-ga-section]') as HTMLElement | null;
+      const sectionId = sectionEl?.id || sectionEl?.dataset.gaSection || '';
+
+      // Skip empty icon-only clicks with no label, and rapid double-fires.
+      if (!text && !href) return;
+      if (!shouldFire('cta:' + (text || href), 800)) return;
+
+      ga4('cta_click', {
+        cta_text: text || '(icon)',
+        cta_type: ctaType,
+        link_url: href ? href.slice(0, 100) : undefined,
+        section_id: sectionId || undefined,
+        page_path: window.location.pathname,
+      });
+    },
+    { capture: true }
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/* Booking funnel: step views, field interactions, submits, drop-off   */
+/* ------------------------------------------------------------------ */
+
+interface FunnelState {
+  formId: string;
+  step: number;
+  stepName: string;
+  lastField: string;
+  started: boolean;
+  submitted: boolean;
+}
+
+const funnel: FunnelState = {
+  formId: '',
+  step: 0,
+  stepName: '',
+  lastField: '',
+  started: false,
+  submitted: false,
+};
+
+const seenFunnelSteps = new Set<string>();
+const seenFormFields = new Set<string>();
+let abandonInstalled = false;
+let abandonFired = false;
+
+/**
+ * Fire when a funnel step becomes visible/active. Deduped per step, so use
+ * step_number in a GA4 Funnel Exploration to see exactly where people drop.
+ */
+export function trackFunnelStep(formId: string, step: number, stepName: string): void {
+  funnel.formId = formId;
+  funnel.step = step;
+  funnel.stepName = stepName;
+  funnel.started = true;
+  const key = `${formId}:${step}`;
+  if (seenFunnelSteps.has(key)) return;
+  seenFunnelSteps.add(key);
+  ga4('booking_step_view', {
+    form_id: formId,
+    step_number: step,
+    step_name: stepName,
+    page_path: typeof window !== 'undefined' ? window.location.pathname : '',
+  });
+}
+
+/**
+ * Fire on the first interaction with each form field (call from onChange).
+ * Shows which exact field people stall on inside the contact step.
+ */
+export function trackFieldInteraction(formId: string, fieldName: string): void {
+  funnel.lastField = fieldName;
+  const key = `${formId}:${fieldName}`;
+  if (seenFormFields.has(key)) return;
+  seenFormFields.add(key);
+  ga4('form_field_start', {
+    form_id: formId,
+    field_name: fieldName,
+    step_number: funnel.step,
+  });
+}
+
+export function trackFormSubmitAttempt(formId: string): void {
+  ga4('booking_submit_attempt', { form_id: formId });
+}
+
+export function trackFormSubmitResult(formId: string, ok: boolean, errorMessage?: string): void {
+  if (ok) {
+    funnel.submitted = true; // suppresses the abandon event on redirect
+    ga4('booking_submit_success', { form_id: formId });
+  } else {
+    ga4('booking_submit_error', {
+      form_id: formId,
+      error_message: (errorMessage || 'unknown').slice(0, 100),
+    });
+  }
+}
+
+/**
+ * Fire `booking_abandon` with the furthest step + last touched field when a
+ * user who started the funnel leaves without submitting. If they come back
+ * to the tab, `booking_resume` fires so abandons can be netted out.
+ */
+export function installFunnelAbandonTracking(): void {
+  if (typeof window === 'undefined' || abandonInstalled) return;
+  abandonInstalled = true;
+
+  const flush = (reason: string) => {
+    if (abandonFired || !funnel.started || funnel.submitted) return;
+    abandonFired = true;
+    ga4('booking_abandon', {
+      form_id: funnel.formId,
+      last_step_number: funnel.step,
+      last_step_name: funnel.stepName,
+      last_field: funnel.lastField || undefined,
+      abandon_reason: reason,
+      page_path: window.location.pathname,
+      transport_type: 'beacon',
+    });
+  };
+
+  window.addEventListener('pagehide', () => flush('page_exit'));
+  document.addEventListener('visibilitychange', () => {
+    if (document.visibilityState === 'hidden') {
+      flush('tab_hidden');
+    } else if (abandonFired && !funnel.submitted && funnel.started) {
+      abandonFired = false; // re-arm; they came back
+      ga4('booking_resume', {
+        form_id: funnel.formId,
+        step_number: funnel.step,
+        step_name: funnel.stepName,
+      });
+    }
+  });
+}
+
+/** Call from a funnel component's unmount to catch SPA route-away drop-offs. */
+export function flushFunnelAbandon(reason: string): void {
+  if (abandonFired || !funnel.started || funnel.submitted) return;
+  abandonFired = true;
+  ga4('booking_abandon', {
+    form_id: funnel.formId,
+    last_step_number: funnel.step,
+    last_step_name: funnel.stepName,
+    last_field: funnel.lastField || undefined,
+    abandon_reason: reason,
+    page_path: typeof window !== 'undefined' ? window.location.pathname : '',
+  });
+}
+
+/** Service-package card selection (the cards are divs, so cta_click misses them). */
+export function trackServiceSelect(formId: string, serviceName: string): void {
+  if (!shouldFire('service_select:' + serviceName, 800)) return;
+  ga4('select_service', { form_id: formId, service_name: serviceName });
 }
