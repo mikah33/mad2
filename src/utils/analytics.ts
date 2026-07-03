@@ -484,12 +484,16 @@ export function trackFunnelStep(formId: string, step: number, stepName: string):
   const key = `${formId}:${step}`;
   if (seenFunnelSteps.has(key)) return;
   seenFunnelSteps.add(key);
-  ga4('booking_step_view', {
+  const params = {
     form_id: formId,
     step_number: step,
     step_name: stepName,
     page_path: typeof window !== 'undefined' ? window.location.pathname : '',
-  });
+  };
+  ga4('booking_step_view', params);
+  // Also fire a per-step event name (booking_step_1..5): GA4 funnel reports
+  // work on event names immediately, without waiting for custom dimensions.
+  ga4(`booking_step_${step}`, params);
 }
 
 /**
