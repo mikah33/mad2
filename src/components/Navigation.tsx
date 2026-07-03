@@ -94,7 +94,7 @@ const Navigation: React.FC = () => {
               className="h-10 w-10 sm:h-12 sm:w-12 rounded-full object-cover shadow-md"
               loading="eager"
             />
-            <h1 className="text-lg sm:text-xl font-bold text-gray-900">Mikah's Auto Detailing</h1>
+            <span className="text-lg sm:text-xl font-bold text-gray-900">Mikah's Auto Detailing</span>
           </a>
 
           {/* Desktop Navigation Links */}
