@@ -71,13 +71,13 @@ blogPosts.forEach((post) => {
 
   // Update meta description
   html = html.replace(
-    /<meta name="description" content=".*?"\/>/,
+    /<meta name="description" content="[^"]*"[^>]*>/,
     `<meta name="description" content="${(post.metaDescription || post.excerpt).replace(/"/g, '&quot;')}"/>`
   );
 
   // Update keywords
   html = html.replace(
-    /<meta name="keywords" content=".*?"\/>/,
+    /<meta name="keywords" content="[^"]*"[^>]*>/,
     `<meta name="keywords" content="${post.tags.join(', ')}"/>`
   );
 
@@ -92,22 +92,22 @@ blogPosts.forEach((post) => {
   }
 
   // Update OG tags
-  html = html.replace(/<meta property="og:title" content=".*?"\/>/g, `<meta property="og:title" content="${fullTitle.replace(/"/g, '&quot;')}"/>`);
+  html = html.replace(/<meta property="og:title" content="[^"]*"[^>]*>/g, `<meta property="og:title" content="${fullTitle.replace(/"/g, '&quot;')}"/>`);
   html = html.replace(
-    /<meta property="og:description" content=".*?"\/>/g,
+    /<meta property="og:description" content="[^"]*"[^>]*>/g,
     `<meta property="og:description" content="${(post.metaDescription || post.excerpt).replace(/"/g, '&quot;')}"/>`
   );
-  html = html.replace(/<meta property="og:url" content=".*?"\/>/g, `<meta property="og:url" content="${postUrl}"/>`);
-  html = html.replace(/<meta property="og:image" content=".*?"\/>/g, `<meta property="og:image" content="${imageUrl}"/>`);
-  html = html.replace(/<meta property="og:type" content=".*?"\/>/g, `<meta property="og:type" content="article"/>`);
+  html = html.replace(/<meta property="og:url" content="[^"]*"[^>]*>/g, `<meta property="og:url" content="${postUrl}"/>`);
+  html = html.replace(/<meta property="og:image" content="[^"]*"[^>]*>/g, `<meta property="og:image" content="${imageUrl}"/>`);
+  html = html.replace(/<meta property="og:type" content="[^"]*"[^>]*>/g, `<meta property="og:type" content="article"/>`);
 
   // Update Twitter tags
-  html = html.replace(/<meta name="twitter:title" content=".*?"\/>/g, `<meta name="twitter:title" content="${fullTitle.replace(/"/g, '&quot;')}"/>`);
+  html = html.replace(/<meta name="twitter:title" content="[^"]*"[^>]*>/g, `<meta name="twitter:title" content="${fullTitle.replace(/"/g, '&quot;')}"/>`);
   html = html.replace(
-    /<meta name="twitter:description" content=".*?"\/>/g,
+    /<meta name="twitter:description" content="[^"]*"[^>]*>/g,
     `<meta name="twitter:description" content="${(post.metaDescription || post.excerpt).replace(/"/g, '&quot;')}"/>`
   );
-  html = html.replace(/<meta name="twitter:image" content=".*?"\/>/g, `<meta name="twitter:image" content="${imageUrl}"/>`);
+  html = html.replace(/<meta name="twitter:image" content="[^"]*"[^>]*>/g, `<meta name="twitter:image" content="${imageUrl}"/>`);
 
   // Inject blog-specific schemas right before </head>
   html = html.replace('</head>', `${schemaScripts}\n  </head>`);

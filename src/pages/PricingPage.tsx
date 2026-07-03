@@ -391,7 +391,8 @@ export const PricingPage = () => {
             detail than a maintained sedan anywhere you go. Ours are flat, published rates for the
             Midlands: see what's included on each <a href="/services" className="text-primary-600 font-semibold hover:underline">service page</a>,
             or check <a href="/locations" className="text-primary-600 font-semibold hover:underline">our service areas</a> across
-            Columbia, Lexington, Irmo, West Columbia, and Cayce.
+            Columbia, Lexington, Irmo, West Columbia, and Cayce. Want the full breakdown of what drives
+            detailing costs? Read our <a href="/blog/car-detailing-prices-value-breakdown" className="text-primary-600 font-semibold hover:underline">car detailing prices guide</a>.
           </p>
         </div>
       </section>
