@@ -1,6 +1,18 @@
 # GA4 Tracking System — Setup & Reference
 
-Last updated: 2026-07-03. Property: **G-RYC8XZ9D02** · Ads: AW-16694998422 · GTM: GTM-WBS8H6B2
+Last updated: 2026-07-03. Property: **G-RYC8XZ9D02** (GA4 property 518196316, account "1/2/26 - MIKAHS AUTO", stream "Thank You Page" 13232906551) · Ads: AW-16694998422 · GTM: GTM-WBS8H6B2
+
+## ✅ Console setup status (completed 2026-07-03 via GA/GTM UI)
+
+- [x] All 15 custom dimensions + "Section Seconds" custom metric registered
+- [x] Key events marked: `generate_lead`, `phone_call_click` (plus pre-existing `lead_gen`)
+- [x] Enhanced measurement: "Page changes based on browser history events" turned OFF
+- [x] GTM v10 published: `send_page_view=false` on BOTH Google Tags ("GA4 - All Pages" and the FB_CONVERSIONS_API GA4_Config tag, which had send_page_view=true → page_views were being double-counted even before this project)
+- [x] Explore funnel "Booking Funnel Drop-off" built: booking_step_1→5 → booking_submit_success
+- [ ] REMAINING (needs GA processing lag): Admin → Events → search `text_message_click` and `booking_submit_success` → click the star to mark as key events (they were seeded today; appear within ~24h)
+- [ ] OPTIONAL (after ~24h): custom dimensions become usable in Explore; add `step_number` conditions or breakdowns anywhere needed. The funnel doesn't need them — it uses the per-step event names.
+
+Note: `booking_step_1..5` alias events fire alongside `booking_step_view` (see trackFunnelStep) specifically so funnels work on event names alone.
 
 ## What was broken before this change
 
