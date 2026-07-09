@@ -11,7 +11,7 @@ export const ContactPage = () => {
         title="Contact Us | Auto Detailing Services Columbia SC | Mikah's"
         description="Contact Mikah's Auto Detailing for professional auto detailing services in Columbia, SC. Schedule your mobile detailing appointment. Call (803) 667-8731 for a free quote!"
         keywords="auto detailing services columbia sc, contact auto detailing, book detailing appointment columbia sc, mobile detailing contact, auto detailing services in columbia sc"
-        canonical="https://mikahsmobiledetailingsc.com/contact"
+        canonical="https://mikahsmobiledetailingsc.com/contact/"
         schema={enhancedBusinessSchema}
       />
 

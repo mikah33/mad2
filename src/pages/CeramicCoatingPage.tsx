@@ -65,7 +65,7 @@ const CeramicCoatingPage: React.FC = () => {
         title="Ceramic Coating Columbia SC | Auto Detailing Services | Paint Protection"
         description="Professional ceramic coating in Columbia, SC from $999. 2–5 year paint protection, custom quoted to your vehicle. Mobile service to your location. 5-star rated. Call (803) 667-8731!"
         keywords="auto detailing services columbia sc, ceramic coating Columbia SC, ceramic coating near me, paint protection Columbia, auto detailing services in columbia sc, car ceramic coating, ceramic coating installer, long-term paint protection, ceramic paint protection"
-        canonical="https://mikahsmobiledetailingsc.com/services/ceramic-coating"
+        canonical="https://mikahsmobiledetailingsc.com/services/ceramic-coating/"
         ogImage="https://mikahsmobiledetailingsc.com/exterior3.jpg"
         ogImageAlt="Professional ceramic coating auto detailing services in Columbia SC"
         schema={schemas}

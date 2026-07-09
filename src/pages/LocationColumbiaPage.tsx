@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { MapPin, Phone, Star, Shield, Award, CheckCircle, ArrowRight, Clock } from 'lucide-react';
+import { MapPin, Phone, Star, Shield, Award, CheckCircle, ArrowRight, Clock, MessageCircle } from 'lucide-react';
 import { useRef, useEffect } from 'react';
 import { SEOHead } from '../components/seo/SEOHead';
 import { generateLocalBusinessSchema, generateFAQSchema } from '../components/seo/StructuredData';
@@ -9,6 +9,8 @@ import { services } from '../data/services';
 import { aggregateRating, reviews } from '../data/reviews';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
+import StickyMobileCTA from '../components/StickyMobileCTA';
+import { trackTextClick } from '../utils/analytics';
 import { Breadcrumbs } from '../components/Breadcrumbs';
 import { InternalLinkingMatrix } from '../components/seo/InternalLinkingMatrix';
 import { LandmarkContent } from '../components/seo/LandmarkContent';
@@ -169,10 +171,10 @@ export const LocationColumbiaPage = () => {
   return (
     <>
       <SEOHead
-        title="Car Detailing Columbia SC | Mobile Detailing From $225 | Mikah's"
+        title="Car Detailing Columbia SC | $225 Full Detail — Mikah's Auto Detailing"
         description="Best car detailing in Columbia SC. 5.0★ rated mobile detailing from $225. Interior, exterior, ceramic coating & paint correction — we come to you! Call (803) 667-8731."
         keywords="auto detailing services columbia sc, auto detailing services in columbia sc, columbia detailing, columbia auto detail, auto detail columbia, columbia mobile detailing, detailing columbia sc, car detailing columbia sc, mobile auto detailing columbia sc, professional car detailing columbia, best columbia detailing"
-        canonical="https://mikahsmobiledetailingsc.com/locations/columbia-sc"
+        canonical="https://mikahsmobiledetailingsc.com/locations/columbia-sc/"
         ogDescription="Best car detailing in Columbia SC. 5.0★ rated mobile detailing from $225. Interior, exterior, ceramic coating & paint correction — we come to you! Call (803) 667-8731."
         twitterDescription="Best car detailing in Columbia SC. 5.0★ rated mobile detailing from $225. Interior, exterior, ceramic coating & paint correction — we come to you! Call (803) 667-8731."
         schema={schemas}
@@ -267,6 +269,15 @@ export const LocationColumbiaPage = () => {
                 <button className="w-full sm:w-auto px-6 md:px-8 py-3 md:py-4 bg-white text-primary-700 text-base md:text-lg font-bold rounded-lg hover:bg-gray-100 transition shadow-lg hover:shadow-xl transform hover:scale-105 flex items-center justify-center gap-2">
                   <Phone className="w-5 h-5" />
                   Call (803) 667-8731
+                </button>
+              </a>
+              <a
+                href="sms:+18036678731?&body=Hi! I'm in Columbia — can you text me a quote for my car?"
+                onClick={() => trackTextClick('location_columbia')}
+              >
+                <button className="w-full sm:w-auto px-6 md:px-8 py-3 md:py-4 bg-white text-primary-700 text-base md:text-lg font-bold rounded-lg hover:bg-gray-100 transition shadow-lg hover:shadow-xl transform hover:scale-105 flex items-center justify-center gap-2">
+                  <MessageCircle className="w-5 h-5" />
+                  Text Us
                 </button>
               </a>
               <a href="/#quote">
@@ -589,6 +600,7 @@ export const LocationColumbiaPage = () => {
       </div>
 
       <Footer />
+      <StickyMobileCTA />
     </>
   );
 };

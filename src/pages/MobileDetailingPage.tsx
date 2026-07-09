@@ -68,7 +68,7 @@ const MobileDetailingPage: React.FC = () => {
         title="Mobile Detailing Near Me | Columbia & Lexington SC | Mikah's"
         description="Mobile car detailing near you in Columbia & Lexington SC. We come to your home or office from $225. Same day available. 5-star rated. Call (803) 667-8731."
         keywords="auto detailing services columbia sc, mobile car detailing near me, detailing car near me, automotive detail near me, car interior detailing, mobile detailing columbia sc, auto detailing services in columbia sc, mobile automotive detailing, professional car detailing columbia sc"
-        canonical="https://mikahsmobiledetailingsc.com/services/mobile-detailing"
+        canonical="https://mikahsmobiledetailingsc.com/services/mobile-detailing/"
         ogImage="https://mikahsmobiledetailingsc.com/exterior3.jpg"
         ogImageAlt="Professional mobile auto detailing services in Columbia SC"
         schema={schemas}

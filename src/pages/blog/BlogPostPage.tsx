@@ -10,6 +10,7 @@ import { NotFoundPage } from '../NotFoundPage';
 import Navigation from '../../components/Navigation';
 import Footer from '../../components/Footer';
 import { RelatedPosts } from '../../components/blog/RelatedPosts';
+import { locationForSlug } from '../../utils/locationForSlug';
 
 // Configure marked options
 marked.setOptions({
@@ -50,7 +51,7 @@ export const BlogPostPage = () => {
     return <NotFoundPage />;
   }
 
-  const postUrl = `https://mikahsmobiledetailingsc.com/blog/${post.slug}`;
+  const postUrl = `https://mikahsmobiledetailingsc.com/blog/${post.slug}/`;
   const imageUrl = post.image || 'https://mikahsmobiledetailingsc.com/exterior1.jpg';
 
   // NOTE: Schemas are pre-rendered in static HTML by generate-blog-html.ts script
@@ -249,6 +250,26 @@ export const BlogPostPage = () => {
                 </p>
               </div>
             )}
+
+            {/* City location-page link (fixes blog/location cannibalization) */}
+            {(() => {
+              const loc = locationForSlug(post.slug);
+              if (!loc) return null;
+              return (
+                <div className="mt-10 p-6 bg-[#CAF0F8] border border-[#90E0EF] rounded-xl">
+                  <h2 className="text-xl font-bold text-gray-900 mb-2">Mobile Car Detailing in {loc.city}</h2>
+                  <p className="text-gray-700">
+                    We detail cars, trucks, and SUVs at homes and offices across {loc.city} — no travel
+                    fees, and you get a quote by text within minutes. See local pricing, availability, and
+                    the neighborhoods we cover on our{' '}
+                    <Link to={loc.path} className="text-primary-700 font-semibold underline">
+                      mobile car detailing {loc.city}
+                    </Link>{' '}
+                    page.
+                  </p>
+                </div>
+              );
+            })()}
 
             {/* FAQs */}
             {fullContent?.faqs && fullContent.faqs.length > 0 && (

@@ -85,7 +85,7 @@ export const LocationDetailPage = () => {
         title={`Best Mobile Detailing ${location.city} SC | ${businessInfo.name}`}
         description={location.description || `Professional mobile auto detailing in ${location.city}, South Carolina. Ceramic coating, paint correction, interior/exterior detailing. We come to you! Free quotes. Call (803) 667-8731.`}
         keywords={`mobile detailing ${location.city} sc, car detailing ${location.city}, auto detailing ${location.city}, ceramic coating ${location.city}, car wash ${location.city}, mobile car detailing near me, best auto detailing ${location.city}`}
-        canonical={`https://mikahsmobiledetailingsc.com/locations/${location.slug}`}
+        canonical={`https://mikahsmobiledetailingsc.com/locations/${location.slug}/`}
         ogType="place"
         schema={schemas}
       />

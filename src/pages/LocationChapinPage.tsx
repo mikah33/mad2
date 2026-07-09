@@ -127,7 +127,7 @@ export const LocationChapinPage = () => {
         title="Mobile Detailing Chapin SC | Lake Murray Auto Detailing & Ceramic Coating"
         description="Best mobile detailing Chapin SC. Professional auto detailing & ceramic coating for Lake Murray west side. $225+ Interior/exterior detailing. 5.0★ 31 reviews. Serving Timberlake, Little Mountain. Free quotes!"
         keywords="mobile auto detailing chapin sc, car detailing chapin sc, lake murray auto detailing, chapin mobile detailing, timberlake car care, lake house vehicle detailing, luxury auto detailing chapin"
-        canonical="https://mikahsmobiledetailingsc.com/locations/chapin-sc"
+        canonical="https://mikahsmobiledetailingsc.com/locations/chapin-sc/"
         schema={schemas}
       />
 

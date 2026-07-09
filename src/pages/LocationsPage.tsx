@@ -107,7 +107,7 @@ export const LocationsPage = () => {
         title="Service Locations | Mobile Auto Detailing Columbia, Lexington, Irmo SC"
         description="Mobile auto detailing services available throughout Columbia, Lexington, Irmo, West Columbia, Cayce, and surrounding South Carolina communities. We come to you!"
         keywords="mobile detailing columbia sc, auto detailing lexington sc, car detailing irmo, mobile car wash columbia, detailing near me"
-        canonical={`${baseUrl}/locations`}
+        canonical={`${baseUrl}/locations/`}
       />
 
       <Navigation />

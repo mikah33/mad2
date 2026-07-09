@@ -36,7 +36,7 @@ const InteriorCarDetailingPage: React.FC = () => {
         title="Car Interior Detailing Columbia SC | Professional Interior Car Detailing Near Me"
         description="Professional car interior detailing in Columbia SC. Expert steam cleaning, leather conditioning, stain removal, and interior protection. Mobile service available - we come to you!"
         keywords="car interior detailing, interior car detailing columbia sc, car interior detailing near me, automotive interior cleaning, interior auto detailing, mobile interior detailing, professional car interior cleaning"
-        canonical="https://mikahsmobiledetailingsc.com/services/interior-car-detailing"
+        canonical="https://mikahsmobiledetailingsc.com/services/interior-car-detailing/"
         ogImage="https://mikahsmobiledetailingsc.com/interior-detailing.jpg"
         ogImageAlt="Professional car interior detailing Columbia SC"
         schema={schemas}

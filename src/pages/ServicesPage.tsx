@@ -205,7 +205,7 @@ export const ServicesPage = () => {
         title="Auto Detailing Services Columbia SC | Packages & Pricing | Mikah's"
         description="Professional auto detailing services in Columbia, SC. Mobile detailing, ceramic coating, paint correction, interior & exterior packages. 5-star rated. Call (803) 667-8731!"
         keywords="auto detailing services columbia sc, auto detailing services in columbia sc, mobile auto detailing columbia sc, car detailing columbia sc, ceramic coating columbia sc, interior detailing, exterior detailing, paint correction, mobile detailer near me"
-        canonical="https://mikahsmobiledetailingsc.com/services"
+        canonical="https://mikahsmobiledetailingsc.com/services/"
         ogType="website"
         schema={schemas}
       />

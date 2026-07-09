@@ -167,7 +167,7 @@ const InteriorDetailingPage: React.FC = () => {
         title="Interior Detailing Columbia SC | Auto Detailing Services | From $200"
         description="Professional auto detailing services in Columbia, SC. Interior deep cleaning, stain removal, leather conditioning, odor elimination. Mobile service. 5-star rated. Call (803) 667-8731!"
         keywords="auto detailing services columbia sc, car interior detailing, interior detailing columbia sc, auto detailing services in columbia sc, mobile car interior detailing, professional interior car detailing, leather conditioning, stain removal, odor elimination, pet hair removal"
-        canonical="https://mikahsmobiledetailingsc.com/services/interior-detailing"
+        canonical="https://mikahsmobiledetailingsc.com/services/interior-detailing/"
         ogImage="https://mikahsmobiledetailingsc.com/interior1.jpg"
         ogImageAlt="Professional interior auto detailing services in Columbia SC"
         schema={schemas}

@@ -114,7 +114,7 @@ const ExteriorDetailingPage: React.FC = () => {
         title="Exterior Detailing Columbia SC | Auto Detailing Services | Hand Wash"
         description="Professional auto detailing services in Columbia, SC. Exterior hand wash, clay bar, wax protection, paint enhancement. Mobile service. 5-star rated. Call (803) 667-8731!"
         keywords="auto detailing services columbia sc, exterior car detailing, car wash Columbia SC, auto detailing services in columbia sc, hand car wash, clay bar treatment, car wax, paint protection, mobile car wash columbia sc, exterior detailing"
-        canonical="https://mikahsmobiledetailingsc.com/services/exterior-detailing"
+        canonical="https://mikahsmobiledetailingsc.com/services/exterior-detailing/"
         ogImage="https://mikahsmobiledetailingsc.com/exterior1.jpg"
         ogImageAlt="Professional exterior auto detailing services in Columbia SC"
         schema={schemas}

@@ -42,7 +42,7 @@ export const BlogPage = () => {
         title="Auto Detailing Blog & Tips - Columbia SC"
         description="Expert advice, tips, and guides on auto detailing, car care, ceramic coating, and vehicle maintenance from Columbia SC professionals."
         keywords="auto detailing blog, car care tips, detailing guides, ceramic coating advice, Columbia SC blog"
-        canonical="https://mikahsmobiledetailingsc.com/blog"
+        canonical="https://mikahsmobiledetailingsc.com/blog/"
         ogImage="https://mikahsmobiledetailingsc.com/exterior1.jpg"
         ogImageAlt="Mikah's Auto Detailing Blog - Expert Car Care Tips"
         schema={schemas}

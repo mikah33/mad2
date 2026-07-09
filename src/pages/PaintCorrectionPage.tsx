@@ -37,7 +37,7 @@ const PaintCorrectionPage: React.FC = () => {
         title="Paint Correction Columbia SC | Swirl Mark Removal | Auto Detailing Near Me"
         description="Professional paint correction in Columbia SC. Remove swirl marks, scratches, oxidation. Expert polishing and paint restoration. Serving Lexington, Irmo, Cayce. Book now!"
         keywords="paint correction Columbia SC, swirl removal, scratch removal, paint polishing, paint restoration, auto detailing Columbia, car paint correction Lexington SC, oxidation removal, paint correction near me"
-        canonical="https://mikahsmobiledetailingsc.com/services/paint-correction"
+        canonical="https://mikahsmobiledetailingsc.com/services/paint-correction/"
         ogImage="https://mikahsmobiledetailingsc.com/exterior4.jpg"
         ogImageAlt="Professional paint correction Columbia SC - swirl mark and scratch removal"
         schema={schemas}

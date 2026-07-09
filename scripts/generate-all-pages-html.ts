@@ -86,8 +86,8 @@ const routes = [
 
   // Location pages
   { path: 'locations', title: 'Service Areas | Mobile Detailing in SC', description: 'Mobile car detailing across the Midlands: Columbia, Lexington, West Columbia, Irmo, Cayce, Chapin, Blythewood & more. 5.0-star - we come to you, from $100.' },
-  { path: 'locations/columbia-sc', title: 'Car Detailing Columbia SC | Mobile Service', description: 'Mobile car detailing in Columbia SC - 5.0-star rated. Interior from $200, exterior from $100, full detail $225 at your driveway. Call (803) 667-8731.' },
-  { path: 'locations/lexington-sc', title: 'Car Detailing Lexington SC | Mobile Service', description: 'Mobile car detailing in Lexington SC - 5.0-star rated. Interior from $200, exterior from $100, full detail $225. We come to your home or office.' },
+  { path: 'locations/columbia-sc', title: "Car Detailing Columbia SC | $225 Full Detail — Mikah's Auto Detailing", description: 'Mobile car detailing in Columbia SC - 5.0-star rated. Interior from $200, exterior from $100, full detail $225 at your driveway. Call (803) 667-8731.' },
+  { path: 'locations/lexington-sc', title: "Car Detailing Lexington SC | $225 Full Detail — Mikah's Auto Detailing", description: 'Mobile car detailing in Lexington SC - 5.0-star rated. Interior from $200, exterior from $100, full detail $225. We come to your home or office.' },
   { path: 'locations/irmo-sc', title: 'Car Detailing Irmo SC | Mobile Service', description: 'Mobile car detailing in Irmo SC - 5.0-star rated. Interior from $200, exterior from $100, full detail $225 at your home or office. (803) 667-8731.' },
   { path: 'locations/cayce-sc', title: 'Car Detailing Cayce SC | Mobile Service', description: 'Mobile car detailing in Cayce SC - 5.0-star rated. Interior from $200, exterior from $100, full detail $225. We come to you. Call (803) 667-8731.' },
   { path: 'locations/west-columbia', title: 'Car Detailing West Columbia SC | Mobile Service', description: 'Mobile car detailing in West Columbia SC - 5.0-star rated. Interior from $200, exterior from $100, full detail $225. We come to you. (803) 667-8731.' },
@@ -129,7 +129,7 @@ routes.forEach(route => {
     fs.mkdirSync(dirPath, { recursive: true });
   }
 
-  const pageUrl = `${baseUrl}/${routePath}`;
+  const pageUrl = routePath ? `${baseUrl}/${routePath}/` : `${baseUrl}/`;
   const fullTitle = route.title.includes("Mikah's Auto Detailing") ? route.title : `${route.title} | Mikah's Auto Detailing`;
 
   // Determine page type and service type for schema generation

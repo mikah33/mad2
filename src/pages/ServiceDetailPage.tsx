@@ -272,7 +272,7 @@ export const ServiceDetailPage = () => {
         title={`${service.name} Columbia SC | ${businessInfo.name}`}
         description={content.metaDescription}
         keywords={content.keywords.join(', ')}
-        canonical={`https://mikahsmobiledetailingsc.com/services/${service.slug}`}
+        canonical={`https://mikahsmobiledetailingsc.com/services/${service.slug}/`}
         ogType="service"
         schema={schemas}
       />

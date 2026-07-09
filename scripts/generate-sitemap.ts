@@ -68,7 +68,7 @@ function generateSitemap(): string {
 
   // Services listing page
   urls.push({
-    loc: `${SITE_URL}/services`,
+    loc: `${SITE_URL}/services/`,
     lastmod: currentDate,
     changefreq: 'monthly',
     priority: 0.9,
@@ -84,7 +84,7 @@ function generateSitemap(): string {
 
   mobileDetailingPages.forEach((slug) => {
     urls.push({
-      loc: `${SITE_URL}/services/${slug}`,
+      loc: `${SITE_URL}/services/${slug}/`,
       lastmod: currentDate,
       changefreq: 'weekly',    // More frequent updates for primary services
       priority: 0.95,         // Higher priority for mobile detailing focus
@@ -99,7 +99,7 @@ function generateSitemap(): string {
 
   secondaryServicePages.forEach((slug) => {
     urls.push({
-      loc: `${SITE_URL}/services/${slug}`,
+      loc: `${SITE_URL}/services/${slug}/`,
       lastmod: currentDate,
       changefreq: 'monthly',
       priority: 0.7,          // Lower priority - secondary to mobile detailing
@@ -111,7 +111,7 @@ function generateSitemap(): string {
 
   // Locations listing page
   urls.push({
-    loc: `${SITE_URL}/locations`,
+    loc: `${SITE_URL}/locations/`,
     lastmod: currentDate,
     changefreq: 'monthly',
     priority: 0.9,
@@ -120,7 +120,7 @@ function generateSitemap(): string {
   // Individual location pages from data file
   locations.forEach((location) => {
     urls.push({
-      loc: `${SITE_URL}/locations/${location.slug}`,
+      loc: `${SITE_URL}/locations/${location.slug}/`,
       lastmod: currentDate,
       changefreq: 'monthly',
       priority: 0.9,
@@ -141,7 +141,7 @@ function generateSitemap(): string {
   ];
 
   additionalLocationSlugs.forEach((slug) => {
-    const url = `${SITE_URL}/locations/${slug}`;
+    const url = `${SITE_URL}/locations/${slug}/`;
     // Only add if not already in urls
     if (!urls.find(u => u.loc === url)) {
       urls.push({
@@ -157,7 +157,7 @@ function generateSitemap(): string {
   if (cities.length > 0) {
     cities.forEach((city: any) => {
       urls.push({
-        loc: `${SITE_URL}/locations/${city.slug}/neighborhoods`,
+        loc: `${SITE_URL}/locations/${city.slug}/neighborhoods/`,
         lastmod: currentDate,
         changefreq: 'monthly',
         priority: 0.85,
@@ -169,7 +169,7 @@ function generateSitemap(): string {
   if (neighborhoods.length > 0) {
     neighborhoods.forEach((neighborhood: any) => {
       urls.push({
-        loc: `${SITE_URL}/locations/${neighborhood.citySlug}/${neighborhood.slug}`,
+        loc: `${SITE_URL}/locations/${neighborhood.citySlug}/${neighborhood.slug}/`,
         lastmod: currentDate,
         changefreq: 'monthly',
         priority: 0.8,
@@ -179,7 +179,7 @@ function generateSitemap(): string {
 
   // Blog listing page
   urls.push({
-    loc: `${SITE_URL}/blog`,
+    loc: `${SITE_URL}/blog/`,
     lastmod: currentDate,
     changefreq: 'weekly',
     priority: 0.8,
@@ -189,7 +189,7 @@ function generateSitemap(): string {
   if (blogPosts.length > 0) {
     blogPosts.forEach((post) => {
       urls.push({
-        loc: `${SITE_URL}/blog/${post.slug}`,
+        loc: `${SITE_URL}/blog/${post.slug}/`,
         lastmod: post.dateModified || post.datePublished || currentDate,
         changefreq: 'monthly',
         priority: post.featured ? 0.9 : 0.8,
@@ -199,7 +199,7 @@ function generateSitemap(): string {
 
   // FAQ pages
   urls.push({
-    loc: `${SITE_URL}/faq`,
+    loc: `${SITE_URL}/faq/`,
     lastmod: currentDate,
     changefreq: 'monthly',
     priority: 0.8,
@@ -207,14 +207,14 @@ function generateSitemap(): string {
 
   // Specialty FAQ pages
   urls.push({
-    loc: `${SITE_URL}/faq/ceramic-coating`,
+    loc: `${SITE_URL}/faq/ceramic-coating/`,
     lastmod: currentDate,
     changefreq: 'monthly',
     priority: 0.9,
   });
 
   urls.push({
-    loc: `${SITE_URL}/faq/mobile-detailing`,
+    loc: `${SITE_URL}/faq/mobile-detailing/`,
     lastmod: currentDate,
     changefreq: 'monthly',
     priority: 0.9,
@@ -222,7 +222,7 @@ function generateSitemap(): string {
 
   // Resources page
   urls.push({
-    loc: `${SITE_URL}/resources`,
+    loc: `${SITE_URL}/resources/`,
     lastmod: currentDate,
     changefreq: 'monthly',
     priority: 0.8,
@@ -230,7 +230,7 @@ function generateSitemap(): string {
 
   // Contact page
   urls.push({
-    loc: `${SITE_URL}/contact`,
+    loc: `${SITE_URL}/contact/`,
     lastmod: currentDate,
     changefreq: 'monthly',
     priority: 0.8,
@@ -238,7 +238,7 @@ function generateSitemap(): string {
 
   // Review Us page
   urls.push({
-    loc: `${SITE_URL}/review-us`,
+    loc: `${SITE_URL}/review-us/`,
     lastmod: currentDate,
     changefreq: 'monthly',
     priority: 0.6,
@@ -246,7 +246,7 @@ function generateSitemap(): string {
 
   // Reviews page
   urls.push({
-    loc: `${SITE_URL}/reviews`,
+    loc: `${SITE_URL}/reviews/`,
     lastmod: currentDate,
     changefreq: 'weekly',
     priority: 0.7,
@@ -254,7 +254,7 @@ function generateSitemap(): string {
 
   // Gallery page
   urls.push({
-    loc: `${SITE_URL}/gallery`,
+    loc: `${SITE_URL}/gallery/`,
     lastmod: currentDate,
     changefreq: 'weekly',
     priority: 0.7,
@@ -262,7 +262,7 @@ function generateSitemap(): string {
 
   // Pricing page
   urls.push({
-    loc: `${SITE_URL}/pricing`,
+    loc: `${SITE_URL}/pricing/`,
     lastmod: currentDate,
     changefreq: 'monthly',
     priority: 0.9,
@@ -270,7 +270,7 @@ function generateSitemap(): string {
 
   // Booking page
   urls.push({
-    loc: `${SITE_URL}/book`,
+    loc: `${SITE_URL}/book/`,
     lastmod: currentDate,
     changefreq: 'monthly',
     priority: 0.9,
@@ -278,7 +278,7 @@ function generateSitemap(): string {
 
   // SEO Landing Pages (High Priority - Target Keywords)
   urls.push({
-    loc: `${SITE_URL}/auto-detailing-services-columbia-sc`,
+    loc: `${SITE_URL}/auto-detailing-services-columbia-sc/`,
     lastmod: currentDate,
     changefreq: 'weekly',
     priority: 0.95,
@@ -286,14 +286,14 @@ function generateSitemap(): string {
 
   // Marketing Landing Pages
   urls.push({
-    loc: `${SITE_URL}/lp`,
+    loc: `${SITE_URL}/lp/`,
     lastmod: currentDate,
     changefreq: 'weekly',
     priority: 0.9,
   });
 
   urls.push({
-    loc: `${SITE_URL}/lp-specials`,
+    loc: `${SITE_URL}/lp-specials/`,
     lastmod: currentDate,
     changefreq: 'weekly',
     priority: 0.9,
@@ -301,14 +301,14 @@ function generateSitemap(): string {
 
   // Legal Pages
   urls.push({
-    loc: `${SITE_URL}/privacy`,
+    loc: `${SITE_URL}/privacy/`,
     lastmod: currentDate,
     changefreq: 'yearly',
     priority: 0.3,
   });
 
   urls.push({
-    loc: `${SITE_URL}/terms`,
+    loc: `${SITE_URL}/terms/`,
     lastmod: currentDate,
     changefreq: 'yearly',
     priority: 0.3,

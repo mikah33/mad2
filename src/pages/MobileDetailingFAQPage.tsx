@@ -15,7 +15,7 @@ export const MobileDetailingFAQPage: React.FC = () => {
         title="Mobile Detailing FAQs | Car Detailing Near Me Columbia SC"
         description="Find answers to all your mobile car detailing questions. Learn about mobile auto detailing services, pricing, scheduling, and service areas in Columbia SC."
         keywords="mobile car detailing, car detailing near me, mobile detailing columbia sc, auto detailing near me, mobile auto detailing, car detailing services"
-        canonical="https://mikahsmobiledetailingsc.com/faq/mobile-detailing"
+        canonical="https://mikahsmobiledetailingsc.com/faq/mobile-detailing/"
         ogImage="https://mikahsmobiledetailingsc.com/exterior1.jpg"
         ogImageAlt="Mobile car detailing FAQs - Mikah's Auto Detailing Columbia SC"
         schema={generateMobileDetailingFAQSchema()}

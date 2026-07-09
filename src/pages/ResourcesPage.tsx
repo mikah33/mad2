@@ -204,7 +204,7 @@ export const ResourcesPage = () => {
         title="Auto Detailing Resources & Publications | Mikah's Auto Detailing"
         description="Explore our comprehensive auto detailing guides, articles, and resources published across the web. Professional mobile car detailing education from Columbia SC's trusted experts."
         keywords="auto detailing resources, car detailing guides, mobile detailing articles, columbia sc auto detailing, detailing education"
-        canonical="https://mikahsmobiledetailingsc.com/resources"
+        canonical="https://mikahsmobiledetailingsc.com/resources/"
         schema={enhancedBusinessSchema}
       />
 

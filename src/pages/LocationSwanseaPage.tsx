@@ -127,7 +127,7 @@ export const LocationSwanseaPage = () => {
         title="Mobile Detailing Swansea SC | Rural Auto Detailing & Classic Car Care"
         description="Best mobile detailing Swansea SC. Professional auto detailing & classic car care for rural properties. $225+ Interior/exterior detailing. 5.0★ 31 reviews. Serving historic Swansea. Free quotes!"
         keywords="mobile auto detailing swansea sc, car detailing swansea sc, rural mobile detailing, classic car care swansea, farm vehicle detailing, historic swansea auto care"
-        canonical="https://mikahsmobiledetailingsc.com/locations/swansea-sc"
+        canonical="https://mikahsmobiledetailingsc.com/locations/swansea-sc/"
         schema={schemas}
       />
 

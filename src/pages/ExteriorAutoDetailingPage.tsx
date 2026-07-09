@@ -36,7 +36,7 @@ const ExteriorAutoDetailingPage: React.FC = () => {
         title="Exterior Auto Detailing Columbia SC | Professional Automotive Exterior Detailing Near Me"
         description="Professional exterior auto detailing in Columbia SC. Expert hand wash, paint protection, wax application, and wheel detailing. Mobile service available - we come to you!"
         keywords="exterior auto detailing, exterior auto detailing columbia sc, automotive exterior detailing, exterior car detailing near me, auto exterior cleaning, mobile exterior detailing, professional car exterior detailing"
-        canonical="https://mikahsmobiledetailingsc.com/services/exterior-auto-detailing"
+        canonical="https://mikahsmobiledetailingsc.com/services/exterior-auto-detailing/"
         ogImage="https://mikahsmobiledetailingsc.com/exterior-detailing.jpg"
         ogImageAlt="Professional exterior auto detailing Columbia SC"
         schema={schemas}

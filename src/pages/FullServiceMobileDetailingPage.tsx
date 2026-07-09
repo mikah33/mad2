@@ -37,7 +37,7 @@ const FullServiceMobileDetailingPage: React.FC = () => {
         title="Full Service Mobile Detailing Columbia SC | Complete Car Interior & Exterior Auto Detailing"
         description="Complete full service mobile detailing in Columbia SC. Professional car interior detailing + exterior auto detailing at your location. Best value mobile automotive detail package!"
         keywords="full service mobile detailing, mobile car detailing columbia sc, car interior detailing, exterior auto detailing, automotive detail near me, complete mobile detailing service, professional car detailing columbia sc"
-        canonical="https://mikahsmobiledetailingsc.com/services/full-service-mobile-detailing"
+        canonical="https://mikahsmobiledetailingsc.com/services/full-service-mobile-detailing/"
         ogImage="https://mikahsmobiledetailingsc.com/full-service-detailing.jpg"
         ogImageAlt="Full service mobile detailing Columbia SC - complete interior and exterior"
         schema={schemas}

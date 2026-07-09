@@ -127,7 +127,7 @@ export const LocationNewberryPage = () => {
         title="Mobile Detailing Newberry SC | Rural Auto Detailing & Farm Vehicle Care"
         description="Best mobile detailing Newberry SC. Professional auto detailing & farm vehicle care for rural properties. $225+ Interior/exterior detailing. 5.0★ 31 reviews. Serving Newberry County. Free quotes!"
         keywords="mobile auto detailing newberry sc, car detailing newberry sc, rural mobile detailing, farm vehicle detailing, work truck cleaning newberry, agricultural vehicle care"
-        canonical="https://mikahsmobiledetailingsc.com/locations/newberry-sc"
+        canonical="https://mikahsmobiledetailingsc.com/locations/newberry-sc/"
         schema={schemas}
       />
 

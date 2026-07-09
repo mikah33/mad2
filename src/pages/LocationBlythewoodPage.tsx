@@ -128,7 +128,7 @@ export const LocationBlythewoodPage = () => {
         title="Car Detailing Blythewood SC | Mobile Service | Mikah's Auto Detailing"
         description="Blythewood's trusted mobile car detailing service. Full detail packages from $225. We come to your home or office. 5-star rated. Call (803) 667-8731!"
         keywords="car detailing blythewood sc, auto detailing blythewood, mobile detailing blythewood sc, luxury car detailing blythewood, killian auto detailing, ridgewood car care, longtown mobile detailing"
-        canonical="https://mikahsmobiledetailingsc.com/locations/blythewood-sc"
+        canonical="https://mikahsmobiledetailingsc.com/locations/blythewood-sc/"
         schema={schemas}
       />
 

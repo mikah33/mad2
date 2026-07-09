@@ -10,7 +10,7 @@ export const PrivacyPolicyPage = () => {
         title="Privacy Policy | Mikah's Auto Detailing"
         description="Privacy Policy for Mikah's Auto Detailing. Learn how we collect, use, and protect your personal information."
         keywords="privacy policy, data protection, auto detailing privacy"
-        canonical="https://mikahsmobiledetailingsc.com/privacy"
+        canonical="https://mikahsmobiledetailingsc.com/privacy/"
         ogType="website"
       />
 

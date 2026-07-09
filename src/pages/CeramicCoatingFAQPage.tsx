@@ -15,7 +15,7 @@ export const CeramicCoatingFAQPage: React.FC = () => {
         title="Ceramic Coating FAQs | Professional Auto Ceramic Coating Columbia SC"
         description="Get answers to all your ceramic coating questions. Learn about automotive ceramic coating, professional application, costs, benefits, and maintenance in Columbia SC."
         keywords="ceramic coating, auto ceramic coating, car ceramic coating, professional ceramic coating, ceramic coating columbia sc, automotive ceramic coating, ceramic paint coating"
-        canonical="https://mikahsmobiledetailingsc.com/faq/ceramic-coating"
+        canonical="https://mikahsmobiledetailingsc.com/faq/ceramic-coating/"
         ogImage="https://mikahsmobiledetailingsc.com/exterior3.jpg"
         ogImageAlt="Professional ceramic coating FAQs - Mikah's Auto Detailing Columbia SC"
         schema={generateCeramicCoatingFAQSchema()}

@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { MapPin, Phone, Star, Shield, Award, CheckCircle, ArrowRight, Clock } from 'lucide-react';
+import { MapPin, Phone, Star, Shield, Award, CheckCircle, ArrowRight, Clock, MessageCircle } from 'lucide-react';
 import { useRef, useEffect } from 'react';
 import { SEOHead } from '../components/seo/SEOHead';
 import { generateLocalBusinessSchema, generateFAQSchema } from '../components/seo/StructuredData';
@@ -9,6 +9,8 @@ import { services } from '../data/services';
 import { aggregateRating, reviews } from '../data/reviews';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
+import StickyMobileCTA from '../components/StickyMobileCTA';
+import { trackTextClick } from '../utils/analytics';
 import { Breadcrumbs } from '../components/Breadcrumbs';
 import { InternalLinkingMatrix } from '../components/seo/InternalLinkingMatrix';
 import { LandmarkContent } from '../components/seo/LandmarkContent';
@@ -185,10 +187,10 @@ export const LocationLexingtonPage = () => {
   return (
     <>
       <SEOHead
-        title="Mobile Car Detailing Lexington SC | 5.0★ Rated | We Come to You | From $225"
+        title="Car Detailing Lexington SC | $225 Full Detail — Mikah's Auto Detailing"
         description="5.0★ mobile car detailing in Lexington SC — we come to your home or office. Full details from $225. Serving Lake Murray, Chapin &amp; Irmo. Same-week booking: (803) 667-8731."
         keywords={allKeywords.join(', ') + ', auto detailing services columbia sc'}
-        canonical="https://mikahsmobiledetailingsc.com/locations/lexington-sc"
+        canonical="https://mikahsmobiledetailingsc.com/locations/lexington-sc/"
         ogDescription="5.0★ mobile car detailing in Lexington SC — we come to you. Full details from $225. Serving Lake Murray, Chapin &amp; Irmo. Call (803) 667-8731."
         twitterDescription="5.0★ mobile car detailing in Lexington SC — we come to you. Full details from $225. Serving Lake Murray, Chapin &amp; Irmo. Call (803) 667-8731."
         schema={schemas}
@@ -284,6 +286,15 @@ export const LocationLexingtonPage = () => {
                 <button className="w-full sm:w-auto px-6 md:px-8 py-3 md:py-4 bg-white text-primary-700 text-base md:text-lg font-bold rounded-lg hover:bg-gray-100 transition shadow-lg hover:shadow-xl transform hover:scale-105 flex items-center justify-center gap-2">
                   <Phone className="w-5 h-5" />
                   Call (803) 667-8731
+                </button>
+              </a>
+              <a
+                href="sms:+18036678731?&body=Hi! I'm in Lexington — can you text me a quote for my car?"
+                onClick={() => trackTextClick('location_lexington')}
+              >
+                <button className="w-full sm:w-auto px-6 md:px-8 py-3 md:py-4 bg-white text-primary-700 text-base md:text-lg font-bold rounded-lg hover:bg-gray-100 transition shadow-lg hover:shadow-xl transform hover:scale-105 flex items-center justify-center gap-2">
+                  <MessageCircle className="w-5 h-5" />
+                  Text Us
                 </button>
               </a>
               <a href="/#quote">
@@ -606,6 +617,7 @@ export const LocationLexingtonPage = () => {
       </div>
 
       <Footer />
+      <StickyMobileCTA />
     </>
   );
 };

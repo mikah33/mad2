@@ -47,7 +47,7 @@ const GalleryPage: React.FC = () => {
         title="Gallery | Auto Detailing Services Columbia SC | Mikah's"
         description="View our auto detailing services in Columbia, SC. Before & after photos of ceramic coating, paint correction, interior detailing. 5-star rated. Call (803) 667-8731!"
         keywords="auto detailing services columbia sc, car detailing gallery, auto detailing photos columbia sc, ceramic coating results, paint correction before after, auto detailing services in columbia sc"
-        canonical="https://mikahsmobiledetailingsc.com/gallery"
+        canonical="https://mikahsmobiledetailingsc.com/gallery/"
       />
 
       <div className="min-h-screen bg-white pb-20">

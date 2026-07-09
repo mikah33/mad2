@@ -15,6 +15,7 @@ const __dirname = dirname(__filename);
 // Import blog data
 import { blogPosts } from '../src/data/blog.js';
 import { generateCompleteBlogPostSchema } from '../src/components/seo/BlogSchemas.js';
+import { locationCtaHtml } from '../src/utils/locationForSlug.js';
 
 // Read the base index.html
 const distPath = path.join(__dirname, '../dist');
@@ -78,7 +79,7 @@ blogPosts.forEach((post) => {
     .join('\n');
 
   // Update meta tags for this specific blog post
-  const postUrl = `https://mikahsmobiledetailingsc.com/blog/${post.slug}`;
+  const postUrl = `https://mikahsmobiledetailingsc.com/blog/${post.slug}/`;
   const imageUrl = post.image || 'https://mikahsmobiledetailingsc.com/exterior1.jpg';
   const fullTitle = `${post.title} | Mikah's Auto Detailing`;
 
@@ -137,7 +138,7 @@ blogPosts.forEach((post) => {
     const faqHtml = (fullContent.faqs || [])
       .map((f: any) => `<h3>${f.question}</h3><p>${f.answer}</p>`)
       .join('\n');
-    const staticBody = `<div id="root"><main><article><h1>${post.title}</h1><p>By ${post.author} — updated ${fullContent.lastModified || post.datePublished}</p>${fullContent.content}${faqHtml ? `<section><h2>Frequently Asked Questions</h2>${faqHtml}</section>` : ''}</article></main></div>`;
+    const staticBody = `<div id="root"><main><article><h1>${post.title}</h1><p>By ${post.author} — updated ${fullContent.lastModified || post.datePublished}</p>${fullContent.content}${locationCtaHtml(post.slug)}${faqHtml ? `<section><h2>Frequently Asked Questions</h2>${faqHtml}</section>` : ''}</article></main></div>`;
     html = html.replace('<div id="root"></div>', staticBody);
   }
 

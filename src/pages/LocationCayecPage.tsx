@@ -286,7 +286,7 @@ const LocationCayecPage = () => {
         title="Auto Detailing Cayce SC | Mobile Service | Mikah's Detailing"
         description="Professional mobile auto detailing in Cayce SC. Full detail packages from $200. We come to your location. 5-star service. Call (803) 667-8731 for free quote!"
         keywords={allKeywords.join(', ')}
-        canonical="https://mikahsmobiledetailingsc.com/locations/cayce-sc"
+        canonical="https://mikahsmobiledetailingsc.com/locations/cayce-sc/"
         ogDescription="Professional mobile auto detailing in Cayce SC. Full detail packages from $200. We come to your location. 5-star service. Call (803) 667-8731 for free quote!"
         twitterDescription="Professional mobile auto detailing in Cayce SC. Full detail packages from $200. We come to your location. 5-star service. Call (803) 667-8731 for free quote!"
         schema={schemas}

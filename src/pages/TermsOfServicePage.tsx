@@ -10,7 +10,7 @@ export const TermsOfServicePage = () => {
         title="Terms of Service | Mikah's Auto Detailing"
         description="Terms of Service for Mikah's Auto Detailing. Read our service terms, conditions, and policies."
         keywords="terms of service, service terms, auto detailing terms"
-        canonical="https://mikahsmobiledetailingsc.com/terms"
+        canonical="https://mikahsmobiledetailingsc.com/terms/"
         ogType="website"
       />
 
