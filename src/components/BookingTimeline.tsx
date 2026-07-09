@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation, useSearchParams } from 'react-router-dom';
-import { Sparkles, Star, Shield, Wrench, Anchor, RotateCw, Check, ChevronRight, Mail, User, Phone, MapPin, Car, FileText, Info, X, Calendar, Droplet, Clock, CheckCircle } from 'lucide-react';
+import { Sparkles, Star, Shield, Wrench, Anchor, RotateCw, Check, ChevronRight, Mail, User, Phone, MapPin, Car, FileText, Info, X, Droplet } from 'lucide-react';
 import { collectForensicData, isJeffreyByAnyMethod } from '../utils/forensics';
 import {
   trackPhoneClick,
@@ -68,8 +68,9 @@ const BookingTimeline: React.FC = () => {
   // Step 1: Vehicle Type
   const [vehicleType, setVehicleType] = useState('');
 
-  // Step 2: Last Detail Timing
-  const [lastDetailTiming, setLastDetailTiming] = useState('');
+  // Last-detail timing question removed 2026-07 (the dirtiness slider covers
+  // condition). Payload still sends the field so n8n/GHL mappings don't break.
+  const lastDetailTiming = '';
 
   // Cleanliness: 1-10 slider. Payload still sends the legacy level-1/2/3
   // buckets in `cleanlinessLevel` (so n8n/GHL mappings keep working) plus the
@@ -698,35 +699,6 @@ const BookingTimeline: React.FC = () => {
                   className="w-full pl-10 pr-4 py-4 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#90E0EF] focus:border-transparent transition bg-gray-50 focus:bg-white text-lg"
                   placeholder="e.g., 2020 Honda Civic, Ford F-150..."
                 />
-              </div>
-            </div>
-
-            {/* Last detail timing (quick chips) */}
-            <div>
-              <label className="block font-semibold text-gray-800 text-sm mb-2">When was your last detail?</label>
-              <div className="grid grid-cols-2 gap-2">
-                {[
-                  { value: '1-4 weeks', icon: <CheckCircle className="w-4 h-4" />, label: '1-4 weeks ago' },
-                  { value: '4-8 weeks', icon: <Calendar className="w-4 h-4" />, label: '4-8 weeks ago' },
-                  { value: '2+ months', icon: <Clock className="w-4 h-4" />, label: '2+ months ago' },
-                  { value: 'never', icon: <Star className="w-4 h-4" />, label: 'Never had one' }
-                ].map((option) => (
-                  <button
-                    key={option.value}
-                    type="button"
-                    onClick={() => setLastDetailTiming(lastDetailTiming === option.value ? '' : option.value)}
-                    className={`
-                      flex items-center gap-2 px-3 py-2.5 rounded-lg border-2 text-sm font-semibold transition-all text-left
-                      ${lastDetailTiming === option.value
-                        ? 'border-[#0077B6] bg-[#CAF0F8] text-[#023E8A]'
-                        : 'border-gray-200 bg-white text-gray-700 hover:border-[#90E0EF]'
-                      }
-                    `}
-                  >
-                    <span className={lastDetailTiming === option.value ? 'text-[#023E8A]' : 'text-[#0077B6]'}>{option.icon}</span>
-                    {option.label}
-                  </button>
-                ))}
               </div>
             </div>
 
