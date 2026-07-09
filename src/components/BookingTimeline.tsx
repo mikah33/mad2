@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation, useSearchParams } from 'react-router-dom';
-import { Sparkles, Star, Shield, Wrench, Anchor, RotateCw, Check, ChevronRight, Mail, User, Phone, MapPin, Car, FileText, Info, X, Droplet } from 'lucide-react';
+import { Sparkles, Star, Shield, Wrench, Anchor, RotateCw, Check, ChevronRight, Mail, MessageCircle, User, Phone, MapPin, Car, FileText, Info, X, Droplet } from 'lucide-react';
 import { collectForensicData, isJeffreyByAnyMethod } from '../utils/forensics';
 import {
   trackPhoneClick,
@@ -708,23 +708,37 @@ const BookingTimeline: React.FC = () => {
                 How dirty is it? <span className="font-normal text-gray-500">Be honest — we've seen it all!</span>
               </label>
               <div className="flex items-center gap-3">
-                <input
-                  id="dirtiness-slider"
-                  type="range"
-                  min={1}
-                  max={10}
-                  step={1}
-                  value={dirtinessScore}
-                  onChange={(e) => setDirtinessScore(Number(e.target.value))}
-                  className="flex-1 h-2 rounded-full appearance-none cursor-pointer accent-[#0077B6]"
-                  style={{
-                    background: `linear-gradient(to right, #0077B6 0%, #0077B6 ${((dirtinessScore - 1) / 9) * 100}%, #E5E7EB ${((dirtinessScore - 1) / 9) * 100}%, #E5E7EB 100%)`,
-                  }}
-                  aria-valuetext={`${dirtinessScore} out of 10`}
-                />
-                <div className="w-14 text-center bg-[#023E8A] text-white font-black text-lg rounded-lg py-1.5 select-none">
-                  {dirtinessScore}
-                </div>
+                {(() => {
+                  // Heat meter: hue sweeps 120 (green) -> 30 (orange) -> 0 (red)
+                  const pct = ((dirtinessScore - 1) / 9) * 100;
+                  const hueAt = (score: number) => 120 - ((score - 1) / 9) * 120;
+                  const color = `hsl(${hueAt(dirtinessScore)}, 85%, 45%)`;
+                  return (
+                    <>
+                      <input
+                        id="dirtiness-slider"
+                        type="range"
+                        min={1}
+                        max={10}
+                        step={1}
+                        value={dirtinessScore}
+                        onChange={(e) => setDirtinessScore(Number(e.target.value))}
+                        className="flex-1 h-2 rounded-full appearance-none cursor-pointer"
+                        style={{
+                          accentColor: color,
+                          background: `linear-gradient(to right, hsl(120, 85%, 45%) 0%, ${color} ${pct}%, #E5E7EB ${pct}%, #E5E7EB 100%)`,
+                        }}
+                        aria-valuetext={`${dirtinessScore} out of 10`}
+                      />
+                      <div
+                        className="w-14 text-center text-white font-black text-lg rounded-lg py-1.5 select-none transition-colors"
+                        style={{ backgroundColor: color }}
+                      >
+                        {dirtinessScore}
+                      </div>
+                    </>
+                  );
+                })()}
               </div>
               <div className="flex justify-between text-xs text-gray-400 mt-1 select-none">
                 <span>Spotless</span>
@@ -1034,7 +1048,7 @@ const BookingTimeline: React.FC = () => {
                   onClick={() => trackTextClick('booking_form_top')}
                   className="flex-1 flex items-center justify-center gap-2 py-2.5 rounded-lg border-2 border-[#0077B6] text-[#023E8A] font-semibold text-sm hover:bg-[#CAF0F8] transition"
                 >
-                  <Mail className="w-4 h-4" /> Text us instead
+                  <MessageCircle className="w-4 h-4" /> Text us instead
                 </a>
               </div>
 
