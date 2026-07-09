@@ -27,6 +27,23 @@ const STEP_NAMES: Record<number, string> = {
   3: 'contact_details',
 };
 
+/**
+ * Dirtiness slider praise — every answer gets celebrated so nobody feels
+ * judged into abandoning the form (the old "how dirty" step lost 40% of users).
+ */
+const DIRTINESS_PRAISE: Record<number, { emoji: string; text: string }> = {
+  1: { emoji: '🤩', text: 'Basically showroom clean — this will be a quick glow-up!' },
+  2: { emoji: '✨', text: 'Barely lived-in. You clearly take care of your ride!' },
+  3: { emoji: '👌', text: 'Just needs a little love — easy day for us.' },
+  4: { emoji: '😎', text: 'A few crumbs never hurt anyone. Nice and manageable!' },
+  5: { emoji: '👍', text: 'Perfectly normal — right in our sweet spot.' },
+  6: { emoji: '💪', text: 'Lived-in and loved. We got you covered!' },
+  7: { emoji: '🔥', text: 'Now we\'re talking — a satisfying transformation incoming.' },
+  8: { emoji: '🚀', text: 'Oh, this is going to be a GREAT before & after!' },
+  9: { emoji: '🏋️', text: 'A worthy challenge — honestly, our favorite kind of job.' },
+  10: { emoji: '🏆', text: 'Legendary. We LIVE for these transformations!' },
+};
+
 interface Service {
   icon: React.ReactNode;
   title: string;
@@ -54,8 +71,11 @@ const BookingTimeline: React.FC = () => {
   // Step 2: Last Detail Timing
   const [lastDetailTiming, setLastDetailTiming] = useState('');
 
-  // Step 3: Cleanliness Level
-  const [cleanlinessLevel, setCleanlinessLevel] = useState('');
+  // Cleanliness: 1-10 slider. Payload still sends the legacy level-1/2/3
+  // buckets in `cleanlinessLevel` (so n8n/GHL mappings keep working) plus the
+  // exact score as a new additive `dirtinessScore` field.
+  const [dirtinessScore, setDirtinessScore] = useState(5);
+  const cleanlinessLevel = dirtinessScore <= 3 ? 'level-1' : dirtinessScore <= 7 ? 'level-2' : 'level-3';
 
   // Step 4: Package Selection
   const [selectedService, setSelectedService] = useState('');
@@ -274,8 +294,10 @@ const BookingTimeline: React.FC = () => {
         // Step 2: Last Detail Timing
         lastDetailTiming: lastDetailTiming,
 
-        // Step 3: Cleanliness Level
+        // Cleanliness: legacy bucket (GHL mappings depend on level-1/2/3)
+        // plus the exact 1-10 slider score as a new additive field.
         cleanlinessLevel: cleanlinessLevel,
+        dirtinessScore: dirtinessScore,
 
         // Step 4: Selected Service
         service: selectedService,
@@ -708,31 +730,37 @@ const BookingTimeline: React.FC = () => {
               </div>
             </div>
 
-            {/* Cleanliness level (quick chips) */}
+            {/* Cleanliness level (1-10 slider — every answer gets praised) */}
             <div>
-              <label className="block font-semibold text-gray-800 text-sm mb-2">How dirty is it? <span className="font-normal text-gray-500">Be honest — we've seen it all!</span></label>
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
-                {[
-                  { value: 'level-1', label: 'Not too bad', desc: 'Just a refresh', color: 'bg-green-50 border-green-200' },
-                  { value: 'level-2', label: 'Moderately dirty', desc: 'Dirt and dust', color: 'bg-yellow-50 border-yellow-200' },
-                  { value: 'level-3', label: 'Really dirty', desc: 'Needs deep clean', color: 'bg-red-50 border-red-200' }
-                ].map((option) => (
-                  <button
-                    key={option.value}
-                    type="button"
-                    onClick={() => setCleanlinessLevel(cleanlinessLevel === option.value ? '' : option.value)}
-                    className={`
-                      px-3 py-2.5 rounded-lg border-2 text-left transition-all
-                      ${cleanlinessLevel === option.value
-                        ? 'border-[#0077B6] bg-[#CAF0F8]'
-                        : `${option.color} hover:border-[#90E0EF]`
-                      }
-                    `}
-                  >
-                    <div className={`font-semibold text-sm ${cleanlinessLevel === option.value ? 'text-[#023E8A]' : 'text-gray-800'}`}>{option.label}</div>
-                    <div className="text-gray-600 text-xs">{option.desc}</div>
-                  </button>
-                ))}
+              <label htmlFor="dirtiness-slider" className="block font-semibold text-gray-800 text-sm mb-2">
+                How dirty is it? <span className="font-normal text-gray-500">Be honest — we've seen it all!</span>
+              </label>
+              <div className="flex items-center gap-3">
+                <input
+                  id="dirtiness-slider"
+                  type="range"
+                  min={1}
+                  max={10}
+                  step={1}
+                  value={dirtinessScore}
+                  onChange={(e) => setDirtinessScore(Number(e.target.value))}
+                  className="flex-1 h-2 rounded-full appearance-none cursor-pointer accent-[#0077B6]"
+                  style={{
+                    background: `linear-gradient(to right, #0077B6 0%, #0077B6 ${((dirtinessScore - 1) / 9) * 100}%, #E5E7EB ${((dirtinessScore - 1) / 9) * 100}%, #E5E7EB 100%)`,
+                  }}
+                  aria-valuetext={`${dirtinessScore} out of 10`}
+                />
+                <div className="w-14 text-center bg-[#023E8A] text-white font-black text-lg rounded-lg py-1.5 select-none">
+                  {dirtinessScore}
+                </div>
+              </div>
+              <div className="flex justify-between text-xs text-gray-400 mt-1 select-none">
+                <span>Spotless</span>
+                <span>Send help</span>
+              </div>
+              <div className="mt-2 flex items-center gap-2 bg-[#CAF0F8] border border-[#90E0EF] rounded-lg px-3 py-2.5" aria-live="polite">
+                <span className="text-xl">{DIRTINESS_PRAISE[dirtinessScore].emoji}</span>
+                <span className="text-[#023E8A] font-semibold text-sm">{DIRTINESS_PRAISE[dirtinessScore].text}</span>
               </div>
             </div>
 
