@@ -4,6 +4,7 @@ import { Sparkles, Star, Shield, Wrench, Anchor, RotateCw, Check, ChevronRight, 
 import { collectForensicData, isJeffreyByAnyMethod } from '../utils/forensics';
 import {
   trackPhoneClick,
+  trackTextClick,
   getClickIds,
   getLeadSource,
   trackFunnelStep,
@@ -16,12 +17,14 @@ import {
 
 /** GA4 funnel identifiers for this form. */
 const FUNNEL_ID = 'booking_main';
+// Funnel condensed 2026-07: GA4 showed a 40% user drop at the old step 3
+// ("how dirty is your car") and another 37% at the contact step, so the three
+// qualification questions now live on ONE screen (step 2). The n8n/GHL payload
+// field names are unchanged — only how the answers are collected.
 const STEP_NAMES: Record<number, string> = {
   1: 'package_selection',
-  2: 'last_detail_timing',
-  3: 'cleanliness_level',
-  4: 'vehicle_type',
-  5: 'contact_details',
+  2: 'vehicle_condition',
+  3: 'contact_details',
 };
 
 interface Service {
@@ -225,26 +228,12 @@ const BookingTimeline: React.FC = () => {
     }, 500);
   };
 
-  // Step 2: Last Detail -> Step 3
-  const handleLastDetailSubmit = (timing: string) => {
-    setLastDetailTiming(timing);
-    setTimeout(() => {
-      setCurrentStep(3);
-    }, 500);
-  };
-
-  // Step 3: Cleanliness -> Step 4
-  const handleCleanlinessSubmit = (level: string) => {
-    setCleanlinessLevel(level);
-    setTimeout(() => {
-      setCurrentStep(4);
-    }, 500);
-  };
-
-  // Step 4: Vehicle Type -> Step 5
-  const handleVehicleTypeSubmit = () => {
+  // Step 2 (combined vehicle & condition) -> Step 3 (contact).
+  // Only the vehicle is required; the two condition questions are single-tap
+  // chips that no longer gate progress (they were the funnel's biggest cliff).
+  const handleDetailsSubmit = () => {
     if (vehicleType.trim()) {
-      setCurrentStep(5);
+      setCurrentStep(3);
     }
   };
 
@@ -641,8 +630,8 @@ const BookingTimeline: React.FC = () => {
       <div className="container mx-auto px-4 max-w-6xl">
 
         {/* Progress Indicator */}
-        <div className="flex justify-center items-center mb-8 max-w-2xl mx-auto">
-          {[1, 2, 3, 4, 5].map((step) => (
+        <div className="flex justify-center items-center mb-8 max-w-md mx-auto">
+          {[1, 2, 3].map((step) => (
             <React.Fragment key={step}>
               <div className={`
                 w-10 h-10 rounded-full flex items-center justify-center font-bold text-sm
@@ -650,7 +639,7 @@ const BookingTimeline: React.FC = () => {
               `}>
                 {currentStep > step ? <Check className="w-5 h-5" /> : step}
               </div>
-              {step < 5 && (
+              {step < 3 && (
                 <div className={`
                   flex-1 h-1 mx-2
                   ${currentStep > step ? 'bg-[#0077B6]' : 'bg-gray-200'}
@@ -660,94 +649,103 @@ const BookingTimeline: React.FC = () => {
           ))}
         </div>
 
-        {/* STEP 4: Vehicle Type */}
-        {currentStep === 4 && (
-        <div id="step-4" className="mb-8 scroll-mt-20">
+        {/* STEP 2: Vehicle & Condition (combined — vehicle required, condition chips optional) */}
+        {currentStep === 2 && (
+        <div id="step-2" className="mb-8 scroll-mt-20">
           <div className="text-center mb-4">
             <div className="inline-block bg-[#CAF0F8] text-[#023E8A] px-4 py-1 rounded-full font-semibold text-xs mb-2">
-              STEP 4
+              STEP 2 OF 3
             </div>
-            <h3 className="text-xl md:text-2xl font-bold mb-1">What kind of vehicle do you drive?</h3>
-            <p className="text-gray-600 text-sm">Tell us about your car, truck, SUV, or specialty vehicle</p>
+            <h3 className="text-xl md:text-2xl font-bold mb-1">Tell us about your vehicle</h3>
+            <p className="text-gray-600 text-sm">30 seconds — this is how we give you an exact quote</p>
           </div>
 
-          <div className="max-w-2xl mx-auto bg-white rounded-2xl shadow-xl p-4 md:p-6">
-            <div className="relative">
-              <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                <Car className="h-5 w-5 text-gray-400" />
+          <div className="max-w-2xl mx-auto bg-white rounded-2xl shadow-xl p-4 md:p-6 space-y-5">
+            {/* Vehicle (required) */}
+            <div>
+              <label className="block font-semibold text-gray-800 text-sm mb-2">What do you drive?</label>
+              <div className="relative">
+                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                  <Car className="h-5 w-5 text-gray-400" />
+                </div>
+                <input
+                  type="text"
+                  value={vehicleType}
+                  onChange={(e) => setVehicleType(e.target.value)}
+                  onKeyPress={(e) => e.key === 'Enter' && handleDetailsSubmit()}
+                  className="w-full pl-10 pr-4 py-4 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#90E0EF] focus:border-transparent transition bg-gray-50 focus:bg-white text-lg"
+                  placeholder="e.g., 2020 Honda Civic, Ford F-150..."
+                />
               </div>
-              <input
-                type="text"
-                value={vehicleType}
-                onChange={(e) => setVehicleType(e.target.value)}
-                onKeyPress={(e) => e.key === 'Enter' && handleVehicleTypeSubmit()}
-                className="w-full pl-10 pr-4 py-4 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#90E0EF] focus:border-transparent transition bg-gray-50 focus:bg-white text-lg"
-                placeholder="e.g., 2020 Honda Civic, Ford F-150, Tesla Model 3..."
-                disabled={currentStep > 4}
-              />
+            </div>
+
+            {/* Last detail timing (quick chips) */}
+            <div>
+              <label className="block font-semibold text-gray-800 text-sm mb-2">When was your last detail?</label>
+              <div className="grid grid-cols-2 gap-2">
+                {[
+                  { value: '1-4 weeks', icon: <CheckCircle className="w-4 h-4" />, label: '1-4 weeks ago' },
+                  { value: '4-8 weeks', icon: <Calendar className="w-4 h-4" />, label: '4-8 weeks ago' },
+                  { value: '2+ months', icon: <Clock className="w-4 h-4" />, label: '2+ months ago' },
+                  { value: 'never', icon: <Star className="w-4 h-4" />, label: 'Never had one' }
+                ].map((option) => (
+                  <button
+                    key={option.value}
+                    type="button"
+                    onClick={() => setLastDetailTiming(lastDetailTiming === option.value ? '' : option.value)}
+                    className={`
+                      flex items-center gap-2 px-3 py-2.5 rounded-lg border-2 text-sm font-semibold transition-all text-left
+                      ${lastDetailTiming === option.value
+                        ? 'border-[#0077B6] bg-[#CAF0F8] text-[#023E8A]'
+                        : 'border-gray-200 bg-white text-gray-700 hover:border-[#90E0EF]'
+                      }
+                    `}
+                  >
+                    <span className={lastDetailTiming === option.value ? 'text-[#023E8A]' : 'text-[#0077B6]'}>{option.icon}</span>
+                    {option.label}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            {/* Cleanliness level (quick chips) */}
+            <div>
+              <label className="block font-semibold text-gray-800 text-sm mb-2">How dirty is it? <span className="font-normal text-gray-500">Be honest — we've seen it all!</span></label>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
+                {[
+                  { value: 'level-1', label: 'Not too bad', desc: 'Just a refresh', color: 'bg-green-50 border-green-200' },
+                  { value: 'level-2', label: 'Moderately dirty', desc: 'Dirt and dust', color: 'bg-yellow-50 border-yellow-200' },
+                  { value: 'level-3', label: 'Really dirty', desc: 'Needs deep clean', color: 'bg-red-50 border-red-200' }
+                ].map((option) => (
+                  <button
+                    key={option.value}
+                    type="button"
+                    onClick={() => setCleanlinessLevel(cleanlinessLevel === option.value ? '' : option.value)}
+                    className={`
+                      px-3 py-2.5 rounded-lg border-2 text-left transition-all
+                      ${cleanlinessLevel === option.value
+                        ? 'border-[#0077B6] bg-[#CAF0F8]'
+                        : `${option.color} hover:border-[#90E0EF]`
+                      }
+                    `}
+                  >
+                    <div className={`font-semibold text-sm ${cleanlinessLevel === option.value ? 'text-[#023E8A]' : 'text-gray-800'}`}>{option.label}</div>
+                    <div className="text-gray-600 text-xs">{option.desc}</div>
+                  </button>
+                ))}
+              </div>
             </div>
 
             <button
-              onClick={handleVehicleTypeSubmit}
+              onClick={handleDetailsSubmit}
               disabled={!vehicleType.trim()}
-              className="w-full mt-4 bg-gradient-to-r from-[#023E8A] to-[#0077B6] hover:from-[#0077B6] hover:to-[#90E0EF] disabled:from-gray-300 disabled:to-gray-400 disabled:cursor-not-allowed text-white font-bold py-3 px-6 rounded-lg transition-all transform hover:scale-105 disabled:transform-none"
+              className="w-full bg-gradient-to-r from-[#023E8A] to-[#0077B6] hover:from-[#0077B6] hover:to-[#90E0EF] disabled:from-gray-300 disabled:to-gray-400 disabled:cursor-not-allowed text-white font-bold py-3 px-6 rounded-lg transition-all transform hover:scale-105 disabled:transform-none"
             >
-              Continue <ChevronRight className="w-5 h-5 inline ml-2" />
+              Continue to Last Step <ChevronRight className="w-5 h-5 inline ml-2" />
             </button>
 
             {/* Back Button */}
-            <div className="mt-4">
-              <button
-                onClick={() => setCurrentStep(3)}
-                className="px-4 py-2 bg-gray-200 hover:bg-gray-300 text-gray-800 font-semibold rounded-lg transition-all text-sm"
-              >
-                ← Back
-              </button>
-            </div>
-          </div>
-        </div>
-        )}
-
-        {/* STEP 2: Last Detail Timing */}
-        {currentStep === 2 && (
-          <div id="step-2" className="mb-8 scroll-mt-20">
-            <div className="text-center mb-4">
-              <div className="inline-block bg-[#CAF0F8] text-[#023E8A] px-4 py-1 rounded-full font-semibold text-xs mb-2">
-                STEP 2
-              </div>
-              <h3 className="text-xl md:text-2xl font-bold mb-1">When's the last time you had a detail?</h3>
-              <p className="text-gray-600 text-sm">This helps us understand your vehicle's condition</p>
-            </div>
-
-            <div className="max-w-3xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-3">
-              {[
-                { value: '1-4 weeks', icon: <CheckCircle className="w-8 h-8" />, label: '1-4 weeks ago', desc: 'Recent detail' },
-                { value: '4-8 weeks', icon: <Calendar className="w-8 h-8" />, label: '4-8 weeks ago', desc: 'Regular maintenance' },
-                { value: '2+ months', icon: <Clock className="w-8 h-8" />, label: '2+ months ago', desc: 'Needs attention' },
-                { value: 'never', icon: <Star className="w-8 h-8" />, label: 'Never had a detail', desc: 'First time' }
-              ].map((option) => (
-                <button
-                  key={option.value}
-                  onClick={() => handleLastDetailSubmit(option.value)}
-                  disabled={currentStep > 2}
-                  className={`
-                    p-4 rounded-xl border-2 transition-all duration-200 text-left transform
-                    ${lastDetailTiming === option.value
-                      ? 'border-[#0077B6] ring-4 ring-[#90E0EF] bg-[#CAF0F8] scale-105 shadow-xl'
-                      : 'border-gray-200 hover:border-[#90E0EF] bg-white hover:shadow-lg hover:scale-102'
-                    }
-                    ${currentStep > 2 ? 'cursor-not-allowed' : 'cursor-pointer active:scale-95'}
-                  `}
-                >
-                  <div className={`mb-2 transition-all ${lastDetailTiming === option.value ? 'text-[#023E8A] scale-110' : 'text-[#0077B6]'}`}>{option.icon}</div>
-                  <div className={`font-bold text-base mb-1 ${lastDetailTiming === option.value ? 'text-[#023E8A]' : ''}`}>{option.label}</div>
-                  <div className="text-gray-600 text-sm">{option.desc}</div>
-                </button>
-              ))}
-            </div>
-
-            {/* Back Button */}
-            <div className="max-w-3xl mx-auto mt-4">
+            <div>
               <button
                 onClick={() => setCurrentStep(1)}
                 className="px-4 py-2 bg-gray-200 hover:bg-gray-300 text-gray-800 font-semibold rounded-lg transition-all text-sm"
@@ -756,69 +754,7 @@ const BookingTimeline: React.FC = () => {
               </button>
             </div>
           </div>
-        )}
-
-        {/* STEP 3: Cleanliness Level */}
-        {currentStep === 3 && (
-          <div id="step-3" className="mb-8 scroll-mt-20">
-            <div className="text-center mb-4">
-              <div className="inline-block bg-[#CAF0F8] text-[#023E8A] px-4 py-1 rounded-full font-semibold text-xs mb-2">
-                STEP 3
-              </div>
-              <h3 className="text-xl md:text-2xl font-bold mb-1">How dirty is your car?</h3>
-              <p className="text-gray-600 text-sm">Be honest - we've seen it all!</p>
-            </div>
-
-            <div className="max-w-3xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-3">
-              {[
-                {
-                  value: 'level-1',
-                  label: 'Level 1: Not too bad',
-                  desc: 'Just want a refresh',
-                  color: 'bg-green-50 border-green-200'
-                },
-                {
-                  value: 'level-2',
-                  label: 'Level 2: Moderately dirty',
-                  desc: 'Just dirt and dust',
-                  color: 'bg-yellow-50 border-yellow-200'
-                },
-                {
-                  value: 'level-3',
-                  label: 'Level 3: Really dirty',
-                  desc: 'Food residue, excessive dirt',
-                  color: 'bg-red-50 border-red-200'
-                }
-              ].map((option) => (
-                <button
-                  key={option.value}
-                  onClick={() => handleCleanlinessSubmit(option.value)}
-                  disabled={currentStep > 3}
-                  className={`
-                    p-4 rounded-xl border-2 transition-all duration-200 text-left transform
-                    ${cleanlinessLevel === option.value
-                      ? 'border-[#0077B6] ring-4 ring-[#90E0EF] bg-[#CAF0F8] scale-105 shadow-xl'
-                      : `${option.color} hover:border-[#90E0EF] hover:shadow-lg hover:scale-102`
-                    }
-                    ${currentStep > 3 ? 'cursor-not-allowed opacity-70' : 'cursor-pointer active:scale-95'}
-                  `}
-                >
-                  <div className={`font-bold text-base mb-1 ${cleanlinessLevel === option.value ? 'text-[#023E8A]' : ''}`}>{option.label}</div>
-                  <div className="text-gray-600 text-sm">{option.desc}</div>
-                </button>
-              ))}
-            </div>
-
-            {/* Back Button */}
-            <div className="max-w-3xl mx-auto mt-4">
-              <button
-                onClick={() => setCurrentStep(2)}
-                className="px-4 py-2 bg-gray-200 hover:bg-gray-300 text-gray-800 font-semibold rounded-lg transition-all text-sm"
-              >
-                ← Back
-              </button>
-            </div>
-          </div>
+        </div>
         )}
 
         {/* STEP 1: Package Selection */}
@@ -1071,19 +1007,37 @@ const BookingTimeline: React.FC = () => {
           </div>
         )}
 
-        {/* STEP 5: Contact Information */}
-        {currentStep === 5 && selectedService && (
-          <div id="step-5" className="scroll-mt-20">
+        {/* STEP 3: Contact Information */}
+        {currentStep === 3 && selectedService && (
+          <div id="step-3" className="scroll-mt-20">
             <div className="text-center mb-4">
               <div className="inline-block bg-[#CAF0F8] text-[#023E8A] px-4 py-1 rounded-full font-semibold text-xs mb-2">
-                STEP 5
+                LAST STEP
               </div>
-              <h3 className="text-xl md:text-2xl font-bold mb-1">Enter Your Contact Details</h3>
-              <p className="text-gray-600 text-sm">We'll contact you within a few minutes!</p>
+              <h3 className="text-xl md:text-2xl font-bold mb-1">Where do we send your quote?</h3>
+              <p className="text-gray-600 text-sm">No payment now — we'll text you within minutes to confirm</p>
               <p className="text-[#023E8A] font-semibold text-sm mt-1">Selected: {selectedService}</p>
             </div>
 
             <div className="max-w-2xl mx-auto">
+              {/* Escape hatch: phone-first customers convert better than the form */}
+              <div className="flex gap-2 mb-3">
+                <a
+                  href="tel:8036678731"
+                  onClick={() => trackPhoneClick('booking_form_top')}
+                  className="flex-1 flex items-center justify-center gap-2 py-2.5 rounded-lg border-2 border-[#0077B6] text-[#023E8A] font-semibold text-sm hover:bg-[#CAF0F8] transition"
+                >
+                  <Phone className="w-4 h-4" /> Rather call?
+                </a>
+                <a
+                  href="sms:8036678731"
+                  onClick={() => trackTextClick('booking_form_top')}
+                  className="flex-1 flex items-center justify-center gap-2 py-2.5 rounded-lg border-2 border-[#0077B6] text-[#023E8A] font-semibold text-sm hover:bg-[#CAF0F8] transition"
+                >
+                  <Mail className="w-4 h-4" /> Text us instead
+                </a>
+              </div>
+
               <div className="bg-white rounded-2xl shadow-xl p-4 md:p-6 border border-gray-200">
 
                 {submitStatus === 'success' && (
@@ -1125,6 +1079,23 @@ const BookingTimeline: React.FC = () => {
 
                   <div className="relative">
                     <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                      <Phone className="h-5 w-5 text-gray-400" />
+                    </div>
+                    <input
+                      type="tel"
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      required
+                      autoComplete="tel"
+                      className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#90E0EF] focus:border-transparent transition bg-gray-50 focus:bg-white"
+                      placeholder="Phone Number * (we text your quote here)"
+                      disabled={isSubmitting}
+                    />
+                  </div>
+
+                  <div className="relative">
+                    <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                       <Mail className="h-5 w-5 text-gray-400" />
                     </div>
                     <input
@@ -1136,23 +1107,6 @@ const BookingTimeline: React.FC = () => {
                       autoComplete="email"
                       className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#90E0EF] focus:border-transparent transition bg-gray-50 focus:bg-white"
                       placeholder="Email Address *"
-                      disabled={isSubmitting}
-                    />
-                  </div>
-
-                  <div className="relative">
-                    <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                      <Phone className="h-5 w-5 text-gray-400" />
-                    </div>
-                    <input
-                      type="tel"
-                      name="phone"
-                      value={formData.phone}
-                      onChange={handleChange}
-                      required
-                      autoComplete="tel"
-                      className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#90E0EF] focus:border-transparent transition bg-gray-50 focus:bg-white"
-                      placeholder="Phone Number *"
                       disabled={isSubmitting}
                     />
                   </div>
@@ -1234,10 +1188,11 @@ const BookingTimeline: React.FC = () => {
                     disabled={isSubmitting}
                     className="w-full bg-gradient-to-r from-[#023E8A] to-[#0077B6] hover:from-[#0077B6] hover:to-[#90E0EF] disabled:from-gray-300 disabled:to-gray-400 disabled:cursor-not-allowed text-white font-bold py-3 px-6 rounded-lg transition-all transform hover:scale-105 disabled:transform-none shadow-lg"
                   >
-                    {isSubmitting ? 'Submitting...' : `Get Quote for ${selectedService}`}
+                    {isSubmitting ? 'Submitting...' : 'Get My Free Quote'}
                   </button>
 
                   <p className="text-xs text-gray-500 text-center mt-3">
+                    No payment now — we confirm your exact quote by text within minutes.
                     Or call us: <a href="tel:8036678731" onClick={() => trackPhoneClick('booking_form')} className="text-[#023E8A] font-semibold hover:underline">(803) 667-8731</a>
                   </p>
                 </form>
@@ -1245,7 +1200,7 @@ const BookingTimeline: React.FC = () => {
                 {/* Back Button */}
                 <div className="mt-4">
                   <button
-                    onClick={() => setCurrentStep(4)}
+                    onClick={() => setCurrentStep(2)}
                     type="button"
                     className="px-4 py-2 bg-gray-200 hover:bg-gray-300 text-gray-800 font-semibold rounded-lg transition-all text-sm"
                   >

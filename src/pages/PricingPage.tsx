@@ -1,10 +1,12 @@
 import React from 'react';
-import { Check, Star, Shield, Sparkles, Clock, CreditCard, MapPin, Droplet, Wrench, RotateCw, Anchor } from 'lucide-react';
+import { Check, Star, Shield, Sparkles, Clock, CreditCard, MapPin, Droplet, Wrench, RotateCw, Anchor, MessageCircle } from 'lucide-react';
 import { SEOHead } from '../components/seo/SEOHead';
 import { generateFAQSchema } from '../components/seo/StructuredData';
 import { generateEnhancedLocalBusinessSchema } from '../components/seo/EnhancedLocalBusinessSchema';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
+import StickyMobileCTA from '../components/StickyMobileCTA';
+import { trackTextClick } from '../utils/analytics';
 
 export const PricingPage = () => {
   // NOTE: All pricing on this page is sourced directly from the booking form
@@ -305,6 +307,14 @@ export const PricingPage = () => {
                 Book Your Detail
               </a>
               <a
+                href="sms:+18036678731?&body=Hi! I'm looking at your pricing page — can you text me a quote?"
+                onClick={() => trackTextClick('pricing_hero')}
+                className="inline-flex items-center gap-2 px-8 py-4 bg-white/10 hover:bg-white/20 text-white font-bold rounded-lg text-lg transition border border-white/30"
+              >
+                <MessageCircle className="w-5 h-5" />
+                Text Us for a Quote
+              </a>
+              <a
                 href="tel:+18036678731"
                 className="inline-flex items-center px-8 py-4 bg-white/10 hover:bg-white/20 text-white font-bold rounded-lg text-lg transition border border-white/30"
               >
@@ -344,6 +354,21 @@ export const PricingPage = () => {
                 ))}
               </tbody>
             </table>
+          </div>
+
+          {/* Low-friction quote path for price-shoppers who aren't ready for the booking form */}
+          <div className="mt-6 bg-[#CAF0F8] border border-[#90E0EF] rounded-xl p-5 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p className="text-[#023E8A] font-semibold text-center sm:text-left">
+              Not sure which package fits? Text us your vehicle and how dirty it is — we'll reply with an exact quote.
+            </p>
+            <a
+              href="sms:+18036678731?&body=Hi! Can you quote me? My vehicle is: "
+              onClick={() => trackTextClick('pricing_table')}
+              className="inline-flex items-center gap-2 bg-primary-600 hover:bg-primary-700 text-white font-bold py-3 px-6 rounded-lg transition whitespace-nowrap"
+            >
+              <MessageCircle className="w-5 h-5" />
+              Text for a Quote
+            </a>
           </div>
         </div>
       </section>
@@ -534,6 +559,14 @@ export const PricingPage = () => {
               Book Your Detail
             </a>
             <a
+              href="sms:+18036678731?&body=Hi! I'm looking at your pricing page — can you text me a quote?"
+              onClick={() => trackTextClick('pricing_footer')}
+              className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white font-bold py-4 px-8 rounded-lg text-lg transition border border-white/30"
+            >
+              <MessageCircle className="w-5 h-5" />
+              Text Us
+            </a>
+            <a
               href="tel:+18036678731"
               className="inline-block bg-white/10 hover:bg-white/20 text-white font-bold py-4 px-8 rounded-lg text-lg transition border border-white/30"
             >
@@ -544,6 +577,7 @@ export const PricingPage = () => {
       </section>
 
       <Footer />
+      <StickyMobileCTA />
     </>
   );
 };
