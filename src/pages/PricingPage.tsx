@@ -292,13 +292,14 @@ export const PricingPage = () => {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
               Car Detailing Prices in Columbia &amp; Lexington SC
             </h1>
-            <p className="text-xl md:text-2xl text-gray-300 mb-4">
-              Transparent, flat-rate pricing with no hidden fees
+            <p className="text-xl md:text-2xl text-gray-300 mb-6">
+              Flat rates. We come to you. Quote by text in minutes.
             </p>
-            <p className="text-lg text-gray-400 max-w-3xl mx-auto mb-8">
-              These are the exact prices from our booking form. Every service includes mobile detailing at your
-              location in Columbia, Lexington, Irmo, West Columbia, Cayce, and surrounding SC areas.
-            </p>
+            <div className="flex flex-wrap justify-center gap-2 mb-8 text-sm">
+              <span className="bg-white/10 border border-white/20 rounded-full px-4 py-1.5">🚐 Mobile — we come to you</span>
+              <span className="bg-white/10 border border-white/20 rounded-full px-4 py-1.5">💵 No travel fees in the Midlands</span>
+              <span className="bg-white/10 border border-white/20 rounded-full px-4 py-1.5">💳 No payment until the job's done</span>
+            </div>
             <div className="flex flex-wrap justify-center gap-4">
               <a
                 href="/book"
@@ -325,110 +326,30 @@ export const PricingPage = () => {
         </div>
       </section>
 
-      {/* Quick Pricing Table */}
-      <section className="py-12 bg-white">
-        <div className="container mx-auto px-4 max-w-5xl">
-          <div className="text-center mb-8">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Pricing at a Glance</h2>
-            <p className="text-gray-600 text-lg">
-              All prices include mobile service — we come to you!
-            </p>
-          </div>
-
-          <div className="overflow-x-auto">
-            <table className="w-full border-collapse bg-gray-50 rounded-xl overflow-hidden shadow-lg">
-              <thead>
-                <tr className="bg-primary-600 text-white">
-                  <th className="px-6 py-4 text-left font-bold">Service</th>
-                  <th className="px-6 py-4 text-center font-bold">Price</th>
-                  <th className="px-6 py-4 text-left font-bold hidden md:table-cell">What's Included</th>
-                </tr>
-              </thead>
-              <tbody>
-                {pricingTable.map((item, index) => (
-                  <tr key={index} className={`border-b border-gray-200 ${index % 2 === 0 ? 'bg-white' : 'bg-gray-50'}`}>
-                    <td className="px-6 py-4 font-semibold text-gray-800">{item.service}</td>
-                    <td className="px-6 py-4 text-center text-primary-600 font-bold text-xl whitespace-nowrap">{item.price}</td>
-                    <td className="px-6 py-4 text-gray-600 hidden md:table-cell">{item.description}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-
-          {/* Low-friction quote path for price-shoppers who aren't ready for the booking form */}
-          <div className="mt-6 bg-[#CAF0F8] border border-[#90E0EF] rounded-xl p-5 flex flex-col sm:flex-row items-center justify-between gap-4">
-            <p className="text-[#023E8A] font-semibold text-center sm:text-left">
-              Not sure which package fits? Text us your vehicle and how dirty it is — we'll reply with an exact quote.
-            </p>
-            <a
-              href="sms:+18036678731?&body=Hi! Can you quote me? My vehicle is: "
-              onClick={() => trackTextClick('pricing_table')}
-              className="inline-flex items-center gap-2 bg-primary-600 hover:bg-primary-700 text-white font-bold py-3 px-6 rounded-lg transition whitespace-nowrap"
-            >
-              <MessageCircle className="w-5 h-5" />
-              Text for a Quote
-            </a>
-          </div>
-        </div>
-      </section>
-
-      {/* 2026 Average Cost Section — targets "how much does car detailing cost" searches */}
-      <section className="py-12 bg-gray-50">
-        <div className="container mx-auto px-4 max-w-5xl">
-          <div className="text-center mb-8">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">How Much Does Car Detailing Cost in 2026?</h2>
-          </div>
-
-          <p className="text-gray-700 text-lg leading-relaxed max-w-3xl mx-auto mb-8">
-            In 2026, most U.S. drivers pay between <strong>$150 and $300</strong> for a full car detail,
-            depending on vehicle size and condition. Interior-only details typically run $125–$250 and
-            exterior-only $75–$150, while paint correction and ceramic coating range from $500 into the
-            thousands. At Mikah's Auto Detailing, our flat <strong>$225 Basic Detail</strong> covers the full
-            interior and exterior — with mobile service to your driveway included, not extra.
-          </p>
-
-          <div className="overflow-x-auto mb-8">
-            <table className="w-full border-collapse bg-white rounded-xl overflow-hidden shadow-lg">
-              <thead>
-                <tr className="bg-gray-800 text-white">
-                  <th className="px-6 py-4 text-left font-bold">Service</th>
-                  <th className="px-6 py-4 text-center font-bold">Typical U.S. Range (2026)</th>
-                  <th className="px-6 py-4 text-center font-bold">Our Price</th>
-                </tr>
-              </thead>
-              <tbody>
-                {costComparison.map((row, index) => (
-                  <tr key={index} className={`border-b border-gray-200 ${index % 2 === 0 ? 'bg-white' : 'bg-gray-50'}`}>
-                    <td className="px-6 py-4 font-semibold text-gray-800">
-                      <a href={row.link} className="hover:text-primary-600 hover:underline">{row.service}</a>
-                    </td>
-                    <td className="px-6 py-4 text-center text-gray-600 whitespace-nowrap">{row.usRange}</td>
-                    <td className="px-6 py-4 text-center text-primary-600 font-bold whitespace-nowrap">{row.ourPrice}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-
-          <p className="text-gray-600 leading-relaxed max-w-3xl mx-auto text-center">
-            Prices vary with vehicle size, condition, and location — a heavily soiled SUV costs more to
-            detail than a maintained sedan anywhere you go. Ours are flat, published rates for the
-            Midlands: see what's included on each <a href="/services" className="text-primary-600 font-semibold hover:underline">service page</a>,
-            or check <a href="/locations" className="text-primary-600 font-semibold hover:underline">our service areas</a> across
-            Columbia, Lexington, Irmo, West Columbia, and Cayce. Want the full breakdown of what drives
-            detailing costs? Read our <a href="/blog/car-detailing-prices-value-breakdown" className="text-primary-600 font-semibold hover:underline">car detailing prices guide</a>.
-          </p>
-        </div>
-      </section>
-
       {/* Pricing Cards Section */}
-      <section className="py-16 md:py-20 bg-white">
+      <section className="py-12 md:py-16 bg-white">
         <div className="container mx-auto px-4 max-w-7xl">
+          {/* How it works — mirrors the 3-step booking funnel so the page IS the top of it */}
+          <div className="max-w-3xl mx-auto mb-10">
+            <div className="grid grid-cols-3 gap-2 sm:gap-4 text-center">
+              {[
+                { n: '1', label: 'Pick your package', sub: 'right below' },
+                { n: '2', label: 'Tell us about your car', sub: '30 seconds' },
+                { n: '3', label: 'Get your quote by text', sub: 'within minutes' },
+              ].map((s) => (
+                <div key={s.n} className="bg-gray-50 border border-gray-200 rounded-xl px-2 py-4">
+                  <div className="w-8 h-8 mx-auto mb-2 rounded-full bg-primary-600 text-white font-bold flex items-center justify-center">{s.n}</div>
+                  <div className="font-semibold text-gray-800 text-sm">{s.label}</div>
+                  <div className="text-gray-500 text-xs">{s.sub}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Detailing Packages</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Pick Your Package</h2>
             <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-              Every package includes mobile service and our satisfaction guarantee. Tap any package to book.
+              Every price includes mobile service to your driveway and our satisfaction guarantee.
             </p>
           </div>
 
@@ -493,6 +414,96 @@ export const PricingPage = () => {
         </div>
       </section>
 
+      {/* Quick Pricing Table */}
+      <section className="py-12 bg-white">
+        <div className="container mx-auto px-4 max-w-5xl">
+          <div className="text-center mb-8">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Pricing at a Glance</h2>
+            <p className="text-gray-600 text-lg">
+              All prices include mobile service — we come to you!
+            </p>
+          </div>
+
+          <div className="overflow-x-auto">
+            <table className="w-full border-collapse bg-gray-50 rounded-xl overflow-hidden shadow-lg">
+              <thead>
+                <tr className="bg-primary-600 text-white">
+                  <th className="px-6 py-4 text-left font-bold">Service</th>
+                  <th className="px-6 py-4 text-center font-bold">Price</th>
+                  <th className="px-6 py-4 text-left font-bold hidden md:table-cell">What's Included</th>
+                </tr>
+              </thead>
+              <tbody>
+                {pricingTable.map((item, index) => (
+                  <tr key={index} className={`border-b border-gray-200 ${index % 2 === 0 ? 'bg-white' : 'bg-gray-50'}`}>
+                    <td className="px-6 py-4 font-semibold text-gray-800">{item.service}</td>
+                    <td className="px-6 py-4 text-center text-primary-600 font-bold text-xl whitespace-nowrap">{item.price}</td>
+                    <td className="px-6 py-4 text-gray-600 hidden md:table-cell">{item.description}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+
+          {/* Low-friction quote path for price-shoppers who aren't ready for the booking form */}
+          <div className="mt-6 bg-[#CAF0F8] border border-[#90E0EF] rounded-xl p-5 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p className="text-[#023E8A] font-semibold text-center sm:text-left">
+              Not sure which package fits? Text us your vehicle and how dirty it is — we'll reply with an exact quote.
+            </p>
+            <a
+              href="sms:+18036678731?&body=Hi! Can you quote me? My vehicle is: "
+              onClick={() => trackTextClick('pricing_table')}
+              className="inline-flex items-center gap-2 bg-primary-600 hover:bg-primary-700 text-white font-bold py-3 px-6 rounded-lg transition whitespace-nowrap"
+            >
+              <MessageCircle className="w-5 h-5" />
+              Text for a Quote
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* 2026 Average Cost Section — targets "how much does car detailing cost" searches */}
+      <section className="py-12 bg-gray-50">
+        <div className="container mx-auto px-4 max-w-5xl">
+          <div className="text-center mb-8">
+            <h2 className="text-3xl md:text-4xl font-bold mb-3">How Much Does Car Detailing Cost in 2026?</h2>
+            <p className="text-gray-600 text-lg max-w-3xl mx-auto">
+              Most U.S. drivers pay <strong>$150–$300</strong> for a full detail in 2026. Here's how our flat
+              Midlands rates compare:
+            </p>
+          </div>
+
+          <div className="overflow-x-auto mb-8">
+            <table className="w-full border-collapse bg-white rounded-xl overflow-hidden shadow-lg">
+              <thead>
+                <tr className="bg-gray-800 text-white">
+                  <th className="px-6 py-4 text-left font-bold">Service</th>
+                  <th className="px-6 py-4 text-center font-bold">Typical U.S. Range (2026)</th>
+                  <th className="px-6 py-4 text-center font-bold">Our Price</th>
+                </tr>
+              </thead>
+              <tbody>
+                {costComparison.map((row, index) => (
+                  <tr key={index} className={`border-b border-gray-200 ${index % 2 === 0 ? 'bg-white' : 'bg-gray-50'}`}>
+                    <td className="px-6 py-4 font-semibold text-gray-800">
+                      <a href={row.link} className="hover:text-primary-600 hover:underline">{row.service}</a>
+                    </td>
+                    <td className="px-6 py-4 text-center text-gray-600 whitespace-nowrap">{row.usRange}</td>
+                    <td className="px-6 py-4 text-center text-primary-600 font-bold whitespace-nowrap">{row.ourPrice}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+
+          <p className="text-gray-600 leading-relaxed max-w-3xl mx-auto text-center text-sm">
+            Ours are flat, published rates for Columbia, Lexington, Irmo, West Columbia, and Cayce — see
+            each <a href="/services" className="text-primary-600 font-semibold hover:underline">service page</a> for
+            what's included, or read the full <a href="/blog/car-detailing-prices-value-breakdown" className="text-primary-600 font-semibold hover:underline">car detailing prices guide</a>.
+          </p>
+        </div>
+      </section>
+
       {/* FAQ Section */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4 max-w-4xl">
@@ -503,12 +514,15 @@ export const PricingPage = () => {
             </p>
           </div>
 
-          <div className="space-y-6">
+          <div className="space-y-3">
             {pricingFAQs.map((faq, index) => (
-              <div key={index} className="bg-gray-50 rounded-xl p-6 shadow-lg">
-                <h3 className="text-xl font-bold mb-3 text-gray-800">{faq.question}</h3>
-                <p className="text-gray-600 leading-relaxed">{faq.answer}</p>
-              </div>
+              <details key={index} className="bg-gray-50 rounded-xl shadow group">
+                <summary className="cursor-pointer select-none px-5 py-4 font-bold text-gray-800 flex items-center justify-between gap-3">
+                  <h3 className="text-base md:text-lg font-bold">{faq.question}</h3>
+                  <span className="text-primary-600 shrink-0 transition-transform group-open:rotate-90">›</span>
+                </summary>
+                <p className="text-gray-600 leading-relaxed px-5 pb-4">{faq.answer}</p>
+              </details>
             ))}
           </div>
         </div>

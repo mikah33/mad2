@@ -12,6 +12,8 @@ import {
   trackFormSubmitAttempt,
   trackFormSubmitResult,
   trackServiceSelect,
+  trackVehicleDetails,
+  trackSmsPrefsOpen,
   flushFunnelAbandon,
 } from '../utils/analytics';
 
@@ -254,6 +256,7 @@ const BookingTimeline: React.FC = () => {
   // chips that no longer gate progress (they were the funnel's biggest cliff).
   const handleDetailsSubmit = () => {
     if (vehicleType.trim()) {
+      trackVehicleDetails(FUNNEL_ID, dirtinessScore, vehicleType);
       setCurrentStep(3);
     }
   };
@@ -722,7 +725,10 @@ const BookingTimeline: React.FC = () => {
                         max={10}
                         step={1}
                         value={dirtinessScore}
-                        onChange={(e) => setDirtinessScore(Number(e.target.value))}
+                        onChange={(e) => {
+                          trackFieldInteraction(FUNNEL_ID, 'dirtiness_slider');
+                          setDirtinessScore(Number(e.target.value));
+                        }}
                         className="flex-1 h-2 rounded-full appearance-none cursor-pointer"
                         style={{
                           accentColor: color,
@@ -1182,7 +1188,12 @@ const BookingTimeline: React.FC = () => {
                       required to submit. Collapsed behind an expander so the legal text
                       doesn't read as a wall; the full language is visible before anyone
                       can check a box, which keeps the opt-in compliant. */}
-                  <details className="rounded-lg bg-gray-50 border border-gray-200 group">
+                  <details
+                    className="rounded-lg bg-gray-50 border border-gray-200 group"
+                    onToggle={(e) => {
+                      if ((e.target as HTMLDetailsElement).open) trackSmsPrefsOpen(FUNNEL_ID);
+                    }}
+                  >
                     <summary className="cursor-pointer select-none px-3 py-2.5 text-sm font-semibold text-gray-700 flex items-center justify-between">
                       <span>Text message preferences <span className="font-normal text-gray-500">(optional)</span></span>
                       <ChevronRight className="w-4 h-4 text-gray-400 transition-transform group-open:rotate-90" />

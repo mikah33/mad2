@@ -585,3 +585,23 @@ export function trackServiceSelect(formId: string, serviceName: string): void {
   if (!shouldFire('service_select:' + serviceName, 800)) return;
   ga4('select_service', { form_id: formId, service_name: serviceName });
 }
+
+/**
+ * Fired when the combined vehicle/condition step is submitted. Carries the
+ * 1-10 dirtiness slider score so GA4 can answer "how dirty are the cars of
+ * people who convert vs. abandon".
+ */
+export function trackVehicleDetails(formId: string, dirtinessScore: number, vehicle: string): void {
+  if (!shouldFire('vehicle_details:' + formId, 1200)) return;
+  ga4('booking_vehicle_details', {
+    form_id: formId,
+    dirtiness_score: dirtinessScore,
+    vehicle: vehicle.slice(0, 60),
+  });
+}
+
+/** Fired once when the SMS-consent "Text message preferences" expander is opened. */
+export function trackSmsPrefsOpen(formId: string): void {
+  if (!shouldFire('sms_prefs_open:' + formId, 60000)) return;
+  ga4('sms_prefs_open', { form_id: formId });
+}
