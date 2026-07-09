@@ -1030,10 +1030,25 @@ const BookingTimeline: React.FC = () => {
               </div>
               <h3 className="text-xl md:text-2xl font-bold mb-1">Where do we send your quote?</h3>
               <p className="text-gray-600 text-sm">No payment now — we'll text you within minutes to confirm</p>
-              <p className="text-[#023E8A] font-semibold text-sm mt-1">Selected: {selectedService}</p>
             </div>
 
             <div className="max-w-2xl mx-auto">
+              {/* Quote summary: confirming a deal, not requesting a callback */}
+              <div className="bg-[#023E8A] text-white rounded-xl px-4 py-3 mb-3 flex items-center justify-between gap-3">
+                <div className="min-w-0">
+                  <div className="font-bold text-base truncate">{selectedService}</div>
+                  {vehicleType.trim() && (
+                    <div className="text-white/80 text-sm truncate">{vehicleType.trim()}</div>
+                  )}
+                </div>
+                <div className="text-right shrink-0">
+                  <div className="font-black text-xl whitespace-nowrap">
+                    {allServices.find((s) => s.title === selectedService)?.price || ''}
+                  </div>
+                  <div className="text-white/70 text-[11px]">mobile service included</div>
+                </div>
+              </div>
+
               {/* Escape hatch: phone-first customers convert better than the form */}
               <div className="flex gap-2 mb-3">
                 <a
@@ -1125,6 +1140,9 @@ const BookingTimeline: React.FC = () => {
                     />
                   </div>
 
+                  {/* City/zip only at quote stage — the street address was the
+                      heaviest psychological ask; we collect it in the follow-up
+                      text. Payload field name is still `location` for GHL. */}
                   <div className="relative">
                     <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                       <MapPin className="h-5 w-5 text-gray-400" />
@@ -1135,9 +1153,9 @@ const BookingTimeline: React.FC = () => {
                       value={formData.location}
                       onChange={handleChange}
                       required
-                      autoComplete="street-address"
+                      autoComplete="postal-code"
                       className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#90E0EF] focus:border-transparent transition bg-gray-50 focus:bg-white"
-                      placeholder="Street address, city and zip"
+                      placeholder="City & zip (e.g., Lexington 29072)"
                       disabled={isSubmitting}
                     />
                   </div>
@@ -1160,8 +1178,16 @@ const BookingTimeline: React.FC = () => {
                     />
                   </div>
 
-                  {/* SMS Consent (A2P 10DLC) — two separate, optional opt-ins; neither required to submit */}
-                  <div className="space-y-2 rounded-lg bg-gray-50 border border-gray-200 p-3">
+                  {/* SMS Consent (A2P 10DLC) — two separate, optional opt-ins; neither
+                      required to submit. Collapsed behind an expander so the legal text
+                      doesn't read as a wall; the full language is visible before anyone
+                      can check a box, which keeps the opt-in compliant. */}
+                  <details className="rounded-lg bg-gray-50 border border-gray-200 group">
+                    <summary className="cursor-pointer select-none px-3 py-2.5 text-sm font-semibold text-gray-700 flex items-center justify-between">
+                      <span>Text message preferences <span className="font-normal text-gray-500">(optional)</span></span>
+                      <ChevronRight className="w-4 h-4 text-gray-400 transition-transform group-open:rotate-90" />
+                    </summary>
+                    <div className="space-y-2 px-3 pb-3">
                     <label htmlFor="smsTransactional" className="flex items-start gap-2 cursor-pointer">
                       <input
                         type="checkbox"
@@ -1195,7 +1221,8 @@ const BookingTimeline: React.FC = () => {
                       <a href="/privacy" className="text-[#023E8A] font-semibold hover:underline">Privacy Policy</a> &amp;{' '}
                       <a href="/terms" className="text-[#023E8A] font-semibold hover:underline">Terms of Service</a>.
                     </p>
-                  </div>
+                    </div>
+                  </details>
 
                   <button
                     type="submit"
