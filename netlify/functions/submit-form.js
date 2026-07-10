@@ -36,7 +36,7 @@ exports.handler = async (event, context) => {
     // Forward to both n8n webhook AND CRM in parallel
     const [n8nResponse, crmResponse] = await Promise.allSettled([
       // n8n webhook (existing)
-      fetch('https://contractorai.app.n8n.cloud/webhook/004a0a90-39e2-4cfe-87fa-21bfc34e6d17', {
+      fetch('https://us-central1-mikahs-auto-detailing-crm.cloudfunctions.net/madWebsiteForm', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

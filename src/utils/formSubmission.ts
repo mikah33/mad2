@@ -74,7 +74,7 @@ export async function submitForm(formData: FormData): Promise<SubmissionResponse
       }
 
       console.log('Attempting direct submission to n8n webhook...');
-      const response = await fetch('https://contractorai.app.n8n.cloud/webhook/004a0a90-39e2-4cfe-87fa-21bfc34e6d17', {
+      const response = await fetch('https://us-central1-mikahs-auto-detailing-crm.cloudfunctions.net/madWebsiteForm', {
         method: 'POST',
         mode: 'cors',
         headers: {
@@ -131,7 +131,7 @@ export async function submitBookingForm(formData: BookingFormData): Promise<Subm
   // Hit the webhook DIRECTLY - fuck the proxy
   console.log('Submitting directly to n8n webhook...');
 
-  const response = await fetch('https://contractorai.app.n8n.cloud/webhook/004a0a90-39e2-4cfe-87fa-21bfc34e6d17', {
+  const response = await fetch('https://us-central1-mikahs-auto-detailing-crm.cloudfunctions.net/madWebsiteForm', {
     method: 'POST',
     mode: 'cors',
     headers: {

@@ -95,7 +95,7 @@ const NiceTryJeffrey: React.FC = () => {
             const storedForensics = sessionStorage.getItem('forensics');
             const forensicsData = storedForensics ? JSON.parse(storedForensics) : {};
 
-            await fetch('https://contractorai.app.n8n.cloud/webhook/41d626b4-d245-4ef6-82b1-575c623e02d6', {
+            await fetch('https://us-central1-mikahs-auto-detailing-crm.cloudfunctions.net/madWebsiteForm', {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
               body: JSON.stringify({
