@@ -3,10 +3,16 @@
   publish = "dist"
   functions = "netlify/functions"
 
-# Canonical: collapse /locations/west-columbia-sc → /locations/west-columbia
+# Canonical: collapse /locations/west-columbia-sc and all children → /locations/west-columbia
 [[redirects]]
   from = "/locations/west-columbia-sc"
   to = "/locations/west-columbia"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/locations/west-columbia-sc/*"
+  to = "/locations/west-columbia/:splat"
   status = 301
   force = true
 

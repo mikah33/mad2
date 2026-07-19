@@ -7,7 +7,7 @@
 import { generateEnhancedLocalBusinessSchema } from './EnhancedLocalBusinessSchema';
 import { generateMobileDetailingServiceSchema, generateMobileDetailingFAQSchema } from './MobileDetailingServiceSchema';
 import { generateMobileDetailingProductSchemas, generateMobileDetailingPackageListSchema } from './MobileDetailingProductSchema';
-import { generateAutomotiveBusinessSchema, generateAutomotiveOrganizationSchema } from './AutomotiveBusinessSchema';
+import { generateAutomotiveOrganizationSchema } from './AutomotiveBusinessSchema';
 
 const baseUrl = 'https://mikahsmobiledetailingsc.com';
 
@@ -46,14 +46,9 @@ export const generateMobileDetailingMasterSchema = (
   });
   schemas.push(localBusinessSchema);
 
-  // 2. Automotive Business Schema
-  const automotiveBusinessSchema = generateAutomotiveBusinessSchema({
-    includeSpecializations: true,
-    includeEquipment: true,
-    includeCertifications: true,
-    includeServiceRadius: true
-  });
-  schemas.push(automotiveBusinessSchema);
+  // NOTE: AutomotiveBusinessSchema intentionally not emitted — it declared a
+  // second business entity on every page, conflicting with the primary
+  // LocalBusiness above. One page, one business entity.
 
   // 3. Organization Schema
   const organizationSchema = generateAutomotiveOrganizationSchema();
@@ -225,7 +220,9 @@ export const generatePageTypeSchema = (pageType: string, serviceType?: string) =
   const options: MobileDetailingMasterSchemaOptions = {
     pageType: pageType as any,
     serviceType: serviceType as any,
-    includeProducts: pageType === 'homepage' || pageType === 'service',
+    // Products off: 19 Product entities (each with its own seller LocalBusiness)
+    // tripled page weight; the Service schema's OfferCatalog already carries pricing.
+    includeProducts: false,
     includeServices: true,
     includeFAQ: pageType === 'faq',
     includeReviews: true

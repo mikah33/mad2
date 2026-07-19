@@ -40,14 +40,14 @@ export const videos: Record<string, VideoMetadata> = {
 
   // Ceramic Coating Process Video 1
   ceramicVideo1: {
-    url: `${baseUrl}/ceramic-video1.mov`,
+    url: `${baseUrl}/ceramic-video1.mp4`,
     title: "Ceramic Coating Application Process - Step by Step",
     description: "Professional ceramic coating application on a luxury vehicle. Watch as our IDA-certified detailer prepares the surface through paint correction and applies premium ceramic coating for long-lasting protection against South Carolina's harsh climate.",
     alt: "Step-by-step ceramic coating application showing surface preparation, paint correction, and professional coating installation",
     width: 1920,
     height: 1080,
     duration: "PT2M15S",
-    type: 'video/quicktime',
+    type: 'video/mp4',
     thumbnail: `${baseUrl}/exterior4.jpg`,
     category: 'process',
     keywords: [
@@ -62,14 +62,14 @@ export const videos: Record<string, VideoMetadata> = {
 
   // Ceramic Coating Process Video 2
   ceramicVideo2: {
-    url: `${baseUrl}/ceramic-video2.mov`,
+    url: `${baseUrl}/ceramic-video2.mp4`,
     title: "Ceramic Coating Results - Before and After Comparison",
     description: "See the dramatic difference ceramic coating makes on vehicle paint. This video showcases the hydrophobic properties, enhanced gloss, and superior protection that professional ceramic coating provides. Perfect for South Carolina's hot and humid climate.",
     alt: "Before and after comparison of ceramic coating showing enhanced gloss, water beading, and paint protection on detailed vehicle",
     width: 1920,
     height: 1080,
     duration: "PT1M50S",
-    type: 'video/quicktime',
+    type: 'video/mp4',
     thumbnail: `${baseUrl}/exterior5.jpg`,
     category: 'service',
     keywords: [

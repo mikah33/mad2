@@ -7,3 +7,13 @@
 # Node modules and build cache
 node_modules/
 .vite/
+
+# Build output
+dist/
+
+# Secrets
+.env
+.env.*
+
+# OS junk
+.DS_Store

@@ -1684,7 +1684,7 @@ export const westColumbiaNeighborhoods: Neighborhood[] = [
     slug: 'triangle-city-west-columbia-sc',
     name: 'Triangle City',
     city: 'West Columbia',
-    citySlug: 'west-columbia-sc',
+    citySlug: 'west-columbia',
     state: 'SC',
     zipCodes: ['29169'],
     coordinates: { lat: 33.9932, lng: -81.0732 },
@@ -1777,7 +1777,7 @@ export const westColumbiaNeighborhoods: Neighborhood[] = [
     slug: 'brookland-west-columbia-sc',
     name: 'Brookland',
     city: 'West Columbia',
-    citySlug: 'west-columbia-sc',
+    citySlug: 'west-columbia',
     state: 'SC',
     zipCodes: ['29169', '29170'],
     coordinates: { lat: 33.9856, lng: -81.0834 },
@@ -1870,7 +1870,7 @@ export const westColumbiaNeighborhoods: Neighborhood[] = [
     slug: 'state-street-west-columbia-sc',
     name: 'State Street',
     city: 'West Columbia',
-    citySlug: 'west-columbia-sc',
+    citySlug: 'west-columbia',
     state: 'SC',
     zipCodes: ['29169'],
     coordinates: { lat: 33.9945, lng: -81.0656 },
@@ -1962,7 +1962,7 @@ export const westColumbiaNeighborhoods: Neighborhood[] = [
     slug: 'sunset-blvd-west-columbia-sc',
     name: 'Sunset Boulevard',
     city: 'West Columbia',
-    citySlug: 'west-columbia-sc',
+    citySlug: 'west-columbia',
     state: 'SC',
     zipCodes: ['29169', '29172'],
     coordinates: { lat: 33.9878, lng: -81.0923 },
@@ -2055,7 +2055,7 @@ export const westColumbiaNeighborhoods: Neighborhood[] = [
     slug: 'riverland-park-west-columbia-sc',
     name: 'Riverland Park',
     city: 'West Columbia',
-    citySlug: 'west-columbia-sc',
+    citySlug: 'west-columbia',
     state: 'SC',
     zipCodes: ['29169'],
     coordinates: { lat: 33.9789, lng: -81.0756 },
@@ -2148,7 +2148,7 @@ export const westColumbiaNeighborhoods: Neighborhood[] = [
 
 // West Columbia City Hub Data
 export const westColumbiaCity: City = {
-  slug: 'west-columbia-sc',
+  slug: 'west-columbia',
   name: 'West Columbia',
   state: 'SC',
   description: `West Columbia, South Carolina is a charming city just across the river from downtown Columbia. Known for its historic Triangle City downtown, growing neighborhoods, and convenient access to the Congaree River, West Columbia offers affordable living with big-city amenities nearby. From established neighborhoods to newer developments, West Columbia serves a diverse community.
@@ -3342,7 +3342,7 @@ export const getCityBySlug = (slug: string): City | undefined => {
   if (slug === 'irmo-sc') return irmoCity;
   if (slug === 'lexington-sc') return lexingtonCity;
   if (slug === 'columbia-sc') return columbiaCity;
-  if (slug === 'west-columbia-sc') return westColumbiaCity;
+  if (slug === 'west-columbia' || slug === 'west-columbia-sc') return westColumbiaCity; // -sc kept for legacy in-app links
   if (slug === 'blythewood-sc') return blythewoodCity;
   if (slug === 'cayce-sc') return cayceCity;
   return undefined;

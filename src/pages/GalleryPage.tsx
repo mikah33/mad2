@@ -24,8 +24,8 @@ const GalleryPage: React.FC = () => {
     { id: 5, image: '/exterior5.jpg', title: 'Auto detailing results Columbia SC - full detail package completion', type: 'image' },
     { id: 6, image: '/exterior6.jpg', title: 'Auto detailing services Columbia SC - ceramic coating installation process', type: 'image' },
     { id: 7, image: '/exterior7.jpg', title: 'Auto detailing results Columbia SC - complete exterior restoration shine', type: 'image' },
-    { id: 8, image: '/ceramic-video1.mov', title: 'Auto detailing services Columbia SC - ceramic coating application process video', type: 'video', thumbnail: '/ceramic.jpg' },
-    { id: 9, image: '/ceramic-video2.mov', title: 'Professional auto detailing Columbia SC - ceramic coating technique demonstration', type: 'video', thumbnail: '/exterior3.jpg' },
+    { id: 8, image: '/ceramic-video1.mp4', title: 'Auto detailing services Columbia SC - ceramic coating application process video', type: 'video', thumbnail: '/ceramic.jpg' },
+    { id: 9, image: '/ceramic-video2.mp4', title: 'Professional auto detailing Columbia SC - ceramic coating technique demonstration', type: 'video', thumbnail: '/exterior3.jpg' },
     { id: 10, image: '/interior1.jpg', title: 'Interior car detailing Columbia SC - leather seat restoration and cleaning', type: 'image' },
     { id: 11, image: '/interior2.jpg', title: 'Interior auto detailing services Columbia SC - complete interior detail results', type: 'image' },
     // New images from recent work

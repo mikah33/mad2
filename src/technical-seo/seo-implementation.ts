@@ -366,7 +366,7 @@ Allow: /locations/columbia-sc
 Allow: /locations/lexington-sc
 Allow: /locations/irmo-sc
 Allow: /locations/cayce-sc
-Allow: /locations/west-columbia-sc
+Allow: /locations/west-columbia
 
 # Important pages
 Allow: /services

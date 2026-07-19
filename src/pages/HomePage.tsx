@@ -1,9 +1,6 @@
 import { SEOHead } from '../components/seo/SEOHead';
-import { generateLocalBusinessSchema, generateFAQSchema, generateVideoSchema, generateItemListSchema } from '../components/seo/StructuredData';
-import { generateGMBSchema } from '../components/seo/GMBSchema';
-import { generateEnhancedLocalBusinessSchema } from '../components/seo/EnhancedLocalBusinessSchema';
-import { businessInfo } from '../data/business';
-import { reviews, aggregateRating } from '../data/reviews';
+import { generateFAQSchema, generateVideoSchema, generateItemListSchema } from '../components/seo/StructuredData';
+import { reviews } from '../data/reviews';
 import { faqs } from '../data/faqs-comprehensive';
 import { services, getFeaturedServices } from '../data/services';
 import { Star, CheckCircle, Phone, MapPin, Clock } from 'lucide-react';
@@ -17,24 +14,6 @@ export const HomePage = () => {
     faqs.find(f => f.id === 'mob-1'), // How much does mobile detailing cost
     faqs.find(f => f.id === 'cer-2'), // What is ceramic coating
   ].filter(Boolean).map(f => ({ question: f!.question, answer: f!.answer }));
-
-  // Generate comprehensive LocalBusiness schema with reviews and aggregate rating
-  const localBusinessSchema = generateLocalBusinessSchema(
-    {
-      name: businessInfo.name,
-      description: businessInfo.description,
-      phone: businessInfo.phone,
-      email: businessInfo.email,
-      address: businessInfo.address,
-      hours: businessInfo.hours,
-      priceRange: businessInfo.priceRange
-    },
-    aggregateRating,
-    reviews
-  );
-
-  // Generate GMB schema with all reviews
-  const gmbSchema = generateGMBSchema();
 
   // Generate FAQ schema for common questions
   const faqSchema = generateFAQSchema(homepageFAQs);
@@ -61,11 +40,10 @@ export const HomePage = () => {
     }))
   );
 
-  // Generate enhanced comprehensive LocalBusiness schema
-  const enhancedBusinessSchema = generateEnhancedLocalBusinessSchema();
-
-  // Combine schemas
-  const schemas = [gmbSchema, localBusinessSchema, enhancedBusinessSchema, faqSchema, videoSchema, itemListSchema];
+  // LocalBusiness/Organization schema is injected once at build time by the
+  // prerender script (MobileDetailingMasterSchema) — only page-specific
+  // schemas belong here, or every page ships duplicate business entities.
+  const schemas = [faqSchema, videoSchema, itemListSchema];
 
   // Get featured testimonials for social proof section
   const featuredTestimonials = reviews.slice(0, 4);

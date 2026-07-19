@@ -413,10 +413,7 @@ export const generateEnhancedLocalBusinessSchema = (
             name: 'Mobile Car Detailing Services',
             description: 'Complete mobile car detailing service brought to your location. Interior and exterior detailing, vacuuming, cleaning, and protection.',
             serviceType: 'MobileDetailingService',
-            provider: {
-              '@type': 'LocalBusiness',
-              name: "Mikah's Auto Detailing"
-            },
+            provider: { '@id': `${baseUrl}/#business` },
             areaServed: ['Columbia SC', 'Lexington SC', 'Irmo SC', 'Cayce SC'],
             url: `${baseUrl}/services/mobile-detailing`
           },
@@ -435,10 +432,7 @@ export const generateEnhancedLocalBusinessSchema = (
             name: 'Car Interior Detailing',
             description: 'Professional interior car detailing: deep cleaning, vacuuming, upholstery cleaning, leather conditioning, dashboard cleaning, and odor removal.',
             serviceType: 'InteriorDetailingService',
-            provider: {
-              '@type': 'LocalBusiness',
-              name: "Mikah's Auto Detailing"
-            },
+            provider: { '@id': `${baseUrl}/#business` },
             areaServed: ['Columbia SC', 'Lexington SC', 'Irmo SC', 'Cayce SC'],
             url: `${baseUrl}/services/interior-detailing`
           },
@@ -457,10 +451,7 @@ export const generateEnhancedLocalBusinessSchema = (
             name: 'Exterior Auto Detailing',
             description: 'Professional exterior auto detailing: washing, clay bar treatment, polishing, waxing, tire cleaning, and paint protection.',
             serviceType: 'ExteriorDetailingService',
-            provider: {
-              '@type': 'LocalBusiness',
-              name: "Mikah's Auto Detailing"
-            },
+            provider: { '@id': `${baseUrl}/#business` },
             areaServed: ['Columbia SC', 'Lexington SC', 'Irmo SC', 'Cayce SC'],
             url: `${baseUrl}/services/exterior-detailing`
           },
@@ -479,10 +470,7 @@ export const generateEnhancedLocalBusinessSchema = (
             name: 'Full Service Automotive Detailing',
             description: 'Complete automotive detailing package: full interior and exterior detailing, paint correction, waxing, and protection. Our most comprehensive mobile detailing service.',
             serviceType: 'FullDetailService',
-            provider: {
-              '@type': 'LocalBusiness',
-              name: "Mikah's Auto Detailing"
-            },
+            provider: { '@id': `${baseUrl}/#business` },
             areaServed: ['Columbia SC', 'Lexington SC', 'Irmo SC', 'Cayce SC'],
             url: `${baseUrl}/services/full-detail`
           },
@@ -501,10 +489,7 @@ export const generateEnhancedLocalBusinessSchema = (
             name: 'Mobile Detailing Pricing Packages',
             description: 'Flexible mobile car detailing packages to fit your budget. Basic, premium, and luxury mobile detailing options available.',
             serviceType: 'MobileDetailingPackages',
-            provider: {
-              '@type': 'LocalBusiness',
-              name: "Mikah's Auto Detailing"
-            },
+            provider: { '@id': `${baseUrl}/#business` },
             areaServed: ['Columbia SC', 'Lexington SC', 'Irmo SC', 'Cayce SC']
           }
         },
@@ -518,10 +503,7 @@ export const generateEnhancedLocalBusinessSchema = (
             name: 'Ceramic Coating Application',
             description: 'Professional ceramic coating application for long-lasting paint protection and enhanced shine.',
             serviceType: 'CeramicCoatingService',
-            provider: {
-              '@type': 'LocalBusiness',
-              name: "Mikah's Auto Detailing"
-            },
+            provider: { '@id': `${baseUrl}/#business` },
             areaServed: ['Columbia SC', 'Lexington SC', 'Irmo SC', 'Cayce SC'],
             url: `${baseUrl}/services/ceramic-coating`
           },
@@ -540,10 +522,7 @@ export const generateEnhancedLocalBusinessSchema = (
             name: 'Paint Correction Services',
             description: 'Multi-stage paint correction to remove swirl marks, scratches, and oxidation.',
             serviceType: 'PaintCorrectionService',
-            provider: {
-              '@type': 'LocalBusiness',
-              name: "Mikah's Auto Detailing"
-            },
+            provider: { '@id': `${baseUrl}/#business` },
             areaServed: ['Columbia SC', 'Lexington SC', 'Irmo SC', 'Cayce SC'],
             url: `${baseUrl}/services/paint-correction`
           },
@@ -575,10 +554,7 @@ export const generateEnhancedLocalBusinessSchema = (
           price: '150',
           availability: 'https://schema.org/InStock',
           url: `${baseUrl}/book`,
-          seller: {
-            '@type': 'LocalBusiness',
-            name: "Mikah's Auto Detailing"
-          }
+          seller: { '@id': `${baseUrl}/#business` }
         }
       },
       {
@@ -598,10 +574,7 @@ export const generateEnhancedLocalBusinessSchema = (
           price: '250',
           availability: 'https://schema.org/InStock',
           url: `${baseUrl}/book`,
-          seller: {
-            '@type': 'LocalBusiness',
-            name: "Mikah's Auto Detailing"
-          }
+          seller: { '@id': `${baseUrl}/#business` }
         }
       },
       {
@@ -621,10 +594,7 @@ export const generateEnhancedLocalBusinessSchema = (
           price: '350',
           availability: 'https://schema.org/InStock',
           url: `${baseUrl}/book`,
-          seller: {
-            '@type': 'LocalBusiness',
-            name: "Mikah's Auto Detailing"
-          }
+          seller: { '@id': `${baseUrl}/#business` }
         }
       }
     ];

@@ -80,7 +80,7 @@ const RecentProjects: React.FC = () => {
     },
     {
       id: 8,
-      image: '/ceramic-video1.mov',
+      image: '/ceramic-video1.mp4',
       title: 'Auto Detailing Services Columbia SC - Ceramic Coating Video',
       description: 'Watch our professional auto detailing services columbia sc ceramic coating application.',
       category: 'ceramic-coating',
@@ -90,7 +90,7 @@ const RecentProjects: React.FC = () => {
     },
     {
       id: 9,
-      image: '/ceramic-video2.mov',
+      image: '/ceramic-video2.mp4',
       title: 'Auto Detailing Services Columbia SC - Application Process',
       description: 'See how we apply ceramic coating in our auto detailing services columbia sc.',
       category: 'ceramic-coating',
@@ -167,7 +167,7 @@ const RecentProjects: React.FC = () => {
       "name": project.title,
       "description": project.description,
       "uploadDate": `${project.datePublished}T12:00:00-05:00`,
-      "thumbnailUrl": `https://mikahsmobiledetailingsc.com${project.image.replace('.mov', '-thumb.jpg')}`,
+      "thumbnailUrl": `https://mikahsmobiledetailingsc.com${project.image.replace('.mp4', '-thumb.jpg')}`,
       "creator": {
         "@type": "Person",
         "name": "Mikah Albertson"
