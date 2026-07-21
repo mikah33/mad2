@@ -1,0 +1,49 @@
+{
+  "_schema": {
+    "id": "exp-YYYY-MM-DD-slug",
+    "started": "date the change shipped",
+    "change": "what was changed (files + summary)",
+    "hypothesis": "what should improve and why",
+    "target_queries": ["queries to watch in GSC"],
+    "target_pages": ["pages to watch"],
+    "baseline": "metric values at start (clicks/impr/ctr/pos over prior 7d)",
+    "review_after": "date (>= 2 weeks after started; SEO changes need 2-4 weeks)",
+    "status": "open | won | lost | inconclusive",
+    "outcome": "filled at review time; ALSO append the lesson to LEARNINGS.md"
+  },
+  "experiments": [
+    {
+      "id": "exp-2026-07-21-homepage-ctr",
+      "started": null,
+      "change": "PLANNED: homepage title/meta rewrite targeting 'car detailing near me' CTR (currently pos 7.1, 189 impr/28d, 1.06% CTR)",
+      "hypothesis": "Homepage is in striking distance (pos 7) for the highest-volume local term (880/mo); a benefit-led title (price anchor + 'We Come to You' + 5.0 stars) should lift CTR toward 3-5%",
+      "target_queries": ["car detailing near me", "auto detailing near me", "detailing near me"],
+      "target_pages": ["https://mikahsmobiledetailingsc.com/"],
+      "baseline": "28d: clicks 21, impr 1983, ctr 1.06%, pos 13.0 (homepage overall)",
+      "review_after": null,
+      "status": "open"
+    },
+    {
+      "id": "exp-2026-07-21-pricing-blog-zero-ctr",
+      "started": null,
+      "change": "PLANNED: fix /blog/car-detailing-prices-value-breakdown/ - 2,011 impressions, 0 clicks, pos 45. Retitle to match actual queries, add price table near top, internal-link from /pricing",
+      "hypothesis": "Page has huge impression volume with zero clicks; better title/meta + on-page price answers should convert impressions to clicks and lift position",
+      "target_queries": ["car detailing prices", "auto detailing cost", "how much does car detailing cost"],
+      "target_pages": ["https://mikahsmobiledetailingsc.com/blog/car-detailing-prices-value-breakdown/"],
+      "baseline": "28d: clicks 0, impr 2011, ctr 0%, pos 45.4",
+      "review_after": null,
+      "status": "open"
+    },
+    {
+      "id": "exp-2026-07-21-pricing-slash-consolidation",
+      "started": null,
+      "change": "PLANNED: /pricing vs /pricing/ both receiving impressions (2,743 + 1,270 per 28d) - verify canonical + redirect so only trailing-slash version is indexed",
+      "hypothesis": "Consolidating the split should merge ranking signals and lift the surviving URL's position",
+      "target_queries": ["car detailing prices columbia sc", "auto detail price list"],
+      "target_pages": ["https://mikahsmobiledetailingsc.com/pricing/"],
+      "baseline": "28d: /pricing/ 6 clicks/2743 impr/pos 17.4 ; /pricing 5 clicks/1270 impr/pos 24.3",
+      "review_after": null,
+      "status": "open"
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "source": "Google Ads Keyword Planner (account 702-360-2346, Mikah's Auto Detailing)",
+  "location": "Columbia SC Nielsen DMA (reach ~1,780,000)",
+  "language": "English",
+  "date_range": "Jul 2025 - Jun 2026",
+  "pulled_at": "2026-07-21",
+  "refresh_policy": "Re-pull quarterly or when the SEO agent flags volumes as stale. Pulled manually via Keyword Planner UI (no API access).",
+  "notes": "Google groups close variants; keywords sharing identical volume/bid are one variant cluster. 'near me' intent dominates local search. Bids are top-of-page ranges (USD).",
+  "keywords": [
+    {"kw": "car detailing near me", "vol": 880, "yoy": -0.12, "comp": "Medium", "bid_low": 1.50, "bid_high": 3.39, "cluster": "head-near-me", "variants": ["vehicle detailing near me", "car detail shops near me", "auto car detailing near me"]},
+    {"kw": "car wash touchless near me", "vol": 480, "yoy": 0.23, "comp": "Low", "cluster": "car-wash-adjacent", "note": "off-service; do not target"},
+    {"kw": "car detailing", "vol": 320, "yoy": 0.23, "comp": "Medium", "bid_low": 1.40, "bid_high": 2.97, "cluster": "head-generic", "variants": ["detailing auto", "car auto detailing", "detailing automobile", "vehicle detailer"], "note": "GROWING +23% YoY"},
+    {"kw": "hand car wash near me", "vol": 320, "yoy": -0.19, "comp": "Low", "bid_low": 0.98, "bid_high": 2.45, "cluster": "car-wash-adjacent", "note": "adjacent service; low priority"},
+    {"kw": "mobile detailing near me", "vol": 260, "comp": "Medium", "bid_low": 1.26, "bid_high": 3.74, "cluster": "mobile"},
+    {"kw": "car detailing services", "vol": 260, "yoy": -0.65, "comp": "Low", "cluster": "services", "variants": ["auto detailing services"], "note": "declining hard -65% YoY"},
+    {"kw": "full service car wash near me", "vol": 210, "three_mo": 0.52, "yoy": 0.23, "comp": "Low", "bid_low": 0.80, "bid_high": 2.09, "cluster": "car-wash-adjacent", "note": "+52% 3-month spike"},
+    {"kw": "ceramic coating", "vol": 170, "yoy": -0.33, "comp": "High", "bid_low": 0.85, "bid_high": 6.85, "cluster": "ceramic", "note": "high-ticket, high competition, bids to $6.85"},
+    {"kw": "detailing near me", "vol": 170, "comp": "Medium", "bid_low": 1.57, "bid_high": 3.76, "cluster": "head-near-me"},
+    {"kw": "car wax", "vol": 170, "yoy": -0.35, "comp": "High", "cluster": "diy", "note": "DIY intent; do not target"},
+    {"kw": "auto detailing near me", "vol": 140, "yoy": -0.18, "comp": "Medium", "bid_low": 1.60, "bid_high": 2.95, "cluster": "head-near-me", "variants": ["interior car detailing near me", "automobile detailing near me", "auto detail shops near me"]},
+    {"kw": "mobile car detailing near me", "vol": 140, "three_mo": -0.21, "comp": "Medium", "bid_low": 1.44, "bid_high": 3.47, "cluster": "mobile", "variants": ["mobile auto detailing near me", "mobile vehicle detailing near me", "auto detailers near me mobile", "auto detailing near me mobile", "detailing near me mobile", "detailing mobile near me"]},
+    {"kw": "car interior cleaning", "vol": 140, "yoy": -0.50, "comp": "High", "bid_low": 1.17, "bid_high": 2.92, "cluster": "interior", "variants": ["inside car cleaning", "auto interior cleaning", "vehicle interior cleaning"]},
+    {"kw": "mobile detailing", "vol": 90, "yoy": 0.40, "comp": "Low", "bid_low": 1.53, "bid_high": 3.49, "cluster": "mobile", "note": "GROWING +40% YoY, low competition"},
+    {"kw": "paint correction", "vol": 30, "three_mo": 1.00, "yoy": -0.50, "comp": "High", "bid_low": 0.88, "bid_high": 2.43, "cluster": "paint-correction", "note": "+100% 3-month; small volume, high ticket"}
+  ],
+  "strategy_implications": [
+    "The 'near me' head cluster (~880/mo + variants) is the biggest local prize; homepage already ranks pos ~7 for 'car detailing near me' in GSC - CTR optimization of homepage title/meta is the highest-leverage move.",
+    "Generic 'car detailing' cluster is growing +23% YoY - keep homepage + services pages aligned to it.",
+    "'mobile detailing' is growing +40% YoY with LOW competition - lean into 'mobile' phrasing in titles ('We Come to You').",
+    "Ceramic coating searches declining -33% YoY locally but highest ticket ($999+) - keep pages, don't over-invest in new ceramic content.",
+    "Interior cleaning cluster declining -50% YoY - deprioritize new interior-focused blog content.",
+    "Car-wash-adjacent terms (touchless, hand wash, full service) are Low competition but wrong intent - only worth a comparison/explainer post, not service pages."
+  ]
+}
