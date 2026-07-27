@@ -34,3 +34,23 @@ into `seo-data/keyword-planner.json`.
    or crawlers get homepage-clone HTML (prerender bug class, fixed 2026-07-04).
 9. Blog = national/informational "cost" queries; /pricing = local price list. Cross-link, never
    compete.
+
+---
+
+## 2026-07-27 — Clicks dropped -43% WoW; pricing-slash resolved; 3 title/meta experiments shipped
+
+**Evidence:** Week Jul 19–25: 12 clicks, 2,853 impr, 0.42% CTR, pos 19.78.
+Prior week Jul 12–18: 21 clicks, 2,948 impr, 0.71% CTR, pos 19.56.
+WoW: -43% clicks, -3% impressions, -41% CTR, position flat. Drop likely seasonal/variance — not a ranking penalty (impressions barely moved).
+
+Experiments review (all 3 prior plans were PLANNED but never started until this run):
+- **exp-2026-07-21-pricing-slash-consolidation → WON**: /pricing only 1 impression vs 1,111 for /pricing/ — Google consolidated to trailing slash as intended.
+- **exp-2026-07-21-homepage-ctr → STARTING**: Implementing today (title rewrite).
+- **exp-2026-07-21-pricing-blog-zero-ctr → STARTING**: Implementing today (title rewrite).
+- **exp-2026-07-27-mobile-prices-blog → NEW**: Best opportunity: pos 10.5 with 0 clicks.
+
+**Rules:**
+10. **/blog/mobile-detailing-columbia-sc-prices-2025/ is striking distance** (pos 10.5, 139 impr/wk, 0 clicks). Stale "2025" in title + no price anchor. Updated title to 2026 + "From $100" anchor — review in 14 days.
+11. **"near me" cluster earns impressions but 0 clicks** for organic listings (map pack takes all clicks at these positions). Still worth title-testing since it costs nothing and may lift CTR for users who scroll past map pack.
+12. **Sitemap "indexed: 0" in GSC** (123 submitted) — likely a GSC display lag, not a real indexing failure (pages DO appear in search results with impressions). Monitor next week; if still 0, investigate Coverage report.
+13. **WoW click swings of ±50% are normal** in a small-traffic site (12–21 clicks/week). Use 4-week rolling average to assess trends, not single-week delta.
