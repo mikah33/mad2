@@ -250,6 +250,34 @@ routes.forEach(route => {
   // PerplexityBot, ClaudeBot) don't execute JavaScript, so without this every
   // page body is empty to them. React replaces this markup on hydration.
   const h1 = route.title.split('|')[0].trim();
+
+  // Per-page crawler-readable body content. MUST mirror the visible React page
+  // content for that route — do not add content here that users cannot see.
+  const pageBodies: Record<string, string> = {
+    'services/ceramic-coating': `
+      <h2>Mobile Ceramic Coating — We Come to You</h2>
+      <p>Almost every ceramic installer in Columbia is a fixed shop. You drive across town, leave the car for a few days, and arrange a ride home. We work differently: we bring the equipment, the water, the power, and the lighting to your driveway or your office parking lot.</p>
+      <p>That covers Columbia, Lexington, West Columbia, Irmo, Cayce, Chapin, Blythewood, Swansea, and Newberry — with no travel fee anywhere in the Midlands.</p>
+      <p>Ceramic coating is mostly preparation. The coating itself goes on in about an hour; getting the paint ready is the real work, and it is where cheaper coating jobs cut corners. Every ceramic job we do includes a full decontamination wash, clay treatment, paint correction, a panel wipe, hand-leveled application, and a proper cure before the vehicle goes back into service.</p>
+      <h2>How Ceramic Coating Holds Up in South Carolina</h2>
+      <p>The Midlands is genuinely hard on paint, and that is exactly why a coating pays off more here than it would in a dry climate. We get heavy spring pollen that turns mildly acidic once it sits in the rain. Summer brings heat, humidity, and love bugs whose remains etch clear coat within days. Park under the pines and oaks most of us have in our yards and you are dealing with sap. And the UV load fades red and black paint faster than people expect.</p>
+      <p>A coating takes that abuse instead of your clear coat. Bug guts, bird droppings, sap, and pollen are all acidic — on bare paint they etch, and on a coated surface you have a real buffer to get them off before damage happens.</p>
+      <p>Coating life depends on the vehicle and how it is kept. A garaged car that gets washed properly holds up near the top of the range; a truck that lives outside under trees works harder for it. To keep it performing, wash with a pH-neutral soap and skip automatic brush tunnels — those brushes are what put swirls back into paint you just paid to correct.</p>
+      <h2>Ceramic Coating vs. Wax vs. Paint Correction</h2>
+      <ul>
+        <li><strong>Wax or sealant</strong> — weeks to a few months of protection. Cheap, easy, and temporary.</li>
+        <li><strong><a href="/services/paint-correction">Paint correction</a></strong> — removes existing swirls and scratches. It makes paint look new, but it does not protect anything on its own. From $599, and it is already included in your ceramic coating job.</li>
+        <li><strong>Ceramic coating</strong> — two to five years of UV and chemical protection over corrected paint. From $999.</li>
+      </ul>
+      <p>If your paint is in good shape and you want it to stay that way for years, coating is the move. If your paint is dull or swirled and you are not ready for a coating, start with paint correction. One thing worth saying plainly: a ceramic coating is not scratch-proof and it will not stop rock chips. It is chemical and UV protection with serious gloss and much easier washing — not armor.</p>
+      <h2>Ceramic Coating FAQ</h2>
+      <p><strong>How long does ceramic coating last?</strong> Two to five years with proper maintenance, depending on the product and how the vehicle is driven and stored.</p>
+      <p><strong>How much does ceramic coating cost?</strong> From $999, custom quoted after we inspect your paint. The price includes the required paint correction prep.</p>
+      <p><strong>Can I wash my car after ceramic coating?</strong> Wait 7 days before the first wash to allow complete curing, then wash normally with a pH-neutral soap.</p>
+      <p><strong>Do you come to my location?</strong> Yes — we are mobile and bring all equipment needed for professional installation.</p>`,
+  };
+  const pageBody = pageBodies[routePath] || '';
+
   const pricingTable = routePath === 'pricing' ? `
       <h2>How Much Does Car Detailing Cost in 2026?</h2>
       <p>In 2026, most U.S. drivers pay between $150 and $300 for a full car detail, depending on vehicle size and condition. Interior-only details typically run $125–$250 and exterior-only $75–$150. At Mikah's Auto Detailing in Columbia SC, the flat $225 Basic Detail covers the full interior and exterior with mobile service included.</p>
@@ -265,6 +293,7 @@ routes.forEach(route => {
   const staticBody = `<div id="root"><main>
       <h1>${h1}</h1>
       <p>${route.description}</p>${cityBlock}${pricingTable}
+      ${pageBody}
       <h2>Services &amp; 2026 Prices</h2>
       <ul>
         <li><a href="/services/exterior-detailing">Exterior Detail</a> — from $100</li>

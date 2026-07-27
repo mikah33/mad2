@@ -254,6 +254,96 @@ const CeramicCoatingPage: React.FC = () => {
           </div>
         </section>
 
+
+        {/* Mobile advantage — the competitive wedge */}
+        <section className="py-16 bg-gray-50">
+          <div className="container mx-auto px-4 max-w-4xl">
+            <h2 className="text-3xl font-bold mb-6">Mobile Ceramic Coating — We Come to You</h2>
+            <p className="text-gray-600 mb-4">
+              Almost every ceramic installer in Columbia is a fixed shop. You drive across town, leave
+              the car for a few days, and arrange a ride home. We work differently: we bring the
+              equipment, the water, the power, and the lighting to your driveway or your office
+              parking lot.
+            </p>
+            <p className="text-gray-600 mb-4">
+              That covers Columbia, Lexington, West Columbia, Irmo, Cayce, Chapin, Blythewood,
+              Swansea, and Newberry — with no travel fee anywhere in the Midlands.
+            </p>
+            <p className="text-gray-600">
+              Ceramic coating is mostly preparation. The coating itself goes on in about an hour;
+              getting the paint ready is the real work, and it is where cheaper coating jobs cut
+              corners. Every ceramic job we do includes a full decontamination wash, clay treatment,
+              paint correction, a panel wipe, hand-leveled application, and a proper cure before the
+              vehicle goes back into service.
+            </p>
+          </div>
+        </section>
+
+        {/* Local climate content */}
+        <section className="py-16">
+          <div className="container mx-auto px-4 max-w-4xl">
+            <h2 className="text-3xl font-bold mb-6">How Ceramic Coating Holds Up in South Carolina</h2>
+            <p className="text-gray-600 mb-4">
+              The Midlands is genuinely hard on paint, and that is exactly why a coating pays off more
+              here than it would in a dry climate. We get heavy spring pollen that turns mildly acidic
+              once it sits in the rain. Summer brings heat, humidity, and love bugs whose remains etch
+              clear coat within days. Park under the pines and oaks most of us have in our yards and
+              you are dealing with sap. And the UV load fades red and black paint faster than people
+              expect.
+            </p>
+            <p className="text-gray-600 mb-4">
+              A coating takes that abuse instead of your clear coat. Bug guts, bird droppings, sap,
+              and pollen are all acidic — on bare paint they etch, and on a coated surface you have a
+              real buffer to get them off before damage happens.
+            </p>
+            <p className="text-gray-600">
+              Coating life depends on the vehicle and how it is kept. A garaged car that gets washed
+              properly holds up near the top of the range; a truck that lives outside under trees
+              works harder for it. To keep it performing, wash with a pH-neutral soap and skip
+              automatic brush tunnels — those brushes are what put swirls back into paint you just
+              paid to correct.
+            </p>
+          </div>
+        </section>
+
+        {/* Comparison */}
+        <section className="py-16 bg-gray-50">
+          <div className="container mx-auto px-4 max-w-4xl">
+            <h2 className="text-3xl font-bold mb-6">Ceramic Coating vs. Wax vs. Paint Correction</h2>
+            <p className="text-gray-600 mb-4">
+              These three get confused constantly, so here is the honest version:
+            </p>
+            <ul className="space-y-3 text-gray-600 mb-4">
+              <li>
+                <strong>Wax or sealant</strong> — weeks to a few months of protection. Cheap, easy,
+                and temporary.
+              </li>
+              <li>
+                <strong><a href="/services/paint-correction" className="text-green-700 underline">Paint correction</a></strong> —
+                removes existing swirls and scratches. It makes paint look new, but it does not
+                protect anything on its own. From $599, and it is already included in your ceramic
+                coating job.
+              </li>
+              <li>
+                <strong>Ceramic coating</strong> — two to five years of UV and chemical protection
+                over corrected paint. From $999.
+              </li>
+            </ul>
+            <p className="text-gray-600 mb-4">
+              If your paint is in good shape and you want it to stay that way for years, coating is
+              the move. If your paint is dull or swirled and you are not ready for a coating, start
+              with paint correction.
+            </p>
+            <p className="text-gray-600">
+              One thing worth saying plainly: a ceramic coating is <strong>not</strong> scratch-proof
+              and it will <strong>not</strong> stop rock chips. It is chemical and UV protection with
+              serious gloss and much easier washing — not armor. See the full{' '}
+              <a href="/pricing" className="text-green-700 underline">2026 price list</a> or{' '}
+              <a href="/book" className="text-green-700 underline">book online</a>.
+            </p>
+          </div>
+        </section>
+
         {/* FAQ */}
         <section className="py-16">
           <div className="container mx-auto px-4 max-w-4xl">
