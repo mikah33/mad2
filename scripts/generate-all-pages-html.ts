@@ -73,7 +73,7 @@ console.log('\n🚀 Generating pre-rendered HTML files for ALL pages...\n');
 // Define all routes that need HTML files
 const routes = [
   // Homepage
-  { path: '', title: "Mobile Car Detailing Columbia SC | Mikah's Auto Detailing", description: '5.0-star mobile auto detailing in Columbia, Lexington & Irmo SC. We come to you - details from $100, full interior + exterior $225. Call (803) 667-8731.' },
+  { path: '', title: "Mobile Detailing Near Me | Columbia SC | From $100 — Mikah's Auto Detailing", description: 'We come to you. 5.0-star mobile car detailing in Columbia, Lexington & Irmo SC. Exterior from $100, full detail $225. Same-day available. Call (803) 667-8731.' },
 
   // Service pages
   { path: 'services', title: 'Auto Detailing Services | Columbia SC', description: 'Mobile detailing services in Columbia SC: interior from $200, exterior from $100, full detail $225, ceramic coating from $999. 5.0-star - we come to you.' },
