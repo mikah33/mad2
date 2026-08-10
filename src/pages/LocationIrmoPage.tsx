@@ -181,12 +181,12 @@ export const LocationIrmoPage = () => {
   return (
     <>
       <SEOHead
-        title="Auto Detailing Services Irmo SC | Mobile Detailing | Mikah's"
-        description="Professional auto detailing services in Irmo, SC near Columbia. Mobile car detailing, ceramic coating, paint correction. 5-star rated. Call (803) 667-8731!"
+        title="Mobile Detailing Irmo SC | We Come to You From $100 — Mikah's"
+        description="Mobile car detailing in Irmo, SC — we drive to you! Exterior from $100, Interior from $200, Basic Detail $225. 5.0★ rated. Same-day available. Book online!"
         keywords={allKeywords.join(', ') + ', auto detailing services columbia sc'}
         canonical="https://mikahsmobiledetailingsc.com/locations/irmo-sc/"
-        ogDescription="Professional auto detailing services in Irmo, SC near Columbia. Mobile car detailing, ceramic coating, paint correction. 5-star rated. Call (803) 667-8731!"
-        twitterDescription="Professional auto detailing services in Irmo, SC near Columbia. Mobile car detailing, ceramic coating, paint correction. 5-star rated. Call (803) 667-8731!"
+        ogDescription="Mobile car detailing in Irmo, SC — we drive to you! Exterior from $100, Interior from $200, Basic Detail $225. 5.0★ rated. Same-day available."
+        twitterDescription="Mobile car detailing in Irmo, SC — we drive to you! Exterior from $100, Interior from $200, Basic Detail $225. 5.0★ rated. Same-day available."
         schema={schemas}
       />
 

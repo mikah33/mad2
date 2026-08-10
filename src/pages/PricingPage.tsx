@@ -272,8 +272,8 @@ export const PricingPage = () => {
   return (
     <>
       <SEOHead
-        title="Car Detailing Prices 2026 — Columbia SC Price List"
-        description="2026 car detailing price list for Columbia &amp; Lexington SC: Exterior from $100, Interior from $200, Basic Detail $225, Factory Reset $400. Mobile — we come to you. Free quote: (803) 667-8731."
+        title="Mobile Detailing Prices Columbia SC | From $100 · We Come to You — Mikah's"
+        description="Flat-rate mobile car detailing in Columbia &amp; Lexington SC. Exterior from $100, Interior from $200, Basic Detail $225, Factory Reset $400. No travel fees — we come to you. Book online!"
         keywords="car detailing prices, auto detailing prices, how much does car detailing cost, car detailing prices columbia sc, auto detailing prices columbia sc, mobile detailing prices, interior detailing cost, exterior detailing prices, detailing packages pricing"
         canonical="https://mikahsmobiledetailingsc.com/pricing/"
         ogType="website"
