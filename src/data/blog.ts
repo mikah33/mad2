@@ -164,10 +164,10 @@ export const blogPosts: BlogPost[] = [
   },
   {
     id: 'blog-009',
-    title: 'Car Detailing Prices 2026: How Much Does It Cost?',
+    title: 'How Much Does Car Detailing Cost? 2026 Price Breakdown',
     slug: 'car-detailing-prices-value-breakdown',
-    excerpt: 'Understand car detailing pricing and what you get for your money in Columbia SC',
-    metaDescription: 'Car detailing prices in Columbia SC explained - what drives cost and what is included at each level. Real 2026 prices: exterior from $100, full detail $225 flat.',
+    excerpt: 'What does car detailing cost in 2026? Full price breakdown — what you pay at each service level and what drives your final quote.',
+    metaDescription: 'What does car detailing cost in 2026? Full price breakdown: exterior from $100, interior from $200, full detail $225+. Learn what drives cost and what each service level includes.',
     author: 'Mikah',
     authorJobTitle: 'Professional Auto Detailer',
     datePublished: '2024-03-15',
