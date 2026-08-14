@@ -33,7 +33,7 @@ const FullDetailPage: React.FC = () => {
   const factoryResetSchema = generateProductSchema({
     name: "Factory Reset Package",
     description: "Deep interior and exterior restoration. Includes shampoo & extraction, light stain removal, brake dust removal, and complete protection.",
-    price: "400",
+    price: "375",
     features: [
       "Full wipe down + conditioner + UV protection",
       "Vacuum + disinfection",
@@ -137,7 +137,7 @@ const FullDetailPage: React.FC = () => {
                 
       </div>
                 <h3 className="text-2xl font-bold mb-2">Factory Reset Package</h3>
-                <p className="text-3xl font-bold text-orange-600 mb-4">$400</p>
+                <p className="text-3xl font-bold text-orange-600 mb-4">$375</p>
                 <p className="text-sm text-gray-600 mb-4">Complete restoration experience</p>
                 <div className="space-y-3 mb-6">
                   <h4 className="font-bold">Interior:</h4>

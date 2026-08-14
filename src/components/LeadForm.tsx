@@ -31,7 +31,7 @@ const LeadForm: React.FC<LeadFormProps> = ({ selectedService }) => {
 
   const serviceOptions = [
     'Basic Detail Package - $225',
-    'Factory Reset Package - $400',
+    'Factory Reset Package - $375',
     'Ceramic Coatings',
     'Paint Corrections',
     'Specialty Services',

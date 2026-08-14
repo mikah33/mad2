@@ -14,7 +14,7 @@ const ExteriorDetailingPage: React.FC = () => {
   const productSchema = generateProductSchema({
     name: "Exterior Car Detailing Service",
     description: "Professional exterior car detailing in Columbia SC. Hand wash, clay bar treatment, paint correction, wax protection, and wheel detailing. Mobile service available.",
-    price: "100",
+    price: "125",
     features: [
       "Hand wash using premium products",
       "Wheel and tire deep cleaning",
@@ -65,7 +65,7 @@ const ExteriorDetailingPage: React.FC = () => {
       "@type": "Offer",
       "priceSpecification": {
         "@type": "PriceSpecification",
-        "minPrice": "100",
+        "minPrice": "125",
         "priceCurrency": "USD"
       }
     }
@@ -315,7 +315,7 @@ const ExteriorDetailingPage: React.FC = () => {
                   
       </div>
                   <p className="text-gray-700 mb-2">
-                    <strong>Starting at $100</strong>
+                    <strong>Starting at $125</strong>
                   </p>
                   <div className="flex items-center gap-3">
                     <Clock className="w-6 h-6 text-blue-600" />

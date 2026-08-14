@@ -61,7 +61,7 @@ export const services: Service[] = [
       'Protective wax layer',
       'Tires & rims dressed'
     ],
-    pricing: { starting: '400' },
+    pricing: { starting: '375' },
     duration: '3-4 hours',
     featured: true,
     popular: true
@@ -104,7 +104,7 @@ export const services: Service[] = [
       'Chrome and trim polishing',
       'Brake dust removal'
     ],
-    pricing: { starting: '100' },
+    pricing: { starting: '125' },
     duration: '2-5 hours',
     featured: true
   },
@@ -124,7 +124,7 @@ export const services: Service[] = [
       'Professional-grade application',
       'Requires exterior detailing first'
     ],
-    pricing: { starting: '999' },
+    pricing: { starting: '850' },
     duration: '4-8 hours additional',
     featured: false,
     popular: false

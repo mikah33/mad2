@@ -44,7 +44,7 @@ export const LocationColumbiaPage = () => {
     },
     {
       title: 'Factory Reset Package',
-      price: '$400',
+      price: '$375',
       duration: '3-4 hours',
       description: 'Interior wipe down, conditioner + UV protection, vacuum + disinfection, light stain removal, shampoo & extraction, glass cleaned. Exterior foam wash, brake dust removal, protective wax, tires & rims dressed.',
       link: '/services/full-detail'
@@ -83,7 +83,7 @@ export const LocationColumbiaPage = () => {
   const locationFAQs = [
     {
       question: 'How much does mobile detailing cost in Columbia SC?',
-      answer: 'Mobile detailing in Columbia SC starts at $225 for our Basic Detail Package and $400 for our Factory Reset Package. Ceramic coatings, paint corrections, and specialty services require quotes based on vehicle size and condition. We provide free quotes for all Columbia residents.'
+      answer: 'Mobile detailing in Columbia SC starts at $225 for our Basic Detail Package and $375 for our Factory Reset Package. Ceramic coatings, paint corrections, and specialty services require quotes based on vehicle size and condition. We provide free quotes for all Columbia residents.'
     },
     {
       question: 'What is the best mobile car detailing service in Columbia SC?',
@@ -509,7 +509,7 @@ export const LocationColumbiaPage = () => {
               </p>
 
               <p>
-                The Factory Reset Package at $400 takes detailing to the next level for vehicles that need deeper restoration. This service includes everything in the Basic Package plus light stain removal targeting those coffee spills and food marks that accumulate over time, full carpet and upholstery shampoo with hot water extraction to pull embedded dirt from fabric fibers, and comprehensive brake dust removal that addresses the iron contamination embedded in your wheels. This package is particularly popular among Columbia residents dealing with red clay staining and the accumulated pollen residue that builds up during our extended allergy season.
+                The Factory Reset Package at $375 takes detailing to the next level for vehicles that need deeper restoration. This service includes everything in the Basic Package plus light stain removal targeting those coffee spills and food marks that accumulate over time, full carpet and upholstery shampoo with hot water extraction to pull embedded dirt from fabric fibers, and comprehensive brake dust removal that addresses the iron contamination embedded in your wheels. This package is particularly popular among Columbia residents dealing with red clay staining and the accumulated pollen residue that builds up during our extended allergy season.
               </p>
 
               <p>

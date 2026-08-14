@@ -171,7 +171,7 @@ export function generateEnhancedLocalBusinessSchema(cityKey: string) {
             "name": "Factory Reset",
             "description": "Deep-clean package with shampoo, extraction, and restoration"
           },
-          "price": "400",
+          "price": "375",
           "priceCurrency": "USD"
         },
         {
@@ -181,7 +181,7 @@ export function generateEnhancedLocalBusinessSchema(cityKey: string) {
             "name": "Ceramic Coating",
             "description": "Paint correction and ceramic coating application"
           },
-          "price": "999",
+          "price": "850",
           "priceCurrency": "USD"
         }
       ]
@@ -264,7 +264,7 @@ export function generateServiceSchema(cityKey: string) {
         "@type": "Offer",
         "name": "Factory Reset",
         "description": "Deep-clean package with shampoo, extraction, and restoration",
-        "price": "400",
+        "price": "375",
         "priceCurrency": "USD",
         "validIn": {
           "@type": "City",
@@ -329,7 +329,7 @@ export function generateFAQSchema(cityKey: string) {
         "name": `What is the cost of mobile auto detailing in ${city.name}?`,
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": `Our mobile auto detailing in ${city.name} starts at $100 for an exterior detail, $200 for an interior detail, and $225 for our Basic Detail package. Ceramic coating starts at $999. Pricing depends on the service selected.`
+          "text": `Our mobile auto detailing in ${city.name} starts at $125 for an exterior detail, $200 for an interior detail, and $225 for our Basic Detail package. Ceramic coating starts at $850. Pricing depends on the service selected.`
         }
       },
       {

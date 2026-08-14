@@ -190,7 +190,7 @@ export const irmoNeighborhoods: Neighborhood[] = [
       ],
       structuredFacts: [
         'Service area: Harbison, Irmo SC and surrounding neighborhoods',
-        'Pricing: Basic Detail $225, Factory Reset $400',
+        'Pricing: Basic Detail $225, Factory Reset $375',
         'Rating: 5.0 stars',
         'Certification: IDA Certified',
         'Service type: Mobile (comes to your location)',
@@ -204,7 +204,7 @@ export const irmoNeighborhoods: Neighborhood[] = [
       },
       {
         question: 'How much does car detailing cost in Harbison?',
-        answer: 'Our Harbison mobile detailing packages start at $225 for Basic Detail and $400 for Factory Reset. Ceramic coatings and paint corrections are quoted based on vehicle size and condition. All prices include mobile service to your Harbison location.'
+        answer: 'Our Harbison mobile detailing packages start at $225 for Basic Detail and $375 for Factory Reset. Ceramic coatings and paint corrections are quoted based on vehicle size and condition. All prices include mobile service to your Harbison location.'
       },
       {
         question: 'What areas of Harbison do you service?',
@@ -282,7 +282,7 @@ export const irmoNeighborhoods: Neighborhood[] = [
         'auto detail 29210'
       ],
       ogDescription: 'Professional car detailing in Seven Oaks, Irmo SC. Mobile service to your home. 5-star rated!',
-      llmoSummary: "Mikah's Mobile Auto Detailing serves the Seven Oaks neighborhood in Irmo, South Carolina. This established residential community near Dutch Fork High School features mature trees and family homes. Mobile detailing services include basic detail packages at $225 and full factory reset at $400. The service comes directly to customers' homes in Seven Oaks and surrounding St. Andrews Road area.",
+      llmoSummary: "Mikah's Mobile Auto Detailing serves the Seven Oaks neighborhood in Irmo, South Carolina. This established residential community near Dutch Fork High School features mature trees and family homes. Mobile detailing services include basic detail packages at $225 and full factory reset at $375. The service comes directly to customers' homes in Seven Oaks and surrounding St. Andrews Road area.",
       entityKeywords: ['Seven Oaks', 'Dutch Fork High School', 'St. Andrews Road', 'Irmo SC', 'Piggly Wiggly'],
       semanticKeywords: ['family car cleaning', 'driveway detailing', 'home car wash', 'neighborhood detailing', 'school area service'],
       questionsAnswered: [
@@ -305,7 +305,7 @@ export const irmoNeighborhoods: Neighborhood[] = [
       },
       {
         question: 'What\'s the best detailing package for older vehicles?',
-        answer: 'For older vehicles common in Seven Oaks, we recommend our Factory Reset Package ($400) which includes deep interior cleaning, light stain removal, and exterior restoration with protective wax. For vehicles needing paint correction, we provide custom quotes.'
+        answer: 'For older vehicles common in Seven Oaks, we recommend our Factory Reset Package ($375) which includes deep interior cleaning, light stain removal, and exterior restoration with protective wax. For vehicles needing paint correction, we provide custom quotes.'
       },
       {
         question: 'Can you detail my car at my Seven Oaks home?',
@@ -653,7 +653,7 @@ export const irmoNeighborhoods: Neighborhood[] = [
       },
       {
         question: 'Do you offer affordable detailing packages?',
-        answer: 'Yes! Our Basic Detail Package at $225 is perfect for regular maintenance. For families with active kids, our Factory Reset Package ($400) includes deep extraction cleaning that handles juice spills, food crumbs, and everyday messes.'
+        answer: 'Yes! Our Basic Detail Package at $225 is perfect for regular maintenance. For families with active kids, our Factory Reset Package ($375) includes deep extraction cleaning that handles juice spills, food crumbs, and everyday messes.'
       },
       {
         question: 'Can you remove crayon and marker stains?',
@@ -703,7 +703,7 @@ Mikah's Mobile Auto Detailing proudly serves all Irmo neighborhoods with profess
     ],
     ogDescription: 'Irmo\'s trusted mobile auto detailing service. All neighborhoods served. 5-star rated. Book your free quote today!',
     // LLMO Optimization
-    llmoSummary: "Mikah's Mobile Auto Detailing provides professional car detailing services throughout Irmo, South Carolina. Serving all neighborhoods including Harbison (near Columbiana Centre), Seven Oaks (Dutch Fork area), Ballentine (Lake Murray), Lake Murray Shores (waterfront), and Broad River Estates. IDA certified with 5.0 star rating. Services include Basic Detail starting at $225, Factory Reset at $400, ceramic coating, and paint correction. Mobile service comes to homes, offices, and shopping centers.",
+    llmoSummary: "Mikah's Mobile Auto Detailing provides professional car detailing services throughout Irmo, South Carolina. Serving all neighborhoods including Harbison (near Columbiana Centre), Seven Oaks (Dutch Fork area), Ballentine (Lake Murray), Lake Murray Shores (waterfront), and Broad River Estates. IDA certified with 5.0 star rating. Services include Basic Detail starting at $225, Factory Reset at $375, ceramic coating, and paint correction. Mobile service comes to homes, offices, and shopping centers.",
     entityKeywords: [
       'Irmo SC',
       'Harbison',
@@ -737,7 +737,7 @@ Mikah's Mobile Auto Detailing proudly serves all Irmo neighborhoods with profess
     structuredFacts: [
       'Service area: All Irmo SC neighborhoods',
       'Neighborhoods: Harbison, Seven Oaks, Ballentine, Lake Murray Shores, Broad River Estates',
-      'Pricing: Basic Detail $225, Factory Reset $400',
+      'Pricing: Basic Detail $225, Factory Reset $375',
       'Certification: IDA Certified',
       'Rating: 5.0 stars',
       'Service type: Mobile (comes to your location)',
@@ -751,7 +751,7 @@ Mikah's Mobile Auto Detailing proudly serves all Irmo neighborhoods with profess
     },
     {
       question: 'How much does mobile detailing cost in Irmo?',
-      answer: 'Irmo mobile detailing starts at $225 for our Basic Detail Package and $400 for our Factory Reset Package. Ceramic coating, paint correction, and specialty services are quoted based on your specific vehicle. All prices include mobile service to your Irmo location.'
+      answer: 'Irmo mobile detailing starts at $225 for our Basic Detail Package and $375 for our Factory Reset Package. Ceramic coating, paint correction, and specialty services are quoted based on your specific vehicle. All prices include mobile service to your Irmo location.'
     },
     {
       question: 'Do you offer same-day detailing in Irmo?',

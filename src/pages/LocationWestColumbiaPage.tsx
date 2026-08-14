@@ -93,7 +93,7 @@ export const LocationWestColumbiaPage = () => {
     },
     {
       title: 'Factory Reset Package',
-      price: '$400',
+      price: '$375',
       duration: '3-4 hours',
       description: 'Deep cleaning with shampoo & extraction, light stain removal, brake dust removal, and premium protection.',
       features: ['Shampoo & extraction', 'Light stain removal', 'Brake dust removal', 'Premium wax finish'],
@@ -207,7 +207,7 @@ export const LocationWestColumbiaPage = () => {
   return (
     <>
       <SEOHead
-        title="Mobile Car Detailing West Columbia SC | 5.0★ | We Come to You | From $200"
+        title="Mobile Car Detailing West Columbia SC | We Come to You — Mikah's Auto Detailing"
         description="5.0★ mobile car detailing in West Columbia SC — we come to your home or office. Interior &amp; exterior from $200. Serving Triangle City, Cayce &amp; Brookland. Call (803) 667-8731."
         keywords={allKeywords.join(', ')}
         canonical="https://mikahsmobiledetailingsc.com/locations/west-columbia/"

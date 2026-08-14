@@ -47,7 +47,7 @@ const ServicesBooking: React.FC = () => {
     {
       icon: <Star className="w-6 h-6" />,
       title: 'Factory Reset Package',
-      price: '$400',
+      price: '$375',
       color: 'bg-[#0077B6]',
       slug: 'factory-reset',
       description: [
@@ -104,7 +104,7 @@ const ServicesBooking: React.FC = () => {
       slug: 'specialty',
       description: [
         'Interior-Only Detail (from $200)',
-        'Exterior-Only Detail (from $100)',
+        'Exterior-Only Detail (from $125)',
         'Weather Stripping Restoration (call for a quote)',
         'Scratch Removal (call for a quote)',
         'Engine Bay Detail (call for a quote)',
@@ -164,7 +164,7 @@ const ServicesBooking: React.FC = () => {
     {
       icon: <Gift className="w-6 h-6" />,
       title: 'Gift Card - Factory Reset',
-      price: '$400',
+      price: '$375',
       color: 'bg-[#D4AF37]',
       slug: 'gift-card-factory',
       description: [

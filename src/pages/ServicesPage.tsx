@@ -47,7 +47,7 @@ export const ServicesPage = () => {
     {
       icon: <Star className="w-8 h-8" />,
       title: 'Factory Reset Package',
-      price: '$400',
+      price: '$375',
       color: 'bg-orange-500',
       description: [
         'Interior: Full wipe down, conditioner + UV protection, vacuum + disinfection, light stain removal, shampoo & extraction, glass cleaned, door jambs cleaned & waxed',
@@ -88,7 +88,7 @@ export const ServicesPage = () => {
     {
       icon: <Zap className="w-8 h-8" />,
       title: 'Exterior Detail',
-      price: '$100',
+      price: '$125',
       color: 'bg-primary-500',
       description: [
         'Foam contact wash',
@@ -103,7 +103,7 @@ export const ServicesPage = () => {
     {
       icon: <Wrench className="w-8 h-8" />,
       title: 'Ceramic Coatings',
-      price: 'Starting at $999',
+      price: 'Starting at $850',
       color: 'bg-primary-500',
       description: [
         'Achieve long-term paint protection with our professional-grade ceramic application',

@@ -44,7 +44,7 @@ export const LocationLexingtonPage = () => {
     },
     {
       title: 'Factory Reset Package',
-      price: '$400',
+      price: '$375',
       duration: '3-4 hours',
       description: 'Interior wipe down, conditioner + UV protection, vacuum + disinfection, light stain removal, shampoo & extraction, glass cleaned. Exterior foam wash, brake dust removal, protective wax, tires & rims dressed.',
       link: '/services/full-detail'
@@ -83,7 +83,7 @@ export const LocationLexingtonPage = () => {
   const locationFAQs = [
     {
       question: 'How much does car detailing cost in Lexington SC?',
-      answer: 'Car detailing in Lexington SC starts at $225 for our Basic Detail Package and $400 for our Factory Reset Package. Ceramic coatings, paint corrections, and specialty services require quotes based on vehicle size and condition. We provide free quotes for all Lexington residents.'
+      answer: 'Car detailing in Lexington SC starts at $225 for our Basic Detail Package and $375 for our Factory Reset Package. Ceramic coatings, paint corrections, and specialty services require quotes based on vehicle size and condition. We provide free quotes for all Lexington residents.'
     },
     {
       question: 'What is the best mobile car detailing service in Lexington SC?',
@@ -187,7 +187,7 @@ export const LocationLexingtonPage = () => {
   return (
     <>
       <SEOHead
-        title="Car Detailing Lexington SC | $225 Full Detail — Mikah's Auto Detailing"
+        title="Mobile Car Detailing Lexington SC | We Come to You — Mikah's Auto Detailing"
         description="5.0★ mobile car detailing in Lexington SC — we come to your home or office. Full details from $225. Serving Lake Murray, Chapin &amp; Irmo. Same-week booking: (803) 667-8731."
         keywords={allKeywords.join(', ') + ', auto detailing services columbia sc'}
         canonical="https://mikahsmobiledetailingsc.com/locations/lexington-sc/"
@@ -526,7 +526,7 @@ export const LocationLexingtonPage = () => {
               </p>
 
               <p>
-                Our Factory Reset Package at $400 addresses the deeper restoration needs of vehicles exposed to Lake Murray conditions. This includes everything in the Basic Package plus stain removal, full carpet and upholstery shampoo with hot water extraction, and comprehensive brake dust removal. For vehicles that have accumulated sand, lake residue, or wear from outdoor activities, this package restores interiors and exteriors to near-original condition.
+                Our Factory Reset Package at $375 addresses the deeper restoration needs of vehicles exposed to Lake Murray conditions. This includes everything in the Basic Package plus stain removal, full carpet and upholstery shampoo with hot water extraction, and comprehensive brake dust removal. For vehicles that have accumulated sand, lake residue, or wear from outdoor activities, this package restores interiors and exteriors to near-original condition.
               </p>
 
               <p>

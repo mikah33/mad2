@@ -115,7 +115,7 @@ const BookingTimeline: React.FC = () => {
     {
       icon: <Star className="w-8 h-8" />,
       title: 'Factory Reset',
-      price: '$400',
+      price: '$375',
       color: 'bg-[#0077B6]',
       slug: 'factory-reset',
       image: '/exterior2.jpg',
@@ -150,7 +150,7 @@ const BookingTimeline: React.FC = () => {
     {
       icon: <Droplet className="w-8 h-8" />,
       title: 'Exterior Detail',
-      price: 'Starting at $100',
+      price: 'Starting at $125',
       color: 'bg-[#0077B6]',
       slug: 'exterior-detail',
       image: '/exterior2.jpg',
@@ -173,7 +173,7 @@ const BookingTimeline: React.FC = () => {
     {
       icon: <Shield className="w-8 h-8" />,
       title: 'Ceramic Coating',
-      price: 'Starting at $999',
+      price: 'Starting at $850',
       color: 'bg-[#023E8A]',
       slug: 'ceramic-coating',
       image: '/ceramic.jpg',
@@ -458,7 +458,7 @@ const BookingTimeline: React.FC = () => {
         benefits: []
       },
       'Factory Reset': {
-        fullDescription: '🏭 Factory Reset Package – $400\n\nOur Factory Reset is an enhanced version of the Basic Maintenance Detail, designed to get your vehicle looking as close to factory condition as possible.',
+        fullDescription: '🏭 Factory Reset Package – $375\n\nOur Factory Reset is an enhanced version of the Basic Maintenance Detail, designed to get your vehicle looking as close to factory condition as possible.',
         includes: [
           '**Interior:**',
           '✅ Full interior wipe down',
@@ -509,7 +509,7 @@ const BookingTimeline: React.FC = () => {
         benefits: []
       },
       'Ceramic Coating': {
-        fullDescription: '🛡️ Ceramic Coating – Starting at $999\n\nProfessional-grade ceramic coating provides years of protection with incredible gloss, hydrophobic properties, and chemical resistance. Our ceramic coating service is highly popular throughout Columbia SC, Lexington SC, and surrounding areas.',
+        fullDescription: '🛡️ Ceramic Coating – Starting at $850\n\nProfessional-grade ceramic coating provides years of protection with incredible gloss, hydrophobic properties, and chemical resistance. Our ceramic coating service is highly popular throughout Columbia SC, Lexington SC, and surrounding areas.',
         includes: [
           '**What is Ceramic Coating?**',
           'Ceramic coating is a liquid polymer that chemically bonds with your vehicle\'s paint, creating a protective layer that lasts 2-5 years. It provides superior protection against UV rays, chemicals, bird droppings, and environmental contaminants.',
@@ -595,7 +595,7 @@ const BookingTimeline: React.FC = () => {
         benefits: []
       },
       'Exterior Detail': {
-        fullDescription: '✨ Exterior Detail – Starting at $100\n\nComplete exterior wash, decontamination, and protection.',
+        fullDescription: '✨ Exterior Detail – Starting at $125\n\nComplete exterior wash, decontamination, and protection.',
         includes: [
           '**Exterior Services:**',
           '🛞 Wheels decontaminated from brake dust',

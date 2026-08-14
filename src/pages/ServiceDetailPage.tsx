@@ -118,7 +118,7 @@ const serviceContent: Record<string, {
   },
   'ceramic-coating': {
     fullDescription: 'Professional ceramic coating application providing 2-5 years of superior paint protection. Our nano-ceramic coatings create a permanent bond with your paint, offering extreme gloss, hydrophobic properties, UV protection, and chemical resistance. Ideal for Columbia SC\'s intense sun and environmental challenges.',
-    metaDescription: 'Best ceramic coating Columbia SC. Professional nano-ceramic paint protection 2-5 years. From $999. Paint correction included. Mobile ceramic coating available. Free quotes!',
+    metaDescription: 'Best ceramic coating Columbia SC. Professional nano-ceramic paint protection 2-5 years. From $850. Paint correction included. Mobile ceramic coating available. Free quotes!',
     keywords: ['ceramic coating Columbia SC', 'ceramic coating near me', 'nano ceramic paint protection', 'professional ceramic coating', 'ceramic car coating', 'paint protection coating'],
     benefits: [
       '2-5 year protection guarantee',

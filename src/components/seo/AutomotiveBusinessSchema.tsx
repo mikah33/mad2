@@ -47,7 +47,7 @@ export const generateAutomotiveBusinessSchema = (
     // Physical Location
     address: {
       '@type': 'PostalAddress',
-      addressLocality: 'Columbia',
+      addressLocality: 'Lexington',
       addressRegion: 'SC',
       postalCode: '29072',
       addressCountry: 'US'
@@ -148,7 +148,7 @@ export const generateAutomotiveBusinessSchema = (
     ],
 
     // Price Range
-    priceRange: '$$-$$$',
+    priceRange: '$$',
 
     // Currency
     currenciesAccepted: 'USD',
@@ -410,7 +410,7 @@ export const generateAutomotiveOrganizationSchema = () => {
     // Address
     address: {
       '@type': 'PostalAddress',
-      addressLocality: 'Columbia',
+      addressLocality: 'Lexington',
       addressRegion: 'SC',
       postalCode: '29072',
       addressCountry: 'US'

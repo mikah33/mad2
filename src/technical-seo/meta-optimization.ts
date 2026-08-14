@@ -241,12 +241,7 @@ export function generateLocalSEOData(cityKey: string) {
         "url": "https://mikahsmobiledetailingsc.com",
         "name": "Mikah's Auto Detailing",
         "description": "Premium mobile auto detailing services in South Carolina",
-        "inLanguage": "en-US",
-        "potentialAction": {
-          "@type": "SearchAction",
-          "target": "https://mikahsmobiledetailingsc.com/search?q={search_term_string}",
-          "query-input": "required name=search_term_string"
-        }
+        "inLanguage": "en-US"
       }
     ]
   };

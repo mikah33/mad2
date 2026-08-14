@@ -4,15 +4,51 @@
   functions = "netlify/functions"
 
 # Canonical: collapse /locations/west-columbia-sc and all children → /locations/west-columbia
+# Targets carry the trailing slash so Netlify doesn't add a second 301 hop.
 [[redirects]]
   from = "/locations/west-columbia-sc"
-  to = "/locations/west-columbia"
+  to = "/locations/west-columbia/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/locations/west-columbia-sc/*"
-  to = "/locations/west-columbia/:splat"
+  to = "/locations/west-columbia/:splat/"
+  status = 301
+  force = true
+
+# Legacy ceramic URL — earned 136 impressions at pos 10 before it became a
+# soft-404 duplicate of the homepage; consolidate its equity into the real page.
+[[redirects]]
+  from = "/services/ceramic-coating-columbia-lexington"
+  to = "/services/ceramic-coating/"
+  status = 301
+  force = true
+
+# Duplicate-title consolidation: two posts shared the exact same title/H1 and
+# split the "how often should you detail" query; keep the newer SC-specific one.
+[[redirects]]
+  from = "/blog/06-how-often-should-you-detail-your-car"
+  to = "/blog/how-often-detail-car-south-carolina/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/06-how-often-should-you-detail-your-car/*"
+  to = "/blog/how-often-detail-car-south-carolina/"
+  status = 301
+  force = true
+
+# /contact/ has no SPA route (rendered a noindexed 404); send people to booking.
+[[redirects]]
+  from = "/contact"
+  to = "/book/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/contact/*"
+  to = "/book/"
   status = 301
   force = true
 
@@ -21,3 +57,47 @@
   from = "/*"
   to = "/index.html"
   status = 200
+
+# ---------------------------------------------------------------------------
+# Caching. Without these, every asset (including the ~1MB fingerprinted JS
+# bundle) served with max-age=0 and revalidated on every page view.
+# ---------------------------------------------------------------------------
+
+# Vite fingerprints /assets/* filenames, so they can be cached forever.
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Media directories: not fingerprinted, but they change rarely. A day in the
+# browser + a week on the CDN with SWR keeps repeat visits instant while still
+# letting a re-upload propagate within a day.
+[[headers]]
+  for = "/gallery/*"
+  [headers.values]
+    Cache-Control = "public, max-age=86400, stale-while-revalidate=604800"
+
+[[headers]]
+  for = "/videos/*"
+  [headers.values]
+    Cache-Control = "public, max-age=86400, stale-while-revalidate=604800"
+
+[[headers]]
+  for = "/*.jpg"
+  [headers.values]
+    Cache-Control = "public, max-age=86400, stale-while-revalidate=604800"
+
+[[headers]]
+  for = "/*.png"
+  [headers.values]
+    Cache-Control = "public, max-age=86400, stale-while-revalidate=604800"
+
+[[headers]]
+  for = "/*.webp"
+  [headers.values]
+    Cache-Control = "public, max-age=86400, stale-while-revalidate=604800"
+
+[[headers]]
+  for = "/*.mp4"
+  [headers.values]
+    Cache-Control = "public, max-age=86400, stale-while-revalidate=604800"

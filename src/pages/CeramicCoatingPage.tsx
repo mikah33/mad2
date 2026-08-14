@@ -13,8 +13,8 @@ const CeramicCoatingPage: React.FC = () => {
 
   const productSchema = generateProductSchema({
     name: "Professional Ceramic Coating Service",
-    description: "Professional ceramic coating installation in Columbia SC. Multi-year paint protection with hydrophobic properties. Starting at $999, custom quoted by vehicle and condition.",
-    price: "999",
+    description: "Professional ceramic coating installation in Columbia SC. Multi-year paint protection with hydrophobic properties. Starting at $850, custom quoted by vehicle and condition.",
+    price: "850",
     features: [
       "Multi-year protection (2-5 years)",
       "UV resistance",
@@ -24,7 +24,7 @@ const CeramicCoatingPage: React.FC = () => {
       "Professional-grade application",
       "Complete decontamination",
       "Required paint correction prep included",
-      "Starting at $999 (custom quote)"
+      "Starting at $850 (custom quote)"
     ],
     image: "https://mikahsmobiledetailingsc.com/exterior3.jpg",
     url: "https://mikahsmobiledetailingsc.com/services/ceramic-coating",
@@ -46,12 +46,12 @@ const CeramicCoatingPage: React.FC = () => {
       },
       "areaServed": ["Columbia SC", "Lexington SC", "West Columbia SC", "Irmo SC", "Cayce SC"]
     },
-    "description": "Professional ceramic coating installation in Columbia SC. Multi-year paint protection with hydrophobic properties. Starting at $999, custom quoted by vehicle and condition.",
+    "description": "Professional ceramic coating installation in Columbia SC. Multi-year paint protection with hydrophobic properties. Starting at $850, custom quoted by vehicle and condition.",
     "offers": {
       "@type": "Offer",
       "priceSpecification": {
         "@type": "PriceSpecification",
-        "minPrice": "999",
+        "minPrice": "850",
         "priceCurrency": "USD"
       }
     }
@@ -63,7 +63,7 @@ const CeramicCoatingPage: React.FC = () => {
     <>
       <SEOHead
         title="Ceramic Coating Columbia SC | Auto Detailing Services | Paint Protection"
-        description="Professional ceramic coating in Columbia, SC from $999. 2–5 year paint protection, custom quoted to your vehicle. Mobile service to your location. 5-star rated. Call (803) 667-8731!"
+        description="Professional ceramic coating in Columbia, SC from $850. 2–5 year paint protection, custom quoted to your vehicle. Mobile service to your location. 5-star rated. Call (803) 667-8731!"
         keywords="auto detailing services columbia sc, ceramic coating Columbia SC, ceramic coating near me, paint protection Columbia, auto detailing services in columbia sc, car ceramic coating, ceramic coating installer, long-term paint protection, ceramic paint protection"
         canonical="https://mikahsmobiledetailingsc.com/services/ceramic-coating/"
         ogImage="https://mikahsmobiledetailingsc.com/exterior3.jpg"
@@ -160,7 +160,7 @@ const CeramicCoatingPage: React.FC = () => {
           <div className="container mx-auto px-4 max-w-7xl">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">Ceramic Coating Pricing</h2>
             <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
-              Ceramic coating starts at $999. Every job is custom quoted based on your vehicle's size, paint
+              Ceramic coating starts at $850. Every job is custom quoted based on your vehicle's size, paint
               condition, and the level of correction needed — so you only pay for what your vehicle actually needs.
             </p>
             <div className="max-w-2xl mx-auto">
@@ -169,7 +169,7 @@ const CeramicCoatingPage: React.FC = () => {
                   <Award className="w-8 h-8 text-yellow-700" />
                 </div>
                 <h3 className="text-2xl font-bold mb-2">Professional Ceramic Coating</h3>
-                <p className="text-5xl font-bold text-green-600 mb-1">Starting at $999</p>
+                <p className="text-5xl font-bold text-green-600 mb-1">Starting at $850</p>
                 <p className="text-gray-600 mb-6">Final price quoted after we inspect your vehicle</p>
                 <ul className="space-y-3 text-sm text-left max-w-md mx-auto mb-8">
                   <li className="flex gap-2"><CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" /><span>Complete decontamination &amp; clay bar treatment</span></li>
@@ -326,7 +326,7 @@ const CeramicCoatingPage: React.FC = () => {
               </li>
               <li>
                 <strong>Ceramic coating</strong> — two to five years of UV and chemical protection
-                over corrected paint. From $999.
+                over corrected paint. From $850.
               </li>
             </ul>
             <p className="text-gray-600 mb-4">
@@ -355,7 +355,7 @@ const CeramicCoatingPage: React.FC = () => {
               </div>
               <div className="bg-white p-6 rounded-lg shadow-lg">
                 <h3 className="text-xl font-bold mb-3">How much does ceramic coating cost?</h3>
-                <p className="text-gray-600">Ceramic coating starts at $999. Because every vehicle's size and paint condition is different, we provide a custom quote after inspecting your paint — the price includes the required paint correction prep and professional application.</p>
+                <p className="text-gray-600">Ceramic coating starts at $850. Because every vehicle's size and paint condition is different, we provide a custom quote after inspecting your paint — the price includes the required paint correction prep and professional application.</p>
               </div>
               <div className="bg-white p-6 rounded-lg shadow-lg">
                 <h3 className="text-xl font-bold mb-3">Is ceramic coating worth it?</h3>

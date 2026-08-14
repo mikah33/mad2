@@ -41,7 +41,7 @@ export const LocationBlythewoodPage = () => {
     },
     {
       title: 'Factory Reset Package',
-      price: '$400',
+      price: '$375',
       duration: '3-4 hours',
       description: 'Interior wipe down, conditioner + UV protection, vacuum + disinfection, light stain removal, shampoo & extraction, glass cleaned. Exterior foam wash, brake dust removal, protective wax, tires & rims dressed.',
       link: '/services/full-detail'
@@ -88,7 +88,7 @@ export const LocationBlythewoodPage = () => {
     },
     {
       question: 'How much does car detailing cost in Blythewood SC?',
-      answer: 'Our car detailing prices in Blythewood SC start at $225 for our Basic Detail Package and $400 for our Factory Reset Package. We offer premium detailing services tailored to luxury vehicles and high-end automobiles common in the Blythewood area.'
+      answer: 'Our car detailing prices in Blythewood SC start at $225 for our Basic Detail Package and $375 for our Factory Reset Package. We offer premium detailing services tailored to luxury vehicles and high-end automobiles common in the Blythewood area.'
     },
     {
       question: 'Do you specialize in luxury vehicle detailing in Blythewood?',

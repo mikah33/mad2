@@ -18,6 +18,9 @@ export interface MobileDetailingMasterSchemaOptions {
   includeServices?: boolean;
   includeFAQ?: boolean;
   includeReviews?: boolean;
+  /** The actual page being rendered, so per-page schema (WebPage @id/url/name)
+   *  reflects the real page instead of a hardcoded one. */
+  pageInfo?: { url: string; name: string; description: string };
 }
 
 /**
@@ -32,7 +35,8 @@ export const generateMobileDetailingMasterSchema = (
     includeProducts = true,
     includeServices = true,
     includeFAQ = false,
-    includeReviews = true
+    includeReviews = true,
+    pageInfo
   } = options;
 
   const schemas: any[] = [];
@@ -101,15 +105,9 @@ export const generateMobileDetailingMasterSchema = (
         '@type': 'LocalBusiness',
         '@id': `${baseUrl}/#business`
       },
+      // No SearchAction here: the site has no /search endpoint, and Google
+      // retired the sitelinks-searchbox feature in 2024.
       potentialAction: [
-        {
-          '@type': 'SearchAction',
-          target: {
-            '@type': 'EntryPoint',
-            urlTemplate: `${baseUrl}/search?q={search_term_string}`
-          },
-          'query-input': 'required name=search_term_string'
-        },
         {
           '@type': 'ReserveAction',
           target: {
@@ -175,21 +173,24 @@ export const generateMobileDetailingMasterSchema = (
   }
 
   if (pageType === 'location') {
-    // Location Page Schema
+    // Location Page Schema. MUST use the actual page's URL/name — this was
+    // hardcoded to columbia-sc for years, so every location page's schema
+    // claimed to be the Columbia page.
+    const pageUrl = pageInfo?.url || `${baseUrl}/locations/columbia-sc`;
     schemas.push({
       '@context': 'https://schema.org',
       '@type': 'WebPage',
-      '@id': `${baseUrl}/locations/columbia-sc`,
-      name: 'Mobile Car Detailing Columbia SC | Mikah\'s Auto Detailing',
-      description: 'Professional mobile car detailing in Columbia SC. We bring expert automotive detailing services directly to your location.',
-      url: `${baseUrl}/locations/columbia-sc`,
+      '@id': pageUrl,
+      name: pageInfo?.name || 'Mobile Car Detailing Columbia SC | Mikah\'s Auto Detailing',
+      description: pageInfo?.description || 'Professional mobile car detailing in Columbia SC. We bring expert automotive detailing services directly to your location.',
+      url: pageUrl,
       isPartOf: {
         '@type': 'WebSite',
         '@id': `${baseUrl}/#website`
       },
       about: {
         '@type': 'Place',
-        name: 'Columbia, SC',
+        name: pageInfo?.name ? pageInfo.name.split(/[|—]/)[0].replace(/Mobile Car Detailing|Mobile Detailing|Car Detailing|Auto Detailing/gi, '').trim() : 'Columbia, SC',
         description: 'Mobile detailing service area'
       }
     });
@@ -216,7 +217,7 @@ ${JSON.stringify(schemas, null, 2)}
 /**
  * Generate complete schema for different page types
  */
-export const generatePageTypeSchema = (pageType: string, serviceType?: string) => {
+export const generatePageTypeSchema = (pageType: string, serviceType?: string, pageInfo?: { url: string; name: string; description: string }) => {
   const options: MobileDetailingMasterSchemaOptions = {
     pageType: pageType as any,
     serviceType: serviceType as any,
@@ -225,7 +226,8 @@ export const generatePageTypeSchema = (pageType: string, serviceType?: string) =
     includeProducts: false,
     includeServices: true,
     includeFAQ: pageType === 'faq',
-    includeReviews: true
+    includeReviews: true,
+    pageInfo
   };
 
   return generateMobileDetailingMasterSchema(options);

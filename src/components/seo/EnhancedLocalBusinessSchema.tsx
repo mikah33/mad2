@@ -28,7 +28,7 @@ export const generateAutoDetailingSchema = () => {
     priceRange: '$$',
     address: {
       '@type': 'PostalAddress',
-      addressLocality: 'Columbia',
+      addressLocality: 'Lexington',
       addressRegion: 'SC',
       postalCode: '29072',
       addressCountry: 'US'
@@ -140,7 +140,7 @@ export const generateEnhancedLocalBusinessSchema = (
     // Physical Address
     address: {
       '@type': 'PostalAddress',
-      addressLocality: 'Columbia',
+      addressLocality: 'Lexington',
       addressRegion: 'SC',
       postalCode: '29072',
       addressCountry: 'US'
@@ -244,7 +244,7 @@ export const generateEnhancedLocalBusinessSchema = (
     ],
 
     // Price Range
-    priceRange: '$$$',
+    priceRange: '$$',
 
     // Certifications
     hasCertification: [
@@ -312,7 +312,7 @@ export const generateEnhancedLocalBusinessSchema = (
       email: 'mikahsautodetailing@gmail.com',
       areaServed: 'US-SC',
       availableLanguage: 'English',
-      contactOption: ['TollFree', 'HearingImpairedSupported'],
+      contactOption: ['HearingImpairedSupported'],
       hoursAvailable: {
         '@type': 'OpeningHoursSpecification',
         dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
@@ -394,7 +394,7 @@ export const generateEnhancedLocalBusinessSchema = (
       'Discover'
     ];
 
-    schema.currenciesAccepted = 'USD, BTC, ETH';
+    schema.currenciesAccepted = 'USD';
   }
 
   // Add Mobile Detailing Services (Primary Focus)

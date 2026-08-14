@@ -207,11 +207,11 @@ export const generateMobileDetailingServiceSchema = (
   // Add pricing information if requested
   if (includePricing) {
     const pricingMap = {
-      'mobile-detailing': { min: '100', max: '400' },
+      'mobile-detailing': { min: '125', max: '375' },
       'interior-detailing': { min: '200', max: '200' },
-      'exterior-detailing': { min: '100', max: '100' },
-      'full-detail': { min: '225', max: '400' },
-      'ceramic-coating': { min: '999', max: '999' },
+      'exterior-detailing': { min: '125', max: '125' },
+      'full-detail': { min: '225', max: '375' },
+      'ceramic-coating': { min: '850', max: '850' },
       'paint-correction': { min: '599', max: '599' }
     };
 
@@ -269,7 +269,7 @@ export const generateMobileDetailingServiceSchema = (
           priceSpecification: {
             '@type': 'PriceSpecification',
             priceCurrency: 'USD',
-            price: '400'
+            price: '375'
           }
         },
         {
@@ -307,7 +307,7 @@ export const generateMobileDetailingFAQSchema = () => {
         name: 'How much does mobile car detailing cost in Columbia SC?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Mobile car detailing in Columbia SC starts at $100 for an exterior detail, $200 for an interior detail, and $225 for our Basic Detail package. We offer free quotes for all services.'
+          text: 'Mobile car detailing in Columbia SC starts at $125 for an exterior detail, $200 for an interior detail, and $225 for our Basic Detail package. We offer free quotes for all services.'
         }
       },
       {
@@ -345,7 +345,7 @@ export const generateExtendedFAQSchema = () => {
         name: 'How much does mobile car detailing cost in Columbia SC?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Mobile car detailing in Columbia SC starts at $100 for an exterior detail, $200 for an interior detail, and $225 for our Basic Detail package. We offer free quotes for all services.'
+          text: 'Mobile car detailing in Columbia SC starts at $125 for an exterior detail, $200 for an interior detail, and $225 for our Basic Detail package. We offer free quotes for all services.'
         }
       },
       {

@@ -55,7 +55,7 @@ const LocationCayecPage = () => {
     },
     {
       title: 'Factory Reset Package',
-      price: '$400',
+      price: '$375',
       duration: '3-4 hours',
       description: 'Everything in Basic Package PLUS: Shampoo seats/carpet, hot water extraction, steam clean, deep condition leather, bug removal, clay bar treatment, paint sealant.',
       features: [
@@ -110,7 +110,7 @@ const LocationCayecPage = () => {
   const locationFAQs = [
     {
       question: 'How much does mobile detailing cost in Cayce SC?',
-      answer: 'Mobile detailing in Cayce SC starts at $225 for our Basic Detail Package and $400 for our Factory Reset Package. We also offer ceramic coating (custom quote) and monthly maintenance at $225/month. All services include professional products, experienced technicians, and satisfaction guarantee.'
+      answer: 'Mobile detailing in Cayce SC starts at $225 for our Basic Detail Package and $375 for our Factory Reset Package. We also offer ceramic coating (custom quote) and monthly maintenance at $225/month. All services include professional products, experienced technicians, and satisfaction guarantee.'
     },
     {
       question: 'Do you offer car detailing near West Columbia and Cayce?',

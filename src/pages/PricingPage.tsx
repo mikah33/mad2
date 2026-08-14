@@ -21,11 +21,11 @@ export const PricingPage = () => {
     },
     {
       question: "How much does car detailing cost at Mikah's?",
-      answer: "Our pricing is flat and transparent. Exterior Detail starts at $100, Interior Detail starts at $200, our Basic Detail (full interior + exterior with wax) is $225, and the Factory Reset deep-clean package is $400. Paint Correction starts at $599 and Ceramic Coating at $999. Every price includes mobile service — we come to you in Columbia, Lexington, and the surrounding Midlands SC area."
+      answer: "Our pricing is flat and transparent. Exterior Detail starts at $125, Interior Detail starts at $200, our Basic Detail (full interior + exterior with wax) is $225, and the Factory Reset deep-clean package is $375. Paint Correction starts at $599 and Ceramic Coating at $850. Every price includes mobile service — we come to you in Columbia, Lexington, and the surrounding Midlands SC area."
     },
     {
       question: "What's the difference between the Basic Detail and Factory Reset?",
-      answer: "The Basic Detail ($225) is a full interior and exterior detail with wax protection — perfect for regular maintenance. The Factory Reset ($400) is our deep-clean package: it adds light stain removal, upholstery and floor-mat shampoo and extraction, black trim restoration, and an engine bay detail to get your vehicle as close to factory condition as possible."
+      answer: "The Basic Detail ($225) is a full interior and exterior detail with wax protection — perfect for regular maintenance. The Factory Reset ($375) is our deep-clean package: it adds light stain removal, upholstery and floor-mat shampoo and extraction, black trim restoration, and an engine bay detail to get your vehicle as close to factory condition as possible."
     },
     {
       question: "How much does interior car detailing cost?",
@@ -33,7 +33,7 @@ export const PricingPage = () => {
     },
     {
       question: "How much does exterior detailing cost?",
-      answer: "Exterior Detail starts at $100. It includes wheel decontamination from brake dust, a foam contact wash that removes bugs, sap, and tar, a layer of wax for protection, and trim and tires dressed."
+      answer: "Exterior Detail starts at $125. It includes wheel decontamination from brake dust, a foam contact wash that removes bugs, sap, and tar, a layer of wax for protection, and trim and tires dressed."
     },
     {
       question: "Do you offer a monthly detailing plan?",
@@ -41,7 +41,7 @@ export const PricingPage = () => {
     },
     {
       question: "How much is paint correction and ceramic coating?",
-      answer: "Paint Correction starts at $599, with 1-step and 2-step options depending on your paint's condition. Ceramic Coating starts at $999 and includes the required paint correction prep, providing 2–5 years of protection. Both are quoted after we inspect your vehicle's paint."
+      answer: "Paint Correction starts at $599, with 1-step and 2-step options depending on your paint's condition. Ceramic Coating starts at $850 and includes the required paint correction prep, providing 2–5 years of protection. Both are quoted after we inspect your vehicle's paint."
     },
     {
       question: "Do you charge travel fees?",
@@ -55,12 +55,12 @@ export const PricingPage = () => {
 
   // Quick pricing table — one row per real booking-form service
   const pricingTable = [
-    { service: 'Exterior Detail', price: 'From $100', description: 'Wheels, foam wash, wax, trim & tires dressed' },
+    { service: 'Exterior Detail', price: 'From $125', description: 'Wheels, foam wash, wax, trim & tires dressed' },
     { service: 'Interior Detail', price: 'From $200', description: 'Wipe down, vacuum, disinfection, UV protection, glass' },
     { service: 'Basic Detail', price: '$225', description: 'Full interior & exterior detail with wax protection' },
-    { service: 'Factory Reset', price: '$400', description: 'Deep clean — shampoo, extraction & restoration' },
+    { service: 'Factory Reset', price: '$375', description: 'Deep clean — shampoo, extraction & restoration' },
     { service: 'Paint Correction', price: 'From $599', description: '1-step & 2-step swirl and scratch removal' },
-    { service: 'Ceramic Coating', price: 'From $999', description: '2–5 year paint protection with prep included' },
+    { service: 'Ceramic Coating', price: 'From $850', description: '2–5 year paint protection with prep included' },
     { service: 'Routine Reset', price: '$225/mo', description: '1 interior + 2 exterior details every month' },
     { service: 'Marine & RV', price: 'Custom Quote', description: 'Boats, RVs, motorcycles & specialty vehicles' }
   ];
@@ -68,12 +68,12 @@ export const PricingPage = () => {
   // 2026 national averages vs. our flat prices — targets "average car
   // detailing cost 2026" searches (ranges are widely cited industry figures)
   const costComparison = [
-    { service: 'Exterior detail', usRange: '$75 – $150', ourPrice: 'From $100', link: '/services/exterior-detailing' },
+    { service: 'Exterior detail', usRange: '$75 – $150', ourPrice: 'From $125', link: '/services/exterior-detailing' },
     { service: 'Interior detail', usRange: '$125 – $250', ourPrice: 'From $200', link: '/services/interior-detailing' },
     { service: 'Full detail (interior + exterior)', usRange: '$150 – $300', ourPrice: '$225 flat', link: '/services/full-detail' },
-    { service: 'Deep-clean / restoration detail', usRange: '$250 – $450', ourPrice: '$400 flat', link: '/services/full-detail' },
+    { service: 'Deep-clean / restoration detail', usRange: '$250 – $450', ourPrice: '$375 flat', link: '/services/full-detail' },
     { service: 'Paint correction', usRange: '$500 – $1,500+', ourPrice: 'From $599', link: '/services/paint-correction' },
-    { service: 'Ceramic coating', usRange: '$1,000 – $3,000', ourPrice: 'From $999', link: '/services/ceramic-coating' }
+    { service: 'Ceramic coating', usRange: '$1,000 – $3,000', ourPrice: 'From $850', link: '/services/ceramic-coating' }
   ];
 
   // Service package cards — names, prices, and features all from the booking form
@@ -98,7 +98,7 @@ export const PricingPage = () => {
     },
     {
       name: 'Factory Reset',
-      price: '$400',
+      price: '$375',
       priceNote: 'flat',
       slug: 'factory-reset',
       servicePage: '/services/full-detail',
@@ -132,7 +132,7 @@ export const PricingPage = () => {
     },
     {
       name: 'Exterior Detail',
-      price: 'From $100',
+      price: 'From $125',
       priceNote: 'starting at',
       slug: 'exterior-detail',
       servicePage: '/services/exterior-detailing',
@@ -165,7 +165,7 @@ export const PricingPage = () => {
     },
     {
       name: 'Ceramic Coating',
-      price: 'From $999',
+      price: 'From $850',
       priceNote: 'starting at',
       slug: 'ceramic-coating',
       servicePage: '/services/ceramic-coating',
@@ -248,12 +248,12 @@ export const PricingPage = () => {
     }
   });
   const offers = [
-    makeOffer('Exterior Detail', 'Exterior wash, decontamination, wax, and trim/tire dressing. Starting price.', '100'),
+    makeOffer('Exterior Detail', 'Exterior wash, decontamination, wax, and trim/tire dressing. Starting price.', '125'),
     makeOffer('Interior Detail', 'Complete interior cleaning, disinfection, conditioning, and UV protection. Starting price.', '200'),
     makeOffer('Basic Detail', 'Full interior and exterior detail with wax protection.', '225'),
-    makeOffer('Factory Reset', 'Deep-clean package with shampoo, extraction, trim restoration, and engine bay detail.', '400'),
+    makeOffer('Factory Reset', 'Deep-clean package with shampoo, extraction, trim restoration, and engine bay detail.', '375'),
     makeOffer('Paint Correction', '1-step and 2-step paint correction to remove swirls and scratches. Starting price.', '599'),
-    makeOffer('Ceramic Coating', '2–5 year ceramic paint protection including required paint correction prep. Starting price.', '999')
+    makeOffer('Ceramic Coating', '2–5 year ceramic paint protection including required paint correction prep. Starting price.', '850')
   ];
 
   // One coherent LocalBusiness entity carrying the price catalog (instead of
@@ -273,7 +273,7 @@ export const PricingPage = () => {
     <>
       <SEOHead
         title="Car Detailing Prices 2026 — Columbia SC Price List"
-        description="2026 car detailing price list for Columbia &amp; Lexington SC: Exterior from $100, Interior from $200, Basic Detail $225, Factory Reset $400. Mobile — we come to you. Free quote: (803) 667-8731."
+        description="2026 car detailing price list for Columbia &amp; Lexington SC: Exterior from $125, Interior from $200, Basic Detail $225, Factory Reset $375. Mobile — we come to you. Free quote: (803) 667-8731."
         keywords="car detailing prices, auto detailing prices, how much does car detailing cost, car detailing prices columbia sc, auto detailing prices columbia sc, mobile detailing prices, interior detailing cost, exterior detailing prices, detailing packages pricing"
         canonical="https://mikahsmobiledetailingsc.com/pricing/"
         ogType="website"

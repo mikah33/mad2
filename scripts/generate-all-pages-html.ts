@@ -13,6 +13,11 @@ const __dirname = dirname(__filename);
 
 // Import mobile detailing schema generators
 import { generatePageTypeSchema, generateSchemaScript } from '../src/components/seo/MobileDetailingMasterSchema.js';
+// Neighborhood + city-hub pages come from the SAME data module the sitemap
+// generator imports. They must never be listed in only one of the two scripts:
+// that drift is exactly what left 38 sitemap URLs serving homepage HTML with a
+// homepage canonical (every neighborhood page invisible to Google) until 2026-08.
+import { neighborhoods, cities } from '../src/data/neighborhoods.js';
 
 const distPath = path.join(__dirname, '../dist');
 const indexHtmlPath = path.join(distPath, 'index.html');
@@ -71,34 +76,48 @@ const ogImageMap: Record<string, { image: string; width: number; height: number 
 console.log('\n🚀 Generating pre-rendered HTML files for ALL pages...\n');
 
 // Define all routes that need HTML files
-const routes = [
+interface PrerenderRoute {
+  path: string;
+  title: string;
+  description: string;
+  /** Ad landing pages: served but kept out of the index. */
+  noindex?: boolean;
+}
+
+const routes: PrerenderRoute[] = [
   // Homepage
-  { path: '', title: "Mobile Car Detailing Columbia SC | Mikah's Auto Detailing", description: '5.0-star mobile auto detailing in Columbia, Lexington & Irmo SC. We come to you - details from $100, full interior + exterior $225. Call (803) 667-8731.' },
+  { path: '', title: "Mobile Car Detailing Columbia SC | Mikah's Auto Detailing", description: '5.0-star mobile auto detailing in Columbia, Lexington & Irmo SC. We come to you - details from $125, full interior + exterior $225. Call (803) 667-8731.' },
 
   // Service pages
-  { path: 'services', title: 'Auto Detailing Services | Columbia SC', description: 'Mobile detailing services in Columbia SC: interior from $200, exterior from $100, full detail $225, ceramic coating from $999. 5.0-star - we come to you.' },
+  { path: 'services', title: 'Auto Detailing Services | Columbia SC', description: 'Mobile detailing services in Columbia SC: interior from $200, exterior from $125, full detail $225, ceramic coating from $850. 5.0-star - we come to you.' },
   { path: 'services/interior-detailing', title: 'Interior Car Detailing From $200 | Columbia SC', description: 'Interior car detailing from $200 in Columbia & Lexington SC. Deep clean, shampoo & extraction, UV protection, odor removal. 5.0-star mobile - we come to you.' },
-  { path: 'services/exterior-detailing', title: 'Exterior Car Detailing From $100 | Columbia SC', description: 'Exterior detailing from $100 in Columbia SC: foam wash, wheel decontamination, wax & trim dressing. 5.0-star mobile service at your driveway. (803) 667-8731.' },
-  { path: 'services/ceramic-coating', title: 'Ceramic Coating From $999 | Columbia SC', description: 'Professional ceramic coating from $999 in Columbia SC with 2-5 year protection. Paint correction prep included. 5.0-star rated mobile installer.' },
+  { path: 'services/exterior-detailing', title: 'Exterior Car Detailing From $125 | Columbia SC', description: 'Exterior detailing from $125 in Columbia SC: foam wash, wheel decontamination, wax & trim dressing. 5.0-star mobile service at your driveway. (803) 667-8731.' },
+  { path: 'services/ceramic-coating', title: 'Ceramic Coating From $850 | Columbia SC', description: 'Professional ceramic coating from $850 in Columbia SC with 2-5 year protection. Paint correction prep included. 5.0-star rated mobile installer.' },
   { path: 'services/paint-correction', title: 'Paint Correction From $599 | Columbia SC', description: 'Paint correction from $599 in Columbia SC - 1-step & 2-step swirl and scratch removal that restores gloss. 5.0-star mobile service. Free quote: (803) 667-8731.' },
   { path: 'services/full-detail', title: 'Full Detail Package $225 Flat | Columbia SC', description: 'Full detail package - $225 flat in Columbia & Lexington SC. Complete interior + exterior with wax protection. 5.0-star mobile detailing, we come to you.' },
-  { path: 'services/mobile-detailing', title: 'Mobile Auto Detailing | Columbia SC', description: '5.0-star mobile detailing at your home or office in Columbia, Lexington & Irmo SC. Details from $100, full interior + exterior $225. Same-day available.' },
+  { path: 'services/mobile-detailing', title: 'Mobile Auto Detailing | Columbia SC', description: '5.0-star mobile detailing at your home or office in Columbia, Lexington & Irmo SC. Details from $125, full interior + exterior $225. Same-day available.' },
 
   // Location pages
-  { path: 'locations', title: 'Service Areas | Mobile Detailing in SC', description: 'Mobile car detailing across the Midlands: Columbia, Lexington, West Columbia, Irmo, Cayce, Chapin, Blythewood & more. 5.0-star - we come to you, from $100.' },
-  { path: 'locations/columbia-sc', title: "Car Detailing Columbia SC | $225 Full Detail — Mikah's Auto Detailing", description: 'Mobile car detailing in Columbia SC - 5.0-star rated. Interior from $200, exterior from $100, full detail $225 at your driveway. Call (803) 667-8731.' },
-  { path: 'locations/lexington-sc', title: "Car Detailing Lexington SC | $225 Full Detail — Mikah's Auto Detailing", description: 'Mobile car detailing in Lexington SC - 5.0-star rated. Interior from $200, exterior from $100, full detail $225. We come to your home or office.' },
-  { path: 'locations/irmo-sc', title: 'Car Detailing Irmo SC | Mobile Service', description: 'Mobile car detailing in Irmo SC - 5.0-star rated. Interior from $200, exterior from $100, full detail $225 at your home or office. (803) 667-8731.' },
-  { path: 'locations/cayce-sc', title: 'Car Detailing Cayce SC | Mobile Service', description: 'Mobile car detailing in Cayce SC - 5.0-star rated. Interior from $200, exterior from $100, full detail $225. We come to you. Call (803) 667-8731.' },
-  { path: 'locations/west-columbia', title: 'Car Detailing West Columbia SC | Mobile Service', description: 'Mobile car detailing in West Columbia SC - 5.0-star rated. Interior from $200, exterior from $100, full detail $225. We come to you. (803) 667-8731.' },
-  { path: 'locations/chapin-sc', title: 'Car Detailing Chapin SC | Mobile Service', description: 'Mobile car detailing in Chapin SC - 5.0-star rated. Interior from $200, exterior from $100, full detail $225 at your home or office. (803) 667-8731.' },
-  { path: 'locations/swansea-sc', title: 'Car Detailing Swansea SC | Mobile Service', description: 'Mobile car detailing in Swansea SC - 5.0-star rated. Interior from $200, exterior from $100, full detail $225. We come to you. Call (803) 667-8731.' },
-  { path: 'locations/newberry-sc', title: 'Car Detailing Newberry SC | Mobile Service', description: 'Mobile car detailing in Newberry SC - 5.0-star rated. Interior from $200, exterior from $100, full detail $225. We come to you. (803) 667-8731.' },
-  { path: 'locations/blythewood-sc', title: 'Car Detailing Blythewood SC | Mobile Service', description: 'Mobile car detailing in Blythewood SC - 5.0-star rated. Interior from $200, exterior from $100, full detail $225 at your driveway. (803) 667-8731.' },
+  // Lexington + West Columbia titles lead with "Mobile … We Come to You": the
+  // "mobile detailing near me" query cluster (~600 imp/90d at pos 5-7) lands on
+  // these two pages, and the generic "| Mobile Service" titles were earning ~1%
+  // CTR. Keep these in sync with the SEOHead titles in the React components.
+  { path: 'locations', title: 'Service Areas | Mobile Detailing in SC', description: 'Mobile car detailing across the Midlands: Columbia, Lexington, West Columbia, Irmo, Cayce, Chapin, Blythewood & more. 5.0-star - we come to you, from $125.' },
+  { path: 'locations/columbia-sc', title: "Car Detailing Columbia SC | $225 Full Detail — Mikah's Auto Detailing", description: 'Mobile car detailing in Columbia SC - 5.0-star rated. Interior from $200, exterior from $125, full detail $225 at your driveway. Call (803) 667-8731.' },
+  { path: 'locations/lexington-sc', title: "Mobile Car Detailing Lexington SC | We Come to You — Mikah's Auto Detailing", description: 'Mobile car detailing in Lexington SC - 5.0-star rated, we come to your home or office. Interior from $200, exterior from $125, full detail $225. (803) 667-8731.' },
+  { path: 'locations/irmo-sc', title: 'Car Detailing Irmo SC | Mobile Service', description: 'Mobile car detailing in Irmo SC - 5.0-star rated. Interior from $200, exterior from $125, full detail $225 at your home or office. (803) 667-8731.' },
+  { path: 'locations/cayce-sc', title: 'Car Detailing Cayce SC | Mobile Service', description: 'Mobile car detailing in Cayce SC - 5.0-star rated. Interior from $200, exterior from $125, full detail $225. We come to you. Call (803) 667-8731.' },
+  { path: 'locations/west-columbia', title: "Mobile Car Detailing West Columbia SC | We Come to You — Mikah's Auto Detailing", description: 'Mobile car detailing in West Columbia SC - 5.0-star rated, we come to you. Interior from $200, exterior from $125, full detail $225. Call (803) 667-8731.' },
+  { path: 'locations/chapin-sc', title: 'Car Detailing Chapin SC | Mobile Service', description: 'Mobile car detailing in Chapin SC - 5.0-star rated. Interior from $200, exterior from $125, full detail $225 at your home or office. (803) 667-8731.' },
+  { path: 'locations/swansea-sc', title: 'Car Detailing Swansea SC | Mobile Service', description: 'Mobile car detailing in Swansea SC - 5.0-star rated. Interior from $200, exterior from $125, full detail $225. We come to you. Call (803) 667-8731.' },
+  { path: 'locations/newberry-sc', title: 'Car Detailing Newberry SC | Mobile Service', description: 'Mobile car detailing in Newberry SC - 5.0-star rated. Interior from $200, exterior from $125, full detail $225. We come to you. (803) 667-8731.' },
+  { path: 'locations/blythewood-sc', title: 'Car Detailing Blythewood SC | Mobile Service', description: 'Mobile car detailing in Blythewood SC - 5.0-star rated. Interior from $200, exterior from $125, full detail $225 at your driveway. (803) 667-8731.' },
 
   // Main pages
-  { path: 'contact', title: 'Contact Us | Book Your Detail', description: 'Contact Mikah\'s Auto Detailing for a free quote. Call (803) 667-8731 or book online.' },
-  { path: 'pricing', title: 'Car Detailing Prices 2026 — Columbia SC Price List', description: '2026 car detailing price list for Columbia & Lexington SC: Exterior from $100, Interior from $200, Basic Detail $225, Factory Reset $400. Mobile — we come to you. Free quote: (803) 667-8731.' },
+  // NOTE: /contact/ is intentionally NOT here. The router has no /contact route
+  // (the SPA renders a noindexed 404 for it), so prerendering it served users a
+  // broken page. netlify.toml now 301s /contact/* -> /book/.
+  { path: 'pricing', title: 'Car Detailing Prices 2026 — Columbia SC Price List', description: '2026 car detailing price list for Columbia & Lexington SC: Exterior from $125, Interior from $200, Basic Detail $225, Factory Reset $375. Mobile — we come to you. Free quote: (803) 667-8731.' },
   { path: 'faq', title: 'Frequently Asked Questions | Auto Detailing', description: 'Common questions about auto detailing, ceramic coating, pricing, and our mobile service.' },
   { path: 'faq/ceramic-coating', title: 'Ceramic Coating FAQ | Common Questions', description: 'Frequently asked questions about ceramic coating, application, maintenance, and benefits.' },
   { path: 'faq/mobile-detailing', title: 'Mobile Detailing FAQ | Common Questions', description: 'Frequently asked questions about our mobile detailing service and process.' },
@@ -108,15 +127,36 @@ const routes = [
   { path: 'blog', title: 'Auto Detailing Blog | Tips & Guides', description: 'Expert auto detailing tips, car care guides, and industry insights from Columbia SC\'s trusted mobile detailer.' },
   { path: 'gallery', title: 'Gallery | Our Work', description: 'See our professional auto detailing results. Before and after photos of ceramic coating, paint correction, and interior detailing.' },
   { path: 'book', title: 'Book Your Detail | Schedule Online', description: 'Book your professional mobile auto detailing appointment online. Easy scheduling for Columbia, Lexington, and Irmo SC.' },
-  { path: 'book/thank-you', title: 'Thank You | Booking Confirmed', description: 'Thank you for booking with Mikah\'s Auto Detailing. We\'ll contact you shortly to confirm your appointment.' },
+  { path: 'book/thank-you', title: 'Thank You | Booking Confirmed', description: 'Thank you for booking with Mikah\'s Auto Detailing. We\'ll contact you shortly to confirm your appointment.', noindex: true },
 
   // SEO Landing Pages
   { path: 'auto-detailing-services-columbia-sc', title: 'Auto Detailing Services in Columbia, SC | Mobile Detailing', description: 'Professional auto detailing services in Columbia, SC. Mobile detailing, ceramic coating, paint correction, interior & exterior packages. 5-star rated. Call (803) 667-8731!' },
 
-  // Marketing Landing Pages
-  { path: 'lp', title: 'Mobile Auto Detailing Columbia SC | Special Offer', description: 'Professional mobile auto detailing in Columbia & Lexington SC. Interior/exterior detailing from $225. 5-star rated. Same day available. Call (803) 667-8731!' },
-  { path: 'lp-specials', title: 'Auto Detailing Specials Columbia SC | Limited Time', description: 'Exclusive auto detailing specials in Columbia SC. Save on ceramic coating, full details, and more. Limited time offers!' },
+  // Marketing Landing Pages — noindexed: they are near-duplicates of the
+  // homepage built for ad traffic, and indexing them splits homepage signals.
+  { path: 'lp', title: 'Mobile Auto Detailing Columbia SC | Special Offer', description: 'Professional mobile auto detailing in Columbia & Lexington SC. Interior/exterior detailing from $225. 5-star rated. Same day available. Call (803) 667-8731!', noindex: true },
+  { path: 'lp-specials', title: 'Auto Detailing Specials Columbia SC | Limited Time', description: 'Exclusive auto detailing specials in Columbia SC. Save on ceramic coating, full details, and more. Limited time offers!', noindex: true },
+
+  // Review pages (in the sitemap since launch, but never prerendered until 2026-08)
+  { path: 'reviews', title: 'Customer Reviews | 5.0★ Mobile Detailing Columbia SC', description: "Real reviews from Mikah's Auto Detailing customers across Columbia, Lexington & Irmo SC. 5.0-star rated mobile detailing — we come to you. (803) 667-8731." },
+  { path: 'review-us', title: 'Leave Us a Review | Mikah\'s Auto Detailing', description: "Had your vehicle detailed with us? Share your experience — your review helps neighbors in Columbia & Lexington SC find trusted mobile detailing." },
 ];
+
+// Neighborhood + city-hub routes, generated from the same data the sitemap uses.
+for (const city of cities) {
+  routes.push({
+    path: `locations/${city.slug}/neighborhoods`,
+    title: `${city.name} SC Neighborhoods We Serve | Mobile Detailing`,
+    description: `Mobile car detailing across ${city.name} SC neighborhoods — we come to your home or office. 5.0-star rated, from $125. Call (803) 667-8731.`,
+  });
+}
+for (const n of neighborhoods) {
+  routes.push({
+    path: `locations/${n.citySlug}/${n.slug}`,
+    title: n.seo?.title || `Mobile Car Detailing ${n.name}, ${n.city} SC`,
+    description: n.seo?.description || `Mobile car detailing in ${n.name}, ${n.city} SC — 5.0-star rated, we come to you. Call (803) 667-8731.`,
+  });
+}
 
 let generatedCount = 0;
 
@@ -152,13 +192,18 @@ routes.forEach(route => {
   }
 
   // Generate mobile detailing focused schemas
-  const schemas = generatePageTypeSchema(pageType, serviceType);
+  const schemas = generatePageTypeSchema(pageType, serviceType, { url: pageUrl, name: fullTitle, description: route.description });
   const schemaScript = `    ${generateSchemaScript(schemas)}`;
 
   let html = baseHtml;
 
   // Update title
   html = html.replace(/<title>.*?<\/title>/, `<title>${fullTitle}</title>`);
+
+  // Ad landing pages are served but excluded from the index
+  if (route.noindex) {
+    html = html.replace('</head>', `    <meta name="robots" content="noindex, follow" />\n  </head>`);
+  }
 
   // Update meta description (handle both " />" and "/>" formats)
   html = html.replace(
@@ -267,12 +312,12 @@ routes.forEach(route => {
       <ul>
         <li><strong>Wax or sealant</strong> — weeks to a few months of protection. Cheap, easy, and temporary.</li>
         <li><strong><a href="/services/paint-correction">Paint correction</a></strong> — removes existing swirls and scratches. It makes paint look new, but it does not protect anything on its own. From $599, and it is already included in your ceramic coating job.</li>
-        <li><strong>Ceramic coating</strong> — two to five years of UV and chemical protection over corrected paint. From $999.</li>
+        <li><strong>Ceramic coating</strong> — two to five years of UV and chemical protection over corrected paint. From $850.</li>
       </ul>
       <p>If your paint is in good shape and you want it to stay that way for years, coating is the move. If your paint is dull or swirled and you are not ready for a coating, start with paint correction. One thing worth saying plainly: a ceramic coating is not scratch-proof and it will not stop rock chips. It is chemical and UV protection with serious gloss and much easier washing — not armor.</p>
       <h2>Ceramic Coating FAQ</h2>
       <p><strong>How long does ceramic coating last?</strong> Two to five years with proper maintenance, depending on the product and how the vehicle is driven and stored.</p>
-      <p><strong>How much does ceramic coating cost?</strong> From $999, custom quoted after we inspect your paint. The price includes the required paint correction prep.</p>
+      <p><strong>How much does ceramic coating cost?</strong> From $850, custom quoted after we inspect your paint. The price includes the required paint correction prep.</p>
       <p><strong>Can I wash my car after ceramic coating?</strong> Wait 7 days before the first wash to allow complete curing, then wash normally with a pH-neutral soap.</p>
       <p><strong>Do you come to my location?</strong> Yes — we are mobile and bring all equipment needed for professional installation.</p>`,
   };
@@ -283,12 +328,13 @@ routes.forEach(route => {
       <p>In 2026, most U.S. drivers pay between $150 and $300 for a full car detail, depending on vehicle size and condition. Interior-only details typically run $125–$250 and exterior-only $75–$150. At Mikah's Auto Detailing in Columbia SC, the flat $225 Basic Detail covers the full interior and exterior with mobile service included.</p>
       <table>
         <tr><th>Service</th><th>Typical U.S. Range (2026)</th><th>Our Price</th></tr>
-        <tr><td>Exterior detail</td><td>$75–$150</td><td>From $100</td></tr>
+        <tr><td>Exterior detail</td><td>$75–$150</td><td>From $125</td></tr>
         <tr><td>Interior detail</td><td>$125–$250</td><td>From $200</td></tr>
         <tr><td>Full detail (interior + exterior)</td><td>$150–$300</td><td>$225 flat</td></tr>
-        <tr><td>Deep-clean / restoration detail</td><td>$250–$450</td><td>$400 flat</td></tr>
+        <tr><td>Deep-clean / restoration detail</td><td>$250–$450</td><td>$375 flat</td></tr>
+        <tr><td>Odor removal (standalone)</td><td>$150–$350</td><td>$250</td></tr>
         <tr><td>Paint correction</td><td>$500–$1,500+</td><td>From $599</td></tr>
-        <tr><td>Ceramic coating</td><td>$1,000–$3,000</td><td>From $999</td></tr>
+        <tr><td>Ceramic coating</td><td>$1,000–$3,000</td><td>From $850</td></tr>
       </table>` : '';
   const staticBody = `<div id="root"><main>
       <h1>${h1}</h1>
@@ -296,12 +342,13 @@ routes.forEach(route => {
       ${pageBody}
       <h2>Services &amp; 2026 Prices</h2>
       <ul>
-        <li><a href="/services/exterior-detailing">Exterior Detail</a> — from $100</li>
+        <li><a href="/services/exterior-detailing">Exterior Detail</a> — from $125</li>
         <li><a href="/services/interior-detailing">Interior Detail</a> — from $200</li>
         <li><a href="/services/full-detail">Basic Detail (full interior + exterior)</a> — $225 flat</li>
-        <li><a href="/services/full-detail">Factory Reset deep clean</a> — $400 flat</li>
+        <li><a href="/services/full-detail">Factory Reset deep clean</a> — $375 flat</li>
+        <li><a href="/services/interior-detailing">Odor Removal</a> — $250 ($400 with full interior steam &amp; shampoo)</li>
         <li><a href="/services/paint-correction">Paint Correction</a> — from $599</li>
-        <li><a href="/services/ceramic-coating">Ceramic Coating (2–5 year protection)</a> — from $999</li>
+        <li><a href="/services/ceramic-coating">Ceramic Coating (2–5 year protection)</a> — from $850</li>
         <li>Routine Reset subscription — $225/month</li>
       </ul>
       <h2>Service Areas</h2>

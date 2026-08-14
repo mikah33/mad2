@@ -18,9 +18,9 @@ export const generateGMBSchema = () => ({
   address: {
     '@type': 'PostalAddress',
     streetAddress: '',
-    addressLocality: 'Columbia',
+    addressLocality: 'Lexington',
     addressRegion: 'SC',
-    postalCode: '29201',
+    postalCode: '29072',
     addressCountry: 'US'
   },
   geo: {

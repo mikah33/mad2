@@ -40,7 +40,7 @@ export const LocationSwanseaPage = () => {
     },
     {
       title: 'Factory Reset Package',
-      price: '$400',
+      price: '$375',
       duration: '3-4 hours',
       description: 'Interior wipe down, conditioner + UV protection, vacuum + disinfection, light stain removal, shampoo & extraction, glass cleaned. Exterior foam wash, brake dust removal, protective wax, tires & rims dressed.',
       link: '/services/full-detail'
@@ -87,7 +87,7 @@ export const LocationSwanseaPage = () => {
     },
     {
       question: 'How much does car detailing cost in Swansea SC?',
-      answer: 'Our car detailing prices in Swansea SC start at $225 for our Basic Detail Package and $400 for our Factory Reset Package. We offer special rates for farm vehicles, classic cars, and rural property service.'
+      answer: 'Our car detailing prices in Swansea SC start at $225 for our Basic Detail Package and $375 for our Factory Reset Package. We offer special rates for farm vehicles, classic cars, and rural property service.'
     },
     {
       question: 'Do you detail farm vehicles and classic cars in Swansea?',

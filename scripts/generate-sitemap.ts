@@ -186,8 +186,11 @@ function generateSitemap(): string {
   });
 
   // Blog posts - dynamically added from blog.ts
+  // Excluded: posts 301-redirected in netlify.toml (duplicate-title consolidation).
+  const redirectedBlogSlugs = new Set(['06-how-often-should-you-detail-your-car']);
   if (blogPosts.length > 0) {
     blogPosts.forEach((post) => {
+      if (redirectedBlogSlugs.has(post.slug)) return;
       urls.push({
         loc: `${SITE_URL}/blog/${post.slug}/`,
         lastmod: post.dateModified || post.datePublished || currentDate,
@@ -228,13 +231,8 @@ function generateSitemap(): string {
     priority: 0.8,
   });
 
-  // Contact page
-  urls.push({
-    loc: `${SITE_URL}/contact/`,
-    lastmod: currentDate,
-    changefreq: 'monthly',
-    priority: 0.8,
-  });
+  // NOTE: /contact/ removed 2026-08 — the SPA has no /contact route (it rendered
+  // a noindexed 404) and netlify.toml now 301s it to /book/.
 
   // Review Us page
   urls.push({
@@ -284,20 +282,8 @@ function generateSitemap(): string {
     priority: 0.95,
   });
 
-  // Marketing Landing Pages
-  urls.push({
-    loc: `${SITE_URL}/lp/`,
-    lastmod: currentDate,
-    changefreq: 'weekly',
-    priority: 0.9,
-  });
-
-  urls.push({
-    loc: `${SITE_URL}/lp-specials/`,
-    lastmod: currentDate,
-    changefreq: 'weekly',
-    priority: 0.9,
-  });
+  // NOTE: /lp/ and /lp-specials/ removed 2026-08 — they are noindexed ad landing
+  // pages (near-duplicates of the homepage) and don't belong in the sitemap.
 
   // Legal Pages
   urls.push({

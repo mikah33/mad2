@@ -78,7 +78,7 @@ const services = [
   },
   {
     title: 'Factory Reset Package',
-    price: '$400',
+    price: '$375',
     duration: '3-4 hours',
     description: 'Interior wipe down, conditioner + UV protection, vacuum + disinfection, light stain removal, shampoo & extraction, glass cleaned. Exterior foam wash, brake dust removal, protective wax, tires & rims dressed.',
     link: '/services/full-detail'

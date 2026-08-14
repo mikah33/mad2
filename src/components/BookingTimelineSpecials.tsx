@@ -337,7 +337,7 @@ const BookingTimelineSpecials: React.FC = () => {
                   <span className="text-sm text-gray-500 line-through">$225</span>
                 )}
                 {service.title === 'Factory Reset' && (
-                  <span className="text-sm text-gray-500 line-through">$400</span>
+                  <span className="text-sm text-gray-500 line-through">$375</span>
                 )}
               </div>
             </div>
@@ -396,7 +396,7 @@ const BookingTimelineSpecials: React.FC = () => {
                           <span className="text-sm text-gray-500 line-through">$225</span>
                         )}
                         {service.title === 'Factory Reset' && (
-                          <span className="text-sm text-gray-500 line-through">$400</span>
+                          <span className="text-sm text-gray-500 line-through">$375</span>
                         )}
                       </div>
                     </div>

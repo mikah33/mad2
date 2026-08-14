@@ -6,7 +6,7 @@ export const businessInfo = {
   email: 'mikahsautodetailing@gmail.com',
   address: {
     street: '',
-    city: 'Columbia',
+    city: 'Lexington',
     state: 'SC',
     zip: '29072',
     country: 'US'

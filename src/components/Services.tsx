@@ -39,7 +39,7 @@ const Services: React.FC<{ onSelectService: (service: string) => void }> = ({ on
     {
       icon: <Star className="w-8 h-8" />,
       title: 'Factory Reset Package',
-      price: '$400',
+      price: '$375',
       color: 'bg-[#0077B6]',
       description: [
         'Interior: Full wipe down, conditioner + UV protection, vacuum + disinfection, light stain removal, shampoo & extraction, glass cleaned, door jambs cleaned & waxed',
@@ -50,7 +50,7 @@ const Services: React.FC<{ onSelectService: (service: string) => void }> = ({ on
     {
       icon: <Shield className="w-8 h-8" />,
       title: 'Ceramic Coatings',
-      price: 'Starting at $999',
+      price: 'Starting at $850',
       color: 'bg-[#0077B6]',
       description: [
         'Achieve long-term paint protection with our professional-grade ceramic application',
@@ -123,7 +123,7 @@ const Services: React.FC<{ onSelectService: (service: string) => void }> = ({ on
     {
       icon: <Gift className="w-8 h-8" />,
       title: 'Gift Card - Factory Reset',
-      price: '$400',
+      price: '$375',
       color: 'bg-[#D4AF37]',
       description: [
         '🎁 Ultimate Gift Experience!',
