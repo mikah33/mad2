@@ -58,10 +58,10 @@ const FullDetailPage: React.FC = () => {
       <SEOHead
         title="Full Car Detail Columbia SC | Interior + Exterior | From $225"
         description="Complete full car detailing in Columbia SC. Interior + exterior detailing package. Professional cleaning, protection, and restoration. Mobile service to Lexington, Irmo, Cayce. Book now!"
-        keywords="full car detailing, complete auto detailing Columbia SC, interior exterior detailing, full detail package, car detailing near me, mobile auto detailing Lexington SC, vehicle detailing services, comprehensive car cleaning"
+        keywords="full car detailing, complete auto detailing, interior exterior detailing, full detail package, car detailing near me, mobile auto detailing, vehicle detailing services, comprehensive car cleaning"
         canonical="https://mikahsmobiledetailingsc.com/services/full-detail/"
         ogImage="https://mikahsmobiledetailingsc.com/exterior1.jpg"
-        ogImageAlt="Full car detailing Columbia SC - complete interior and exterior package"
+        ogImageAlt="Full car detail package - complete interior and exterior detailing"
         schema={schemas}
       />
 
@@ -72,7 +72,7 @@ const FullDetailPage: React.FC = () => {
           <div className="container mx-auto px-4 max-w-7xl">
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div>
-                <h1 className="text-4xl md:text-5xl font-bold mb-6">Complete Full Detail Package in Columbia, SC</h1>
+                <h1 className="text-4xl md:text-5xl font-bold mb-6">Complete Full Detail Package — Interior + Exterior</h1>
                 <p className="text-xl mb-8 text-orange-100">
                   The ultimate detailing experience. Complete interior and exterior deep cleaning, protection, and restoration.
                   Mobile service throughout Columbia, Lexington, West Columbia, Irmo, and Cayce.
@@ -92,7 +92,7 @@ const FullDetailPage: React.FC = () => {
               
       </div>
               <div className="hidden md:block">
-                <img src="/exterior1.jpg" alt="Full auto detailing services columbia sc - complete interior and exterior car detail" className="rounded-lg shadow-2xl" loading="lazy" />
+                <img src="/exterior1.jpg" alt="Complete full detail package - interior and exterior mobile car detailing" className="rounded-lg shadow-2xl" loading="lazy" />
               
       </div>
             
@@ -190,7 +190,7 @@ const FullDetailPage: React.FC = () => {
               <div className="text-center">
                 <Phone className="w-16 h-16 text-orange-500 mx-auto mb-4" />
                 <h3 className="text-xl font-bold mb-3">Mobile Convenience</h3>
-                <p className="text-gray-600">We come to you in Columbia, Lexington, West Columbia, Irmo, Cayce. Work from home while we transform your vehicle.</p>
+                <p className="text-gray-600">We come to you anywhere in the Midlands. Work from home while we transform your vehicle in your own driveway.</p>
               
       </div>
             
@@ -233,7 +233,7 @@ const FullDetailPage: React.FC = () => {
           <div className="container mx-auto px-4 max-w-4xl text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready for Complete Vehicle Transformation?</h2>
             <p className="text-xl mb-8 text-orange-100">
-              Book full car detailing in Columbia, Lexington, or surrounding areas. Mobile service means we come to you!
+              Book your full car detail today. Mobile service means we come to you!
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
               <a href="/book?service=basic-detail" className="bg-white text-orange-600 px-8 py-4 rounded-lg font-bold hover:bg-orange-50 transition">Book Online</a>

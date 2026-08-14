@@ -298,7 +298,7 @@ export const HomePage = () => {
             <div className="mt-10 text-center text-gray-600">
               <p className="mb-2 font-medium">We serve all Midlands SC locations:</p>
               <div className="flex flex-wrap justify-center gap-x-4 gap-y-1 text-sm">
-                <a href="/locations/columbia-sc" className="text-[#0077B6] hover:underline">Car Detailing Columbia SC</a>
+                <a href="/locations/columbia-sc/" className="text-[#0077B6] hover:underline">Car Detailing Columbia SC</a>
                 <span>|</span>
                 <a href="/locations/lexington-sc" className="text-[#0077B6] hover:underline">Mobile Car Detailing Lexington SC</a>
                 <span>|</span>

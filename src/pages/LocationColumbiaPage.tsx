@@ -82,16 +82,20 @@ export const LocationColumbiaPage = () => {
   // FAQs based on REAL search terms
   const locationFAQs = [
     {
-      question: 'How much does mobile detailing cost in Columbia SC?',
-      answer: 'Mobile detailing in Columbia SC starts at $225 for our Basic Detail Package and $375 for our Factory Reset Package. Ceramic coatings, paint corrections, and specialty services require quotes based on vehicle size and condition. We provide free quotes for all Columbia residents.'
+      question: 'How much does auto detailing cost in Columbia SC?',
+      answer: 'Auto detailing in Columbia SC starts at $225 for our Basic Detail Package and $375 for our Factory Reset Package. Interior-only details start at $200, exterior-only at $125, paint correction starts at $599, and ceramic coating packages start at $850. We provide free quotes for all Columbia residents.'
     },
     {
       question: 'What is the best mobile car detailing service in Columbia SC?',
       answer: "Mikah's Auto Detailing is the top-rated mobile detailing service in Columbia SC with a 5.0-star rating from 31 Google reviews. We're IDA certified, fully insured, and bring professional equipment directly to your location anywhere in Columbia, Lexington, or Irmo."
     },
     {
-      question: 'Do you offer mobile car detailing in Lexington SC?',
-      answer: 'Yes! We provide full mobile car detailing service throughout Lexington SC. Our mobile unit comes equipped with everything needed for professional interior detailing, exterior washing, ceramic coating, and paint correction at your home or office in Lexington.'
+      question: 'What auto detailing services do you offer in Columbia SC?',
+      answer: 'We offer complete auto detailing services in Columbia SC: Basic Detail (interior + exterior) at $225, Factory Reset with shampoo & extraction at $375, interior-only details from $200, exterior-only details from $125, deep interior with steam & shampoo at $275, odor removal at $250, headlight restoration at $125, paint correction from $599, and ceramic coating from $850. Every service is mobile — we come to you anywhere in Columbia.'
+    },
+    {
+      question: 'Do you detail cars near USC and Fort Jackson in Columbia SC?',
+      answer: 'Yes! Yes! We serve homes, offices, and apartment complexes near the University of South Carolina campus, Williams-Brice Stadium, Rosewood, and the neighborhoods around Fort Jackson. Our mobile unit brings water, power, and all equipment, so we can work in most apartment and office parking lots.'
     },
     {
       question: 'Where can I find car detailing on Two Notch Road in Columbia SC?',
@@ -125,6 +129,8 @@ export const LocationColumbiaPage = () => {
 
   // All keywords
   const allKeywords = [
+    'auto detailing columbia sc', 'car detailing columbia sc', 'auto detailing services columbia sc',
+    'auto detailing services in columbia sc', 'auto detailing in columbia sc', 'mobile auto detailing columbia sc',
     'mobile detailing columbia sc', 'mobile detailing columbia sc prices', 'car detailing columbia sc',
     'mobile detailing columbia sc reviews', 'best mobile detailing columbia sc', 'mobile detailing columbia sc cost',
     'interior car detailing columbia sc', 'car detailing two notch columbia sc', 'mobile car detailing lexington sc',
@@ -171,12 +177,12 @@ export const LocationColumbiaPage = () => {
   return (
     <>
       <SEOHead
-        title="Car Detailing Columbia SC | $225 Full Detail — Mikah's Auto Detailing"
-        description="Best car detailing in Columbia SC. 5.0★ rated mobile detailing from $225. Interior, exterior, ceramic coating & paint correction — we come to you! Call (803) 667-8731."
-        keywords="auto detailing services columbia sc, auto detailing services in columbia sc, columbia detailing, columbia auto detail, auto detail columbia, columbia mobile detailing, detailing columbia sc, car detailing columbia sc, mobile auto detailing columbia sc, professional car detailing columbia, best columbia detailing"
+        title="Auto Detailing Columbia SC | $225 Full Detail — Mikah's Auto Detailing"
+        description="Auto detailing in Columbia SC — we come to you. 5.0-star mobile detailing: full detail $225, interior from $200, exterior from $125. Call (803) 667-8731."
+        keywords={allKeywords.join(', ') + ', columbia detailing, columbia auto detail, auto detail columbia, columbia mobile detailing, detailing columbia sc, professional car detailing columbia, best columbia detailing'}
         canonical="https://mikahsmobiledetailingsc.com/locations/columbia-sc/"
-        ogDescription="Best car detailing in Columbia SC. 5.0★ rated mobile detailing from $225. Interior, exterior, ceramic coating & paint correction — we come to you! Call (803) 667-8731."
-        twitterDescription="Best car detailing in Columbia SC. 5.0★ rated mobile detailing from $225. Interior, exterior, ceramic coating & paint correction — we come to you! Call (803) 667-8731."
+        ogDescription="Auto detailing in Columbia SC — we come to you. 5.0-star mobile detailing: full detail $225, interior from $200, exterior from $125. Call (803) 667-8731."
+        twitterDescription="Auto detailing in Columbia SC — we come to you. 5.0-star mobile detailing: full detail $225, interior from $200, exterior from $125. Call (803) 667-8731."
         schema={schemas}
       />
 
@@ -227,13 +233,13 @@ export const LocationColumbiaPage = () => {
             </div>
 
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 leading-tight">
-              Car Detailing
+              Auto Detailing
               <br />
-              <span className="text-primary-300">Columbia SC</span>
+              <span className="text-primary-300">in Columbia SC</span>
             </h1>
 
             <p className="text-base sm:text-lg md:text-xl mb-6 md:mb-8 max-w-3xl mx-auto text-gray-100 px-4">
-              Columbia SC's #1 car detailing service — mobile detailing that comes to you. Interior & exterior detailing, ceramic coating, paint correction at your location. 5.0★ rated with 31 Google reviews. From $225.
+              Columbia SC's #1 auto detailing service — mobile car detailing that comes to you. Interior & exterior detailing, ceramic coating & paint correction at your home or office, from downtown to Forest Acres. 5.0★ rated with 31 Google reviews. From $225.
             </p>
 
             <p className="text-lg sm:text-xl md:text-2xl font-semibold mb-6 md:mb-8 text-primary-300">
@@ -289,12 +295,15 @@ export const LocationColumbiaPage = () => {
           </div>
         </div>
 
-        {/* Intro content targeting broader "car detailing columbia sc" keyword */}
+        {/* Intro content targeting "auto detailing columbia sc" + "car detailing columbia sc" */}
         <section className="py-12 bg-white">
           <div className="container mx-auto px-4 max-w-4xl">
-            <div className="prose prose-lg max-w-none text-gray-700">
+            <div className="prose prose-lg max-w-none text-gray-700 space-y-6">
               <p>
-                Looking for professional <strong>car detailing in Columbia SC</strong>? Mikah's Auto Detailing is the top-rated <strong>mobile detailing in Columbia SC</strong> — we bring the detail shop to your driveway, office parking lot, or anywhere in the Columbia metro. Our fully equipped mobile unit handles everything from basic maintenance details to full ceramic coating installations without you ever leaving home. With a perfect 5.0-star Google rating, IDA certification, and packages starting at just $225, Columbia residents trust us for <strong>mobile car detailing</strong> that delivers shop-quality results with unmatched convenience. Whether you're in Five Points, Forest Acres, Harbison, or anywhere along the I-20 or I-26 corridors, we come to you — no drop-offs, no waiting rooms, no hassle.
+                Looking for <strong>auto detailing in Columbia SC</strong>? Mikah's Auto Detailing is the top-rated mobile detailer in the capital city — we bring the detail shop to your driveway, office parking lot, or apartment complex anywhere in the Columbia metro. We detail vehicles across downtown Columbia, The Vista, Five Points, Shandon, Rosewood, and Forest Acres, plus the homes and offices near the University of South Carolina and Fort Jackson. With a perfect 5.0-star Google rating, IDA certification, and packages starting at just $225, Columbia residents trust us for <strong>car detailing</strong> that delivers shop-quality results without you ever leaving home.
+              </p>
+              <p>
+                Our fully self-contained mobile unit carries its own water, power, and professional-grade equipment, so our <strong>auto detailing services in Columbia, SC</strong> work just as well in a Shandon driveway as they do in a parking garage near Main Street or an office lot off Two Notch Road. From basic maintenance details to deep interior steam cleaning, paint correction, and ceramic coating installations, every package includes at-your-door service at no extra charge — no drop-offs, no waiting rooms, no hassle.
               </p>
             </div>
           </div>
@@ -354,10 +363,10 @@ export const LocationColumbiaPage = () => {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 max-w-6xl">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
-              Columbia Auto Detail Services & Pricing
+              Auto Detailing Services & Prices — Columbia SC
             </h2>
             <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
-              Professional Columbia detailing at your location. Expert auto detail columbia services for all vehicles. Mobile service included in all pricing.
+              Professional detailing at your Columbia home, office, or apartment. All prices include mobile service — we come to you.
             </p>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -391,9 +400,9 @@ export const LocationColumbiaPage = () => {
             </p>
 
             <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-4">
-              {['Downtown Columbia', 'Two Notch Road', 'Five Points', 'The Vista', 'Shandon',
-                'Forest Acres', 'Harbison', 'West Columbia', 'Lexington SC', 'Irmo SC',
-                'Cayce SC', 'Blythewood SC'].map((area, i) => (
+              {['Downtown Columbia', 'The Vista', 'Five Points', 'Shandon', 'Rosewood',
+                'Forest Acres', 'Two Notch Road', 'Fort Jackson Area', 'USC / Williams-Brice', 'West Columbia',
+                'Irmo SC', 'Blythewood SC'].map((area, i) => (
                 <div key={i} className="bg-gray-50 rounded-lg p-4 hover:bg-gray-100 transition">
                   <MapPin className="w-5 h-5 text-primary-700 mb-2" />
                   <div className="font-semibold">{area}</div>
@@ -549,7 +558,7 @@ export const LocationColumbiaPage = () => {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 max-w-4xl">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-              Mobile Detailing Columbia SC - Frequently Asked
+              Auto Detailing Columbia SC — Frequently Asked Questions
             </h2>
             <div className="space-y-6">
               {locationFAQs.map((faq, index) => (

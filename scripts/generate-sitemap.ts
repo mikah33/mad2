@@ -79,7 +79,8 @@ function generateSitemap(): string {
     'mobile-detailing',      // Primary service - highest priority
     'interior-detailing',    // High-volume keyword target
     'exterior-detailing',    // Core mobile service
-    'full-detail'           // Complete mobile package
+    'full-detail',          // Complete mobile package
+    'odor-stain-removal'    // Fast-growing GSC demand (odor/stain removal near me)
   ];
 
   mobileDetailingPages.forEach((slug) => {
@@ -274,13 +275,7 @@ function generateSitemap(): string {
     priority: 0.9,
   });
 
-  // SEO Landing Pages (High Priority - Target Keywords)
-  urls.push({
-    loc: `${SITE_URL}/auto-detailing-services-columbia-sc/`,
-    lastmod: currentDate,
-    changefreq: 'weekly',
-    priority: 0.95,
-  });
+  // NOTE: /auto-detailing-services-columbia-sc/ retired 2026-08 — 301 -> /locations/columbia-sc/
 
   // NOTE: /lp/ and /lp-specials/ removed 2026-08 — they are noindexed ad landing
   // pages (near-duplicates of the homepage) and don't belong in the sitemap.

@@ -123,7 +123,7 @@ const Navigation: React.FC = () => {
               </a>
               <div className="absolute top-full left-0 mt-2 w-56 bg-white rounded-lg shadow-xl border border-gray-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
                 <div className="p-3 space-y-2">
-                  <a href="/locations/columbia-sc" className="block px-3 py-2 text-sm text-gray-700 hover:text-[#023E8A] hover:bg-[#CAF0F8] rounded transition">Columbia SC</a>
+                  <a href="/locations/columbia-sc/" className="block px-3 py-2 text-sm text-gray-700 hover:text-[#023E8A] hover:bg-[#CAF0F8] rounded transition">Columbia SC</a>
                   <a href="/locations/lexington-sc" className="block px-3 py-2 text-sm text-gray-700 hover:text-[#023E8A] hover:bg-[#CAF0F8] rounded transition">Lexington SC</a>
                   <a href="/locations/west-columbia" className="block px-3 py-2 text-sm text-gray-700 hover:text-[#023E8A] hover:bg-[#CAF0F8] rounded transition">West Columbia SC</a>
                   <a href="/locations/irmo-sc" className="block px-3 py-2 text-sm text-gray-700 hover:text-[#023E8A] hover:bg-[#CAF0F8] rounded transition">Irmo SC</a>
@@ -248,7 +248,7 @@ const Navigation: React.FC = () => {
                 Locations
               </a>
               <div className="pl-8 space-y-1">
-                <a href="/locations/columbia-sc" onClick={handleLinkClick} className="block px-4 py-1.5 text-sm text-gray-600 hover:text-[#023E8A] hover:bg-[#CAF0F8] rounded transition">Columbia SC</a>
+                <a href="/locations/columbia-sc/" onClick={handleLinkClick} className="block px-4 py-1.5 text-sm text-gray-600 hover:text-[#023E8A] hover:bg-[#CAF0F8] rounded transition">Columbia SC</a>
                 <a href="/locations/lexington-sc" onClick={handleLinkClick} className="block px-4 py-1.5 text-sm text-gray-600 hover:text-[#023E8A] hover:bg-[#CAF0F8] rounded transition">Lexington SC</a>
                 <a href="/locations/west-columbia" onClick={handleLinkClick} className="block px-4 py-1.5 text-sm text-gray-600 hover:text-[#023E8A] hover:bg-[#CAF0F8] rounded transition">West Columbia SC</a>
                 <a href="/locations/irmo-sc" onClick={handleLinkClick} className="block px-4 py-1.5 text-sm text-gray-600 hover:text-[#023E8A] hover:bg-[#CAF0F8] rounded transition">Irmo SC</a>

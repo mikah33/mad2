@@ -36,7 +36,7 @@ export const ServicesPage = () => {
       'Factory Reset Package': '/services/full-detail',
       'Ceramic Coatings': '/services/ceramic-coating',
       'Paint Corrections': '/services/paint-correction',
-      'Specialty Services': '/services/interior-detailing',
+      'Specialty Services': '/services/odor-stain-removal/',
       'Marine & RV Detailing': '/services/exterior-detailing',
       'Routine Reset': '/services/mobile-detailing',
     };

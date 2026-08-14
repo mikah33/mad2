@@ -410,10 +410,18 @@ const InteriorDetailingPage: React.FC = () => {
                   <div className="flex items-center gap-3">
                     <Clock className="w-6 h-6 text-orange-600" />
                     <span className="font-semibold">Duration: 2-3 hours</span>
-                  
+
       </div>
-                
+
       </div>
+
+                <p className="mt-4 text-gray-700">
+                  Dealing with heavy odors or set-in stains? See our dedicated{' '}
+                  <a href="/services/odor-stain-removal/" className="text-orange-600 font-semibold hover:underline">
+                    odor &amp; stain removal service
+                  </a>{' '}
+                  - $250 standalone or $400 with a full interior steam &amp; shampoo.
+                </p>
               
       </div>
             

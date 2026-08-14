@@ -76,7 +76,7 @@ const Footer: React.FC = () => {
             <h4 className="text-lg font-bold mb-4 text-[#90E0EF]">Service Locations</h4>
             <ul className="space-y-3 text-gray-400 text-sm">
               <li>
-                <a href="/locations/columbia-sc" className="hover:text-[#90E0EF] transition block">
+                <a href="/locations/columbia-sc/" className="hover:text-[#90E0EF] transition block">
                   Mobile Detailing Columbia SC
                 </a>
               </li>

@@ -39,6 +39,21 @@
   status = 301
   force = true
 
+# Exact-match landing page retired 2026-08: it never earned an impression for
+# its own query while /locations/columbia-sc/ is the page being built up for
+# the Columbia cluster — consolidate.
+[[redirects]]
+  from = "/auto-detailing-services-columbia-sc"
+  to = "/locations/columbia-sc/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/auto-detailing-services-columbia-sc/*"
+  to = "/locations/columbia-sc/"
+  status = 301
+  force = true
+
 # /contact/ has no SPA route (rendered a noindexed 404); send people to booking.
 [[redirects]]
   from = "/contact"

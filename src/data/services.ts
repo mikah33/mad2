@@ -168,6 +168,26 @@ export const services: Service[] = [
     popular: true
   },
   {
+    id: 'svc-009',
+    name: 'Odor & Stain Removal',
+    slug: 'odor-stain-removal',
+    category: 'specialty',
+    shortDescription: 'Professional car odor removal and interior stain treatment - pet odor, smoke smell, spills',
+    description: 'Standalone odor removal for $250, or $400 combined with a full interior steam & shampoo. Enzymatic treatment, steam cleaning, hot water extraction, and ozone treatment for pet odors, smoke smell, mildew, and everyday stains. Light-to-moderate stain removal - we set honest expectations before starting.',
+    features: [
+      'Odor source inspection',
+      'Enzymatic odor treatment',
+      'Professional steam cleaning',
+      'Spot treatment & hot water extraction',
+      'Ozone treatment for stubborn odors',
+      'Pet odor and smoke smell removal',
+      'Full interior steam & shampoo option'
+    ],
+    pricing: { starting: '250', range: '250-400' },
+    duration: '3 hours',
+    featured: true
+  },
+  {
     id: 'svc-008',
     name: 'Specialty Services',
     slug: 'interior-detailing',
