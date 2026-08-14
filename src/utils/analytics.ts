@@ -133,7 +133,13 @@ export function trackLeadSubmit(lead?: LeadData): void {
 /* ------------------------------------------------------------------ */
 
 export function trackPhoneClick(source = 'unknown'): void {
-  if (!shouldFire('phone_call:' + source, 1200)) return;
+  // Dedupe on the ACTION, not action+source. Many tel:/sms: anchors are covered
+  // twice: once by the site-wide delegated listener (source 'link') and once by
+  // their own onClick (source e.g. 'pricing_hero'). Keying by source made the
+  // two look like different events, so both fired and every such click was
+  // counted twice. See installContactLinkTracking for how the specific source
+  // is kept as the surviving one.
+  if (!shouldFire('phone_call', 1200)) return;
   ga4('phone_call_click', { source, value: VALUES.phone_call, currency: 'USD' });
   ga4('contact', { method: 'phone', source }); // GA4 recommended "contact" event
   adsConversion('phone_call', VALUES.phone_call);
@@ -141,7 +147,8 @@ export function trackPhoneClick(source = 'unknown'): void {
 }
 
 export function trackTextClick(source = 'unknown'): void {
-  if (!shouldFire('text_message:' + source, 1200)) return;
+  // Action-scoped dedupe — see the note in trackPhoneClick.
+  if (!shouldFire('text_message', 1200)) return;
   ga4('text_message_click', { source, value: VALUES.text_message, currency: 'USD' });
   ga4('contact', { method: 'sms', source });
   adsConversion('text_message', VALUES.text_message);
@@ -241,8 +248,15 @@ export function getLeadSource(): Record<string, string> {
 /**
  * Installs ONE delegated click listener that catches every <a href="tel:">
  * and <a href="sms:"> click site-wide, so any call/text link is tracked even
- * if its component doesn't wire up an onClick. Idempotent. Dedupe in the
- * track* helpers prevents double-counting with explicit handlers.
+ * if its component doesn't wire up an onClick. Idempotent.
+ *
+ * This is a FALLBACK for links with no explicit handler. It runs in the capture
+ * phase, which fires before React's bubble-phase onClick, so reporting straight
+ * away would make the generic 'link' source win the dedupe and hide the more
+ * useful specific source (e.g. 'pricing_hero'). Deferring by a tick lets any
+ * explicit onClick claim the action first; this call is then suppressed by the
+ * action-scoped dedupe in trackPhoneClick/trackTextClick. tel:/sms: activation
+ * does not unload the document, so the deferred call always runs.
  */
 export function installContactLinkTracking(): void {
   if (typeof document === 'undefined' || window.__contactLinkTrackingInstalled) return;
@@ -255,8 +269,8 @@ export function installContactLinkTracking(): void {
       const anchor = target?.closest?.('a[href]') as HTMLAnchorElement | null;
       if (!anchor) return;
       const href = anchor.getAttribute('href') || '';
-      if (href.startsWith('tel:')) trackPhoneClick('link');
-      else if (href.startsWith('sms:')) trackTextClick('link');
+      if (href.startsWith('tel:')) setTimeout(() => trackPhoneClick('link'), 0);
+      else if (href.startsWith('sms:')) setTimeout(() => trackTextClick('link'), 0);
     },
     { capture: true }
   );
