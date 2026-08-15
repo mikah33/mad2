@@ -1,45 +1,61 @@
+import { lazy } from 'react';
 import { createBrowserRouter } from 'react-router-dom';
 import App from './App';
-import { ServicesPage } from './pages/ServicesPage';
-import InteriorDetailingPage from './pages/InteriorDetailingPage';
-import OdorStainRemovalPage from './pages/OdorStainRemovalPage';
-import ExteriorDetailingPage from './pages/ExteriorDetailingPage';
-import CeramicCoatingPage from './pages/CeramicCoatingPage';
-import PaintCorrectionPage from './pages/PaintCorrectionPage';
-import FullDetailPage from './pages/FullDetailPage';
-import MobileDetailingPage from './pages/MobileDetailingPage';
-import { BlogPage } from './pages/blog/BlogPage';
-import { BlogPostPage } from './pages/blog/BlogPostPage';
-import { FAQPage } from './pages/FAQPage';
-import { CeramicCoatingFAQPage } from './pages/CeramicCoatingFAQPage';
-import { MobileDetailingFAQPage } from './pages/MobileDetailingFAQPage';
-import { PrivacyPolicyPage } from './pages/PrivacyPolicyPage';
-import { TermsOfServicePage } from './pages/TermsOfServicePage';
-import { LocationsPage } from './pages/LocationsPage';
-import { ResourcesPage } from './pages/ResourcesPage';
-import LocationColumbiaPage from './pages/LocationColumbiaPage';
-import LocationLexingtonPage from './pages/LocationLexingtonPage';
-import LocationIrmoPage from './pages/LocationIrmoPage';
-import LocationCayecPage from './pages/LocationCayecPage';
-import LocationWestColumbiaPage from './pages/LocationWestColumbiaPage';
-import { LocationChapinPage } from './pages/LocationChapinPage';
-import { LocationSwanseaPage } from './pages/LocationSwanseaPage';
-import { LocationNewberryPage } from './pages/LocationNewberryPage';
-import { LocationBlythewoodPage } from './pages/LocationBlythewoodPage';
-import PricingPage from './pages/PricingPage';
-import BookingPage from './pages/BookingPage';
-import ThankYouPage from './pages/ThankYouPage';
-import AccountPage from './pages/AccountPage';
-import GalleryPage from './pages/GalleryPage';
-import ReviewsPage from './pages/ReviewsPage';
-import ReviewUsPage from './pages/ReviewUsPage';
-import LandingPage from './pages/LandingPage';
-import LandingPageSpecials from './pages/LandingPageSpecials';
-import NiceTryJeffrey from './pages/NiceTryJeffrey';
-import { NotFoundPage } from './pages/NotFoundPage';
 import ErrorBoundary from './components/ErrorBoundary';
-import { NeighborhoodPage, CityHubPage } from './pages/neighborhoods';
 import RootLayout from './components/RootLayout';
+import { NotFoundPage } from './pages/NotFoundPage';
+
+/**
+ * Route code-splitting.
+ *
+ * Every page component used to be imported eagerly, so a visitor landing on the
+ * homepage downloaded all 44 pages plus the neighborhoods dataset in one 1.0MB
+ * bundle — the reason mobile Lighthouse performance sat at 46.
+ *
+ * App (the homepage) and NotFoundPage stay EAGER on purpose: the homepage takes
+ * the most traffic and is what Lighthouse measures, so it must not wait on a
+ * second network round-trip, and the catch-all is tiny. Everything else loads on
+ * demand. Static HTML for every route is still prerendered at build time
+ * (scripts/generate-all-pages-html.ts), so crawlers never wait on a chunk.
+ */
+const ServicesPage = lazy(() => import('./pages/ServicesPage').then((m) => ({ default: m.ServicesPage })));
+const InteriorDetailingPage = lazy(() => import('./pages/InteriorDetailingPage'));
+const OdorStainRemovalPage = lazy(() => import('./pages/OdorStainRemovalPage'));
+const ExteriorDetailingPage = lazy(() => import('./pages/ExteriorDetailingPage'));
+const CeramicCoatingPage = lazy(() => import('./pages/CeramicCoatingPage'));
+const PaintCorrectionPage = lazy(() => import('./pages/PaintCorrectionPage'));
+const FullDetailPage = lazy(() => import('./pages/FullDetailPage'));
+const MobileDetailingPage = lazy(() => import('./pages/MobileDetailingPage'));
+const BlogPage = lazy(() => import('./pages/blog/BlogPage').then((m) => ({ default: m.BlogPage })));
+const BlogPostPage = lazy(() => import('./pages/blog/BlogPostPage').then((m) => ({ default: m.BlogPostPage })));
+const FAQPage = lazy(() => import('./pages/FAQPage').then((m) => ({ default: m.FAQPage })));
+const CeramicCoatingFAQPage = lazy(() => import('./pages/CeramicCoatingFAQPage').then((m) => ({ default: m.CeramicCoatingFAQPage })));
+const MobileDetailingFAQPage = lazy(() => import('./pages/MobileDetailingFAQPage').then((m) => ({ default: m.MobileDetailingFAQPage })));
+const PrivacyPolicyPage = lazy(() => import('./pages/PrivacyPolicyPage').then((m) => ({ default: m.PrivacyPolicyPage })));
+const TermsOfServicePage = lazy(() => import('./pages/TermsOfServicePage').then((m) => ({ default: m.TermsOfServicePage })));
+const LocationsPage = lazy(() => import('./pages/LocationsPage').then((m) => ({ default: m.LocationsPage })));
+const ResourcesPage = lazy(() => import('./pages/ResourcesPage').then((m) => ({ default: m.ResourcesPage })));
+const LocationColumbiaPage = lazy(() => import('./pages/LocationColumbiaPage'));
+const LocationLexingtonPage = lazy(() => import('./pages/LocationLexingtonPage'));
+const LocationIrmoPage = lazy(() => import('./pages/LocationIrmoPage'));
+const LocationCayecPage = lazy(() => import('./pages/LocationCayecPage'));
+const LocationWestColumbiaPage = lazy(() => import('./pages/LocationWestColumbiaPage'));
+const LocationChapinPage = lazy(() => import('./pages/LocationChapinPage').then((m) => ({ default: m.LocationChapinPage })));
+const LocationSwanseaPage = lazy(() => import('./pages/LocationSwanseaPage').then((m) => ({ default: m.LocationSwanseaPage })));
+const LocationNewberryPage = lazy(() => import('./pages/LocationNewberryPage').then((m) => ({ default: m.LocationNewberryPage })));
+const LocationBlythewoodPage = lazy(() => import('./pages/LocationBlythewoodPage').then((m) => ({ default: m.LocationBlythewoodPage })));
+const PricingPage = lazy(() => import('./pages/PricingPage'));
+const BookingPage = lazy(() => import('./pages/BookingPage'));
+const ThankYouPage = lazy(() => import('./pages/ThankYouPage'));
+const AccountPage = lazy(() => import('./pages/AccountPage'));
+const GalleryPage = lazy(() => import('./pages/GalleryPage'));
+const ReviewsPage = lazy(() => import('./pages/ReviewsPage'));
+const ReviewUsPage = lazy(() => import('./pages/ReviewUsPage'));
+const LandingPage = lazy(() => import('./pages/LandingPage'));
+const LandingPageSpecials = lazy(() => import('./pages/LandingPageSpecials'));
+const NiceTryJeffrey = lazy(() => import('./pages/NiceTryJeffrey'));
+const NeighborhoodPage = lazy(() => import('./pages/neighborhoods').then((m) => ({ default: m.NeighborhoodPage })));
+const CityHubPage = lazy(() => import('./pages/neighborhoods').then((m) => ({ default: m.CityHubPage })));
 
 export const router = createBrowserRouter([
   {
