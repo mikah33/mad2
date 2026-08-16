@@ -17,3 +17,7 @@ dist/
 
 # OS junk
 .DS_Store
+
+# Local agent/session state (never commit)
+.claude/
+ruvector.db
