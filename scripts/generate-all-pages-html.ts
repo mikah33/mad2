@@ -86,7 +86,7 @@ interface PrerenderRoute {
 
 const routes: PrerenderRoute[] = [
   // Homepage
-  { path: '', title: "Mobile Car Detailing Columbia SC | Mikah's Auto Detailing", description: '5.0-star mobile auto detailing in Columbia, Lexington & Irmo SC. We come to you - details from $125, full interior + exterior $225. Call (803) 667-8731.' },
+  { path: '', title: "Car Detailing Near Me Columbia SC | From $125 · We Come to You — Mikah's Auto Detailing", description: '5.0-star mobile car detailing in Columbia, Lexington & Irmo SC — we come to your home or office. Full detail $225, exterior from $125, interior from $200. Same-day available. (803) 667-8731.' },
 
   // Service pages
   { path: 'services', title: 'Auto Detailing Services | Columbia SC', description: 'Mobile detailing services in Columbia SC: interior from $200, exterior from $125, full detail $225, ceramic coating from $850. 5.0-star - we come to you.' },
@@ -118,7 +118,7 @@ const routes: PrerenderRoute[] = [
   // NOTE: /contact/ is intentionally NOT here. The router has no /contact route
   // (the SPA renders a noindexed 404 for it), so prerendering it served users a
   // broken page. netlify.toml now 301s /contact/* -> /book/.
-  { path: 'pricing', title: 'Car Detailing Prices 2026 — Columbia SC Price List', description: '2026 car detailing price list for Columbia & Lexington SC: Exterior from $125, Interior from $200, Basic Detail $225, Factory Reset $375. Mobile — we come to you. Free quote: (803) 667-8731.' },
+  { path: 'pricing', title: 'Car Detailing Prices Columbia SC 2026 | Exterior $125 · Full Detail $225', description: '2026 car detailing price list for Columbia & Lexington SC: Exterior from $125, Interior from $200, Full Detail $225, Factory Reset $375. Mobile — we come to you. Free quote: (803) 667-8731.' },
   { path: 'faq', title: 'Frequently Asked Questions | Auto Detailing', description: 'Common questions about auto detailing, ceramic coating, pricing, and our mobile service.' },
   { path: 'faq/ceramic-coating', title: 'Ceramic Coating FAQ | Common Questions', description: 'Frequently asked questions about ceramic coating, application, maintenance, and benefits.' },
   { path: 'faq/mobile-detailing', title: 'Mobile Detailing FAQ | Common Questions', description: 'Frequently asked questions about our mobile detailing service and process.' },
