@@ -1,45 +1,54 @@
 {
   "gsc_property": "https://mikahsmobiledetailingsc.com/",
-  "pulled_at": "2026-08-24T03:02:22.397157+00:00",
+  "pulled_at": "2026-08-24T15:01:07.692416+00:00",
   "date_range": {
     "start": "2026-08-16",
     "end": "2026-08-22"
   },
   "totals": [
     {
-      "clicks": 12,
-      "impressions": 1493,
-      "ctr": 0.008037508372404554,
-      "position": 30.218352310783658
+      "clicks": 15,
+      "impressions": 1699,
+      "ctr": 0.008828722778104767,
+      "position": 29.928781636256623
     }
   ],
   "queries": [
     {
       "keys": [
+        "car detailing near me"
+      ],
+      "clicks": 1,
+      "impressions": 45,
+      "ctr": 0.022222222222222223,
+      "position": 8.066666666666666
+    },
+    {
+      "keys": [
         "detailing near me"
       ],
       "clicks": 1,
-      "impressions": 6,
-      "ctr": 0.16666666666666666,
-      "position": 8.833333333333332
+      "impressions": 7,
+      "ctr": 0.14285714285714285,
+      "position": 8.857142857142858
     },
     {
       "keys": [
         "mobile car detailing near me"
       ],
       "clicks": 1,
-      "impressions": 12,
-      "ctr": 0.08333333333333333,
-      "position": 4.666666666666666
+      "impressions": 14,
+      "ctr": 0.07142857142857142,
+      "position": 4.357142857142858
     },
     {
       "keys": [
         "mobile detailing near me"
       ],
       "clicks": 1,
-      "impressions": 25,
-      "ctr": 0.04,
-      "position": 6.52
+      "impressions": 29,
+      "ctr": 0.034482758620689655,
+      "position": 6.310344827586207
     },
     {
       "keys": [
@@ -112,6 +121,15 @@
       "impressions": 1,
       "ctr": 0,
       "position": 9
+    },
+    {
+      "keys": [
+        "at home car detail"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 7
     },
     {
       "keys": [
@@ -199,9 +217,9 @@
         "auto detailing near me prices"
       ],
       "clicks": 0,
-      "impressions": 3,
+      "impressions": 4,
       "ctr": 0,
-      "position": 70
+      "position": 71.5
     },
     {
       "keys": [
@@ -286,6 +304,15 @@
     },
     {
       "keys": [
+        "auto interior deep cleaning"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 4
+    },
+    {
+      "keys": [
         "auto salon near me"
       ],
       "clicks": 0,
@@ -307,9 +334,9 @@
         "automobile detailing prices"
       ],
       "clicks": 0,
-      "impressions": 19,
+      "impressions": 23,
       "ctr": 0,
-      "position": 54.63157894736842
+      "position": 54.130434782608695
     },
     {
       "keys": [
@@ -376,6 +403,15 @@
     },
     {
       "keys": [
+        "average cost to detail car"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 95
+    },
+    {
+      "keys": [
         "average cost to get car detailed"
       ],
       "clicks": 0,
@@ -403,6 +439,15 @@
     },
     {
       "keys": [
+        "average price car detailing"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 100
+    },
+    {
+      "keys": [
         "average price for a car detail"
       ],
       "clicks": 0,
@@ -418,6 +463,15 @@
       "impressions": 1,
       "ctr": 0,
       "position": 81
+    },
+    {
+      "keys": [
+        "average price for detailing cars"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 67
     },
     {
       "keys": [
@@ -460,9 +514,9 @@
         "buffing car cost"
       ],
       "clicks": 0,
-      "impressions": 7,
+      "impressions": 9,
       "ctr": 0,
-      "position": 72.85714285714286
+      "position": 70.88888888888889
     },
     {
       "keys": [
@@ -478,9 +532,9 @@
         "car buffing cost"
       ],
       "clicks": 0,
-      "impressions": 7,
+      "impressions": 9,
       "ctr": 0,
-      "position": 62.142857142857146
+      "position": 62.55555555555556
     },
     {
       "keys": [
@@ -529,6 +583,24 @@
     },
     {
       "keys": [
+        "car cleaning cost"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 83
+    },
+    {
+      "keys": [
+        "car cleaning price list"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 15
+    },
+    {
+      "keys": [
         "car cleaning service"
       ],
       "clicks": 0,
@@ -559,9 +631,9 @@
         "car dealership cleaning west columbia sc"
       ],
       "clicks": 0,
-      "impressions": 4,
+      "impressions": 5,
       "ctr": 0,
-      "position": 7
+      "position": 6.8
     },
     {
       "keys": [
@@ -586,9 +658,9 @@
         "car detail columbia sc"
       ],
       "clicks": 0,
-      "impressions": 4,
+      "impressions": 7,
       "ctr": 0,
-      "position": 11.25
+      "position": 37.57142857142857
     },
     {
       "keys": [
@@ -598,6 +670,15 @@
       "impressions": 2,
       "ctr": 0,
       "position": 32.5
+    },
+    {
+      "keys": [
+        "car detail costs"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 91
     },
     {
       "keys": [
@@ -637,6 +718,15 @@
     },
     {
       "keys": [
+        "car detail service"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 12
+    },
+    {
+      "keys": [
         "car detail service near me"
       ],
       "clicks": 0,
@@ -667,9 +757,9 @@
         "car detailers near me"
       ],
       "clicks": 0,
-      "impressions": 3,
+      "impressions": 4,
       "ctr": 0,
-      "position": 8.333333333333332
+      "position": 8
     },
     {
       "keys": [
@@ -712,9 +802,9 @@
         "car detailing cost"
       ],
       "clicks": 0,
-      "impressions": 13,
+      "impressions": 14,
       "ctr": 0,
-      "position": 62.07692307692308
+      "position": 64.35714285714286
     },
     {
       "keys": [
@@ -730,9 +820,9 @@
         "car detailing cost near me"
       ],
       "clicks": 0,
-      "impressions": 2,
+      "impressions": 3,
       "ctr": 0,
-      "position": 38
+      "position": 51.333333333333336
     },
     {
       "keys": [
@@ -772,15 +862,6 @@
     },
     {
       "keys": [
-        "car detailing near me"
-      ],
-      "clicks": 0,
-      "impressions": 31,
-      "ctr": 0,
-      "position": 8.387096774193548
-    },
-    {
-      "keys": [
         "car detailing near me cheap"
       ],
       "clicks": 0,
@@ -793,9 +874,9 @@
         "car detailing near me prices"
       ],
       "clicks": 0,
-      "impressions": 8,
+      "impressions": 9,
       "ctr": 0,
-      "position": 71.875
+      "position": 74.55555555555556
     },
     {
       "keys": [
@@ -811,9 +892,9 @@
         "car detailing paint correction cost"
       ],
       "clicks": 0,
-      "impressions": 1,
+      "impressions": 4,
       "ctr": 0,
-      "position": 52
+      "position": 54
     },
     {
       "keys": [
@@ -829,18 +910,27 @@
         "car detailing price list"
       ],
       "clicks": 0,
-      "impressions": 6,
+      "impressions": 7,
       "ctr": 0,
-      "position": 17.833333333333332
+      "position": 18
     },
     {
       "keys": [
         "car detailing prices"
       ],
       "clicks": 0,
-      "impressions": 81,
+      "impressions": 85,
       "ctr": 0,
-      "position": 25.641975308641975
+      "position": 25.68235294117647
+    },
+    {
+      "keys": [
+        "car detailing prices list"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 48
     },
     {
       "keys": [
@@ -856,9 +946,9 @@
         "car detailing pricing"
       ],
       "clicks": 0,
-      "impressions": 7,
+      "impressions": 8,
       "ctr": 0,
-      "position": 37.57142857142857
+      "position": 38.5
     },
     {
       "keys": [
@@ -928,9 +1018,9 @@
         "car interior detailing cost"
       ],
       "clicks": 0,
-      "impressions": 2,
+      "impressions": 3,
       "ctr": 0,
-      "position": 92
+      "position": 81.66666666666667
     },
     {
       "keys": [
@@ -1054,9 +1144,9 @@
         "ceramic coating cost near me"
       ],
       "clicks": 0,
-      "impressions": 10,
+      "impressions": 11,
       "ctr": 0,
-      "position": 40.7
+      "position": 41
     },
     {
       "keys": [
@@ -1111,6 +1201,15 @@
       "impressions": 3,
       "ctr": 0,
       "position": 6
+    },
+    {
+      "keys": [
+        "columbia auto detailing"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 12
     },
     {
       "keys": [
@@ -1357,6 +1456,24 @@
     },
     {
       "keys": [
+        "detailing a car pricing"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 23
+    },
+    {
+      "keys": [
+        "detailing car prices"
+      ],
+      "clicks": 0,
+      "impressions": 3,
+      "ctr": 0,
+      "position": 50.666666666666664
+    },
+    {
+      "keys": [
         "detailing car wash price"
       ],
       "clicks": 0,
@@ -1414,9 +1531,9 @@
         "detailing prices"
       ],
       "clicks": 0,
-      "impressions": 1,
+      "impressions": 2,
       "ctr": 0,
-      "position": 36
+      "position": 65.5
     },
     {
       "keys": [
@@ -1456,6 +1573,15 @@
     },
     {
       "keys": [
+        "detallado de autos a domicilio"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 7
+    },
+    {
+      "keys": [
         "drive up car detailing near me"
       ],
       "clicks": 0,
@@ -1474,12 +1600,39 @@
     },
     {
       "keys": [
+        "engine bay cleaning near me"
+      ],
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 6.5
+    },
+    {
+      "keys": [
+        "exterior car detailing cost"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 9
+    },
+    {
+      "keys": [
         "exterior detail cost"
       ],
       "clicks": 0,
       "impressions": 1,
       "ctr": 0,
       "position": 80
+    },
+    {
+      "keys": [
+        "foamy auto detailing"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 13
     },
     {
       "keys": [
@@ -1573,12 +1726,30 @@
     },
     {
       "keys": [
+        "how much are car details"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 10
+    },
+    {
+      "keys": [
         "how much auto detailing cost"
       ],
       "clicks": 0,
       "impressions": 2,
       "ctr": 0,
       "position": 67.5
+    },
+    {
+      "keys": [
+        "how much detail car"
+      ],
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 92
     },
     {
       "keys": [
@@ -1609,6 +1780,15 @@
     },
     {
       "keys": [
+        "how much does a detail cost"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 63
+    },
+    {
+      "keys": [
         "how much does a full auto detail cost"
       ],
       "clicks": 0,
@@ -1624,6 +1804,15 @@
       "impressions": 2,
       "ctr": 0,
       "position": 66
+    },
+    {
+      "keys": [
+        "how much does an auto detail cost"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 8
     },
     {
       "keys": [
@@ -1675,9 +1864,9 @@
         "how much does interior car detailing cost"
       ],
       "clicks": 0,
-      "impressions": 6,
+      "impressions": 7,
       "ctr": 0,
-      "position": 58
+      "position": 54.57142857142857
     },
     {
       "keys": [
@@ -1720,9 +1909,9 @@
         "how much does it cost to detail a car"
       ],
       "clicks": 0,
-      "impressions": 3,
+      "impressions": 4,
       "ctr": 0,
-      "position": 64.66666666666666
+      "position": 50.5
     },
     {
       "keys": [
@@ -1768,6 +1957,15 @@
       "impressions": 1,
       "ctr": 0,
       "position": 10
+    },
+    {
+      "keys": [
+        "how much does it cost to detail your car"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 74
     },
     {
       "keys": [
@@ -1897,6 +2095,15 @@
     },
     {
       "keys": [
+        "how much is a car detail cost"
+      ],
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 62.5
+    },
+    {
+      "keys": [
         "how much is a car detailing"
       ],
       "clicks": 0,
@@ -1933,6 +2140,15 @@
     },
     {
       "keys": [
+        "how much is a full detail on a car"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 8
+    },
+    {
+      "keys": [
         "how much is a full interior and exterior detail"
       ],
       "clicks": 0,
@@ -1954,9 +2170,9 @@
         "how much is car detailing"
       ],
       "clicks": 0,
-      "impressions": 5,
+      "impressions": 7,
       "ctr": 0,
-      "position": 37.6
+      "position": 46.42857142857143
     },
     {
       "keys": [
@@ -1978,12 +2194,21 @@
     },
     {
       "keys": [
+        "how much is car detailing near me"
+      ],
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 72.5
+    },
+    {
+      "keys": [
         "how much is detailing"
       ],
       "clicks": 0,
-      "impressions": 1,
+      "impressions": 2,
       "ctr": 0,
-      "position": 98
+      "position": 66.5
     },
     {
       "keys": [
@@ -2035,9 +2260,18 @@
         "how much is it to get your car detailed"
       ],
       "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 8.5
+    },
+    {
+      "keys": [
+        "how much is to detail a car"
+      ],
+      "clicks": 0,
       "impressions": 1,
       "ctr": 0,
-      "position": 8
+      "position": 80
     },
     {
       "keys": [
@@ -2131,6 +2365,15 @@
     },
     {
       "keys": [
+        "how much to get car detailed"
+      ],
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 41
+    },
+    {
+      "keys": [
         "how much to get car detailed inside"
       ],
       "clicks": 0,
@@ -2143,9 +2386,9 @@
         "hyundai auto detailing service prices"
       ],
       "clicks": 0,
-      "impressions": 3,
+      "impressions": 5,
       "ctr": 0,
-      "position": 68.33333333333333
+      "position": 67.4
     },
     {
       "keys": [
@@ -2158,12 +2401,30 @@
     },
     {
       "keys": [
+        "interior car cleaning"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 10
+    },
+    {
+      "keys": [
         "interior car cleaning cost"
       ],
       "clicks": 0,
-      "impressions": 3,
+      "impressions": 4,
       "ctr": 0,
-      "position": 79
+      "position": 76.75
+    },
+    {
+      "keys": [
+        "interior car cleaning near me"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 4
     },
     {
       "keys": [
@@ -2206,9 +2467,9 @@
         "interior car detailing near me"
       ],
       "clicks": 0,
-      "impressions": 3,
+      "impressions": 4,
       "ctr": 0,
-      "position": 9.333333333333334
+      "position": 9.75
     },
     {
       "keys": [
@@ -2305,9 +2566,9 @@
         "interior detailing cost"
       ],
       "clicks": 0,
-      "impressions": 4,
+      "impressions": 5,
       "ctr": 0,
-      "position": 68.75
+      "position": 67
     },
     {
       "keys": [
@@ -2365,6 +2626,15 @@
     },
     {
       "keys": [
+        "mazda auto detailing service prices"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 57
+    },
+    {
+      "keys": [
         "mercedes benz auto detailing service prices"
       ],
       "clicks": 0,
@@ -2377,7 +2647,7 @@
         "mikahs"
       ],
       "clicks": 0,
-      "impressions": 1,
+      "impressions": 2,
       "ctr": 0,
       "position": 1
     },
@@ -2440,9 +2710,9 @@
         "mobile car detailing"
       ],
       "clicks": 0,
-      "impressions": 5,
+      "impressions": 7,
       "ctr": 0,
-      "position": 39.8
+      "position": 31
     },
     {
       "keys": [
@@ -2512,9 +2782,9 @@
         "mobile car detailing prices"
       ],
       "clicks": 0,
-      "impressions": 1,
+      "impressions": 2,
       "ctr": 0,
-      "position": 38
+      "position": 58.5
     },
     {
       "keys": [
@@ -2611,9 +2881,9 @@
         "mobile detailing columbia sc"
       ],
       "clicks": 0,
-      "impressions": 20,
+      "impressions": 21,
       "ctr": 0,
-      "position": 53.9
+      "position": 52.23809523809524
     },
     {
       "keys": [
@@ -2665,9 +2935,9 @@
         "mobile detailing prices"
       ],
       "clicks": 0,
-      "impressions": 19,
+      "impressions": 26,
       "ctr": 0,
-      "position": 60.1578947368421
+      "position": 55.92307692307692
     },
     {
       "keys": [
@@ -2737,9 +3007,18 @@
         "paint correction detail cost"
       ],
       "clicks": 0,
-      "impressions": 2,
+      "impressions": 6,
       "ctr": 0,
-      "position": 52
+      "position": 45.166666666666664
+    },
+    {
+      "keys": [
+        "ppf vs ceramic coating differences"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 80
     },
     {
       "keys": [
@@ -2764,9 +3043,9 @@
         "price for car detailing"
       ],
       "clicks": 0,
-      "impressions": 4,
+      "impressions": 5,
       "ctr": 0,
-      "position": 45
+      "position": 45.2
     },
     {
       "keys": [
@@ -2791,9 +3070,9 @@
         "price to buff car"
       ],
       "clicks": 0,
-      "impressions": 8,
+      "impressions": 10,
       "ctr": 0,
-      "position": 69.625
+      "position": 69.8
     },
     {
       "keys": [
@@ -2818,9 +3097,27 @@
         "prices for detailing cars"
       ],
       "clicks": 0,
-      "impressions": 3,
+      "impressions": 5,
       "ctr": 0,
-      "position": 68.33333333333333
+      "position": 50
+    },
+    {
+      "keys": [
+        "professional car detailing"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 39
+    },
+    {
+      "keys": [
+        "professional car polishing near me"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 18
     },
     {
       "keys": [
@@ -2887,6 +3184,15 @@
     },
     {
       "keys": [
+        "toyota auto detailing service prices"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 91
+    },
+    {
+      "keys": [
         "truck detail price"
       ],
       "clicks": 0,
@@ -2908,9 +3214,9 @@
         "ultra gloss mobile detailing columbia"
       ],
       "clicks": 0,
-      "impressions": 6,
+      "impressions": 7,
       "ctr": 0,
-      "position": 10.333333333333334
+      "position": 10.142857142857142
     },
     {
       "keys": [
@@ -2935,9 +3241,9 @@
         "vehicle detailing shandon"
       ],
       "clicks": 0,
-      "impressions": 1,
+      "impressions": 2,
       "ctr": 0,
-      "position": 12
+      "position": 34.5
     },
     {
       "keys": [
@@ -2963,64 +3269,73 @@
       "keys": [
         "https://mikahsmobiledetailingsc.com/"
       ],
-      "clicks": 5,
-      "impressions": 202,
-      "ctr": 0.024752475247524754,
-      "position": 12.752475247524753
+      "clicks": 7,
+      "impressions": 219,
+      "ctr": 0.0319634703196347,
+      "position": 12.374429223744292
     },
     {
       "keys": [
         "https://mikahsmobiledetailingsc.com/locations/columbia-sc/"
       ],
       "clicks": 3,
-      "impressions": 140,
-      "ctr": 0.02142857142857143,
-      "position": 29.15
+      "impressions": 157,
+      "ctr": 0.01910828025477707,
+      "position": 27.21019108280255
     },
     {
       "keys": [
         "https://mikahsmobiledetailingsc.com/locations/columbia-sc/neighborhoods/"
       ],
       "clicks": 1,
-      "impressions": 42,
-      "ctr": 0.023809523809523808,
-      "position": 63.833333333333336
+      "impressions": 46,
+      "ctr": 0.021739130434782608,
+      "position": 60.54347826086956
     },
     {
       "keys": [
         "https://mikahsmobiledetailingsc.com/locations/irmo-sc/"
       ],
       "clicks": 1,
-      "impressions": 40,
-      "ctr": 0.025,
-      "position": 8.85
+      "impressions": 44,
+      "ctr": 0.022727272727272728,
+      "position": 8.818181818181818
     },
     {
       "keys": [
         "https://mikahsmobiledetailingsc.com/locations/west-columbia/"
       ],
       "clicks": 1,
-      "impressions": 166,
-      "ctr": 0.006024096385542169,
-      "position": 18.548192771084338
+      "impressions": 202,
+      "ctr": 0.0049504950495049506,
+      "position": 16.68811881188119
     },
     {
       "keys": [
         "https://mikahsmobiledetailingsc.com/locations/west-columbia/sunset-blvd-west-columbia-sc/"
       ],
       "clicks": 1,
-      "impressions": 26,
-      "ctr": 0.038461538461538464,
-      "position": 45.19230769230769
+      "impressions": 28,
+      "ctr": 0.03571428571428571,
+      "position": 45.464285714285715
+    },
+    {
+      "keys": [
+        "https://mikahsmobiledetailingsc.com/pricing/"
+      ],
+      "clicks": 1,
+      "impressions": 569,
+      "ctr": 0.0017574692442882249,
+      "position": 29.147627416520212
     },
     {
       "keys": [
         "https://mikahsmobiledetailingsc.com/services/full-detail/"
       ],
       "clicks": 1,
-      "impressions": 47,
-      "ctr": 0.02127659574468085,
-      "position": 57.255319148936174
+      "impressions": 48,
+      "ctr": 0.020833333333333332,
+      "position": 57.604166666666664
     },
     {
       "keys": [
@@ -3036,18 +3351,27 @@
         "https://mikahsmobiledetailingsc.com/blog/02-ceramic-coating-vs-ppf/"
       ],
       "clicks": 0,
-      "impressions": 3,
+      "impressions": 4,
       "ctr": 0,
-      "position": 77
+      "position": 77.75
+    },
+    {
+      "keys": [
+        "https://mikahsmobiledetailingsc.com/blog/02-mobile-car-detailing-columbia-sc-guide/"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 8
     },
     {
       "keys": [
         "https://mikahsmobiledetailingsc.com/blog/05-ceramic-coating-cost-benefit-analysis/"
       ],
       "clicks": 0,
-      "impressions": 2,
+      "impressions": 3,
       "ctr": 0,
-      "position": 36
+      "position": 51.333333333333336
     },
     {
       "keys": [
@@ -3063,18 +3387,18 @@
         "https://mikahsmobiledetailingsc.com/blog/best-car-detailing-lexington-sc/"
       ],
       "clicks": 0,
-      "impressions": 14,
+      "impressions": 15,
       "ctr": 0,
-      "position": 65.78571428571429
+      "position": 62.2
     },
     {
       "keys": [
         "https://mikahsmobiledetailingsc.com/blog/car-detailing-columbia-sc-2026/"
       ],
       "clicks": 0,
-      "impressions": 5,
+      "impressions": 6,
       "ctr": 0,
-      "position": 5.6
+      "position": 5.833333333333333
     },
     {
       "keys": [
@@ -3099,9 +3423,9 @@
         "https://mikahsmobiledetailingsc.com/blog/car-detailing-prices-value-breakdown/"
       ],
       "clicks": 0,
-      "impressions": 215,
+      "impressions": 237,
       "ctr": 0,
-      "position": 70.49302325581395
+      "position": 70.83122362869199
     },
     {
       "keys": [
@@ -3135,9 +3459,9 @@
         "https://mikahsmobiledetailingsc.com/blog/mobile-car-detailing-lexington-sc-complete-guide/"
       ],
       "clicks": 0,
-      "impressions": 2,
+      "impressions": 3,
       "ctr": 0,
-      "position": 8
+      "position": 7
     },
     {
       "keys": [
@@ -3153,9 +3477,9 @@
         "https://mikahsmobiledetailingsc.com/blog/mobile-detailing-columbia-sc-prices-2025/"
       ],
       "clicks": 0,
-      "impressions": 86,
+      "impressions": 101,
       "ctr": 0,
-      "position": 16.046511627906977
+      "position": 15.752475247524753
     },
     {
       "keys": [
@@ -3180,9 +3504,9 @@
         "https://mikahsmobiledetailingsc.com/blog/ultimate-guide-mobile-car-detailing-columbia-sc/"
       ],
       "clicks": 0,
-      "impressions": 21,
+      "impressions": 22,
       "ctr": 0,
-      "position": 70
+      "position": 66.9090909090909
     },
     {
       "keys": [
@@ -3198,9 +3522,9 @@
         "https://mikahsmobiledetailingsc.com/book"
       ],
       "clicks": 0,
-      "impressions": 6,
+      "impressions": 7,
       "ctr": 0,
-      "position": 5.333333333333333
+      "position": 6.714285714285714
     },
     {
       "keys": [
@@ -3234,18 +3558,18 @@
         "https://mikahsmobiledetailingsc.com/locations/blythewood-sc"
       ],
       "clicks": 0,
-      "impressions": 2,
+      "impressions": 3,
       "ctr": 0,
-      "position": 10
+      "position": 7.333333333333333
     },
     {
       "keys": [
         "https://mikahsmobiledetailingsc.com/locations/cayce-sc"
       ],
       "clicks": 0,
-      "impressions": 2,
+      "impressions": 3,
       "ctr": 0,
-      "position": 10
+      "position": 7.333333333333333
     },
     {
       "keys": [
@@ -3261,63 +3585,63 @@
         "https://mikahsmobiledetailingsc.com/locations/cayce-sc/airport-blvd-cayce-sc/"
       ],
       "clicks": 0,
-      "impressions": 3,
+      "impressions": 4,
       "ctr": 0,
-      "position": 6.666666666666667
+      "position": 6
     },
     {
       "keys": [
         "https://mikahsmobiledetailingsc.com/locations/irmo-sc"
       ],
       "clicks": 0,
-      "impressions": 6,
+      "impressions": 8,
       "ctr": 0,
-      "position": 10.166666666666666
+      "position": 8.125
     },
     {
       "keys": [
         "https://mikahsmobiledetailingsc.com/locations/irmo-sc/neighborhoods/"
       ],
       "clicks": 0,
-      "impressions": 19,
+      "impressions": 24,
       "ctr": 0,
-      "position": 30.105263157894736
+      "position": 25.291666666666668
     },
     {
       "keys": [
         "https://mikahsmobiledetailingsc.com/locations/lexington-sc"
       ],
       "clicks": 0,
-      "impressions": 6,
+      "impressions": 8,
       "ctr": 0,
-      "position": 10.166666666666666
+      "position": 8.125
     },
     {
       "keys": [
         "https://mikahsmobiledetailingsc.com/locations/lexington-sc/"
       ],
       "clicks": 0,
-      "impressions": 65,
+      "impressions": 81,
       "ctr": 0,
-      "position": 28.23076923076923
+      "position": 24.555555555555557
     },
     {
       "keys": [
         "https://mikahsmobiledetailingsc.com/locations/lexington-sc/neighborhoods/"
       ],
       "clicks": 0,
-      "impressions": 20,
+      "impressions": 21,
       "ctr": 0,
-      "position": 29.4
+      "position": 28.238095238095237
     },
     {
       "keys": [
         "https://mikahsmobiledetailingsc.com/locations/west-columbia"
       ],
       "clicks": 0,
-      "impressions": 6,
+      "impressions": 8,
       "ctr": 0,
-      "position": 10.166666666666666
+      "position": 8.125
     },
     {
       "keys": [
@@ -3330,39 +3654,30 @@
     },
     {
       "keys": [
-        "https://mikahsmobiledetailingsc.com/pricing/"
-      ],
-      "clicks": 0,
-      "impressions": 485,
-      "ctr": 0,
-      "position": 27.789690721649485
-    },
-    {
-      "keys": [
         "https://mikahsmobiledetailingsc.com/services/ceramic-coating/"
       ],
       "clicks": 0,
-      "impressions": 8,
+      "impressions": 9,
       "ctr": 0,
-      "position": 31.875
+      "position": 28.555555555555557
     },
     {
       "keys": [
         "https://mikahsmobiledetailingsc.com/services/interior-detailing/"
       ],
       "clicks": 0,
-      "impressions": 25,
+      "impressions": 26,
       "ctr": 0,
-      "position": 44.36
+      "position": 43.88461538461539
     },
     {
       "keys": [
         "https://mikahsmobiledetailingsc.com/services/mobile-detailing/"
       ],
       "clicks": 0,
-      "impressions": 35,
+      "impressions": 37,
       "ctr": 0,
-      "position": 57.65714285714286
+      "position": 56.91891891891892
     },
     {
       "keys": [
@@ -3375,6 +3690,16 @@
     }
   ],
   "query_x_page": [
+    {
+      "keys": [
+        "car detailing near me",
+        "https://mikahsmobiledetailingsc.com/"
+      ],
+      "clicks": 1,
+      "impressions": 13,
+      "ctr": 0.07692307692307693,
+      "position": 11.692307692307692
+    },
     {
       "keys": [
         "detailing near me",
@@ -3391,9 +3716,9 @@
         "https://mikahsmobiledetailingsc.com/locations/west-columbia/"
       ],
       "clicks": 1,
-      "impressions": 8,
-      "ctr": 0.125,
-      "position": 3.625
+      "impressions": 10,
+      "ctr": 0.1,
+      "position": 3.4
     },
     {
       "keys": [
@@ -3554,6 +3879,26 @@
       "impressions": 1,
       "ctr": 0,
       "position": 9
+    },
+    {
+      "keys": [
+        "at home car detail",
+        "https://mikahsmobiledetailingsc.com/"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 10
+    },
+    {
+      "keys": [
+        "at home car detail",
+        "https://mikahsmobiledetailingsc.com/locations/lexington-sc/"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 7
     },
     {
       "keys": [
@@ -3881,9 +4226,9 @@
         "https://mikahsmobiledetailingsc.com/pricing/"
       ],
       "clicks": 0,
-      "impressions": 3,
+      "impressions": 4,
       "ctr": 0,
-      "position": 70
+      "position": 71.5
     },
     {
       "keys": [
@@ -4057,6 +4402,16 @@
     },
     {
       "keys": [
+        "auto interior deep cleaning",
+        "https://mikahsmobiledetailingsc.com/locations/west-columbia/"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 4
+    },
+    {
+      "keys": [
         "auto salon near me",
         "https://mikahsmobiledetailingsc.com/locations/columbia-sc/"
       ],
@@ -4091,9 +4446,9 @@
         "https://mikahsmobiledetailingsc.com/pricing/"
       ],
       "clicks": 0,
-      "impressions": 16,
+      "impressions": 20,
       "ctr": 0,
-      "position": 47.3125
+      "position": 48.2
     },
     {
       "keys": [
@@ -4167,6 +4522,16 @@
     },
     {
       "keys": [
+        "average cost to detail car",
+        "https://mikahsmobiledetailingsc.com/blog/car-detailing-prices-value-breakdown/"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 95
+    },
+    {
+      "keys": [
         "average cost to get car detailed",
         "https://mikahsmobiledetailingsc.com/blog/car-detailing-prices-value-breakdown/"
       ],
@@ -4197,6 +4562,16 @@
     },
     {
       "keys": [
+        "average price car detailing",
+        "https://mikahsmobiledetailingsc.com/blog/car-detailing-prices-value-breakdown/"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 100
+    },
+    {
+      "keys": [
         "average price for a car detail",
         "https://mikahsmobiledetailingsc.com/blog/car-detailing-prices-value-breakdown/"
       ],
@@ -4214,6 +4589,16 @@
       "impressions": 1,
       "ctr": 0,
       "position": 81
+    },
+    {
+      "keys": [
+        "average price for detailing cars",
+        "https://mikahsmobiledetailingsc.com/blog/car-detailing-prices-value-breakdown/"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 67
     },
     {
       "keys": [
@@ -4271,9 +4656,9 @@
         "https://mikahsmobiledetailingsc.com/pricing/"
       ],
       "clicks": 0,
-      "impressions": 1,
+      "impressions": 3,
       "ctr": 0,
-      "position": 59
+      "position": 62.333333333333336
     },
     {
       "keys": [
@@ -4301,9 +4686,9 @@
         "https://mikahsmobiledetailingsc.com/pricing/"
       ],
       "clicks": 0,
-      "impressions": 3,
+      "impressions": 5,
       "ctr": 0,
-      "position": 52.333333333333336
+      "position": 57
     },
     {
       "keys": [
@@ -4377,6 +4762,26 @@
     },
     {
       "keys": [
+        "car cleaning cost",
+        "https://mikahsmobiledetailingsc.com/pricing/"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 83
+    },
+    {
+      "keys": [
+        "car cleaning price list",
+        "https://mikahsmobiledetailingsc.com/pricing/"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 15
+    },
+    {
+      "keys": [
         "car cleaning service",
         "https://mikahsmobiledetailingsc.com/locations/columbia-sc/"
       ],
@@ -4411,9 +4816,9 @@
         "https://mikahsmobiledetailingsc.com/locations/west-columbia/"
       ],
       "clicks": 0,
-      "impressions": 4,
+      "impressions": 5,
       "ctr": 0,
-      "position": 7
+      "position": 6.8
     },
     {
       "keys": [
@@ -4478,6 +4883,16 @@
     {
       "keys": [
         "car detail columbia sc",
+        "https://mikahsmobiledetailingsc.com/locations/columbia-sc/neighborhoods/"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 81
+    },
+    {
+      "keys": [
+        "car detail columbia sc",
         "https://mikahsmobiledetailingsc.com/locations/irmo-sc"
       ],
       "clicks": 0,
@@ -4507,6 +4922,46 @@
     },
     {
       "keys": [
+        "car detail columbia sc",
+        "https://mikahsmobiledetailingsc.com/locations/west-columbia/"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 63
+    },
+    {
+      "keys": [
+        "car detail columbia sc",
+        "https://mikahsmobiledetailingsc.com/locations/west-columbia/sunset-blvd-west-columbia-sc/"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 86
+    },
+    {
+      "keys": [
+        "car detail columbia sc",
+        "https://mikahsmobiledetailingsc.com/services/full-detail/"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 74
+    },
+    {
+      "keys": [
+        "car detail columbia sc",
+        "https://mikahsmobiledetailingsc.com/services/mobile-detailing/"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 79
+    },
+    {
+      "keys": [
         "car detail cost",
         "https://mikahsmobiledetailingsc.com/blog/car-detailing-prices-value-breakdown/"
       ],
@@ -4524,6 +4979,16 @@
       "impressions": 1,
       "ctr": 0,
       "position": 6
+    },
+    {
+      "keys": [
+        "car detail costs",
+        "https://mikahsmobiledetailingsc.com/blog/car-detailing-prices-value-breakdown/"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 91
     },
     {
       "keys": [
@@ -4587,6 +5052,16 @@
     },
     {
       "keys": [
+        "car detail service",
+        "https://mikahsmobiledetailingsc.com/locations/west-columbia/"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 12
+    },
+    {
+      "keys": [
         "car detail service near me",
         "https://mikahsmobiledetailingsc.com/"
       ],
@@ -4631,9 +5106,9 @@
         "https://mikahsmobiledetailingsc.com/locations/columbia-sc/"
       ],
       "clicks": 0,
-      "impressions": 2,
+      "impressions": 3,
       "ctr": 0,
-      "position": 9
+      "position": 8.333333333333332
     },
     {
       "keys": [
@@ -4851,9 +5326,9 @@
         "https://mikahsmobiledetailingsc.com/blog/car-detailing-prices-value-breakdown/"
       ],
       "clicks": 0,
-      "impressions": 9,
+      "impressions": 10,
       "ctr": 0,
-      "position": 83.22222222222223
+      "position": 84.3
     },
     {
       "keys": [
@@ -4881,9 +5356,9 @@
         "https://mikahsmobiledetailingsc.com/pricing/"
       ],
       "clicks": 0,
-      "impressions": 2,
+      "impressions": 3,
       "ctr": 0,
-      "position": 38
+      "position": 51.333333333333336
     },
     {
       "keys": [
@@ -4968,16 +5443,6 @@
     {
       "keys": [
         "car detailing near me",
-        "https://mikahsmobiledetailingsc.com/"
-      ],
-      "clicks": 0,
-      "impressions": 9,
-      "ctr": 0,
-      "position": 12.333333333333334
-    },
-    {
-      "keys": [
-        "car detailing near me",
         "https://mikahsmobiledetailingsc.com/locations/cayce-sc/airport-blvd-cayce-sc"
       ],
       "clicks": 0,
@@ -4991,9 +5456,9 @@
         "https://mikahsmobiledetailingsc.com/locations/columbia-sc/"
       ],
       "clicks": 0,
-      "impressions": 5,
+      "impressions": 6,
       "ctr": 0,
-      "position": 10.4
+      "position": 10
     },
     {
       "keys": [
@@ -5001,9 +5466,9 @@
         "https://mikahsmobiledetailingsc.com/locations/lexington-sc/"
       ],
       "clicks": 0,
-      "impressions": 4,
+      "impressions": 6,
       "ctr": 0,
-      "position": 5
+      "position": 5.333333333333333
     },
     {
       "keys": [
@@ -5021,9 +5486,9 @@
         "https://mikahsmobiledetailingsc.com/locations/west-columbia/"
       ],
       "clicks": 0,
-      "impressions": 10,
+      "impressions": 19,
       "ctr": 0,
-      "position": 7.2
+      "position": 7.2631578947368425
     },
     {
       "keys": [
@@ -5051,9 +5516,9 @@
         "https://mikahsmobiledetailingsc.com/pricing/"
       ],
       "clicks": 0,
-      "impressions": 8,
+      "impressions": 9,
       "ctr": 0,
-      "position": 71.875
+      "position": 74.55555555555556
     },
     {
       "keys": [
@@ -5071,9 +5536,9 @@
         "https://mikahsmobiledetailingsc.com/pricing/"
       ],
       "clicks": 0,
-      "impressions": 1,
+      "impressions": 4,
       "ctr": 0,
-      "position": 52
+      "position": 54
     },
     {
       "keys": [
@@ -5101,9 +5566,9 @@
         "https://mikahsmobiledetailingsc.com/pricing/"
       ],
       "clicks": 0,
-      "impressions": 6,
+      "impressions": 7,
       "ctr": 0,
-      "position": 17.833333333333332
+      "position": 18
     },
     {
       "keys": [
@@ -5111,9 +5576,9 @@
         "https://mikahsmobiledetailingsc.com/blog/car-detailing-prices-value-breakdown/"
       ],
       "clicks": 0,
-      "impressions": 3,
+      "impressions": 4,
       "ctr": 0,
-      "position": 65
+      "position": 59
     },
     {
       "keys": [
@@ -5131,9 +5596,19 @@
         "https://mikahsmobiledetailingsc.com/pricing/"
       ],
       "clicks": 0,
-      "impressions": 79,
+      "impressions": 82,
       "ctr": 0,
-      "position": 23.924050632911392
+      "position": 23.841463414634145
+    },
+    {
+      "keys": [
+        "car detailing prices list",
+        "https://mikahsmobiledetailingsc.com/pricing/"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 48
     },
     {
       "keys": [
@@ -5161,9 +5636,9 @@
         "https://mikahsmobiledetailingsc.com/pricing/"
       ],
       "clicks": 0,
-      "impressions": 6,
+      "impressions": 7,
       "ctr": 0,
-      "position": 28.5
+      "position": 30.857142857142858
     },
     {
       "keys": [
@@ -5294,6 +5769,16 @@
       "impressions": 2,
       "ctr": 0,
       "position": 92
+    },
+    {
+      "keys": [
+        "car interior detailing cost",
+        "https://mikahsmobiledetailingsc.com/pricing/"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 61
     },
     {
       "keys": [
@@ -5471,9 +5956,9 @@
         "https://mikahsmobiledetailingsc.com/pricing/"
       ],
       "clicks": 0,
-      "impressions": 10,
+      "impressions": 11,
       "ctr": 0,
-      "position": 40.7
+      "position": 41
     },
     {
       "keys": [
@@ -5564,6 +6049,16 @@
       "impressions": 3,
       "ctr": 0,
       "position": 6
+    },
+    {
+      "keys": [
+        "columbia auto detailing",
+        "https://mikahsmobiledetailingsc.com/locations/columbia-sc/"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 12
     },
     {
       "keys": [
@@ -5937,6 +6432,36 @@
     },
     {
       "keys": [
+        "detailing a car pricing",
+        "https://mikahsmobiledetailingsc.com/pricing/"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 23
+    },
+    {
+      "keys": [
+        "detailing car prices",
+        "https://mikahsmobiledetailingsc.com/blog/car-detailing-prices-value-breakdown/"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 98
+    },
+    {
+      "keys": [
+        "detailing car prices",
+        "https://mikahsmobiledetailingsc.com/pricing/"
+      ],
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 27
+    },
+    {
+      "keys": [
         "detailing car wash price",
         "https://mikahsmobiledetailingsc.com/pricing/"
       ],
@@ -5981,9 +6506,9 @@
         "https://mikahsmobiledetailingsc.com/locations/west-columbia/"
       ],
       "clicks": 0,
-      "impressions": 4,
+      "impressions": 5,
       "ctr": 0,
-      "position": 8.75
+      "position": 8.8
     },
     {
       "keys": [
@@ -6024,6 +6549,16 @@
       "impressions": 1,
       "ctr": 0,
       "position": 26
+    },
+    {
+      "keys": [
+        "detailing prices",
+        "https://mikahsmobiledetailingsc.com/blog/car-detailing-prices-value-breakdown/"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 95
     },
     {
       "keys": [
@@ -6077,6 +6612,16 @@
     },
     {
       "keys": [
+        "detallado de autos a domicilio",
+        "https://mikahsmobiledetailingsc.com/locations/west-columbia/"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 7
+    },
+    {
+      "keys": [
         "drive up car detailing near me",
         "https://mikahsmobiledetailingsc.com/locations/columbia-sc/"
       ],
@@ -6097,6 +6642,26 @@
     },
     {
       "keys": [
+        "engine bay cleaning near me",
+        "https://mikahsmobiledetailingsc.com/locations/lexington-sc/"
+      ],
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 6.5
+    },
+    {
+      "keys": [
+        "exterior car detailing cost",
+        "https://mikahsmobiledetailingsc.com/pricing/"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 9
+    },
+    {
+      "keys": [
         "exterior detail cost",
         "https://mikahsmobiledetailingsc.com/blog/car-detailing-prices-value-breakdown/"
       ],
@@ -6104,6 +6669,16 @@
       "impressions": 1,
       "ctr": 0,
       "position": 80
+    },
+    {
+      "keys": [
+        "foamy auto detailing",
+        "https://mikahsmobiledetailingsc.com/locations/columbia-sc/"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 13
     },
     {
       "keys": [
@@ -6237,6 +6812,16 @@
     },
     {
       "keys": [
+        "how much are car details",
+        "https://mikahsmobiledetailingsc.com/pricing/"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 10
+    },
+    {
+      "keys": [
         "how much auto detailing cost",
         "https://mikahsmobiledetailingsc.com/blog/car-detailing-prices-value-breakdown/"
       ],
@@ -6244,6 +6829,16 @@
       "impressions": 2,
       "ctr": 0,
       "position": 67.5
+    },
+    {
+      "keys": [
+        "how much detail car",
+        "https://mikahsmobiledetailingsc.com/blog/car-detailing-prices-value-breakdown/"
+      ],
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 92
     },
     {
       "keys": [
@@ -6287,6 +6882,16 @@
     },
     {
       "keys": [
+        "how much does a detail cost",
+        "https://mikahsmobiledetailingsc.com/blog/car-detailing-prices-value-breakdown/"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 63
+    },
+    {
+      "keys": [
         "how much does a full auto detail cost",
         "https://mikahsmobiledetailingsc.com/blog/car-detailing-prices-value-breakdown/"
       ],
@@ -6304,6 +6909,16 @@
       "impressions": 2,
       "ctr": 0,
       "position": 66
+    },
+    {
+      "keys": [
+        "how much does an auto detail cost",
+        "https://mikahsmobiledetailingsc.com/pricing/"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 8
     },
     {
       "keys": [
@@ -6381,9 +6996,9 @@
         "https://mikahsmobiledetailingsc.com/pricing/"
       ],
       "clicks": 0,
-      "impressions": 3,
+      "impressions": 4,
       "ctr": 0,
-      "position": 35
+      "position": 34.75
     },
     {
       "keys": [
@@ -6437,6 +7052,16 @@
     },
     {
       "keys": [
+        "how much does it cost to detail a car",
+        "https://mikahsmobiledetailingsc.com/pricing/"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 8
+    },
+    {
+      "keys": [
         "how much does it cost to detail a car inside and out",
         "https://mikahsmobiledetailingsc.com/pricing/"
       ],
@@ -6484,6 +7109,16 @@
       "impressions": 1,
       "ctr": 0,
       "position": 10
+    },
+    {
+      "keys": [
+        "how much does it cost to detail your car",
+        "https://mikahsmobiledetailingsc.com/blog/car-detailing-prices-value-breakdown/"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 74
     },
     {
       "keys": [
@@ -6657,6 +7292,26 @@
     },
     {
       "keys": [
+        "how much is a car detail cost",
+        "https://mikahsmobiledetailingsc.com/blog/car-detailing-prices-value-breakdown/"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 92
+    },
+    {
+      "keys": [
+        "how much is a car detail cost",
+        "https://mikahsmobiledetailingsc.com/pricing/"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 33
+    },
+    {
+      "keys": [
         "how much is a car detailing",
         "https://mikahsmobiledetailingsc.com/blog/car-detailing-prices-value-breakdown/"
       ],
@@ -6717,6 +7372,16 @@
     },
     {
       "keys": [
+        "how much is a full detail on a car",
+        "https://mikahsmobiledetailingsc.com/pricing/"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 8
+    },
+    {
+      "keys": [
         "how much is a full interior and exterior detail",
         "https://mikahsmobiledetailingsc.com/pricing/"
       ],
@@ -6741,9 +7406,9 @@
         "https://mikahsmobiledetailingsc.com/blog/car-detailing-prices-value-breakdown/"
       ],
       "clicks": 0,
-      "impressions": 3,
+      "impressions": 4,
       "ctr": 0,
-      "position": 52
+      "position": 63
     },
     {
       "keys": [
@@ -6761,9 +7426,9 @@
         "https://mikahsmobiledetailingsc.com/pricing/"
       ],
       "clicks": 0,
-      "impressions": 3,
+      "impressions": 4,
       "ctr": 0,
-      "position": 15.333333333333334
+      "position": 21.75
     },
     {
       "keys": [
@@ -6807,13 +7472,33 @@
     },
     {
       "keys": [
+        "how much is car detailing near me",
+        "https://mikahsmobiledetailingsc.com/pricing/"
+      ],
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 72.5
+    },
+    {
+      "keys": [
         "how much is detailing",
         "https://mikahsmobiledetailingsc.com/blog/car-detailing-prices-value-breakdown/"
       ],
       "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 97
+    },
+    {
+      "keys": [
+        "how much is detailing",
+        "https://mikahsmobiledetailingsc.com/pricing/"
+      ],
+      "clicks": 0,
       "impressions": 1,
       "ctr": 0,
-      "position": 98
+      "position": 35
     },
     {
       "keys": [
@@ -6891,9 +7576,19 @@
         "https://mikahsmobiledetailingsc.com/pricing/"
       ],
       "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 8.5
+    },
+    {
+      "keys": [
+        "how much is to detail a car",
+        "https://mikahsmobiledetailingsc.com/blog/car-detailing-prices-value-breakdown/"
+      ],
+      "clicks": 0,
       "impressions": 1,
       "ctr": 0,
-      "position": 8
+      "position": 80
     },
     {
       "keys": [
@@ -6997,6 +7692,26 @@
     },
     {
       "keys": [
+        "how much to get car detailed",
+        "https://mikahsmobiledetailingsc.com/blog/car-detailing-prices-value-breakdown/"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 76
+    },
+    {
+      "keys": [
+        "how much to get car detailed",
+        "https://mikahsmobiledetailingsc.com/pricing/"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 6
+    },
+    {
+      "keys": [
         "how much to get car detailed inside",
         "https://mikahsmobiledetailingsc.com/blog/car-detailing-prices-value-breakdown/"
       ],
@@ -7011,9 +7726,9 @@
         "https://mikahsmobiledetailingsc.com/pricing/"
       ],
       "clicks": 0,
-      "impressions": 3,
+      "impressions": 5,
       "ctr": 0,
-      "position": 68.33333333333333
+      "position": 67.4
     },
     {
       "keys": [
@@ -7024,6 +7739,16 @@
       "impressions": 1,
       "ctr": 0,
       "position": 56
+    },
+    {
+      "keys": [
+        "interior car cleaning",
+        "https://mikahsmobiledetailingsc.com/locations/west-columbia/"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 10
     },
     {
       "keys": [
@@ -7041,9 +7766,49 @@
         "https://mikahsmobiledetailingsc.com/pricing/"
       ],
       "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 66.5
+    },
+    {
+      "keys": [
+        "interior car cleaning near me",
+        "https://mikahsmobiledetailingsc.com/locations/columbia-sc/"
+      ],
+      "clicks": 0,
       "impressions": 1,
       "ctr": 0,
-      "position": 63
+      "position": 23
+    },
+    {
+      "keys": [
+        "interior car cleaning near me",
+        "https://mikahsmobiledetailingsc.com/locations/west-columbia/"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 4
+    },
+    {
+      "keys": [
+        "interior car cleaning near me",
+        "https://mikahsmobiledetailingsc.com/pricing/"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 56
+    },
+    {
+      "keys": [
+        "interior car cleaning near me",
+        "https://mikahsmobiledetailingsc.com/services/interior-detailing/"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 32
     },
     {
       "keys": [
@@ -7131,7 +7896,7 @@
         "https://mikahsmobiledetailingsc.com/locations/west-columbia/"
       ],
       "clicks": 0,
-      "impressions": 1,
+      "impressions": 2,
       "ctr": 0,
       "position": 11
     },
@@ -7281,9 +8046,9 @@
         "https://mikahsmobiledetailingsc.com/pricing/"
       ],
       "clicks": 0,
-      "impressions": 2,
+      "impressions": 3,
       "ctr": 0,
-      "position": 45.5
+      "position": 50.333333333333336
     },
     {
       "keys": [
@@ -7487,6 +8252,16 @@
     },
     {
       "keys": [
+        "mazda auto detailing service prices",
+        "https://mikahsmobiledetailingsc.com/pricing/"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 57
+    },
+    {
+      "keys": [
         "mercedes benz auto detailing service prices",
         "https://mikahsmobiledetailingsc.com/blog/car-detailing-prices-value-breakdown/"
       ],
@@ -7501,7 +8276,7 @@
         "https://mikahsmobiledetailingsc.com/"
       ],
       "clicks": 0,
-      "impressions": 1,
+      "impressions": 2,
       "ctr": 0,
       "position": 1
     },
@@ -7671,9 +8446,9 @@
         "https://mikahsmobiledetailingsc.com/"
       ],
       "clicks": 0,
-      "impressions": 2,
+      "impressions": 3,
       "ctr": 0,
-      "position": 51.5
+      "position": 38.333333333333336
     },
     {
       "keys": [
@@ -7694,6 +8469,16 @@
       "impressions": 1,
       "ctr": 0,
       "position": 10
+    },
+    {
+      "keys": [
+        "mobile car detailing",
+        "https://mikahsmobiledetailingsc.com/locations/irmo-sc/neighborhoods/"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 6
     },
     {
       "keys": [
@@ -7904,476 +8689,6 @@
       "impressions": 2,
       "ctr": 0,
       "position": 95
-    },
-    {
-      "keys": [
-        "mobile car detailing columbia sc",
-        "https://mikahsmobiledetailingsc.com/services/mobile-detailing/"
-      ],
-      "clicks": 0,
-      "impressions": 3,
-      "ctr": 0,
-      "position": 70.66666666666667
-    },
-    {
-      "keys": [
-        "mobile car detailing company",
-        "https://mikahsmobiledetailingsc.com/locations/lexington-sc/"
-      ],
-      "clicks": 0,
-      "impressions": 1,
-      "ctr": 0,
-      "position": 9
-    },
-    {
-      "keys": [
-        "mobile car detailing irmo",
-        "https://mikahsmobiledetailingsc.com/locations/irmo-sc/"
-      ],
-      "clicks": 0,
-      "impressions": 1,
-      "ctr": 0,
-      "position": 11
-    },
-    {
-      "keys": [
-        "mobile car detailing irmo",
-        "https://mikahsmobiledetailingsc.com/locations/irmo-sc/neighborhoods/"
-      ],
-      "clicks": 0,
-      "impressions": 1,
-      "ctr": 0,
-      "position": 23
-    },
-    {
-      "keys": [
-        "mobile car detailing lexington sc",
-        "https://mikahsmobiledetailingsc.com/"
-      ],
-      "clicks": 0,
-      "impressions": 6,
-      "ctr": 0,
-      "position": 12.833333333333334
-    },
-    {
-      "keys": [
-        "mobile car detailing lexington sc",
-        "https://mikahsmobiledetailingsc.com/blog/best-car-detailing-lexington-sc/"
-      ],
-      "clicks": 0,
-      "impressions": 3,
-      "ctr": 0,
-      "position": 85.33333333333333
-    },
-    {
-      "keys": [
-        "mobile car detailing lexington sc",
-        "https://mikahsmobiledetailingsc.com/locations/columbia-sc/"
-      ],
-      "clicks": 0,
-      "impressions": 1,
-      "ctr": 0,
-      "position": 100
-    },
-    {
-      "keys": [
-        "mobile car detailing lexington sc",
-        "https://mikahsmobiledetailingsc.com/locations/columbia-sc/neighborhoods/"
-      ],
-      "clicks": 0,
-      "impressions": 2,
-      "ctr": 0,
-      "position": 92.5
-    },
-    {
-      "keys": [
-        "mobile car detailing lexington sc",
-        "https://mikahsmobiledetailingsc.com/locations/lexington-sc/"
-      ],
-      "clicks": 0,
-      "impressions": 6,
-      "ctr": 0,
-      "position": 55.166666666666664
-    },
-    {
-      "keys": [
-        "mobile car detailing lexington sc",
-        "https://mikahsmobiledetailingsc.com/locations/lexington-sc/neighborhoods/"
-      ],
-      "clicks": 0,
-      "impressions": 1,
-      "ctr": 0,
-      "position": 63
-    },
-    {
-      "keys": [
-        "mobile car detailing lexington sc",
-        "https://mikahsmobiledetailingsc.com/locations/west-columbia/"
-      ],
-      "clicks": 0,
-      "impressions": 3,
-      "ctr": 0,
-      "position": 73.66666666666667
-    },
-    {
-      "keys": [
-        "mobile car detailing lexington sc",
-        "https://mikahsmobiledetailingsc.com/locations/west-columbia/sunset-blvd-west-columbia-sc/"
-      ],
-      "clicks": 0,
-      "impressions": 1,
-      "ctr": 0,
-      "position": 95
-    },
-    {
-      "keys": [
-        "mobile car detailing lexington sc",
-        "https://mikahsmobiledetailingsc.com/pricing/"
-      ],
-      "clicks": 0,
-      "impressions": 1,
-      "ctr": 0,
-      "position": 93
-    },
-    {
-      "keys": [
-        "mobile car detailing lexington sc",
-        "https://mikahsmobiledetailingsc.com/services/full-detail/"
-      ],
-      "clicks": 0,
-      "impressions": 2,
-      "ctr": 0,
-      "position": 89
-    },
-    {
-      "keys": [
-        "mobile car detailing lexington sc",
-        "https://mikahsmobiledetailingsc.com/services/mobile-detailing/"
-      ],
-      "clicks": 0,
-      "impressions": 2,
-      "ctr": 0,
-      "position": 67.5
-    },
-    {
-      "keys": [
-        "mobile car detailing near me",
-        "https://mikahsmobiledetailingsc.com/"
-      ],
-      "clicks": 0,
-      "impressions": 4,
-      "ctr": 0,
-      "position": 6.5
-    },
-    {
-      "keys": [
-        "mobile car detailing near me",
-        "https://mikahsmobiledetailingsc.com/locations/irmo-sc/"
-      ],
-      "clicks": 0,
-      "impressions": 1,
-      "ctr": 0,
-      "position": 4
-    },
-    {
-      "keys": [
-        "mobile car detailing near me prices",
-        "https://mikahsmobiledetailingsc.com/locations/columbia-sc/"
-      ],
-      "clicks": 0,
-      "impressions": 8,
-      "ctr": 0,
-      "position": 80.125
-    },
-    {
-      "keys": [
-        "mobile car detailing price list",
-        "https://mikahsmobiledetailingsc.com/pricing/"
-      ],
-      "clicks": 0,
-      "impressions": 1,
-      "ctr": 0,
-      "position": 35
-    },
-    {
-      "keys": [
-        "mobile car detailing prices",
-        "https://mikahsmobiledetailingsc.com/pricing/"
-      ],
-      "clicks": 0,
-      "impressions": 1,
-      "ctr": 0,
-      "position": 38
-    },
-    {
-      "keys": [
-        "mobile car detailing prices list",
-        "https://mikahsmobiledetailingsc.com/blog/car-detailing-prices-value-breakdown/"
-      ],
-      "clicks": 0,
-      "impressions": 1,
-      "ctr": 0,
-      "position": 89
-    },
-    {
-      "keys": [
-        "mobile car detailing prices list",
-        "https://mikahsmobiledetailingsc.com/pricing/"
-      ],
-      "clicks": 0,
-      "impressions": 2,
-      "ctr": 0,
-      "position": 3
-    },
-    {
-      "keys": [
-        "mobile car wash",
-        "https://mikahsmobiledetailingsc.com/"
-      ],
-      "clicks": 0,
-      "impressions": 1,
-      "ctr": 0,
-      "position": 12
-    },
-    {
-      "keys": [
-        "mobile car wash columbia sc",
-        "https://mikahsmobiledetailingsc.com/blog/ultimate-guide-mobile-car-detailing-columbia-sc/"
-      ],
-      "clicks": 0,
-      "impressions": 1,
-      "ctr": 0,
-      "position": 79
-    },
-    {
-      "keys": [
-        "mobile car wash columbia sc",
-        "https://mikahsmobiledetailingsc.com/locations/columbia-sc/"
-      ],
-      "clicks": 0,
-      "impressions": 2,
-      "ctr": 0,
-      "position": 68
-    },
-    {
-      "keys": [
-        "mobile car wash columbia sc",
-        "https://mikahsmobiledetailingsc.com/locations/west-columbia/"
-      ],
-      "clicks": 0,
-      "impressions": 1,
-      "ctr": 0,
-      "position": 69
-    },
-    {
-      "keys": [
-        "mobile car wash hills estate",
-        "https://mikahsmobiledetailingsc.com/locations/irmo-sc/neighborhoods/"
-      ],
-      "clicks": 0,
-      "impressions": 1,
-      "ctr": 0,
-      "position": 3
-    },
-    {
-      "keys": [
-        "mobile car wash near me",
-        "https://mikahsmobiledetailingsc.com/locations/columbia-sc/"
-      ],
-      "clicks": 0,
-      "impressions": 1,
-      "ctr": 0,
-      "position": 9
-    },
-    {
-      "keys": [
-        "mobile car wash west columbia sc",
-        "https://mikahsmobiledetailingsc.com/"
-      ],
-      "clicks": 0,
-      "impressions": 1,
-      "ctr": 0,
-      "position": 11
-    },
-    {
-      "keys": [
-        "mobile car wash west columbia sc",
-        "https://mikahsmobiledetailingsc.com/blog/mobile-detailing-columbia-sc-2026-guide/"
-      ],
-      "clicks": 0,
-      "impressions": 1,
-      "ctr": 0,
-      "position": 66
-    },
-    {
-      "keys": [
-        "mobile car wash west columbia sc",
-        "https://mikahsmobiledetailingsc.com/locations/blythewood-sc"
-      ],
-      "clicks": 0,
-      "impressions": 1,
-      "ctr": 0,
-      "position": 11
-    },
-    {
-      "keys": [
-        "mobile car wash west columbia sc",
-        "https://mikahsmobiledetailingsc.com/locations/cayce-sc"
-      ],
-      "clicks": 0,
-      "impressions": 1,
-      "ctr": 0,
-      "position": 11
-    },
-    {
-      "keys": [
-        "mobile car wash west columbia sc",
-        "https://mikahsmobiledetailingsc.com/locations/columbia-sc/"
-      ],
-      "clicks": 0,
-      "impressions": 2,
-      "ctr": 0,
-      "position": 42
-    },
-    {
-      "keys": [
-        "mobile car wash west columbia sc",
-        "https://mikahsmobiledetailingsc.com/locations/columbia-sc/neighborhoods/"
-      ],
-      "clicks": 0,
-      "impressions": 2,
-      "ctr": 0,
-      "position": 82
-    },
-    {
-      "keys": [
-        "mobile car wash west columbia sc",
-        "https://mikahsmobiledetailingsc.com/locations/irmo-sc"
-      ],
-      "clicks": 0,
-      "impressions": 1,
-      "ctr": 0,
-      "position": 11
-    },
-    {
-      "keys": [
-        "mobile car wash west columbia sc",
-        "https://mikahsmobiledetailingsc.com/locations/lexington-sc"
-      ],
-      "clicks": 0,
-      "impressions": 1,
-      "ctr": 0,
-      "position": 11
-    },
-    {
-      "keys": [
-        "mobile car wash west columbia sc",
-        "https://mikahsmobiledetailingsc.com/locations/west-columbia"
-      ],
-      "clicks": 0,
-      "impressions": 1,
-      "ctr": 0,
-      "position": 11
-    },
-    {
-      "keys": [
-        "mobile car wash west columbia sc",
-        "https://mikahsmobiledetailingsc.com/locations/west-columbia/"
-      ],
-      "clicks": 0,
-      "impressions": 1,
-      "ctr": 0,
-      "position": 40
-    },
-    {
-      "keys": [
-        "mobile car wash west columbia sc",
-        "https://mikahsmobiledetailingsc.com/services/full-detail/"
-      ],
-      "clicks": 0,
-      "impressions": 1,
-      "ctr": 0,
-      "position": 78
-    },
-    {
-      "keys": [
-        "mobile car wash west columbia sc",
-        "https://mikahsmobiledetailingsc.com/services/mobile-detailing/"
-      ],
-      "clicks": 0,
-      "impressions": 1,
-      "ctr": 0,
-      "position": 57
-    },
-    {
-      "keys": [
-        "mobile ceramic coating irmo",
-        "https://mikahsmobiledetailingsc.com/"
-      ],
-      "clicks": 0,
-      "impressions": 1,
-      "ctr": 0,
-      "position": 80
-    },
-    {
-      "keys": [
-        "mobile ceramic coating irmo",
-        "https://mikahsmobiledetailingsc.com/locations/columbia-sc/"
-      ],
-      "clicks": 0,
-      "impressions": 1,
-      "ctr": 0,
-      "position": 57
-    },
-    {
-      "keys": [
-        "mobile ceramic coating irmo",
-        "https://mikahsmobiledetailingsc.com/locations/irmo-sc/"
-      ],
-      "clicks": 0,
-      "impressions": 1,
-      "ctr": 0,
-      "position": 5
-    },
-    {
-      "keys": [
-        "mobile ceramic coating irmo",
-        "https://mikahsmobiledetailingsc.com/locations/irmo-sc/neighborhoods/"
-      ],
-      "clicks": 0,
-      "impressions": 1,
-      "ctr": 0,
-      "position": 25
-    },
-    {
-      "keys": [
-        "mobile detail prices list",
-        "https://mikahsmobiledetailingsc.com/pricing/"
-      ],
-      "clicks": 0,
-      "impressions": 1,
-      "ctr": 0,
-      "position": 24
-    },
-    {
-      "keys": [
-        "mobile detailers near me",
-        "https://mikahsmobiledetailingsc.com/"
-      ],
-      "clicks": 0,
-      "impressions": 1,
-      "ctr": 0,
-      "position": 1
-    },
-    {
-      "keys": [
-        "mobile detailers near me",
-        "https://mikahsmobiledetailingsc.com/locations/west-columbia/"
-      ],
-      "clicks": 0,
-      "impressions": 1,
-      "ctr": 0,
-      "position": 5
     }
   ],
   "device": [
@@ -8381,28 +8696,28 @@
       "keys": [
         "MOBILE"
       ],
-      "clicks": 10,
-      "impressions": 626,
-      "ctr": 0.01597444089456869,
-      "position": 15.143769968051119
+      "clicks": 13,
+      "impressions": 712,
+      "ctr": 0.018258426966292134,
+      "position": 14.606741573033707
     },
     {
       "keys": [
         "DESKTOP"
       ],
       "clicks": 2,
-      "impressions": 864,
-      "ctr": 0.0023148148148148147,
-      "position": 41.20949074074074
+      "impressions": 983,
+      "ctr": 0.002034587995930824,
+      "position": 41.108850457782296
     },
     {
       "keys": [
         "TABLET"
       ],
       "clicks": 0,
-      "impressions": 3,
+      "impressions": 4,
       "ctr": 0,
-      "position": 10.333333333333334
+      "position": 9.75
     }
   ],
   "country": [
@@ -8410,19 +8725,28 @@
       "keys": [
         "usa"
       ],
-      "clicks": 12,
-      "impressions": 1446,
-      "ctr": 0.008298755186721992,
-      "position": 29.88589211618257
+      "clicks": 15,
+      "impressions": 1637,
+      "ctr": 0.00916310323762981,
+      "position": 29.58888210140501
     },
     {
       "keys": [
         "are"
       ],
       "clicks": 0,
-      "impressions": 4,
+      "impressions": 8,
       "ctr": 0,
-      "position": 5.5
+      "position": 3.625
+    },
+    {
+      "keys": [
+        "arg"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 22
     },
     {
       "keys": [
@@ -8438,9 +8762,9 @@
         "bra"
       ],
       "clicks": 0,
-      "impressions": 6,
+      "impressions": 7,
       "ctr": 0,
-      "position": 48
+      "position": 44.285714285714285
     },
     {
       "keys": [
@@ -8492,9 +8816,9 @@
         "gbr"
       ],
       "clicks": 0,
-      "impressions": 8,
+      "impressions": 10,
       "ctr": 0,
-      "position": 66.375
+      "position": 68.3
     },
     {
       "keys": [
@@ -8510,9 +8834,9 @@
         "ind"
       ],
       "clicks": 0,
-      "impressions": 3,
+      "impressions": 4,
       "ctr": 0,
-      "position": 38
+      "position": 47
     },
     {
       "keys": [
@@ -8525,12 +8849,21 @@
     },
     {
       "keys": [
-        "mys"
+        "mkd"
       ],
       "clicks": 0,
       "impressions": 1,
       "ctr": 0,
-      "position": 23
+      "position": 2
+    },
+    {
+      "keys": [
+        "mys"
+      ],
+      "clicks": 0,
+      "impressions": 3,
+      "ctr": 0,
+      "position": 55.666666666666664
     },
     {
       "keys": [
@@ -8597,6 +8930,15 @@
     },
     {
       "keys": [
+        "swe"
+      ],
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 26
+    },
+    {
+      "keys": [
         "tha"
       ],
       "clicks": 0,
@@ -8618,9 +8960,9 @@
         "vnm"
       ],
       "clicks": 0,
-      "impressions": 3,
+      "impressions": 5,
       "ctr": 0,
-      "position": 52.333333333333336
+      "position": 43.8
     },
     {
       "keys": [
