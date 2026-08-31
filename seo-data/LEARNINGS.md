@@ -34,3 +34,31 @@ into `seo-data/keyword-planner.json`.
    or crawlers get homepage-clone HTML (prerender bug class, fixed 2026-07-04).
 9. Blog = national/informational "cost" queries; /pricing = local price list. Cross-link, never
    compete.
+
+---
+
+## 2026-08-31 — Impressions surging (+41% WoW) but position degrading; 3 stale experiments closed; 3 new launched
+
+**Evidence:** Prior week (Aug 16–22): 15 clicks / 1,699 impr / 0.883% CTR / pos 29.93.
+Current week (Aug 23–29): 16 clicks / 2,392 impr / 0.669% CTR / pos 38.43.
+WoW: clicks +1 (+7%), impressions +41%, CTR −0.21pp, avg position worsened 8.5 spots.
+Impression surge with position degradation = more tail pages indexed at deep positions,
+diluting aggregate metrics. Not a quality decline — site is indexing more, just at low positions.
+
+Top pages (current 7d): /pricing/ 908 impr/pos41/0.33% CTR; /locations/west-columbia/ 290 impr/pos16/0.69%; /blog/car-detailing-prices-value-breakdown/ 290 impr/pos79/0%.
+Top striking-distance zero-CTR queries: "mobile detailing near me" 28i/pos5.9/0%, "car detailing near me" 65i/pos7.6/3.1% (CTR decent), "auto detailing near me" 10i/pos7.3/0%.
+
+**Experiment resolutions:**
+- exp-2026-07-21-homepage-ctr: INCONCLUSIVE (never shipped; homepage CTR now 3.9% — recovered on own; map pack absorbs 'near me' clicks)
+- exp-2026-07-21-pricing-blog-zero-ctr: INCONCLUSIVE (never shipped; superseded by exp-2026-08-31-blog-prices-retitle)
+- exp-2026-07-21-pricing-slash-consolidation: INCONCLUSIVE (never shipped; pricing page still at pos 41, needs title fix)
+
+**New experiments launched this week:**
+- exp-2026-08-31-pricing-title: /pricing/ title now answers "How much does car detailing cost?" directly
+- exp-2026-08-31-blog-prices-retitle: blog "how much does car detailing cost" title alignment
+- exp-2026-08-31-west-columbia-title: West Columbia page — price anchor "From $125" + "5.0★" added to title
+
+**Rules:**
+10. **"Near me" queries at pos 5-7 often get 0 organic CTR** because Google's map pack absorbs clicks. Optimizing title/meta for these is low-ROI; focus GBP optimization instead. Exception: if the query has no map pack (desktop, informational intent), title CTR matters.
+11. **"How much does X cost" is the highest-volume query form** for cost-intent traffic. Title that starts with or directly answers this question ranks better AND gets higher CTR than generic "price list" framing.
+12. **Price anchors in titles work** — add "From $X" to location page titles that show pos 10-20 with CTR < 1%. West Columbia test will validate this for location pages specifically.

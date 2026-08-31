@@ -15,34 +15,70 @@
     {
       "id": "exp-2026-07-21-homepage-ctr",
       "started": null,
-      "change": "PLANNED: homepage title/meta rewrite targeting 'car detailing near me' CTR (currently pos 7.1, 189 impr/28d, 1.06% CTR)",
-      "hypothesis": "Homepage is in striking distance (pos 7) for the highest-volume local term (880/mo); a benefit-led title (price anchor + 'We Come to You' + 5.0 stars) should lift CTR toward 3-5%",
+      "change": "PLANNED (never shipped): homepage title/meta rewrite targeting 'car detailing near me' CTR",
+      "hypothesis": "Homepage in striking distance (pos 7) for 'car detailing near me'; benefit-led title should lift CTR",
       "target_queries": ["car detailing near me", "auto detailing near me", "detailing near me"],
       "target_pages": ["https://mikahsmobiledetailingsc.com/"],
-      "baseline": "28d: clicks 21, impr 1983, ctr 1.06%, pos 13.0 (homepage overall)",
+      "baseline": "28d: clicks 21, impr 1983, ctr 1.06%, pos 13.0",
       "review_after": null,
-      "status": "open"
+      "status": "inconclusive",
+      "outcome": "2026-08-31: Never shipped — stale plan created 2026-07-21. Current homepage CTR is now 3.9% (9c/232i) at pos 13.9 — has improved on its own or via prior changes. Homepage title is now optimized already. Lesson: homepage CTR recovered without intervention; map pack absorbs 'near me' clicks — monitor but skip homepage rewrites unless CTR drops below 2%."
     },
     {
       "id": "exp-2026-07-21-pricing-blog-zero-ctr",
       "started": null,
-      "change": "PLANNED: fix /blog/car-detailing-prices-value-breakdown/ - 2,011 impressions, 0 clicks, pos 45. Retitle to match actual queries, add price table near top, internal-link from /pricing",
-      "hypothesis": "Page has huge impression volume with zero clicks; better title/meta + on-page price answers should convert impressions to clicks and lift position",
+      "change": "PLANNED (never shipped): /blog/car-detailing-prices-value-breakdown/ retitle + price table + internal link",
+      "hypothesis": "Page had huge impression volume with zero clicks; better title/meta + on-page price answers should convert impressions to clicks",
       "target_queries": ["car detailing prices", "auto detailing cost", "how much does car detailing cost"],
       "target_pages": ["https://mikahsmobiledetailingsc.com/blog/car-detailing-prices-value-breakdown/"],
       "baseline": "28d: clicks 0, impr 2011, ctr 0%, pos 45.4",
       "review_after": null,
-      "status": "open"
+      "status": "inconclusive",
+      "outcome": "2026-08-31: Never shipped — superseded by new exp-2026-08-31-blog-prices-retitle which implements the core change. Blog page now at pos 79.0 avg / 290 impr / 0 clicks this week."
     },
     {
       "id": "exp-2026-07-21-pricing-slash-consolidation",
       "started": null,
-      "change": "PLANNED: /pricing vs /pricing/ both receiving impressions (2,743 + 1,270 per 28d) - verify canonical + redirect so only trailing-slash version is indexed",
-      "hypothesis": "Consolidating the split should merge ranking signals and lift the surviving URL's position",
+      "change": "PLANNED (never shipped): /pricing vs /pricing/ canonical verification + redirect",
+      "hypothesis": "Consolidating split URLs would merge ranking signals",
       "target_queries": ["car detailing prices columbia sc", "auto detail price list"],
       "target_pages": ["https://mikahsmobiledetailingsc.com/pricing/"],
       "baseline": "28d: /pricing/ 6 clicks/2743 impr/pos 17.4 ; /pricing 5 clicks/1270 impr/pos 24.3",
       "review_after": null,
+      "status": "inconclusive",
+      "outcome": "2026-08-31: Never shipped — stale plan. Current week /pricing/ page shows 3c/908i/pos41.4 which suggests the split may have persisted or the page dropped. Superseded by exp-2026-08-31-pricing-title which tackles title/meta CTR for the pricing page."
+    },
+    {
+      "id": "exp-2026-08-31-pricing-title",
+      "started": "2026-08-31",
+      "change": "scripts/generate-all-pages-html.ts: pricing route title changed from 'Car Detailing Prices 2026 — Columbia SC Price List' to 'Car Detailing Prices Columbia SC | From $125 | We Come to You'. Description rewritten to open with 'How much does car detailing cost?' price answer.",
+      "hypothesis": "Price-anchored title directly answers the highest-volume cost queries ('car detailing prices' 87 impr/pos 27.5; 'how much does car detailing cost' 26 impr); opening description with price info should lift CTR from 0% toward 2-3% for those queries",
+      "target_queries": ["car detailing prices", "how much does car detailing cost", "how much does interior car detailing cost near me", "car detailing cost"],
+      "target_pages": ["https://mikahsmobiledetailingsc.com/pricing/"],
+      "baseline": "7d (2026-08-23 to 2026-08-29): /pricing/ page: 3c / 908i / pos41.4 / 0.33% CTR. 'car detailing prices' query: 87i / 0c / pos27.5",
+      "review_after": "2026-09-14",
+      "status": "open"
+    },
+    {
+      "id": "exp-2026-08-31-blog-prices-retitle",
+      "started": "2026-08-31",
+      "change": "src/content/blog/car-detailing-prices-value-breakdown.json: title changed from 'Car Detailing Near Me: What It Should Cost (Columbia SC)' to 'How Much Does Car Detailing Cost? Columbia SC Price Breakdown'. metaDescription rewritten to open with price range '$125–$599+' and list services. lastModified updated to 2026-08-31.",
+      "hypothesis": "Blog post ranks for 'car detailing prices' at pos ~25-30 (87 impr aggregate, 0 clicks). New title directly matches the most common query phrasing 'how much does car detailing cost' (26 impr, pos 58.5); price range in meta reduces pogo-stick risk and signals relevance to ranking algo",
+      "target_queries": ["how much does car detailing cost", "car detailing prices", "how much does auto detailing cost", "car detailing cost"],
+      "target_pages": ["https://mikahsmobiledetailingsc.com/blog/car-detailing-prices-value-breakdown/"],
+      "baseline": "7d (2026-08-23 to 2026-08-29): 0c / 290i / pos79.0 / 0% CTR. 'how much does car detailing cost' query: 26i / 0c / pos58.5",
+      "review_after": "2026-09-14",
+      "status": "open"
+    },
+    {
+      "id": "exp-2026-08-31-west-columbia-title",
+      "started": "2026-08-31",
+      "change": "scripts/generate-all-pages-html.ts: West Columbia location page title changed from 'Mobile Car Detailing West Columbia SC | We Come to You — Mikah's Auto Detailing' to 'Mobile Car Detailing West Columbia SC | From $125 | 5.0★ Rated'. Description tightened with price first.",
+      "hypothesis": "West Columbia page has 290 impressions at avg pos 16.1 but only 0.69% CTR (2 clicks). Adding price anchor 'From $125' and '5.0★' social proof to the title should lift CTR by 1-2pp — consistent with LEARNINGS Rule (price-anchored titles lift CTR)",
+      "target_queries": ["mobile detailing west columbia sc", "car detailing west columbia sc", "auto detailing west columbia sc", "mobile car detailing near me"],
+      "target_pages": ["https://mikahsmobiledetailingsc.com/locations/west-columbia/"],
+      "baseline": "7d (2026-08-23 to 2026-08-29): 2c / 290i / pos16.1 / 0.69% CTR",
+      "review_after": "2026-09-14",
       "status": "open"
     }
   ]
