@@ -34,3 +34,21 @@ into `seo-data/keyword-planner.json`.
    or crawlers get homepage-clone HTML (prerender bug class, fixed 2026-07-04).
 9. Blog = national/informational "cost" queries; /pricing = local price list. Cross-link, never
    compete.
+
+---
+
+## 2026-08-24 — Impressions dropped -29% WoW; /pricing/ hit hardest; blog prices page is striking distance
+
+**Evidence:** WoW (Aug 9–15 → Aug 16–22): clicks 17→15 (-12%), impr 2,397→1,699 (-29%), CTR 0.71%→0.88% (+17% relative), pos 26.9→29.9 (worsened). Biggest drops: /pricing/ (1,047→569 impr, pos 20→29), /blog/car-detailing-prices-value-breakdown/ (435→237 impr, pos 59→71). Homepage held steady: 7 clicks both weeks, CTR improved 2.05%→3.20%, pos improved 13.87→12.37. /locations/west-columbia/ gained impressions (159→202) but CTR dropped from 1.26% to 0.50% as position improved to pos 16.69.
+
+**Experiment closures:** All three 2026-07-21 experiments had started=null (never shipped). Closing them:
+- exp-2026-07-21-homepage-ctr: **Shipped this cycle** (started 2026-08-24). Never actually deployed; finally implementing now.
+- exp-2026-07-21-pricing-blog-zero-ctr: **Inconclusive** — never shipped; /blog/car-detailing-prices-value-breakdown/ now at pos 71 (too deep for title-only fix). Superseded by mobile-prices-2025 blog opportunity.
+- exp-2026-07-21-pricing-slash-consolidation: **Inconclusive** — canonical fix was already deployed 2026-07-09 outside experiments; /pricing/ dropped pos 20→29 this week (likely algorithm fluctuation not canonicalization).
+
+**Rules:**
+10. **Blog title years matter**: "2025" in titles is becoming stale in 2026; update to 2026 for "cost/price" queries where freshness influences CTR.
+11. **"how much does X cost" queries convert differently**: /blog/mobile-detailing-columbia-sc-prices-2025/ ranks pos 3–11 for multiple "how much" queries but gets 0 CTR — title must directly answer the question ("$100–$999+") not just label the topic.
+12. **Price anchors work**: Use "From $100" / "From $200" in meta descriptions for location pages — corrects the "$200" floor shown on West Columbia page that undersells the entry price.
+13. **/pricing/ impression drops are volatile**: Page lost 54% impressions WoW; avoid heavy changes until it stabilizes. Monitor position recovery before experimenting further.
+14. **Sitemap shows 0 indexed**: GSC sitemap report shows 119 submitted / 0 indexed — flagged for human review. Pages ARE appearing in GSC, so may be a reporting artifact. Needs manual verification.

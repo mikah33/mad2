@@ -633,10 +633,10 @@ export const blogPosts: BlogPost[] = [
   },
   {
     id: 'blog-038',
-    title: 'Mobile Detailing in Columbia SC Prices: Complete Cost Guide 2025',
+    title: 'Mobile Car Detailing Cost: $100–$999+ | Complete 2026 Price Guide',
     slug: 'mobile-detailing-columbia-sc-prices-2025',
-    excerpt: 'Complete guide to mobile detailing in Columbia SC prices. Understand what you\'re paying for, compare packages from $125-$850, and get the best value for professional mobile service.',
-    metaDescription: 'Mobile detailing Columbia SC prices 2025. Best mobile car detailing packages from $125-$850. Professional mobile detailing near me with transparent pricing. Same-day available!',
+    excerpt: 'How much does mobile car detailing cost? Compare packages from $100 (exterior) to $999+ (ceramic coating) with transparent pricing from Mikah\'s in Columbia SC.',
+    metaDescription: 'How much does mobile car detailing cost? Exterior from $100, Interior from $200, Full Detail from $225, Paint Correction from $599, Ceramic Coating from $999. We come to you in Columbia SC!',
     author: 'Mikah Albertson',
     authorJobTitle: 'Professional Auto Detailer',
     datePublished: '2025-10-26',

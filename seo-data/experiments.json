@@ -14,36 +14,63 @@
   "experiments": [
     {
       "id": "exp-2026-07-21-homepage-ctr",
-      "started": null,
-      "change": "PLANNED: homepage title/meta rewrite targeting 'car detailing near me' CTR (currently pos 7.1, 189 impr/28d, 1.06% CTR)",
-      "hypothesis": "Homepage is in striking distance (pos 7) for the highest-volume local term (880/mo); a benefit-led title (price anchor + 'We Come to You' + 5.0 stars) should lift CTR toward 3-5%",
-      "target_queries": ["car detailing near me", "auto detailing near me", "detailing near me"],
+      "started": "2026-08-24",
+      "change": "Homepage title rewrite: 'Car Detailing Near Me | We Come to You | From $100 | Mikah's Columbia SC'. Meta: leads with mobile benefit + price anchors ($100/$200/$225) + 5.0★. File: src/pages/HomePage.tsx.",
+      "hypothesis": "Homepage is pos 8 for 'car detailing near me' (45 impr, 2.2% CTR). Benefit-led title with price anchor + 'We Come to You' should lift CTR toward 4-6%; at 45 impr/wk that's roughly 1-2 more clicks/week.",
+      "target_queries": ["car detailing near me", "auto detailing near me", "mobile car detailing near me", "detailing near me"],
       "target_pages": ["https://mikahsmobiledetailingsc.com/"],
-      "baseline": "28d: clicks 21, impr 1983, ctr 1.06%, pos 13.0 (homepage overall)",
-      "review_after": null,
-      "status": "open"
+      "baseline": "7d (Aug 16-22): homepage 7 clicks, 219 impr, 3.20% CTR, pos 12.37. 'car detailing near me' query: 1 click, 45 impr, 2.22% CTR, pos 8.07",
+      "review_after": "2026-09-07",
+      "status": "open",
+      "outcome": null
     },
     {
       "id": "exp-2026-07-21-pricing-blog-zero-ctr",
       "started": null,
-      "change": "PLANNED: fix /blog/car-detailing-prices-value-breakdown/ - 2,011 impressions, 0 clicks, pos 45. Retitle to match actual queries, add price table near top, internal-link from /pricing",
-      "hypothesis": "Page has huge impression volume with zero clicks; better title/meta + on-page price answers should convert impressions to clicks and lift position",
+      "change": "NEVER SHIPPED — planned to fix /blog/car-detailing-prices-value-breakdown/ but superseded by better opportunity on mobile-prices-2025 blog.",
+      "hypothesis": "n/a — never shipped",
       "target_queries": ["car detailing prices", "auto detailing cost", "how much does car detailing cost"],
       "target_pages": ["https://mikahsmobiledetailingsc.com/blog/car-detailing-prices-value-breakdown/"],
       "baseline": "28d: clicks 0, impr 2011, ctr 0%, pos 45.4",
       "review_after": null,
-      "status": "open"
+      "status": "inconclusive",
+      "outcome": "Never shipped. Page fell to pos 71 (Aug 16-22), 237 impr, 0 clicks. Too deep for a title-only fix now. The mobile-detailing-columbia-sc-prices-2025 page is a better opportunity (pos 15.75, 101 impr). Rule: don't invest in pos 60+ pages before fixing striking-distance ones."
     },
     {
       "id": "exp-2026-07-21-pricing-slash-consolidation",
       "started": null,
-      "change": "PLANNED: /pricing vs /pricing/ both receiving impressions (2,743 + 1,270 per 28d) - verify canonical + redirect so only trailing-slash version is indexed",
-      "hypothesis": "Consolidating the split should merge ranking signals and lift the surviving URL's position",
+      "change": "NEVER SHIPPED as experiment — trailing-slash canonical fix was deployed 2026-07-09 outside of experiment tracking.",
+      "hypothesis": "n/a — canonical was already deployed",
       "target_queries": ["car detailing prices columbia sc", "auto detail price list"],
       "target_pages": ["https://mikahsmobiledetailingsc.com/pricing/"],
       "baseline": "28d: /pricing/ 6 clicks/2743 impr/pos 17.4 ; /pricing 5 clicks/1270 impr/pos 24.3",
       "review_after": null,
-      "status": "open"
+      "status": "inconclusive",
+      "outcome": "Canonical fix deployed 2026-07-09 before this experiment was tracked. /pricing/ now at pos 29 (was pos 20 prior week) and lost 54% impressions WoW — likely algorithm fluctuation, not the canonical. Monitor. Rule 13: /pricing/ impressions volatile; hold changes."
+    },
+    {
+      "id": "exp-2026-08-24-blog-mobile-prices-ctr",
+      "started": "2026-08-24",
+      "change": "Title changed to 'Mobile Car Detailing Cost: $100–$999+ | Complete 2026 Price Guide'. Meta updated with actual published price anchors and direct 'how much' answer. Year updated from 2025 to 2026. File: src/data/blog.ts (blog-038 entry).",
+      "hypothesis": "Page ranks pos 3–11 for 'how much does mobile car detailing cost' type queries (101 impr/wk, 0 CTR). A title that directly answers the cost question + real price anchors should convert impressions to clicks. Target: ≥2% CTR (≥2 clicks/wk from this page).",
+      "target_queries": ["how much does mobile car detailing cost", "how much is car detailing", "how much do mobile car detailers charge", "how much does it cost to have a car detailed", "mobile car detailing cost"],
+      "target_pages": ["https://mikahsmobiledetailingsc.com/blog/mobile-detailing-columbia-sc-prices-2025/"],
+      "baseline": "7d (Aug 16-22): 0 clicks, 101 impr, 0% CTR, pos 15.75",
+      "review_after": "2026-09-07",
+      "status": "open",
+      "outcome": null
+    },
+    {
+      "id": "exp-2026-08-24-west-columbia-meta",
+      "started": "2026-08-24",
+      "change": "Meta description updated: fixed pricing from 'from $200' to 'Exterior from $100, Interior from $200' and added 'Same-day available'. File: src/pages/LocationWestColumbiaPage.tsx.",
+      "hypothesis": "Page at pos 16.69 with 202 impr and only 0.50% CTR. Meta had 'from $200' which undersells entry price vs competitors. Adding 'Exterior from $100' as price floor should improve CTR toward 2-3%. Page ranks pos 3-5 for 'mobile car detailing near me' variants.",
+      "target_queries": ["mobile car detailing near me", "mobile detailing near me", "mobile car detailing west columbia sc", "car detailing near me west columbia"],
+      "target_pages": ["https://mikahsmobiledetailingsc.com/locations/west-columbia/"],
+      "baseline": "7d (Aug 16-22): 1 click, 202 impr, 0.50% CTR, pos 16.69",
+      "review_after": "2026-09-07",
+      "status": "open",
+      "outcome": null
     }
   ]
 }
