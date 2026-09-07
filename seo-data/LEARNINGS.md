@@ -34,3 +34,36 @@ into `seo-data/keyword-planner.json`.
    or crawlers get homepage-clone HTML (prerender bug class, fixed 2026-07-04).
 9. Blog = national/informational "cost" queries; /pricing = local price list. Cross-link, never
    compete.
+
+---
+
+## 2026-09-07 — WoW drop; pricing page is the top untapped opportunity
+
+**Evidence:** Week of Aug 30–Sep 5: 10 clicks, 1,477 impr, 0.68% CTR, pos 42.5.
+Prior week (Aug 23–29): 16 clicks, 2,392 impr, 0.67% CTR, pos 38.4.
+WoW: clicks −37.5%, impressions −38.3%, CTR flat, position worse. Drop likely reflects
+weekend-heavy date range vs. prior week (Labor Day weekend lower search volume).
+
+**Experiment outcomes (all 3 baseline experiments were PLANNED but never implemented — no
+code changes shipped in prior runs, so no measurable outcomes):**
+- exp-2026-07-21-homepage-ctr → inconclusive (never started; converting to active exp this week)
+- exp-2026-07-21-pricing-blog-zero-ctr → inconclusive (never started; blog dropped to 77 impr/wk
+  at pos 81 — too deep to fix with title alone; deprioritized)
+- exp-2026-07-21-pricing-slash-consolidation → inconclusive (never started; /pricing/ is the only
+  version appearing in current GSC pages data — consolidation may have resolved naturally)
+
+**Top opportunity this week — /pricing/ (553 impr, 0.18% CTR, pos 47):**
+The pricing page received more impressions than any other page (553) but nearly zero clicks.
+Queries: "car detailing prices" (44 impr, pos 33), "mobile detailing prices" (29 impr, pos 53).
+Price-anchored title rewrite is the highest-leverage change available.
+
+**Rules:**
+10. **/pricing/ title is the single biggest CTR lever** — 553 impr/wk at 0.18% CTR; add
+    "mobile" + price anchor ("From $125") to the title. Retest every 2 weeks.
+11. **"Near me" queries rank pos 6-9 on homepage but get 0 clicks** — "mobile detailing near me"
+    (pos 6.9, 18 impr), "car detailing near me" (pos 9.3, 27 impr). Homepage title needs "near me"
+    + "We Come to You" phrasing to convert impressions.
+12. **Homepage overall CTR is improving** (2.98% at pos 14 this week) but the "near me" cluster
+    isn't converting — title must speak to the query, not just the city.
+13. **/locations/west-columbia/ at pos 23, 0.56% CTR** — striking distance; description rewrite
+    with prominent price anchor should lift CTR toward 2-3%.
