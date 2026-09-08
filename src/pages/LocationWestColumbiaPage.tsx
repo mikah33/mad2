@@ -69,7 +69,7 @@ export const LocationWestColumbiaPage = () => {
     {
       title: 'Interior Detail',
       price: '$350',
-      duration: '2-3 hours',
+      duration: 'About 2.5 hours',
       description: 'Complete interior restoration including vacuum, full wipe down, conditioner + UV protection, disinfection, a deep clean with steam plus shampoo & extraction of upholstery and carpets, and crystal clear glass cleaning.',
       features: ['Full vacuum', 'Steam clean + shampoo & extraction', 'Dashboard & console cleaning', 'UV protection applied', 'Glass cleaned inside'],
       link: '/services/interior-detailing'
@@ -85,7 +85,7 @@ export const LocationWestColumbiaPage = () => {
     {
       title: 'Level 2 Full Reset',
       price: '$375',
-      duration: '3-5 hours',
+      duration: 'About 4.5 hours',
       description: 'The complete package - interior and exterior detailing with shampoo & extraction and engine bay. Rebook the same vehicle by day 90, with service by day 97 and Level 1 Maintenance Details are just $225.',
       features: ['Everything in Interior', 'Everything in Exterior', 'Shampoo & extraction', 'Most popular choice'],
       link: '/services/full-detail',
@@ -94,7 +94,7 @@ export const LocationWestColumbiaPage = () => {
     {
       title: 'Level 2 Premium',
       price: '$675',
-      duration: '5-7 hours',
+      duration: 'About 6 hours',
       description: 'Everything in the Level 2 Full Reset plus 1-step machine polish, headlight and windshield ceramic coatings, and black trim restoration.',
       features: ['1-step machine polish', 'Headlight ceramic coating', 'Windshield ceramic coating', 'Black trim restored'],
       link: '/services/full-detail'

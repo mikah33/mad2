@@ -321,13 +321,13 @@ routes.forEach(route => {
 
   const pricingTable = routePath === 'pricing' ? `
       <h2>How Much Does Car Detailing Cost in 2026?</h2>
-      <p>In 2026, most U.S. drivers pay between $150 and $350 for a full car detail, depending on vehicle size and condition. Interior-only details typically run $125–$250 and exterior-only $75–$150. At Mikah's Auto Detailing in Columbia SC, the Level 2 Full Reset starting at $375 covers the full interior and exterior with mobile service included — and once we've detailed your vehicle, the Level 1 Maintenance rate is just $225 anytime you rebook the same vehicle by day 90, with service by day 97.</p>
+      <p>In 2026, most U.S. drivers pay between $150 and $300 for a full car detail, depending on vehicle size and condition. Interior-only details typically run $125–$250 and exterior-only $75–$150. At Mikah's Auto Detailing in Columbia SC, the Level 2 Full Reset starting at $375 covers the full interior and exterior with mobile service included — and once we've detailed your vehicle, the Level 1 Maintenance rate is just $225 anytime you rebook the same vehicle by day 90, with service by day 97.</p>
       <table>
         <tr><th>Service</th><th>Typical U.S. Range (2026)</th><th>Our Price</th></tr>
         <tr><td>Exterior detail</td><td>$75–$150</td><td>From $150</td></tr>
-        <tr><td>Interior detail</td><td>$125–$250</td><td>From $200</td></tr>
-        <tr><td>Full detail (interior + exterior)</td><td>$150–$300</td><td>$225 flat</td></tr>
-        <tr><td>Deep-clean / restoration detail</td><td>$250–$450</td><td>$375 starting price</td></tr>
+        <tr><td>Interior detail</td><td>$125–$250</td><td>$350 first visit; $175 same-vehicle return after verified interior/full detail, booked by day 90 and serviced by day 97</td></tr>
+        <tr><td>Full detail (interior + exterior)</td><td>$150–$300</td><td>Starts at $375 (Level 2 Full Reset)</td></tr>
+        <tr><td>Deep-clean / restoration detail</td><td>$250–$450</td><td>$650 (Level 3 Disaster)</td></tr>
         <tr><td>Odor removal (standalone)</td><td>$150–$300</td><td>$250</td></tr>
         <tr><td>Paint correction</td><td>$500–$1,500+</td><td>From $599</td></tr>
         <tr><td>Ceramic coating</td><td>$1,000–$3,000</td><td>From $850</td></tr>
