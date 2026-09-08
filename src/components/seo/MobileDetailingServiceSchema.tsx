@@ -333,7 +333,7 @@ export const generateMobileDetailingFAQSchema = () => {
         name: 'How much does mobile car detailing cost in Columbia SC?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Mobile car detailing in Columbia SC starts at $150 for an exterior detail, $300 for an interior detail (now including a steam clean plus shampoo & extraction), and $375 for our Level 2 Full Reset (full interior and exterior). Returning customers qualify for a $225 Level 1 Maintenance Detail within 90 days of their last detail. We offer free quotes for all services.'
+          text: 'Mobile car detailing in Columbia SC starts at $150 for an exterior detail, $350 for an interior detail (now including a steam clean plus shampoo & extraction), and $375 for our Level 2 Full Reset (full interior and exterior). Returning customers qualify for a $225 Level 1 Maintenance Detail within 90 days of their last detail. We offer free quotes for all services.'
         }
       },
       {
@@ -371,7 +371,7 @@ export const generateExtendedFAQSchema = () => {
         name: 'How much does mobile car detailing cost in Columbia SC?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Mobile car detailing in Columbia SC starts at $150 for an exterior detail, $300 for an interior detail (now including a steam clean plus shampoo & extraction), and $375 for our Level 2 Full Reset (full interior and exterior). Returning customers qualify for a $225 Level 1 Maintenance Detail within 90 days of their last detail. We offer free quotes for all services.'
+          text: 'Mobile car detailing in Columbia SC starts at $150 for an exterior detail, $350 for an interior detail (now including a steam clean plus shampoo & extraction), and $375 for our Level 2 Full Reset (full interior and exterior). Returning customers qualify for a $225 Level 1 Maintenance Detail within 90 days of their last detail. We offer free quotes for all services.'
         }
       },
       {

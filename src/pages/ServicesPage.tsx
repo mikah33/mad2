@@ -103,7 +103,7 @@ export const ServicesPage = () => {
     {
       icon: <Zap className="w-8 h-8" />,
       title: 'Interior Detail',
-      price: '$300',
+      price: '$350',
       color: 'bg-primary-500',
       description: [
         'Deep cleaning included — steam clean + upholstery & carpet shampoo with extraction',

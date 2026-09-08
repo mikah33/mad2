@@ -302,7 +302,7 @@ const OdorStainRemovalPage: React.FC = () => {
                     <a href="/services/interior-detailing/" className="text-orange-600 font-semibold hover:underline">
                       interior detailing
                     </a>{' '}
-                    from $300, or compare everything on our{' '}
+                    from $350, or compare everything on our{' '}
                     <a href="/pricing/" className="text-orange-600 font-semibold hover:underline">
                       pricing page
                     </a>.
@@ -403,7 +403,7 @@ const OdorStainRemovalPage: React.FC = () => {
             <p className="mt-8 text-orange-100">
               Also see:{' '}
               <a href="/services/interior-detailing/" className="underline font-semibold">
-                Interior Detailing from $300
+                Interior Detailing from $350
               </a>{' '}
               ·{' '}
               <a href="/pricing/" className="underline font-semibold">

@@ -83,7 +83,7 @@ export const LocationColumbiaPage = () => {
   const locationFAQs = [
     {
       question: 'How much does auto detailing cost in Columbia SC?',
-      answer: 'Auto detailing in Columbia SC starts at $375 for our Level 2 Full Reset. Once we\'ve detailed your vehicle, our $225 Level 1 Maintenance Detail is available anytime you rebook the same vehicle by day 90, with service by day 97. Interior-only details start at $300, exterior-only at $150, paint correction starts at $599, and ceramic coating packages start at $850. We provide free quotes for all Columbia residents.'
+      answer: 'Auto detailing in Columbia SC starts at $375 for our Level 2 Full Reset. Once we\'ve detailed your vehicle, our $225 Level 1 Maintenance Detail is available anytime you rebook the same vehicle by day 90, with service by day 97. Interior-only details start at $350, exterior-only at $150, paint correction starts at $599, and ceramic coating packages start at $850. We provide free quotes for all Columbia residents.'
     },
     {
       question: 'What is the best mobile car detailing service in Columbia SC?',
@@ -91,7 +91,7 @@ export const LocationColumbiaPage = () => {
     },
     {
       question: 'What auto detailing services do you offer in Columbia SC?',
-      answer: 'We offer complete auto detailing services in Columbia SC: Level 2 Full Reset (interior + exterior with shampoo & extraction and engine bay) at $375, Level 2 Premium with 1-step polish and headlight & windshield ceramic coatings at $675, Level 3 Disaster Detail for heavy pet hair, set-in stains, and odor at $650, interior-only details from $300 (now including a steam clean plus shampoo & extraction of upholstery and carpets), exterior-only details from $150, odor removal at $250, headlight restoration at $125, paint correction from $599, and ceramic coating from $850. Every service is mobile — we come to you anywhere in Columbia.'
+      answer: 'We offer complete auto detailing services in Columbia SC: Level 2 Full Reset (interior + exterior with shampoo & extraction and engine bay) at $375, Level 2 Premium with 1-step polish and headlight & windshield ceramic coatings at $675, Level 3 Disaster Detail for heavy pet hair, set-in stains, and odor at $650, interior-only details from $350 (now including a steam clean plus shampoo & extraction of upholstery and carpets), exterior-only details from $150, odor removal at $250, headlight restoration at $125, paint correction from $599, and ceramic coating from $850. Every service is mobile — we come to you anywhere in Columbia.'
     },
     {
       question: 'Do you detail cars near USC and Fort Jackson in Columbia SC?',
@@ -178,11 +178,11 @@ export const LocationColumbiaPage = () => {
     <>
       <SEOHead
         title="Auto Detailing Columbia SC | $375 Full Detail — Mikah's Auto Detailing"
-        description="Auto detailing in Columbia SC — we come to you. 5.0-star mobile detailing: full detail $375, interior from $300, exterior from $150. Call (803) 667-8731."
+        description="Auto detailing in Columbia SC — we come to you. 5.0-star mobile detailing: full detail $375, interior from $350, exterior from $150. Call (803) 667-8731."
         keywords={allKeywords.join(', ') + ', columbia detailing, columbia auto detail, auto detail columbia, columbia mobile detailing, detailing columbia sc, professional car detailing columbia, best columbia detailing'}
         canonical="https://mikahsmobiledetailingsc.com/locations/columbia-sc/"
-        ogDescription="Auto detailing in Columbia SC — we come to you. 5.0-star mobile detailing: full detail $375, interior from $300, exterior from $150. Call (803) 667-8731."
-        twitterDescription="Auto detailing in Columbia SC — we come to you. 5.0-star mobile detailing: full detail $375, interior from $300, exterior from $150. Call (803) 667-8731."
+        ogDescription="Auto detailing in Columbia SC — we come to you. 5.0-star mobile detailing: full detail $375, interior from $350, exterior from $150. Call (803) 667-8731."
+        twitterDescription="Auto detailing in Columbia SC — we come to you. 5.0-star mobile detailing: full detail $375, interior from $350, exterior from $150. Call (803) 667-8731."
         schema={schemas}
       />
 

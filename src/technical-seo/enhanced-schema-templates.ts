@@ -371,7 +371,7 @@ export function generateFAQSchema(cityKey: string) {
         "name": `What is the cost of mobile auto detailing in ${city.name}?`,
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": `Our mobile auto detailing in ${city.name} starts at $150 for an exterior detail, $300 for an interior detail (now including a steam clean plus shampoo & extraction), and $375 for our Level 2 Full Reset (full interior and exterior). Returning customers qualify for a $225 Level 1 Maintenance Detail within 90 days of their last detail. Ceramic coating starts at $850. Pricing depends on the service selected.`
+          "text": `Our mobile auto detailing in ${city.name} starts at $150 for an exterior detail, $350 for an interior detail (now including a steam clean plus shampoo & extraction), and $375 for our Level 2 Full Reset (full interior and exterior). Returning customers qualify for a $225 Level 1 Maintenance Detail within 90 days of their last detail. Ceramic coating starts at $850. Pricing depends on the service selected.`
         }
       },
       {

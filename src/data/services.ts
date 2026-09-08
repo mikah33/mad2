@@ -37,7 +37,7 @@ export const services: Service[] = [
       'Tire and wheel dressing'
     ],
     pricing: { starting: '375' },
-    duration: '3-4 hours',
+    duration: 'About 4.5 hours',
     featured: true,
     popular: true
   },
@@ -63,7 +63,7 @@ export const services: Service[] = [
       'Engine bay detailed'
     ],
     pricing: { starting: '375' },
-    duration: '3-4 hours',
+    duration: 'About 4.5 hours',
     featured: true,
     popular: true
   },
@@ -84,8 +84,8 @@ export const services: Service[] = [
       'UV protection treatment',
       'Window cleaning (interior)'
     ],
-    pricing: { starting: '300' },
-    duration: '3-4 hours',
+    pricing: { starting: '350' },
+    duration: 'About 2.5 hours',
     featured: true
   },
   {

@@ -247,7 +247,7 @@ export const HomePage = () => {
                   <li className="flex items-center"><CheckCircle className="w-4 h-4 mr-2 text-green-500 flex-shrink-0" />Stain & odor removal</li>
                 </ul>
                 <div className="text-center">
-                  <p className="font-bold text-[#023E8A] text-xl mb-3">From $300</p>
+                  <p className="font-bold text-[#023E8A] text-xl mb-3">First visit $350</p>
                   <a href="#booking" className="block w-full py-2 bg-[#023E8A] text-white font-semibold rounded-lg hover:bg-[#0077B6] transition text-center">
                     Get Quote
                   </a>

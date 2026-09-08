@@ -213,11 +213,11 @@ const BookingTimeline: React.FC = () => {
     {
       icon: <Sparkles className="w-8 h-8" />,
       title: 'Interior Detail',
-      price: 'Starting at $300',
+      price: 'Starting at $350',
       color: 'bg-[#0077B6]',
       slug: 'interior-detail',
       image: '/interior1.jpg',
-      description: 'Deep interior clean — steam, shampoo & extraction included',
+      description: 'About 2.5 hours. First visit $350; $175 same-vehicle return after verified interior/full detail, booked by day 90 and serviced by day 97.',
       altText: 'Interior auto detailing services columbia sc - complete cleaning and protection'
     },
     {
@@ -706,7 +706,7 @@ const BookingTimeline: React.FC = () => {
         benefits: []
       },
       'Interior Detail': {
-        fullDescription: '🧹 Interior Detail – Starting at $300\n\nComplete interior deep clean — steam cleaning and a shampoo & extraction of upholstery and carpets are included, not add-ons.',
+        fullDescription: '🧹 Interior Detail – Starting at $350\n\nComplete interior deep clean — steam cleaning and a shampoo & extraction of upholstery and carpets are included, not add-ons.',
         includes: [
           '**Interior Services:**',
           '✅ Full interior wipe down',

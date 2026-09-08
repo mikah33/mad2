@@ -41,7 +41,7 @@ export const LocationWestColumbiaPage = () => {
     },
     {
       question: "How much does car detailing cost in West Columbia SC?",
-      answer: "Our car detailing prices in West Columbia are: Interior Detail starting at $300 (now including a steam clean plus shampoo & extraction), Exterior Detail starting at $150, and our Level 2 Full Reset (interior + exterior) at $375 — with $225 Level 1 Maintenance Details anytime you rebook the same vehicle by day 90, with service by day 97. Mobile service is included - no extra fees for coming to your West Columbia location!"
+      answer: "Our car detailing prices in West Columbia are: Interior Detail starting at $350 (now including a steam clean plus shampoo & extraction), Exterior Detail starting at $150, and our Level 2 Full Reset (interior + exterior) at $375 — with $225 Level 1 Maintenance Details anytime you rebook the same vehicle by day 90, with service by day 97. Mobile service is included - no extra fees for coming to your West Columbia location!"
     },
     {
       question: "How do I book mobile detailing in West Columbia?",
@@ -68,7 +68,7 @@ export const LocationWestColumbiaPage = () => {
   const servicePackages = [
     {
       title: 'Interior Detail',
-      price: '$300',
+      price: '$350',
       duration: '2-3 hours',
       description: 'Complete interior restoration including vacuum, full wipe down, conditioner + UV protection, disinfection, a deep clean with steam plus shampoo & extraction of upholstery and carpets, and crystal clear glass cleaning.',
       features: ['Full vacuum', 'Steam clean + shampoo & extraction', 'Dashboard & console cleaning', 'UV protection applied', 'Glass cleaned inside'],
@@ -208,11 +208,11 @@ export const LocationWestColumbiaPage = () => {
     <>
       <SEOHead
         title="Mobile Car Detailing West Columbia SC | We Come to You — Mikah's Auto Detailing"
-        description="5.0★ mobile car detailing in West Columbia SC — we come to your home or office. Interior from $300, exterior from $150. Serving Triangle City, Cayce &amp; Brookland. Call (803) 667-8731."
+        description="5.0★ mobile car detailing in West Columbia SC — we come to your home or office. Interior from $350, exterior from $150. Serving Triangle City, Cayce &amp; Brookland. Call (803) 667-8731."
         keywords={allKeywords.join(', ')}
         canonical="https://mikahsmobiledetailingsc.com/locations/west-columbia/"
-        ogDescription="5.0★ mobile car detailing in West Columbia SC — we come to you. Interior from $300, exterior from $150. Serving Triangle City, Cayce &amp; Brookland. Call (803) 667-8731."
-        twitterDescription="5.0★ mobile car detailing in West Columbia SC — we come to you. Interior from $300, exterior from $150. Serving Triangle City, Cayce &amp; Brookland. Call (803) 667-8731."
+        ogDescription="5.0★ mobile car detailing in West Columbia SC — we come to you. Interior from $350, exterior from $150. Serving Triangle City, Cayce &amp; Brookland. Call (803) 667-8731."
+        twitterDescription="5.0★ mobile car detailing in West Columbia SC — we come to you. Interior from $350, exterior from $150. Serving Triangle City, Cayce &amp; Brookland. Call (803) 667-8731."
         schema={schemas}
       />
 
@@ -274,7 +274,7 @@ export const LocationWestColumbiaPage = () => {
             </p>
 
             <p className="text-lg sm:text-xl md:text-2xl font-semibold mb-6 md:mb-8 text-primary-300">
-              Interior $300 | Exterior $150 | Level 2 Full Reset $375
+              Interior $350 | Exterior $150 | Level 2 Full Reset $375
             </p>
 
             <div className="flex flex-wrap justify-center gap-3 md:gap-6 mb-8 md:mb-10 px-4">
@@ -594,7 +594,7 @@ export const LocationWestColumbiaPage = () => {
               Professional auto detailing service comes to you - call now or request a free quote
             </p>
             <p className="text-2xl font-bold mb-8 text-white">
-              Interior $300 | Exterior $150 | Level 2 Full Reset $375
+              Interior $350 | Exterior $150 | Level 2 Full Reset $375
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a

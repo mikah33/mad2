@@ -74,7 +74,7 @@ export const LocationDetailPage = () => {
     { name: 'Mobile Auto Detailing', price: 'from $150', icon: '🚗' },
     { name: 'Ceramic Coating', price: 'from $850', icon: '🛡️' },
     { name: 'Paint Correction', price: 'from $599', icon: '✨' },
-    { name: 'Interior Detailing', price: 'from $300', icon: '🧽' },
+    { name: 'Interior Detailing', price: 'from $350', icon: '🧽' },
     { name: 'Exterior Detailing', price: 'from $150', icon: '💦' },
     { name: 'Level 2 Full Reset', price: '$375', icon: '⭐' }
   ];

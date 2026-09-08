@@ -21,7 +21,7 @@ const InteriorDetailingPage: React.FC = () => {
   const productSchema = generateProductSchema({
     name: "Interior Car Detailing Service",
     description: "Professional interior car detailing services in Columbia SC. Deep cleaning, stain removal, odor elimination, leather conditioning, and fabric protection for all vehicle types.",
-    price: "300",
+    price: "350",
     features: [
       "Complete vacuum service",
       "Professional steam cleaning",
@@ -120,7 +120,7 @@ const InteriorDetailingPage: React.FC = () => {
       "@type": "Offer",
       "priceSpecification": {
         "@type": "PriceSpecification",
-        "minPrice": "300",
+        "minPrice": "350",
         "priceCurrency": "USD"
       }
     }
@@ -131,7 +131,7 @@ const InteriorDetailingPage: React.FC = () => {
   const faqs = [
     {
       question: "How long does interior detailing take?",
-      answer: "Professional interior detailing typically takes 2-3 hours depending on vehicle size and condition. Heavily soiled vehicles or those requiring pet hair removal may take additional time."
+      answer: "Professional interior detailing typically takes 2.5 hours depending on vehicle size and condition. Heavily soiled vehicles or those requiring pet hair removal may take additional time."
     },
     {
       question: "Can you remove pet hair and odors?",
@@ -155,7 +155,7 @@ const InteriorDetailingPage: React.FC = () => {
     },
     {
       question: "How often should I get interior detailing?",
-      answer: "We recommend interior detailing every 90 days — and our maintenance pricing is built around exactly that: after any full detail, the Level 1 Maintenance rate is just $225 when you rebook the same vehicle by day 90, with service by day 97. Families with children or pets get the most out of staying on that 90-day cycle."
+      answer: "Interior Only is $350 for a first visit, or $175 for the same vehicle after a verified completed interior or full detail when booked by day 90 and serviced by day 97. Interior-only service does not qualify for the $225 full interior-and-exterior Maintenance rate. Families with children or pets get the most out of staying on that 90-day cycle."
     },
     {
       question: "Can you remove stains from seats?",
@@ -166,8 +166,8 @@ const InteriorDetailingPage: React.FC = () => {
   return (
     <>
       <SEOHead
-        title="Interior Detailing Columbia SC | Auto Detailing Services | From $300"
-        description="Professional auto detailing services in Columbia, SC. Interior deep cleaning, stain removal, leather conditioning, odor elimination. Mobile service. 5-star rated. Call (803) 667-8731!"
+        title="Interior Detailing Columbia SC | Auto Detailing Services | First visit $350"
+        description="Professional auto detailing services in Columbia, SC. Interior deep cleaning, stain removal, leather conditioning, odor elimination. First visit $350; $175 same-vehicle return booked by day 90, serviced by day 97 after verified completed interior or full detailing. About 2.5 hours. Mobile service. 5-star rated. Call (803) 667-8731!"
         keywords="auto detailing services columbia sc, car interior detailing, interior detailing columbia sc, auto detailing services in columbia sc, mobile car interior detailing, professional interior car detailing, leather conditioning, stain removal, odor elimination, pet hair removal"
         canonical="https://mikahsmobiledetailingsc.com/services/interior-detailing/"
         ogImage="https://mikahsmobiledetailingsc.com/interior1.jpg"
@@ -412,7 +412,7 @@ const InteriorDetailingPage: React.FC = () => {
                   
       </div>
                   <p className="text-gray-700 mb-2">
-                    <strong>Starting at $300</strong>
+                    <strong>First visit $350 · eligible return $175</strong><br />Book the same vehicle by day 90 after a verified completed interior or full detail; service by day 97. About 2.5 hours.
                   </p>
                   <p className="text-sm text-gray-600 mb-3">
                     Now includes a full deep clean — steam cleaning plus shampoo &amp; extraction of
@@ -420,7 +420,7 @@ const InteriorDetailingPage: React.FC = () => {
                   </p>
                   <div className="flex items-center gap-3">
                     <Clock className="w-6 h-6 text-orange-600" />
-                    <span className="font-semibold">Duration: 2-3 hours</span>
+                    <span className="font-semibold">Duration: 2.5 hours</span>
 
       </div>
 

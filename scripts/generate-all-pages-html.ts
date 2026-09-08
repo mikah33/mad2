@@ -88,8 +88,8 @@ const routes: PrerenderRoute[] = [
   { path: '', title: "Mobile Car Detailing Columbia SC | Mikah's Auto Detailing", description: '5.0-star mobile auto detailing in Columbia, Lexington & Irmo SC. We come to you - full interior + exterior resets $375, then $225 maintenance details every 90 days. Call (803) 667-8731.' },
 
   // Service pages
-  { path: 'services', title: 'Auto Detailing Services | Columbia SC', description: 'Mobile detailing services in Columbia SC: Level 2 Full Reset $375, interior from $300, exterior from $150, ceramic coating from $850. 5.0-star - we come to you.' },
-  { path: 'services/interior-detailing', title: 'Interior Car Detailing From $300 | Columbia SC', description: 'Interior car detailing from $300 in Columbia & Lexington SC - deep cleaning included: steam, shampoo & extraction, UV protection. 5.0-star mobile - we come to you.' },
+  { path: 'services', title: 'Auto Detailing Services | Columbia SC', description: 'Mobile detailing services in Columbia SC: Level 2 Full Reset $375, interior from $350, exterior from $150, ceramic coating from $850. 5.0-star - we come to you.' },
+  { path: 'services/interior-detailing', title: 'Interior Car Detailing From $350 | Columbia SC', description: 'Interior detailing: $350 first visit; $175 same-vehicle return booked by day 90 after verified interior/full detail and serviced by day 97. About 2.5 hours. Includes: steam, shampoo & extraction, UV protection. 5.0-star mobile - we come to you.' },
   { path: 'services/exterior-detailing', title: 'Exterior Car Detailing From $150 | Columbia SC', description: 'Exterior detailing from $150 in Columbia SC: foam wash, wheel decontamination, wax & trim dressing. 5.0-star mobile service at your driveway. (803) 667-8731.' },
   { path: 'services/ceramic-coating', title: 'Ceramic Coating From $850 | Columbia SC', description: 'Professional ceramic coating from $850 in Columbia SC with 2-5 year protection. Paint correction prep included. 5.0-star rated mobile installer.' },
   { path: 'services/paint-correction', title: 'Paint Correction From $599 | Columbia SC', description: 'Paint correction from $599 in Columbia SC - 1-step & 2-step swirl and scratch removal that restores gloss. 5.0-star mobile service. Free quote: (803) 667-8731.' },
@@ -103,21 +103,21 @@ const routes: PrerenderRoute[] = [
   // these two pages, and the generic "| Mobile Service" titles were earning ~1%
   // CTR. Keep these in sync with the SEOHead titles in the React components.
   { path: 'locations', title: 'Service Areas | Mobile Detailing in SC', description: 'Mobile car detailing across the Midlands: Columbia, Lexington, West Columbia, Irmo, Cayce, Chapin, Blythewood & more. 5.0-star - we come to you, from $150.' },
-  { path: 'locations/columbia-sc', title: "Auto Detailing Columbia SC | $375 Full Reset — Mikah's Auto Detailing", description: 'Auto detailing in Columbia SC — we come to you. 5.0-star mobile detailing: Level 2 Full Reset $375, interior from $300, exterior from $150. Call (803) 667-8731.' },
-  { path: 'locations/lexington-sc', title: "Mobile Car Detailing Lexington SC | We Come to You — Mikah's Auto Detailing", description: 'Mobile car detailing in Lexington SC - 5.0-star rated, we come to your home or office. Full Reset $375, interior from $300, exterior from $150. (803) 667-8731.' },
-  { path: 'locations/irmo-sc', title: 'Car Detailing Irmo SC | Mobile Service', description: 'Mobile car detailing in Irmo SC - 5.0-star rated. Full Reset $375, interior from $300, exterior from $150 at your home or office. (803) 667-8731.' },
-  { path: 'locations/cayce-sc', title: 'Car Detailing Cayce SC | Mobile Service', description: 'Mobile car detailing in Cayce SC - 5.0-star rated. Full Reset $375, interior from $300, exterior from $150. We come to you. Call (803) 667-8731.' },
-  { path: 'locations/west-columbia', title: "Mobile Car Detailing West Columbia SC | We Come to You — Mikah's Auto Detailing", description: 'Mobile car detailing in West Columbia SC - 5.0-star rated, we come to you. Full Reset $375, interior from $300, exterior from $150. Call (803) 667-8731.' },
-  { path: 'locations/chapin-sc', title: 'Car Detailing Chapin SC | Mobile Service', description: 'Mobile car detailing in Chapin SC - 5.0-star rated. Full Reset $375, interior from $300, exterior from $150 at your home or office. (803) 667-8731.' },
-  { path: 'locations/swansea-sc', title: 'Car Detailing Swansea SC | Mobile Service', description: 'Mobile car detailing in Swansea SC - 5.0-star rated. Full Reset $375, interior from $300, exterior from $150. We come to you. Call (803) 667-8731.' },
-  { path: 'locations/newberry-sc', title: 'Car Detailing Newberry SC | Mobile Service', description: 'Mobile car detailing in Newberry SC - 5.0-star rated. Full Reset $375, interior from $300, exterior from $150. We come to you. (803) 667-8731.' },
-  { path: 'locations/blythewood-sc', title: 'Car Detailing Blythewood SC | Mobile Service', description: 'Mobile car detailing in Blythewood SC - 5.0-star rated. Full Reset $375, interior from $300, exterior from $150 at your driveway. (803) 667-8731.' },
+  { path: 'locations/columbia-sc', title: "Auto Detailing Columbia SC | $375 Full Reset — Mikah's Auto Detailing", description: 'Auto detailing in Columbia SC — we come to you. 5.0-star mobile detailing: Level 2 Full Reset $375, interior from $350, exterior from $150. Call (803) 667-8731.' },
+  { path: 'locations/lexington-sc', title: "Mobile Car Detailing Lexington SC | We Come to You — Mikah's Auto Detailing", description: 'Mobile car detailing in Lexington SC - 5.0-star rated, we come to your home or office. Full Reset $375, interior from $350, exterior from $150. (803) 667-8731.' },
+  { path: 'locations/irmo-sc', title: 'Car Detailing Irmo SC | Mobile Service', description: 'Mobile car detailing in Irmo SC - 5.0-star rated. Full Reset $375, interior from $350, exterior from $150 at your home or office. (803) 667-8731.' },
+  { path: 'locations/cayce-sc', title: 'Car Detailing Cayce SC | Mobile Service', description: 'Mobile car detailing in Cayce SC - 5.0-star rated. Full Reset $375, interior from $350, exterior from $150. We come to you. Call (803) 667-8731.' },
+  { path: 'locations/west-columbia', title: "Mobile Car Detailing West Columbia SC | We Come to You — Mikah's Auto Detailing", description: 'Mobile car detailing in West Columbia SC - 5.0-star rated, we come to you. Full Reset $375, interior from $350, exterior from $150. Call (803) 667-8731.' },
+  { path: 'locations/chapin-sc', title: 'Car Detailing Chapin SC | Mobile Service', description: 'Mobile car detailing in Chapin SC - 5.0-star rated. Full Reset $375, interior from $350, exterior from $150 at your home or office. (803) 667-8731.' },
+  { path: 'locations/swansea-sc', title: 'Car Detailing Swansea SC | Mobile Service', description: 'Mobile car detailing in Swansea SC - 5.0-star rated. Full Reset $375, interior from $350, exterior from $150. We come to you. Call (803) 667-8731.' },
+  { path: 'locations/newberry-sc', title: 'Car Detailing Newberry SC | Mobile Service', description: 'Mobile car detailing in Newberry SC - 5.0-star rated. Full Reset $375, interior from $350, exterior from $150. We come to you. (803) 667-8731.' },
+  { path: 'locations/blythewood-sc', title: 'Car Detailing Blythewood SC | Mobile Service', description: 'Mobile car detailing in Blythewood SC - 5.0-star rated. Full Reset $375, interior from $350, exterior from $150 at your driveway. (803) 667-8731.' },
 
   // Main pages
   // NOTE: /contact/ is intentionally NOT here. The router has no /contact route
   // (the SPA renders a noindexed 404 for it), so prerendering it served users a
   // broken page. netlify.toml now 301s /contact/* -> /book/.
-  { path: 'pricing', title: 'Car Detailing Prices 2026 — Columbia SC Price List', description: '2026 car detailing price list for Columbia & Lexington SC: Level 2 Full Reset $375, Level 2 Premium $675, Level 3 Disaster Detail $650, $225 maintenance rate within 90 days. Interior from $300, exterior from $150. Mobile — we come to you.' },
+  { path: 'pricing', title: 'Car Detailing Prices 2026 — Columbia SC Price List', description: '2026 car detailing price list for Columbia & Lexington SC: Level 2 Full Reset $375, Level 2 Premium $675, Level 3 Disaster Detail $650, $225 maintenance rate within 90 days. Interior from $350, exterior from $150. Mobile — we come to you.' },
   { path: 'faq', title: 'Frequently Asked Questions | Auto Detailing', description: 'Common questions about auto detailing, ceramic coating, pricing, and our mobile service.' },
   { path: 'faq/ceramic-coating', title: 'Ceramic Coating FAQ | Common Questions', description: 'Frequently asked questions about ceramic coating, application, maintenance, and benefits.' },
   { path: 'faq/mobile-detailing', title: 'Mobile Detailing FAQ | Common Questions', description: 'Frequently asked questions about our mobile detailing service and process.' },
@@ -321,14 +321,14 @@ routes.forEach(route => {
 
   const pricingTable = routePath === 'pricing' ? `
       <h2>How Much Does Car Detailing Cost in 2026?</h2>
-      <p>In 2026, most U.S. drivers pay between $150 and $300 for a full car detail, depending on vehicle size and condition. Interior-only details typically run $125–$250 and exterior-only $75–$150. At Mikah's Auto Detailing in Columbia SC, the Level 2 Full Reset starting at $375 covers the full interior and exterior with mobile service included — and once we've detailed your vehicle, the Level 1 Maintenance rate is just $225 anytime you rebook the same vehicle by day 90, with service by day 97.</p>
+      <p>In 2026, most U.S. drivers pay between $150 and $350 for a full car detail, depending on vehicle size and condition. Interior-only details typically run $125–$250 and exterior-only $75–$150. At Mikah's Auto Detailing in Columbia SC, the Level 2 Full Reset starting at $375 covers the full interior and exterior with mobile service included — and once we've detailed your vehicle, the Level 1 Maintenance rate is just $225 anytime you rebook the same vehicle by day 90, with service by day 97.</p>
       <table>
         <tr><th>Service</th><th>Typical U.S. Range (2026)</th><th>Our Price</th></tr>
         <tr><td>Exterior detail</td><td>$75–$150</td><td>From $150</td></tr>
         <tr><td>Interior detail</td><td>$125–$250</td><td>From $200</td></tr>
         <tr><td>Full detail (interior + exterior)</td><td>$150–$300</td><td>$225 flat</td></tr>
         <tr><td>Deep-clean / restoration detail</td><td>$250–$450</td><td>$375 starting price</td></tr>
-        <tr><td>Odor removal (standalone)</td><td>$150–$350</td><td>$250</td></tr>
+        <tr><td>Odor removal (standalone)</td><td>$150–$300</td><td>$250</td></tr>
         <tr><td>Paint correction</td><td>$500–$1,500+</td><td>From $599</td></tr>
         <tr><td>Ceramic coating</td><td>$1,000–$3,000</td><td>From $850</td></tr>
       </table>` : '';
@@ -339,7 +339,7 @@ routes.forEach(route => {
       <h2>Services &amp; 2026 Prices</h2>
       <ul>
         <li><a href="/services/exterior-detailing">Exterior Detail</a> — from $150</li>
-        <li><a href="/services/interior-detailing">Interior Detail (deep cleaning included)</a> — from $300</li>
+        <li><a href="/services/interior-detailing">Interior Detail (deep cleaning included)</a> — from $350</li>
         <li><a href="/services/full-detail">Level 2 Full Reset (full interior + exterior)</a> — $375 starting price</li>
         <li><a href="/services/full-detail">Level 2 Premium (Reset + polish, headlight &amp; windshield coatings, trim redye)</a> — $675 starting price</li>
         <li><a href="/services/full-detail">Level 3 Disaster Detail (interior rescue + basic wash)</a> — $650 flat</li>

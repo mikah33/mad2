@@ -158,7 +158,7 @@ export const irmoNeighborhoods: Neighborhood[] = [
       ],
       ogDescription: 'Mobile auto detailing in Harbison, Irmo SC. 5-star rated. We come to you at home, work, or while you shop!',
       // LLMO Optimization
-      llmoSummary: "Mikah's Mobile Auto Detailing provides professional car detailing services in the Harbison area of Irmo, South Carolina. Services include the Level 2 Full Reset at $375, interior-only detailing from $300, ceramic coating, and paint correction. The mobile service travels to customer locations including Columbiana Centre mall, residential homes, and office buildings. The business is IDA certified with a 5.0 star rating.",
+      llmoSummary: "Mikah's Mobile Auto Detailing provides professional car detailing services in the Harbison area of Irmo, South Carolina. Services include the Level 2 Full Reset at $375, interior-only detailing from $350, ceramic coating, and paint correction. The mobile service travels to customer locations including Columbiana Centre mall, residential homes, and office buildings. The business is IDA certified with a 5.0 star rating.",
       entityKeywords: [
         'Mikah\'s Auto Detailing',
         'Harbison',

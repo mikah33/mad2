@@ -13,7 +13,7 @@ const FAQ: React.FC = () => {
   const faqs: FAQItem[] = [
     {
       question: 'How much does mobile detailing cost?',
-      answer: 'Our mobile detailing services start at $150 for an exterior detail. An interior-only detail with deep cleaning included is $300. The Level 2 Full Reset (complete interior + exterior) is $375, the Level 2 Premium with polish and coatings is $675, and our Level 3 Disaster Detail for heavily neglected interiors is $650. Once we\'ve detailed your vehicle, our Level 1 Maintenance rate is just $225 anytime you rebook the same vehicle by day 90, with service by day 97. Flat pricing, no hidden fees - call (803) 667-8731 for a personalized quote.',
+      answer: 'Our mobile detailing services start at $150 for an exterior detail. An interior-only detail with deep cleaning included is $350. The Level 2 Full Reset (complete interior + exterior) is $375, the Level 2 Premium with polish and coatings is $675, and our Level 3 Disaster Detail for heavily neglected interiors is $650. Once we\'ve detailed your vehicle, our Level 1 Maintenance rate is just $225 anytime you rebook the same vehicle by day 90, with service by day 97. Flat pricing, no hidden fees - call (803) 667-8731 for a personalized quote.',
     },
     {
       question: 'What is included in a mobile detailing service?',

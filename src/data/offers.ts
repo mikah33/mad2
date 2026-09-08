@@ -93,7 +93,7 @@ export const LEVEL_OFFERS: LevelOffer[] = [
       'Engine bay detailed',
     ],
     slug: 'level-2-reset',
-    duration: '3-5 hours',
+    duration: 'About 4.5 hours',
   },
   {
     id: 'level-2-premium',
@@ -115,7 +115,7 @@ export const LEVEL_OFFERS: LevelOffer[] = [
       'Black trim restored / redyed',
     ],
     slug: 'level-2-premium',
-    duration: '5-7 hours',
+    duration: 'About 6 hours',
   },
   {
     id: 'level-3',
@@ -139,7 +139,7 @@ export const LEVEL_OFFERS: LevelOffer[] = [
       'No polish or coatings — paint work is always a separate quote',
     ],
     slug: 'level-3-disaster',
-    duration: '5-8 hours',
+    duration: 'About 4.5 hours',
   },
 ];
 
