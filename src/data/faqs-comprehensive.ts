@@ -398,7 +398,7 @@ export const faqs: FAQ[] = [
     id: 'pri-3',
     category: 'Pricing & Packages',
     question: 'What is your most popular detailing package?',
-    answer: 'Our Level 2 Full Reset is the most popular package with Columbia SC customers. This deep-clean package includes full interior deep cleaning with shampoo and extraction, light stain removal, complete exterior foam wash, tire and wheel detailing, engine bay detailing, and a protective layer of wax. Priced at a flat $375 regardless of vehicle size, it gets your vehicle back to a level where we can maintenance clean it for you—rebook the same vehicle by day 90, with service by day 97 and the $225 Level 1 Maintenance Detail rate applies. Most customers stay on that maintenance schedule. The Level 2 Full Reset takes 3-5 hours and leaves vehicles looking showroom-new.',
+    answer: 'Our Level 2 Full Reset is the most popular package with Columbia SC customers. This deep-clean package includes full interior deep cleaning with shampoo and extraction, light stain removal, complete exterior foam wash, tire and wheel detailing, engine bay detailing, and a protective layer of wax. Starting at $375, with the final quote confirmed before service, it gets your vehicle back to a level where we can maintenance clean it for you—rebook the same vehicle by day 90, with service by day 97 and the $225 Level 1 Maintenance Detail rate applies. Most customers stay on that maintenance schedule. The Level 2 Full Reset takes 3-5 hours and leaves vehicles looking showroom-new.',
     keywords: ['best car detailing package Columbia SC', 'popular detailing service', 'full detail package'],
     relatedServices: ['packages', 'full-detail']
   },

@@ -49,7 +49,7 @@ export const LocationWestColumbiaPage = () => {
     },
     {
       question: "What's included in a full detail in West Columbia?",
-      answer: "Our Level 2 Full Reset in West Columbia includes complete interior cleaning (vacuum, wipe down, UV protection, glass cleaning, disinfection, shampoo & extraction) plus full exterior service (foam wash, decontamination, protective wax, engine bay, wheel and tire dressing). All for a flat $375 — then just $225 Level 1 Maintenance Details when you rebook the same vehicle by day 90, with service by day 97!"
+      answer: "Our Level 2 Full Reset in West Columbia includes complete interior cleaning (vacuum, wipe down, UV protection, glass cleaning, disinfection, shampoo & extraction) plus full exterior service (foam wash, decontamination, protective wax, engine bay, wheel and tire dressing). Starting at $375 — then just $225 Level 1 Maintenance Details when you rebook the same vehicle by day 90, with service by day 97!"
     },
     {
       question: "Do you offer same-day detailing in West Columbia SC?",
