@@ -332,13 +332,13 @@ export const PricingPage = () => {
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="text-center">
             <div className="inline-block bg-orange-500/20 text-orange-300 border border-orange-400/40 px-4 py-1 rounded-full text-sm font-semibold mb-4">
-              2026 Price List — Updated July 2026
+              2026 Price List — Updated September 2026
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
               Car Detailing Prices in Columbia &amp; Lexington SC
             </h1>
             <p className="text-xl md:text-2xl text-gray-300 mb-6">
-              Flat rates. We come to you. Quote by text in minutes.
+              Clear pricing. We come to you. Quote by text in minutes.
             </p>
             <div className="flex flex-wrap justify-center gap-2 mb-8 text-sm">
               <span className="bg-white/10 border border-white/20 rounded-full px-4 py-1.5">🚐 Mobile — we come to you</span>
