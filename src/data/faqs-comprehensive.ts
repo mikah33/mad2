@@ -52,7 +52,7 @@ export const faqs: FAQ[] = [
     id: 'gen-3',
     category: 'General Detailing',
     question: 'How often should I get my car professionally detailed?',
-    answer: 'Most vehicles benefit from professional detailing every 3-4 months to maintain optimal condition. However, frequency depends on usage and environment. Daily drivers in Columbia SC exposed to pollen, humidity, and sun should be detailed quarterly. Garage-kept vehicles or those driven occasionally can go 6 months between details. Regular detailing prevents damage accumulation, maintains resale value, and keeps your car looking new. We offer maintenance packages with discounted rates for recurring customers.',
+    answer: 'Most vehicles benefit from professional detailing every 90 days to maintain optimal condition — and our maintenance pricing is built around exactly that: after any full detail, the Level 1 Maintenance rate is just $225 when you rebook the same vehicle by day 90, with service by day 97. Daily drivers in Columbia SC exposed to pollen, humidity, and sun get the most from that 90-day cycle, and even garage-kept or occasionally driven vehicles see the best results — and the best pricing — by rebooking within the window. Regular detailing prevents damage accumulation, maintains resale value, and keeps your car looking new.',
     keywords: ['how often detail car', 'car detailing frequency', 'maintenance schedule Columbia SC'],
     relatedServices: ['maintenance-packages']
   },
@@ -60,7 +60,7 @@ export const faqs: FAQ[] = [
     id: 'gen-4',
     category: 'General Detailing',
     question: 'Is car detailing worth the cost?',
-    answer: 'Absolutely! Professional detailing is an investment that pays dividends. Regular detailing can increase your vehicle\'s resale value and prevents costly damage from neglect. Our Columbia SC customers report that proper detailing extends paint life, prevents interior wear, and maintains that new car feeling. When you consider that paint correction (which starts at $599) restores oxidation and scratches that regular detailing prevents, routine care is a minimal investment for long-term protection. Our Basic Detail is just $225, so staying ahead of damage is far more affordable than fixing it later.',
+    answer: 'Absolutely! Professional detailing is an investment that pays dividends. Regular detailing can increase your vehicle\'s resale value and prevents costly damage from neglect. Our Columbia SC customers report that proper detailing extends paint life, prevents interior wear, and maintains that new car feeling. When you consider that paint correction (which starts at $599) restores oxidation and scratches that regular detailing prevents, routine care is a minimal investment for long-term protection. Our Level 2 Full Reset is $375, and once we\'ve detailed your vehicle, $225 Level 1 Maintenance Details keep you ahead of damage for far less than fixing it later.',
     keywords: ['is car detailing worth it', 'detailing value', 'resale value Columbia SC'],
     relatedServices: ['packages', 'ceramic-coating']
   },
@@ -108,7 +108,7 @@ export const faqs: FAQ[] = [
     id: 'gen-10',
     category: 'General Detailing',
     question: 'What is the best time of year to detail my car?',
-    answer: 'While car detailing is beneficial year-round, spring and fall are optimal times in Columbia SC. Spring detailing removes winter grime and prepares your vehicle for summer sun exposure. Fall detailing protects against winter moisture and prepares paint for cooler months. However, don\'t wait—detailing provides benefits whenever performed. Summer detailing combats UV damage and pollen, while winter detailing removes road salt and protects against moisture. We recommend quarterly detailing regardless of season for optimal protection.',
+    answer: 'While car detailing is beneficial year-round, spring and fall are optimal times in Columbia SC. Spring detailing removes winter grime and prepares your vehicle for summer sun exposure. Fall detailing protects against winter moisture and prepares paint for cooler months. However, don\'t wait—detailing provides benefits whenever performed. Summer detailing combats UV damage and pollen, while winter detailing removes road salt and protects against moisture. We recommend detailing every 90 days regardless of season for optimal protection — it also keeps our $225 Level 1 Maintenance rate unlocked.',
     keywords: ['best time detail car', 'seasonal car detailing Columbia SC', 'when to detail car'],
     relatedServices: ['maintenance-packages', 'exterior-detailing']
   },
@@ -118,7 +118,7 @@ export const faqs: FAQ[] = [
     id: 'mob-1',
     category: 'Mobile Detailing',
     question: 'How much does mobile car detailing cost in Columbia SC?',
-    answer: 'We charge flat rates that don\'t change with your vehicle\'s size. An Exterior Detail starts at $125 and an Interior Detail at $200, while our Basic Detail—a full interior and exterior with wax—is $225. The Factory Reset deep-clean package is $375, paint correction starts at $599, and ceramic coating starts at $850. Mobile service includes the same quality as shop detailing but with added convenience—no travel time or waiting. We serve Columbia, Lexington, Irmo, Forest Acres, and surrounding areas with no additional travel fees within 20 miles.',
+    answer: 'We charge flat rates that don\'t change with your vehicle\'s size. An Exterior Detail starts at $150 and an Interior Detail at $300 (now including a steam clean plus shampoo & extraction of upholstery and carpets), while our Level 2 Full Reset—a full interior and exterior deep clean with shampoo, extraction, and engine bay—is $375. Once we\'ve detailed your vehicle, the $225 Level 1 Maintenance Detail applies anytime you rebook the same vehicle by day 90, with service by day 97. The Level 2 Premium with 1-step polish and ceramic-coated headlights and windshield is $675, paint correction starts at $599, and ceramic coating starts at $850. Mobile service includes the same quality as shop detailing but with added convenience—no travel time or waiting. We serve Columbia, Lexington, Irmo, Forest Acres, and surrounding areas with no additional travel fees within 20 miles.',
     keywords: ['mobile car detailing cost Columbia SC', 'car detailing prices', 'mobile detailing Columbia'],
     relatedServices: ['pricing', 'packages']
   },
@@ -174,7 +174,7 @@ export const faqs: FAQ[] = [
     id: 'mob-8',
     category: 'Mobile Detailing',
     question: 'How do I schedule mobile detailing service?',
-    answer: 'Scheduling is easy! Call, text, or use our online booking system at MikahsAutoDetailing.com. Provide your location in the Columbia SC area, vehicle type, preferred date/time, and desired service level. We\'ll confirm availability within 24 hours (usually much faster). You can book 1-2 weeks ahead for best availability or request same-day service. We send reminder texts 24 hours before and when we\'re en route. Payment is accepted via card, Venmo, or cash upon completion. First-time customers receive 10% off!',
+    answer: 'Scheduling is easy! Call, text, or use our online booking system at MikahsAutoDetailing.com. Provide your location in the Columbia SC area, vehicle type, preferred date/time, and desired service level. We\'ll confirm availability within 24 hours (usually much faster). You can book 1-2 weeks ahead for best availability or request same-day service. We send reminder texts 24 hours before and when we\'re en route. Payment is accepted via cash, check, Zelle, or card upon completion.',
     keywords: ['schedule mobile detailing Columbia SC', 'book car detailing', 'mobile detailing appointment'],
     relatedServices: ['scheduling', 'booking']
   },
@@ -382,7 +382,7 @@ export const faqs: FAQ[] = [
     id: 'pri-1',
     category: 'Pricing & Packages',
     question: 'How much does car detailing cost in Columbia SC?',
-    answer: 'We use simple flat pricing that doesn\'t change with your vehicle\'s size. An Exterior Detail starts at $125 and an Interior Detail at $200. Our Basic Detail—a full interior and exterior with wax—is $225, and the Factory Reset deep-clean package is $375. For paint protection, paint correction starts at $599 and ceramic coating starts at $850. We offer transparent pricing with no hidden fees. Mobile service is included at no extra charge within 20 miles. First-time customers receive 10% off, and we offer package discounts for regular maintenance. Exact pricing provided during booking.',
+    answer: 'We use simple flat pricing that doesn\'t change with your vehicle\'s size. An Exterior Detail starts at $150 and an Interior Detail at $300. Our Level 2 Full Reset—a full interior and exterior deep clean with wax—is $375, and $225 Level 1 Maintenance Details are available anytime you rebook the same vehicle by day 90, with service by day 97. For paint protection, paint correction starts at $599 and ceramic coating starts at $850. We offer transparent pricing with no hidden fees, and mobile service is included at no extra charge within our Midlands service area. Exact pricing provided during booking.',
     keywords: ['car detailing cost Columbia SC', 'detailing prices', 'how much is car detailing'],
     relatedServices: ['pricing', 'packages']
   },
@@ -390,7 +390,7 @@ export const faqs: FAQ[] = [
     id: 'pri-2',
     category: 'Pricing & Packages',
     question: 'Do you offer any discounts or package deals?',
-    answer: 'Yes! We offer several ways to save: 10% off for first-time customers, 15% discount when you book 3 or more services in advance (quarterly maintenance plan), fleet discounts for 3+ vehicles, referral bonounts ($25 credit when referred customer books), seasonal promotions throughout the year, and add-on discounts when bundling services. Columbia SC customers who commit to quarterly detailing save 15-20% annually compared to one-off services. We also offer bundled packages (interior + exterior + coating) with built-in savings. Check our website or call for current promotions.',
+    answer: 'Our prices are flat — no haggling, no coupon games — but there is one built-in way to save, and it\'s substantial: the 90-day maintenance plan. After any full detail, every rebook the same vehicle by day 90, with service by day 97 is a $225 Level 1 Maintenance Detail instead of the $375 Level 2 Full Reset — a $150 saving on every single visit for staying on the schedule. The Routine Reset subscription ($225/month for 1 interior + 2 exterior details) is the other value play for high-use vehicles. Doing multiple vehicles at one address? Ask us when booking.',
     keywords: ['car detailing discounts Columbia SC', 'detailing package deals', 'save on detailing'],
     relatedServices: ['pricing', 'packages', 'promotions']
   },
@@ -398,7 +398,7 @@ export const faqs: FAQ[] = [
     id: 'pri-3',
     category: 'Pricing & Packages',
     question: 'What is your most popular detailing package?',
-    answer: 'Our Factory Reset is the most popular package with Columbia SC customers. This deep-clean package includes full interior deep cleaning with extraction, complete exterior wash and clay bar treatment, tire and wheel detailing, trim restoration, and sealant protection. Priced at a flat $375 regardless of vehicle size, it provides exceptional value with comprehensive coverage inside and out. Customers who want comprehensive care on a smaller budget often choose our Basic Detail at $225, a full interior and exterior with wax. Most customers schedule a detail quarterly for maintenance. The Factory Reset takes 3-4 hours and leaves vehicles looking showroom-new.',
+    answer: 'Our Level 2 Full Reset is the most popular package with Columbia SC customers. This deep-clean package includes full interior deep cleaning with shampoo and extraction, light stain removal, complete exterior foam wash, tire and wheel detailing, engine bay detailing, and a protective layer of wax. Priced at a flat $375 regardless of vehicle size, it gets your vehicle back to a level where we can maintenance clean it for you—rebook the same vehicle by day 90, with service by day 97 and the $225 Level 1 Maintenance Detail rate applies. Most customers stay on that maintenance schedule. The Level 2 Full Reset takes 3-5 hours and leaves vehicles looking showroom-new.',
     keywords: ['best car detailing package Columbia SC', 'popular detailing service', 'full detail package'],
     relatedServices: ['packages', 'full-detail']
   },
@@ -414,7 +414,7 @@ export const faqs: FAQ[] = [
     id: 'pri-5',
     category: 'Pricing & Packages',
     question: 'Is there a difference in price for SUVs and trucks?',
-    answer: 'No—we charge the same flat rate no matter what you drive, whether it\'s a sedan, an SUV, or a full-size truck. Our prices are fixed: an Exterior Detail is $125, an Interior Detail is $200, the Basic Detail (full interior and exterior with wax) is $225, and the Factory Reset deep-clean package is $375. Paint correction starts at $599 and ceramic coating starts at $850. There are no size surcharges and no surprises—you pay the listed price regardless of vehicle size. Columbia SC customers appreciate this straightforward, transparent pricing.',
+    answer: 'No—we charge the same flat rate no matter what you drive, whether it\'s a sedan, an SUV, or a full-size truck. Our prices are fixed: an Exterior Detail is $150, an Interior Detail is $300, the Level 2 Full Reset deep-clean package (full interior and exterior) is $375, the Level 2 Premium is $675, and the Level 3 Disaster Detail is $650. Paint correction starts at $599 and ceramic coating starts at $850. There are no size surcharges and no surprises—you pay the listed price regardless of vehicle size. Columbia SC customers appreciate this straightforward, transparent pricing.',
     keywords: ['SUV detailing cost Columbia SC', 'truck detailing price', 'large vehicle pricing'],
     relatedServices: ['pricing', 'vehicle-types']
   },
@@ -422,7 +422,7 @@ export const faqs: FAQ[] = [
     id: 'pri-6',
     category: 'Pricing & Packages',
     question: 'Can I get just interior or just exterior detailing?',
-    answer: 'Absolutely! We offer interior-only and exterior-only packages for customers with specific needs. Interior-only detailing starts at $200 (perfect for new cars or when the exterior is fine), and exterior-only starts at $125 (great for maintained interiors or a quick refresh). Our Basic Detail bundles both for $225, so combining them is the most economical choice. Many Columbia SC customers alternate—interior in summer (AC season) and exterior in spring/fall. Some prefer interior quarterly and exterior twice yearly. We customize to your needs and budget, and we never push services you don\'t need.',
+    answer: 'Absolutely! We offer interior-only and exterior-only packages for customers with specific needs. Interior-only detailing starts at $300 and now includes a full deep clean — steam cleaning plus shampoo & extraction of upholstery and carpets (perfect for new cars or when the exterior is fine) — and exterior-only starts at $150 (great for maintained interiors or a quick refresh). Our Level 2 Full Reset combines both plus shampoo & extraction and the engine bay for $375—and rebooking within 90 days makes follow-up combined details just $225 with our Level 1 Maintenance Detail. Many Columbia SC customers alternate—interior in summer (AC season) and exterior in spring/fall—but the 90-day rhythm works best for both, and it\'s what keeps that $225 maintenance rate unlocked. We customize to your needs and budget, and we never push services you don\'t need.',
     keywords: ['interior only detailing Columbia SC', 'exterior only car cleaning', 'partial detailing'],
     relatedServices: ['interior-detailing', 'exterior-detailing', 'packages']
   },
@@ -430,7 +430,7 @@ export const faqs: FAQ[] = [
     id: 'pri-7',
     category: 'Pricing & Packages',
     question: 'Do you offer maintenance packages for regular customers?',
-    answer: 'Yes! Our maintenance packages provide the best value for regular detailing. The Quarterly Maintenance Plan includes 4 complete details per year (every 3 months) at 15% discount—effectively getting one service free. You choose specific months and we send reminders. The Monthly Maintenance Plan offers basic detail monthly at 20% off regular pricing, perfect for daily drivers and luxury vehicles. Columbia SC customers love the convenience, priority scheduling, and guaranteed availability. Packages lock in rates for one year regardless of future price increases. Commitment is optional—pause or cancel anytime.',
+    answer: 'Yes! Our maintenance pricing is built around a simple 90-day cycle: after any full detail, the Level 1 Maintenance Detail is just $225 whenever you rebook the same vehicle by day 90, with service by day 97—a full interior and exterior maintenance clean at well below the first-visit price. For customers who want it fully on autopilot, our Routine Reset subscription delivers a monthly maintenance detail at $225/month, perfect for daily drivers and luxury vehicles. Columbia SC customers love the convenience, priority scheduling, and guaranteed availability. Commitment is optional—pause or cancel anytime.',
     keywords: ['detailing maintenance packages Columbia SC', 'regular car detailing plan', 'recurring detailing discount'],
     relatedServices: ['maintenance-packages', 'pricing']
   },
@@ -438,7 +438,7 @@ export const faqs: FAQ[] = [
     id: 'pri-8',
     category: 'Pricing & Packages',
     question: 'What forms of payment do you accept?',
-    answer: 'We accept all major credit cards (Visa, MasterCard, Amex, Discover), debit cards, Venmo, Zelle, Apple Pay, and cash. Payment is due upon service completion. For mobile service in Columbia SC, we process cards via Square—fast, secure, and contactless. You receive an itemized receipt via email immediately. For fleet and commercial accounts, we offer net-30 invoicing terms after account setup. No checks accepted. First-time customers can pay however is most convenient. We also offer Venmo and Zelle for customers who prefer peer-to-peer payment.',
+    answer: 'We accept cash, checks, Zelle, and all major credit and debit cards (Visa, MasterCard, Amex, Discover). Payment is due upon service completion. We do not take Venmo or Cash App.',
     keywords: ['car detailing payment methods Columbia SC', 'how to pay for detailing', 'detailing payment options'],
     relatedServices: ['payment', 'booking']
   },
@@ -472,7 +472,7 @@ export const faqs: FAQ[] = [
     id: 'sch-4',
     category: 'Scheduling & Service Area',
     question: 'What is your cancellation policy?',
-    answer: 'We understand plans change. Cancel or reschedule up to 24 hours before your appointment with no penalty—simply call, text, or email. Cancellations within 24 hours incur a $50 fee to compensate for lost scheduling opportunities (waived for emergencies or severe weather). No-shows are charged 50% of the scheduled service. Columbia SC customers appreciate that we honor the same policy—if we must cancel or reschedule for any reason, you receive 10% off your next service. We communicate proactively about any schedule changes.',
+    answer: 'We understand plans change — just call or text and we\'ll reschedule, no drama. We appreciate as much notice as you can give (24 hours is ideal) so we can offer your slot to someone else, and we extend the same courtesy: if we ever need to move your appointment, we\'ll communicate proactively and make it right. Note that all completed services are final (no refunds) — if anything isn\'t right, tell us within 12 hours and we\'ll come back and fix it free.',
     keywords: ['car detailing cancellation policy Columbia SC', 'reschedule detailing', 'missed appointment fee'],
     relatedServices: ['scheduling', 'policies']
   },
@@ -514,7 +514,7 @@ export const faqs: FAQ[] = [
     id: 'mai-3',
     category: 'Maintenance & Care',
     question: 'How often should I wash my car in South Carolina?',
-    answer: 'In South Carolina\'s climate, wash your vehicle every 1-2 weeks. Spring requires weekly washing due to pollen accumulation. Summer demands frequent washing to remove bug splatter and bird droppings that bake onto paint in heat. Fall needs regular washing for leaves and tree debris. Winter is slightly more forgiving but salt spray near the coast requires attention. Columbia SC\'s high pollen counts make washing critical—yellow pollen contains acids that damage clear coat. More frequent washing between quarterly professional detailing maintains appearance and protection.',
+    answer: 'In South Carolina\'s climate, wash your vehicle every 1-2 weeks. Spring requires weekly washing due to pollen accumulation. Summer demands frequent washing to remove bug splatter and bird droppings that bake onto paint in heat. Fall needs regular washing for leaves and tree debris. Winter is slightly more forgiving but salt spray near the coast requires attention. Columbia SC\'s high pollen counts make washing critical—yellow pollen contains acids that damage clear coat. More frequent washing between your 90-day professional details maintains appearance and protection.',
     keywords: ['how often wash car South Carolina', 'car washing frequency Columbia SC', 'wash schedule'],
     relatedServices: ['maintenance', 'exterior-care']
   },

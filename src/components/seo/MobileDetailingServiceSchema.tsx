@@ -207,10 +207,10 @@ export const generateMobileDetailingServiceSchema = (
   // Add pricing information if requested
   if (includePricing) {
     const pricingMap = {
-      'mobile-detailing': { min: '125', max: '375' },
-      'interior-detailing': { min: '200', max: '200' },
-      'exterior-detailing': { min: '125', max: '125' },
-      'full-detail': { min: '225', max: '375' },
+      'mobile-detailing': { min: '150', max: '675' },
+      'interior-detailing': { min: '300', max: '300' },
+      'exterior-detailing': { min: '150', max: '150' },
+      'full-detail': { min: '375', max: '675' },
       'ceramic-coating': { min: '850', max: '850' },
       'paint-correction': { min: '599', max: '599' }
     };
@@ -250,8 +250,8 @@ export const generateMobileDetailingServiceSchema = (
           '@type': 'Offer',
           itemOffered: {
             '@type': 'Service',
-            name: 'Basic Mobile Detailing',
-            description: 'Essential mobile car detailing with wash, vacuum, and basic interior cleaning'
+            name: 'Level 1 Maintenance Detail',
+            description: 'Full interior and exterior maintenance detail with wax protection — for vehicles detailed by us within the last 90 days'
           },
           priceSpecification: {
             '@type': 'PriceSpecification',
@@ -263,13 +263,39 @@ export const generateMobileDetailingServiceSchema = (
           '@type': 'Offer',
           itemOffered: {
             '@type': 'Service',
-            name: 'Premium Mobile Detailing',
-            description: 'Comprehensive mobile detailing with interior deep clean, exterior wash, wax, and tire shine'
+            name: 'Level 2 Full Reset',
+            description: 'Comprehensive mobile detailing with interior shampoo & extraction, stain removal, engine bay, exterior wash, wax, and tire shine'
           },
           priceSpecification: {
             '@type': 'PriceSpecification',
             priceCurrency: 'USD',
             price: '375'
+          }
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'Level 2 Premium',
+            description: 'Full Reset plus 1-step machine polish, headlight and windshield ceramic coatings, and black trim restoration'
+          },
+          priceSpecification: {
+            '@type': 'PriceSpecification',
+            priceCurrency: 'USD',
+            price: '675'
+          }
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'Level 3 Disaster Detail',
+            description: 'Interior rescue for heavy pet hair, set-in stains, and odor, with a basic exterior wash'
+          },
+          priceSpecification: {
+            '@type': 'PriceSpecification',
+            priceCurrency: 'USD',
+            price: '650'
           }
         },
         {
@@ -307,7 +333,7 @@ export const generateMobileDetailingFAQSchema = () => {
         name: 'How much does mobile car detailing cost in Columbia SC?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Mobile car detailing in Columbia SC starts at $125 for an exterior detail, $200 for an interior detail, and $225 for our Basic Detail package. We offer free quotes for all services.'
+          text: 'Mobile car detailing in Columbia SC starts at $150 for an exterior detail, $300 for an interior detail (now including a steam clean plus shampoo & extraction), and $375 for our Level 2 Full Reset (full interior and exterior). Returning customers qualify for a $225 Level 1 Maintenance Detail within 90 days of their last detail. We offer free quotes for all services.'
         }
       },
       {
@@ -323,7 +349,7 @@ export const generateMobileDetailingFAQSchema = () => {
         name: 'How long does a full detail take?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'A full interior and exterior detail typically takes 2-4 hours depending on vehicle size and condition. We work efficiently while maintaining our high quality standards.'
+          text: 'A full interior and exterior detail typically takes 3-5 hours depending on vehicle condition, while a Level 1 Maintenance Detail for returning customers takes 2-3 hours. We work efficiently while maintaining our high quality standards.'
         }
       }
     ]
@@ -345,7 +371,7 @@ export const generateExtendedFAQSchema = () => {
         name: 'How much does mobile car detailing cost in Columbia SC?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Mobile car detailing in Columbia SC starts at $125 for an exterior detail, $200 for an interior detail, and $225 for our Basic Detail package. We offer free quotes for all services.'
+          text: 'Mobile car detailing in Columbia SC starts at $150 for an exterior detail, $300 for an interior detail (now including a steam clean plus shampoo & extraction), and $375 for our Level 2 Full Reset (full interior and exterior). Returning customers qualify for a $225 Level 1 Maintenance Detail within 90 days of their last detail. We offer free quotes for all services.'
         }
       },
       {
@@ -361,7 +387,7 @@ export const generateExtendedFAQSchema = () => {
         name: 'How long does a full detail take?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'A full interior and exterior detail typically takes 2-4 hours depending on vehicle size and condition. We work efficiently while maintaining our high quality standards.'
+          text: 'A full interior and exterior detail typically takes 3-5 hours depending on vehicle condition, while a Level 1 Maintenance Detail for returning customers takes 2-3 hours. We work efficiently while maintaining our high quality standards.'
         }
       },
       {
@@ -377,7 +403,7 @@ export const generateExtendedFAQSchema = () => {
         name: 'How often should you detail your vehicle?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Most vehicles should be professionally detailed every 3-6 months to maintain optimal appearance and protect resale value. Daily drivers in Columbia\'s climate may benefit from quarterly service, while garage-kept vehicles can go 6 months. Our subscription service provides convenient regular maintenance at discounted rates.'
+          text: 'Most vehicles should be professionally detailed every 90 days to maintain optimal appearance and protect resale value — and our maintenance pricing is built around exactly that: after any full detail, the Level 1 Maintenance rate is just $225 when you rebook the same vehicle by day 90, with service by day 97. Daily drivers in Columbia\'s climate benefit most from that 90-day cycle, and our subscription service makes regular maintenance effortless.'
         }
       },
       {
@@ -393,7 +419,7 @@ export const generateExtendedFAQSchema = () => {
         name: 'How long does ceramic coating last?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Professional ceramic coating typically lasts 2-5 years depending on the product grade and maintenance. Our premium ceramic packages include 3-year warranties with proper care. The coating\'s durability makes it more cost-effective than traditional wax, which needs reapplication every 3-4 months.'
+          text: 'Professional ceramic coating typically lasts 2-5 years depending on the product grade and maintenance. Our premium ceramic packages include 3-year warranties with proper care. The coating\'s durability makes it more cost-effective than traditional wax, which needs reapplication every 90 days or so.'
         }
       },
       {
@@ -417,7 +443,7 @@ export const generateExtendedFAQSchema = () => {
         name: 'What forms of payment do you accept?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'We accept cash, all major credit cards (Visa, MasterCard, American Express, Discover), and convenient digital payment methods including Venmo, Cash App, and Zelle. Payment is collected upon service completion to your satisfaction.'
+          text: 'We accept cash, checks, Zelle, and all major credit and debit cards (Visa, MasterCard, American Express, Discover). Payment is collected upon service completion to your satisfaction.'
         }
       }
     ]

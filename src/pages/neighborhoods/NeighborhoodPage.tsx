@@ -70,17 +70,17 @@ const getLandmarkColor = (type: Landmark['type']) => {
 // Services data
 const services = [
   {
-    title: 'Basic Detail Package',
-    price: '$225',
-    duration: '2-3 hours',
-    description: 'Interior full wipe down, conditioner + UV protection, vacuum, disinfection, glass cleaned. Exterior wheels decontaminated, foam wash, protective wax, wheels & tires dressed.',
+    title: 'Level 2 Full Reset',
+    price: '$375',
+    duration: '3-5 hours',
+    description: 'Interior wipe down, conditioner + UV protection, vacuum + disinfection, light stain removal, shampoo & extraction, glass cleaned. Exterior foam wash, brake dust removal, protective wax, tires & rims dressed, engine bay detailed. Rebook the same vehicle by day 90, with service by day 97 and Level 1 Maintenance Details are just $225.',
     link: '/services/full-detail'
   },
   {
-    title: 'Factory Reset Package',
-    price: '$375',
-    duration: '3-4 hours',
-    description: 'Interior wipe down, conditioner + UV protection, vacuum + disinfection, light stain removal, shampoo & extraction, glass cleaned. Exterior foam wash, brake dust removal, protective wax, tires & rims dressed.',
+    title: 'Level 2 Premium',
+    price: '$675',
+    duration: '5-7 hours',
+    description: 'Everything in the Level 2 Full Reset plus 1-step machine polish, headlight ceramic coating, windshield ceramic coating, and black trim restored & redyed.',
     link: '/services/full-detail'
   },
   {
@@ -188,7 +188,7 @@ export const NeighborhoodPage: React.FC = () => {
       worstRating: 1
     },
     priceRange: '$$',
-    paymentAccepted: 'Cash, Credit Card, Debit Card, Venmo, Zelle',
+    paymentAccepted: 'Cash, Check, Zelle, Credit Card, Debit Card',
     hasOfferCatalog: {
       '@type': 'OfferCatalog',
       name: 'Auto Detailing Services',

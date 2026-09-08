@@ -158,7 +158,7 @@ export const irmoNeighborhoods: Neighborhood[] = [
       ],
       ogDescription: 'Mobile auto detailing in Harbison, Irmo SC. 5-star rated. We come to you at home, work, or while you shop!',
       // LLMO Optimization
-      llmoSummary: "Mikah's Mobile Auto Detailing provides professional car detailing services in the Harbison area of Irmo, South Carolina. Services include interior detailing starting at $225, ceramic coating, and paint correction. The mobile service travels to customer locations including Columbiana Centre mall, residential homes, and office buildings. The business is IDA certified with a 5.0 star rating.",
+      llmoSummary: "Mikah's Mobile Auto Detailing provides professional car detailing services in the Harbison area of Irmo, South Carolina. Services include the Level 2 Full Reset at $375, interior-only detailing from $300, ceramic coating, and paint correction. The mobile service travels to customer locations including Columbiana Centre mall, residential homes, and office buildings. The business is IDA certified with a 5.0 star rating.",
       entityKeywords: [
         'Mikah\'s Auto Detailing',
         'Harbison',
@@ -190,7 +190,7 @@ export const irmoNeighborhoods: Neighborhood[] = [
       ],
       structuredFacts: [
         'Service area: Harbison, Irmo SC and surrounding neighborhoods',
-        'Pricing: Basic Detail $225, Factory Reset $375',
+        'Pricing: Level 2 Full Reset $375, Level 1 Maintenance Detail $225 (for vehicles we\'ve detailed within the last 90 days)',
         'Rating: 5.0 stars',
         'Certification: IDA Certified',
         'Service type: Mobile (comes to your location)',
@@ -204,7 +204,7 @@ export const irmoNeighborhoods: Neighborhood[] = [
       },
       {
         question: 'How much does car detailing cost in Harbison?',
-        answer: 'Our Harbison mobile detailing packages start at $225 for Basic Detail and $375 for Factory Reset. Ceramic coatings and paint corrections are quoted based on vehicle size and condition. All prices include mobile service to your Harbison location.'
+        answer: 'Our Harbison mobile detailing packages start at $375 for the Level 2 Full Reset — and once we\'ve detailed your vehicle, $225 Level 1 Maintenance Details are available anytime you rebook the same vehicle by day 90, with service by day 97. Ceramic coatings and paint corrections are quoted based on vehicle size and condition. All prices include mobile service to your Harbison location.'
       },
       {
         question: 'What areas of Harbison do you service?',
@@ -212,7 +212,7 @@ export const irmoNeighborhoods: Neighborhood[] = [
       },
       {
         question: 'Can you remove pet hair from my car in Harbison?',
-        answer: 'Absolutely! Pet hair removal is included in our Interior and Factory Reset packages. Many Harbison families have pets, and our extraction equipment effectively removes embedded pet hair from seats, carpets, and hard-to-reach areas.'
+        answer: 'Absolutely! Pet hair removal is included in our Interior and Level 2 Full Reset packages, and for heavy pet hair our Level 3 Disaster Detail goes even deeper. Many Harbison families have pets, and our extraction equipment effectively removes embedded pet hair from seats, carpets, and hard-to-reach areas.'
       }
     ],
     featured: true
@@ -265,7 +265,7 @@ export const irmoNeighborhoods: Neighborhood[] = [
       }
     ],
     adjacentNeighborhoods: ['harbison-irmo-sc', 'st-andrews-columbia-sc', 'broad-river-estates-irmo-sc'],
-    popularServices: ['Basic Detail', 'Interior Cleaning', 'Exterior Wash & Wax'],
+    popularServices: ['Level 2 Full Reset', 'Interior Cleaning', 'Exterior Wash & Wax'],
     serviceNotes: 'Mix of vehicle ages means both maintenance detailing and restoration work. Popular with families who need regular interior cleaning.',
     seo: {
       title: 'Car Detailing Seven Oaks Irmo SC | Mobile Service Available',
@@ -282,7 +282,7 @@ export const irmoNeighborhoods: Neighborhood[] = [
         'auto detail 29210'
       ],
       ogDescription: 'Professional car detailing in Seven Oaks, Irmo SC. Mobile service to your home. 5-star rated!',
-      llmoSummary: "Mikah's Mobile Auto Detailing serves the Seven Oaks neighborhood in Irmo, South Carolina. This established residential community near Dutch Fork High School features mature trees and family homes. Mobile detailing services include basic detail packages at $225 and full factory reset at $375. The service comes directly to customers' homes in Seven Oaks and surrounding St. Andrews Road area.",
+      llmoSummary: "Mikah's Mobile Auto Detailing serves the Seven Oaks neighborhood in Irmo, South Carolina. This established residential community near Dutch Fork High School features mature trees and family homes. Mobile detailing services include the Level 2 Full Reset at $375, with $225 Level 1 Maintenance Details available within 90 days of a previous detail. The service comes directly to customers' homes in Seven Oaks and surrounding St. Andrews Road area.",
       entityKeywords: ['Seven Oaks', 'Dutch Fork High School', 'St. Andrews Road', 'Irmo SC', 'Piggly Wiggly'],
       semanticKeywords: ['family car cleaning', 'driveway detailing', 'home car wash', 'neighborhood detailing', 'school area service'],
       questionsAnswered: [
@@ -295,7 +295,7 @@ export const irmoNeighborhoods: Neighborhood[] = [
         'Service area: Seven Oaks, Dutch Fork, St. Andrews Road corridor',
         'Nearby landmark: Dutch Fork High School',
         'Community type: Established residential, family-oriented',
-        'Popular services: Basic Detail, Interior Cleaning'
+        'Popular services: Level 2 Full Reset, Interior Cleaning'
       ]
     },
     faqs: [
@@ -305,7 +305,7 @@ export const irmoNeighborhoods: Neighborhood[] = [
       },
       {
         question: 'What\'s the best detailing package for older vehicles?',
-        answer: 'For older vehicles common in Seven Oaks, we recommend our Factory Reset Package ($375) which includes deep interior cleaning, light stain removal, and exterior restoration with protective wax. For vehicles needing paint correction, we provide custom quotes.'
+        answer: 'For older vehicles common in Seven Oaks, we recommend our Level 2 Full Reset ($375) which includes deep interior cleaning, light stain removal, engine bay detailing, and exterior restoration with protective wax. For vehicles needing paint correction, we provide custom quotes.'
       },
       {
         question: 'Can you detail my car at my Seven Oaks home?',
@@ -594,7 +594,7 @@ export const irmoNeighborhoods: Neighborhood[] = [
       }
     ],
     adjacentNeighborhoods: ['seven-oaks-irmo-sc', 'st-andrews-columbia-sc', 'harbison-irmo-sc'],
-    popularServices: ['Basic Detail', 'Interior Deep Clean', 'Family Vehicle Package'],
+    popularServices: ['Level 2 Full Reset', 'Interior Deep Clean', 'Family Vehicle Package'],
     serviceNotes: 'Family neighborhood with emphasis on interior cleaning, car seat safe products, and affordable maintenance packages.',
     seo: {
       title: 'Auto Detailing Broad River Estates Irmo SC | Family-Friendly Service',
@@ -612,7 +612,7 @@ export const irmoNeighborhoods: Neighborhood[] = [
       ],
       ogDescription: 'Family-friendly auto detailing in Broad River Estates, Irmo SC. Safe products, affordable prices, mobile service!',
       // LLMO Optimization
-      llmoSummary: "Mikah's Mobile Auto Detailing serves Broad River Estates, a family-oriented neighborhood in Irmo, South Carolina. Home values range from $200,000-$380,000. The service specializes in family vehicle care using child-safe, non-toxic products. Popular services include Basic Detail at $225 and Interior Deep Clean. Located near Broad River Greenway and convenient to Broad River Road corridor for Columbia commuters.",
+      llmoSummary: "Mikah's Mobile Auto Detailing serves Broad River Estates, a family-oriented neighborhood in Irmo, South Carolina. Home values range from $200,000-$380,000. The service specializes in family vehicle care using child-safe, non-toxic products. Popular services include the Level 2 Full Reset at $375 and Interior Deep Clean. Located near Broad River Greenway and convenient to Broad River Road corridor for Columbia commuters.",
       entityKeywords: [
         'Broad River Estates',
         'Irmo SC',
@@ -642,7 +642,7 @@ export const irmoNeighborhoods: Neighborhood[] = [
         'Service area: Broad River Estates, Irmo SC',
         'Home values: $200,000-$380,000',
         'Specialization: Family vehicles, child-safe products',
-        'Popular services: Basic Detail $225, Interior Deep Clean',
+        'Popular services: Level 2 Full Reset $375, Interior Deep Clean',
         'Nearby: Broad River Greenway, Broad River Road corridor'
       ]
     },
@@ -653,7 +653,7 @@ export const irmoNeighborhoods: Neighborhood[] = [
       },
       {
         question: 'Do you offer affordable detailing packages?',
-        answer: 'Yes! Our Basic Detail Package at $225 is perfect for regular maintenance. For families with active kids, our Factory Reset Package ($375) includes deep extraction cleaning that handles juice spills, food crumbs, and everyday messes.'
+        answer: 'Yes! Our Level 2 Full Reset at $375 includes deep extraction cleaning that handles juice spills, food crumbs, and everyday messes. And once we\'ve detailed your vehicle, our $225 Level 1 Maintenance Detail keeps it that way anytime you rebook the same vehicle by day 90, with service by day 97.'
       },
       {
         question: 'Can you remove crayon and marker stains?',
@@ -661,7 +661,7 @@ export const irmoNeighborhoods: Neighborhood[] = [
       },
       {
         question: 'How often should I detail my family vehicle?',
-        answer: 'For family vehicles with regular use and kids, we recommend a basic interior cleaning every 4-6 weeks and a full detail every 3-4 months. This keeps your vehicle fresh and prevents stain buildup. Our Routine Reset subscription offers the best value for regular service.'
+        answer: 'For family vehicles with regular use and kids, we recommend a basic interior cleaning every 4-6 weeks and a full detail every 90 days — and our maintenance pricing is built around exactly that: after any full detail, the Level 1 Maintenance rate is just $225 when you rebook the same vehicle by day 90, with service by day 97. This keeps your vehicle fresh and prevents stain buildup. Our Routine Reset subscription offers the best value for regular service.'
       }
     ],
     featured: false
@@ -703,7 +703,7 @@ Mikah's Mobile Auto Detailing proudly serves all Irmo neighborhoods with profess
     ],
     ogDescription: 'Irmo\'s trusted mobile auto detailing service. All neighborhoods served. 5-star rated. Book your free quote today!',
     // LLMO Optimization
-    llmoSummary: "Mikah's Mobile Auto Detailing provides professional car detailing services throughout Irmo, South Carolina. Serving all neighborhoods including Harbison (near Columbiana Centre), Seven Oaks (Dutch Fork area), Ballentine (Lake Murray), Lake Murray Shores (waterfront), and Broad River Estates. IDA certified with 5.0 star rating. Services include Basic Detail starting at $225, Factory Reset at $375, ceramic coating, and paint correction. Mobile service comes to homes, offices, and shopping centers.",
+    llmoSummary: "Mikah's Mobile Auto Detailing provides professional car detailing services throughout Irmo, South Carolina. Serving all neighborhoods including Harbison (near Columbiana Centre), Seven Oaks (Dutch Fork area), Ballentine (Lake Murray), Lake Murray Shores (waterfront), and Broad River Estates. IDA certified with 5.0 star rating. Services include the Level 2 Full Reset at $375, $225 Level 1 Maintenance Details for vehicles detailed within the last 90 days, ceramic coating, and paint correction. Mobile service comes to homes, offices, and shopping centers.",
     entityKeywords: [
       'Irmo SC',
       'Harbison',
@@ -737,7 +737,7 @@ Mikah's Mobile Auto Detailing proudly serves all Irmo neighborhoods with profess
     structuredFacts: [
       'Service area: All Irmo SC neighborhoods',
       'Neighborhoods: Harbison, Seven Oaks, Ballentine, Lake Murray Shores, Broad River Estates',
-      'Pricing: Basic Detail $225, Factory Reset $375',
+      'Pricing: Level 2 Full Reset $375, Level 1 Maintenance Detail $225 (for vehicles we\'ve detailed within the last 90 days)',
       'Certification: IDA Certified',
       'Rating: 5.0 stars',
       'Service type: Mobile (comes to your location)',
@@ -751,7 +751,7 @@ Mikah's Mobile Auto Detailing proudly serves all Irmo neighborhoods with profess
     },
     {
       question: 'How much does mobile detailing cost in Irmo?',
-      answer: 'Irmo mobile detailing starts at $225 for our Basic Detail Package and $375 for our Factory Reset Package. Ceramic coating, paint correction, and specialty services are quoted based on your specific vehicle. All prices include mobile service to your Irmo location.'
+      answer: 'Irmo mobile detailing starts at $375 for our Level 2 Full Reset — and once we\'ve detailed your vehicle, $225 Level 1 Maintenance Details are available anytime you rebook the same vehicle by day 90, with service by day 97. Ceramic coating, paint correction, and specialty services are quoted based on your specific vehicle. All prices include mobile service to your Irmo location.'
     },
     {
       question: 'Do you offer same-day detailing in Irmo?',
@@ -1046,7 +1046,7 @@ export const lexingtonNeighborhoods: Neighborhood[] = [
       }
     ],
     adjacentNeighborhoods: ['governors-grant-lexington-sc', 'reserve-at-midway-lexington-sc'],
-    popularServices: ['Basic Detail', 'Interior Cleaning', 'Family Vehicle Package'],
+    popularServices: ['Level 2 Full Reset', 'Interior Cleaning', 'Family Vehicle Package'],
     serviceNotes: 'Family-focused community appreciates our safe, non-toxic cleaning products.',
     seo: {
       title: 'Car Detailing Cobblestone Farms Lexington SC | Family Service',
@@ -1496,7 +1496,7 @@ export const columbiaNeighborhoods: Neighborhood[] = [
       }
     ],
     adjacentNeighborhoods: ['forest-acres-sc', 'dentsville-columbia-sc'],
-    popularServices: ['Basic Detail', 'Interior Cleaning', 'Family Vehicle Package'],
+    popularServices: ['Level 2 Full Reset', 'Interior Cleaning', 'Family Vehicle Package'],
     serviceNotes: 'Family-oriented community with emphasis on value and quality service.',
     seo: {
       title: 'Car Detailing Woodland Hills Columbia SC | Northeast Columbia',
@@ -1525,7 +1525,7 @@ export const columbiaNeighborhoods: Neighborhood[] = [
     faqs: [
       {
         question: 'Do you offer affordable packages for families?',
-        answer: 'Yes! Our Basic Detail Package at $225 is perfect for family vehicles. We also offer multi-vehicle discounts for households with multiple cars.'
+        answer: 'Yes! Our Level 2 Full Reset at $375 is perfect for family vehicles — and rebooking within 90 days drops maintenance details to $225. We also offer multi-vehicle discounts for households with multiple cars.'
       }
     ],
     featured: false
@@ -1566,7 +1566,7 @@ export const columbiaNeighborhoods: Neighborhood[] = [
       }
     ],
     adjacentNeighborhoods: ['forest-acres-sc', 'woodland-hills-columbia-sc'],
-    popularServices: ['Basic Detail', 'Interior Deep Clean', 'Exterior Wash & Wax'],
+    popularServices: ['Level 2 Full Reset', 'Interior Deep Clean', 'Exterior Wash & Wax'],
     serviceNotes: 'Family community with community amenities. Standard service packages popular.',
     seo: {
       title: 'Car Detailing Lake Forest Columbia SC | Near Forest Acres',
@@ -1908,7 +1908,7 @@ export const westColumbiaNeighborhoods: Neighborhood[] = [
       }
     ],
     adjacentNeighborhoods: ['triangle-city-west-columbia-sc', 'sunset-blvd-west-columbia-sc'],
-    popularServices: ['Basic Detail', 'Commuter Package', 'Fleet Service'],
+    popularServices: ['Level 2 Full Reset', 'Commuter Package', 'Fleet Service'],
     serviceNotes: 'Central location with many commuter vehicles and work trucks needing regular maintenance cleaning.',
     seo: {
       title: 'Auto Detailing State Street West Columbia SC | Central Location',
@@ -2544,7 +2544,7 @@ export const blythewoodNeighborhoods: Neighborhood[] = [
       }
     ],
     adjacentNeighborhoods: ['creekside-blythewood-sc', 'longtown-blythewood-sc'],
-    popularServices: ['Basic Detail', 'Commuter Package', 'Truck Cleaning'],
+    popularServices: ['Level 2 Full Reset', 'Commuter Package', 'Truck Cleaning'],
     serviceNotes: 'Growing area with many commuters and work vehicles benefiting from regular maintenance.',
     seo: {
       title: 'Auto Detailing Muller Road Blythewood SC | Convenient Location',
@@ -2855,7 +2855,7 @@ export const cayceNeighborhoods: Neighborhood[] = [
       },
       {
         question: 'Are your services affordable?',
-        answer: 'Absolutely! We offer competitive pricing starting at $225 for full details. No hidden fees and mobile service is included.'
+        answer: 'Absolutely! We offer competitive pricing starting at $375 for our Level 2 Full Reset, with $225 maintenance details anytime you rebook the same vehicle by day 90, with service by day 97. No hidden fees and mobile service is included.'
       }
     ],
     featured: false
@@ -2995,7 +2995,7 @@ export const cayceNeighborhoods: Neighborhood[] = [
       }
     ],
     adjacentNeighborhoods: ['riverwalk-district-cayce-sc', 'springdale-cayce-sc'],
-    popularServices: ['Basic Detail', 'Pre-Travel Clean', 'Fleet Service'],
+    popularServices: ['Level 2 Full Reset', 'Pre-Travel Clean', 'Fleet Service'],
     serviceNotes: 'Commercial area with many commuters and travelers needing convenient service.',
     seo: {
       title: 'Auto Detailing Airport Boulevard Cayce SC | Near Airport',
@@ -3088,7 +3088,7 @@ export const cayceNeighborhoods: Neighborhood[] = [
       }
     ],
     adjacentNeighborhoods: ['airport-blvd-cayce-sc', 'guignard-park-cayce-sc'],
-    popularServices: ['Basic Detail', 'Interior Cleaning', 'Truck Wash'],
+    popularServices: ['Level 2 Full Reset', 'Interior Cleaning', 'Truck Wash'],
     serviceNotes: 'Affordable community appreciating value-focused detailing services.',
     seo: {
       title: 'Auto Detailing Springdale Cayce SC | Affordable Service',
@@ -3130,7 +3130,7 @@ export const cayceNeighborhoods: Neighborhood[] = [
     faqs: [
       {
         question: 'Do you offer affordable detailing in Springdale?',
-        answer: 'Yes! We offer competitive pricing for all Springdale residents. Our basic detail starts at $225 with no hidden fees or travel charges.'
+        answer: 'Yes! We offer competitive pricing for all Springdale residents. Our Level 2 Full Reset is $375 with no hidden fees or travel charges — and maintenance details are just $225 when you rebook the same vehicle by day 90, with service by day 97.'
       },
       {
         question: 'Can you clean my work truck?',

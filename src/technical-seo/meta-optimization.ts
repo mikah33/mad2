@@ -148,7 +148,7 @@ export function generateMetaHTML(cityKey: string): string {
     <!-- Rich Snippets Preparation -->
     <meta name="rating" content="4.9" />
     <meta name="price-range" content="$$" />
-    <meta name="payment-methods" content="Cash, Credit Card, Venmo, PayPal" />
+    <meta name="payment-methods" content="Cash, Check, Zelle, Credit Card, Debit Card" />
     <meta name="service-area" content="${city.name}, ${city.neighborhoods.join(', ')}" />
 
     <!-- Mobile Optimization -->

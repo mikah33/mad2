@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet-async';
 import { ArrowLeft, Star, Send, CheckCircle } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import BottomNavbar from '../components/BottomNavbar';
+import MaintenancePitch from '../components/MaintenancePitch';
 
 const GOOGLE_REVIEW_URL = 'https://g.page/r/CSSblq-gPlXUEBM/review';
 
@@ -260,6 +261,10 @@ const ReviewUsPage: React.FC = () => {
             </div>
           )}
         </div>
+      </div>
+
+      <div className="container mx-auto px-4 max-w-2xl pb-8">
+        <MaintenancePitch variant="card" context="Loved the result? Keep it: rebook the same vehicle by day 90, with service by day 97 and every visit is a flat $225 maintenance detail — you never pay the reset price twice." cta={{ label: 'Book my $225 maintenance detail', href: '/book?service=level-1-maintenance' }} />
       </div>
 
       <BottomNavbar />

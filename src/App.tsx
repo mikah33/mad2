@@ -21,7 +21,7 @@ function App() {
     <>
       <Helmet>
         <title>Mobile Car Detailing Columbia & Lexington SC | 5-Star Rated | Mikah's</title>
-        <meta name="description" content="Columbia & Lexington SC's top-rated mobile car detailing. Interior & exterior from $225. We come to you — same day available. Call (803) 667-8731." />
+        <meta name="description" content="Columbia & Lexington SC's top-rated mobile car detailing. Full interior & exterior resets $375, then $225 maintenance details every 90 days. We come to you. Call (803) 667-8731." />
         <meta name="keywords" content="mobile car detailing columbia sc, car detailing columbia sc, mobile detailing near me, car detailing near me, mobile car detailing lexington sc, car detailing lexington sc, mobile auto detailing columbia sc, ceramic coating columbia sc, paint correction columbia sc" />
         <link rel="canonical" href="https://mikahsmobiledetailingsc.com" />
 
@@ -29,7 +29,7 @@ function App() {
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://mikahsmobiledetailingsc.com" />
         <meta property="og:title" content="Mobile Car Detailing Columbia & Lexington SC | 5-Star Rated | Mikah's" />
-        <meta property="og:description" content="Columbia & Lexington SC's top-rated mobile car detailing. Interior & exterior from $225. We come to you — same day available. Call (803) 667-8731." />
+        <meta property="og:description" content="Columbia & Lexington SC's top-rated mobile car detailing. Full interior & exterior resets $375, then $225 maintenance details every 90 days. We come to you. Call (803) 667-8731." />
         <meta property="og:image" content={images.ogDefault.url} />
         <meta property="og:image:alt" content={images.ogDefault.alt} />
         <meta property="og:image:width" content={images.ogDefault.width.toString()} />
@@ -40,7 +40,7 @@ function App() {
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Mobile Car Detailing Columbia & Lexington SC | 5-Star Rated | Mikah's" />
-        <meta name="twitter:description" content="Columbia & Lexington SC's top-rated mobile car detailing. Interior & exterior from $225. We come to you — same day available. Call (803) 667-8731." />
+        <meta name="twitter:description" content="Columbia & Lexington SC's top-rated mobile car detailing. Full interior & exterior resets $375, then $225 maintenance details every 90 days. We come to you. Call (803) 667-8731." />
         <meta name="twitter:image" content={images.ogDefault.url} />
         <meta name="twitter:image:alt" content={images.ogDefault.alt} />
 
@@ -70,7 +70,7 @@ function App() {
                 Looking for car detailing near me? Mikah's Auto Detailing brings professional mobile detailing directly to your location anywhere in the Columbia and Lexington SC metro area. From Five Points and The Vista to Lake Murray and Harbison — we come to your home, office, or apartment complex with everything needed for a complete detail. No drop-off, no waiting, no hassle.
               </p>
               <p>
-                Our mobile detailing near me service covers Columbia, Lexington, Irmo, Cayce, West Columbia, Blythewood, Chapin, and all surrounding communities within 25 miles. Interior and exterior packages start at $225. Same day appointments available. Call <a href="tel:8036678731" className="text-primary-700 font-semibold">(803) 667-8731</a> for a free quote.
+                Our mobile detailing near me service covers Columbia, Lexington, Irmo, Cayce, West Columbia, Blythewood, Chapin, and all surrounding communities within 25 miles. Full interior and exterior resets are $375 — then just $225 maintenance details anytime you rebook the same vehicle by day 90, with service by day 97. Same day appointments available. Call <a href="tel:8036678731" className="text-primary-700 font-semibold">(803) 667-8731</a> for a free quote.
               </p>
             </div>
           </div>

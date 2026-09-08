@@ -2,6 +2,7 @@ import React from 'react';
 import { Truck, Phone, ChevronRight, CheckCircle, MapPin, Clock } from 'lucide-react';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
+import MaintenancePitch from '../components/MaintenancePitch';
 import { Breadcrumbs } from '../components/Breadcrumbs';
 import { SEOHead } from '../components/seo/SEOHead';
 import { generateProductSchema } from '../components/seo/StructuredData';
@@ -54,7 +55,7 @@ const MobileDetailingPage: React.FC = () => {
       "@type": "Offer",
       "price": "225",
       "priceCurrency": "USD",
-      "description": "Basic Detail Package - Interior & Exterior"
+      "description": "Level 1 Maintenance Detail - Interior & Exterior, for vehicles detailed by us within the last 90 days"
     },
     "description": "Professional mobile car detailing service in Columbia and Lexington SC. We come to your location with all equipment needed.",
     "url": "https://mikahsmobiledetailingsc.com/services/mobile-detailing"
@@ -66,7 +67,7 @@ const MobileDetailingPage: React.FC = () => {
     <>
       <SEOHead
         title="Mobile Detailing Near Me | Columbia & Lexington SC | Mikah's"
-        description="Mobile car detailing near you in Columbia & Lexington SC. We come to your home or office from $225. Same day available. 5-star rated. Call (803) 667-8731."
+        description="Mobile car detailing near you in Columbia & Lexington SC. We come to your home or office — full details from $375. Same day available. 5-star rated. Call (803) 667-8731."
         keywords="auto detailing services columbia sc, mobile car detailing near me, detailing car near me, automotive detail near me, car interior detailing, mobile detailing columbia sc, auto detailing services in columbia sc, mobile automotive detailing, professional car detailing columbia sc"
         canonical="https://mikahsmobiledetailingsc.com/services/mobile-detailing/"
         ogImage="https://mikahsmobiledetailingsc.com/exterior3.jpg"
@@ -352,6 +353,12 @@ const MobileDetailingPage: React.FC = () => {
                 Call (803) 667-8731
               </a>
             </div>
+          </div>
+        </section>
+
+                <section className="py-10 bg-white">
+          <div className="container mx-auto px-4 max-w-4xl">
+            <MaintenancePitch variant="card" />
           </div>
         </section>
 

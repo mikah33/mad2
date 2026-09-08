@@ -24,7 +24,7 @@ export const services: Service[] = [
     slug: 'mobile-detailing',
     category: 'mobile',
     shortDescription: 'Professional mobile car detailing - complete interior and exterior detail at your location',
-    description: 'Our most popular mobile car detailing package includes complete interior car detailing and exterior auto detailing service. We come to your location in Columbia SC with everything needed for professional automotive detail service.',
+    description: 'Our most popular mobile car detailing package includes complete interior car detailing and exterior auto detailing service. We come to your location in Columbia SC with everything needed for professional automotive detail service. Full resets from $375 — and once we\'ve detailed your vehicle, the Level 1 Maintenance rate is $225 anytime you rebook the same vehicle by day 90, with service by day 97.',
     features: [
       'Complete car interior detailing',
       'Professional exterior auto detailing',
@@ -36,18 +36,18 @@ export const services: Service[] = [
       'Protective wax application',
       'Tire and wheel dressing'
     ],
-    pricing: { starting: '225' },
+    pricing: { starting: '375' },
     duration: '3-4 hours',
     featured: true,
     popular: true
   },
   {
     id: 'svc-002',
-    name: 'Factory Reset Package',
+    name: 'Level 2 Full Reset',
     slug: 'full-detail',
     category: 'package',
-    shortDescription: 'Deep interior and exterior restoration',
-    description: 'Interior: Full wipe down, conditioner + UV protection, vacuum + disinfection, light stain removal, shampoo & extraction, glass cleaned, door jambs cleaned & waxed. Exterior: Foam contact wash, brake dust removal, protective wax layer, tires & rims dressed.',
+    shortDescription: 'Deep interior and exterior reset — the standard for any vehicle we haven\'t detailed recently',
+    description: 'Interior: Full wipe down, conditioner + UV protection, vacuum + disinfection, light stain removal, shampoo & extraction, glass cleaned, door jambs cleaned & waxed. Exterior: Foam contact wash, brake dust removal, protective wax layer, tires & rims dressed, engine bay detailed. Rebook the same vehicle by day 90, with service by day 97 and the Level 1 Maintenance rate ($225) applies.',
     features: [
       'Interior full wipe down',
       'Conditioner + UV protection',
@@ -59,7 +59,8 @@ export const services: Service[] = [
       'Foam contact wash',
       'Brake dust removal',
       'Protective wax layer',
-      'Tires & rims dressed'
+      'Tires & rims dressed',
+      'Engine bay detailed'
     ],
     pricing: { starting: '375' },
     duration: '3-4 hours',
@@ -72,19 +73,19 @@ export const services: Service[] = [
     slug: 'interior-detailing',
     category: 'interior',
     shortDescription: 'Professional car interior detailing with deep cleaning and restoration of your vehicle interior',
-    description: 'Complete car interior detailing service including steam cleaning, leather conditioning, stain removal, and UV protection. Perfect for customers searching "car interior detailing near me" in Columbia SC.',
+    description: 'Complete car interior detailing service with deep cleaning included — steam cleaning, shampoo & extraction of upholstery and carpets, leather conditioning, stain removal, and UV protection. Perfect for customers searching "car interior detailing near me" in Columbia SC.',
     features: [
       'Professional steam cleaning and sanitization',
       'Leather cleaning and conditioning',
-      'Fabric and upholstery deep cleaning',
+      'Upholstery and carpet shampoo & extraction',
       'Stain and odor removal',
       'Complete vacuum and disinfection',
       'Dashboard and console detailing',
       'UV protection treatment',
       'Window cleaning (interior)'
     ],
-    pricing: { starting: '200' },
-    duration: '2-4 hours',
+    pricing: { starting: '300' },
+    duration: '3-4 hours',
     featured: true
   },
   {
@@ -104,7 +105,7 @@ export const services: Service[] = [
       'Chrome and trim polishing',
       'Brake dust removal'
     ],
-    pricing: { starting: '125' },
+    pricing: { starting: '150' },
     duration: '2-5 hours',
     featured: true
   },
@@ -172,19 +173,17 @@ export const services: Service[] = [
     name: 'Odor & Stain Removal',
     slug: 'odor-stain-removal',
     category: 'specialty',
-    shortDescription: 'Professional car odor removal and interior stain treatment - pet odor, smoke smell, spills',
-    description: 'Standalone odor removal for $250, or $400 combined with a full interior steam & shampoo. Enzymatic treatment, steam cleaning, hot water extraction, and ozone treatment for pet odors, smoke smell, mildew, and everyday stains. Light-to-moderate stain removal - we set honest expectations before starting.',
+    shortDescription: 'Professional car odor removal - pet odor, smoke smell, mildew - starting at $250',
+    description: 'Professional odor treatment for $250 - enzymatic treatment and ozone (a professional odor bomb) for pet odors, smoke smell, and mildew. If the interior also needs deep cleaning - heavy pet hair, set-in stains, old food - that is our Level 3 Disaster Detail at $650, which includes the odor treatment. We set honest expectations before starting.',
     features: [
       'Odor source inspection',
       'Enzymatic odor treatment',
-      'Professional steam cleaning',
-      'Spot treatment & hot water extraction',
-      'Ozone treatment for stubborn odors',
+      'Ozone treatment (professional odor bomb)',
       'Pet odor and smoke smell removal',
-      'Full interior steam & shampoo option'
+      'Interior needs deep cleaning too? That is the Level 3 Disaster Detail ($650)'
     ],
-    pricing: { starting: '250', range: '250-400' },
-    duration: '3 hours',
+    pricing: { starting: '250' },
+    duration: '2-3 hours',
     featured: true
   },
   {

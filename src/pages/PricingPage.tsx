@@ -17,23 +17,23 @@ export const PricingPage = () => {
   const pricingFAQs = [
     {
       question: "How much does car detailing cost on average in 2026?",
-      answer: "In 2026, most U.S. drivers pay $150–$300 for a full car detail, $125–$250 for interior-only, and $75–$150 for exterior-only service, with larger vehicles at the higher end. At Mikah's Auto Detailing in Columbia SC, a full interior and exterior Basic Detail is a flat $225 with mobile service included — no travel fees in the Midlands area."
+      answer: "In 2026, most U.S. drivers pay $150–$300 for a full car detail, $125–$250 for interior-only, and $75–$150 for exterior-only service, with larger vehicles at the higher end. At Mikah's Auto Detailing in Columbia SC, a full interior and exterior Level 2 Full Reset starts at $375 with mobile service included — and once we've detailed your vehicle, maintenance details are just $225 anytime you rebook the same vehicle by day 90, with service by day 97."
     },
     {
       question: "How much does car detailing cost at Mikah's?",
-      answer: "Our pricing is flat and transparent. Exterior Detail starts at $125, Interior Detail starts at $200, our Basic Detail (full interior + exterior with wax) is $225, and the Factory Reset deep-clean package is $375. Paint Correction starts at $599 and Ceramic Coating at $850. Every price includes mobile service — we come to you in Columbia, Lexington, and the surrounding Midlands SC area."
+      answer: "Our pricing is transparent, built as a level ladder. The Level 2 Full Reset (complete interior + exterior deep clean) starts at $375. The Level 2 Premium adds a 1-step polish, headlight and windshield ceramic coatings, and black trim redye starting at $675. The Level 3 Disaster Detail — heavy interior rescue with a basic exterior wash — is $650. And once we've detailed your vehicle, the Level 1 Maintenance rate is $225 anytime you rebook the same vehicle by day 90, with service by day 97. Exterior-only starts at $150, interior-only with deep cleaning included at $300, Paint Correction at $599, and full-vehicle Ceramic Coating at $850. Every price includes mobile service — we come to you in Columbia, Lexington, and the surrounding Midlands SC area."
     },
     {
-      question: "What's the difference between the Basic Detail and Factory Reset?",
-      answer: "The Basic Detail ($225) is a full interior and exterior detail with wax protection — perfect for regular maintenance. The Factory Reset ($375) is our deep-clean package: it adds light stain removal, upholstery and floor-mat shampoo and extraction, black trim restoration, and an engine bay detail to get your vehicle as close to factory condition as possible."
+      question: "What's the difference between the detail levels?",
+      answer: "Levels 1–3 grade your interior's condition. Level 1 Maintenance ($225) is our 90-day rate — a full interior and exterior maintenance clean, available when we've detailed your vehicle in the last 90 days. Level 2 Full Reset ($375) is the standard for anyone new: it adds light stain removal, upholstery and floor-mat shampoo and extraction, and an engine bay detail to get your vehicle back to a level we can maintain. Level 2 Premium ($675) adds a 1-step polish, headlight and windshield ceramic coatings, and black trim redye. Level 3 Disaster Detail ($650) is for heavily neglected interiors — old food, pet hair, set-in stains — with a basic exterior wash included."
     },
     {
       question: "How much does interior car detailing cost?",
-      answer: "Interior Detail starts at $200. It includes a full interior wipe down, conditioning and UV protection on all surfaces, a complete vacuum, full disinfection of cloth surfaces, glass cleaning, and door jambs cleaned and waxed."
+      answer: "Interior Detail starts at $300 and includes a deep cleaning — steam cleaning plus a shampoo & extraction of upholstery and carpets — along with a full wipe down, conditioning and UV protection, complete vacuum, disinfection, glass, and door jambs."
     },
     {
       question: "How much does exterior detailing cost?",
-      answer: "Exterior Detail starts at $125. It includes wheel decontamination from brake dust, a foam contact wash that removes bugs, sap, and tar, a layer of wax for protection, and trim and tires dressed."
+      answer: "Exterior Detail starts at $150. It includes wheel decontamination from brake dust, a foam contact wash that removes bugs, sap, and tar, a layer of wax for protection, and trim and tires dressed."
     },
     {
       question: "Do you offer a monthly detailing plan?",
@@ -49,16 +49,22 @@ export const PricingPage = () => {
     },
     {
       question: "What payment methods do you accept?",
-      answer: "We accept all major credit cards, debit cards, and cash. Payment is due upon completion of service. For ceramic coating and larger jobs, we may require a deposit to secure your appointment."
+      answer: "We accept cash, checks, Zelle, and all major credit and debit cards. Payment is due upon completion of service. For ceramic coating and larger jobs, we may require a deposit to secure your appointment."
+    },
+    {
+      question: "Do you offer refunds?",
+      answer: "All sales are final — we don't offer refunds. What we do offer is a make-it-right guarantee: if anything about your detail isn't up to standard, contact us within 12 hours of completion and we'll come back and fix it at no charge. See our Terms of Service for full details, including limitations for vehicles 10+ years old."
     }
   ];
 
   // Quick pricing table — one row per real booking-form service
   const pricingTable = [
-    { service: 'Exterior Detail', price: 'From $125', description: 'Wheels, foam wash, wax, trim & tires dressed' },
-    { service: 'Interior Detail', price: 'From $200', description: 'Wipe down, vacuum, disinfection, UV protection, glass' },
-    { service: 'Basic Detail', price: '$225', description: 'Full interior & exterior detail with wax protection' },
-    { service: 'Factory Reset', price: '$375', description: 'Deep clean — shampoo, extraction & restoration' },
+    { service: 'Exterior Detail', price: 'From $150', description: 'Wheels, foam wash, wax, trim & tires dressed' },
+    { service: 'Interior Detail', price: 'From $300', description: 'Deep clean — steam, shampoo & extraction included' },
+    { service: 'Level 1 Maintenance', price: '$225', description: '90-day rebook rate — full interior & exterior maintenance clean' },
+    { service: 'Level 2 Full Reset', price: 'Starts at $375', description: 'Deep reset — shampoo, extraction, stain removal & engine bay' },
+    { service: 'Level 2 Premium', price: 'Starts at $675', description: 'Full Reset + 1-step polish, headlight & windshield coatings, trim redye' },
+    { service: 'Level 3 Disaster Detail', price: '$650', description: 'Interior rescue — pet hair, stains, odor + basic exterior wash' },
     { service: 'Paint Correction', price: 'From $599', description: '1-step & 2-step swirl and scratch removal' },
     { service: 'Ceramic Coating', price: 'From $850', description: '2–5 year paint protection with prep included' },
     { service: 'Routine Reset', price: '$225/mo', description: '1 interior + 2 exterior details every month' },
@@ -68,10 +74,10 @@ export const PricingPage = () => {
   // 2026 national averages vs. our flat prices — targets "average car
   // detailing cost 2026" searches (ranges are widely cited industry figures)
   const costComparison = [
-    { service: 'Exterior detail', usRange: '$75 – $150', ourPrice: 'From $125', link: '/services/exterior-detailing' },
-    { service: 'Interior detail', usRange: '$125 – $250', ourPrice: 'From $200', link: '/services/interior-detailing' },
-    { service: 'Full detail (interior + exterior)', usRange: '$150 – $300', ourPrice: '$225 flat', link: '/services/full-detail' },
-    { service: 'Deep-clean / restoration detail', usRange: '$250 – $450', ourPrice: '$375 flat', link: '/services/full-detail' },
+    { service: 'Exterior detail', usRange: '$75 – $150', ourPrice: 'From $150', link: '/services/exterior-detailing' },
+    { service: 'Interior detail (deep clean included)', usRange: '$125 – $250', ourPrice: 'From $300', link: '/services/interior-detailing' },
+    { service: 'Full detail (interior + exterior)', usRange: '$150 – $300', ourPrice: 'Starts at $375 (Level 2)', link: '/services/full-detail' },
+    { service: 'Deep-clean / restoration detail', usRange: '$250 – $450', ourPrice: '$650 flat (Level 3)', link: '/services/full-detail' },
     { service: 'Paint correction', usRange: '$500 – $1,500+', ourPrice: 'From $599', link: '/services/paint-correction' },
     { service: 'Ceramic coating', usRange: '$1,000 – $3,000', ourPrice: 'From $850', link: '/services/ceramic-coating' }
   ];
@@ -79,13 +85,67 @@ export const PricingPage = () => {
   // Service package cards — names, prices, and features all from the booking form
   const packages = [
     {
-      name: 'Basic Detail',
-      price: '$225',
-      priceNote: 'flat',
-      slug: 'basic-detail',
+      name: 'Level 2 Full Reset',
+      price: 'Starts at $375',
+      priceNote: '',
+      slug: 'level-2-reset',
+      servicePage: '/services/full-detail',
+      popular: true,
+      description: 'The standard — a deep reset that gets your vehicle to where we can maintenance clean it',
+      features: [
+        'Full interior wipe down, conditioning & UV protection',
+        'Full vacuum & cloth disinfection',
+        'Light stain removal',
+        'Upholstery & floor mat shampoo + extraction',
+        'Foam contact wash, wax, trim & tires dressed',
+        'Engine bay detailed',
+        'Rebook the same vehicle by day 90, with service by day 97: $225 maintenance rate'
+      ],
+      icon: <Star className="w-12 h-12 text-orange-500" />
+    },
+    {
+      name: 'Level 2 Premium',
+      price: 'Starts at $675',
+      priceNote: '',
+      slug: 'level-2-premium',
       servicePage: '/services/full-detail',
       popular: false,
-      description: 'Full interior & exterior detail with wax protection',
+      description: 'Reset the car, then lock the finish in — for keepers',
+      features: [
+        'Everything in the Level 2 Full Reset',
+        '1-step machine polish (removes light swirls)',
+        'Headlight ceramic coating',
+        'Windshield ceramic coating',
+        'Black trim restored / redyed'
+      ],
+      icon: <Shield className="w-12 h-12 text-orange-500" />
+    },
+    {
+      name: 'Level 3 Disaster Detail',
+      price: '$650',
+      priceNote: 'flat',
+      slug: 'level-3-disaster',
+      servicePage: '/services/full-detail',
+      popular: false,
+      description: 'Interior rescue for heavy neglect — pet hair, stains, odor, old food',
+      features: [
+        'Everything in the Level 2 interior',
+        'Heavy pet hair removal',
+        'Set-in stain treatment & hot water extraction',
+        'Deep steam clean & odor treatment',
+        'Basic exterior wash included',
+        'No polish/coatings — paint work quoted separately'
+      ],
+      icon: <Wrench className="w-12 h-12 text-orange-500" />
+    },
+    {
+      name: 'Level 1 Maintenance',
+      price: '$225',
+      priceNote: 'flat · 90-day customers',
+      slug: 'level-1-maintenance',
+      servicePage: '/services/full-detail',
+      popular: false,
+      description: 'Our maintenance rate — for vehicles we\'ve detailed in the last 90 days',
       features: [
         'Full interior wipe down & conditioning',
         'UV protection on all surfaces',
@@ -97,42 +157,25 @@ export const PricingPage = () => {
       icon: <Sparkles className="w-12 h-12 text-orange-500" />
     },
     {
-      name: 'Factory Reset',
-      price: '$375',
-      priceNote: 'flat',
-      slug: 'factory-reset',
-      servicePage: '/services/full-detail',
-      popular: true,
-      description: 'Deep clean to get your vehicle close to factory condition',
-      features: [
-        'Everything in the Basic Detail',
-        'Light stain removal',
-        'Upholstery & floor mat shampoo + extraction',
-        'Black trim restored / redyed',
-        'Engine bay detailed'
-      ],
-      icon: <Star className="w-12 h-12 text-orange-500" />
-    },
-    {
       name: 'Interior Detail',
-      price: 'From $200',
+      price: 'From $300',
       priceNote: 'starting at',
       slug: 'interior-detail',
       servicePage: '/services/interior-detailing',
       popular: false,
-      description: 'Complete interior cleaning & protection',
+      description: 'Deep interior clean — steam, shampoo & extraction included',
       features: [
         'Full interior wipe down & conditioning',
         'UV protection on all surfaces',
         'Full vacuum & cloth disinfection',
-        'Glass cleaning',
-        'Door jambs cleaned & waxed'
+        'Steam clean + upholstery & carpet shampoo with extraction',
+        'Glass cleaning, door jambs cleaned & waxed'
       ],
       icon: <Sparkles className="w-12 h-12 text-orange-500" />
     },
     {
       name: 'Exterior Detail',
-      price: 'From $125',
+      price: 'From $150',
       priceNote: 'starting at',
       slug: 'exterior-detail',
       servicePage: '/services/exterior-detailing',
@@ -248,10 +291,12 @@ export const PricingPage = () => {
     }
   });
   const offers = [
-    makeOffer('Exterior Detail', 'Exterior wash, decontamination, wax, and trim/tire dressing. Starting price.', '125'),
-    makeOffer('Interior Detail', 'Complete interior cleaning, disinfection, conditioning, and UV protection. Starting price.', '200'),
-    makeOffer('Basic Detail', 'Full interior and exterior detail with wax protection.', '225'),
-    makeOffer('Factory Reset', 'Deep-clean package with shampoo, extraction, trim restoration, and engine bay detail.', '375'),
+    makeOffer('Exterior Detail', 'Exterior wash, decontamination, wax, and trim/tire dressing. Starting price.', '150'),
+    makeOffer('Interior Detail', 'Deep interior clean including steam, shampoo & extraction, disinfection, conditioning, and UV protection. Starting price.', '300'),
+    makeOffer('Level 1 Maintenance Detail', 'Full interior and exterior maintenance detail — available to customers detailed within the last 90 days.', '225'),
+    makeOffer('Level 2 Full Reset', 'Deep-clean reset with shampoo, extraction, stain removal, and engine bay detail.', '375'),
+    makeOffer('Level 2 Premium', 'Full Reset plus 1-step polish, headlight and windshield ceramic coatings, and black trim redye.', '675'),
+    makeOffer('Level 3 Disaster Detail', 'Heavy interior remediation — pet hair, set-in stains, odor — with a basic exterior wash.', '650'),
     makeOffer('Paint Correction', '1-step and 2-step paint correction to remove swirls and scratches. Starting price.', '599'),
     makeOffer('Ceramic Coating', '2–5 year ceramic paint protection including required paint correction prep. Starting price.', '850')
   ];
@@ -273,7 +318,7 @@ export const PricingPage = () => {
     <>
       <SEOHead
         title="Car Detailing Prices 2026 — Columbia SC Price List"
-        description="2026 car detailing price list for Columbia &amp; Lexington SC: Exterior from $125, Interior from $200, Basic Detail $225, Factory Reset $375. Mobile — we come to you. Free quote: (803) 667-8731."
+        description="2026 car detailing price list for Columbia &amp; Lexington SC: Level 2 Full Reset $375, Level 2 Premium $675, Level 3 Disaster Detail $650, $225 maintenance rate within 90 days. Mobile — we come to you. Free quote: (803) 667-8731."
         keywords="car detailing prices, auto detailing prices, how much does car detailing cost, car detailing prices columbia sc, auto detailing prices columbia sc, mobile detailing prices, interior detailing cost, exterior detailing prices, detailing packages pricing"
         canonical="https://mikahsmobiledetailingsc.com/pricing/"
         ogType="website"
@@ -468,7 +513,7 @@ export const PricingPage = () => {
           <div className="text-center mb-8">
             <h2 className="text-3xl md:text-4xl font-bold mb-3">How Much Does Car Detailing Cost in 2026?</h2>
             <p className="text-gray-600 text-lg max-w-3xl mx-auto">
-              Most U.S. drivers pay <strong>$150–$300</strong> for a full detail in 2026. Here's how our flat
+              Most U.S. drivers pay <strong>$150–$300</strong> for a full detail in 2026. Here's how our published
               Midlands rates compare:
             </p>
           </div>
@@ -497,7 +542,7 @@ export const PricingPage = () => {
           </div>
 
           <p className="text-gray-600 leading-relaxed max-w-3xl mx-auto text-center text-sm">
-            Ours are flat, published rates for Columbia, Lexington, Irmo, West Columbia, and Cayce — see
+            Ours are published rates for Columbia, Lexington, Irmo, West Columbia, and Cayce — see
             each <a href="/services" className="text-primary-600 font-semibold hover:underline">service page</a> for
             what's included, or read the full <a href="/blog/car-detailing-prices-value-breakdown" className="text-primary-600 font-semibold hover:underline">car detailing prices guide</a>.
           </p>

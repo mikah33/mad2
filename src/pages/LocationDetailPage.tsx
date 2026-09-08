@@ -71,12 +71,12 @@ export const LocationDetailPage = () => {
   const schemas = [localBusinessSchema, breadcrumbSchema, faqSchema];
 
   const services = [
-    { name: 'Mobile Auto Detailing', price: 'from $125', icon: '🚗' },
+    { name: 'Mobile Auto Detailing', price: 'from $150', icon: '🚗' },
     { name: 'Ceramic Coating', price: 'from $850', icon: '🛡️' },
     { name: 'Paint Correction', price: 'from $599', icon: '✨' },
-    { name: 'Interior Detailing', price: 'from $200', icon: '🧽' },
-    { name: 'Exterior Detailing', price: 'from $125', icon: '💦' },
-    { name: 'Full Detail Package', price: '$225', icon: '⭐' }
+    { name: 'Interior Detailing', price: 'from $300', icon: '🧽' },
+    { name: 'Exterior Detailing', price: 'from $150', icon: '💦' },
+    { name: 'Level 2 Full Reset', price: '$375', icon: '⭐' }
   ];
 
   return (

@@ -41,7 +41,7 @@ export const LocationWestColumbiaPage = () => {
     },
     {
       question: "How much does car detailing cost in West Columbia SC?",
-      answer: "Our car detailing prices in West Columbia are: Interior Detail starting at $200, Exterior Detail starting at $200, and Full Detail (interior + exterior) starting at $225. Mobile service is included - no extra fees for coming to your West Columbia location!"
+      answer: "Our car detailing prices in West Columbia are: Interior Detail starting at $300 (now including a steam clean plus shampoo & extraction), Exterior Detail starting at $150, and our Level 2 Full Reset (interior + exterior) at $375 — with $225 Level 1 Maintenance Details anytime you rebook the same vehicle by day 90, with service by day 97. Mobile service is included - no extra fees for coming to your West Columbia location!"
     },
     {
       question: "How do I book mobile detailing in West Columbia?",
@@ -49,7 +49,7 @@ export const LocationWestColumbiaPage = () => {
     },
     {
       question: "What's included in a full detail in West Columbia?",
-      answer: "Our full detail in West Columbia includes complete interior cleaning (vacuum, wipe down, UV protection, glass cleaning, disinfection) plus full exterior service (foam wash, decontamination, protective wax, wheel and tire dressing). All for just $225!"
+      answer: "Our Level 2 Full Reset in West Columbia includes complete interior cleaning (vacuum, wipe down, UV protection, glass cleaning, disinfection, shampoo & extraction) plus full exterior service (foam wash, decontamination, protective wax, engine bay, wheel and tire dressing). All for a flat $375 — then just $225 Level 1 Maintenance Details when you rebook the same vehicle by day 90, with service by day 97!"
     },
     {
       question: "Do you offer same-day detailing in West Columbia SC?",
@@ -68,35 +68,35 @@ export const LocationWestColumbiaPage = () => {
   const servicePackages = [
     {
       title: 'Interior Detail',
-      price: '$200',
-      duration: '1.5-2 hours',
-      description: 'Complete interior restoration including vacuum, full wipe down, conditioner + UV protection, disinfection, and crystal clear glass cleaning.',
-      features: ['Full vacuum & extraction', 'Dashboard & console cleaning', 'UV protection applied', 'Glass cleaned inside', 'Air freshening'],
+      price: '$300',
+      duration: '2-3 hours',
+      description: 'Complete interior restoration including vacuum, full wipe down, conditioner + UV protection, disinfection, a deep clean with steam plus shampoo & extraction of upholstery and carpets, and crystal clear glass cleaning.',
+      features: ['Full vacuum', 'Steam clean + shampoo & extraction', 'Dashboard & console cleaning', 'UV protection applied', 'Glass cleaned inside'],
       link: '/services/interior-detailing'
     },
     {
       title: 'Exterior Detail',
-      price: '$200',
+      price: '$150',
       duration: '1.5-2 hours',
       description: 'Full exterior transformation with foam wash, wheel decontamination, protective wax, and professional tire dressing.',
       features: ['Foam cannon wash', 'Clay bar treatment', 'Hand wax applied', 'Wheels decontaminated', 'Tires dressed'],
       link: '/services/exterior-detailing'
     },
     {
-      title: 'Full Detail',
-      price: '$225',
-      duration: '2-3 hours',
-      description: 'The complete package - interior and exterior detailing combined for total vehicle restoration.',
-      features: ['Everything in Interior', 'Everything in Exterior', 'Best value package', 'Most popular choice'],
+      title: 'Level 2 Full Reset',
+      price: '$375',
+      duration: '3-5 hours',
+      description: 'The complete package - interior and exterior detailing with shampoo & extraction and engine bay. Rebook the same vehicle by day 90, with service by day 97 and Level 1 Maintenance Details are just $225.',
+      features: ['Everything in Interior', 'Everything in Exterior', 'Shampoo & extraction', 'Most popular choice'],
       link: '/services/full-detail',
       popular: true
     },
     {
-      title: 'Factory Reset Package',
-      price: '$375',
-      duration: '3-4 hours',
-      description: 'Deep cleaning with shampoo & extraction, light stain removal, brake dust removal, and premium protection.',
-      features: ['Shampoo & extraction', 'Light stain removal', 'Brake dust removal', 'Premium wax finish'],
+      title: 'Level 2 Premium',
+      price: '$675',
+      duration: '5-7 hours',
+      description: 'Everything in the Level 2 Full Reset plus 1-step machine polish, headlight and windshield ceramic coatings, and black trim restoration.',
+      features: ['1-step machine polish', 'Headlight ceramic coating', 'Windshield ceramic coating', 'Black trim restored'],
       link: '/services/full-detail'
     },
     {
@@ -137,15 +137,15 @@ export const LocationWestColumbiaPage = () => {
       name: "Marcus T.",
       location: "Triangle City, West Columbia",
       rating: 5,
-      text: "Best mobile detailing in West Columbia! Mikah came right to my house and my truck looks brand new. The interior detail was worth every penny of the $200.",
+      text: "Best mobile detailing in West Columbia! Mikah came right to my house and my truck looks brand new. The interior detail was worth every penny.",
       service: "Interior Detail"
     },
     {
       name: "Jennifer L.",
       location: "Brookland, West Columbia",
       rating: 5,
-      text: "Finally found a reliable detailer in West Columbia. The full detail for $225 is an amazing value. My car hasn't looked this good since I bought it!",
-      service: "Full Detail"
+      text: "Finally found a reliable detailer in West Columbia. The Level 2 Full Reset is an amazing value. My car hasn't looked this good since I bought it!",
+      service: "Level 2 Full Reset"
     },
     {
       name: "David R.",
@@ -159,7 +159,7 @@ export const LocationWestColumbiaPage = () => {
       location: "Sunset Blvd Area",
       rating: 5,
       text: "Got my SUV detailed while working from home. The attention to detail is incredible. They got out stains I thought were permanent. 5 stars all the way!",
-      service: "Factory Reset Package"
+      service: "Level 2 Full Reset"
     }
   ];
 
@@ -182,7 +182,7 @@ export const LocationWestColumbiaPage = () => {
   const localBusinessSchema = generateLocalBusinessSchema(
     {
       name: "Mikah's Auto Detailing - West Columbia SC",
-      description: "West Columbia's premier mobile detailing service. Full car details from $200. We bring the detail shop to you. 5-star rated. Serving Triangle City, Brookland, Cayce border areas.",
+      description: "West Columbia's premier mobile detailing service. Detail packages from $150. We bring the detail shop to you. 5-star rated. Serving Triangle City, Brookland, Cayce border areas.",
       phone: '(803) 667-8731',
       email: 'mikahsautodetailing@gmail.com',
       address: {
@@ -208,11 +208,11 @@ export const LocationWestColumbiaPage = () => {
     <>
       <SEOHead
         title="Mobile Car Detailing West Columbia SC | We Come to You — Mikah's Auto Detailing"
-        description="5.0★ mobile car detailing in West Columbia SC — we come to your home or office. Interior &amp; exterior from $200. Serving Triangle City, Cayce &amp; Brookland. Call (803) 667-8731."
+        description="5.0★ mobile car detailing in West Columbia SC — we come to your home or office. Interior from $300, exterior from $150. Serving Triangle City, Cayce &amp; Brookland. Call (803) 667-8731."
         keywords={allKeywords.join(', ')}
         canonical="https://mikahsmobiledetailingsc.com/locations/west-columbia/"
-        ogDescription="5.0★ mobile car detailing in West Columbia SC — we come to you. Interior &amp; exterior from $200. Serving Triangle City, Cayce &amp; Brookland. Call (803) 667-8731."
-        twitterDescription="5.0★ mobile car detailing in West Columbia SC — we come to you. Interior &amp; exterior from $200. Serving Triangle City, Cayce &amp; Brookland. Call (803) 667-8731."
+        ogDescription="5.0★ mobile car detailing in West Columbia SC — we come to you. Interior from $300, exterior from $150. Serving Triangle City, Cayce &amp; Brookland. Call (803) 667-8731."
+        twitterDescription="5.0★ mobile car detailing in West Columbia SC — we come to you. Interior from $300, exterior from $150. Serving Triangle City, Cayce &amp; Brookland. Call (803) 667-8731."
         schema={schemas}
       />
 
@@ -269,12 +269,12 @@ export const LocationWestColumbiaPage = () => {
             </h1>
 
             <p className="text-base sm:text-lg md:text-xl mb-6 md:mb-8 max-w-3xl mx-auto text-gray-100 px-4">
-              West Columbia's premier mobile detailing service. Full car details from $200.
+              West Columbia's premier mobile detailing service. Detail packages from $150.
               We bring the detail shop to you - home or office. 5-star rated!
             </p>
 
             <p className="text-lg sm:text-xl md:text-2xl font-semibold mb-6 md:mb-8 text-primary-300">
-              Interior $200 | Exterior $200 | Full Detail $225
+              Interior $300 | Exterior $150 | Level 2 Full Reset $375
             </p>
 
             <div className="flex flex-wrap justify-center gap-3 md:gap-6 mb-8 md:mb-10 px-4">
@@ -394,7 +394,7 @@ export const LocationWestColumbiaPage = () => {
                   <Award className="w-8 h-8" />
                 </div>
                 <h3 className="text-xl font-bold mb-2">Affordable Pricing</h3>
-                <p className="text-gray-600">Quality detailing from $200. Full details just $225 - no hidden fees or surprises.</p>
+                <p className="text-gray-600">Quality detailing from $150. Level 2 Full Resets just $375 - no hidden fees or surprises.</p>
               </div>
               <div className="text-center p-6 bg-gray-50 rounded-xl hover:shadow-lg transition">
                 <div className="bg-primary-500 text-white p-4 rounded-full inline-block mb-4">
@@ -594,7 +594,7 @@ export const LocationWestColumbiaPage = () => {
               Professional auto detailing service comes to you - call now or request a free quote
             </p>
             <p className="text-2xl font-bold mb-8 text-white">
-              Interior $200 | Exterior $200 | Full Detail $225
+              Interior $300 | Exterior $150 | Level 2 Full Reset $375
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a

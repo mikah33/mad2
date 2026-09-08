@@ -52,7 +52,7 @@ export const HomePage = () => {
     <>
       <SEOHead
         title="Mobile Car Detailing Columbia & Lexington SC | 5-Star Rated | Mikah's"
-        description="#1 mobile auto detailing in Columbia & Lexington SC. Interior/exterior detailing from $225. 5.0★ rated. Same day available. Call (803) 667-8731 for free quote!"
+        description="#1 mobile auto detailing in Columbia & Lexington SC. Full interior/exterior reset $375, then $225 maintenance details on our 90-day plan. 5.0★ rated. Call (803) 667-8731!"
         keywords="mobile auto detailing columbia sc, mobile car detailing lexington sc, car detailing near me, interior car detailing columbia, exterior auto detailing, same day car detailing, mobile detailing services"
         canonical="https://mikahsmobiledetailingsc.com"
         schema={schemas}
@@ -85,7 +85,7 @@ export const HomePage = () => {
 
                 <h1 className="text-4xl md:text-5xl font-bold mb-6">Mobile Auto Detailing in Columbia & Lexington SC</h1>
                 <p className="text-xl mb-6 text-blue-100">
-                  We come to you - same day appointments available. Professional interior & exterior detailing from <span className="font-bold text-white">$225</span>.
+                  We come to you - same day appointments available. Full interior &amp; exterior resets from <span className="font-bold text-white">$375</span>, then <span className="font-bold text-white">$225</span> maintenance details on our 90-day plan.
                 </p>
 
                 {/* Single Clear CTA */}
@@ -247,7 +247,7 @@ export const HomePage = () => {
                   <li className="flex items-center"><CheckCircle className="w-4 h-4 mr-2 text-green-500 flex-shrink-0" />Stain & odor removal</li>
                 </ul>
                 <div className="text-center">
-                  <p className="font-bold text-[#023E8A] text-xl mb-3">From $200</p>
+                  <p className="font-bold text-[#023E8A] text-xl mb-3">From $300</p>
                   <a href="#booking" className="block w-full py-2 bg-[#023E8A] text-white font-semibold rounded-lg hover:bg-[#0077B6] transition text-center">
                     Get Quote
                   </a>
@@ -258,9 +258,9 @@ export const HomePage = () => {
                   <span className="bg-[#0077B6] text-white px-4 py-1 rounded-full text-sm font-bold">Best Value</span>
                 </div>
                 <div className="text-center mb-4 pt-2">
-                  <h3 className="text-xl font-bold">Full Detail Package</h3>
+                  <h3 className="text-xl font-bold">Level 2 Full Reset</h3>
                 </div>
-                <p className="text-gray-600 mb-4 text-center">Complete interior + exterior detailing</p>
+                <p className="text-gray-600 mb-4 text-center">Complete interior + exterior reset — then $225 maintenance every 90 days</p>
                 <ul className="text-gray-600 space-y-2 mb-4 text-sm">
                   <li className="flex items-center"><CheckCircle className="w-4 h-4 mr-2 text-green-500 flex-shrink-0" />Complete interior detail</li>
                   <li className="flex items-center"><CheckCircle className="w-4 h-4 mr-2 text-green-500 flex-shrink-0" />Full exterior detail</li>
@@ -268,7 +268,7 @@ export const HomePage = () => {
                   <li className="flex items-center"><CheckCircle className="w-4 h-4 mr-2 text-green-500 flex-shrink-0" />Protective wax application</li>
                 </ul>
                 <div className="text-center">
-                  <p className="font-bold text-[#023E8A] text-xl mb-3">From $225</p>
+                  <p className="font-bold text-[#023E8A] text-xl mb-3">$375</p>
                   <a href="#booking" className="block w-full py-2 bg-gradient-to-r from-[#023E8A] to-[#0077B6] text-white font-semibold rounded-lg hover:from-[#0077B6] hover:to-[#023E8A] transition text-center">
                     Get Quote
                   </a>

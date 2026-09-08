@@ -125,7 +125,7 @@ export function generateEnhancedLocalBusinessSchema(cityKey: string) {
         "closes": "17:00"
       }
     ],
-    "paymentAccepted": ["Cash", "Credit Card", "Debit Card", "Venmo", "PayPal", "Zelle"],
+    "paymentAccepted": ["Cash", "Check", "Credit Card", "Debit Card", "Zelle"],
     "priceRange": "$$",
     "currenciesAccepted": "USD",
     "founder": {
@@ -158,8 +158,8 @@ export function generateEnhancedLocalBusinessSchema(cityKey: string) {
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
-            "name": "Basic Detail",
-            "description": "Full interior and exterior detail with wax protection"
+            "name": "Level 1 Maintenance Detail",
+            "description": "Full interior and exterior maintenance detail with wax protection — for vehicles detailed by us within the last 90 days"
           },
           "price": "225",
           "priceCurrency": "USD"
@@ -168,10 +168,30 @@ export function generateEnhancedLocalBusinessSchema(cityKey: string) {
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
-            "name": "Factory Reset",
-            "description": "Deep-clean package with shampoo, extraction, and restoration"
+            "name": "Level 2 Full Reset",
+            "description": "Deep-clean package with shampoo, extraction, engine bay, and restoration"
           },
           "price": "375",
+          "priceCurrency": "USD"
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Level 2 Premium",
+            "description": "Full Reset plus 1-step machine polish, headlight and windshield ceramic coatings, and black trim restoration"
+          },
+          "price": "675",
+          "priceCurrency": "USD"
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Level 3 Disaster Detail",
+            "description": "Interior rescue for heavy pet hair, set-in stains, and odor, with a basic exterior wash"
+          },
+          "price": "650",
           "priceCurrency": "USD"
         },
         {
@@ -251,8 +271,8 @@ export function generateServiceSchema(cityKey: string) {
     "offers": [
       {
         "@type": "Offer",
-        "name": "Basic Detail",
-        "description": "Full interior and exterior detail with wax protection",
+        "name": "Level 1 Maintenance Detail",
+        "description": "Full interior and exterior maintenance detail with wax protection — for vehicles detailed by us within the last 90 days",
         "price": "225",
         "priceCurrency": "USD",
         "validIn": {
@@ -262,9 +282,31 @@ export function generateServiceSchema(cityKey: string) {
       },
       {
         "@type": "Offer",
-        "name": "Factory Reset",
-        "description": "Deep-clean package with shampoo, extraction, and restoration",
+        "name": "Level 2 Full Reset",
+        "description": "Deep-clean package with shampoo, extraction, engine bay, and restoration",
         "price": "375",
+        "priceCurrency": "USD",
+        "validIn": {
+          "@type": "City",
+          "name": city.name
+        }
+      },
+      {
+        "@type": "Offer",
+        "name": "Level 2 Premium",
+        "description": "Full Reset plus 1-step machine polish, headlight and windshield ceramic coatings, and black trim restoration",
+        "price": "675",
+        "priceCurrency": "USD",
+        "validIn": {
+          "@type": "City",
+          "name": city.name
+        }
+      },
+      {
+        "@type": "Offer",
+        "name": "Level 3 Disaster Detail",
+        "description": "Interior rescue for heavy pet hair, set-in stains, and odor, with a basic exterior wash",
+        "price": "650",
         "priceCurrency": "USD",
         "validIn": {
           "@type": "City",
@@ -321,7 +363,7 @@ export function generateFAQSchema(cityKey: string) {
         "name": "How long does mobile auto detailing take?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Mobile auto detailing typically takes 2-4 hours depending on the service package selected. Basic details take 2-3 hours, while full service details with ceramic coating can take 4-6 hours."
+          "text": "Mobile auto detailing typically takes 2-5 hours depending on the service package selected. Maintenance details take 2-3 hours, a Level 2 Full Reset takes 3-5 hours, while full service details with ceramic coating can take longer."
         }
       },
       {
@@ -329,7 +371,7 @@ export function generateFAQSchema(cityKey: string) {
         "name": `What is the cost of mobile auto detailing in ${city.name}?`,
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": `Our mobile auto detailing in ${city.name} starts at $125 for an exterior detail, $200 for an interior detail, and $225 for our Basic Detail package. Ceramic coating starts at $850. Pricing depends on the service selected.`
+          "text": `Our mobile auto detailing in ${city.name} starts at $150 for an exterior detail, $300 for an interior detail (now including a steam clean plus shampoo & extraction), and $375 for our Level 2 Full Reset (full interior and exterior). Returning customers qualify for a $225 Level 1 Maintenance Detail within 90 days of their last detail. Ceramic coating starts at $850. Pricing depends on the service selected.`
         }
       },
       {

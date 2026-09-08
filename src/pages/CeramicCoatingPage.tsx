@@ -2,6 +2,7 @@ import React from 'react';
 import { Shield, CheckCircle, Clock, DollarSign, Phone, ChevronRight, Award, Droplets, Sun } from 'lucide-react';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
+import MaintenancePitch from '../components/MaintenancePitch';
 import { SEOHead } from '../components/seo/SEOHead';
 import { generateProductSchema } from '../components/seo/StructuredData';
 import { generateEnhancedLocalBusinessSchema } from '../components/seo/EnhancedLocalBusinessSchema';
@@ -400,6 +401,12 @@ const CeramicCoatingPage: React.FC = () => {
                 Call (803) 667-8731
               </a>
             </div>
+          </div>
+        </section>
+
+                <section className="py-10 bg-white">
+          <div className="container mx-auto px-4 max-w-4xl">
+            <MaintenancePitch variant="card" context="Just invested in a coating? Maintenance details keep it performing — coating-safe washes and interior upkeep at the $225 rate anytime you rebook the same vehicle by day 90, with service by day 97 after a qualifying completed detail." />
           </div>
         </section>
 

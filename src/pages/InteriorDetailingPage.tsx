@@ -2,6 +2,7 @@ import React from 'react';
 import { Star, CheckCircle, Clock, DollarSign, Phone, ChevronRight } from 'lucide-react';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
+import MaintenancePitch from '../components/MaintenancePitch';
 import { Breadcrumbs } from '../components/Breadcrumbs';
 import { SEOHead } from '../components/seo/SEOHead';
 import { generateProductSchema } from '../components/seo/StructuredData';
@@ -20,10 +21,11 @@ const InteriorDetailingPage: React.FC = () => {
   const productSchema = generateProductSchema({
     name: "Interior Car Detailing Service",
     description: "Professional interior car detailing services in Columbia SC. Deep cleaning, stain removal, odor elimination, leather conditioning, and fabric protection for all vehicle types.",
-    price: "200",
+    price: "300",
     features: [
       "Complete vacuum service",
       "Professional steam cleaning",
+      "Upholstery & carpet shampoo and extraction",
       "Stain removal",
       "Leather cleaning and conditioning",
       "Dashboard and console detail",
@@ -118,7 +120,7 @@ const InteriorDetailingPage: React.FC = () => {
       "@type": "Offer",
       "priceSpecification": {
         "@type": "PriceSpecification",
-        "minPrice": "200",
+        "minPrice": "300",
         "priceCurrency": "USD"
       }
     }
@@ -137,7 +139,7 @@ const InteriorDetailingPage: React.FC = () => {
     },
     {
       question: "What's included in interior detailing?",
-      answer: "Our interior detailing includes complete vacuum, steam cleaning, stain removal, leather conditioning, dashboard and console cleaning, window cleaning, odor elimination, and UV protectant application on all surfaces."
+      answer: "Our interior detailing includes complete vacuum, a full deep clean — steam cleaning plus shampoo & extraction of upholstery and carpets — stain removal, leather conditioning, dashboard and console cleaning, window cleaning, odor elimination, and UV protectant application on all surfaces."
     },
     {
       question: "Can you remove smoke smell?",
@@ -153,7 +155,7 @@ const InteriorDetailingPage: React.FC = () => {
     },
     {
       question: "How often should I get interior detailing?",
-      answer: "We recommend interior detailing every 3-4 months for regular maintenance. Families with children or pets may benefit from more frequent detailing every 2-3 months."
+      answer: "We recommend interior detailing every 90 days — and our maintenance pricing is built around exactly that: after any full detail, the Level 1 Maintenance rate is just $225 when you rebook the same vehicle by day 90, with service by day 97. Families with children or pets get the most out of staying on that 90-day cycle."
     },
     {
       question: "Can you remove stains from seats?",
@@ -164,7 +166,7 @@ const InteriorDetailingPage: React.FC = () => {
   return (
     <>
       <SEOHead
-        title="Interior Detailing Columbia SC | Auto Detailing Services | From $200"
+        title="Interior Detailing Columbia SC | Auto Detailing Services | From $300"
         description="Professional auto detailing services in Columbia, SC. Interior deep cleaning, stain removal, leather conditioning, odor elimination. Mobile service. 5-star rated. Call (803) 667-8731!"
         keywords="auto detailing services columbia sc, car interior detailing, interior detailing columbia sc, auto detailing services in columbia sc, mobile car interior detailing, professional interior car detailing, leather conditioning, stain removal, odor elimination, pet hair removal"
         canonical="https://mikahsmobiledetailingsc.com/services/interior-detailing/"
@@ -300,9 +302,17 @@ const InteriorDetailingPage: React.FC = () => {
                   <li className="flex items-start gap-3">
                     <CheckCircle className="w-6 h-6 text-orange-500 flex-shrink-0 mt-1" />
                     <div>
+                      <strong>Shampoo &amp; Extraction:</strong> Upholstery, carpets, and floor mats shampooed and
+                      hot-water extracted for a true deep clean.
+
+      </div>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="w-6 h-6 text-orange-500 flex-shrink-0 mt-1" />
+                    <div>
                       <strong>Stain Removal:</strong> Professional spot removers and hot water extraction tackle
                       coffee, food, grease, and other stubborn stains.
-                    
+
       </div>
                   </li>
                   <li className="flex items-start gap-3">
@@ -402,10 +412,11 @@ const InteriorDetailingPage: React.FC = () => {
                   
       </div>
                   <p className="text-gray-700 mb-2">
-                    <strong>Starting at $200</strong>
+                    <strong>Starting at $300</strong>
                   </p>
                   <p className="text-sm text-gray-600 mb-3">
-                    Pricing varies by vehicle condition.
+                    Now includes a full deep clean — steam cleaning plus shampoo &amp; extraction of
+                    upholstery and carpets. Pricing varies by vehicle condition.
                   </p>
                   <div className="flex items-center gap-3">
                     <Clock className="w-6 h-6 text-orange-600" />
@@ -420,7 +431,8 @@ const InteriorDetailingPage: React.FC = () => {
                   <a href="/services/odor-stain-removal/" className="text-orange-600 font-semibold hover:underline">
                     odor &amp; stain removal service
                   </a>{' '}
-                  - $250 standalone or $400 with a full interior steam &amp; shampoo.
+                  - $250 standalone, or if the interior also needs a full deep cleaning, that's our
+                  Level 3 Disaster Detail at $650.
                 </p>
               
       </div>
@@ -629,6 +641,12 @@ const InteriorDetailingPage: React.FC = () => {
       </div>
           
       </div>
+        </section>
+
+                <section className="py-10 bg-white">
+          <div className="container mx-auto px-4 max-w-4xl">
+            <MaintenancePitch variant="card" />
+          </div>
         </section>
 
         <Footer />

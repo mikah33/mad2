@@ -92,20 +92,35 @@ export const TermsOfServicePage = () => {
             </p>
             <ul>
               <li>Pre-existing damage to paint, interior, or other vehicle components</li>
+              <li>Check engine lights, sensor warnings, or electrical issues appearing during or after service (engine bay and interior cleaning can surface pre-existing electrical conditions)</li>
+              <li>Damage of any kind on vehicles 10 years of age or older — aged plastics, brittle trim, sun-weakened clear coat, worn upholstery, and degraded seals can fail under normal, careful cleaning</li>
+              <li>Battery drain or a dead battery resulting from doors, hatches, or accessories being open/on during service, particularly on older or weak batteries</li>
               <li>Damage resulting from improper prior repairs or maintenance</li>
               <li>Damage to aftermarket modifications or non-OEM parts</li>
               <li>Loss of personal items left in the vehicle</li>
               <li>Clear coat or paint failure on vehicles with compromised paint</li>
-              <li>Stains or odors that cannot be removed despite best efforts</li>
+              <li>Stains or odors that cannot be removed despite best efforts — deep-set damage is treated, never guaranteed gone</li>
             </ul>
+            <p>
+              We photograph notable pre-existing damage before starting work. For safety and liability reasons we do not reinstall child car seats — we will clean around or under them and place them back in the vehicle uninstalled.
+            </p>
+            <p>
+              If a vehicle's condition on arrival is materially different from what was described at booking (including biohazards, mold, rodent or insect infestation), we may requote the service on site or decline it.
+            </p>
             <p>
               Our total liability for any claim arising from our services shall not exceed the amount paid for the specific service in question.
             </p>
 
-            <h2>Warranty and Guarantees</h2>
+            <h2>Level 1 Maintenance Eligibility</h2>
+            <p>
+              The $225 Level 1 Maintenance rate is available for the same vehicle after a qualifying completed detail with us. Make your booking no later than day 90 after that completed service, and schedule the maintenance detail to take place no later than day 97. We verify eligibility against our appointment records before confirming the rate. A canceled or missed appointment does not start a new eligibility window. The next window begins when your next qualifying detail is completed.
+            </p>
+
+            <h2>Satisfaction, Refunds, and the 12-Hour Window</h2>
             <ul>
               <li>We guarantee professional workmanship on all services performed.</li>
-              <li>If you are not satisfied with our work, contact us within 48 hours and we will address your concerns.</li>
+              <li><strong>All sales are final — we do not offer refunds.</strong> Instead, we make things right: if anything about the service isn't up to standard, contact us within <strong>12 hours of completion</strong> and we will return to address the issue at no charge.</li>
+              <li>Issues reported more than 12 hours after completion are handled at our discretion — a vehicle back in daily use can no longer be distinguished from our work.</li>
               <li>Warranty does not cover damage from improper maintenance or use after service.</li>
               <li>Ceramic coating warranties are subject to separate terms and proper maintenance requirements.</li>
             </ul>

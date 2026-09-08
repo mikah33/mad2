@@ -1,4 +1,5 @@
 import React from 'react';
+import MaintenancePitch from './MaintenancePitch';
 import { Phone, Facebook, Instagram } from 'lucide-react';
 import StickyCallButton from './StickyCallButton';
 
@@ -6,6 +7,7 @@ const Footer: React.FC = () => {
   return (
     <footer className="bg-gray-950 text-white pt-12 pb-20 md:pb-6 w-full overflow-hidden">
       <div className="container mx-auto px-4 max-w-7xl">
+        <MaintenancePitch variant="banner" className="mb-8" />
         {/* Mobile: CTA First */}
         <div className="md:hidden mb-8">
           <div className="bg-gradient-to-br from-[#023E8A] to-[#0077B6] rounded-lg p-6">

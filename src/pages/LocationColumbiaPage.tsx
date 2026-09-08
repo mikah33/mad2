@@ -36,17 +36,17 @@ export const LocationColumbiaPage = () => {
   // Real services from homepage
   const realServices = [
     {
-      title: 'Basic Detail Package',
-      price: '$225',
-      duration: '2-3 hours',
-      description: 'Interior full wipe down, conditioner + UV protection, vacuum, disinfection, glass cleaned. Exterior wheels decontaminated, foam wash, protective wax, wheels & tires dressed.',
+      title: 'Level 2 Full Reset',
+      price: '$375',
+      duration: '3-5 hours',
+      description: 'Interior wipe down, conditioner + UV protection, vacuum + disinfection, light stain removal, shampoo & extraction, glass cleaned. Exterior foam wash, brake dust removal, protective wax, tires & rims dressed, engine bay detailed. Rebook the same vehicle by day 90, with service by day 97 and Level 1 Maintenance Details are just $225.',
       link: '/services/full-detail'
     },
     {
-      title: 'Factory Reset Package',
-      price: '$375',
-      duration: '3-4 hours',
-      description: 'Interior wipe down, conditioner + UV protection, vacuum + disinfection, light stain removal, shampoo & extraction, glass cleaned. Exterior foam wash, brake dust removal, protective wax, tires & rims dressed.',
+      title: 'Level 2 Premium',
+      price: '$675',
+      duration: '5-7 hours',
+      description: 'Everything in the Level 2 Full Reset plus 1-step machine polish, headlight ceramic coating, windshield ceramic coating, and black trim restored & redyed.',
       link: '/services/full-detail'
     },
     {
@@ -83,7 +83,7 @@ export const LocationColumbiaPage = () => {
   const locationFAQs = [
     {
       question: 'How much does auto detailing cost in Columbia SC?',
-      answer: 'Auto detailing in Columbia SC starts at $225 for our Basic Detail Package and $375 for our Factory Reset Package. Interior-only details start at $200, exterior-only at $125, paint correction starts at $599, and ceramic coating packages start at $850. We provide free quotes for all Columbia residents.'
+      answer: 'Auto detailing in Columbia SC starts at $375 for our Level 2 Full Reset. Once we\'ve detailed your vehicle, our $225 Level 1 Maintenance Detail is available anytime you rebook the same vehicle by day 90, with service by day 97. Interior-only details start at $300, exterior-only at $150, paint correction starts at $599, and ceramic coating packages start at $850. We provide free quotes for all Columbia residents.'
     },
     {
       question: 'What is the best mobile car detailing service in Columbia SC?',
@@ -91,7 +91,7 @@ export const LocationColumbiaPage = () => {
     },
     {
       question: 'What auto detailing services do you offer in Columbia SC?',
-      answer: 'We offer complete auto detailing services in Columbia SC: Basic Detail (interior + exterior) at $225, Factory Reset with shampoo & extraction at $375, interior-only details from $200, exterior-only details from $125, deep interior with steam & shampoo at $275, odor removal at $250, headlight restoration at $125, paint correction from $599, and ceramic coating from $850. Every service is mobile — we come to you anywhere in Columbia.'
+      answer: 'We offer complete auto detailing services in Columbia SC: Level 2 Full Reset (interior + exterior with shampoo & extraction and engine bay) at $375, Level 2 Premium with 1-step polish and headlight & windshield ceramic coatings at $675, Level 3 Disaster Detail for heavy pet hair, set-in stains, and odor at $650, interior-only details from $300 (now including a steam clean plus shampoo & extraction of upholstery and carpets), exterior-only details from $150, odor removal at $250, headlight restoration at $125, paint correction from $599, and ceramic coating from $850. Every service is mobile — we come to you anywhere in Columbia.'
     },
     {
       question: 'Do you detail cars near USC and Fort Jackson in Columbia SC?',
@@ -103,11 +103,11 @@ export const LocationColumbiaPage = () => {
     },
     {
       question: 'How long does interior car detailing take in Columbia SC?',
-      answer: 'Interior car detailing in Columbia SC typically takes 2-4 hours depending on the package. Our Basic Detail Package takes 2-3 hours while our Factory Reset Package with shampoo & extraction takes 3-4 hours. We work at your location so you can continue your day while we detail your vehicle.'
+      answer: 'Interior car detailing in Columbia SC typically takes 2-5 hours depending on the package. Our Level 2 Full Reset with shampoo & extraction takes 3-5 hours, while a Level 1 Maintenance Detail for returning customers takes 2-3 hours. We work at your location so you can continue your day while we detail your vehicle.'
     },
     {
       question: 'Do you offer mobile car wash services in Columbia SC?',
-      answer: 'Yes! Our mobile car wash service in Columbia SC includes hand washing, waxing, and exterior detailing starting at $225 for our Basic Detail Package. We bring water, power, and all equipment needed. Perfect for Columbia residents who want professional results without leaving home.'
+      answer: 'Yes! Our mobile car wash service in Columbia SC includes hand washing, waxing, and exterior detailing starting at $150 for an exterior-only detail, or $375 for our Level 2 Full Reset covering the full interior and exterior. We bring water, power, and all equipment needed. Perfect for Columbia residents who want professional results without leaving home.'
     },
     {
       question: 'What areas of Columbia SC do you serve for mobile detailing?',
@@ -123,7 +123,7 @@ export const LocationColumbiaPage = () => {
     },
     {
       question: "What's the best mobile detailing service in Columbia SC?",
-      answer: "Mikah's Auto Detailing is Columbia SC's highest-rated mobile detailing service with a perfect 5.0-star Google rating from 31 verified reviews. We're IDA certified, fully insured, and offer comprehensive mobile detailing packages starting at $225. Our mobile unit is fully self-contained with onboard water, power, and professional-grade equipment — we can detail your vehicle anywhere in Columbia SC."
+      answer: "Mikah's Auto Detailing is Columbia SC's highest-rated mobile detailing service with a perfect 5.0-star Google rating from 31 verified reviews. We're IDA certified, fully insured, and offer comprehensive mobile detailing packages starting at $375 for a full interior and exterior detail. Our mobile unit is fully self-contained with onboard water, power, and professional-grade equipment — we can detail your vehicle anywhere in Columbia SC."
     }
   ];
 
@@ -177,12 +177,12 @@ export const LocationColumbiaPage = () => {
   return (
     <>
       <SEOHead
-        title="Auto Detailing Columbia SC | $225 Full Detail — Mikah's Auto Detailing"
-        description="Auto detailing in Columbia SC — we come to you. 5.0-star mobile detailing: full detail $225, interior from $200, exterior from $125. Call (803) 667-8731."
+        title="Auto Detailing Columbia SC | $375 Full Detail — Mikah's Auto Detailing"
+        description="Auto detailing in Columbia SC — we come to you. 5.0-star mobile detailing: full detail $375, interior from $300, exterior from $150. Call (803) 667-8731."
         keywords={allKeywords.join(', ') + ', columbia detailing, columbia auto detail, auto detail columbia, columbia mobile detailing, detailing columbia sc, professional car detailing columbia, best columbia detailing'}
         canonical="https://mikahsmobiledetailingsc.com/locations/columbia-sc/"
-        ogDescription="Auto detailing in Columbia SC — we come to you. 5.0-star mobile detailing: full detail $225, interior from $200, exterior from $125. Call (803) 667-8731."
-        twitterDescription="Auto detailing in Columbia SC — we come to you. 5.0-star mobile detailing: full detail $225, interior from $200, exterior from $125. Call (803) 667-8731."
+        ogDescription="Auto detailing in Columbia SC — we come to you. 5.0-star mobile detailing: full detail $375, interior from $300, exterior from $150. Call (803) 667-8731."
+        twitterDescription="Auto detailing in Columbia SC — we come to you. 5.0-star mobile detailing: full detail $375, interior from $300, exterior from $150. Call (803) 667-8731."
         schema={schemas}
       />
 
@@ -239,7 +239,7 @@ export const LocationColumbiaPage = () => {
             </h1>
 
             <p className="text-base sm:text-lg md:text-xl mb-6 md:mb-8 max-w-3xl mx-auto text-gray-100 px-4">
-              Columbia SC's #1 auto detailing service — mobile car detailing that comes to you. Interior & exterior detailing, ceramic coating & paint correction at your home or office, from downtown to Forest Acres. 5.0★ rated with 31 Google reviews. From $225.
+              Columbia SC's #1 auto detailing service — mobile car detailing that comes to you. Interior & exterior detailing, ceramic coating & paint correction at your home or office, from downtown to Forest Acres. 5.0★ rated with 31 Google reviews. Full details from $375.
             </p>
 
             <p className="text-lg sm:text-xl md:text-2xl font-semibold mb-6 md:mb-8 text-primary-300">
@@ -300,7 +300,7 @@ export const LocationColumbiaPage = () => {
           <div className="container mx-auto px-4 max-w-4xl">
             <div className="prose prose-lg max-w-none text-gray-700 space-y-6">
               <p>
-                Looking for <strong>auto detailing in Columbia SC</strong>? Mikah's Auto Detailing is the top-rated mobile detailer in the capital city — we bring the detail shop to your driveway, office parking lot, or apartment complex anywhere in the Columbia metro. We detail vehicles across downtown Columbia, The Vista, Five Points, Shandon, Rosewood, and Forest Acres, plus the homes and offices near the University of South Carolina and Fort Jackson. With a perfect 5.0-star Google rating, IDA certification, and packages starting at just $225, Columbia residents trust us for <strong>car detailing</strong> that delivers shop-quality results without you ever leaving home.
+                Looking for <strong>auto detailing in Columbia SC</strong>? Mikah's Auto Detailing is the top-rated mobile detailer in the capital city — we bring the detail shop to your driveway, office parking lot, or apartment complex anywhere in the Columbia metro. We detail vehicles across downtown Columbia, The Vista, Five Points, Shandon, Rosewood, and Forest Acres, plus the homes and offices near the University of South Carolina and Fort Jackson. With a perfect 5.0-star Google rating, IDA certification, and full details starting at $375, Columbia residents trust us for <strong>car detailing</strong> that delivers shop-quality results without you ever leaving home.
               </p>
               <p>
                 Our fully self-contained mobile unit carries its own water, power, and professional-grade equipment, so our <strong>auto detailing services in Columbia, SC</strong> work just as well in a Shandon driveway as they do in a parking garage near Main Street or an office lot off Two Notch Road. From basic maintenance details to deep interior steam cleaning, paint correction, and ceramic coating installations, every package includes at-your-door service at no extra charge — no drop-offs, no waiting rooms, no hassle.
@@ -466,7 +466,7 @@ export const LocationColumbiaPage = () => {
               </p>
 
               <p>
-                Maintaining your vehicle's value is another compelling reason to invest in professional detailing. In the Columbia automotive market, well-maintained vehicles command significantly higher resale prices. A vehicle with documented professional detailing history signals to buyers that the owner cared for their investment. Regular professional detailing prevents permanent damage from contamination, bird droppings, tree sap, and industrial fallout that cannot be reversed once it bonds with your paint. Our Factory Reset Package restores vehicles to near-original condition, addressing the specific challenges Columbia vehicles face daily.
+                Maintaining your vehicle's value is another compelling reason to invest in professional detailing. In the Columbia automotive market, well-maintained vehicles command significantly higher resale prices. A vehicle with documented professional detailing history signals to buyers that the owner cared for their investment. Regular professional detailing prevents permanent damage from contamination, bird droppings, tree sap, and industrial fallout that cannot be reversed once it bonds with your paint. Our Level 2 Full Reset restores vehicles to near-original condition, addressing the specific challenges Columbia vehicles face daily.
               </p>
 
               <p>
@@ -514,11 +514,11 @@ export const LocationColumbiaPage = () => {
 
             <div className="prose prose-lg max-w-none text-gray-700 space-y-6">
               <p>
-                Our Basic Detail Package at $225 addresses the everyday challenges Columbia vehicles face. The interior service includes a thorough wipe-down of all surfaces, application of UV-protective conditioner to prevent the dashboard cracking common in South Carolina heat, complete vacuuming, sanitization to eliminate bacteria and allergens, and streak-free glass cleaning. The exterior portion includes wheel decontamination to remove brake dust buildup, a foam wash using pH-balanced soap that is safe for all finishes, application of protective wax to guard against UV damage, and wheel and tire dressing for that fresh, finished look.
+                Our Level 2 Full Reset at $375 addresses the everyday challenges Columbia vehicles face and gets your vehicle back to a level where we can maintenance clean it for you — rebook the same vehicle by day 90, with service by day 97 and the $225 Level 1 Maintenance Detail rate applies. The interior service includes a thorough wipe-down of all surfaces, application of UV-protective conditioner to prevent the dashboard cracking common in South Carolina heat, complete vacuuming, sanitization to eliminate bacteria and allergens, light stain removal, full carpet and upholstery shampoo with hot water extraction, and streak-free glass cleaning. The exterior portion includes wheel decontamination to remove brake dust buildup, a foam wash using pH-balanced soap that is safe for all finishes, application of protective wax to guard against UV damage, engine bay detailing, and wheel and tire dressing for that fresh, finished look.
               </p>
 
               <p>
-                The Factory Reset Package at $375 takes detailing to the next level for vehicles that need deeper restoration. This service includes everything in the Basic Package plus light stain removal targeting those coffee spills and food marks that accumulate over time, full carpet and upholstery shampoo with hot water extraction to pull embedded dirt from fabric fibers, and comprehensive brake dust removal that addresses the iron contamination embedded in your wheels. This package is particularly popular among Columbia residents dealing with red clay staining and the accumulated pollen residue that builds up during our extended allergy season.
+                The Level 3 Disaster Detail at $650 is our rescue package for vehicles that need deeper restoration — heavy pet hair, set-in stains, old food, and stubborn odors. It includes everything in the Level 2 Full Reset interior plus set-in stain treatment with hot water extraction, deep steam cleaning of all surfaces, odor treatment, and a full trash-out, paired with a basic exterior wash (no polish or coatings — paint work is always quoted separately). For keepers, the Level 2 Premium at $675 adds a 1-step machine polish, headlight and windshield ceramic coatings, and restored black trim on top of the Full Reset. These packages are particularly popular among Columbia residents dealing with red clay staining and the accumulated pollen residue that builds up during our extended allergy season.
               </p>
 
               <p>

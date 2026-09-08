@@ -93,7 +93,7 @@ const Hero: React.FC = () => {
             </h1>
 
             <p className="text-lg md:text-xl mb-4 text-gray-100 max-w-xl">
-              We come to your home or office. Professional interior & exterior detailing from <span className="font-bold text-white">$225</span>.
+              We come to your home or office. Full interior &amp; exterior resets from <span className="font-bold text-white">$375</span> — then just <span className="font-bold text-white">$225</span> maintenance details on our 90-day plan.
             </p>
 
             {/* Primary CTA - Single Clear Action */}
@@ -134,7 +134,8 @@ const Hero: React.FC = () => {
               {/* CTA card (no on-page form — single opt-in lives on /book for A2P compliance) */}
               <div className="space-y-3">
                 <ul className="space-y-2 text-sm text-gray-700">
-                  <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" /> Interior &amp; exterior detailing from $225</li>
+                  <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" /> Full interior &amp; exterior reset — $375</li>
+                  <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" /> Then $225 maintenance details every 90 days</li>
                   <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" /> We come to your home or office</li>
                   <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" /> Pick your package &amp; get an instant quote</li>
                 </ul>

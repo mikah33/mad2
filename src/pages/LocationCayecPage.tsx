@@ -36,37 +36,34 @@ const LocationCayecPage = () => {
   // Real services from homepage
   const realServices = [
     {
-      title: 'Basic Detail Package',
-      price: '$225',
-      duration: '2-3 hours',
-      description: 'Interior full wipe down, conditioner + UV protection, vacuum, disinfection, glass cleaned, door jambs cleaned & waxed. Exterior: Wheels decontaminated, foam contact wash, protective wax layer, wheels & tires dressed.',
+      title: 'Level 2 Full Reset',
+      price: '$375',
+      duration: '3-5 hours',
+      description: 'Interior full wipe down, conditioner + UV protection, vacuum, disinfection, light stain removal, shampoo & extraction, glass cleaned, door jambs cleaned & waxed. Exterior: Wheels decontaminated, foam contact wash, protective wax layer, engine bay detailed, wheels & tires dressed. Rebook the same vehicle by day 90, with service by day 97 and Level 1 Maintenance Details are just $225.',
       features: [
         'Interior full wipe down',
         'Conditioner + UV protection',
         'Vacuum & disinfection',
+        'Light stain removal',
+        'Shampoo & hot water extraction',
         'Glass cleaning',
         'Door jambs cleaned & waxed',
-        'Wheels decontaminated',
-        'Foam contact wash',
-        'Protective wax layer',
-        'Wheels & tires dressed'
+        'Foam contact wash & wax layer',
+        'Engine bay detailed'
       ],
       link: '/services/full-detail'
     },
     {
-      title: 'Factory Reset Package',
-      price: '$375',
-      duration: '3-4 hours',
-      description: 'Everything in Basic Package PLUS: Shampoo seats/carpet, hot water extraction, steam clean, deep condition leather, bug removal, clay bar treatment, paint sealant.',
+      title: 'Level 2 Premium',
+      price: '$675',
+      duration: '5-7 hours',
+      description: 'Everything in the Level 2 Full Reset PLUS: 1-step machine polish, headlight ceramic coating, windshield ceramic coating, black trim restored & redyed.',
       features: [
-        'All Basic Package services',
-        'Shampoo seats & carpet',
-        'Hot water extraction',
-        'Steam cleaning',
-        'Deep condition leather',
-        'Bug removal',
-        'Clay bar treatment',
-        'Paint sealant application'
+        'All Level 2 Full Reset services',
+        '1-step machine polish',
+        'Headlight ceramic coating',
+        'Windshield ceramic coating',
+        'Black trim restored & redyed'
       ],
       link: '/services/full-detail'
     },
@@ -110,7 +107,7 @@ const LocationCayecPage = () => {
   const locationFAQs = [
     {
       question: 'How much does mobile detailing cost in Cayce SC?',
-      answer: 'Mobile detailing in Cayce SC starts at $225 for our Basic Detail Package and $375 for our Factory Reset Package. We also offer ceramic coating (custom quote) and monthly maintenance at $225/month. All services include professional products, experienced technicians, and satisfaction guarantee.'
+      answer: 'Mobile detailing in Cayce SC starts at $375 for our Level 2 Full Reset — and once we\'ve detailed your vehicle, our $225 Level 1 Maintenance Detail is available anytime you rebook the same vehicle by day 90, with service by day 97. We also offer ceramic coating (custom quote) and monthly maintenance at $225/month. All services include professional products, experienced technicians, and satisfaction guarantee.'
     },
     {
       question: 'Do you offer car detailing near West Columbia and Cayce?',
@@ -122,7 +119,7 @@ const LocationCayecPage = () => {
     },
     {
       question: 'How long does car detailing take in Cayce?',
-      answer: 'Our Basic Detail Package takes 2-3 hours, Factory Reset Package takes 3-4 hours, and ceramic coating requires 1-2 days for proper curing. We schedule appointments to ensure thorough, quality work without rushing.'
+      answer: 'Our Level 2 Full Reset takes 3-5 hours, a Level 1 Maintenance Detail for returning customers takes 2-3 hours, and ceramic coating requires 1-2 days for proper curing. We schedule appointments to ensure thorough, quality work without rushing.'
     },
     {
       question: 'Do you offer ceramic coating in Cayce SC?',
@@ -284,11 +281,11 @@ const LocationCayecPage = () => {
     <>
       <SEOHead
         title="Auto Detailing Cayce SC | Mobile Service | Mikah's Detailing"
-        description="Professional mobile auto detailing in Cayce SC. Full detail packages from $200. We come to your location. 5-star service. Call (803) 667-8731 for free quote!"
+        description="Professional mobile auto detailing in Cayce SC. Detail packages from $150. We come to your location. 5-star service. Call (803) 667-8731 for free quote!"
         keywords={allKeywords.join(', ')}
         canonical="https://mikahsmobiledetailingsc.com/locations/cayce-sc/"
-        ogDescription="Professional mobile auto detailing in Cayce SC. Full detail packages from $200. We come to your location. 5-star service. Call (803) 667-8731 for free quote!"
-        twitterDescription="Professional mobile auto detailing in Cayce SC. Full detail packages from $200. We come to your location. 5-star service. Call (803) 667-8731 for free quote!"
+        ogDescription="Professional mobile auto detailing in Cayce SC. Detail packages from $150. We come to your location. 5-star service. Call (803) 667-8731 for free quote!"
+        twitterDescription="Professional mobile auto detailing in Cayce SC. Detail packages from $150. We come to your location. 5-star service. Call (803) 667-8731 for free quote!"
         schema={schemas}
       />
 

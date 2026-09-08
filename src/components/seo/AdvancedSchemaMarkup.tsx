@@ -84,7 +84,7 @@ export const AdvancedSchemaMarkup: React.FC<AdvancedSchemaMarkupProps> = ({
     // Enhanced business details
     foundingDate: '2020',
     numberOfEmployees: '1-5',
-    paymentAccepted: ['Cash', 'Credit Card', 'Venmo', 'CashApp', 'Check'],
+    paymentAccepted: ['Cash', 'Check', 'Zelle', 'Credit Card', 'Debit Card'],
     currenciesAccepted: 'USD',
     priceRange: '$$',
 
@@ -144,8 +144,8 @@ export const AdvancedSchemaMarkup: React.FC<AdvancedSchemaMarkupProps> = ({
         {
           '@type': 'Offer',
           '@id': `https://mikahsmobiledetailingsc.com/services/basic-detail#offer`,
-          name: 'Basic Detail Package',
-          description: 'Interior full wipe down, conditioner + UV protection, vacuum, disinfection, glass cleaned. Exterior wheels decontaminated, foam wash, protective wax.',
+          name: 'Level 1 Maintenance Detail',
+          description: 'Full interior and exterior maintenance detail — interior wipe down, conditioner + UV protection, vacuum, disinfection, glass cleaned, exterior foam wash and protective wax. For vehicles detailed by us within the last 90 days.',
           price: locationData.pricing.basic,
           priceCurrency: 'USD',
           priceValidUntil: new Date(new Date().setMonth(new Date().getMonth() + 3)).toISOString().split('T')[0],
@@ -162,8 +162,8 @@ export const AdvancedSchemaMarkup: React.FC<AdvancedSchemaMarkupProps> = ({
         {
           '@type': 'Offer',
           '@id': `https://mikahsmobiledetailingsc.com/services/factory-reset#offer`,
-          name: 'Factory Reset Package',
-          description: 'Premium mobile detailing with interior shampoo & extraction, brake dust removal, protective wax, complete interior and exterior restoration.',
+          name: 'Level 2 Full Reset',
+          description: 'Our standard full detail — interior shampoo & extraction, stain removal, engine bay detailing, brake dust removal, protective wax, complete interior and exterior reset.',
           price: locationData.pricing.premium,
           priceCurrency: 'USD',
           priceValidUntil: new Date(new Date().setMonth(new Date().getMonth() + 3)).toISOString().split('T')[0],
@@ -427,7 +427,7 @@ export const getLocationData = (locationSlug: string): LocationSpecificData => {
       ],
       pricing: {
         basic: '225',
-        premium: '400',
+        premium: '375',
         ceramic: 'Quote',
         paintCorrection: 'Quote'
       }
@@ -469,7 +469,7 @@ export const getLocationData = (locationSlug: string): LocationSpecificData => {
       ],
       pricing: {
         basic: '225',
-        premium: '400',
+        premium: '375',
         ceramic: 'Quote',
         paintCorrection: 'Quote'
       }
@@ -509,7 +509,7 @@ export const getLocationData = (locationSlug: string): LocationSpecificData => {
       ],
       pricing: {
         basic: '225',
-        premium: '400',
+        premium: '375',
         ceramic: 'Quote',
         paintCorrection: 'Quote'
       }
@@ -548,7 +548,7 @@ export const getLocationData = (locationSlug: string): LocationSpecificData => {
       ],
       pricing: {
         basic: '225',
-        premium: '400',
+        premium: '375',
         ceramic: 'Quote',
         paintCorrection: 'Quote'
       }
@@ -587,7 +587,7 @@ export const getLocationData = (locationSlug: string): LocationSpecificData => {
       ],
       pricing: {
         basic: '225',
-        premium: '400',
+        premium: '375',
         ceramic: 'Quote',
         paintCorrection: 'Quote'
       }
@@ -629,7 +629,7 @@ export const getLocationData = (locationSlug: string): LocationSpecificData => {
       ],
       pricing: {
         basic: '225',
-        premium: '400',
+        premium: '375',
         ceramic: 'Quote',
         paintCorrection: 'Quote'
       }
@@ -669,7 +669,7 @@ export const getLocationData = (locationSlug: string): LocationSpecificData => {
       ],
       pricing: {
         basic: '225',
-        premium: '400',
+        premium: '375',
         ceramic: 'Quote',
         paintCorrection: 'Quote'
       }
@@ -709,7 +709,7 @@ export const getLocationData = (locationSlug: string): LocationSpecificData => {
       ],
       pricing: {
         basic: '225',
-        premium: '400',
+        premium: '375',
         ceramic: 'Quote',
         paintCorrection: 'Quote'
       }
@@ -751,7 +751,7 @@ export const getLocationData = (locationSlug: string): LocationSpecificData => {
       ],
       pricing: {
         basic: '225',
-        premium: '400',
+        premium: '375',
         ceramic: 'Quote',
         paintCorrection: 'Quote'
       }

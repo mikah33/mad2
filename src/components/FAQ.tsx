@@ -13,7 +13,7 @@ const FAQ: React.FC = () => {
   const faqs: FAQItem[] = [
     {
       question: 'How much does mobile detailing cost?',
-      answer: 'Our mobile detailing services start at $125 for an exterior detail and range up to $850+ for ceramic coating. We use simple flat pricing—the package you choose sets your price, not your vehicle\'s size. We offer competitive rates with no hidden fees - get your personalized quote by calling (803) 667-8731.',
+      answer: 'Our mobile detailing services start at $150 for an exterior detail. An interior-only detail with deep cleaning included is $300. The Level 2 Full Reset (complete interior + exterior) is $375, the Level 2 Premium with polish and coatings is $675, and our Level 3 Disaster Detail for heavily neglected interiors is $650. Once we\'ve detailed your vehicle, our Level 1 Maintenance rate is just $225 anytime you rebook the same vehicle by day 90, with service by day 97. Flat pricing, no hidden fees - call (803) 667-8731 for a personalized quote.',
     },
     {
       question: 'What is included in a mobile detailing service?',
@@ -29,7 +29,7 @@ const FAQ: React.FC = () => {
     },
     {
       question: 'How long does ceramic coating last?',
-      answer: 'Professional ceramic coating typically lasts 2-5 years depending on the product grade and maintenance. Our premium ceramic packages include 3-year warranties with proper care. The coating\'s durability makes it more cost-effective than traditional wax, which needs reapplication every 3-4 months.',
+      answer: 'Professional ceramic coating typically lasts 2-5 years depending on the product grade and maintenance. Our premium ceramic packages include 3-year warranties with proper care. The coating\'s durability makes it more cost-effective than traditional wax, which needs reapplication every 90 days or so.',
     },
     {
       question: 'How long does a typical detailing service take?',
@@ -45,7 +45,7 @@ const FAQ: React.FC = () => {
     },
     {
       question: 'What forms of payment do you accept?',
-      answer: 'We accept cash, all major credit cards (Visa, MasterCard, American Express, Discover), and convenient digital payment methods including Venmo, Cash App, and Zelle. Payment is collected upon service completion to your satisfaction.',
+      answer: 'We accept cash, checks, Zelle, and all major credit and debit cards (Visa, MasterCard, American Express, Discover). Payment is collected upon service completion to your satisfaction.',
     },
     {
       question: 'Is mobile detailing as effective as shop detailing?',

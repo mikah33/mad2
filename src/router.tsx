@@ -1,5 +1,5 @@
 import { lazy } from 'react';
-import { createBrowserRouter } from 'react-router-dom';
+import { createBrowserRouter, Navigate } from 'react-router-dom';
 import App from './App';
 import ErrorBoundary from './components/ErrorBoundary';
 import RootLayout from './components/RootLayout';
@@ -52,7 +52,6 @@ const GalleryPage = lazy(() => import('./pages/GalleryPage'));
 const ReviewsPage = lazy(() => import('./pages/ReviewsPage'));
 const ReviewUsPage = lazy(() => import('./pages/ReviewUsPage'));
 const LandingPage = lazy(() => import('./pages/LandingPage'));
-const LandingPageSpecials = lazy(() => import('./pages/LandingPageSpecials'));
 const NiceTryJeffrey = lazy(() => import('./pages/NiceTryJeffrey'));
 const NeighborhoodPage = lazy(() => import('./pages/neighborhoods').then((m) => ({ default: m.NeighborhoodPage })));
 const CityHubPage = lazy(() => import('./pages/neighborhoods').then((m) => ({ default: m.CityHubPage })));
@@ -203,8 +202,10 @@ export const router = createBrowserRouter([
         element: <LandingPage />,
       },
       {
+        // Retired 2026-08 with the level-ladder restructure; old FB ads may
+        // still point here, so keep the path alive as a redirect to /lp.
         path: '/lp-specials',
-        element: <LandingPageSpecials />,
+        element: <Navigate to="/lp" replace />,
       },
       {
         path: '/nice-try-jeffrey',

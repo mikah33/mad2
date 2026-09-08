@@ -4,6 +4,7 @@ import { ArrowLeft } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import Testimonials from '../components/Testimonials';
 import BottomNavbar from '../components/BottomNavbar';
+import MaintenancePitch from '../components/MaintenancePitch';
 
 const ReviewsPage: React.FC = () => {
   const navigate = useNavigate();
@@ -55,6 +56,10 @@ const ReviewsPage: React.FC = () => {
             </a>
           </div>
         </div>
+      </div>
+
+      <div className="container mx-auto px-4 max-w-4xl pb-8">
+        <MaintenancePitch variant="banner" />
       </div>
 
       <BottomNavbar />

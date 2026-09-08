@@ -382,12 +382,9 @@ export const generateEnhancedLocalBusinessSchema = (
     schema.paymentAccepted = [
       'Cash',
       'Check',
+      'Zelle',
       'Credit Card',
       'Debit Card',
-      'PayPal',
-      'Zelle',
-      'Cash App',
-      'Cryptocurrency',
       'Visa',
       'Mastercard',
       'American Express',

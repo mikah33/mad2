@@ -2,6 +2,7 @@ import React from 'react';
 import { Wrench, CheckCircle, Phone, ChevronRight } from 'lucide-react';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
+import MaintenancePitch from '../components/MaintenancePitch';
 import { SEOHead } from '../components/seo/SEOHead';
 import { generateProductSchema } from '../components/seo/StructuredData';
 import { generateEnhancedLocalBusinessSchema } from '../components/seo/EnhancedLocalBusinessSchema';
@@ -270,6 +271,12 @@ const PaintCorrectionPage: React.FC = () => {
       </div>
           
       </div>
+        </section>
+
+                <section className="py-10 bg-white">
+          <div className="container mx-auto px-4 max-w-4xl">
+            <MaintenancePitch variant="card" context="Corrected paint only stays flawless if it's maintained. After any full detail, rebook the same vehicle by day 90, with service by day 97 and every visit is a flat $225 — proper washing that protects the finish you just paid to restore." />
+          </div>
         </section>
 
         <Footer />

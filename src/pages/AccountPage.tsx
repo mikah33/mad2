@@ -2,6 +2,7 @@ import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { User, Phone, Mail, MapPin, Clock, Star, Gift, Settings, ChevronRight } from 'lucide-react';
 import BottomNavbar from '../components/BottomNavbar';
+import MaintenancePitch from '../components/MaintenancePitch';
 
 const AccountPage: React.FC = () => {
   // Placeholder - will be configured later
@@ -148,6 +149,10 @@ const AccountPage: React.FC = () => {
             </p>
           </div>
         </div>
+      </div>
+
+      <div className="container mx-auto px-4 max-w-2xl pb-8">
+        <MaintenancePitch variant="card" context="Already a customer? Rebook the same vehicle by day 90, with service by day 97 after your last completed detail and every visit is a flat $225 Level 1 Maintenance Detail — the upkeep rate, not the $375 reset price." cta={{ label: 'Book my $225 maintenance detail', href: '/book?service=level-1-maintenance' }} />
       </div>
 
       <BottomNavbar />

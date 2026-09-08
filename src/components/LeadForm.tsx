@@ -30,8 +30,10 @@ const LeadForm: React.FC<LeadFormProps> = ({ selectedService }) => {
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
   const serviceOptions = [
-    'Basic Detail Package - $225',
-    'Factory Reset Package - $375',
+    'Level 1 Maintenance Detail - $225 (90-day customers)',
+    'Level 2 Full Reset - $375',
+    'Level 2 Premium (Reset + Protect) - $675',
+    'Level 3 Disaster Detail - $650',
     'Ceramic Coatings',
     'Paint Corrections',
     'Specialty Services',

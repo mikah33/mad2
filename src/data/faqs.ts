@@ -31,7 +31,7 @@ export const faqs: FAQ[] = [
   {
     id: 'faq-004',
     question: 'What payment methods do you accept?',
-    answer: 'We accept cash, all major credit cards, Venmo, Zelle, and PayPal. Payment is due upon completion of service.',
+    answer: 'We accept cash, checks, Zelle, and all major credit and debit cards. Payment is due upon completion of service.',
     category: 'pricing',
     order: 4
   },
@@ -45,7 +45,7 @@ export const faqs: FAQ[] = [
   {
     id: 'faq-006',
     question: 'Do you offer any warranties or guarantees?',
-    answer: 'Yes! We stand behind our work with a 100% satisfaction guarantee. Ceramic coatings come with manufacturer warranties ranging from 2-7 years depending on the product.',
+    answer: 'We stand behind our work: if anything isn\'t up to standard, contact us within 12 hours of completion and we\'ll come back and make it right at no charge. All sales are final (no refunds) — the make-it-right visit is our guarantee. Ceramic coatings additionally carry manufacturer warranties of 2-7 years depending on the product.',
     category: 'services',
     order: 6
   },

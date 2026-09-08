@@ -144,7 +144,7 @@ export const generateAutomotiveBusinessSchema = (
 
     // Payment Methods
     paymentAccepted: [
-      'Cash', 'Check', 'Credit Card', 'Debit Card', 'PayPal', 'Zelle', 'Cash App'
+      'Cash', 'Check', 'Zelle', 'Credit Card', 'Debit Card'
     ],
 
     // Price Range

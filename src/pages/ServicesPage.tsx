@@ -32,8 +32,10 @@ export const ServicesPage = () => {
     const urlMap: { [key: string]: string } = {
       'Interior Detail': '/services/interior-detailing',
       'Exterior Detail': '/services/exterior-detailing',
-      'Basic Detail Package': '/services/full-detail',
-      'Factory Reset Package': '/services/full-detail',
+      'Level 1 Maintenance Detail': '/services/full-detail',
+      'Level 2 Full Reset': '/services/full-detail',
+      'Level 2 Premium': '/services/full-detail',
+      'Level 3 Disaster Detail': '/services/odor-stain-removal',
       'Ceramic Coatings': '/services/ceramic-coating',
       'Paint Corrections': '/services/paint-correction',
       'Specialty Services': '/services/odor-stain-removal/',
@@ -46,41 +48,69 @@ export const ServicesPage = () => {
   const services: Service[] = [
     {
       icon: <Star className="w-8 h-8" />,
-      title: 'Factory Reset Package',
-      price: '$375',
+      title: 'Level 2 Full Reset',
+      price: 'Starts at $375',
       color: 'bg-orange-500',
       description: [
+        'The standard for any vehicle we haven\'t detailed recently — gets it back to a level we can maintenance clean for you',
         'Interior: Full wipe down, conditioner + UV protection, vacuum + disinfection, light stain removal, shampoo & extraction, glass cleaned, door jambs cleaned & waxed',
-        'Exterior: Foam contact wash, brake dust removal, protective wax layer, tires & rims dressed',
-        'Add-On Services: Weather Stripping Restoration, Scratch Removal (call for a quote)'
+        'Exterior: Foam contact wash, brake dust removal, protective wax layer, tires & rims dressed, engine bay detailed',
+        'Rebook the same vehicle by day 90, with service by day 97 and the Level 1 Maintenance rate ($225) applies'
       ],
       image: '/exterior3.jpg',
-      imageAlt: 'Auto detailing services columbia sc - factory reset complete detail package',
+      imageAlt: 'Auto detailing services columbia sc - level 2 full reset complete detail package',
       popular: true
     },
     {
+      icon: <Shield className="w-8 h-8" />,
+      title: 'Level 2 Premium',
+      price: 'Starts at $675',
+      color: 'bg-orange-500',
+      description: [
+        'Reset the car, then lock the finish in — for keepers',
+        'Everything in the Level 2 Full Reset',
+        'Plus: 1-step machine polish, headlight ceramic coating, windshield ceramic coating, black trim restored/redyed'
+      ],
+      image: '/ceramic.jpg',
+      imageAlt: 'Auto detailing services columbia sc - level 2 premium reset with polish and coatings'
+    },
+    {
+      icon: <Zap className="w-8 h-8" />,
+      title: 'Level 3 Disaster Detail',
+      price: '$650',
+      color: 'bg-orange-500',
+      description: [
+        'Some cars need rescuing before they can be maintained — old food, heavy pet hair, set-in stains, years since the last clean',
+        'Interior rescue: everything in the Level 2 interior plus heavy pet hair removal, set-in stain treatment, deep steam clean, odor treatment',
+        'Basic exterior wash included — no polish or coatings (paint work quoted separately)'
+      ],
+      image: '/interior1.jpg',
+      imageAlt: 'Auto detailing services columbia sc - level 3 disaster detail interior rescue'
+    },
+    {
       icon: <Sparkles className="w-8 h-8" />,
-      title: 'Basic Detail Package',
+      title: 'Level 1 Maintenance Detail',
       price: '$225',
       color: 'bg-orange-500',
       description: [
+        'Our 90-day maintenance rate — available when we\'ve detailed your vehicle in the last 90 days',
         'Interior: Full wipe down, conditioner + UV protection, vacuum, disinfection, glass cleaned, door jambs cleaned & waxed',
         'Exterior: Wheels decontaminated, foam contact wash, protective wax layer, wheels & tires dressed'
       ],
       image: '/exterior1.jpg',
-      imageAlt: 'Auto detailing services columbia sc - basic detail package interior and exterior'
+      imageAlt: 'Auto detailing services columbia sc - level 1 maintenance detail for repeat customers'
     },
     {
       icon: <Zap className="w-8 h-8" />,
       title: 'Interior Detail',
-      price: '$200',
+      price: '$300',
       color: 'bg-primary-500',
       description: [
+        'Deep cleaning included — steam clean + upholstery & carpet shampoo with extraction',
         'Full interior wipe down & conditioning',
         'UV protection on all surfaces',
         'Complete vacuum & disinfection',
-        'Glass cleaned inside & out',
-        'Door jambs cleaned & waxed'
+        'Glass cleaned inside & out, door jambs cleaned & waxed'
       ],
       image: '/interior1.jpg',
       imageAlt: 'Interior auto detailing services columbia sc - professional cleaning and conditioning'
@@ -88,7 +118,7 @@ export const ServicesPage = () => {
     {
       icon: <Zap className="w-8 h-8" />,
       title: 'Exterior Detail',
-      price: '$125',
+      price: '$150',
       color: 'bg-primary-500',
       description: [
         'Foam contact wash',

@@ -33,17 +33,17 @@ export const LocationBlythewoodPage = () => {
   // Real services with correct pricing
   const realServices = [
     {
-      title: 'Basic Detail Package',
-      price: '$225',
-      duration: '2-3 hours',
-      description: 'Interior full wipe down, conditioner + UV protection, vacuum, disinfection, glass cleaned. Exterior wheels decontaminated, foam wash, protective wax, wheels & tires dressed.',
+      title: 'Level 2 Full Reset',
+      price: '$375',
+      duration: '3-5 hours',
+      description: 'Interior wipe down, conditioner + UV protection, vacuum + disinfection, light stain removal, shampoo & extraction, glass cleaned. Exterior foam wash, brake dust removal, protective wax, tires & rims dressed, engine bay detailed. Rebook the same vehicle by day 90, with service by day 97 and Level 1 Maintenance Details are just $225.',
       link: '/services/full-detail'
     },
     {
-      title: 'Factory Reset Package',
-      price: '$375',
-      duration: '3-4 hours',
-      description: 'Interior wipe down, conditioner + UV protection, vacuum + disinfection, light stain removal, shampoo & extraction, glass cleaned. Exterior foam wash, brake dust removal, protective wax, tires & rims dressed.',
+      title: 'Level 2 Premium',
+      price: '$675',
+      duration: '5-7 hours',
+      description: 'Everything in the Level 2 Full Reset plus 1-step machine polish, headlight ceramic coating, windshield ceramic coating, and black trim restored & redyed.',
       link: '/services/full-detail'
     },
     {
@@ -88,7 +88,7 @@ export const LocationBlythewoodPage = () => {
     },
     {
       question: 'How much does car detailing cost in Blythewood SC?',
-      answer: 'Our car detailing prices in Blythewood SC start at $225 for our Basic Detail Package and $375 for our Factory Reset Package. We offer premium detailing services tailored to luxury vehicles and high-end automobiles common in the Blythewood area.'
+      answer: 'Our car detailing prices in Blythewood SC start at $375 for our Level 2 Full Reset, with our $225 Level 1 Maintenance Detail available anytime you rebook the same vehicle by day 90, with service by day 97. We offer premium detailing services tailored to luxury vehicles and high-end automobiles common in the Blythewood area.'
     },
     {
       question: 'Do you specialize in luxury vehicle detailing in Blythewood?',
@@ -126,7 +126,7 @@ export const LocationBlythewoodPage = () => {
     <>
       <SEOHead
         title="Car Detailing Blythewood SC | Mobile Service | Mikah's Auto Detailing"
-        description="Blythewood's trusted mobile car detailing service. Full detail packages from $225. We come to your home or office. 5-star rated. Call (803) 667-8731!"
+        description="Blythewood's trusted mobile car detailing service. Full detail packages from $375. We come to your home or office. 5-star rated. Call (803) 667-8731!"
         keywords="car detailing blythewood sc, auto detailing blythewood, mobile detailing blythewood sc, luxury car detailing blythewood, killian auto detailing, ridgewood car care, longtown mobile detailing"
         canonical="https://mikahsmobiledetailingsc.com/locations/blythewood-sc/"
         schema={schemas}

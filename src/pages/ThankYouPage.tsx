@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet-async';
 import { CheckCircle, Phone, Home } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import BottomNavbar from '../components/BottomNavbar';
+import MaintenancePitch from '../components/MaintenancePitch';
 import { trackLeadSubmit, LeadData } from '../utils/analytics';
 
 const ThankYouPage: React.FC = () => {
@@ -68,6 +69,14 @@ const ThankYouPage: React.FC = () => {
               </li>
             </ul>
           </div>
+
+          {/* Plant the 90-day rebook seed at the moment of highest intent */}
+          <MaintenancePitch
+            variant="card"
+            context="Good to know for later: once we've detailed your car, rebooking within 90 days locks in the $225 maintenance rate — keep the maintenance rate while you stay eligible. We'll remind you before your window closes."
+            cta={null}
+            className="mb-6 text-left"
+          />
 
           {/* Action Buttons */}
           <div className="space-y-3">

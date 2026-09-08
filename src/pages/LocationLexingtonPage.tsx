@@ -36,17 +36,17 @@ export const LocationLexingtonPage = () => {
   // Real services from homepage
   const realServices = [
     {
-      title: 'Basic Detail Package',
-      price: '$225',
-      duration: '2-3 hours',
-      description: 'Interior full wipe down, conditioner + UV protection, vacuum, disinfection, glass cleaned. Exterior wheels decontaminated, foam wash, protective wax, wheels & tires dressed.',
+      title: 'Level 2 Full Reset',
+      price: '$375',
+      duration: '3-5 hours',
+      description: 'Interior wipe down, conditioner + UV protection, vacuum + disinfection, light stain removal, shampoo & extraction, glass cleaned. Exterior foam wash, brake dust removal, protective wax, tires & rims dressed, engine bay detailed. Rebook the same vehicle by day 90, with service by day 97 and Level 1 Maintenance Details are just $225.',
       link: '/services/full-detail'
     },
     {
-      title: 'Factory Reset Package',
-      price: '$375',
-      duration: '3-4 hours',
-      description: 'Interior wipe down, conditioner + UV protection, vacuum + disinfection, light stain removal, shampoo & extraction, glass cleaned. Exterior foam wash, brake dust removal, protective wax, tires & rims dressed.',
+      title: 'Level 2 Premium',
+      price: '$675',
+      duration: '5-7 hours',
+      description: 'Everything in the Level 2 Full Reset plus 1-step machine polish, headlight ceramic coating, windshield ceramic coating, and black trim restored & redyed.',
       link: '/services/full-detail'
     },
     {
@@ -83,7 +83,7 @@ export const LocationLexingtonPage = () => {
   const locationFAQs = [
     {
       question: 'How much does car detailing cost in Lexington SC?',
-      answer: 'Car detailing in Lexington SC starts at $225 for our Basic Detail Package and $375 for our Factory Reset Package. Ceramic coatings, paint corrections, and specialty services require quotes based on vehicle size and condition. We provide free quotes for all Lexington residents.'
+      answer: 'Car detailing in Lexington SC starts at $375 for our Level 2 Full Reset. Once we\'ve detailed your vehicle, our $225 Level 1 Maintenance Detail is available anytime you rebook the same vehicle by day 90, with service by day 97. Ceramic coatings, paint corrections, and specialty services require quotes based on vehicle size and condition. We provide free quotes for all Lexington residents.'
     },
     {
       question: 'What is the best mobile car detailing service in Lexington SC?',
@@ -99,11 +99,11 @@ export const LocationLexingtonPage = () => {
     },
     {
       question: 'How long does auto detailing take in Lexington SC?',
-      answer: 'Auto detailing in Lexington SC typically takes 2-4 hours depending on the package. Our Basic Detail Package takes 2-3 hours while our Factory Reset Package with shampoo & extraction takes 3-4 hours. We work at your location so you can continue your day while we detail your vehicle.'
+      answer: 'Auto detailing in Lexington SC typically takes 2-5 hours depending on the package. Our Level 2 Full Reset with shampoo & extraction takes 3-5 hours, while a Level 1 Maintenance Detail for returning customers takes 2-3 hours. We work at your location so you can continue your day while we detail your vehicle.'
     },
     {
       question: 'Do you offer mobile detailing in Lexington SC?',
-      answer: 'Yes! Our mobile detailing service in Lexington SC includes complete interior detailing, exterior detailing, and ceramic coating starting at $225 for our Basic Detail Package. We bring water, power, and all equipment needed. Perfect for Lexington residents who want professional results without leaving home.'
+      answer: 'Yes! Our mobile detailing service in Lexington SC includes complete interior detailing, exterior detailing, and ceramic coating — full details start at $375 with our Level 2 Full Reset. We bring water, power, and all equipment needed. Perfect for Lexington residents who want professional results without leaving home.'
     },
     {
       question: 'What areas of Lexington SC do you serve for auto detailing?',
@@ -188,11 +188,11 @@ export const LocationLexingtonPage = () => {
     <>
       <SEOHead
         title="Mobile Car Detailing Lexington SC | We Come to You — Mikah's Auto Detailing"
-        description="5.0★ mobile car detailing in Lexington SC — we come to your home or office. Full details from $225. Serving Lake Murray, Chapin &amp; Irmo. Same-week booking: (803) 667-8731."
+        description="5.0★ mobile car detailing in Lexington SC — we come to your home or office. Full details from $375. Serving Lake Murray, Chapin &amp; Irmo. Same-week booking: (803) 667-8731."
         keywords={allKeywords.join(', ') + ', auto detailing services columbia sc'}
         canonical="https://mikahsmobiledetailingsc.com/locations/lexington-sc/"
-        ogDescription="5.0★ mobile car detailing in Lexington SC — we come to you. Full details from $225. Serving Lake Murray, Chapin &amp; Irmo. Call (803) 667-8731."
-        twitterDescription="5.0★ mobile car detailing in Lexington SC — we come to you. Full details from $225. Serving Lake Murray, Chapin &amp; Irmo. Call (803) 667-8731."
+        ogDescription="5.0★ mobile car detailing in Lexington SC — we come to you. Full details from $375. Serving Lake Murray, Chapin &amp; Irmo. Call (803) 667-8731."
+        twitterDescription="5.0★ mobile car detailing in Lexington SC — we come to you. Full details from $375. Serving Lake Murray, Chapin &amp; Irmo. Call (803) 667-8731."
         schema={schemas}
       />
 
@@ -250,7 +250,7 @@ export const LocationLexingtonPage = () => {
             </h1>
 
             <p className="text-base sm:text-lg md:text-xl mb-6 md:mb-8 max-w-3xl mx-auto text-gray-100 px-4">
-              Lexington SC's #1 mobile detailing service. Professional mobile car detailing for interior, exterior, ceramic coating & paint correction — all at your location. Serving Lake Murray & all of Lexington County. 5.0★ rated with 31 Google reviews. From $225.
+              Lexington SC's #1 mobile detailing service. Professional mobile car detailing for interior, exterior, ceramic coating & paint correction — all at your location. Serving Lake Murray & all of Lexington County. 5.0★ rated with 31 Google reviews. Full details from $375.
             </p>
 
             <p className="text-lg sm:text-xl md:text-2xl font-semibold mb-6 md:mb-8 text-primary-300">
@@ -422,7 +422,7 @@ export const LocationLexingtonPage = () => {
             <div className="mt-12 bg-primary-50 rounded-xl p-8 border border-primary-100">
               <h3 className="text-2xl font-bold mb-4 text-primary-800">Mobile Detailing Near Me in Lexington SC</h3>
               <p className="text-gray-700">
-                Searching for mobile detailing near me in Lexington? Mikah's Auto Detailing brings professional car detailing directly to your home or office anywhere in Lexington County. From Lake Murray Shores to Sunset Boulevard, Gilbert to Red Bank — we're your local mobile detailer. Same day availability, from $225. <a href="tel:8036678731" className="text-primary-700 font-semibold hover:underline">Call (803) 667-8731</a> for your free quote.
+                Searching for mobile detailing near me in Lexington? Mikah's Auto Detailing brings professional car detailing directly to your home or office anywhere in Lexington County. From Lake Murray Shores to Sunset Boulevard, Gilbert to Red Bank — we're your local mobile detailer. Same day availability, full details from $375. <a href="tel:8036678731" className="text-primary-700 font-semibold hover:underline">Call (803) 667-8731</a> for your free quote.
               </p>
             </div>
           </div>
@@ -474,7 +474,7 @@ export const LocationLexingtonPage = () => {
               </p>
 
               <p>
-                For boat owners and outdoor enthusiasts who store equipment in their vehicles, interior detailing becomes particularly important. Sand tracked in from lake beaches, moisture from wet gear, and the general wear from active lifestyles accumulate quickly. Our extraction equipment removes embedded debris from carpet and upholstery fibers, while our ozone treatment option eliminates musty odors that develop from damp conditions. The Factory Reset Package is especially popular among Lexington residents who want to restore interiors worn by lake lifestyle usage.
+                For boat owners and outdoor enthusiasts who store equipment in their vehicles, interior detailing becomes particularly important. Sand tracked in from lake beaches, moisture from wet gear, and the general wear from active lifestyles accumulate quickly. Our extraction equipment removes embedded debris from carpet and upholstery fibers, while our ozone treatment option eliminates musty odors that develop from damp conditions. The Level 2 Full Reset is especially popular among Lexington residents who want to restore interiors worn by lake lifestyle usage, and for interiors that have gone beyond worn — heavy pet hair, set-in stains, lingering odors — our Level 3 Disaster Detail is built for exactly that.
               </p>
 
               <p>
@@ -522,11 +522,11 @@ export const LocationLexingtonPage = () => {
 
             <div className="prose prose-lg max-w-none text-gray-700 space-y-6">
               <p>
-                The Basic Detail Package at $225 provides comprehensive care for vehicles maintained on a regular schedule. Interior service includes complete surface cleaning with UV-protective conditioner application, thorough vacuuming, sanitization, and glass cleaning. The exterior receives wheel decontamination, foam wash with pH-balanced products, protective wax application, and wheel and tire dressing. This package is ideal for Lexington residents who want to maintain their vehicle between more intensive services.
+                The Level 2 Full Reset at $375 provides comprehensive care and gets your vehicle back to a level where we can maintenance clean it for you — rebook the same vehicle by day 90, with service by day 97 and the $225 Level 1 Maintenance Detail rate applies. Interior service includes complete surface cleaning with UV-protective conditioner application, thorough vacuuming, sanitization, light stain removal, full carpet and upholstery shampoo with hot water extraction, and glass cleaning. The exterior receives wheel decontamination, foam wash with pH-balanced products, protective wax application, engine bay detailing, and wheel and tire dressing. This package is the standard for any Lexington vehicle we have not detailed recently.
               </p>
 
               <p>
-                Our Factory Reset Package at $375 addresses the deeper restoration needs of vehicles exposed to Lake Murray conditions. This includes everything in the Basic Package plus stain removal, full carpet and upholstery shampoo with hot water extraction, and comprehensive brake dust removal. For vehicles that have accumulated sand, lake residue, or wear from outdoor activities, this package restores interiors and exteriors to near-original condition.
+                Our Level 2 Premium at $675 locks in the results for vehicles exposed to Lake Murray conditions, adding a 1-step machine polish, headlight and windshield ceramic coatings, and restored black trim on top of everything in the Full Reset. And for vehicles that have accumulated years of sand, lake residue, pet hair, or set-in stains, the Level 3 Disaster Detail at $650 is our interior rescue package — deep steam cleaning, hot water extraction, and odor treatment paired with a basic exterior wash.
               </p>
 
               <p>

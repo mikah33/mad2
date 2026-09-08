@@ -2,6 +2,7 @@ import React from 'react';
 import { Sparkles, CheckCircle, Clock, DollarSign, Phone, ChevronRight, Droplets } from 'lucide-react';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
+import MaintenancePitch from '../components/MaintenancePitch';
 import { SEOHead } from '../components/seo/SEOHead';
 import { generateProductSchema } from '../components/seo/StructuredData';
 import { generateEnhancedLocalBusinessSchema } from '../components/seo/EnhancedLocalBusinessSchema';
@@ -14,7 +15,7 @@ const ExteriorDetailingPage: React.FC = () => {
   const productSchema = generateProductSchema({
     name: "Exterior Car Detailing Service",
     description: "Professional exterior car detailing in Columbia SC. Hand wash, clay bar treatment, paint correction, wax protection, and wheel detailing. Mobile service available.",
-    price: "125",
+    price: "150",
     features: [
       "Hand wash using premium products",
       "Wheel and tire deep cleaning",
@@ -65,7 +66,7 @@ const ExteriorDetailingPage: React.FC = () => {
       "@type": "Offer",
       "priceSpecification": {
         "@type": "PriceSpecification",
-        "minPrice": "125",
+        "minPrice": "150",
         "priceCurrency": "USD"
       }
     }
@@ -100,7 +101,7 @@ const ExteriorDetailingPage: React.FC = () => {
     },
     {
       question: "How often should I get exterior detailing?",
-      answer: "We recommend full exterior detailing every 3-4 months for optimal paint protection and appearance. Between details, regular maintenance washes help preserve the protection."
+      answer: "We recommend a full exterior detail every 90 days — and our maintenance pricing is built around exactly that: after any full detail, the Level 1 Maintenance rate is just $225 when you rebook the same vehicle by day 90, with service by day 97. Between details, regular maintenance washes help preserve the protection."
     },
     {
       question: "Can you detail my truck or SUV?",
@@ -315,7 +316,7 @@ const ExteriorDetailingPage: React.FC = () => {
                   
       </div>
                   <p className="text-gray-700 mb-2">
-                    <strong>Starting at $125</strong>
+                    <strong>Starting at $150</strong>
                   </p>
                   <div className="flex items-center gap-3">
                     <Clock className="w-6 h-6 text-blue-600" />
@@ -536,6 +537,12 @@ const ExteriorDetailingPage: React.FC = () => {
       </div>
           
       </div>
+        </section>
+
+                <section className="py-10 bg-white">
+          <div className="container mx-auto px-4 max-w-4xl">
+            <MaintenancePitch variant="card" />
+          </div>
         </section>
 
         <Footer />

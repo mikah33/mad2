@@ -32,17 +32,17 @@ export const LocationChapinPage = () => {
   // Real services with correct pricing
   const realServices = [
     {
-      title: 'Basic Detail Package',
-      price: '$225',
-      duration: '2-3 hours',
-      description: 'Interior full wipe down, conditioner + UV protection, vacuum, disinfection, glass cleaned. Exterior wheels decontaminated, foam wash, protective wax, wheels & tires dressed.',
+      title: 'Level 2 Full Reset',
+      price: '$375',
+      duration: '3-5 hours',
+      description: 'Interior wipe down, conditioner + UV protection, vacuum + disinfection, light stain removal, shampoo & extraction, glass cleaned. Exterior foam wash, brake dust removal, protective wax, tires & rims dressed, engine bay detailed. Rebook the same vehicle by day 90, with service by day 97 and Level 1 Maintenance Details are just $225.',
       link: '/services/full-detail'
     },
     {
-      title: 'Factory Reset Package',
-      price: '$375',
-      duration: '3-4 hours',
-      description: 'Interior wipe down, conditioner + UV protection, vacuum + disinfection, light stain removal, shampoo & extraction, glass cleaned. Exterior foam wash, brake dust removal, protective wax, tires & rims dressed.',
+      title: 'Level 2 Premium',
+      price: '$675',
+      duration: '5-7 hours',
+      description: 'Everything in the Level 2 Full Reset plus 1-step machine polish, headlight ceramic coating, windshield ceramic coating, and black trim restored & redyed.',
       link: '/services/full-detail'
     },
     {
@@ -87,7 +87,7 @@ export const LocationChapinPage = () => {
     },
     {
       question: 'How much does car detailing cost in Chapin SC?',
-      answer: 'Our car detailing prices in Chapin SC start at $225 for our Basic Detail Package and $375 for our Factory Reset Package. We offer special rates for lake house communities and luxury vehicle care.'
+      answer: 'Our car detailing prices in Chapin SC start at $375 for our Level 2 Full Reset, with our $225 Level 1 Maintenance Detail available anytime you rebook the same vehicle by day 90, with service by day 97. We offer special rates for lake house communities and luxury vehicle care.'
     },
     {
       question: 'Do you detail boats and lake vehicles in Chapin?',
@@ -125,7 +125,7 @@ export const LocationChapinPage = () => {
     <>
       <SEOHead
         title="Mobile Detailing Chapin SC | Lake Murray Auto Detailing & Ceramic Coating"
-        description="Best mobile detailing Chapin SC. Professional auto detailing & ceramic coating for Lake Murray west side. $225+ Interior/exterior detailing. 5.0★ 31 reviews. Serving Timberlake, Little Mountain. Free quotes!"
+        description="Best mobile detailing Chapin SC. Professional auto detailing & ceramic coating for Lake Murray west side. Full details from $375. 5.0★ 31 reviews. Serving Timberlake, Little Mountain. Free quotes!"
         keywords="mobile auto detailing chapin sc, car detailing chapin sc, lake murray auto detailing, chapin mobile detailing, timberlake car care, lake house vehicle detailing, luxury auto detailing chapin"
         canonical="https://mikahsmobiledetailingsc.com/locations/chapin-sc/"
         schema={schemas}

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation, useSearchParams } from 'react-router-dom';
 import { Sparkles, Star, Shield, Wrench, Anchor, RotateCw, Check, ChevronRight, Mail, MessageCircle, User, Phone, MapPin, Car, FileText, Info, X, Droplet } from 'lucide-react';
 import { collectForensicData, isJeffreyByAnyMethod } from '../utils/forensics';
+import { LEGACY_SLUG_MAP } from '../data/offers';
 import {
   trackPhoneClick,
   trackTextClick,
@@ -46,6 +47,56 @@ const DIRTINESS_PRAISE: Record<number, { emoji: string; text: string }> = {
   10: { emoji: '🏆', text: 'Legendary. We LIVE for these transformations!' },
 };
 
+/**
+ * Compact package breakdowns for the step-2 recommendation card. Marketing-
+ * tight bullets, not the full scope list (that lives in the info modals and
+ * src/data/offers.ts).
+ */
+const RECOMMEND_DETAILS: Record<string, { price: string; lead: string; bullets: string[]; footer: string }> = {
+  'Level 1 Maintenance': {
+    price: '$225',
+    lead: 'Your 90-day maintenance rate:',
+    bullets: [
+      'Full interior wipe down, conditioning & UV protection',
+      'Vacuum, disinfection, glass & door jambs',
+      'Foam wash, wax, wheels, trim & tires dressed',
+    ],
+    footer: "That's $150 off the Full Reset — the reward for staying on the schedule.",
+  },
+  'Level 2 Full Reset': {
+    price: 'Starts at $375',
+    lead: 'The complete inside-and-out reset:',
+    bullets: [
+      'Deep interior clean — shampoo & extraction, light stain removal',
+      'Full exterior — foam wash, wax, wheels, trim & tires',
+      'Engine bay detailed',
+    ],
+    footer: 'Rebook the same vehicle by day 90, with service by day 97 after this and each qualifying maintenance visit is just $225.',
+  },
+  'Level 2 Premium': {
+    price: 'Starts at $675',
+    lead: 'Everything in the $375 Full Reset, PLUS:',
+    bullets: [
+      '1-step machine polish — removes light swirls, restores gloss',
+      'Headlight ceramic coating — no more foggy lenses',
+      'Windshield ceramic coating — rain flies off',
+      'Black trim restored & redyed — no more gray plastic',
+    ],
+    footer: "$300 of exterior protection that keeps a keeper looking new for years.",
+  },
+  'Level 3 Disaster Detail': {
+    price: '$650',
+    lead: 'The full interior rescue:',
+    bullets: [
+      'Everything in the Level 2 interior, then some',
+      'Heavy pet hair, set-in stains & odor treatment',
+      'Deep steam clean + hot water extraction',
+      'Basic exterior wash included',
+    ],
+    footer: 'Our favorite kind of job — the before & after will not look like the same car.',
+  },
+};
+
 interface Service {
   icon: React.ReactNode;
   title: string;
@@ -55,6 +106,7 @@ interface Service {
   slug: string;
   image: string;
   isPopular?: boolean;
+  badge?: string;
   altText?: string;
 }
 
@@ -70,15 +122,21 @@ const BookingTimeline: React.FC = () => {
   // Step 1: Vehicle Type
   const [vehicleType, setVehicleType] = useState('');
 
-  // Last-detail timing question removed 2026-07 (the dirtiness slider covers
-  // condition). Payload still sends the field so n8n/GHL mappings don't break.
-  const lastDetailTiming = '';
-
   // Cleanliness: 1-10 slider. Payload still sends the legacy level-1/2/3
   // buckets in `cleanlinessLevel` (so n8n/GHL mappings keep working) plus the
   // exact score as a new additive `dirtinessScore` field.
   const [dirtinessScore, setDirtinessScore] = useState(5);
   const cleanlinessLevel = dirtinessScore <= 3 ? 'level-1' : dirtinessScore <= 7 ? 'level-2' : 'level-3';
+
+  // Qualifying question: when this vehicle was last professionally detailed.
+  // Drives the Level 1 gate — the $225 maintenance rate is only for vehicles
+  // we've detailed in the last 90 days. Single-tap chips, required.
+  const [lastDetailedByUs, setLastDetailedByUs] = useState('');
+  const level1Eligible = lastDetailedByUs === 'us-within-90';
+
+  // keep-plan question removed from the UI (step 2 was overloaded); the
+  // payload field remains so downstream mappings stay stable.
+  const keepPlan = '';
 
   // Step 4: Package Selection
   const [selectedService, setSelectedService] = useState('');
@@ -100,38 +158,53 @@ const BookingTimeline: React.FC = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
-  // Service packages
-  const topRowServices: Service[] = [
-    {
-      icon: <Sparkles className="w-8 h-8" />,
-      title: 'Basic Detail',
-      price: '$225',
-      color: 'bg-[#0077B6]',
-      slug: 'basic-detail',
-      image: '/interior1.jpg',
-      description: 'Full interior & exterior detail with wax protection',
-      altText: 'Auto detailing services columbia sc - basic detail package interior and exterior'
-    },
+  // Service packages — the level ladder. Source of truth for scope and
+  // pricing lives in src/data/offers.ts; these cards mirror it.
+  // Levels 1-3 grade interior condition; Premium is the exterior
+  // protection upgrade on Level 2. Level 1 is gated to 90-day customers.
+  const ladderServices: Service[] = [
     {
       icon: <Star className="w-8 h-8" />,
-      title: 'Factory Reset',
-      price: '$375',
+      title: 'Level 2 Full Reset',
+      price: 'Starts at $375',
       color: 'bg-[#0077B6]',
-      slug: 'factory-reset',
+      slug: 'level-2-reset',
       image: '/exterior2.jpg',
-      description: 'Deep clean with shampoo, extraction & restoration',
+      description: 'Deep reset — shampoo & extraction, stain removal, engine bay',
       isPopular: true,
-      altText: 'Auto detailing services columbia sc - factory reset deep clean package'
+      altText: 'Auto detailing services columbia sc - level 2 full reset deep clean package'
     },
     {
-      icon: <Anchor className="w-8 h-8" />,
-      title: 'Marine & RV',
-      price: 'Custom Quote',
+      icon: <Shield className="w-8 h-8" />,
+      title: 'Level 2 Premium',
+      price: 'Starts at $675',
       color: 'bg-[#023E8A]',
-      slug: 'marine-rv',
-      image: '/marine.jpg',
-      description: 'Boats, RVs, motorcycles & specialty vehicles',
-      altText: 'Auto detailing services columbia sc - marine and RV detailing'
+      slug: 'level-2-premium',
+      image: '/ceramic.jpg',
+      description: 'Full Reset + 1-step polish, headlight & windshield coatings, trim redye',
+      altText: 'Auto detailing services columbia sc - level 2 premium reset with polish and ceramic coatings'
+    },
+    {
+      icon: <Sparkles className="w-8 h-8" />,
+      title: 'Level 1 Maintenance',
+      price: '$225',
+      color: 'bg-[#0077B6]',
+      slug: 'level-1-maintenance',
+      image: '/interior1.jpg',
+      description: "Maintenance clean for vehicles we've detailed in the last 90 days",
+      badge: '90-DAY CUSTOMERS',
+      altText: 'Auto detailing services columbia sc - level 1 maintenance detail for repeat customers'
+    },
+    {
+      icon: <Wrench className="w-8 h-8" />,
+      title: 'Level 3 Disaster Detail',
+      price: '$650',
+      color: 'bg-[#0077B6]',
+      slug: 'level-3-disaster',
+      image: '/interior1.jpg',
+      description: 'Interior rescue — pet hair, stains, odor + basic exterior wash',
+      badge: 'HEAVY DUTY',
+      altText: 'Auto detailing services columbia sc - level 3 disaster detail interior rescue'
     }
   ];
 
@@ -140,17 +213,17 @@ const BookingTimeline: React.FC = () => {
     {
       icon: <Sparkles className="w-8 h-8" />,
       title: 'Interior Detail',
-      price: 'Starting at $200',
+      price: 'Starting at $300',
       color: 'bg-[#0077B6]',
       slug: 'interior-detail',
       image: '/interior1.jpg',
-      description: 'Complete interior cleaning & protection',
+      description: 'Deep interior clean — steam, shampoo & extraction included',
       altText: 'Interior auto detailing services columbia sc - complete cleaning and protection'
     },
     {
       icon: <Droplet className="w-8 h-8" />,
       title: 'Exterior Detail',
-      price: 'Starting at $125',
+      price: 'Starting at $150',
       color: 'bg-[#0077B6]',
       slug: 'exterior-detail',
       image: '/exterior2.jpg',
@@ -182,6 +255,17 @@ const BookingTimeline: React.FC = () => {
     }
   ];
 
+  const marineService: Service = {
+    icon: <Anchor className="w-8 h-8" />,
+    title: 'Marine & RV',
+    price: 'Custom Quote',
+    color: 'bg-[#023E8A]',
+    slug: 'marine-rv',
+    image: '/marine.jpg',
+    description: 'Boats, RVs, motorcycles & specialty vehicles',
+    altText: 'Auto detailing services columbia sc - marine and RV detailing'
+  };
+
   const bottomRowService: Service = {
     icon: <RotateCw className="w-8 h-8" />,
     title: 'Routine Reset',
@@ -195,7 +279,7 @@ const BookingTimeline: React.FC = () => {
 
 
   // All services (for slug <-> title mapping and deep-linking from other pages)
-  const allServices = [...topRowServices, ...standaloneServices, ...middleRowServices, bottomRowService];
+  const allServices = [...ladderServices, ...standaloneServices, ...middleRowServices, marineService, bottomRowService];
   const slugToTitle: Record<string, string> = {};
   const titleToSlug: Record<string, string> = {};
   allServices.forEach((s) => {
@@ -205,7 +289,8 @@ const BookingTimeline: React.FC = () => {
 
   // Deep-link: /book?service=<slug> pre-selects the package and jumps to step 2
   useEffect(() => {
-    const svc = searchParams.get('service');
+    const raw = searchParams.get('service');
+    const svc = raw ? (LEGACY_SLUG_MAP[raw] || raw) : null;
     if (svc && slugToTitle[svc]) {
       setSelectedService(slugToTitle[svc]);
       setCurrentStep(2);
@@ -255,7 +340,7 @@ const BookingTimeline: React.FC = () => {
   // Only the vehicle is required; the two condition questions are single-tap
   // chips that no longer gate progress (they were the funnel's biggest cliff).
   const handleDetailsSubmit = () => {
-    if (vehicleType.trim()) {
+    if (vehicleType.trim() && lastDetailedByUs) {
       trackVehicleDetails(FUNNEL_ID, dirtinessScore, vehicleType);
       setCurrentStep(3);
     }
@@ -295,8 +380,9 @@ const BookingTimeline: React.FC = () => {
         // Step 1: Vehicle Type
         vehicleType: vehicleType,
 
-        // Step 2: Last Detail Timing
-        lastDetailTiming: lastDetailTiming,
+        // Legacy field name — now carries the real qualify answer so
+        // existing n8n/GHL mappings light up instead of receiving ''.
+        lastDetailTiming: lastDetailedByUs,
 
         // Cleanliness: legacy bucket (GHL mappings depend on level-1/2/3)
         // plus the exact 1-10 slider score as a new additive field.
@@ -305,6 +391,12 @@ const BookingTimeline: React.FC = () => {
 
         // Step 4: Selected Service
         service: selectedService,
+        serviceLevel: titleToSlug[selectedService] || null,
+
+        // Level ladder qualification (2026-08 restructure)
+        lastDetailedByUs: lastDetailedByUs,
+        level1Eligible: level1Eligible,
+        keepPlan: keepPlan,
 
         // Step 5: Contact Information
         fullName: formData.fullName,
@@ -431,8 +523,8 @@ const BookingTimeline: React.FC = () => {
       timeEstimate: string;
       benefits: string[];
     }> = {
-      'Basic Detail': {
-        fullDescription: '🚗 Our Basic Package Includes: ($225)\n\nPerfect for Columbia SC and Lexington SC customers who want professional mobile car detailing at an affordable price.',
+      'Level 1 Maintenance': {
+        fullDescription: '🔄 Level 1 Maintenance Detail – $225\n\nOur 90-day maintenance rate: available when we\'ve detailed your vehicle in the last 90 days. Keeping it where we got it — the reward for staying on the schedule.',
         includes: [
           '**Interior:**',
           '✅ Full interior wipe down',
@@ -451,14 +543,14 @@ const BookingTimeline: React.FC = () => {
           '',
           '**Service Areas:** Available for mobile detailing Columbia SC, Lexington SC, Irmo SC, and surrounding areas.',
           '',
-          'Want individual services? Check out our dedicated interior detailing and exterior detailing packages.'
+          '**Eligibility:** This rate is for vehicles we\'ve detailed within the last 90 days. First time with us? The Level 2 Full Reset gets your vehicle to where this maintenance clean keeps it perfect.'
         ],
         process: [],
         timeEstimate: '2-3 hours',
         benefits: []
       },
-      'Factory Reset': {
-        fullDescription: '🏭 Factory Reset Package – $375\n\nOur Factory Reset is an enhanced version of the Basic Maintenance Detail, designed to get your vehicle looking as close to factory condition as possible.',
+      'Level 2 Full Reset': {
+        fullDescription: '⭐ Level 2 Full Reset – $375\n\nThe standard for any vehicle we haven\'t detailed recently. We\'ll get your vehicle back to a level where we can maintenance clean it for you — after this, each visit booked by day 90 and completed by day 97 is just $225.',
         includes: [
           '**Interior:**',
           '✅ Full interior wipe down',
@@ -473,11 +565,51 @@ const BookingTimeline: React.FC = () => {
           '✅ Brake dust removal from wheels',
           '✅ Layer of wax for protection',
           '✅ Trim and tires dressed',
-          '✅ Black trim restored/redyed',
-          '✅ Engine bay detailed'
+          '✅ Engine bay detailed',
+          '',
+          '**After the Reset:** book again within 90 days and the Level 1 Maintenance rate ($225) applies — keep the maintenance rate while you stay eligible.'
         ],
         process: [],
         timeEstimate: '4-6 hours',
+        benefits: []
+      },
+      'Level 2 Premium': {
+        fullDescription: '🛡️ Level 2 Premium — Reset + Protect – $675\n\nEverything in the Level 2 Full Reset, then we lock the finish in. For keepers.',
+        includes: [
+          '**Everything in the Level 2 Full Reset, plus:**',
+          '✅ 1-step machine polish (removes light swirls, restores gloss)',
+          '✅ Headlight ceramic coating',
+          '✅ Windshield ceramic coating',
+          '✅ Black trim restored/redyed',
+          '',
+          '**Why it works:** every item in the upgrade is exterior appearance and protection — the polish restores the finish, the coatings and trim redye keep it that way.',
+          '',
+          '**Want full-paint protection?** Our 2-5 year full-vehicle Ceramic Coating (from $850) is its own service — ask us which fits your car.'
+        ],
+        process: [],
+        timeEstimate: '5-7 hours',
+        benefits: []
+      },
+      'Level 3 Disaster Detail': {
+        fullDescription: '🚨 Level 3 Disaster Detail – $650\n\nSome cars need rescuing before they can be maintained. Old food, heavy pet hair, set-in stains, years since the last clean — this is our favorite kind of job.',
+        includes: [
+          '**Interior rescue (the focus of this package):**',
+          '✅ Everything in the Level 2 Full Reset interior',
+          '✅ Heavy pet hair removal',
+          '✅ Set-in stain treatment & hot water extraction',
+          '✅ Deep steam clean of all surfaces',
+          '✅ Odor treatment',
+          '✅ Full trash-out and reset of neglected interiors',
+          '',
+          '**Exterior:**',
+          '✅ Basic wash — foam wash, wheels decontaminated, trim and tires dressed',
+          '',
+          '**Not included:** polish or coatings — paint work is always quoted separately so the $650 stays focused where your car needs it most.',
+          '',
+          '**After the rescue:** book again within 90 days and the Level 1 Maintenance rate ($225) keeps it this way.'
+        ],
+        process: [],
+        timeEstimate: '5-8 hours',
         benefits: []
       },
       'Paint Correction': {
@@ -574,28 +706,28 @@ const BookingTimeline: React.FC = () => {
         benefits: []
       },
       'Interior Detail': {
-        fullDescription: '🧹 Interior Detail – Starting at $200\n\nComplete interior cleaning and protection for your vehicle.',
+        fullDescription: '🧹 Interior Detail – Starting at $300\n\nComplete interior deep clean — steam cleaning and a shampoo & extraction of upholstery and carpets are included, not add-ons.',
         includes: [
           '**Interior Services:**',
           '✅ Full interior wipe down',
-          '✅ Conditioner applied to all surfaces',
-          '✅ UV protection on all surfaces',
-          '✅ Full vacuum',
-          '✅ Full disinfection process for cloth surfaces',
+          '✅ Conditioner + UV protection on all surfaces',
+          '✅ Full vacuum & disinfection',
+          '✅ Steam clean of all surfaces',
+          '✅ Upholstery & carpet shampoo + hot water extraction',
+          '✅ Light stain removal',
           '✅ Glass cleaning',
           '✅ Door jambs cleaned and waxed',
           '',
           '**Perfect for:**',
-          '• Vehicles that need interior refresh only',
-          '• Regular interior maintenance',
-          '• Quick turnaround cleaning'
+          '• Interiors that need real cleaning, not a wipe-over',
+          '• Vehicles whose exterior is already handled'
         ],
         process: [],
-        timeEstimate: '1-2 hours',
+        timeEstimate: '2-3 hours',
         benefits: []
       },
       'Exterior Detail': {
-        fullDescription: '✨ Exterior Detail – Starting at $125\n\nComplete exterior wash, decontamination, and protection.',
+        fullDescription: '✨ Exterior Detail – Starting at $150\n\nComplete exterior wash, decontamination, and protection.',
         includes: [
           '**Exterior Services:**',
           '🛞 Wheels decontaminated from brake dust',
@@ -651,6 +783,20 @@ const BookingTimeline: React.FC = () => {
     return serviceDetails[serviceTitle] || null;
   };
 
+  // Live recommendation from the qualify answers. Shown in step 2; never
+  // auto-switches — the customer stays in control.
+  const ladderTitles = ladderServices.map((l) => l.title);
+  const recommendedTitle = (() => {
+    if (dirtinessScore >= 8) return 'Level 3 Disaster Detail';
+    if (level1Eligible) return 'Level 1 Maintenance';
+    return 'Level 2 Full Reset';
+  })();
+  const recommendationReason = (() => {
+    if (dirtinessScore >= 8) return 'That condition level calls for the full interior rescue.';
+    if (level1Eligible) return "Your selected history may qualify for $225 maintenance. We verify your completed detail and service date before confirming.";
+    return 'A one-time reset — then each visit booked by day 90 and completed by day 97 is $225.';
+  })();
+
   return (
     <section id="booking" className="py-4 md:py-6 bg-[#FAFAFA]">
       <div className="container mx-auto px-4 max-w-6xl">
@@ -682,14 +828,14 @@ const BookingTimeline: React.FC = () => {
             <div className="inline-block bg-[#CAF0F8] text-[#023E8A] px-4 py-1 rounded-full font-semibold text-xs mb-2">
               STEP 2 OF 3
             </div>
-            <h3 className="text-xl md:text-2xl font-bold mb-1">Tell us about your vehicle</h3>
-            <p className="text-gray-600 text-sm">30 seconds — this is how we give you an exact quote</p>
+            <h3 className="text-xl md:text-2xl font-bold mb-1">Three quick questions</h3>
+            <p className="text-gray-600 text-sm">30 seconds — then your exact price</p>
           </div>
 
           <div className="max-w-2xl mx-auto bg-white rounded-2xl shadow-xl p-4 md:p-6 space-y-5">
             {/* Vehicle (required) */}
             <div>
-              <label className="block font-semibold text-gray-800 text-sm mb-2">What do you drive?</label>
+              <label className="block font-semibold text-gray-800 text-sm mb-2">1. What do you drive?</label>
               <div className="relative">
                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                   <Car className="h-5 w-5 text-gray-400" />
@@ -705,10 +851,43 @@ const BookingTimeline: React.FC = () => {
               </div>
             </div>
 
+            {/* Level 1 / 90-day gate question. One short line of context —
+                everything else this used to explain lives in the match strip
+                and the info modals now. */}
+            <div>
+              <label className="block font-semibold text-gray-800 text-sm mb-2">
+                2. Has Mikah's detailed this vehicle before?
+              </label>
+              <div className="grid grid-cols-3 gap-2">
+                {[
+                  { v: 'never', label: 'First time here' },
+                  { v: 'us-within-90', label: 'Yes, within 90 days' },
+                  { v: 'us-over-90', label: 'Yes, 90+ days ago' },
+                ].map((opt) => (
+                  <button
+                    key={opt.v}
+                    type="button"
+                    onClick={() => {
+                      trackFieldInteraction(FUNNEL_ID, 'last_detailed');
+                      setLastDetailedByUs(opt.v);
+                    }}
+                    className={`px-2 py-3 rounded-lg border text-sm font-semibold transition-all ${
+                      lastDetailedByUs === opt.v
+                        ? 'bg-[#023E8A] border-[#023E8A] text-white'
+                        : 'bg-gray-50 border-gray-200 text-gray-700 hover:border-[#90E0EF]'
+                    }`}
+                  >
+                    {opt.label}
+                  </button>
+                ))}
+              </div>
+              <p className="text-xs text-gray-500 mt-1.5">For $225 maintenance, book the same vehicle by day 90 after its last completed detail with us; service must take place by day 97. We verify eligibility before confirming.</p>
+            </div>
+
             {/* Cleanliness level (1-10 slider — every answer gets praised) */}
             <div>
               <label htmlFor="dirtiness-slider" className="block font-semibold text-gray-800 text-sm mb-2">
-                How dirty is it? <span className="font-normal text-gray-500">Be honest — we've seen it all!</span>
+                3. How dirty is it? <span className="font-normal text-gray-500">Be honest — we've seen it all!</span>
               </label>
               <div className="flex items-center gap-3">
                 {(() => {
@@ -756,13 +935,71 @@ const BookingTimeline: React.FC = () => {
               </div>
             </div>
 
+            {/* Level 1 gate: picked the maintenance rate but outside the window */}
+            {selectedService === 'Level 1 Maintenance' && lastDetailedByUs && !level1Eligible && (
+              <div className="bg-amber-50 border border-amber-300 rounded-lg px-3 py-3 text-sm" aria-live="polite">
+                <p className="font-semibold text-amber-900 mb-1">The $225 rate is for vehicles we've detailed in the last 90 days</p>
+                <p className="text-amber-800 mb-2">
+                  Start with the Level 2 Full Reset ($375) — after it, each visit booked by day 90 and completed by day 97 is $225.
+                </p>
+                <button
+                  type="button"
+                  onClick={() => setSelectedService('Level 2 Full Reset')}
+                  className="bg-[#023E8A] hover:bg-[#0077B6] text-white font-bold px-4 py-2 rounded-lg text-sm transition-colors"
+                >
+                  Switch to Level 2 Full Reset — $375
+                </button>
+              </div>
+            )}
+
+            {/* Match strip: one line of payoff for the answers above. Green
+                when their pick matches, gold with a one-tap switch when not.
+                Full package breakdowns stay in the step-1 info modals — this
+                strip replaced a full card that overloaded the screen. */}
+            {lastDetailedByUs &&
+              ladderTitles.includes(selectedService) &&
+              !(selectedService === 'Level 1 Maintenance' && !level1Eligible) &&
+              RECOMMEND_DETAILS[recommendedTitle] && (
+              recommendedTitle === selectedService ? (
+                <div className="flex items-center gap-2 bg-green-50 border-2 border-green-400 rounded-lg px-3 py-3" aria-live="polite">
+                  <Check className="w-5 h-5 text-green-600 flex-shrink-0" />
+                  <p className="text-sm text-green-900">
+                    <span className="font-bold">{selectedService} ({RECOMMEND_DETAILS[selectedService].price})</span> is the right fit — {recommendationReason}
+                  </p>
+                </div>
+              ) : (
+                <div className="bg-white border-2 border-[#FFD700] rounded-lg px-3 py-3" aria-live="polite">
+                  <p className="text-sm text-gray-800 mb-2">
+                    <Star className="w-4 h-4 text-[#FFD700] fill-[#FFD700] inline mr-1" />
+                    Your answers point to the <span className="font-bold">{recommendedTitle} ({RECOMMEND_DETAILS[recommendedTitle].price})</span> — {recommendationReason}
+                  </p>
+                  <button
+                    type="button"
+                    onClick={() => setSelectedService(recommendedTitle)}
+                    className="w-full bg-[#FFD700] hover:bg-[#FFC800] text-[#023E8A] font-black py-2.5 px-4 rounded-lg text-sm transition-colors"
+                  >
+                    Switch to {recommendedTitle}
+                  </button>
+                </div>
+              )
+            )}
+
             <button
               onClick={handleDetailsSubmit}
-              disabled={!vehicleType.trim()}
+              disabled={!vehicleType.trim() || !lastDetailedByUs}
               className="w-full bg-gradient-to-r from-[#023E8A] to-[#0077B6] hover:from-[#0077B6] hover:to-[#90E0EF] disabled:from-gray-300 disabled:to-gray-400 disabled:cursor-not-allowed text-white font-bold py-3 px-6 rounded-lg transition-all transform hover:scale-105 disabled:transform-none"
             >
               Continue to Last Step <ChevronRight className="w-5 h-5 inline ml-2" />
             </button>
+            {(!vehicleType.trim() || !lastDetailedByUs) && (
+              <p className="text-center text-xs text-gray-500 -mt-2">
+                {!vehicleType.trim() && !lastDetailedByUs
+                  ? 'Answer questions 1 and 2 above to continue'
+                  : !vehicleType.trim()
+                    ? 'Tell us what you drive (question 1) to continue'
+                    : 'Tell us if we\u2019ve detailed it before (question 2) to continue'}
+              </p>
+            )}
 
             {/* Back Button */}
             <div>
@@ -790,8 +1027,8 @@ const BookingTimeline: React.FC = () => {
 
             {/* Service Cards - 4x2 Grid Style with Text Overlays */}
             <div className="grid grid-cols-2 gap-3 sm:gap-4 md:gap-5">
-              {/* Row 1: Basic Detail & Factory Reset */}
-              {[topRowServices[0], topRowServices[1]].map((service, index) => (
+              {/* Row 1: Level 2 Full Reset & Level 2 Premium — the default and its upgrade */}
+              {[ladderServices[0], ladderServices[1]].map((service, index) => (
                 <div
                   key={index}
                   onClick={() => currentStep === 1 && handleServiceSelect(service.title)}
@@ -832,6 +1069,14 @@ const BookingTimeline: React.FC = () => {
                       </div>
                     )}
 
+                    {service.badge && !service.isPopular && (
+                      <div className="absolute top-3 left-3 z-10">
+                        <div className="bg-white/95 text-[#023E8A] px-3 py-1 rounded text-xs font-bold shadow-lg">
+                          {service.badge}
+                        </div>
+                      </div>
+                    )}
+
                     {selectedService === service.title && (
                       <div className="absolute top-3 right-3 bg-[#0077B6] text-white rounded-full p-2 shadow-lg z-20">
                         <Check className="w-5 h-5" />
@@ -856,6 +1101,70 @@ const BookingTimeline: React.FC = () => {
               ))}
 
               {/* Row 2: Interior & Exterior */}
+              {[ladderServices[2], ladderServices[3]].map((service, index) => (
+                <div
+                  key={index}
+                  onClick={() => currentStep === 1 && handleServiceSelect(service.title)}
+                  className={`
+                    relative rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform group bg-[#0077B6]
+                    ${selectedService === service.title
+                      ? 'ring-4 ring-[#0077B6] scale-[1.02]'
+                      : 'hover:scale-[1.02]'
+                    }
+                    ${currentStep === 1 ? 'cursor-pointer' : 'cursor-not-allowed opacity-70'}
+                  `}
+                >
+                  {/* Large Image with Text Overlay */}
+                  <div className="relative h-44 sm:h-52 md:h-64 overflow-hidden">
+                    <img
+                      src={service.image}
+                      alt={service.altText || service.title}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+
+                    {/* Text Overlay on Image */}
+                    <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-5">
+                      <h4 className="text-white font-bold text-lg sm:text-xl md:text-2xl mb-1 drop-shadow-lg">
+                        {service.title}
+                      </h4>
+                      <p className="text-white/80 text-xs sm:text-sm line-clamp-2 drop-shadow">
+                        {service.description}
+                      </p>
+                    </div>
+
+                    {service.badge && !service.isPopular && (
+                      <div className="absolute top-3 left-3 z-10">
+                        <div className="bg-white/95 text-[#023E8A] px-3 py-1 rounded text-xs font-bold shadow-lg">
+                          {service.badge}
+                        </div>
+                      </div>
+                    )}
+
+                    {selectedService === service.title && (
+                      <div className="absolute top-3 right-3 bg-[#0077B6] text-white rounded-full p-2 shadow-lg z-20">
+                        <Check className="w-5 h-5" />
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Price Bar */}
+                  <div className={`p-3 sm:p-4 flex items-center justify-between ${selectedService === service.title ? 'bg-[#023E8A]' : 'bg-[#0077B6]'}`}>
+                    <div className="text-white font-black text-xl sm:text-2xl">
+                      {service.price}
+                    </div>
+                    <button
+                      onClick={(e) => handleOpenModal(service.title, e)}
+                      className="bg-white/20 hover:bg-white/30 text-white px-3 py-1.5 rounded text-xs sm:text-sm font-semibold transition flex items-center gap-1"
+                    >
+                      <Info className="w-4 h-4" />
+                      Details
+                    </button>
+                  </div>
+                </div>
+              ))}
+
+              {/* Row 3: Paint Correction & Ceramic Coating */}
               {standaloneServices.map((service, index) => (
                 <div
                   key={index}
@@ -888,61 +1197,13 @@ const BookingTimeline: React.FC = () => {
                       </p>
                     </div>
 
-                    {selectedService === service.title && (
-                      <div className="absolute top-3 right-3 bg-[#0077B6] text-white rounded-full p-2 shadow-lg z-20">
-                        <Check className="w-5 h-5" />
+                    {service.badge && !service.isPopular && (
+                      <div className="absolute top-3 left-3 z-10">
+                        <div className="bg-white/95 text-[#023E8A] px-3 py-1 rounded text-xs font-bold shadow-lg">
+                          {service.badge}
+                        </div>
                       </div>
                     )}
-                  </div>
-
-                  {/* Price Bar */}
-                  <div className={`p-3 sm:p-4 flex items-center justify-between ${selectedService === service.title ? 'bg-[#023E8A]' : 'bg-[#0077B6]'}`}>
-                    <div className="text-white font-black text-xl sm:text-2xl">
-                      {service.price}
-                    </div>
-                    <button
-                      onClick={(e) => handleOpenModal(service.title, e)}
-                      className="bg-white/20 hover:bg-white/30 text-white px-3 py-1.5 rounded text-xs sm:text-sm font-semibold transition flex items-center gap-1"
-                    >
-                      <Info className="w-4 h-4" />
-                      Details
-                    </button>
-                  </div>
-                </div>
-              ))}
-
-              {/* Row 3: Paint Correction & Ceramic Coating */}
-              {middleRowServices.map((service, index) => (
-                <div
-                  key={index}
-                  onClick={() => currentStep === 1 && handleServiceSelect(service.title)}
-                  className={`
-                    relative rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform group bg-[#0077B6]
-                    ${selectedService === service.title
-                      ? 'ring-4 ring-[#0077B6] scale-[1.02]'
-                      : 'hover:scale-[1.02]'
-                    }
-                    ${currentStep === 1 ? 'cursor-pointer' : 'cursor-not-allowed opacity-70'}
-                  `}
-                >
-                  {/* Large Image with Text Overlay */}
-                  <div className="relative h-44 sm:h-52 md:h-64 overflow-hidden">
-                    <img
-                      src={service.image}
-                      alt={service.altText || service.title}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
-
-                    {/* Text Overlay on Image */}
-                    <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-5">
-                      <h4 className="text-white font-bold text-lg sm:text-xl md:text-2xl mb-1 drop-shadow-lg">
-                        {service.title}
-                      </h4>
-                      <p className="text-white/80 text-xs sm:text-sm line-clamp-2 drop-shadow">
-                        {service.description}
-                      </p>
-                    </div>
 
                     {selectedService === service.title && (
                       <div className="absolute top-3 right-3 bg-[#0077B6] text-white rounded-full p-2 shadow-lg z-20">
@@ -968,7 +1229,7 @@ const BookingTimeline: React.FC = () => {
               ))}
 
               {/* Row 4: Marine & RV and Routine Reset */}
-              {[topRowServices[2], bottomRowService].map((service, index) => (
+              {[...middleRowServices, marineService, bottomRowService].map((service, index) => (
                 <div
                   key={index}
                   onClick={() => currentStep === 1 && handleServiceSelect(service.title)}
@@ -999,6 +1260,14 @@ const BookingTimeline: React.FC = () => {
                         {service.description}
                       </p>
                     </div>
+
+                    {service.badge && !service.isPopular && (
+                      <div className="absolute top-3 left-3 z-10">
+                        <div className="bg-white/95 text-[#023E8A] px-3 py-1 rounded text-xs font-bold shadow-lg">
+                          {service.badge}
+                        </div>
+                      </div>
+                    )}
 
                     {selectedService === service.title && (
                       <div className="absolute top-3 right-3 bg-[#0077B6] text-white rounded-full p-2 shadow-lg z-20">

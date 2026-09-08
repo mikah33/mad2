@@ -2,6 +2,7 @@ import React from 'react';
 import { CheckCircle, Clock, DollarSign, Phone, ChevronRight, Wind, Sparkles, AlertCircle } from 'lucide-react';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
+import MaintenancePitch from '../components/MaintenancePitch';
 import { Breadcrumbs } from '../components/Breadcrumbs';
 import { SEOHead } from '../components/seo/SEOHead';
 import { generateProductSchema } from '../components/seo/StructuredData';
@@ -90,7 +91,7 @@ const OdorStainRemovalPage: React.FC = () => {
   const faqs = [
     {
       question: "How much does car odor removal cost in Columbia SC?",
-      answer: "Standalone odor removal is $250. If your interior also needs deep cleaning, odor removal with a full interior steam & shampoo is $400 - the better option for smoke, pet, or mildew odors that have soaked into carpets and seats. We come to your home or office anywhere in the Columbia-Lexington area."
+      answer: "Professional odor removal is $250 - an enzymatic treatment plus ozone, a professional-grade odor bomb that neutralizes the smell at the source. If your interior also needs deep cleaning - heavy pet hair, set-in stains, old food - that's our Level 3 Disaster Detail at $650, which includes the full odor treatment along with a complete interior rescue. We come to your home or office anywhere in the Columbia-Lexington area."
     },
     {
       question: "Does detailing remove pet odor from a car?",
@@ -118,7 +119,7 @@ const OdorStainRemovalPage: React.FC = () => {
     <>
       <SEOHead
         title="Car Odor & Stain Removal Columbia SC | From $250"
-        description="Car odor & stain removal from $250 in Columbia & Lexington SC. Pet odor, smoke smell, spills - $400 with full interior steam & shampoo. (803) 667-8731."
+        description="Car odor removal from $250 in Columbia & Lexington SC - professional enzymatic + ozone treatment for pet odor, smoke smell, mildew. Interior need deep cleaning too? Level 3 Disaster Detail $650. (803) 667-8731."
         keywords="car odor removal near me, interior stain removal near me, car odor removal columbia sc, car stain removal, pet odor removal car, smoke smell removal car, ozone treatment car, car seat stain removal, mobile odor removal lexington sc"
         canonical="https://mikahsmobiledetailingsc.com/services/odor-stain-removal/"
         ogImage="https://mikahsmobiledetailingsc.com/interior2.jpg"
@@ -142,9 +143,10 @@ const OdorStainRemovalPage: React.FC = () => {
                   Car Odor Removal &amp; Interior Stain Removal in Columbia, SC
                 </h1>
                 <p className="text-xl mb-8 text-orange-100">
-                  Pet odor, smoke smell, mildew, spilled milk, coffee stains - we treat the source,
-                  not just the symptom. $250 standalone, $400 with a full interior steam &amp; shampoo.
-                  Mobile service across Columbia and Lexington - we come to you.
+                  Pet odor, smoke smell, mildew - we treat the source, not just the symptom.
+                  Professional odor treatment from $250. If the interior needs deep cleaning too,
+                  our Level 3 Disaster Detail ($650) includes it. Mobile service across Columbia
+                  and Lexington - we come to you.
                 </p>
                 <div className="flex flex-wrap gap-4">
                   <a
@@ -258,9 +260,10 @@ const OdorStainRemovalPage: React.FC = () => {
                   <li className="flex items-start gap-3">
                     <CheckCircle className="w-6 h-6 text-orange-500 flex-shrink-0 mt-1" />
                     <div>
-                      <strong>Full Interior Steam &amp; Shampoo ($400 option):</strong> Adds a
-                      complete interior shampoo and extraction of all carpet and upholstery - the
-                      right call when odors have soaked into soft surfaces.
+                      <strong>Need deep cleaning too?</strong> When odors have soaked into carpets
+                      and seats - or the interior has heavy pet hair, set-in stains, or old food -
+                      the <a href="/services/full-detail" className="text-orange-600 font-semibold hover:underline">Level 3 Disaster Detail ($650)</a> is
+                      the right call: a complete interior rescue with the odor treatment included.
                     </div>
                   </li>
                 </ul>
@@ -276,14 +279,17 @@ const OdorStainRemovalPage: React.FC = () => {
                     <div className="bg-white p-4 rounded-lg">
                       <p className="font-bold text-lg">Odor Removal - $250</p>
                       <p className="text-gray-600 text-sm">
-                        Standalone treatment: inspection, enzymatic cleaning, steam, and ozone as needed.
+                        Professional odor treatment: inspection, enzymatic cleaning, and ozone -
+                        a professional-grade odor bomb that neutralizes the smell at its source.
                       </p>
                     </div>
                     <div className="bg-white p-4 rounded-lg border-2 border-orange-500">
-                      <p className="font-bold text-lg">Odor Removal + Full Interior Steam &amp; Shampoo - $400</p>
+                      <p className="font-bold text-lg">Interior needs deep cleaning too? Level 3 Disaster Detail - $650</p>
                       <p className="text-gray-600 text-sm">
-                        Best for smoke, pet, and mildew odors. Complete interior steam clean and
-                        shampoo with extraction, plus the full odor treatment.
+                        For odors soaked into carpets and seats, heavy pet hair, set-in stains, or
+                        old food: a complete interior rescue - steam, shampoo &amp; extraction,
+                        pet hair removal - with the full odor treatment included, plus a basic
+                        exterior wash.
                       </p>
                     </div>
                   </div>
@@ -296,7 +302,7 @@ const OdorStainRemovalPage: React.FC = () => {
                     <a href="/services/interior-detailing/" className="text-orange-600 font-semibold hover:underline">
                       interior detailing
                     </a>{' '}
-                    from $200, or compare everything on our{' '}
+                    from $300, or compare everything on our{' '}
                     <a href="/pricing/" className="text-orange-600 font-semibold hover:underline">
                       pricing page
                     </a>.
@@ -376,8 +382,9 @@ const OdorStainRemovalPage: React.FC = () => {
               Ready for a Fresh-Smelling, Stain-Free Interior?
             </h2>
             <p className="text-xl mb-8 text-orange-100">
-              Book odor and stain removal in Columbia, Lexington, or surrounding areas.
-              $250 standalone or $400 with a full interior steam &amp; shampoo - we come to you.
+              Book odor removal in Columbia, Lexington, or surrounding areas.
+              $250 for the professional odor treatment - or the Level 3 Disaster Detail ($650)
+              when the interior needs the full rescue. We come to you.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
               <a
@@ -396,13 +403,19 @@ const OdorStainRemovalPage: React.FC = () => {
             <p className="mt-8 text-orange-100">
               Also see:{' '}
               <a href="/services/interior-detailing/" className="underline font-semibold">
-                Interior Detailing from $200
+                Interior Detailing from $300
               </a>{' '}
               ·{' '}
               <a href="/pricing/" className="underline font-semibold">
                 Full Pricing
               </a>
             </p>
+          </div>
+        </section>
+
+                <section className="py-10 bg-white">
+          <div className="container mx-auto px-4 max-w-4xl">
+            <MaintenancePitch variant="card" context="Once the odor's gone, keep it gone. After any full detail, rebooking within 90 days locks the $225 maintenance rate — regular upkeep is what stops smells and stains from ever setting in again." />
           </div>
         </section>
 

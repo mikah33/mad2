@@ -10,18 +10,19 @@ const FullDetailPage: React.FC = () => {
   const scrollToQuote = () => { window.location.href = '/#quote'; };
 
   const basicPackageSchema = generateProductSchema({
-    name: "Basic Detail Package",
-    description: "Complete interior and exterior detail. Full wipe down, conditioning, vacuum, disinfection, foam wash, wheels decontaminated, protective wax layer.",
-    price: "225",
+    name: "Level 2 Full Reset",
+    description: "Complete interior and exterior deep reset. Full wipe down, conditioning, vacuum, disinfection, light stain removal, shampoo & extraction, foam wash, engine bay, protective wax layer.",
+    price: "375",
     features: [
       "Interior full wipe down",
       "Conditioner + UV protection",
-      "Complete vacuum",
-      "Disinfection",
+      "Complete vacuum & disinfection",
+      "Light stain removal",
+      "Shampoo & extraction",
       "Glass cleaned",
       "Door jambs cleaned & waxed",
-      "Wheels decontaminated",
       "Foam contact wash",
+      "Engine bay detailed",
       "Protective wax layer",
       "Wheels & tires dressed"
     ],
@@ -31,20 +32,15 @@ const FullDetailPage: React.FC = () => {
   });
 
   const factoryResetSchema = generateProductSchema({
-    name: "Factory Reset Package",
-    description: "Deep interior and exterior restoration. Includes shampoo & extraction, light stain removal, brake dust removal, and complete protection.",
-    price: "375",
+    name: "Level 2 Premium — Reset + Protect",
+    description: "Everything in the Level 2 Full Reset plus a 1-step machine polish, headlight ceramic coating, windshield ceramic coating, and black trim restored/redyed.",
+    price: "675",
     features: [
-      "Full wipe down + conditioner + UV protection",
-      "Vacuum + disinfection",
-      "Light stain removal",
-      "Shampoo & extraction",
-      "Glass cleaned",
-      "Door jambs cleaned & waxed",
-      "Foam contact wash",
-      "Brake dust removal",
-      "Protective wax layer",
-      "Tires & rims dressed"
+      "Everything in the Level 2 Full Reset",
+      "1-step machine polish",
+      "Headlight ceramic coating",
+      "Windshield ceramic coating",
+      "Black trim restored/redyed"
     ],
     image: "https://mikahsmobiledetailingsc.com/exterior1.jpg",
     url: "https://mikahsmobiledetailingsc.com/services/full-detail",
@@ -56,7 +52,7 @@ const FullDetailPage: React.FC = () => {
   return (
     <>
       <SEOHead
-        title="Full Car Detail Columbia SC | Interior + Exterior | From $225"
+        title="Full Car Detail Columbia SC | Interior + Exterior | $375 Full Reset"
         description="Complete full car detailing in Columbia SC. Interior + exterior detailing package. Professional cleaning, protection, and restoration. Mobile service to Lexington, Irmo, Cayce. Book now!"
         keywords="full car detailing, complete auto detailing, interior exterior detailing, full detail package, car detailing near me, mobile auto detailing, vehicle detailing services, comprehensive car cleaning"
         canonical="https://mikahsmobiledetailingsc.com/services/full-detail/"
@@ -78,7 +74,7 @@ const FullDetailPage: React.FC = () => {
                   Mobile service throughout Columbia, Lexington, West Columbia, Irmo, and Cayce.
                 </p>
                 <div className="flex flex-wrap gap-4">
-                  <a href="/book?service=basic-detail" className="bg-white text-orange-600 px-8 py-4 rounded-lg font-bold hover:bg-orange-50 transition">
+                  <a href="/book?service=level-2-reset" className="bg-white text-orange-600 px-8 py-4 rounded-lg font-bold hover:bg-orange-50 transition">
                     Book Online <ChevronRight className="w-5 h-5 inline" />
                   </a>
                   <button onClick={scrollToQuote} className="bg-white text-orange-600 px-8 py-4 rounded-lg font-bold hover:bg-orange-50 transition">
@@ -106,9 +102,9 @@ const FullDetailPage: React.FC = () => {
             <h2 className="text-3xl font-bold text-center mb-12">Our Full Detail Packages</h2>
             <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
               <div className="bg-white p-8 rounded-lg shadow-xl border-2 border-orange-200">
-                <h3 className="text-2xl font-bold mb-2">Basic Detail Package</h3>
-                <p className="text-3xl font-bold text-orange-600 mb-4">$225</p>
-                <p className="text-sm text-gray-600 mb-4">Perfect for regular maintenance</p>
+                <h3 className="text-2xl font-bold mb-2">Level 2 Full Reset</h3>
+                <p className="text-3xl font-bold text-orange-600 mb-4">Starts at $375</p>
+                <p className="text-sm text-gray-600 mb-4">The standard — gets your vehicle back to a level we can maintenance clean. Rebook the same vehicle by day 90, with service by day 97: $225.</p>
                 <div className="space-y-3 mb-6">
                   <h4 className="font-bold">Interior:</h4>
                   <ul className="space-y-2 text-sm">
@@ -116,6 +112,8 @@ const FullDetailPage: React.FC = () => {
                     <li className="flex gap-2"><CheckCircle className="w-5 h-5 text-orange-500 flex-shrink-0" />Conditioner + UV protection</li>
                     <li className="flex gap-2"><CheckCircle className="w-5 h-5 text-orange-500 flex-shrink-0" />Complete vacuum</li>
                     <li className="flex gap-2"><CheckCircle className="w-5 h-5 text-orange-500 flex-shrink-0" />Disinfection</li>
+                    <li className="flex gap-2"><CheckCircle className="w-5 h-5 text-orange-500 flex-shrink-0" />Light stain removal</li>
+                    <li className="flex gap-2"><CheckCircle className="w-5 h-5 text-orange-500 flex-shrink-0" />Shampoo & extraction</li>
                     <li className="flex gap-2"><CheckCircle className="w-5 h-5 text-orange-500 flex-shrink-0" />Glass cleaned</li>
                     <li className="flex gap-2"><CheckCircle className="w-5 h-5 text-orange-500 flex-shrink-0" />Door jambs cleaned & waxed</li>
                   </ul>
@@ -125,6 +123,7 @@ const FullDetailPage: React.FC = () => {
                     <li className="flex gap-2"><CheckCircle className="w-5 h-5 text-orange-500 flex-shrink-0" />Foam contact wash</li>
                     <li className="flex gap-2"><CheckCircle className="w-5 h-5 text-orange-500 flex-shrink-0" />Protective wax layer</li>
                     <li className="flex gap-2"><CheckCircle className="w-5 h-5 text-orange-500 flex-shrink-0" />Wheels & tires dressed</li>
+                    <li className="flex gap-2"><CheckCircle className="w-5 h-5 text-orange-500 flex-shrink-0" />Engine bay detailed</li>
                   </ul>
                 
       </div>
@@ -133,28 +132,19 @@ const FullDetailPage: React.FC = () => {
 
               <div className="bg-gradient-to-br from-orange-50 to-orange-100 p-8 rounded-lg shadow-xl border-4 border-orange-500 relative">
                 <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-orange-500 text-white px-4 py-1 rounded-full text-sm font-bold">
-                  MOST POPULAR
+                  MOST POPULAR UPGRADE
                 
       </div>
-                <h3 className="text-2xl font-bold mb-2">Factory Reset Package</h3>
-                <p className="text-3xl font-bold text-orange-600 mb-4">$375</p>
-                <p className="text-sm text-gray-600 mb-4">Complete restoration experience</p>
+                <h3 className="text-2xl font-bold mb-2">Level 2 Premium — Reset + Protect</h3>
+                <p className="text-3xl font-bold text-orange-600 mb-4">Starts at $675</p>
+                <p className="text-sm text-gray-600 mb-4">Reset the car, then lock the finish in — for keepers</p>
                 <div className="space-y-3 mb-6">
-                  <h4 className="font-bold">Interior:</h4>
+                  <h4 className="font-bold">Everything in the Level 2 Full Reset, plus:</h4>
                   <ul className="space-y-2 text-sm">
-                    <li className="flex gap-2"><CheckCircle className="w-5 h-5 text-orange-500 flex-shrink-0" />Full wipe down + conditioner + UV protection</li>
-                    <li className="flex gap-2"><CheckCircle className="w-5 h-5 text-orange-500 flex-shrink-0" />Vacuum + disinfection</li>
-                    <li className="flex gap-2"><CheckCircle className="w-5 h-5 text-orange-500 flex-shrink-0" />Light stain removal</li>
-                    <li className="flex gap-2"><CheckCircle className="w-5 h-5 text-orange-500 flex-shrink-0" />Shampoo & extraction</li>
-                    <li className="flex gap-2"><CheckCircle className="w-5 h-5 text-orange-500 flex-shrink-0" />Glass cleaned</li>
-                    <li className="flex gap-2"><CheckCircle className="w-5 h-5 text-orange-500 flex-shrink-0" />Door jambs cleaned & waxed</li>
-                  </ul>
-                  <h4 className="font-bold pt-3">Exterior:</h4>
-                  <ul className="space-y-2 text-sm">
-                    <li className="flex gap-2"><CheckCircle className="w-5 h-5 text-orange-500 flex-shrink-0" />Foam contact wash</li>
-                    <li className="flex gap-2"><CheckCircle className="w-5 h-5 text-orange-500 flex-shrink-0" />Brake dust removal</li>
-                    <li className="flex gap-2"><CheckCircle className="w-5 h-5 text-orange-500 flex-shrink-0" />Protective wax layer</li>
-                    <li className="flex gap-2"><CheckCircle className="w-5 h-5 text-orange-500 flex-shrink-0" />Tires & rims dressed</li>
+                    <li className="flex gap-2"><CheckCircle className="w-5 h-5 text-orange-500 flex-shrink-0" />1-step machine polish — removes light swirls, restores gloss</li>
+                    <li className="flex gap-2"><CheckCircle className="w-5 h-5 text-orange-500 flex-shrink-0" />Headlight ceramic coating</li>
+                    <li className="flex gap-2"><CheckCircle className="w-5 h-5 text-orange-500 flex-shrink-0" />Windshield ceramic coating</li>
+                    <li className="flex gap-2"><CheckCircle className="w-5 h-5 text-orange-500 flex-shrink-0" />Black trim restored / redyed</li>
                   </ul>
                   <h4 className="font-bold pt-3">Add-On Options:</h4>
                   <ul className="space-y-2 text-sm">
@@ -205,12 +195,12 @@ const FullDetailPage: React.FC = () => {
             <div className="space-y-6">
               <div className="bg-white p-6 rounded-lg shadow-lg">
                 <h3 className="text-xl font-bold mb-3">How long does full detailing take?</h3>
-                <p className="text-gray-600">Basic Detail Package takes 2-4 hours. Factory Reset Package takes 3-5 hours depending on vehicle size and condition.</p>
+                <p className="text-gray-600">The Level 2 Full Reset takes 3-5 hours. The Level 2 Premium takes 5-7 hours, and the Level 3 Disaster Detail 5-8 hours, depending on vehicle size and condition.</p>
               
       </div>
               <div className="bg-white p-6 rounded-lg shadow-lg">
-                <h3 className="text-xl font-bold mb-3">What's the difference between Basic and Factory Reset?</h3>
-                <p className="text-gray-600">Basic is perfect for regular maintenance. Factory Reset includes deep shampooing, extraction, stain removal, and brake dust removal - ideal for vehicles needing more intensive cleaning.</p>
+                <h3 className="text-xl font-bold mb-3">What's the difference between the detail levels?</h3>
+                <p className="text-gray-600">The Level 2 Full Reset ($375) is the standard — a deep clean that gets your vehicle to where we can maintenance clean it. Level 2 Premium ($675) adds a 1-step polish, headlight and windshield ceramic coatings, and trim redye. Level 3 Disaster Detail ($650) is the interior rescue for heavy neglect. And once we've detailed your car, the Level 1 Maintenance rate is just $225 anytime you rebook the same vehicle by day 90, with service by day 97.</p>
               
       </div>
               <div className="bg-white p-6 rounded-lg shadow-lg">
@@ -220,7 +210,7 @@ const FullDetailPage: React.FC = () => {
       </div>
               <div className="bg-white p-6 rounded-lg shadow-lg">
                 <h3 className="text-xl font-bold mb-3">How often should I get full detailing?</h3>
-                <p className="text-gray-600">We recommend full detailing every 3-4 months for optimal protection and appearance. More frequent if you have pets, children, or drive extensively.</p>
+                <p className="text-gray-600">Our 90-day maintenance plan is built exactly for this: after your Level 2 Full Reset, rebook the same vehicle by day 90, with service by day 97 and each qualifying maintenance visit is just $225 — your car never falls back to needing a full reset again.</p>
               
       </div>
             
@@ -236,7 +226,7 @@ const FullDetailPage: React.FC = () => {
               Book your full car detail today. Mobile service means we come to you!
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
-              <a href="/book?service=basic-detail" className="bg-white text-orange-600 px-8 py-4 rounded-lg font-bold hover:bg-orange-50 transition">Book Online</a>
+              <a href="/book?service=level-2-reset" className="bg-white text-orange-600 px-8 py-4 rounded-lg font-bold hover:bg-orange-50 transition">Book Online</a>
               <button onClick={scrollToQuote} className="bg-white text-orange-600 px-8 py-4 rounded-lg font-bold hover:bg-orange-50 transition">Get Free Quote</button>
               <a href="tel:+18036678731" className="bg-orange-700 text-white px-8 py-4 rounded-lg font-bold hover:bg-orange-600 transition">Call (803) 667-8731</a>
             

@@ -10,6 +10,7 @@ import { faqs } from '../data/faqs-comprehensive';
 import { NotFoundPage } from './NotFoundPage';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
+import MaintenancePitch from '../components/MaintenancePitch';
 
 // Service-specific content
 const serviceContent: Record<string, {
@@ -529,7 +530,13 @@ export const ServiceDetailPage = () => {
         </section>
       </div>
 
-      <Footer />
+              <section className="py-10 bg-white">
+          <div className="container mx-auto px-4 max-w-4xl">
+            <MaintenancePitch variant="card" />
+          </div>
+        </section>
+
+        <Footer />
     </>
   );
 };

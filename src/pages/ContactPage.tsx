@@ -1,5 +1,6 @@
 import { SEOHead } from '../components/seo/SEOHead';
 import { generateEnhancedLocalBusinessSchema } from '../components/seo/EnhancedLocalBusinessSchema';
+import MaintenancePitch from '../components/MaintenancePitch';
 
 export const ContactPage = () => {
   // Generate enhanced comprehensive LocalBusiness schema
@@ -28,6 +29,10 @@ export const ContactPage = () => {
         {/* Content placeholder */}
         <div className="container mx-auto px-4 py-12 max-w-4xl">
           <p className="text-gray-600">Content to be added</p>
+        </div>
+
+        <div className="container mx-auto px-4 max-w-4xl pb-12">
+          <MaintenancePitch variant="banner" />
         </div>
       </div>
     </>

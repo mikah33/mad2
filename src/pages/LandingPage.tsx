@@ -200,7 +200,8 @@ const LandingPage: React.FC = () => {
                 <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-3 leading-tight">
                   Get Started<br />With Your<br />Local Detailer.
                 </h2>
-                <p className="text-xl sm:text-2xl text-gray-600">Choose your service:</p>
+                <p className="text-xl sm:text-2xl text-gray-600">Full resets from <span className="font-bold text-gray-900">$375</span> — then just <span className="font-bold text-gray-900">$225</span> maintenance details every 90 days.</p>
+                <p className="text-lg sm:text-xl text-gray-500 mt-1">Choose your service:</p>
               </div>
               {/* Mikah cutout - positioned right */}
               <div

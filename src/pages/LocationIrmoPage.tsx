@@ -34,17 +34,17 @@ export const LocationIrmoPage = () => {
   // Real services from homepage
   const realServices = [
     {
-      title: 'Basic Detail Package',
-      price: '$225',
-      duration: '2-3 hours',
-      description: 'Interior full wipe down, conditioner + UV protection, vacuum, disinfection, glass cleaned. Exterior wheels decontaminated, foam wash, protective wax, wheels & tires dressed.',
+      title: 'Level 2 Full Reset',
+      price: '$375',
+      duration: '3-5 hours',
+      description: 'Interior wipe down, conditioner + UV protection, vacuum + disinfection, light stain removal, shampoo & extraction, glass cleaned. Exterior foam wash, brake dust removal, protective wax, tires & rims dressed, engine bay detailed. Rebook the same vehicle by day 90, with service by day 97 and Level 1 Maintenance Details are just $225.',
       link: '/services/full-detail'
     },
     {
-      title: 'Factory Reset Package',
-      price: '$375',
-      duration: '3-4 hours',
-      description: 'Interior wipe down, conditioner + UV protection, vacuum + disinfection, light stain removal, shampoo & extraction, glass cleaned. Exterior foam wash, brake dust removal, protective wax, tires & rims dressed.',
+      title: 'Level 2 Premium',
+      price: '$675',
+      duration: '5-7 hours',
+      description: 'Everything in the Level 2 Full Reset plus 1-step machine polish, headlight ceramic coating, windshield ceramic coating, and black trim restored & redyed.',
       link: '/services/full-detail'
     },
     {
@@ -81,7 +81,7 @@ export const LocationIrmoPage = () => {
   const locationFAQs = [
     {
       question: 'How much does car detailing cost in Irmo SC?',
-      answer: 'Car detailing in Irmo SC starts at $225 for our Basic Detail Package and $375 for our Factory Reset Package. Ceramic coatings, paint corrections, and specialty services require quotes based on vehicle size and condition. We provide free quotes for all Irmo residents.'
+      answer: 'Car detailing in Irmo SC starts at $375 for our Level 2 Full Reset. Once we\'ve detailed your vehicle, our $225 Level 1 Maintenance Detail is available anytime you rebook the same vehicle by day 90, with service by day 97. Ceramic coatings, paint corrections, and specialty services require quotes based on vehicle size and condition. We provide free quotes for all Irmo residents.'
     },
     {
       question: 'What is the best mobile car detailing service in Irmo SC?',
@@ -97,11 +97,11 @@ export const LocationIrmoPage = () => {
     },
     {
       question: 'How long does auto detailing take in Irmo SC?',
-      answer: 'Auto detailing in Irmo SC typically takes 2-4 hours depending on the package. Our Basic Detail Package takes 2-3 hours while our Factory Reset Package with shampoo & extraction takes 3-4 hours. We work at your location so you can continue your day while we detail your vehicle.'
+      answer: 'Auto detailing in Irmo SC typically takes 2-5 hours depending on the package. Our Level 2 Full Reset with shampoo & extraction takes 3-5 hours, while a Level 1 Maintenance Detail for returning customers takes 2-3 hours. We work at your location so you can continue your day while we detail your vehicle.'
     },
     {
       question: 'Do you offer mobile detailing in Irmo SC?',
-      answer: 'Yes! Our mobile detailing service in Irmo SC includes complete interior detailing, exterior detailing, and ceramic coating starting at $225 for our Basic Detail Package. We bring water, power, and all equipment needed. Perfect for Irmo residents who want professional results without leaving home.'
+      answer: 'Yes! Our mobile detailing service in Irmo SC includes complete interior detailing, exterior detailing, and ceramic coating — full details start at $375 with our Level 2 Full Reset. We bring water, power, and all equipment needed. Perfect for Irmo residents who want professional results without leaving home.'
     },
     {
       question: 'What areas of Irmo SC do you serve for auto detailing?',
@@ -441,7 +441,7 @@ export const LocationIrmoPage = () => {
               </p>
 
               <p>
-                Interior cleanliness matters especially for families with children participating in Dutch Fork youth sports, pets that love trips to Harbison State Forest, or anyone who spends significant time in their vehicle. Our extraction equipment removes dirt, allergens, and bacteria embedded deep in carpet fibers and upholstery where vacuuming cannot reach. The Factory Reset Package includes full shampoo and extraction that restores interiors to like-new condition, eliminating odors and allergens while refreshing fabric and leather surfaces.
+                Interior cleanliness matters especially for families with children participating in Dutch Fork youth sports, pets that love trips to Harbison State Forest, or anyone who spends significant time in their vehicle. Our extraction equipment removes dirt, allergens, and bacteria embedded deep in carpet fibers and upholstery where vacuuming cannot reach. The Level 2 Full Reset includes full shampoo and extraction that restores interiors to like-new condition, eliminating odors and allergens while refreshing fabric and leather surfaces — and for heavy pet hair and set-in messes, our Level 3 Disaster Detail takes the rescue even further.
               </p>
 
               <p>
@@ -489,11 +489,11 @@ export const LocationIrmoPage = () => {
 
             <div className="prose prose-lg max-w-none text-gray-700 space-y-6">
               <p>
-                The Basic Detail Package at $225 delivers complete interior and exterior care for vehicles on a regular maintenance schedule. Interior service includes thorough cleaning of all surfaces, UV-protective conditioner to guard against sun damage, complete vacuuming, sanitization, and streak-free glass cleaning. Exterior work includes wheel decontamination, foam wash using pH-balanced products safe for all finishes, protective wax application, and wheel and tire dressing for that fresh, finished appearance.
+                The Level 2 Full Reset at $375 delivers complete interior and exterior care and gets your vehicle back to a level where we can maintenance clean it for you — rebook the same vehicle by day 90, with service by day 97 and the $225 Level 1 Maintenance Detail rate applies. Interior service includes thorough cleaning of all surfaces, UV-protective conditioner to guard against sun damage, complete vacuuming, sanitization, targeted stain removal, full carpet and upholstery shampoo with hot water extraction, and streak-free glass cleaning. Exterior work includes wheel decontamination, foam wash using pH-balanced products safe for all finishes, protective wax application, engine bay detailing, and wheel and tire dressing for that fresh, finished appearance.
               </p>
 
               <p>
-                Our Factory Reset Package at $375 provides deep restoration for vehicles needing more intensive attention. Everything in the Basic Package is included, plus targeted stain removal, full carpet and upholstery shampoo with hot water extraction, and comprehensive brake dust removal. This package is particularly popular with Irmo families whose vehicles have accumulated wear from kids, pets, and the active lifestyle that makes Dutch Fork communities so appealing.
+                Our Level 2 Premium at $675 adds lasting protection for vehicles worth keeping — a 1-step machine polish, headlight and windshield ceramic coatings, and restored black trim on top of everything in the Full Reset. And for vehicles that have accumulated serious wear from kids, pets, and the active lifestyle that makes Dutch Fork communities so appealing, the Level 3 Disaster Detail at $650 handles heavy pet hair, set-in stains, and odors with deep steam cleaning and hot water extraction, paired with a basic exterior wash.
               </p>
 
               <p>
