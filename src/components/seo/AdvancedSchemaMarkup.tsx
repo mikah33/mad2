@@ -205,7 +205,7 @@ export const AdvancedSchemaMarkup: React.FC<AdvancedSchemaMarkupProps> = ({
     sameAs: [
       'https://www.google.com/maps/place/Mikah+s+Auto+Detailing',
       'https://www.facebook.com/mikahsautodetailing',
-      'https://www.instagram.com/mikahsautodetailing',
+      'https://www.instagram.com/mikahsautodetail_/',
       'https://www.yelp.com/biz/mikahs-auto-detailing'
     ],
 

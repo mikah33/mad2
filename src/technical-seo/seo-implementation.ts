@@ -279,7 +279,7 @@ ${JSON.stringify(combinedSchema, null, 2)}
       },
       "sameAs": [
         "https://www.facebook.com/mikahsautodetailing",
-        "https://www.instagram.com/mikahsautodetailing"
+        "https://www.instagram.com/mikahsautodetail_/"
       ]
     }
     </script>

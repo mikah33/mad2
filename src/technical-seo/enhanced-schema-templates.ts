@@ -229,7 +229,7 @@ export function generateEnhancedLocalBusinessSchema(cityKey: string) {
     ],
     "sameAs": [
       "https://www.facebook.com/mikahsautodetailing",
-      "https://www.instagram.com/mikahsautodetailing",
+      "https://www.instagram.com/mikahsautodetail_/",
       "https://www.google.com/maps/place/Mikah's+Auto+Detailing"
     ]
   };

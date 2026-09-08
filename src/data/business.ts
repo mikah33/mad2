@@ -18,7 +18,7 @@ export const businessInfo = {
   ],
   socialMedia: {
     facebook: 'https://www.facebook.com/mikahsautodetailing',
-    instagram: 'https://www.instagram.com/mikahsautodetailing',
+    instagram: 'https://www.instagram.com/mikahsautodetail_/',
     twitter: 'https://twitter.com/mikahsdetailing',
     youtube: 'https://youtube.com/@mikahsautodetailing'
   },

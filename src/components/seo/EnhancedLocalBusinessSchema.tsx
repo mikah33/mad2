@@ -299,7 +299,7 @@ export const generateEnhancedLocalBusinessSchema = (
     // Social Media & Web Presence
     sameAs: [
       'https://www.facebook.com/mikahsautodetailing',
-      'https://www.instagram.com/mikahsautodetailing',
+      'https://www.instagram.com/mikahsautodetail_/',
       'https://www.google.com/maps/place/Mikah+s+Auto+Detailing',
       'https://www.yelp.com/biz/mikahs-auto-detailing-columbia'
     ],

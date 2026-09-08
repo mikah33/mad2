@@ -156,7 +156,7 @@ export const generateAutomotiveBusinessSchema = (
     // Social Media
     sameAs: [
       'https://www.facebook.com/mikahsautodetailing',
-      'https://www.instagram.com/mikahsautodetailing',
+      'https://www.instagram.com/mikahsautodetail_/',
       'https://www.google.com/maps/place/Mikah+s+Auto+Detailing'
     ],
 
@@ -439,7 +439,7 @@ export const generateAutomotiveOrganizationSchema = () => {
     // Social Media
     sameAs: [
       'https://www.facebook.com/mikahsautodetailing',
-      'https://www.instagram.com/mikahsautodetailing'
+      'https://www.instagram.com/mikahsautodetail_/'
     ]
   };
 };

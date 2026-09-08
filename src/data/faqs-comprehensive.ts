@@ -642,7 +642,7 @@ export const generateFAQSchema = (faqList: FAQ[] = faqs) => {
         ],
         "sameAs": [
           "https://www.facebook.com/mikahsautodetailing",
-          "https://www.instagram.com/mikahsautodetailing"
+          "https://www.instagram.com/mikahsautodetail_/"
         ]
       }
     },
