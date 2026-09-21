@@ -317,8 +317,8 @@ export const PricingPage = () => {
   return (
     <>
       <SEOHead
-        title="Car Detailing Prices 2026 — Columbia SC Price List"
-        description="2026 car detailing price list for Columbia &amp; Lexington SC: Level 2 Full Reset $375, Level 2 Premium $675, Level 3 Disaster Detail $650, $225 maintenance rate within 90 days. Mobile — we come to you. Free quote: (803) 667-8731."
+        title="Car Detailing Prices Columbia SC — Exterior From $150 · We Come to You | Mikah's"
+        description="Car detailing prices for Columbia &amp; Lexington SC: exterior from $150, interior from $350, full detail $375. Mobile — we come to you. 5.0★ rated. Free quote: (803) 667-8731."
         keywords="car detailing prices, auto detailing prices, how much does car detailing cost, car detailing prices columbia sc, auto detailing prices columbia sc, mobile detailing prices, interior detailing cost, exterior detailing prices, detailing packages pricing"
         canonical="https://mikahsmobiledetailingsc.com/pricing/"
         ogType="website"

@@ -177,12 +177,12 @@ export const LocationColumbiaPage = () => {
   return (
     <>
       <SEOHead
-        title="Auto Detailing Columbia SC | $375 Full Detail — Mikah's Auto Detailing"
-        description="Auto detailing in Columbia SC — we come to you. 5.0-star mobile detailing: full detail $375, interior from $350, exterior from $150. Call (803) 667-8731."
+        title="Auto Detailing Services Columbia SC | Mobile · Full Detail $375 | Mikah's"
+        description="Mobile auto detailing services in Columbia SC — we come to you. 5.0★ rated: full detail $375, exterior from $150, interior from $350. Serving all of Columbia. (803) 667-8731."
         keywords={allKeywords.join(', ') + ', columbia detailing, columbia auto detail, auto detail columbia, columbia mobile detailing, detailing columbia sc, professional car detailing columbia, best columbia detailing'}
         canonical="https://mikahsmobiledetailingsc.com/locations/columbia-sc/"
-        ogDescription="Auto detailing in Columbia SC — we come to you. 5.0-star mobile detailing: full detail $375, interior from $350, exterior from $150. Call (803) 667-8731."
-        twitterDescription="Auto detailing in Columbia SC — we come to you. 5.0-star mobile detailing: full detail $375, interior from $350, exterior from $150. Call (803) 667-8731."
+        ogDescription="Mobile auto detailing services in Columbia SC — we come to you. 5.0★ rated: full detail $375, exterior from $150, interior from $350. Serving all of Columbia. (803) 667-8731."
+        twitterDescription="Mobile auto detailing services in Columbia SC — we come to you. 5.0★ rated: full detail $375, exterior from $150, interior from $350. Serving all of Columbia. (803) 667-8731."
         schema={schemas}
       />
 
