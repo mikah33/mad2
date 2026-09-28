@@ -51,8 +51,8 @@ export const HomePage = () => {
   return (
     <>
       <SEOHead
-        title="Mobile Car Detailing Columbia & Lexington SC | 5-Star Rated | Mikah's"
-        description="#1 mobile auto detailing in Columbia & Lexington SC. Full interior/exterior reset $375, then $225 maintenance details on our 90-day plan. 5.0★ rated. Call (803) 667-8731!"
+        title="Auto Detailing Services Columbia SC | Mobile — We Come to You | 5.0★ | Mikah's"
+        description="Mobile auto detailing services near Columbia &amp; Lexington SC — we come to your home or office. 5.0★ rated. Exterior from $150, full reset from $375, maintenance $225. Call (803) 667-8731!"
         keywords="mobile auto detailing columbia sc, mobile car detailing lexington sc, car detailing near me, interior car detailing columbia, exterior auto detailing, same day car detailing, mobile detailing services"
         canonical="https://mikahsmobiledetailingsc.com"
         schema={schemas}

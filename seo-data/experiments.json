@@ -14,24 +14,24 @@
   "experiments": [
     {
       "id": "exp-2026-07-21-homepage-ctr",
-      "started": null,
-      "change": "PLANNED: homepage title/meta rewrite targeting 'car detailing near me' CTR (currently pos 7.1, 189 impr/28d, 1.06% CTR)",
-      "hypothesis": "Homepage is in striking distance (pos 7) for the highest-volume local term (880/mo); a benefit-led title (price anchor + 'We Come to You' + 5.0 stars) should lift CTR toward 3-5%",
-      "target_queries": ["car detailing near me", "auto detailing near me", "detailing near me"],
+      "started": "2026-09-28",
+      "change": "Homepage SEOHead title/description rewrite (src/pages/HomePage.tsx). Title: 'Auto Detailing Services Columbia SC | Mobile — We Come to You | 5.0★ | Mikah's'. Description now leads with 'Mobile auto detailing services near Columbia & Lexington SC' with price anchors ($150 exterior, $375 reset, $225 maintenance).",
+      "hypothesis": "Homepage ranks pos 22 for 'auto detailing services in columbia, sc' (333 impr/wk, 0 clicks) and pos 11 for 'car detailing near me' (15 impr, 0 clicks). Title now includes 'auto detailing services' + 'Columbia SC' to improve semantic alignment and CTR on the 333-impr query. Price anchors in meta should lift CTR from current 0.46%.",
+      "target_queries": ["auto detailing services in columbia, sc", "car detailing near me", "mobile detailing near me", "auto detailing columbia sc"],
       "target_pages": ["https://mikahsmobiledetailingsc.com/"],
-      "baseline": "28d: clicks 21, impr 1983, ctr 1.06%, pos 13.0 (homepage overall)",
-      "review_after": null,
+      "baseline": "7d (Sep 19–25): 437 impr, 2 clicks, 0.46% CTR, pos 21.4. 'auto detailing services in columbia, sc': 333 impr, 0 clicks, pos 22.3. 'car detailing near me': 15 impr, 0 clicks, pos 11.3.",
+      "review_after": "2026-10-12",
       "status": "open"
     },
     {
       "id": "exp-2026-07-21-pricing-blog-zero-ctr",
-      "started": null,
-      "change": "PLANNED: fix /blog/car-detailing-prices-value-breakdown/ - 2,011 impressions, 0 clicks, pos 45. Retitle to match actual queries, add price table near top, internal-link from /pricing",
-      "hypothesis": "Page has huge impression volume with zero clicks; better title/meta + on-page price answers should convert impressions to clicks and lift position",
-      "target_queries": ["car detailing prices", "auto detailing cost", "how much does car detailing cost"],
+      "started": "2026-09-28",
+      "change": "Blog post title/meta rewrite (src/content/blog/car-detailing-prices-value-breakdown.json). Title: 'Car Detailing Prices Columbia SC 2026 — How Much Does It Cost?' (was 'Car Detailing Near Me: What It Should Cost (Columbia SC)'). Meta now leads with 2026 prices: exterior $150, interior $350, full reset $375.",
+      "hypothesis": "Blog post ranking pos 64–90 for 'how much does car detailing cost' cluster (126 impr, 0 clicks) with a title about 'near me' rather than price. Aligning title to the actual queries landing on the page ('car detailing prices', 'how much does X cost') should improve semantic match, lift position, and drive clicks.",
+      "target_queries": ["car detailing prices", "how much does car detailing cost", "how much is car detailing", "how much does auto detailing cost", "car detailing cost"],
       "target_pages": ["https://mikahsmobiledetailingsc.com/blog/car-detailing-prices-value-breakdown/"],
-      "baseline": "28d: clicks 0, impr 2011, ctr 0%, pos 45.4",
-      "review_after": null,
+      "baseline": "7d (Sep 19–25): 126 impr, 0 clicks, 0% CTR, pos 76.0. 'how much does auto detailing cost': 16 impr, 0 clicks, pos 86. 'how much does car detailing cost': 12 impr, 0 clicks, pos 64.4.",
+      "review_after": "2026-10-12",
       "status": "open"
     },
     {
@@ -43,6 +43,17 @@
       "target_pages": ["https://mikahsmobiledetailingsc.com/pricing/"],
       "baseline": "28d: /pricing/ 6 clicks/2743 impr/pos 17.4 ; /pricing 5 clicks/1270 impr/pos 24.3",
       "review_after": null,
+      "status": "open"
+    },
+    {
+      "id": "exp-2026-09-28-west-columbia-ctr",
+      "started": "2026-09-28",
+      "change": "West Columbia page SEOHead title/description/og/twitter rewrite (src/pages/LocationWestColumbiaPage.tsx). Title: 'Mobile Detailing Near West Columbia SC | 5.0★ We Come to You | Mikah's' (was 'Mobile Car Detailing West Columbia SC | We Come to You — Mikah's Auto Detailing'). Description adds 'no drop-off needed' differentiator.",
+      "hypothesis": "West Columbia page ranks pos 7.5 for 'mobile detailing near me' (11 impr, 0 clicks). At pos 7, a CTR-optimized title with 'Near [city]' phrasing matching the query intent, plus '5.0★' social proof, should convert impressions to clicks. Mobile detailing cluster is growing +40% YoY with Low competition.",
+      "target_queries": ["mobile detailing near me", "mobile car detailing west columbia sc", "mobile detailing west columbia sc"],
+      "target_pages": ["https://mikahsmobiledetailingsc.com/locations/west-columbia/"],
+      "baseline": "7d (Sep 19–25): 67 impr, 0 clicks, 0% CTR, pos 22.4. 'mobile detailing near me': 11 impr, 0 clicks, pos 7.5.",
+      "review_after": "2026-10-12",
       "status": "open"
     }
   ]
