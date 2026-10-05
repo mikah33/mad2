@@ -52,8 +52,8 @@ const FullDetailPage: React.FC = () => {
   return (
     <>
       <SEOHead
-        title="Full Car Detail Columbia SC | Interior + Exterior | $375 Full Reset"
-        description="Complete full car detailing in Columbia SC. Interior + exterior detailing package. Professional cleaning, protection, and restoration. Mobile service to Lexington, Irmo, Cayce. Book now!"
+        title="Car Detailing Service — Mobile | We Come to You | From $225 | Columbia SC"
+        description="Professional car detailing service in Columbia, Lexington, Irmo & Cayce SC — we come to you. Full detail from $225, factory reset from $400. 5.0★ rated. Book online or call (803) 667-8731."
         keywords="full car detailing, complete auto detailing, interior exterior detailing, full detail package, car detailing near me, mobile auto detailing, vehicle detailing services, comprehensive car cleaning"
         canonical="https://mikahsmobiledetailingsc.com/services/full-detail/"
         ogImage="https://mikahsmobiledetailingsc.com/exterior1.jpg"
