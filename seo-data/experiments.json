@@ -14,24 +14,24 @@
   "experiments": [
     {
       "id": "exp-2026-07-21-homepage-ctr",
-      "started": null,
-      "change": "PLANNED: homepage title/meta rewrite targeting 'car detailing near me' CTR (currently pos 7.1, 189 impr/28d, 1.06% CTR)",
-      "hypothesis": "Homepage is in striking distance (pos 7) for the highest-volume local term (880/mo); a benefit-led title (price anchor + 'We Come to You' + 5.0 stars) should lift CTR toward 3-5%",
+      "started": "2026-10-05",
+      "change": "Homepage title → 'Car Detailing Near Me | We Come to You | From $225 | 5.0★ | Mikah's SC'; description updated to lead with 'near you' + price anchor. File: src/pages/HomePage.tsx",
+      "hypothesis": "Homepage ranks pos 7.6 for 'car detailing near me' (18 impr/wk, 0 clicks). Leading the title with the exact search intent and adding a price anchor should lift CTR toward 3-5%.",
       "target_queries": ["car detailing near me", "auto detailing near me", "detailing near me"],
       "target_pages": ["https://mikahsmobiledetailingsc.com/"],
-      "baseline": "28d: clicks 21, impr 1983, ctr 1.06%, pos 13.0 (homepage overall)",
-      "review_after": null,
+      "baseline": "7d (Sep 26-Oct 2): homepage 4 clicks, 119 impr, 3.36% CTR, pos 17.7; 'car detailing near me' 0 clicks, 18 impr, pos 7.6",
+      "review_after": "2026-10-19",
       "status": "open"
     },
     {
       "id": "exp-2026-07-21-pricing-blog-zero-ctr",
-      "started": null,
-      "change": "PLANNED: fix /blog/car-detailing-prices-value-breakdown/ - 2,011 impressions, 0 clicks, pos 45. Retitle to match actual queries, add price table near top, internal-link from /pricing",
-      "hypothesis": "Page has huge impression volume with zero clicks; better title/meta + on-page price answers should convert impressions to clicks and lift position",
-      "target_queries": ["car detailing prices", "auto detailing cost", "how much does car detailing cost"],
+      "started": "2026-10-05",
+      "change": "Blog post title → 'Car Detailing Prices Columbia SC [2026 Guide] — Exterior from $100, Full Detail from $225'; metaDescription updated with direct price answers. File: src/content/blog/car-detailing-prices-value-breakdown.json",
+      "hypothesis": "Blog post at pos 63.6 with 112 impr/wk and 0 clicks. Switching from 'near me' framing (which cannibalizes the homepage) to price-answer framing should align with informational cost queries and begin lifting position + CTR.",
+      "target_queries": ["car detailing prices", "car detailing cost", "how much does car detailing cost", "auto detailing prices"],
       "target_pages": ["https://mikahsmobiledetailingsc.com/blog/car-detailing-prices-value-breakdown/"],
-      "baseline": "28d: clicks 0, impr 2011, ctr 0%, pos 45.4",
-      "review_after": null,
+      "baseline": "7d (Sep 26-Oct 2): 0 clicks, 112 impr, 0% CTR, pos 63.6",
+      "review_after": "2026-10-19",
       "status": "open"
     },
     {
@@ -43,6 +43,17 @@
       "target_pages": ["https://mikahsmobiledetailingsc.com/pricing/"],
       "baseline": "28d: /pricing/ 6 clicks/2743 impr/pos 17.4 ; /pricing 5 clicks/1270 impr/pos 24.3",
       "review_after": null,
+      "status": "open"
+    },
+    {
+      "id": "exp-2026-10-05-full-detail-service-title",
+      "started": "2026-10-05",
+      "change": "FullDetailPage title → 'Car Detailing Service — Mobile | We Come to You | From $225 | Columbia SC'; description updated to lead with service + mobile + price. File: src/pages/FullDetailPage.tsx",
+      "hypothesis": "/services/full-detail/ has 374 impr/wk and 0 clicks at pos 25.1. 'car detailing service' (66 impr, pos 13.5) and 'car detail' (10 impr, pos 19.4) are striking-distance queries with no CTR. Rewriting the title to match these query patterns should convert impressions to clicks.",
+      "target_queries": ["car detailing service", "car detail", "car detailing service near me", "auto detailing service"],
+      "target_pages": ["https://mikahsmobiledetailingsc.com/services/full-detail/"],
+      "baseline": "7d (Sep 26-Oct 2): 0 clicks, 374 impr, 0% CTR, pos 25.1; 'car detailing service' 66 impr pos 13.5; 'car detail' 10 impr pos 19.4",
+      "review_after": "2026-10-19",
       "status": "open"
     }
   ]

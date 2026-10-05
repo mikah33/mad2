@@ -34,3 +34,19 @@ into `seo-data/keyword-planner.json`.
    or crawlers get homepage-clone HTML (prerender bug class, fixed 2026-07-04).
 9. Blog = national/informational "cost" queries; /pricing = local price list. Cross-link, never
    compete.
+
+---
+
+## 2026-10-05 — Strong WoW click recovery; 3 title experiments launched
+
+**Evidence:**
+- WoW totals: clicks 2 → 9 (+350%), impressions 1,209 → 1,483 (+23%), CTR 0.17% → 0.61%, position 39.5 → 38.7.
+- Homepage driving recovery: 4 clicks this week (3.36% CTR, pos 17.7). Query "car detailing near me" ranks pos 7.6 with 18 impr but still 0 clicks → title not converting.
+- /services/full-detail/ is the highest-impression zero-click page: 374 impr, 0 clicks, pos 25.1. "car detailing service" alone is 66 impr at pos 13.5 — pure CTR failure on a near-top-10 query.
+- Blog /car-detailing-prices-value-breakdown/: fell to pos 63.6 (was 45.4 baseline), impressions 112/wk (was ~500/wk). Title "Car Detailing Near Me: What It Should Cost" cannibalizes the homepage for 'near me' intent; redirected to price-answer framing.
+- All 3 prior experiments (exp-2026-07-21-*) had started=null — they were planned but never shipped. No experiment data to analyze; organic movement only.
+
+**Rules:**
+10. **"car detailing service" (pos 13.5, 66 impr/wk) is a high-value CTR gap** — /services/full-detail/ owns that query but its title ("Full Car Detail...") doesn't match the search term. Align title to query before adding content.
+11. **Blog titles must not use "near me" phrasing** — that cannibalizes the homepage for the site's #1 term. Blog titles belong to informational/cost queries; use price anchors and year tags instead.
+12. **Prior experiments that were planned but never started should be re-evaluated** — baseline numbers drift; refresh baseline from current 7d GSC before setting review_after.
