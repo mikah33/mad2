@@ -85,7 +85,7 @@ interface PrerenderRoute {
 
 const routes: PrerenderRoute[] = [
   // Homepage
-  { path: '', title: "Mobile Car Detailing Columbia SC | Mikah's Auto Detailing", description: '5.0-star mobile auto detailing in Columbia, Lexington & Irmo SC. We come to you - full interior + exterior resets $375, then $225 maintenance details every 90 days. Call (803) 667-8731.' },
+  { path: '', title: "Car Detailing Near Me | Mobile Columbia SC — From $225 | Mikah's Auto Detailing", description: '5.0-star mobile car detailing near Columbia, Lexington & Irmo SC. We come to you — full reset from $375, maintenance $225. Same-day available. Call (803) 667-8731.' },
 
   // Service pages
   { path: 'services', title: 'Auto Detailing Services | Columbia SC', description: 'Mobile detailing services in Columbia SC: Level 2 Full Reset $375, interior from $350, exterior from $150, ceramic coating from $850. 5.0-star - we come to you.' },
@@ -103,7 +103,7 @@ const routes: PrerenderRoute[] = [
   // these two pages, and the generic "| Mobile Service" titles were earning ~1%
   // CTR. Keep these in sync with the SEOHead titles in the React components.
   { path: 'locations', title: 'Service Areas | Mobile Detailing in SC', description: 'Mobile car detailing across the Midlands: Columbia, Lexington, West Columbia, Irmo, Cayce, Chapin, Blythewood & more. 5.0-star - we come to you, from $150.' },
-  { path: 'locations/columbia-sc', title: "Auto Detailing Columbia SC | $375 Full Reset — Mikah's Auto Detailing", description: 'Auto detailing in Columbia SC — we come to you. 5.0-star mobile detailing: Level 2 Full Reset $375, interior from $350, exterior from $150. Call (803) 667-8731.' },
+  { path: 'locations/columbia-sc', title: "Auto Detailing Services Columbia SC | Mobile — From $150 | Mikah's Auto Detailing", description: 'Auto detailing services in Columbia SC — 5.0-star mobile, we come to you. Exterior from $150, full reset $375, maintenance $225. Same-day available. (803) 667-8731.' },
   { path: 'locations/lexington-sc', title: "Mobile Car Detailing Lexington SC | We Come to You — Mikah's Auto Detailing", description: 'Mobile car detailing in Lexington SC - 5.0-star rated, we come to your home or office. Full Reset $375, interior from $350, exterior from $150. (803) 667-8731.' },
   { path: 'locations/irmo-sc', title: 'Car Detailing Irmo SC | Mobile Service', description: 'Mobile car detailing in Irmo SC - 5.0-star rated. Full Reset $375, interior from $350, exterior from $150 at your home or office. (803) 667-8731.' },
   { path: 'locations/cayce-sc', title: 'Car Detailing Cayce SC | Mobile Service', description: 'Mobile car detailing in Cayce SC - 5.0-star rated. Full Reset $375, interior from $350, exterior from $150. We come to you. Call (803) 667-8731.' },
@@ -117,7 +117,7 @@ const routes: PrerenderRoute[] = [
   // NOTE: /contact/ is intentionally NOT here. The router has no /contact route
   // (the SPA renders a noindexed 404 for it), so prerendering it served users a
   // broken page. netlify.toml now 301s /contact/* -> /book/.
-  { path: 'pricing', title: 'Car Detailing Prices 2026 — Columbia SC Price List', description: '2026 car detailing price list for Columbia & Lexington SC: Level 2 Full Reset $375, Level 2 Premium $675, Level 3 Disaster Detail $650, $225 maintenance rate within 90 days. Interior from $350, exterior from $150. Mobile — we come to you.' },
+  { path: 'pricing', title: 'Car Detailing Prices 2026 | Columbia SC — From $150', description: 'Mobile detailing prices for Columbia & Lexington SC: exterior from $150, interior from $350, full reset $375, maintenance $225 (rebook same vehicle by day 90). Paint correction from $599, ceramic from $850. We come to you.' },
   { path: 'faq', title: 'Frequently Asked Questions | Auto Detailing', description: 'Common questions about auto detailing, ceramic coating, pricing, and our mobile service.' },
   { path: 'faq/ceramic-coating', title: 'Ceramic Coating FAQ | Common Questions', description: 'Frequently asked questions about ceramic coating, application, maintenance, and benefits.' },
   { path: 'faq/mobile-detailing', title: 'Mobile Detailing FAQ | Common Questions', description: 'Frequently asked questions about our mobile detailing service and process.' },
