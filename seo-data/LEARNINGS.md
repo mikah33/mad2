@@ -34,3 +34,42 @@ into `seo-data/keyword-planner.json`.
    or crawlers get homepage-clone HTML (prerender bug class, fixed 2026-07-04).
 9. Blog = national/informational "cost" queries; /pricing = local price list. Cross-link, never
    compete.
+
+---
+
+## 2026-10-19 — Impressions up, CTR collapsing; position is growing but we're stuck at the fold
+
+**Evidence (WoW: Oct 3–9 → Oct 10–16):**
+- Clicks: 7 → 5 (−29%)
+- Impressions: 1,478 → 1,797 (+22%)
+- CTR: 0.47% → 0.28% (−40%)
+- Position: 35.0 → 27.9 (+7 improved)
+- The position improvement is real (we're ranking for more queries) but we're gaining impressions
+  at low-CTR positions. The "near me" cluster (pos 5–10) shows zero clicks even at good positions
+  — almost certainly because local pack (map 3-pack) sits above organic results for those queries.
+
+**Experiments resolved:**
+- **exp-2026-07-21-pricing-slash-consolidation → WON**: /pricing now consolidated into /pricing/
+  (only one URL in GSC). Canonical + redirect works for trailing-slash splits.
+- **exp-2026-07-21-homepage-ctr → INCONCLUSIVE**: was planned but never shipped. Superseded by
+  exp-2026-10-19-homepage-near-me.
+- **exp-2026-07-21-pricing-blog-zero-ctr → INCONCLUSIVE**: never shipped; blog drifted to pos 53.4
+  (7d), not striking distance. Deprioritized.
+
+**Changes made this cycle:**
+1. Homepage title: added "near me" + "From $225" price anchor (exp-2026-10-19-homepage-near-me)
+2. Columbia SC page: added "Services" to title, "same-day available" to description
+   (exp-2026-10-19-columbia-services) — targeting 255 impr/week "auto detailing services in
+   columbia, sc" at pos 19.4 with 0 clicks.
+3. Pricing page: added "From $150" price anchor to title; description front-loads price ladder
+   (exp-2026-10-19-pricing-ctr) — targeting 455 impr/week page with 0.2% CTR.
+
+**Rules (new):**
+10. **"near me" organic CTR is structurally low** — local pack dominates page 1 for these queries.
+    Organic pos 5–10 still gets ~0% CTR. Don't give up on "near me" optimization (it builds
+    rankings) but don't expect big click lifts until we crack the map pack.
+11. **Price anchors in titles work for intent-match queries** (Rule 1 update): "car detailing prices"
+    at pos 26, 47 impr, 0 clicks — the title had no price; "From $150" in title should lift CTR.
+12. **255 impr/week "auto detailing services in columbia, sc" at pos 19.4** — adding "Services" to
+    the Columbia SC page title is the highest single-query opportunity in the current dataset.
+    Review in 2 weeks (2026-11-02).
