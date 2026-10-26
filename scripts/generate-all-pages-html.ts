@@ -85,7 +85,7 @@ interface PrerenderRoute {
 
 const routes: PrerenderRoute[] = [
   // Homepage
-  { path: '', title: "Mobile Car Detailing Columbia SC | Mikah's Auto Detailing", description: '5.0-star mobile auto detailing in Columbia, Lexington & Irmo SC. We come to you - full interior + exterior resets $375, then $225 maintenance details every 90 days. Call (803) 667-8731.' },
+  { path: '', title: "Car Detailing Near Me Columbia SC | We Come to You · From $225 · 5.0★ | Mikah's Auto Detailing", description: '5.0-star mobile car detailing near you in Columbia, Lexington & Irmo SC — we come to your home or office. Full detail from $225, exterior from $150, interior from $350. Book in minutes: (803) 667-8731.' },
 
   // Service pages
   { path: 'services', title: 'Auto Detailing Services | Columbia SC', description: 'Mobile detailing services in Columbia SC: Level 2 Full Reset $375, interior from $350, exterior from $150, ceramic coating from $850. 5.0-star - we come to you.' },
@@ -104,7 +104,7 @@ const routes: PrerenderRoute[] = [
   // CTR. Keep these in sync with the SEOHead titles in the React components.
   { path: 'locations', title: 'Service Areas | Mobile Detailing in SC', description: 'Mobile car detailing across the Midlands: Columbia, Lexington, West Columbia, Irmo, Cayce, Chapin, Blythewood & more. 5.0-star - we come to you, from $150.' },
   { path: 'locations/columbia-sc', title: "Auto Detailing Columbia SC | $375 Full Reset — Mikah's Auto Detailing", description: 'Auto detailing in Columbia SC — we come to you. 5.0-star mobile detailing: Level 2 Full Reset $375, interior from $350, exterior from $150. Call (803) 667-8731.' },
-  { path: 'locations/lexington-sc', title: "Mobile Car Detailing Lexington SC | We Come to You — Mikah's Auto Detailing", description: 'Mobile car detailing in Lexington SC - 5.0-star rated, we come to your home or office. Full Reset $375, interior from $350, exterior from $150. (803) 667-8731.' },
+  { path: 'locations/lexington-sc', title: "Mobile Car Detailing Lexington SC | We Come to You — Mikah's Auto Detailing", description: '5.0-star mobile car detailing in Lexington SC — we come to your driveway or office. Exterior from $150, full detail from $225, interior from $350. Same-day available. Call (803) 667-8731.' },
   { path: 'locations/irmo-sc', title: 'Car Detailing Irmo SC | Mobile Service', description: 'Mobile car detailing in Irmo SC - 5.0-star rated. Full Reset $375, interior from $350, exterior from $150 at your home or office. (803) 667-8731.' },
   { path: 'locations/cayce-sc', title: 'Car Detailing Cayce SC | Mobile Service', description: 'Mobile car detailing in Cayce SC - 5.0-star rated. Full Reset $375, interior from $350, exterior from $150. We come to you. Call (803) 667-8731.' },
   { path: 'locations/west-columbia', title: "Mobile Car Detailing West Columbia SC | We Come to You — Mikah's Auto Detailing", description: 'Mobile car detailing in West Columbia SC - 5.0-star rated, we come to you. Full Reset $375, interior from $350, exterior from $150. Call (803) 667-8731.' },
