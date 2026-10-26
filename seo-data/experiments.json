@@ -15,34 +15,70 @@
     {
       "id": "exp-2026-07-21-homepage-ctr",
       "started": null,
-      "change": "PLANNED: homepage title/meta rewrite targeting 'car detailing near me' CTR (currently pos 7.1, 189 impr/28d, 1.06% CTR)",
-      "hypothesis": "Homepage is in striking distance (pos 7) for the highest-volume local term (880/mo); a benefit-led title (price anchor + 'We Come to You' + 5.0 stars) should lift CTR toward 3-5%",
+      "change": "PLANNED but never shipped",
+      "hypothesis": "Homepage price-anchored title should lift CTR for 'car detailing near me'",
       "target_queries": ["car detailing near me", "auto detailing near me", "detailing near me"],
       "target_pages": ["https://mikahsmobiledetailingsc.com/"],
-      "baseline": "28d: clicks 21, impr 1983, ctr 1.06%, pos 13.0 (homepage overall)",
+      "baseline": "28d: clicks 21, impr 1983, ctr 1.06%, pos 13.0",
       "review_after": null,
-      "status": "open"
+      "status": "inconclusive",
+      "outcome": "Never started (started=null). Superseded by exp-2026-10-26-homepage-ctr."
     },
     {
       "id": "exp-2026-07-21-pricing-blog-zero-ctr",
       "started": null,
-      "change": "PLANNED: fix /blog/car-detailing-prices-value-breakdown/ - 2,011 impressions, 0 clicks, pos 45. Retitle to match actual queries, add price table near top, internal-link from /pricing",
-      "hypothesis": "Page has huge impression volume with zero clicks; better title/meta + on-page price answers should convert impressions to clicks and lift position",
+      "change": "PLANNED but never shipped",
+      "hypothesis": "Retitling /blog/car-detailing-prices-value-breakdown/ to match price queries should lift CTR",
       "target_queries": ["car detailing prices", "auto detailing cost", "how much does car detailing cost"],
       "target_pages": ["https://mikahsmobiledetailingsc.com/blog/car-detailing-prices-value-breakdown/"],
       "baseline": "28d: clicks 0, impr 2011, ctr 0%, pos 45.4",
       "review_after": null,
-      "status": "open"
+      "status": "inconclusive",
+      "outcome": "Never started (started=null). Superseded by exp-2026-10-26-blog-prices-title."
     },
     {
       "id": "exp-2026-07-21-pricing-slash-consolidation",
       "started": null,
-      "change": "PLANNED: /pricing vs /pricing/ both receiving impressions (2,743 + 1,270 per 28d) - verify canonical + redirect so only trailing-slash version is indexed",
-      "hypothesis": "Consolidating the split should merge ranking signals and lift the surviving URL's position",
+      "change": "PLANNED but never shipped",
+      "hypothesis": "Consolidating /pricing vs /pricing/ split should merge ranking signals",
       "target_queries": ["car detailing prices columbia sc", "auto detail price list"],
       "target_pages": ["https://mikahsmobiledetailingsc.com/pricing/"],
       "baseline": "28d: /pricing/ 6 clicks/2743 impr/pos 17.4 ; /pricing 5 clicks/1270 impr/pos 24.3",
       "review_after": null,
+      "status": "inconclusive",
+      "outcome": "Never started (started=null). Still worth investigating — deferred to a future cycle."
+    },
+    {
+      "id": "exp-2026-10-26-homepage-ctr",
+      "started": "2026-10-26",
+      "change": "scripts/generate-all-pages-html.ts: Homepage title changed from 'Mobile Car Detailing Columbia SC | Mikah's Auto Detailing' to 'Car Detailing Near Me Columbia SC | We Come to You · From $225 · 5.0★ | Mikah's Auto Detailing'. Meta description updated to surface local benefit + price anchor.",
+      "hypothesis": "Homepage ranks pos 6.5 for 'car detailing near me' (57 impr/wk, 0 clicks). A title that leads with 'car detailing near me' and includes a price anchor (From $225) and trust signal (5.0★) should convert impressions to clicks, targeting 3-5% CTR for this query cluster.",
+      "target_queries": ["car detailing near me", "auto detailing near me", "detailing near me", "mobile detailing near me", "car detailers near me"],
+      "target_pages": ["https://mikahsmobiledetailingsc.com/"],
+      "baseline": "7d Oct 17-23: clicks 2, impr 106, ctr 1.89%, pos 16.0. 'car detailing near me' specifically: 57 impr, 0 clicks, pos 6.5.",
+      "review_after": "2026-11-09",
+      "status": "open"
+    },
+    {
+      "id": "exp-2026-10-26-lexington-meta",
+      "started": "2026-10-26",
+      "change": "scripts/generate-all-pages-html.ts: Lexington location page meta description updated to include 'From $150' price anchor, 'same-day available', and cleaner benefit statement.",
+      "hypothesis": "/locations/lexington-sc/ ranks pos 16.2 with 99 impr and 0 clicks — striking distance with zero CTR. Title already leads with 'We Come to You'; the meta description needs a price anchor and urgency signal to trigger clicks.",
+      "target_queries": ["mobile car detailing lexington sc", "mobile detailing lexington sc", "car detailing lexington sc", "auto detailing lexington sc"],
+      "target_pages": ["https://mikahsmobiledetailingsc.com/locations/lexington-sc/"],
+      "baseline": "7d Oct 17-23: clicks 0, impr 99, ctr 0%, pos 16.2.",
+      "review_after": "2026-11-09",
+      "status": "open"
+    },
+    {
+      "id": "exp-2026-10-26-blog-prices-title",
+      "started": "2026-10-26",
+      "change": "src/content/blog/car-detailing-prices-value-breakdown.json: title changed from 'Car Detailing Near Me: What It Should Cost (Columbia SC)' to 'Car Detailing Prices in Columbia SC — What to Expect in 2026'. Meta description rewritten to align with price-intent queries.",
+      "hypothesis": "The post receives 161 impr/wk (largely 'car detailing prices/cost' queries) with 0 clicks at pos 54.7. The current title says 'near me' but searchers want a price guide — fixing the title-query mismatch should improve position and eventually CTR.",
+      "target_queries": ["car detailing prices", "car detailing cost", "how much does car detailing cost", "car detailing prices near me", "auto detailing cost"],
+      "target_pages": ["https://mikahsmobiledetailingsc.com/blog/car-detailing-prices-value-breakdown/"],
+      "baseline": "7d Oct 17-23: clicks 0, impr 161, ctr 0%, pos 54.7.",
+      "review_after": "2026-11-09",
       "status": "open"
     }
   ]
