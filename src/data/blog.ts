@@ -164,10 +164,10 @@ export const blogPosts: BlogPost[] = [
   },
   {
     id: 'blog-009',
-    title: 'Car Detailing Near Me: What It Should Cost (Columbia SC)',
+    title: 'Car Detailing Prices in Columbia SC 2026 — Full Cost Breakdown',
     slug: 'car-detailing-prices-value-breakdown',
-    excerpt: 'What car detailing should cost near Columbia SC, what you get at each level, and how to spot real value. Mobile service from $150 - we come to you.',
-    metaDescription: 'Car detailing near me in Columbia SC: from $150, we come to you. 5.0-star rated, IDA certified. Call (803) 667-8731 or book online in minutes.',
+    excerpt: 'How much does car detailing cost in Columbia SC? Mobile detailing from $100 Exterior, $200 Interior, $225 Full Detail — we come to you.',
+    metaDescription: 'How much does car detailing cost in Columbia & Lexington SC? Mobile detailing prices: Exterior from $100, Interior from $200, Full Detail from $225. 5.0★ rated — we come to you. Free quote: (803) 667-8731.',
     author: 'Mikah',
     authorJobTitle: 'Professional Auto Detailer',
     datePublished: '2024-03-15',
