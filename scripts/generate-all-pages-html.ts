@@ -95,7 +95,7 @@ const routes: PrerenderRoute[] = [
   { path: 'services/paint-correction', title: 'Paint Correction From $599 | Columbia SC', description: 'Paint correction from $599 in Columbia SC - 1-step & 2-step swirl and scratch removal that restores gloss. 5.0-star mobile service. Free quote: (803) 667-8731.' },
   { path: 'services/full-detail', title: 'Full Detail Package $225 Flat | Columbia SC', description: 'Full detail package - $225 flat in Columbia & Lexington SC. Complete interior + exterior with wax protection. 5.0-star mobile detailing, we come to you.' },
   { path: 'services/mobile-detailing', title: 'Mobile Auto Detailing | Columbia SC', description: '5.0-star mobile detailing at your home or office in Columbia, Lexington & Irmo SC. Full resets $375, then $225 maintenance every 90 days. Same-day available.' },
-  { path: 'services/odor-stain-removal', title: 'Car Odor & Stain Removal From $250 | Columbia SC', description: 'Car odor removal from $250 in Columbia & Lexington SC - enzymatic + ozone treatment for pet odor and smoke smell. Deep-clean rescues $650. (803) 667-8731.' },
+  { path: 'services/odor-stain-removal', title: 'Car Odor Removal Near Me — From $250 | Columbia SC', description: 'Car odor removal near you in Columbia & Lexington SC — enzymatic + ozone eliminates pet odor, smoke smell & musty cars. From $250, Level 3 rescue $650. 5.0★ mobile. We come to you.' },
 
   // Location pages
   // Lexington + West Columbia titles lead with "Mobile … We Come to You": the
@@ -117,7 +117,7 @@ const routes: PrerenderRoute[] = [
   // NOTE: /contact/ is intentionally NOT here. The router has no /contact route
   // (the SPA renders a noindexed 404 for it), so prerendering it served users a
   // broken page. netlify.toml now 301s /contact/* -> /book/.
-  { path: 'pricing', title: 'Car Detailing Prices 2026 — Columbia SC Price List', description: '2026 car detailing price list for Columbia & Lexington SC: Level 2 Full Reset $375, Level 2 Premium $675, Level 3 Disaster Detail $650, $225 maintenance rate within 90 days. Interior from $350, exterior from $150. Mobile — we come to you.' },
+  { path: 'pricing', title: 'Mobile Car Detailing Prices 2026 — From $150 | Columbia SC', description: '2026 mobile car detailing prices — Columbia & Lexington SC: Exterior from $150 · Basic $225 · Full Reset from $375 · Level 2 Premium $675 · Disaster $650 · Ceramic from $850. We come to you.' },
   { path: 'faq', title: 'Frequently Asked Questions | Auto Detailing', description: 'Common questions about auto detailing, ceramic coating, pricing, and our mobile service.' },
   { path: 'faq/ceramic-coating', title: 'Ceramic Coating FAQ | Common Questions', description: 'Frequently asked questions about ceramic coating, application, maintenance, and benefits.' },
   { path: 'faq/mobile-detailing', title: 'Mobile Detailing FAQ | Common Questions', description: 'Frequently asked questions about our mobile detailing service and process.' },
