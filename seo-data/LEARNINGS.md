@@ -34,3 +34,26 @@ into `seo-data/keyword-planner.json`.
    or crawlers get homepage-clone HTML (prerender bug class, fixed 2026-07-04).
 9. Blog = national/informational "cost" queries; /pricing = local price list. Cross-link, never
    compete.
+
+---
+
+## 2026-11-16 — WoW: clicks -25%, impressions -14%; homepage CTR climbing; executing July backlog
+
+**Evidence:**
+- Prior week (Oct 31–Nov 6): 8 clicks · 1,783 impr · 0.45% CTR · pos 47.1
+- Current week (Nov 7–13):   6 clicks · 1,536 impr · 0.39% CTR · pos 45.6
+- **Homepage improved**: 2→4 clicks, CTR 1.87%→3.05% (position slipped 13.4→19.0 — normal weekly variance or competing pages climbing; monitor)
+- **/pricing/**: position improved 47.2→39.3 significantly; CTR lifted 0.22%→0.59%; impressions dropped 459→339
+- **/blog/car-detailing-prices-value-breakdown/**: impressions +38% WoW (165→227), position slowly improving (73.3→67.7), still 0 clicks — zero-CTR monster still not fixed
+- Location pages (cayce, irmo, lexington) had clicks last week but 0 this week — normal variance for single-click pages at pos 5–18
+- Key zero-CTR opportunity: "car odor removal near me" at 112 impr, pos 42, 0 clicks — no "near me" in odor page title
+- All 3 planned July experiments had `started: null` — changes were never committed to the repo; executing blog prices rewrite today
+
+**Experiments resolved:**
+- **exp-2026-07-21-pricing-slash-consolidation → INCONCLUSIVE**: never executed; GSC now only shows /pricing/ (not /pricing without slash), so the dual-URL impression split appears to have self-resolved without intervention.
+
+**Rules:**
+10. **Execute before the next plan**: planned experiments with `started: null` for 4+ weeks should either be executed or dropped; they block new experiments on the same pages and cost impressions every day they sit idle.
+11. **Blog prices page impressions are growing fast** (+38% WoW) — the page is indexing and climbing, but zero CTR. Title/meta rewrite is the highest-ROI move: add "cost near me" and a price anchor.
+12. **Odor removal "near me" is a rising keyword**: 112 impr/wk at pos 42 with 0 clicks. The existing odor page title lacks "near me" language — add it; don't create a new page.
+13. **Homepage CTR at 3% is healthy** at pos 19 this week. No changes needed; monitor for 2 more weeks.
