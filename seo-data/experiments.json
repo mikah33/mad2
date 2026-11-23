@@ -25,24 +25,36 @@
     },
     {
       "id": "exp-2026-07-21-pricing-blog-zero-ctr",
-      "started": null,
-      "change": "PLANNED: fix /blog/car-detailing-prices-value-breakdown/ - 2,011 impressions, 0 clicks, pos 45. Retitle to match actual queries, add price table near top, internal-link from /pricing",
-      "hypothesis": "Page has huge impression volume with zero clicks; better title/meta + on-page price answers should convert impressions to clicks and lift position",
-      "target_queries": ["car detailing prices", "auto detailing cost", "how much does car detailing cost"],
+      "started": "2026-11-23",
+      "change": "Title rewrite: 'Car Detailing Near Me: What It Should Cost (Columbia SC)' → 'Car Detailing Prices in Columbia SC | From $225 — Mikah's Mobile'. Meta rewrite: removed wrong '$150' price, added 'From $225' and 'From $400' anchors aligned with published prices. lastModified updated to 2026-11-23.",
+      "hypothesis": "Title with 'Prices' + price anchor better matches 'car detailing prices' (45 impr/wk, pos 33.4) and 'how much does car detailing cost' (25 impr/wk, pos 53.5) intent; CTR should improve from 0% toward 1-2%",
+      "target_queries": ["car detailing prices", "how much does car detailing cost", "how much does interior car detailing cost", "mobile detailing prices"],
       "target_pages": ["https://mikahsmobiledetailingsc.com/blog/car-detailing-prices-value-breakdown/"],
-      "baseline": "28d: clicks 0, impr 2011, ctr 0%, pos 45.4",
-      "review_after": null,
+      "baseline": "7d Nov 7-13: clicks 0, impr 227, ctr 0%, pos 67.7",
+      "review_after": "2026-12-07",
       "status": "open"
     },
     {
       "id": "exp-2026-07-21-pricing-slash-consolidation",
       "started": null,
-      "change": "PLANNED: /pricing vs /pricing/ both receiving impressions (2,743 + 1,270 per 28d) - verify canonical + redirect so only trailing-slash version is indexed",
+      "change": "RESOLVED: /pricing vs /pricing/ split is gone — Nov data shows only /pricing/ in GSC. No action needed.",
       "hypothesis": "Consolidating the split should merge ranking signals and lift the surviving URL's position",
       "target_queries": ["car detailing prices columbia sc", "auto detail price list"],
       "target_pages": ["https://mikahsmobiledetailingsc.com/pricing/"],
       "baseline": "28d: /pricing/ 6 clicks/2743 impr/pos 17.4 ; /pricing 5 clicks/1270 impr/pos 24.3",
       "review_after": null,
+      "status": "won",
+      "outcome": "2026-11-23: /pricing (no slash) no longer appears in Nov GSC data. Only /pricing/ shows. Canonical consolidation worked. Rule: /pricing/ canonicalization is settled — don't re-litigate."
+    },
+    {
+      "id": "exp-2026-11-23-odor-page-near-me",
+      "started": "2026-11-23",
+      "change": "OdorStainRemovalPage.tsx SEOHead title rewrite: 'Car Odor & Stain Removal Columbia SC | From $250' → 'Car Odor Removal Near Me | Columbia SC | From $250 — Mikah's'. Meta rewritten to lead with 'near me' phrase matching dominant zero-CTR query.",
+      "hypothesis": "'car odor removal near me' has 112 impr/wk at pos 41.8 with 0 clicks. Adding 'near me' to title should signal stronger local intent match and lift CTR from 0% toward 1-2% as position improves.",
+      "target_queries": ["car odor removal near me", "car odor removal service", "interior stain removal near me"],
+      "target_pages": ["https://mikahsmobiledetailingsc.com/services/odor-stain-removal/"],
+      "baseline": "7d Nov 7-13: clicks 0, impr 130, ctr 0%, pos 47.2",
+      "review_after": "2026-12-07",
       "status": "open"
     }
   ]
