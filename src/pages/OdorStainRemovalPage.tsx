@@ -118,8 +118,8 @@ const OdorStainRemovalPage: React.FC = () => {
   return (
     <>
       <SEOHead
-        title="Car Odor & Stain Removal Columbia SC | From $250"
-        description="Car odor removal from $250 in Columbia & Lexington SC - professional enzymatic + ozone treatment for pet odor, smoke smell, mildew. Interior need deep cleaning too? Level 3 Disaster Detail $650. (803) 667-8731."
+        title="Car Odor Removal Near Me | Columbia SC | From $250 — Mikah's"
+        description="Car odor removal near me, Columbia & Lexington SC. Pet odor, smoke smell, mildew — enzymatic + ozone treatment from $250. We come to your driveway. (803) 667-8731."
         keywords="car odor removal near me, interior stain removal near me, car odor removal columbia sc, car stain removal, pet odor removal car, smoke smell removal car, ozone treatment car, car seat stain removal, mobile odor removal lexington sc"
         canonical="https://mikahsmobiledetailingsc.com/services/odor-stain-removal/"
         ogImage="https://mikahsmobiledetailingsc.com/interior2.jpg"
